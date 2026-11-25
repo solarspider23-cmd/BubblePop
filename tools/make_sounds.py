@@ -154,6 +154,68 @@ def squeeze(seed, length=0.45):
     return finish(sig, peak=0.6, fade=0.03)
 
 
+def lowpass1(signal, freq):
+    a = 1 - math.exp(-2 * math.pi * freq / SR)
+    out, y = [], 0.0
+    for x in signal:
+        y += a * (x - y)
+        out.append(y)
+    return out
+
+
+def squeak(seed, length=0.42, f_start=420, f_end=980, vib=0.03):
+    """Rubbery squeak: like squeezing a rubber toy - a bright tone that slides up as the
+    plastic gets tighter, with a little wobble and rough edges."""
+    rnd = random.Random(seed)
+    f_start *= rnd.uniform(0.92, 1.08)
+    f_end *= rnd.uniform(0.92, 1.08)
+    n = int(length * SR)
+    out, ph = [], 0.0
+    jitter = 0.0
+    for i in range(n):
+        u = i / n
+        jitter = 0.995 * jitter + 0.005 * rnd.uniform(-1, 1)
+        f = f_start + (f_end - f_start) * u ** 1.6
+        f *= 1 + vib * math.sin(2 * math.pi * 23 * i / SR) + 0.6 * jitter
+        ph += 2 * math.pi * f / SR
+        tone = math.sin(ph) + 0.45 * math.sin(2 * ph) + 0.25 * math.sin(3 * ph) + 0.12 * math.sin(5 * ph)
+        env = min(1, u / 0.12) * (0.35 + 0.65 * u)
+        out.append(tone * env + 0.08 * rnd.uniform(-1, 1) * env)
+    out = bandpass(out, 1400, 0.6)
+    return finish(out, peak=0.55, fade=0.02)
+
+
+def crinkle(seed, length=0.42, density=(40, 260), bright=3200):
+    """Plastic crinkling under pressure: tiny clicks and crackles that get faster, plus a soft
+    rising hiss of air pressure building up inside the bubble."""
+    rnd = random.Random(seed)
+    n = int(length * SR)
+    sig = [0.0] * n
+    i = int(0.01 * SR)
+    while i < n:
+        u = i / n
+        rate = density[0] + (density[1] - density[0]) * u ** 1.4
+        amp = (0.3 + 0.7 * u) * rnd.uniform(0.4, 1.0)
+        dec = rnd.uniform(0.0003, 0.0012) * SR
+        for j in range(int(dec * 5)):
+            if i + j < n:
+                sig[i + j] += amp * rnd.uniform(-1, 1) * math.exp(-j / dec)
+        i += max(1, int(SR / rate * rnd.uniform(0.3, 1.7)))
+    sig = bandpass(sig, bright, 0.7)
+    hiss = bandpass([rnd.uniform(-1, 1) * (i / n) ** 2 for i in range(n)], 5000, 1.2)
+    out = [sig[i] + 0.25 * hiss[i] for i in range(n)]
+    for k in range(int(0.012 * SR)):
+        out[k] *= k / (0.012 * SR)
+    return finish(out, peak=0.55, fade=0.02)
+
+
+def stretch(seed, length=0.42):
+    """Crinkle plus a faint rising squeak: the plastic tightening right before it gives."""
+    a = crinkle(seed, length, density=(30, 200), bright=2800)
+    b = squeak(seed + 50, length, f_start=600, f_end=1500, vib=0.02)
+    return finish([a[i] + 0.45 * b[i] for i in range(min(len(a), len(b)))], peak=0.55, fade=0.02)
+
+
 if __name__ == "__main__":
     write("Pop_Crisp", pop(1))  # bright, snappy
     write("Pop_Juicy", pop(2, tock_freq=1600, thump=0.7, thump_freq=140, air=0.4, tock_decay=0.013))  # fuller
@@ -168,3 +230,9 @@ if __name__ == "__main__":
                                         double=0.9, air=0.3, body=0.15, length=0.06))  # sharper, snappier
         write("PopPock_%d" % take, pop2(300 + take, f0=2500, q=10, decay=0.011, tone=0.6, crack=0.8,
                                         double=0.4, air=0.3, body=0.35, body_freq=200))  # hollow "pock"
+    # Squeeze sounds (the press before the pop): 3 takes each, played at random.
+    for take in range(1, 4):
+        write("SqueezeCreak_%d" % take, squeeze(400 + take, length=0.42))
+        write("SqueezeSqueak_%d" % take, squeak(500 + take))
+        write("SqueezeCrinkle_%d" % take, crinkle(600 + take))
+        write("SqueezeStretch_%d" % take, stretch(700 + take))

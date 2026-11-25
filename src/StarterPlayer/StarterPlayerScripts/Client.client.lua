@@ -11,6 +11,7 @@ local Hud = require(Controllers.Hud)
 local Sfx = require(Controllers.Sfx)
 local Sounds = require(ReplicatedStorage.Shared.Config.Sounds)
 local Room = require(ReplicatedStorage.Shared.Config.Room)
+local Pop = require(ReplicatedStorage.Shared.Config.Pop)
 
 local player = Players.LocalPlayer
 local remotes = ReplicatedStorage:WaitForChild("Remotes")
@@ -38,12 +39,22 @@ UserInputService.MouseIconEnabled = false -- the Hud draws its own crosshair
 Popper.start(remotes)
 Stomp.start(remotes)
 
--- Test-room switches: L = look, 1-9 = pop sound
+-- Test-room switches: L = look, 1-9 = pop sound, K = squeeze sound
+local squeezeIndex = 1
+Sfx.preload()
 local lookIndex = #(Room.looks or {}) -- start on the newest look
 BubbleView.setLook(lookIndex)
 local keys = { Enum.KeyCode.One, Enum.KeyCode.Two, Enum.KeyCode.Three, Enum.KeyCode.Four, Enum.KeyCode.Five, Enum.KeyCode.Six, Enum.KeyCode.Seven, Enum.KeyCode.Eight, Enum.KeyCode.Nine }
 UserInputService.InputBegan:Connect(function(input, processed)
 	if processed then
+		return
+	end
+	if input.KeyCode == Enum.KeyCode.K and Sounds.squeezeOptions then
+		squeezeIndex = squeezeIndex % #Sounds.squeezeOptions + 1
+		local opt = Sounds.squeezeOptions[squeezeIndex]
+		Sfx.override("press", opt)
+		Hud.toast("Squeeze sound " .. squeezeIndex .. ": " .. opt.name)
+		Sfx.play("press", nil, Pop.popTime * (1 - Pop.reachPhase))
 		return
 	end
 	if input.KeyCode == Enum.KeyCode.L then

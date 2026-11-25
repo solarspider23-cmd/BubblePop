@@ -33,22 +33,31 @@ end
 local overrides: { [string]: any } = {}
 function Sfx.override(key: string, def)
 	local base = Sounds[key]
-	overrides[key] = setmetatable({ id = def.id or 0, ids = def.ids or false, pitch = def.pitch }, { __index = base })
+	overrides[key] = setmetatable({
+		id = def.id or 0,
+		ids = def.ids or false,
+		pitch = def.pitch,
+		fit = def.fit or false,
+		length = def.length or false,
+		volume = def.volume or base.volume,
+	}, { __index = base })
 end
 
--- play(key) = 2D (your own pops); play(key, position) = 3D at that spot (other players' pops)
-function Sfx.play(key: string, position: Vector3?)
+-- play(key) = 2D (your own pops); play(key, position) = 3D at that spot (other players' pops).
+-- fitSeconds: for sounds marked `fit`, speed them up or down so they last exactly that long
+-- (the squeeze ends right at the pop, even after Pop Speed upgrades). Returns the Sound.
+function Sfx.play(key: string, position: Vector3?, fitSeconds: number?): Sound?
 	local def = overrides[key] or Sounds[key]
 	if not def then
-		return
+		return nil
 	end
 	local id = source(def, key)
 	if id == "" then
-		return
+		return nil
 	end
 	local now = os.clock()
 	if def.gap and now - (lastPlayed[key] or -math.huge) < def.gap then
-		return -- many at once (stomping): one sound is enough
+		return nil -- many at once (stomping): one sound is enough
 	end
 	lastPlayed[key] = now
 	local s = Instance.new("Sound")
@@ -78,7 +87,40 @@ function Sfx.play(key: string, position: Vector3?)
 		s.Parent = SoundService
 		Debris:AddItem(s, 3)
 	end
+	if fitSeconds and def.fit and def.length then
+		s.PlaybackSpeed = math.clamp(def.length / fitSeconds, 0.5, 3) * (1 + (math.random() * 2 - 1) * (def.pitchVar or 0))
+	end
 	s:Play()
+	return s
+end
+
+-- Load every sound now, so the first pop isn't silent
+function Sfx.preload()
+	local list = {}
+	local function add(def)
+		if type(def) ~= "table" then
+			return
+		end
+		for _, id in (def.ids or { def.id }) do
+			if id and id ~= 0 then
+				local s = Instance.new("Sound")
+				s.SoundId = "rbxassetid://" .. id
+				table.insert(list, s)
+			end
+		end
+	end
+	for _, def in Sounds do
+		add(def)
+	end
+	for _, def in Sounds.popOptions or {} do
+		add(def)
+	end
+	for _, def in Sounds.squeezeOptions or {} do
+		add(def)
+	end
+	task.spawn(function()
+		game:GetService("ContentProvider"):PreloadAsync(list)
+	end)
 end
 
 return Sfx

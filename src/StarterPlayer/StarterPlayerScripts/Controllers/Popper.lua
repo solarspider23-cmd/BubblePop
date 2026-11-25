@@ -73,7 +73,7 @@ function Popper.start(remotes: Folder)
 	near.FilterDescendantsInstances = { BubbleView.folder }
 
 	local holding = 0 -- number of inputs holding "poke" down
-	local press: { id: number, t0: number, creaked: boolean }? = nil
+	local press: { id: number, t0: number, creaked: boolean, sound: Sound? }? = nil
 	local retract: { t0: number, from: Vector3 }? = nil
 	local kick = 0 -- recoil, decays to 0
 	local baseFov = camera.FieldOfView
@@ -137,7 +137,15 @@ function Popper.start(remotes: Folder)
 		return (BubbleView.frame(id) * CFrame.new(0, y, 0)).Position
 	end
 
+	local function stopSqueeze()
+		local snd = press and press.sound
+		if snd then
+			snd:Stop()
+		end
+	end
+
 	local function finishPress(id: number, at: Vector3)
+		stopSqueeze()
 		press = nil
 		retract = { t0 = os.clock(), from = at }
 		kick = 1
@@ -181,6 +189,7 @@ function Popper.start(remotes: Folder)
 			local id = press.id
 			if not BubbleView.isIntact(id) then
 				-- someone else popped it first
+				stopSqueeze()
 				retract = { t0 = now, from = tip.Position }
 				press = nil
 			else
@@ -191,7 +200,8 @@ function Popper.start(remotes: Folder)
 				elseif u < 1 then
 					if not press.creaked then
 						press.creaked = true
-						Sfx.play("press")
+						-- squeeze sound lasts exactly until the pop
+						press.sound = Sfx.play("press", nil, Pop.popTime * (1 - rp))
 					end
 					local s = easeIn((u - rp) / (1 - rp))
 					local wobble = math.sin(u * 48) * 0.035 * s
