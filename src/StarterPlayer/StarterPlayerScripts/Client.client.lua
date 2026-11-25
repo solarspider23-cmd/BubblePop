@@ -10,6 +10,7 @@ local Stomp = require(Controllers.Stomp)
 local Hud = require(Controllers.Hud)
 local Sfx = require(Controllers.Sfx)
 local Sounds = require(ReplicatedStorage.Shared.Config.Sounds)
+local Room = require(ReplicatedStorage.Shared.Config.Room)
 
 local player = Players.LocalPlayer
 local remotes = ReplicatedStorage:WaitForChild("Remotes")
@@ -38,7 +39,8 @@ Popper.start(remotes)
 Stomp.start(remotes)
 
 -- Test-room switches: L = look, 1-6 = pop sound
-local lookIndex = 1
+local lookIndex = #(Room.looks or {}) -- start on the newest look
+BubbleView.setLook(lookIndex)
 local keys = { Enum.KeyCode.One, Enum.KeyCode.Two, Enum.KeyCode.Three, Enum.KeyCode.Four, Enum.KeyCode.Five, Enum.KeyCode.Six }
 UserInputService.InputBegan:Connect(function(input, processed)
 	if processed then

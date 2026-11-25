@@ -62,6 +62,16 @@ end
 -- Current look (Room.looks; press L in game to switch)
 local look = Room.looks and Room.looks[1] or { name = "Cartoon" }
 local tears: { [number]: BasePart } = {}
+local shines: { [number]: BasePart } = {}
+local applyLighting: () -> ()
+
+-- which way is "up the bubble" for the shine spot: towards the sky on walls, a fixed corner on the floor
+local shineDir: { [number]: Vector3 } = {}
+for id, cf in frames do
+	local up = cf:VectorToObjectSpace(Vector3.yAxis)
+	local d = Vector3.new(up.X, 0, up.Z)
+	shineDir[id] = d.Magnitude > 0.5 and d.Unit or Vector3.new(-0.7071, 0, -0.7071)
+end
 
 local function intactTransparency(): number
 	return look.plain and look.bubbleTransparency or Room.colors.bubbleTransparency
@@ -75,7 +85,9 @@ local function styleIntact(p: BasePart)
 		p.Color = color(look.bubble)
 		p.Material = Enum.Material[look.bubbleMaterial or "SmoothPlastic"]
 		p.Reflectance = look.bubbleReflectance or 0
+		p.CastShadow = look.shadows == true
 	else
+		p.CastShadow = false
 		if p:IsA("MeshPart") and intactTemplate then
 			p.TextureID = intactTemplate.TextureID
 		end
@@ -92,6 +104,44 @@ local function setShape(id: number, side: number, up: number)
 	local scale = Vector3.new(side, up, side)
 	p.Size = INTACT_SIZE * scale
 	p.CFrame = frames[id] * CFrame.new(INTACT_CENTER * scale)
+	local sh = shines[id]
+	if sh then
+		local off = shineDir[id] * 0.27 * side
+		sh.CFrame = frames[id] * CFrame.new(off.X, BubbleView.height * 0.84 * up, off.Z)
+	end
+end
+
+local function newShine(id: number)
+	local sh = Instance.new("Part")
+	sh.Name = "Shine"
+	sh.Anchored = true
+	sh.CanCollide = false
+	sh.CanQuery = false
+	sh.CanTouch = false
+	sh.CastShadow = false
+	sh.Material = Enum.Material.Neon
+	sh.Color = Color3.new(1, 1, 1)
+	sh.Transparency = 0.15
+	sh.Size = Vector3.new(0.2, 0.05, 0.2)
+	local m = Instance.new("SpecialMesh")
+	m.MeshType = Enum.MeshType.Sphere
+	m.Parent = sh
+	shines[id] = sh
+end
+
+-- shine spots only on unpopped bubbles, and only in a look that has them
+local function updateShine(id: number)
+	local want = look.shine == true and not isPopped[id]
+	if want and not shines[id] then
+		newShine(id)
+	end
+	local sh = shines[id]
+	if sh then
+		sh.Parent = want and folder or nil
+		if want then
+			setShape(id, 1, 1)
+		end
+	end
 end
 
 local function newIntact(id: number)
@@ -299,6 +349,7 @@ function BubbleView.pop(id: number, kind: string)
 	local p = intact[id]
 	p.Transparency = 1
 	p.CanQuery = false
+	updateShine(id)
 	setShape(id, 1, 1)
 	local model = popped[id] or newPopped(id)
 	popped[id] = model
@@ -339,6 +390,7 @@ function BubbleView.regrow(id: number)
 	local p = intact[id]
 	p.Transparency = intactTransparency()
 	p.CanQuery = true
+	updateShine(id)
 	local t0 = os.clock()
 	local conn
 	conn = game:GetService("RunService").Heartbeat:Connect(function()
@@ -353,6 +405,64 @@ function BubbleView.regrow(id: number)
 			conn:Disconnect()
 		end
 	end)
+end
+
+-- Per-look lighting (this client only). The server's lighting is remembered as the default.
+local Lighting = game:GetService("Lighting")
+local defaults: { [string]: any }? = nil
+local bloom = Instance.new("BloomEffect")
+bloom.Name = "LookBloom"
+bloom.Enabled = false
+bloom.Threshold = 0.92
+bloom.Size = 18
+bloom.Parent = Lighting
+applyLighting = function()
+	local ceiling = workspace:FindFirstChild("Room") and workspace.Room:FindFirstChild("Ceiling") :: BasePart?
+	if not defaults then
+		defaults = {
+			brightness = Lighting.Brightness,
+			clockTime = Lighting.ClockTime,
+			ambient = Lighting.Ambient,
+			outdoor = Lighting.OutdoorAmbient,
+			shadow = ceiling and ceiling.CastShadow,
+		}
+	end
+	local d = defaults :: { [string]: any }
+	local l = look.lighting or {}
+	Lighting.Brightness = l.brightness or d.brightness
+	Lighting.ClockTime = l.clockTime or d.clockTime
+	Lighting.Ambient = l.ambient and color(l.ambient) or d.ambient
+	Lighting.OutdoorAmbient = l.ambient and color(l.ambient) or d.outdoor
+	bloom.Enabled = l.bloom ~= nil
+	bloom.Intensity = l.bloom or 0
+	if ceiling then
+		-- let the sun shine in through the ceiling (it still looks solid)
+		ceiling.CastShadow = if l.sunIn then false else d.shadow
+	end
+end
+
+-- The glow on the bubble you're aiming at (one Highlight, moved around)
+local aimGlow = Instance.new("Highlight")
+aimGlow.Name = "AimGlow"
+aimGlow.DepthMode = Enum.HighlightDepthMode.Occluded
+local aimCfg = Room.aim or {}
+aimGlow.FillColor = aimCfg.fill and color(aimCfg.fill) or Color3.new(1, 1, 1)
+aimGlow.FillTransparency = aimCfg.fillTransparency or 0.7
+aimGlow.OutlineColor = aimCfg.outline and color(aimCfg.outline) or Color3.new(1, 1, 1)
+aimGlow.OutlineTransparency = aimCfg.outlineTransparency or 0.2
+aimGlow.Enabled = false
+aimGlow.Parent = folder
+local aimedId: number? = nil
+function BubbleView.setAim(id: number?)
+	if id and isPopped[id] then
+		id = nil
+	end
+	if id == aimedId then
+		return
+	end
+	aimedId = id
+	aimGlow.Adornee = id and intact[id] or nil
+	aimGlow.Enabled = id ~= nil
 end
 
 -- Switch look: every bubble, popped bubble, sheet, wall and floor (this client only)
@@ -370,6 +480,10 @@ function BubbleView.setLook(index: number): string
 			stylePopped(id, model)
 		end
 	end
+	for id in intact do
+		updateShine(id)
+	end
+	applyLighting()
 	local room = workspace:FindFirstChild("Room")
 	if room then
 		local sheets = room:FindFirstChild("Sheets")
@@ -385,6 +499,12 @@ function BubbleView.setLook(index: number): string
 			local w = room:FindFirstChild(name)
 			if w and w:IsA("BasePart") then
 				w.Color = color(look.wall or Room.colors.wall)
+			end
+		end
+		for _, name in { "TrimN", "TrimS", "TrimW", "TrimE" } do
+			local t = room:FindFirstChild(name)
+			if t and t:IsA("BasePart") then
+				t.Color = color(look.trim or look.wall or Room.colors.trim or Room.colors.wall)
 			end
 		end
 		local floor = room:FindFirstChild("Floor")

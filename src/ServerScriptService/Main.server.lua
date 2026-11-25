@@ -48,6 +48,16 @@ block("WallN", Vector3.new(half * 2 + wallT * 2, height, wallT), CFrame.new(0, y
 block("WallS", Vector3.new(half * 2 + wallT * 2, height, wallT), CFrame.new(0, y0 + height / 2, half + wallT / 2), color(Room.colors.wall))
 block("WallW", Vector3.new(wallT, height, half * 2), CFrame.new(-half - wallT / 2, y0 + height / 2, 0), color(Room.colors.wall))
 block("WallE", Vector3.new(wallT, height, half * 2), CFrame.new(half + wallT / 2, y0 + height / 2, 0), color(Room.colors.wall))
+-- coloured strip along the bottom of each wall (below the wall wrap); its colour comes from the look
+do
+	local t, h = 0.03, Room.wallLift - 0.05
+	local trimColor = color(Room.colors.trim or Room.colors.wall)
+	local ty = y0 + h / 2
+	block("TrimN", Vector3.new(half * 2, h, t), CFrame.new(0, ty, -half + t / 2), trimColor).CanCollide = false
+	block("TrimS", Vector3.new(half * 2, h, t), CFrame.new(0, ty, half - t / 2), trimColor).CanCollide = false
+	block("TrimW", Vector3.new(t, h, half * 2), CFrame.new(-half + t / 2, ty, 0), trimColor).CanCollide = false
+	block("TrimE", Vector3.new(t, h, half * 2), CFrame.new(half - t / 2, ty, 0), trimColor).CanCollide = false
+end
 
 -- Recycler placeholder: a plain block in the middle (real model and selling come later)
 do

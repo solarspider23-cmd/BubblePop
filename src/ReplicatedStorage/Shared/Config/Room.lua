@@ -35,6 +35,9 @@ return {
 		ceiling = rgb(245, 245, 250),
 	},
 
+	-- The glow on the bubble under your crosshair (every look)
+	aim = { fill = rgb(255, 255, 255), fillTransparency = 0.7, outline = rgb(255, 255, 255), outlineTransparency = 0.2 },
+
 	-- Room lighting (bright and clear, so every bubble reads)
 	lighting = {
 		brightness = 1,
@@ -66,6 +69,26 @@ return {
 			sheetTransparency = 0.35,
 			wall = rgb(185, 192, 202),
 			floor = rgb(165, 172, 182),
+		},
+		{
+			-- Clear bubbles on a coloured sheet, with a shine spot, sunlight and shadows
+			name = "Clear+",
+			plain = true,
+			bubble = rgb(240, 250, 255),
+			bubbleTransparency = 0.3,
+			bubbleMaterial = "Glass",
+			bubbleReflectance = 0.25,
+			shine = true, -- white shine spot on every unpopped bubble
+			shadows = true, -- bubbles cast little shadows
+			popped = rgb(150, 170, 190), -- popped plastic: flatter, darker, cloudier
+			poppedTransparency = 0.25,
+			tear = rgb(55, 75, 100),
+			sheet = rgb(120, 190, 240),
+			sheetTransparency = 0,
+			wall = rgb(70, 95, 135),
+			floor = rgb(60, 80, 115),
+			trim = rgb(255, 200, 60), -- strip along the bottom of the walls
+			lighting = { brightness = 2.2, clockTime = 10.5, ambient = rgb(120, 130, 150), bloom = 0.35, sunIn = true },
 		},
 	},
 }

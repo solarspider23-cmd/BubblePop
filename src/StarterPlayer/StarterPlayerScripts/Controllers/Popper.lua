@@ -170,6 +170,7 @@ function Popper.start(remotes: Folder)
 		-- start a new press when holding and aiming at a bubble
 		local target = (not press) and aimed() or nil
 		Hud.setAim(target ~= nil or press ~= nil)
+		BubbleView.setAim(press and press.id or target)
 		if not press and holding > 0 and target and (not retract or now - retract.t0 > RETRACT_TIME * 0.5) then
 			press = { id = target, t0 = now, creaked = false }
 			retract = nil
