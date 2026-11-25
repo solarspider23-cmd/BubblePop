@@ -4,6 +4,8 @@ A Roblox simulator for kids 8-14: pop bubble wrap for coins, upgrade your bag, t
 
 ## Decided (owner)
 
+- 2026-11-25 GAME LOOP: you join into a small lobby hub (third person) with 4 pads. Standing on a pad makes a lobby (up to 4 players); the pad owner picks a chapter and a room, then the group teleports into that popping room. EVERY RUN STARTS FRESH: coins, bag and upgrades reset each run (they are run-only, not saved). Monetisation = game passes + Robux "skip" items (e.g. buy upgrade levels instantly inside a run). What ends a run and what carries over between runs: still to decide with the owner.
+
 - 2026-11-24: Hub world (third person) with 4 pads; stepping on one starts a session for a group of up to 4. Popping rooms are LOCKED FIRST PERSON, aim with a centre crosshair, held tool in view.
 - Room: bubble wrap on floor and walls, plain ceiling.
 - 2026-11-25: Players collect PLASTIC SCRAPS: each pop puts a scrap in the bag (rare bubbles drop gold / crystal / rainbow scraps worth more); the recycler buys plastic. Scraps fly into the bag on pop and out to the recycler on sell.
