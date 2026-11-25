@@ -13,8 +13,9 @@ return {
 	stompSlack = 1.6, -- extra sideways distance the server allows
 	stompMaxPerSecond = 40,
 
-	-- Popped bubbles grow back after this many seconds
-	regrowSeconds = 40,
+	-- Popped bubbles grow back? Off: a run ends when the whole room is cleared (timed).
+	regrow = false,
+	regrowSeconds = 40, -- if regrow is on: seconds until a popped bubble grows back
 
 	-- Press animation
 	squashHeight = 0.45, -- the bubble's height at the end of the press (1 = full)

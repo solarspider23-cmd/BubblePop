@@ -153,12 +153,12 @@ function Shop.start(remotes: Folder)
 	if RunService:IsStudio() then
 		local test = Instance.new("TextButton")
 		test.Position = UDim2.new(0, 18, 1, -62)
-		test.Size = UDim2.new(1, -36, 0, 46)
+		test.Size = UDim2.new(0.5, -24, 0, 46)
 		test.BackgroundColor3 = Color3.fromRGB(120, 60, 200)
 		test.Font = Enum.Font.FredokaOne
 		test.TextScaled = true
 		test.TextColor3 = Color3.new(1, 1, 1)
-		test.Text = "+1000 coins (Studio test only)"
+		test.Text = "+1000 coins (test)"
 		round(test, 12)
 		local tp = Instance.new("UIPadding")
 		tp.PaddingTop, tp.PaddingBottom = UDim.new(0, 8), UDim.new(0, 8)
@@ -166,6 +166,13 @@ function Shop.start(remotes: Folder)
 		test.Parent = panel
 		test.MouseButton1Click:Connect(function()
 			TestCoins:FireServer()
+		end)
+		local clear = test:Clone()
+		clear.Position = UDim2.new(0.5, 6, 1, -62)
+		clear.Text = "Pop all but 10 (test)"
+		clear.Parent = panel
+		clear.MouseButton1Click:Connect(function()
+			(remotes:WaitForChild("TestClear") :: RemoteEvent):FireServer()
 		end)
 	end
 

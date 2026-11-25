@@ -5,6 +5,8 @@ local UserInputService = game:GetService("UserInputService")
 
 local Hud = {}
 
+local DARK_BLUE = Color3.fromRGB(20, 40, 110)
+
 local player = Players.LocalPlayer
 local gui = Instance.new("ScreenGui")
 gui.Name = "Hud"
@@ -86,79 +88,49 @@ local function watchPops()
 end
 task.spawn(watchPops)
 
--- Coins (top left)
-local coinsLabel = Instance.new("TextLabel")
-coinsLabel.AnchorPoint = Vector2.new(0, 0)
-coinsLabel.Position = UDim2.new(0, 24, 0, 46)
-coinsLabel.Size = UDim2.fromOffset(280, 50)
-coinsLabel.BackgroundTransparency = 1
-coinsLabel.Font = Enum.Font.FredokaOne
-coinsLabel.TextScaled = true
-coinsLabel.TextXAlignment = Enum.TextXAlignment.Left
-coinsLabel.TextColor3 = Color3.fromRGB(255, 215, 60)
-coinsLabel.Text = "COINS: 0"
-local coinsStroke = Instance.new("UIStroke")
-coinsStroke.Thickness = 3
-coinsStroke.Color = Color3.fromRGB(90, 50, 0)
-coinsStroke.Parent = coinsLabel
+-- Bottom left, small: coins and bag ("Bag 12/25")
+local function smallText(y: number, col: Color3, strokeCol: Color3): TextLabel
+	local t = Instance.new("TextLabel")
+	t.AnchorPoint = Vector2.new(0, 1)
+	t.Position = UDim2.new(0, 20, 1, y)
+	t.Size = UDim2.fromOffset(220, 30)
+	t.BackgroundTransparency = 1
+	t.Font = Enum.Font.FredokaOne
+	t.TextScaled = true
+	t.TextXAlignment = Enum.TextXAlignment.Left
+	t.TextColor3 = col
+	local st = Instance.new("UIStroke")
+	st.Thickness = 2.5
+	st.Color = strokeCol
+	st.Parent = t
+	t.Parent = gui
+	return t
+end
+
+local coinsLabel = smallText(-98, Color3.fromRGB(255, 215, 60), Color3.fromRGB(90, 50, 0))
+coinsLabel.Text = "Coins: 0"
 local coinsScale = Instance.new("UIScale")
 coinsScale.Parent = coinsLabel
-coinsLabel.Parent = gui
 task.spawn(function()
 	local stats = player:WaitForChild("leaderstats")
 	local coins = stats:WaitForChild("Coins") :: IntValue
 	local last = coins.Value
 	local function show()
-		coinsLabel.Text = "COINS: " .. coins.Value
+		coinsLabel.Text = "Coins: " .. coins.Value
 		local jump = coins.Value - last
 		last = coins.Value
-		coinsScale.Scale = jump >= 5 and 1.4 or 1.12
+		coinsScale.Scale = jump >= 5 and 1.3 or 1.1
 		TweenService:Create(coinsScale, TweenInfo.new(jump >= 5 and 0.3 or 0.12, Enum.EasingStyle.Back), { Scale = 1 }):Play()
 	end
 	coins.Changed:Connect(show)
 	show()
 end)
 
--- Bag (under the coins): how full it is, and what it's worth
 local BagState = require(script.Parent.BagState)
-local bagFrame = Instance.new("Frame")
-bagFrame.Position = UDim2.new(0, 24, 0, 102)
-bagFrame.Size = UDim2.fromOffset(300, 30)
-bagFrame.BackgroundColor3 = Color3.fromRGB(20, 40, 110)
-bagFrame.BackgroundTransparency = 0.25
-local bc = Instance.new("UICorner")
-bc.CornerRadius = UDim.new(0, 10)
-bc.Parent = bagFrame
-local bagStroke = Instance.new("UIStroke")
-bagStroke.Thickness = 2.5
-bagStroke.Color = Color3.fromRGB(255, 255, 255)
-bagStroke.Parent = bagFrame
-local bagFill = Instance.new("Frame")
-bagFill.Size = UDim2.fromScale(0, 1)
-bagFill.BackgroundColor3 = Color3.fromRGB(90, 220, 120)
-local fc = Instance.new("UICorner")
-fc.CornerRadius = UDim.new(0, 10)
-fc.Parent = bagFill
-bagFill.Parent = bagFrame
-local bagText = Instance.new("TextLabel")
-bagText.Size = UDim2.fromScale(1, 1)
-bagText.BackgroundTransparency = 1
-bagText.Font = Enum.Font.FredokaOne
-bagText.TextScaled = true
-bagText.TextColor3 = Color3.new(1, 1, 1)
-bagText.ZIndex = 2
-local btPad = Instance.new("UIPadding")
-btPad.PaddingTop = UDim.new(0, 4)
-btPad.PaddingBottom = UDim.new(0, 4)
-btPad.Parent = bagText
-local bts = Instance.new("UIStroke")
-bts.Thickness = 2
-bts.Color = Color3.fromRGB(20, 40, 110)
-bts.Parent = bagText
-bagText.Parent = bagFrame
+local bagFrame = smallText(-64, Color3.new(1, 1, 1), DARK_BLUE)
+local bagText = bagFrame
 local bagScale = Instance.new("UIScale")
 bagScale.Parent = bagFrame
-bagFrame.Parent = gui
 
 -- "BAG FULL" message in the middle
 local fullMsg = Instance.new("TextLabel")
@@ -182,11 +154,11 @@ fullMsg.Parent = gui
 local function showBag()
 	local n, cap = BagState.count(), BagState.capacity()
 	local worth = player:GetAttribute("BagValue") or 0
-	bagText.Text = ("BAG %d/%d scraps  •  %d coins"):format(n, cap, worth)
 	local full = n >= cap
-	TweenService:Create(bagFill, TweenInfo.new(0.1), { Size = UDim2.fromScale(math.clamp(n / cap, 0, 1), 1) }):Play()
-	bagFill.BackgroundColor3 = full and Color3.fromRGB(255, 70, 70) or Color3.fromRGB(90, 220, 120)
+	bagText.Text = ("Bag %d/%d"):format(n, cap)
+	bagText.TextColor3 = full and Color3.fromRGB(255, 80, 80) or Color3.new(1, 1, 1)
 	fullMsg.Visible = full
+	local _ = worth
 end
 for _, a in { "BagCount", "BagValue", "BagCapacity" } do
 	player:GetAttributeChangedSignal(a):Connect(showBag)
@@ -261,6 +233,95 @@ function Hud.sold(coins: number, n: number)
 		end
 	end)
 end
+
+-- Run timer (top left): how long this run has lasted, and bubbles left
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local timerLabel = Instance.new("TextLabel")
+timerLabel.Position = UDim2.fromOffset(20, 50)
+timerLabel.Size = UDim2.fromOffset(200, 40)
+timerLabel.BackgroundTransparency = 1
+timerLabel.Font = Enum.Font.FredokaOne
+timerLabel.TextScaled = true
+timerLabel.TextXAlignment = Enum.TextXAlignment.Left
+timerLabel.TextColor3 = Color3.new(1, 1, 1)
+timerLabel.Text = "00:00"
+local tls = Instance.new("UIStroke")
+tls.Thickness = 3
+tls.Color = DARK_BLUE
+tls.Parent = timerLabel
+timerLabel.Parent = gui
+local leftLabel = Instance.new("TextLabel")
+leftLabel.Position = UDim2.fromOffset(20, 90)
+leftLabel.Size = UDim2.fromOffset(240, 24)
+leftLabel.BackgroundTransparency = 1
+leftLabel.Font = Enum.Font.FredokaOne
+leftLabel.TextScaled = true
+leftLabel.TextXAlignment = Enum.TextXAlignment.Left
+leftLabel.TextColor3 = Color3.fromRGB(200, 225, 255)
+local lls = Instance.new("UIStroke")
+lls.Thickness = 2
+lls.Color = DARK_BLUE
+lls.Parent = leftLabel
+leftLabel.Parent = gui
+
+local function clock(seconds: number): string
+	seconds = math.max(0, math.floor(seconds))
+	local h, m, sec = seconds // 3600, (seconds // 60) % 60, seconds % 60
+	if h > 0 then
+		return ("%d:%02d:%02d"):format(h, m, sec)
+	end
+	return ("%02d:%02d"):format(m, sec)
+end
+
+-- Room cleared: a big message with the time it took
+local clearedMsg = Instance.new("TextLabel")
+clearedMsg.AnchorPoint = Vector2.new(0.5, 0.5)
+clearedMsg.Position = UDim2.fromScale(0.5, 0.32)
+clearedMsg.Size = UDim2.fromOffset(640, 120)
+clearedMsg.BackgroundTransparency = 1
+clearedMsg.Font = Enum.Font.FredokaOne
+clearedMsg.TextScaled = true
+clearedMsg.TextColor3 = Color3.fromRGB(255, 225, 70)
+clearedMsg.Visible = false
+local cms = Instance.new("UIStroke")
+cms.Thickness = 5
+cms.Color = Color3.fromRGB(90, 50, 0)
+cms.Parent = clearedMsg
+local clearedScale = Instance.new("UIScale")
+clearedScale.Parent = clearedMsg
+clearedMsg.Parent = gui
+
+local function showLeft()
+	local left = ReplicatedStorage:GetAttribute("BubblesLeft")
+	leftLabel.Text = left and (left .. " bubbles left") or ""
+end
+ReplicatedStorage:GetAttributeChangedSignal("BubblesLeft"):Connect(showLeft)
+showLeft()
+
+local function showCleared()
+	local t = ReplicatedStorage:GetAttribute("RunClearTime")
+	if not t or clearedMsg.Visible then
+		return
+	end
+	timerLabel.Text = clock(t)
+	timerLabel.TextColor3 = Color3.fromRGB(255, 225, 70)
+	clearedMsg.Text = "ROOM CLEARED!\n" .. clock(t)
+	clearedMsg.Visible = true
+	clearedScale.Scale = 0.3
+	TweenService:Create(clearedScale, TweenInfo.new(0.5, Enum.EasingStyle.Back), { Scale = 1 }):Play()
+end
+ReplicatedStorage:GetAttributeChangedSignal("RunClearTime"):Connect(showCleared)
+showCleared()
+
+task.spawn(function()
+	while true do
+		task.wait(0.25)
+		local start = ReplicatedStorage:GetAttribute("RunStart")
+		if start and not ReplicatedStorage:GetAttribute("RunClearTime") then
+			timerLabel.Text = clock(workspace:GetServerTimeNow() - start)
+		end
+	end
+end)
 
 -- Hint
 local hint = Instance.new("TextLabel")

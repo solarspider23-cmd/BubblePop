@@ -216,6 +216,9 @@ BuyUpgrade.Parent = remotes
 local TestCoins = Instance.new("RemoteEvent")
 TestCoins.Name = "TestCoins" -- client -> server: give me coins (only works in Studio, for testing)
 TestCoins.Parent = remotes
+local TestClear = Instance.new("RemoteEvent")
+TestClear.Name = "TestClear" -- client -> server: pop all but 10 bubbles (only works in Studio, for testing)
+TestClear.Parent = remotes
 local GetPopped = Instance.new("RemoteFunction")
 GetPopped.Name = "GetPopped" -- client -> server: { popped = {ids}, variantIds = {ids}, variantKinds = {variant} }
 GetPopped.Parent = remotes
@@ -453,6 +456,7 @@ end
 
 -- Send changes in small batches; grow bubbles back
 local sinceFlush, sinceRegrow, sinceSell = 0, 0, 0
+local updateRun: (number) -> ()
 local rc = Room.recycler
 local function sellNearby()
 	for player, bag in bags do
@@ -471,6 +475,38 @@ local function sellNearby()
 		end
 	end
 end
+-- The run: a timer from when the first player arrives until every bubble is popped.
+-- Clients read ReplicatedStorage attributes RunStart (server time), BubblesLeft and
+-- RunClearTime (seconds it took; set once the room is cleared).
+ReplicatedStorage:SetAttribute("BubblesLeft", COUNT)
+updateRun = function(left: number)
+	if ReplicatedStorage:GetAttribute("BubblesLeft") ~= left then
+		ReplicatedStorage:SetAttribute("BubblesLeft", left)
+	end
+	local start = ReplicatedStorage:GetAttribute("RunStart")
+	if left == 0 and start and not ReplicatedStorage:GetAttribute("RunClearTime") then
+		ReplicatedStorage:SetAttribute("RunClearTime", workspace:GetServerTimeNow() - start)
+	end
+end
+
+TestClear.OnServerEvent:Connect(function()
+	if not RunService:IsStudio() then
+		return -- testing only
+	end
+	local keep = 10
+	local now = os.clock()
+	for id = 1, COUNT do
+		if not poppedAt[id] then
+			if keep > 0 then
+				keep -= 1
+			else
+				poppedAt[id] = now
+				queue(id, 0)
+			end
+		end
+	end
+end)
+
 RunService.Heartbeat:Connect(function(dt)
 	sinceFlush += dt
 	sinceRegrow += dt
@@ -482,13 +518,17 @@ RunService.Heartbeat:Connect(function(dt)
 	if sinceRegrow >= 0.5 then
 		sinceRegrow = 0
 		local now = os.clock()
+		local popped = 0
 		for id, t in poppedAt do
-			if now - t >= Pop.regrowSeconds then
+			if Pop.regrow and now - t >= Pop.regrowSeconds then
 				poppedAt[id] = nil
 				rollVariant(id) -- it may grow back as a different (rare) bubble
 				queue(-id, 0)
+			else
+				popped += 1
 			end
 		end
+		updateRun(COUNT - popped)
 	end
 	if sinceFlush >= 0.05 and #pending > 0 then
 		sinceFlush = 0
@@ -499,6 +539,9 @@ end)
 
 ---------------------------------------------------------------- players
 local function onPlayer(player: Player)
+	if not ReplicatedStorage:GetAttribute("RunStart") then
+		ReplicatedStorage:SetAttribute("RunStart", workspace:GetServerTimeNow()) -- the run clock starts
+	end
 	local stats = Instance.new("Folder")
 	stats.Name = "leaderstats"
 	local pops = Instance.new("IntValue")
