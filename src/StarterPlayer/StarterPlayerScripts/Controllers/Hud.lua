@@ -119,6 +119,136 @@ task.spawn(function()
 	show()
 end)
 
+-- Bag (under the coins): how full it is, and what it's worth
+local BagState = require(script.Parent.BagState)
+local bagFrame = Instance.new("Frame")
+bagFrame.Position = UDim2.new(0, 24, 0, 102)
+bagFrame.Size = UDim2.fromOffset(240, 30)
+bagFrame.BackgroundColor3 = Color3.fromRGB(20, 40, 110)
+bagFrame.BackgroundTransparency = 0.25
+local bc = Instance.new("UICorner")
+bc.CornerRadius = UDim.new(0, 10)
+bc.Parent = bagFrame
+local bagStroke = Instance.new("UIStroke")
+bagStroke.Thickness = 2.5
+bagStroke.Color = Color3.fromRGB(255, 255, 255)
+bagStroke.Parent = bagFrame
+local bagFill = Instance.new("Frame")
+bagFill.Size = UDim2.fromScale(0, 1)
+bagFill.BackgroundColor3 = Color3.fromRGB(90, 220, 120)
+local fc = Instance.new("UICorner")
+fc.CornerRadius = UDim.new(0, 10)
+fc.Parent = bagFill
+bagFill.Parent = bagFrame
+local bagText = Instance.new("TextLabel")
+bagText.Size = UDim2.fromScale(1, 1)
+bagText.BackgroundTransparency = 1
+bagText.Font = Enum.Font.FredokaOne
+bagText.TextScaled = true
+bagText.TextColor3 = Color3.new(1, 1, 1)
+bagText.ZIndex = 2
+local btPad = Instance.new("UIPadding")
+btPad.PaddingTop = UDim.new(0, 4)
+btPad.PaddingBottom = UDim.new(0, 4)
+btPad.Parent = bagText
+local bts = Instance.new("UIStroke")
+bts.Thickness = 2
+bts.Color = Color3.fromRGB(20, 40, 110)
+bts.Parent = bagText
+bagText.Parent = bagFrame
+local bagScale = Instance.new("UIScale")
+bagScale.Parent = bagFrame
+bagFrame.Parent = gui
+
+-- "BAG FULL" message in the middle
+local fullMsg = Instance.new("TextLabel")
+fullMsg.AnchorPoint = Vector2.new(0.5, 0.5)
+fullMsg.Position = UDim2.fromScale(0.5, 0.64)
+fullMsg.Size = UDim2.fromOffset(520, 44)
+fullMsg.BackgroundTransparency = 1
+fullMsg.Font = Enum.Font.FredokaOne
+fullMsg.TextScaled = true
+fullMsg.TextColor3 = Color3.fromRGB(255, 80, 80)
+fullMsg.Text = "BAG FULL! Sell at the recycler"
+fullMsg.Visible = false
+local fms = Instance.new("UIStroke")
+fms.Thickness = 3
+fms.Color = Color3.fromRGB(70, 0, 0)
+fms.Parent = fullMsg
+local fullScale = Instance.new("UIScale")
+fullScale.Parent = fullMsg
+fullMsg.Parent = gui
+
+local function showBag()
+	local n, cap = BagState.count(), BagState.capacity()
+	local worth = player:GetAttribute("BagValue") or 0
+	bagText.Text = ("BAG %d/%d  •  %d coins"):format(n, cap, worth)
+	local full = n >= cap
+	TweenService:Create(bagFill, TweenInfo.new(0.1), { Size = UDim2.fromScale(math.clamp(n / cap, 0, 1), 1) }):Play()
+	bagFill.BackgroundColor3 = full and Color3.fromRGB(255, 70, 70) or Color3.fromRGB(90, 220, 120)
+	fullMsg.Visible = full
+end
+for _, a in { "BagCount", "BagValue", "BagCapacity" } do
+	player:GetAttributeChangedSignal(a):Connect(showBag)
+end
+showBag()
+-- local pops show at once (before the server confirms)
+task.spawn(function()
+	while true do
+		task.wait(0.1)
+		showBag()
+	end
+end)
+
+-- Tried to pop with a full bag: shake the warning
+local lastNag = 0
+function Hud.bagFull()
+	local now = os.clock()
+	if now - lastNag < 0.6 then
+		return
+	end
+	lastNag = now
+	fullScale.Scale = 1.25
+	TweenService:Create(fullScale, TweenInfo.new(0.25, Enum.EasingStyle.Back), { Scale = 1 }):Play()
+	bagScale.Scale = 1.15
+	TweenService:Create(bagScale, TweenInfo.new(0.25, Enum.EasingStyle.Back), { Scale = 1 }):Play()
+end
+
+-- Sold at the recycler: big "+N coins" in the middle
+local soldMsg = Instance.new("TextLabel")
+soldMsg.AnchorPoint = Vector2.new(0.5, 0.5)
+soldMsg.Position = UDim2.fromScale(0.5, 0.36)
+soldMsg.Size = UDim2.fromOffset(520, 70)
+soldMsg.BackgroundTransparency = 1
+soldMsg.Font = Enum.Font.FredokaOne
+soldMsg.TextScaled = true
+soldMsg.TextColor3 = Color3.fromRGB(255, 215, 60)
+soldMsg.TextTransparency = 1
+local sms = Instance.new("UIStroke")
+sms.Thickness = 4
+sms.Color = Color3.fromRGB(90, 50, 0)
+sms.Transparency = 1
+sms.Parent = soldMsg
+local soldScale = Instance.new("UIScale")
+soldScale.Parent = soldMsg
+soldMsg.Parent = gui
+local soldId = 0
+function Hud.sold(coins: number, n: number)
+	soldId += 1
+	local mine = soldId
+	soldMsg.Text = ("SOLD %d bubbles  +%d coins"):format(n, coins)
+	soldMsg.TextTransparency = 0
+	sms.Transparency = 0
+	soldScale.Scale = 0.5
+	TweenService:Create(soldScale, TweenInfo.new(0.35, Enum.EasingStyle.Back), { Scale = 1 }):Play()
+	task.delay(1.6, function()
+		if mine == soldId then
+			TweenService:Create(soldMsg, TweenInfo.new(0.4), { TextTransparency = 1 }):Play()
+			TweenService:Create(sms, TweenInfo.new(0.4), { Transparency = 1 }):Play()
+		end
+	end)
+end
+
 -- Hint
 local hint = Instance.new("TextLabel")
 hint.AnchorPoint = Vector2.new(0.5, 1)

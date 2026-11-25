@@ -6,6 +6,7 @@ local RunService = game:GetService("RunService")
 
 local Pop = require(ReplicatedStorage.Shared.Config.Pop)
 local BubbleView = require(script.Parent.BubbleView)
+local BagState = require(script.Parent.BagState)
 
 local Stomp = {}
 
@@ -25,8 +26,9 @@ function Stomp.start(remotes: Folder)
 			local pos = root.Position
 			if pos.Y - layout.floorY < 5 then
 				for _, id in layout.floorNear(pos.X, pos.Z, Pop.stompRadius) do
-					if BubbleView.isIntact(id) and #batch < 30 then
+					if BubbleView.isIntact(id) and #batch < 30 and BagState.hasRoom() then
 						BubbleView.pop(id, "stomp")
+						BagState.added()
 						table.insert(batch, id)
 					end
 				end

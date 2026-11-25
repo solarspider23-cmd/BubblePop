@@ -12,6 +12,7 @@ local Pop = require(Shared.Config.Pop)
 local BubbleView = require(script.Parent.BubbleView)
 local Hud = require(script.Parent.Hud)
 local Sfx = require(script.Parent.Sfx)
+local BagState = require(script.Parent.BagState)
 
 local Popper = {}
 
@@ -150,6 +151,7 @@ function Popper.start(remotes: Folder)
 		retract = { t0 = os.clock(), from = at }
 		kick = 1
 		BubbleView.pop(id, "click")
+		BagState.added()
 		PopRequest:FireServer(id)
 		Hud.kick()
 		camera.FieldOfView = baseFov - 1.5
@@ -179,7 +181,11 @@ function Popper.start(remotes: Folder)
 		local target = (not press) and aimed() or nil
 		Hud.setAim(target ~= nil or press ~= nil)
 		BubbleView.setAim(press and press.id or target)
-		if not press and holding > 0 and target and (not retract or now - retract.t0 > RETRACT_TIME * 0.5) then
+		local room = BagState.hasRoom()
+		if not press and holding > 0 and target and not room then
+			Hud.bagFull() -- trying to pop with a full bag
+		end
+		if not press and holding > 0 and target and room and (not retract or now - retract.t0 > RETRACT_TIME * 0.5) then
 			press = { id = target, t0 = now, creaked = false }
 			retract = nil
 		end

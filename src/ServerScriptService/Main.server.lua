@@ -13,6 +13,8 @@ local RoomLayout = require(Shared.Rules.RoomLayout)
 local PopRules = require(Shared.Rules.PopRules)
 local Variants = require(Shared.Config.Variants)
 local VariantRules = require(Shared.Rules.Variants)
+local BagConfig = require(Shared.Config.Bag)
+local BagRules = require(Shared.Rules.Bag)
 
 Players.CharacterAutoLoads = false -- spawn players only after the room exists
 
@@ -61,7 +63,7 @@ do
 	block("TrimE", Vector3.new(t, h, half * 2), CFrame.new(half - t / 2, ty, 0), trimColor).CanCollide = false
 end
 
--- Recycler placeholder: a plain block in the middle (real model and selling come later)
+-- Recycler placeholder: a plain block in the middle; walk up to it to sell your bag (real model later)
 do
 	local rc = Room.recycler
 	local size = Vector3.new(rc.size[1], rc.size[2], rc.size[3])
@@ -203,6 +205,9 @@ StompRequest.Parent = remotes
 local BubbleChanged = Instance.new("RemoteEvent")
 BubbleChanged.Name = "BubbleChanged" -- server -> clients: {id (popped) or -id (grew back)}, poppedBy userId, variant per entry
 BubbleChanged.Parent = remotes
+local Sold = Instance.new("RemoteEvent")
+Sold.Name = "Sold" -- server -> client: (coins, bubbles) you just sold at the recycler
+Sold.Parent = remotes
 local GetPopped = Instance.new("RemoteFunction")
 GetPopped.Name = "GetPopped" -- client -> server: { popped = {ids}, variantIds = {ids}, variantKinds = {variant} }
 GetPopped.Parent = remotes
@@ -235,16 +240,38 @@ local lastClick: { [Player]: number } = {}
 local stompLimit: { [Player]: (number) -> boolean } = {}
 local clickLimit: { [Player]: (number) -> boolean } = {}
 
--- Count the pop and pay its coins (rare bubbles pay more)
+-- Bags: popped bubbles go in here; they turn into coins when sold at the recycler.
+-- The client sees its bag through player attributes BagCount / BagValue / BagCapacity.
+local bags: { [Player]: BagRules.Bag } = {}
+
+local function showBag(player: Player)
+	local bag = bags[player]
+	if bag then
+		player:SetAttribute("BagCount", bag.count)
+		player:SetAttribute("BagValue", bag.value)
+	end
+end
+
+local function capacity(player: Player): number
+	return player:GetAttribute("BagCapacity") or BagConfig.startCapacity
+end
+
+local function bagFull(player: Player): boolean
+	local bag = bags[player]
+	return not bag or BagRules.full(bag, capacity(player))
+end
+
+-- Put the popped bubble in the bag (rare bubbles are worth more) and count the pop
 local function addPop(player: Player, id: number)
+	local bag = bags[player]
+	if not bag or not BagRules.add(bag, VariantRules.coins(Variants, variantOf[id]), capacity(player)) then
+		return
+	end
+	showBag(player)
 	local stats = player:FindFirstChild("leaderstats")
 	local v = stats and stats:FindFirstChild("Pops")
 	if v then
 		v.Value += 1
-	end
-	local c = stats and stats:FindFirstChild("Coins")
-	if c then
-		c.Value += VariantRules.coins(Variants, variantOf[id])
 	end
 end
 
@@ -272,6 +299,9 @@ PopRequest.OnServerEvent:Connect(function(player, id)
 	end
 	if poppedAt[id] then
 		return -- someone already popped it; their change is on its way
+	end
+	if bagFull(player) then
+		return refuse(player, id) -- full bag: sell first
 	end
 	local r = root(player)
 	if not r then
@@ -305,6 +335,10 @@ StompRequest.OnServerEvent:Connect(function(player, ids)
 			return
 		end
 		if PopRules.validId(id, COUNT) and not poppedAt[id] then
+			if bagFull(player) then
+				refuse(player, id)
+				continue
+			end
 			local b = bubbles[id]
 			if b.surface == "floor" then
 				local dx, dz = r.Position.X - b.x, r.Position.Z - b.z
@@ -333,10 +367,33 @@ GetPopped.OnServerInvoke = function()
 end
 
 -- Send changes in small batches; grow bubbles back
-local sinceFlush, sinceRegrow = 0, 0
+local sinceFlush, sinceRegrow, sinceSell = 0, 0, 0
+local rc = Room.recycler
+local function sellNearby()
+	for player, bag in bags do
+		local r = root(player)
+		if bag.count > 0 and r
+			and BagRules.nearRecycler(r.Position.X, r.Position.Z, 0, 0, rc.size[1], rc.size[3], BagConfig.sellReach) then
+			local n = bag.count
+			local coins = BagRules.sell(bag)
+			local stats = player:FindFirstChild("leaderstats")
+			local c = stats and stats:FindFirstChild("Coins")
+			if c then
+				c.Value += coins
+			end
+			showBag(player)
+			Sold:FireClient(player, coins, n)
+		end
+	end
+end
 RunService.Heartbeat:Connect(function(dt)
 	sinceFlush += dt
 	sinceRegrow += dt
+	sinceSell += dt
+	if sinceSell >= 0.2 then
+		sinceSell = 0
+		sellNearby()
+	end
 	if sinceRegrow >= 0.5 then
 		sinceRegrow = 0
 		local now = os.clock()
@@ -366,6 +423,9 @@ local function onPlayer(player: Player)
 	coins.Name = "Coins"
 	coins.Parent = stats
 	stats.Parent = player
+	bags[player] = BagRules.new()
+	player:SetAttribute("BagCapacity", BagConfig.startCapacity)
+	showBag(player)
 	clickLimit[player] = PopRules.rateLimiter(10)
 	stompLimit[player] = PopRules.rateLimiter(Pop.stompMaxPerSecond)
 	player.CameraMode = Enum.CameraMode.LockFirstPerson
@@ -393,4 +453,5 @@ Players.PlayerRemoving:Connect(function(p)
 	lastClick[p] = nil
 	stompLimit[p] = nil
 	clickLimit[p] = nil
+	bags[p] = nil
 end)

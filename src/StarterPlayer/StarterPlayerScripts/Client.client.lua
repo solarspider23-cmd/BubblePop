@@ -25,6 +25,15 @@ BubbleChanged.OnClientEvent:Connect(function(changes, by, kinds)
 		BubbleView.apply(changes, by, if type(kinds) == "table" then kinds else nil, player.UserId)
 	end
 end)
+-- Sold at the recycler
+local Sold = remotes:WaitForChild("Sold") :: RemoteEvent
+Sold.OnClientEvent:Connect(function(coins, n)
+	if type(coins) == "number" and type(n) == "number" then
+		Hud.sold(coins, n)
+		Sfx.play("sell")
+	end
+end)
+
 local ok, list = pcall(function()
 	return (remotes:WaitForChild("GetPopped") :: RemoteFunction):InvokeServer()
 end)
