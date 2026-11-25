@@ -272,8 +272,8 @@ hint.Font = Enum.Font.FredokaOne
 hint.TextScaled = true
 hint.TextColor3 = Color3.new(1, 1, 1)
 hint.TextTransparency = 0.15
-hint.Text = UserInputService.TouchEnabled and "Hold POP to poke  •  walk on the floor wrap"
-	or "Hold click to poke  •  L = switch look  •  1-9 = pop sound  •  K = squeeze sound"
+hint.Text = UserInputService.TouchEnabled and "Hold POP to poke  •  SHOP for upgrades"
+	or "Hold click to poke  •  B = shop  •  L = look  •  1-9 = pop sound  •  K = squeeze sound"
 local hs = Instance.new("UIStroke")
 hs.Thickness = 2
 hs.Color = Color3.fromRGB(20, 40, 110)

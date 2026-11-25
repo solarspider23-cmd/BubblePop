@@ -74,7 +74,7 @@ function Popper.start(remotes: Folder)
 	near.FilterDescendantsInstances = { BubbleView.folder }
 
 	local holding = 0 -- number of inputs holding "poke" down
-	local press: { id: number, t0: number, creaked: boolean, sound: Sound? }? = nil
+	local press: { id: number, t0: number, creaked: boolean, sound: Sound?, time: number }? = nil
 	local retract: { t0: number, from: Vector3 }? = nil
 	local kick = 0 -- recoil, decays to 0
 	local baseFov = camera.FieldOfView
@@ -186,7 +186,8 @@ function Popper.start(remotes: Folder)
 			Hud.bagFull() -- trying to pop with a full bag
 		end
 		if not press and holding > 0 and target and room and (not retract or now - retract.t0 > RETRACT_TIME * 0.5) then
-			press = { id = target, t0 = now, creaked = false }
+			-- press time comes from the Pop Speed upgrade (server sets the attribute)
+			press = { id = target, t0 = now, creaked = false, time = player:GetAttribute("PopTime") or Pop.popTime }
 			retract = nil
 		end
 
@@ -199,7 +200,7 @@ function Popper.start(remotes: Folder)
 				retract = { t0 = now, from = tip.Position }
 				press = nil
 			else
-				local u = (now - press.t0) / Pop.popTime
+				local u = (now - press.t0) / press.time
 				local rp = Pop.reachPhase
 				if u < rp then
 					tipPos = restTip:Lerp(domeTop(id, 0), easeOut(u / rp))
@@ -207,7 +208,7 @@ function Popper.start(remotes: Folder)
 					if not press.creaked then
 						press.creaked = true
 						-- squeeze sound lasts exactly until the pop
-						press.sound = Sfx.play("press", nil, Pop.popTime * (1 - rp))
+						press.sound = Sfx.play("press", nil, press.time * (1 - rp))
 					end
 					local s = easeIn((u - rp) / (1 - rp))
 					local wobble = math.sin(u * 48) * 0.035 * s

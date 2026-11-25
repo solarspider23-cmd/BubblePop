@@ -15,6 +15,8 @@ local Variants = require(Shared.Config.Variants)
 local VariantRules = require(Shared.Rules.Variants)
 local BagConfig = require(Shared.Config.Bag)
 local BagRules = require(Shared.Rules.Bag)
+local Upgrades = require(Shared.Config.Upgrades)
+local UpgradeRules = require(Shared.Rules.Upgrades)
 
 Players.CharacterAutoLoads = false -- spawn players only after the room exists
 
@@ -208,6 +210,12 @@ BubbleChanged.Parent = remotes
 local Sold = Instance.new("RemoteEvent")
 Sold.Name = "Sold" -- server -> client: (coins, scraps) you just sold at the recycler
 Sold.Parent = remotes
+local BuyUpgrade = Instance.new("RemoteFunction")
+BuyUpgrade.Name = "BuyUpgrade" -- client -> server: (kind) -> ok, message
+BuyUpgrade.Parent = remotes
+local TestCoins = Instance.new("RemoteEvent")
+TestCoins.Name = "TestCoins" -- client -> server: give me coins (only works in Studio, for testing)
+TestCoins.Parent = remotes
 local GetPopped = Instance.new("RemoteFunction")
 GetPopped.Name = "GetPopped" -- client -> server: { popped = {ids}, variantIds = {ids}, variantKinds = {variant} }
 GetPopped.Parent = remotes
@@ -251,6 +259,55 @@ local function showBag(player: Player)
 		player:SetAttribute("BagValue", bag.value)
 	end
 end
+
+-- Upgrades: levels per player (player attributes Upg_<kind>), applied as per-player settings
+local popSettings: { [Player]: any } = {}
+
+local function level(player: Player, kind: string): number
+	return player:GetAttribute("Upg_" .. kind) or 1
+end
+
+local function applyUpgrades(player: Player)
+	local pt = UpgradeRules.value(Upgrades, "popSpeed", level(player, "popSpeed"))
+	local boots = UpgradeRules.value(Upgrades, "boots", level(player, "boots"))
+	popSettings[player] = setmetatable({ popTime = pt, stompRadius = boots }, { __index = Pop })
+	player:SetAttribute("BagCapacity", UpgradeRules.value(Upgrades, "bag", level(player, "bag")))
+	player:SetAttribute("PopTime", pt) -- the client presses this long
+	player:SetAttribute("StompRadius", boots) -- 0 = walking doesn't pop
+end
+
+local function coinsValue(player: Player): IntValue?
+	local stats = player:FindFirstChild("leaderstats")
+	return stats and stats:FindFirstChild("Coins") :: IntValue?
+end
+
+BuyUpgrade.OnServerInvoke = function(player, kind)
+	if not UpgradeRules.valid(Upgrades, kind) then
+		return false, "unknown upgrade"
+	end
+	local c = coinsValue(player)
+	if not c then
+		return false, "not ready"
+	end
+	local ok, newLevel, left = UpgradeRules.buy(Upgrades, kind, level(player, kind), c.Value)
+	if not ok then
+		return false, UpgradeRules.maxed(Upgrades, kind, level(player, kind)) and "maxed" or "not enough coins"
+	end
+	c.Value = left
+	player:SetAttribute("Upg_" .. kind, newLevel)
+	applyUpgrades(player)
+	return true, "bought"
+end
+
+TestCoins.OnServerEvent:Connect(function(player)
+	if not RunService:IsStudio() then
+		return -- testing only
+	end
+	local c = coinsValue(player)
+	if c then
+		c.Value += 1000
+	end
+end)
 
 local function capacity(player: Player): number
 	return player:GetAttribute("BagCapacity") or BagConfig.startCapacity
@@ -309,7 +366,7 @@ PopRequest.OnServerEvent:Connect(function(player, id)
 	end
 	local b = bubbles[id]
 	local distance = (r.Position - Vector3.new(b.x, b.y, b.z)).Magnitude
-	local ok = PopRules.clickOk(distance, now - (lastClick[player] or -math.huge), Pop)
+	local ok = PopRules.clickOk(distance, now - (lastClick[player] or -math.huge), popSettings[player] or Pop)
 	if not ok then
 		return refuse(player, id)
 	end
@@ -342,7 +399,8 @@ StompRequest.OnServerEvent:Connect(function(player, ids)
 			local b = bubbles[id]
 			if b.surface == "floor" then
 				local dx, dz = r.Position.X - b.x, r.Position.Z - b.z
-				if PopRules.stompOk(math.sqrt(dx * dx + dz * dz), r.Position.Y - y0, Pop) then
+				local ps = popSettings[player] or Pop
+				if ps.stompRadius > 0 and PopRules.stompOk(math.sqrt(dx * dx + dz * dz), r.Position.Y - y0, ps) then
 					poppedAt[id] = now
 					queue(id, player.UserId)
 					addPop(player, id)
@@ -424,7 +482,7 @@ local function onPlayer(player: Player)
 	coins.Parent = stats
 	stats.Parent = player
 	bags[player] = BagRules.new()
-	player:SetAttribute("BagCapacity", BagConfig.startCapacity)
+	applyUpgrades(player)
 	showBag(player)
 	clickLimit[player] = PopRules.rateLimiter(10)
 	stompLimit[player] = PopRules.rateLimiter(Pop.stompMaxPerSecond)
@@ -454,4 +512,5 @@ Players.PlayerRemoving:Connect(function(p)
 	stompLimit[p] = nil
 	clickLimit[p] = nil
 	bags[p] = nil
+	popSettings[p] = nil
 end)
