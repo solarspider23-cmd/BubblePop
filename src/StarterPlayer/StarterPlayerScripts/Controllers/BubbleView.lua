@@ -129,7 +129,8 @@ end
 
 local function newPopped(id: number): Instance
 	if #poppedTemplates > 0 then
-		local k = (id % #poppedTemplates) + 1
+		-- scrambled pick per bubble, so neighbours rarely match (fixed per id)
+		local k = ((id * 2654435761) % 4294967296 // 7) % #poppedTemplates + 1
 		local m = poppedTemplates[k]:Clone()
 		m.Name = "Popped"
 		m.CanQuery = false
