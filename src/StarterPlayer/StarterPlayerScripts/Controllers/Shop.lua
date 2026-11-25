@@ -42,9 +42,12 @@ end
 local function describe(kind: string, lvl: number): string
 	local u = Upgrades[kind]
 	local v = UpgradeRules.value(Upgrades, kind, lvl)
-	if kind == "boots" then
-		local name = u.levelNames and u.levelNames[lvl] or ("Level " .. lvl)
-		return v == 0 and (name .. ": walking doesn't pop") or (name .. ": " .. u.describe:format(v))
+	if u.levelNames then
+		local name = u.levelNames[lvl] or ("Level " .. lvl)
+		if kind == "boots" and v == 0 then
+			return name .. ": walking doesn't pop"
+		end
+		return name .. ": " .. u.describe:format(v)
 	end
 	return u.describe:format(v)
 end

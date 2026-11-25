@@ -9,6 +9,8 @@ local TweenService = game:GetService("TweenService")
 
 local Shared = ReplicatedStorage:WaitForChild("Shared")
 local Pop = require(Shared.Config.Pop)
+local Upgrades = require(Shared.Config.Upgrades)
+local Room = require(Shared.Config.Room)
 local BubbleView = require(script.Parent.BubbleView)
 local Hud = require(script.Parent.Hud)
 local Sfx = require(script.Parent.Sfx)
@@ -74,7 +76,7 @@ function Popper.start(remotes: Folder)
 	near.FilterDescendantsInstances = { BubbleView.folder }
 
 	local holding = 0 -- number of inputs holding "poke" down
-	local press: { id: number, t0: number, creaked: boolean, sound: Sound?, time: number }? = nil
+	local press: { id: number, t0: number, creaked: boolean, sound: Sound?, time: number, extras: { number } }? = nil
 	local retract: { t0: number, from: Vector3 }? = nil
 	local kick = 0 -- recoil, decays to 0
 	local baseFov = camera.FieldOfView
@@ -143,16 +145,34 @@ function Popper.start(remotes: Folder)
 		if snd then
 			snd:Stop()
 		end
+		-- un-squash any extra bubbles that won't pop now
+		for _, eid in press and press.extras or {} do
+			BubbleView.setSquash(eid, 0, 0)
+		end
 	end
 
 	local function finishPress(id: number, at: Vector3)
+		local extras = press and press.extras or {}
 		stopSqueeze()
 		press = nil
 		retract = { t0 = os.clock(), from = at }
 		kick = 1
+		-- the bigger tool's extra bubbles pop together with the aimed one
+		local sent = {}
+		for _, eid in extras do
+			if BubbleView.isIntact(eid) and BagState.hasRoom() then
+				table.insert(sent, eid)
+			end
+		end
+		BubbleView.groupSize = 1 + #sent
 		BubbleView.pop(id, "click")
+		BubbleView.groupSize = 1
 		BagState.added()
-		PopRequest:FireServer(id)
+		for _, eid in sent do
+			BubbleView.pop(eid, "multi")
+			BagState.added()
+		end
+		PopRequest:FireServer(id, sent)
 		Hud.kick()
 		camera.FieldOfView = baseFov - 1.5
 		TweenService:Create(camera, TweenInfo.new(0.15, Enum.EasingStyle.Quad), { FieldOfView = baseFov }):Play()
@@ -187,7 +207,15 @@ function Popper.start(remotes: Folder)
 		end
 		if not press and holding > 0 and target and room and (not retract or now - retract.t0 > RETRACT_TIME * 0.5) then
 			-- press time comes from the Pop Speed upgrade (server sets the attribute)
-			press = { id = target, t0 = now, creaked = false, time = player:GetAttribute("PopTime") or Pop.popTime }
+			local toolPops = player:GetAttribute("ToolPops") or 1
+			local spread = Upgrades.tool.spread * Room.spacing
+			press = {
+				id = target,
+				t0 = now,
+				creaked = false,
+				time = player:GetAttribute("PopTime") or Pop.popTime,
+				extras = BubbleView.neighbours(target, toolPops - 1, spread),
+			}
 			retract = nil
 		end
 
@@ -213,6 +241,9 @@ function Popper.start(remotes: Folder)
 					local s = easeIn((u - rp) / (1 - rp))
 					local wobble = math.sin(u * 48) * 0.035 * s
 					BubbleView.setSquash(id, s, wobble)
+					for _, eid in press.extras do
+						BubbleView.setSquash(eid, s * 0.85, -wobble)
+					end
 					tipPos = domeTop(id, s)
 				else
 					tipPos = domeTop(id, 1)

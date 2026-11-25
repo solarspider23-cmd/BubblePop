@@ -199,7 +199,7 @@ cc.Parent = Lighting
 local remotes = Instance.new("Folder")
 remotes.Name = "Remotes"
 local PopRequest = Instance.new("RemoteEvent")
-PopRequest.Name = "PopRequest" -- client -> server: (bubbleId) after a full press
+PopRequest.Name = "PopRequest" -- client -> server: (bubbleId, {extra ids from a bigger tool}) after a full press
 PopRequest.Parent = remotes
 local StompRequest = Instance.new("RemoteEvent")
 StompRequest.Name = "StompRequest" -- client -> server: ({bubbleId, ...}) floor bubbles walked over
@@ -270,7 +270,9 @@ end
 local function applyUpgrades(player: Player)
 	local pt = UpgradeRules.value(Upgrades, "popSpeed", level(player, "popSpeed"))
 	local boots = UpgradeRules.value(Upgrades, "boots", level(player, "boots"))
-	popSettings[player] = setmetatable({ popTime = pt, stompRadius = boots }, { __index = Pop })
+	local tool = UpgradeRules.value(Upgrades, "tool", level(player, "tool"))
+	popSettings[player] = setmetatable({ popTime = pt, stompRadius = boots, tool = tool }, { __index = Pop })
+	player:SetAttribute("ToolPops", tool) -- bubbles per press
 	player:SetAttribute("BagCapacity", UpgradeRules.value(Upgrades, "bag", level(player, "bag")))
 	player:SetAttribute("PopTime", pt) -- the client presses this long
 	player:SetAttribute("StompRadius", boots) -- 0 = walking doesn't pop
@@ -345,7 +347,7 @@ local function refuse(player: Player, id: number)
 	end
 end
 
-PopRequest.OnServerEvent:Connect(function(player, id)
+PopRequest.OnServerEvent:Connect(function(player, id, extras)
 	local now = os.clock()
 	local allow = clickLimit[player]
 	if not allow or not allow(now) then
@@ -374,6 +376,31 @@ PopRequest.OnServerEvent:Connect(function(player, id)
 	poppedAt[id] = now
 	queue(id, player.UserId)
 	addPop(player, id)
+
+	-- a bigger tool pops neighbours too (checked: count, same surface, close, still there, bag room)
+	if type(extras) ~= "table" then
+		return
+	end
+	local maxExtra = ((popSettings[player] or Pop).tool or 1) - 1
+	local spread = Upgrades.tool.spread
+	for i = 1, math.min(#extras, maxExtra) do
+		local eid = extras[i]
+		if PopRules.validId(eid, COUNT) and not poppedAt[eid] then
+			if bagFull(player) or not PopRules.extraOk(b, bubbles[eid], Room.spacing, spread) then
+				refuse(player, eid)
+			else
+				poppedAt[eid] = now
+				queue(eid, player.UserId)
+				addPop(player, eid)
+			end
+		end
+	end
+	for i = maxExtra + 1, math.min(#extras, 30) do
+		local eid = extras[i]
+		if PopRules.validId(eid, COUNT) then
+			refuse(player, eid) -- more than the tool allows
+		end
+	end
 end)
 
 StompRequest.OnServerEvent:Connect(function(player, ids)

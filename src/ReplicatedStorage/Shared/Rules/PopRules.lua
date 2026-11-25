@@ -47,4 +47,14 @@ function PopRules.rateLimiter(perSecond: number)
 	end
 end
 
+-- A bigger tool pops extra bubbles with the aimed one: they must be on the same wall/floor
+-- and close to it (within `spread` bubble spacings).
+function PopRules.extraOk(main: any, extra: any, spacing: number, spread: number): boolean
+	if extra.surface ~= main.surface or extra.id == main.id then
+		return false
+	end
+	local dx, dy, dz = extra.x - main.x, extra.y - main.y, extra.z - main.z
+	return dx * dx + dy * dy + dz * dz <= (spacing * spread) ^ 2
+end
+
 return PopRules

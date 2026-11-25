@@ -55,6 +55,27 @@ test("every room size builds and walls fit under the ceiling", function()
 	end
 end)
 
+test("extra bubbles for a bigger tool: same surface and close only", function()
+	local a = L.bubbles[1]
+	local near, far, other
+	for _, b in L.bubbles do
+		if b.surface == a.surface and b.id ~= a.id then
+			local d = math.sqrt((b.x - a.x) ^ 2 + (b.y - a.y) ^ 2 + (b.z - a.z) ^ 2)
+			if not near and d < Room.spacing * 1.1 then
+				near = b
+			elseif not far and d > Room.spacing * 5 then
+				far = b
+			end
+		elseif b.surface ~= a.surface and not other then
+			other = b
+		end
+	end
+	assert(PopRules.extraOk(a, near, Room.spacing, 2.6))
+	assert(not PopRules.extraOk(a, far, Room.spacing, 2.6))
+	assert(not PopRules.extraOk(a, other, Room.spacing, 1e9))
+	assert(not PopRules.extraOk(a, a, Room.spacing, 2.6))
+end)
+
 test("ids are 1..n in order", function()
 	for i, b in L.bubbles do
 		assert(b.id == i)

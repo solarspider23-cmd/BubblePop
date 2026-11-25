@@ -32,6 +32,7 @@ test("level 1 matches the starting game", function()
 	assert(Upgrades.bag.values[1] == Bag.startCapacity)
 	assert(Upgrades.popSpeed.values[1] == Pop.popTime)
 	assert(Upgrades.boots.values[1] == 0, "no boots: walking doesn't pop")
+	assert(Upgrades.tool.values[1] == 1, "the starting stick pops one bubble")
 end)
 
 test("upgrades always get better", function()
@@ -40,6 +41,9 @@ test("upgrades always get better", function()
 	end
 	for i = 2, #Upgrades.popSpeed.values do
 		assert(Upgrades.popSpeed.values[i] < Upgrades.popSpeed.values[i - 1])
+	end
+	for i = 2, #Upgrades.tool.values do
+		assert(Upgrades.tool.values[i] > Upgrades.tool.values[i - 1])
 	end
 	for i = 2, #Upgrades.boots.values do
 		assert(Upgrades.boots.values[i] > Upgrades.boots.values[i - 1])
@@ -59,6 +63,19 @@ test("buying: enough coins levels up and pays, not enough does nothing, maxed do
 	ok, lvl, left = UpgradeRules.buy(Upgrades, "bag", max, 1e9)
 	assert(not ok and lvl == max and left == 1e9)
 	assert(UpgradeRules.nextCost(Upgrades, "bag", max) == nil)
+end)
+
+test("the biggest tool fits in its spread (13 = every bubble within 2 spacings)", function()
+	local n = 0
+	local r = Upgrades.tool.spread
+	for x = -4, 4 do
+		for y = -4, 4 do
+			if x * x + y * y <= r * r then
+				n += 1
+			end
+		end
+	end
+	assert(n >= Upgrades.tool.values[#Upgrades.tool.values], "spread too small: " .. n)
 end)
 
 test("only real upgrade names are accepted", function()

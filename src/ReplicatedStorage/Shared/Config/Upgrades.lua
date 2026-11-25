@@ -3,7 +3,7 @@
 --   values: what the upgrade gives at each level
 --   costs:  coins to reach that level (level 1 is free: you start there)
 return {
-	order = { "bag", "popSpeed", "boots" },
+	order = { "bag", "popSpeed", "tool", "boots" },
 
 	bag = {
 		name = "Bigger Bag",
@@ -16,6 +16,15 @@ return {
 		describe = "%.2fs per pop",
 		values = { 0.56, 0.5, 0.45, 0.4, 0.35, 0.3, 0.26, 0.22 },
 		costs = { 0, 30, 80, 180, 400, 800, 1500, 3000 },
+	},
+	tool = {
+		-- bubbles one press pops: the one you aim at plus its nearest neighbours on the same wall/floor
+		name = "Better Tool",
+		describe = "%d bubbles per press",
+		levelNames = { "Stick", "Fork", "Trident", "Rake", "Big Rake", "Roller", "Mega Roller" },
+		values = { 1, 2, 3, 5, 7, 9, 13 },
+		costs = { 0, 60, 200, 500, 1200, 3000, 7000 },
+		spread = 2.6, -- extra bubbles must be within this many bubble-spacings of the aimed one
 	},
 	boots = {
 		-- 0 = walking doesn't pop. Otherwise the radius (studs) of floor wrap popped under you.

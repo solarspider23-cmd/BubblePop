@@ -379,6 +379,37 @@ function BubbleView.idOf(part: Instance?): number?
 	return type(id) == "number" and id or nil
 end
 
+-- The k nearest unpopped bubbles to `id` on the same wall/floor, within `radius` studs
+-- (a bigger tool pops these along with the aimed one)
+local nearParams = OverlapParams.new()
+nearParams.FilterType = Enum.RaycastFilterType.Include
+nearParams.FilterDescendantsInstances = { folder }
+function BubbleView.neighbours(id: number, k: number, radius: number): { number }
+	if k <= 0 then
+		return {}
+	end
+	local here = frames[id].Position
+	local surface = bubbles[id].surface
+	local found = {}
+	for _, part in workspace:GetPartBoundsInRadius(here, radius, nearParams) do
+		local nid = part.Name == "Bubble" and BubbleView.idOf(part)
+		if nid and nid ~= id and not isPopped[nid] and bubbles[nid].surface == surface then
+			local d = (frames[nid].Position - here).Magnitude
+			if d <= radius then
+				table.insert(found, { id = nid, d = d })
+			end
+		end
+	end
+	table.sort(found, function(a, b)
+		return a.d < b.d
+	end)
+	local out = {}
+	for i = 1, math.min(k, #found) do
+		out[i] = found[i].id
+	end
+	return out
+end
+
 function BubbleView.frame(id: number): CFrame
 	return frames[id]
 end
@@ -475,22 +506,24 @@ function BubbleView.pop(id: number, kind: string)
 		bits:Emit(kind == "other" and 10 or 30)
 		bits.Color = ColorSequence.new(Color3.new(1, 1, 1), BUBBLE_COLOR)
 		if kind ~= "other" then
-			Sfx.play("rarePop")
+			Sfx.play("rarePop", nil)
 			BubbleView.floatText(cf.Position, "+" .. VariantRules.coins(Variants, variantOf[id]), c, true)
 		end
 	else
 		bits:Emit(kind == "other" and 4 or 9)
 		if kind == "click" then
-			BubbleView.floatText(cf.Position, "+" .. Variants.baseCoins, Color3.fromRGB(255, 225, 90), false)
+			BubbleView.floatText(cf.Position, "+" .. Variants.baseCoins * (BubbleView.groupSize or 1), Color3.fromRGB(255, 225, 90), false)
 		end
 	end
 	puff:Emit(kind == "other" and 1 or 2)
-	if kind == "click" or kind == "stomp" then
+	if kind == "click" or kind == "stomp" or kind == "multi" then
 		-- your pop: a scrap of its plastic flies into your bag
 		local sc = v and (v.rainbow and Color3.fromHSV(math.random(), 0.6, 1) or color(v.color)) or nil
 		Scraps.toBag(cf.Position, sc)
 	end
-	if kind == "click" then
+	if kind == "multi" then
+		-- extra bubbles from a bigger tool: the main pop already made the sound
+	elseif kind == "click" then
 		Sfx.play("pop")
 	elseif kind == "stomp" then
 		Sfx.play("stompPop")
