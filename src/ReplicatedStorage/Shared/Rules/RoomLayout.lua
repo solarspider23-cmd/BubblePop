@@ -34,16 +34,17 @@ function RoomLayout.new(room: any)
 	assert(math.abs(n * sp - S) < 1e-6, "perSheet * spacing must equal sheetSize")
 	local half = room.floorSheets * S / 2
 	local y0 = room.floorY
-	local height = room.wallRows * S
+	local lift = room.wallLift or 0 -- wall wrap starts this far up, so it clears the floor bubbles
+	local height = room.wallRows * S + lift
 	local margin = (S - (n - 1) * sp) / 2
 
 	-- origin = corner of the bubble plane (sheet top), right/up = tangents, normal = into the room
 	local surfaces = {
 		{ name = "floor", origin = v(-half, y0 + t, -half), right = v(1, 0, 0), up = v(0, 0, 1), normal = v(0, 1, 0), cols = room.floorSheets, rows = room.floorSheets },
-		{ name = "north", origin = v(-half, y0, -half + t), right = v(1, 0, 0), up = v(0, 1, 0), normal = v(0, 0, 1), cols = room.floorSheets, rows = room.wallRows },
-		{ name = "south", origin = v(half, y0, half - t), right = v(-1, 0, 0), up = v(0, 1, 0), normal = v(0, 0, -1), cols = room.floorSheets, rows = room.wallRows },
-		{ name = "west", origin = v(-half + t, y0, half), right = v(0, 0, -1), up = v(0, 1, 0), normal = v(1, 0, 0), cols = room.floorSheets, rows = room.wallRows },
-		{ name = "east", origin = v(half - t, y0, -half), right = v(0, 0, 1), up = v(0, 1, 0), normal = v(-1, 0, 0), cols = room.floorSheets, rows = room.wallRows },
+		{ name = "north", origin = v(-half, y0 + lift, -half + t), right = v(1, 0, 0), up = v(0, 1, 0), normal = v(0, 0, 1), cols = room.floorSheets, rows = room.wallRows },
+		{ name = "south", origin = v(half, y0 + lift, half - t), right = v(-1, 0, 0), up = v(0, 1, 0), normal = v(0, 0, -1), cols = room.floorSheets, rows = room.wallRows },
+		{ name = "west", origin = v(-half + t, y0 + lift, half), right = v(0, 0, -1), up = v(0, 1, 0), normal = v(1, 0, 0), cols = room.floorSheets, rows = room.wallRows },
+		{ name = "east", origin = v(half - t, y0 + lift, -half), right = v(0, 0, 1), up = v(0, 1, 0), normal = v(-1, 0, 0), cols = room.floorSheets, rows = room.wallRows },
 	}
 
 	local bubbles: { Bubble } = {}
@@ -58,6 +59,10 @@ function RoomLayout.new(room: any)
 		for row = 0, s.rows - 1 do
 			for col = 0, s.cols - 1 do
 				local cx, cy, cz = at(col * S + S / 2, row * S + S / 2, -t / 2)
+				local clear = room.recycler and room.recycler.clear or 0
+				if s.name == "floor" and math.abs(cx) < clear / 2 and math.abs(cz) < clear / 2 then
+					continue -- the recycler stands here
+				end
 				table.insert(sheets, {
 					surface = s.name, x = cx, y = cy, z = cz,
 					nx = nn.x, ny = nn.y, nz = nn.z, rx = r.x, ry = r.y, rz = r.z,

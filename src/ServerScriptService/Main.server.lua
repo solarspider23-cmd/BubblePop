@@ -49,6 +49,33 @@ block("WallS", Vector3.new(half * 2 + wallT * 2, height, wallT), CFrame.new(0, y
 block("WallW", Vector3.new(wallT, height, half * 2), CFrame.new(-half - wallT / 2, y0 + height / 2, 0), color(Room.colors.wall))
 block("WallE", Vector3.new(wallT, height, half * 2), CFrame.new(half + wallT / 2, y0 + height / 2, 0), color(Room.colors.wall))
 
+-- Recycler placeholder: a plain block in the middle (real model and selling come later)
+do
+	local rc = Room.recycler
+	local size = Vector3.new(rc.size[1], rc.size[2], rc.size[3])
+	local r = block("Recycler", size, CFrame.new(0, y0 + size.Y / 2, 0), color(rc.color))
+	for _, face in { Enum.NormalId.Front, Enum.NormalId.Back, Enum.NormalId.Left, Enum.NormalId.Right } do
+		local gui = Instance.new("SurfaceGui")
+		gui.Face = face
+		gui.SizingMode = Enum.SurfaceGuiSizingMode.PixelsPerStud
+		gui.PixelsPerStud = 40
+		local label = Instance.new("TextLabel")
+		label.Size = UDim2.fromScale(1, 0.4)
+		label.Position = UDim2.fromScale(0, 0.3)
+		label.BackgroundTransparency = 1
+		label.Font = Enum.Font.FredokaOne
+		label.TextScaled = true
+		label.TextColor3 = Color3.new(1, 1, 1)
+		label.Text = "RECYCLER"
+		local stroke = Instance.new("UIStroke")
+		stroke.Thickness = 4
+		stroke.Color = Color3.fromRGB(20, 80, 35)
+		stroke.Parent = label
+		label.Parent = gui
+		gui.Parent = r
+	end
+end
+
 -- Ceiling lights: a grid of glowing panels with lights under them
 local lightStep = 12
 for x = -half + lightStep / 2, half - lightStep / 2, lightStep do
@@ -299,6 +326,10 @@ local function onPlayer(player: Player)
 	stompLimit[player] = PopRules.rateLimiter(Pop.stompMaxPerSecond)
 	player.CameraMode = Enum.CameraMode.LockFirstPerson
 	player.CharacterAdded:Connect(function(char)
+		local s = Room.spawn
+		task.defer(function()
+			char:PivotTo(CFrame.new(s[1], s[2], s[3]))
+		end)
 		local hum = char:WaitForChild("Humanoid") :: Humanoid
 		hum.Died:Connect(function()
 			task.wait(2)

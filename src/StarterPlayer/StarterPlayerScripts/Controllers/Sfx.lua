@@ -17,9 +17,16 @@ local function source(def): string
 	return def.file or ""
 end
 
+-- Sound picker (test room): replace a sound's id/pitch while playing
+local overrides: { [string]: any } = {}
+function Sfx.override(key: string, def)
+	local base = Sounds[key]
+	overrides[key] = setmetatable({ id = def.id, pitch = def.pitch }, { __index = base })
+end
+
 -- play(key) = 2D (your own pops); play(key, position) = 3D at that spot (other players' pops)
 function Sfx.play(key: string, position: Vector3?)
-	local def = Sounds[key]
+	local def = overrides[key] or Sounds[key]
 	if not def then
 		return
 	end

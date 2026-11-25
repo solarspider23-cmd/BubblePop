@@ -36,7 +36,7 @@ if "--no-reload" not in sys.argv:
     time.sleep(10)
 
 print("camera:", client('return game.Players.LocalPlayer.CameraMode.Name'))
-client('local r=game.Players.LocalPlayer.Character.HumanoidRootPart; r.CFrame=CFrame.new(0.3,3,-12); return "moved"')
+client('local r=game.Players.LocalPlayer.Character.HumanoidRootPart; r.CFrame=CFrame.new(0.3,3,-24); return "moved"')
 time.sleep(1)
 before = client('return game.Players.LocalPlayer.leaderstats.Pops.Value')
 studio("user_mouse_input", '{"datamodel_type":"Client","actions":[{"action":"moveTo","x":400,"y":300},'

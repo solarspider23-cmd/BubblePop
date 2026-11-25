@@ -7,6 +7,9 @@ local Controllers = script.Parent:WaitForChild("Controllers")
 local BubbleView = require(Controllers.BubbleView)
 local Popper = require(Controllers.Popper)
 local Stomp = require(Controllers.Stomp)
+local Hud = require(Controllers.Hud)
+local Sfx = require(Controllers.Sfx)
+local Sounds = require(ReplicatedStorage.Shared.Config.Sounds)
 
 local player = Players.LocalPlayer
 local remotes = ReplicatedStorage:WaitForChild("Remotes")
@@ -33,3 +36,27 @@ player.CameraMode = Enum.CameraMode.LockFirstPerson -- popping is always first p
 UserInputService.MouseIconEnabled = false -- the Hud draws its own crosshair
 Popper.start(remotes)
 Stomp.start(remotes)
+
+-- Test-room switches: L = look, 1-6 = pop sound
+local lookIndex = 1
+local keys = { Enum.KeyCode.One, Enum.KeyCode.Two, Enum.KeyCode.Three, Enum.KeyCode.Four, Enum.KeyCode.Five, Enum.KeyCode.Six }
+UserInputService.InputBegan:Connect(function(input, processed)
+	if processed then
+		return
+	end
+	if input.KeyCode == Enum.KeyCode.L then
+		lookIndex += 1
+		Hud.toast("Look: " .. BubbleView.setLook(lookIndex))
+		return
+	end
+	for i, k in keys do
+		local opt = Sounds.popOptions and Sounds.popOptions[i]
+		if input.KeyCode == k and opt then
+			Sfx.override("pop", opt)
+			Sfx.override("stompPop", { id = opt.id, pitch = (opt.pitch or 1) * 0.85 })
+			Sfx.override("otherPop", opt)
+			Hud.toast("Pop sound " .. i .. ": " .. opt.name)
+			Sfx.play("pop")
+		end
+	end
+end)

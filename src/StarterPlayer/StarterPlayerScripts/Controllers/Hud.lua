@@ -97,7 +97,7 @@ hint.TextScaled = true
 hint.TextColor3 = Color3.new(1, 1, 1)
 hint.TextTransparency = 0.15
 hint.Text = UserInputService.TouchEnabled and "Hold POP to poke  •  walk on the floor wrap"
-	or "Hold click to poke  •  walk on the floor wrap"
+	or "Hold click to poke  •  L = switch look  •  1-6 = pop sound"
 local hs = Instance.new("UIStroke")
 hs.Thickness = 2
 hs.Color = Color3.fromRGB(20, 40, 110)
@@ -126,6 +126,37 @@ if UserInputService.TouchEnabled then
 	st.Parent = b
 	b.Parent = gui
 	Hud.popButton = b
+end
+
+-- Short message in the middle-top (test-room switches)
+local toast = Instance.new("TextLabel")
+toast.AnchorPoint = Vector2.new(0.5, 0)
+toast.Position = UDim2.new(0.5, 0, 0, 104)
+toast.Size = UDim2.fromOffset(420, 32)
+toast.BackgroundTransparency = 1
+toast.Font = Enum.Font.FredokaOne
+toast.TextScaled = true
+toast.TextColor3 = Color3.fromRGB(255, 235, 90)
+toast.TextTransparency = 1
+local ts = Instance.new("UIStroke")
+ts.Thickness = 2
+ts.Color = Color3.fromRGB(20, 40, 110)
+ts.Transparency = 1
+ts.Parent = toast
+toast.Parent = gui
+local toastId = 0
+function Hud.toast(text: string)
+	toastId += 1
+	local mine = toastId
+	toast.Text = text
+	toast.TextTransparency = 0
+	ts.Transparency = 0
+	task.delay(2, function()
+		if mine == toastId then
+			TweenService:Create(toast, TweenInfo.new(0.4), { TextTransparency = 1 }):Play()
+			TweenService:Create(ts, TweenInfo.new(0.4), { Transparency = 1 }):Play()
+		end
+	end)
 end
 
 return Hud

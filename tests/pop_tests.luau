@@ -20,8 +20,19 @@ end
 local L = RoomLayout.new(Room)
 local perSheet = Room.perSheet * Room.perSheet
 
-test("bubble count matches floor + 4 walls", function()
-	local sheets = Room.floorSheets * Room.floorSheets + 4 * Room.floorSheets * Room.wallRows
+test("bubble count matches floor (minus recycler) + 4 walls", function()
+	local skipped = 0
+	local clear = Room.recycler and Room.recycler.clear or 0
+	for row = 0, Room.floorSheets - 1 do
+		for col = 0, Room.floorSheets - 1 do
+			local cx = -L.half + col * Room.sheetSize + Room.sheetSize / 2
+			local cz = -L.half + row * Room.sheetSize + Room.sheetSize / 2
+			if math.abs(cx) < clear / 2 and math.abs(cz) < clear / 2 then
+				skipped += 1
+			end
+		end
+	end
+	local sheets = Room.floorSheets * Room.floorSheets - skipped + 4 * Room.floorSheets * Room.wallRows
 	assert(#L.sheets == sheets, "sheets " .. #L.sheets)
 	assert(#L.bubbles == sheets * perSheet, "bubbles " .. #L.bubbles)
 end)
@@ -56,7 +67,7 @@ end)
 test("bubbles along a wall are evenly spaced across sheet seams", function()
 	local xs = {}
 	for _, b in L.bubbles do
-		if b.surface == "north" and math.abs(b.y - (Room.floorY + 0.6)) < 1e-6 then
+		if b.surface == "north" and math.abs(b.y - (Room.floorY + (Room.wallLift or 0) + 0.6)) < 1e-6 then
 			table.insert(xs, b.x)
 		end
 	end
@@ -67,6 +78,15 @@ test("bubbles along a wall are evenly spaced across sheet seams", function()
 	end
 end)
 
+test("wall bubbles clear the floor bubbles at the corners", function()
+	local floorTop = Room.floorY + Room.sheetThickness + Room.bubbleHeight
+	for _, b in L.bubbles do
+		if b.surface ~= "floor" then
+			assert(b.y - Room.bubbleWidth / 2 > floorTop, "wall bubble " .. b.id .. " dips into the floor wrap")
+		end
+	end
+end)
+
 test("floorNear finds the bubble right underfoot and only floor bubbles", function()
 	for _, b in L.bubbles do
 		if b.surface == "floor" then
@@ -74,8 +94,9 @@ test("floorNear finds the bubble right underfoot and only floor bubbles", functi
 			assert(#ids == 1 and ids[1] == b.id, "missed " .. b.id)
 		end
 	end
-	local ids = L.floorNear(0, 0, Pop.stompRadius)
-	assert(#ids >= 2 and #ids <= 6, "near middle " .. #ids)
+	local ids = L.floorNear(0, L.half / 2, Pop.stompRadius)
+	assert(#ids >= 2 and #ids <= 6, "near " .. #ids)
+	assert(#L.floorNear(0, 0, 1) == 0, "no wrap under the recycler")
 	for _, id in ids do
 		assert(L.bubbles[id].surface == "floor")
 	end
