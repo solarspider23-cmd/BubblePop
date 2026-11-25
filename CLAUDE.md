@@ -6,6 +6,7 @@ A Roblox simulator for kids 8-14: pop bubble wrap for coins, upgrade your bag, t
 
 - 2026-11-24: Hub world (third person) with 4 pads; stepping on one starts a session for a group of up to 4. Popping rooms are LOCKED FIRST PERSON, aim with a centre crosshair, held tool in view.
 - Room: bubble wrap on floor and walls, plain ceiling.
+- 2026-11-25: Room size "small" (Config/Room.lua `SIZE`): bubbles 5/6 size, 60 x 60 room, 660 bubbles per wall (60 across x 11 up), one ceiling light. Look 4 "Clear+" is the starting look. Default pop sound: Tiny; squeeze and pop still being auditioned (K and 1-9 in game).
 - Popping a bubble with the tool takes a press time (starts 0.56 s, like the genre reference); the press time becomes an upgrade ("Pop Speed"). Walking over floor wrap pops instantly.
 - Bag: popped bubbles fill your bag (starts at 25); a full bag blocks popping until you sell at the recycler in the middle of the hub. Coins, not cents. First bag upgrades are cheap.
 - Monetisation: Auto-Sell, 2x Bag, 2x Coins, 2x Pop Speed passes, instant bag upgrade product. Bag/tool upgrades also buyable with coins.
