@@ -86,18 +86,16 @@ do
 	end
 end
 
--- Ceiling lights: a grid of glowing panels with lights under them
-local lightStep = 12
-for x = -half + lightStep / 2, half - lightStep / 2, lightStep do
-	for z = -half + lightStep / 2, half - lightStep / 2, lightStep do
-		local panel = block("Light", Vector3.new(4, 0.2, 4), CFrame.new(x, y0 + height - 0.1, z), Color3.fromRGB(255, 250, 235), Enum.Material.Neon)
-		panel.CanCollide = false
-		local l = Instance.new("PointLight")
-		l.Range = Room.lighting.lampRange
-		l.Brightness = Room.lighting.lampBrightness
-		l.Shadows = false
-		l.Parent = panel
-	end
+-- One ceiling light in the middle of the room
+do
+	local lit = Room.lighting
+	local panel = block("Light", Vector3.new(lit.lampSize, 0.2, lit.lampSize), CFrame.new(0, y0 + height - 0.1, 0), Color3.fromRGB(255, 250, 235), Enum.Material.Neon)
+	panel.CanCollide = false
+	local l = Instance.new("PointLight")
+	l.Range = lit.lampRange
+	l.Brightness = lit.lampBrightness
+	l.Shadows = false
+	l.Parent = panel
 end
 
 ---------------------------------------------------------------- uploaded models

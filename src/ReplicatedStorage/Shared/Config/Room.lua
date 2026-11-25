@@ -45,8 +45,9 @@ return {
 		exposure = 0,
 		contrast = 0.1,
 		saturation = 0.1,
-		lampRange = 18,
-		lampBrightness = 0.5,
+		lampSize = 6, -- the one ceiling light (studs across)
+		lampRange = 45,
+		lampBrightness = 0.8,
 	},
 
 	-- Looks to compare in the test room (press L in game). "Cartoon" = the colours above with
