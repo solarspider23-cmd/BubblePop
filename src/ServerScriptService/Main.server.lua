@@ -11,6 +11,8 @@ local Room = require(Shared.Config.Room)
 local Pop = require(Shared.Config.Pop)
 local RoomLayout = require(Shared.Rules.RoomLayout)
 local PopRules = require(Shared.Rules.PopRules)
+local Variants = require(Shared.Config.Variants)
+local VariantRules = require(Shared.Rules.Variants)
 
 Players.CharacterAutoLoads = false -- spawn players only after the room exists
 
@@ -199,10 +201,10 @@ local StompRequest = Instance.new("RemoteEvent")
 StompRequest.Name = "StompRequest" -- client -> server: ({bubbleId, ...}) floor bubbles walked over
 StompRequest.Parent = remotes
 local BubbleChanged = Instance.new("RemoteEvent")
-BubbleChanged.Name = "BubbleChanged" -- server -> clients: {id (popped) or -id (grew back)}, poppedBy userId per entry
+BubbleChanged.Name = "BubbleChanged" -- server -> clients: {id (popped) or -id (grew back)}, poppedBy userId, variant per entry
 BubbleChanged.Parent = remotes
 local GetPopped = Instance.new("RemoteFunction")
-GetPopped.Name = "GetPopped" -- client -> server: list of popped ids right now
+GetPopped.Name = "GetPopped" -- client -> server: { popped = {ids}, variantIds = {ids}, variantKinds = {variant} }
 GetPopped.Parent = remotes
 remotes.Parent = ReplicatedStorage
 
@@ -210,21 +212,39 @@ remotes.Parent = ReplicatedStorage
 local poppedAt: { [number]: number } = {} -- id -> os.clock() when popped
 local pending: { number } = {} -- changes to send
 local pendingBy: { number } = {}
+local pendingKind: { number } = {}
+
+-- Which bubbles are rare (Config/Variants). Missing = normal. Rolled at start and every regrow.
+local variantOf: { [number]: number } = {}
+local rng = Random.new()
+local function rollVariant(id: number)
+	local k = VariantRules.roll(Variants, rng:NextNumber())
+	variantOf[id] = if k > 0 then k else nil
+end
+for id = 1, COUNT do
+	rollVariant(id)
+end
 
 local function queue(change, userId)
 	table.insert(pending, change)
 	table.insert(pendingBy, userId)
+	table.insert(pendingKind, variantOf[math.abs(change)] or 0)
 end
 
 local lastClick: { [Player]: number } = {}
 local stompLimit: { [Player]: (number) -> boolean } = {}
 local clickLimit: { [Player]: (number) -> boolean } = {}
 
-local function addPop(player: Player)
+-- Count the pop and pay its coins (rare bubbles pay more)
+local function addPop(player: Player, id: number)
 	local stats = player:FindFirstChild("leaderstats")
 	local v = stats and stats:FindFirstChild("Pops")
 	if v then
 		v.Value += 1
+	end
+	local c = stats and stats:FindFirstChild("Coins")
+	if c then
+		c.Value += VariantRules.coins(Variants, variantOf[id])
 	end
 end
 
@@ -237,7 +257,7 @@ end
 -- A refused pop the client already showed: tell just that client to put it back
 local function refuse(player: Player, id: number)
 	if not poppedAt[id] then
-		BubbleChanged:FireClient(player, { -id }, { 0 })
+		BubbleChanged:FireClient(player, { -id }, { 0 }, { variantOf[id] or 0 })
 	end
 end
 
@@ -266,7 +286,7 @@ PopRequest.OnServerEvent:Connect(function(player, id)
 	lastClick[player] = now
 	poppedAt[id] = now
 	queue(id, player.UserId)
-	addPop(player)
+	addPop(player, id)
 end)
 
 StompRequest.OnServerEvent:Connect(function(player, ids)
@@ -291,7 +311,7 @@ StompRequest.OnServerEvent:Connect(function(player, ids)
 				if PopRules.stompOk(math.sqrt(dx * dx + dz * dz), r.Position.Y - y0, Pop) then
 					poppedAt[id] = now
 					queue(id, player.UserId)
-					addPop(player)
+					addPop(player, id)
 				else
 					refuse(player, id)
 				end
@@ -301,11 +321,15 @@ StompRequest.OnServerEvent:Connect(function(player, ids)
 end)
 
 GetPopped.OnServerInvoke = function()
-	local list = {}
+	local list, vIds, vKinds = {}, {}, {}
 	for id in poppedAt do
 		table.insert(list, id)
 	end
-	return list
+	for id, k in variantOf do
+		table.insert(vIds, id)
+		table.insert(vKinds, k)
+	end
+	return { popped = list, variantIds = vIds, variantKinds = vKinds }
 end
 
 -- Send changes in small batches; grow bubbles back
@@ -319,14 +343,15 @@ RunService.Heartbeat:Connect(function(dt)
 		for id, t in poppedAt do
 			if now - t >= Pop.regrowSeconds then
 				poppedAt[id] = nil
+				rollVariant(id) -- it may grow back as a different (rare) bubble
 				queue(-id, 0)
 			end
 		end
 	end
 	if sinceFlush >= 0.05 and #pending > 0 then
 		sinceFlush = 0
-		BubbleChanged:FireAllClients(pending, pendingBy)
-		pending, pendingBy = {}, {}
+		BubbleChanged:FireAllClients(pending, pendingBy, pendingKind)
+		pending, pendingBy, pendingKind = {}, {}, {}
 	end
 end)
 
@@ -337,6 +362,9 @@ local function onPlayer(player: Player)
 	local pops = Instance.new("IntValue")
 	pops.Name = "Pops"
 	pops.Parent = stats
+	local coins = Instance.new("IntValue")
+	coins.Name = "Coins"
+	coins.Parent = stats
 	stats.Parent = player
 	clickLimit[player] = PopRules.rateLimiter(10)
 	stompLimit[player] = PopRules.rateLimiter(Pop.stompMaxPerSecond)

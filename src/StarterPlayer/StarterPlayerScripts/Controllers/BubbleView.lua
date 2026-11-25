@@ -10,6 +10,8 @@ local Room = require(Shared.Config.Room)
 local Pop = require(Shared.Config.Pop)
 local Models = require(Shared.Config.Models)
 local RoomLayout = require(Shared.Rules.RoomLayout)
+local Variants = require(Shared.Config.Variants)
+local VariantRules = require(Shared.Rules.Variants)
 local Sfx = require(script.Parent.Sfx)
 
 local BubbleView = {}
@@ -64,6 +66,14 @@ end
 local look = Room.looks and Room.looks[1] or { name = "Cartoon" }
 local tears: { [number]: BasePart } = {}
 local shines: { [number]: BasePart } = {}
+local variantOf: { [number]: number } = {} -- rare bubbles (Config/Variants); missing = normal
+local extras: { [number]: BasePart } = {} -- glow ring (+ sparkles) behind a rare bubble
+local rainbowIds: { [number]: boolean } = {}
+
+local function variantDef(id: number)
+	local k = variantOf[id]
+	return k and Variants.list[k] or nil
+end
 local applyLighting: () -> ()
 
 -- which way is "up the bubble" for the shine spot: towards the sky on walls, a fixed corner on the floor
@@ -74,11 +84,29 @@ for id, cf in frames do
 	shineDir[id] = d.Magnitude > 0.5 and d.Unit or Vector3.new(-0.7071, 0, -0.7071)
 end
 
-local function intactTransparency(): number
+local function intactTransparency(id: number?): number
+	local v = id and variantDef(id)
+	if v then
+		return v.transparency or 0
+	end
 	return look.plain and look.bubbleTransparency or Room.colors.bubbleTransparency
 end
 
-local function styleIntact(p: BasePart)
+local function styleVariant(p: BasePart, id: number?)
+	local v = id and variantDef(id)
+	if not v then
+		return
+	end
+	if p:IsA("MeshPart") then
+		p.TextureID = ""
+	end
+	p.Color = color(v.color)
+	p.Material = Enum.Material.Glass
+	p.Reflectance = v.reflectance or 0.3
+	p.CastShadow = false
+end
+
+local function styleIntact(p: BasePart, id: number?)
 	if look.plain then
 		if p:IsA("MeshPart") then
 			p.TextureID = ""
@@ -96,6 +124,7 @@ local function styleIntact(p: BasePart)
 		p.Material = Enum.Material.SmoothPlastic
 		p.Reflectance = intactTemplate and 0 or 0.08
 	end
+	styleVariant(p, id)
 end
 
 -- Shape of an intact bubble: side = sideways scale, up = height scale (1, 1 = normal).
@@ -129,6 +158,71 @@ local function newShine(id: number)
 	m.Parent = sh
 	shines[id] = sh
 end
+
+-- Rare bubbles: a glowing ring on the sheet behind them, glitter, and (rainbow) changing colours
+local function updateExtras(id: number)
+	local v = variantDef(id)
+	local want = v ~= nil and not isPopped[id]
+	local ring = extras[id]
+	if want and v then
+		if not ring then
+			ring = Instance.new("Part")
+			ring.Name = "Glow"
+			ring.Anchored = true
+			ring.CanCollide = false
+			ring.CanQuery = false
+			ring.CanTouch = false
+			ring.CastShadow = false
+			ring.Material = Enum.Material.Neon
+			ring.Shape = Enum.PartType.Cylinder
+			local d = INTACT_SIZE.X * 1.22
+			ring.Size = Vector3.new(0.02, d, d)
+			ring.CFrame = frames[id] * CFrame.new(0, 0.015, 0) * CFrame.Angles(0, 0, math.pi / 2)
+			local at = Instance.new("Attachment")
+			at.Position = Vector3.new(BubbleView.height * 0.6, 0, 0) -- out from the sheet (ring's X = bubble's up)
+			at.Parent = ring
+			local e = Instance.new("ParticleEmitter")
+			e.Name = "Sparkle"
+			e.Texture = "rbxasset://textures/particles/sparkles_main.dds"
+			e.Lifetime = NumberRange.new(0.4, 0.8)
+			e.Speed = NumberRange.new(0.3, 0.8)
+			e.SpreadAngle = Vector2.new(180, 180)
+			e.LightEmission = 1
+			e.Size = NumberSequence.new({ NumberSequenceKeypoint.new(0, 0.16 * K), NumberSequenceKeypoint.new(1, 0) })
+			e.Parent = at
+			extras[id] = ring
+		end
+		ring.Color = color(v.glow or v.color)
+		ring.Transparency = 0.55
+		local e = ring:FindFirstChild("Sparkle", true) :: ParticleEmitter
+		e.Color = ColorSequence.new(color(v.sparkle or { 255, 255, 255 }))
+		e.Rate = v.sparkleRate or 4
+		rainbowIds[id] = v.rainbow == true or nil
+		ring.Parent = folder
+	elseif ring then
+		ring.Parent = nil
+		rainbowIds[id] = nil
+	end
+end
+
+-- rainbow bubbles slowly cycle through every colour
+game:GetService("RunService").Heartbeat:Connect(function()
+	if next(rainbowIds) == nil then
+		return
+	end
+	local hue = (os.clock() * 0.25) % 1
+	for id in rainbowIds do
+		local p = intact[id]
+		if p and not isPopped[id] then
+			local h = (hue + id * 0.013) % 1
+			p.Color = Color3.fromHSV(h, 0.75, 1)
+			local ring = extras[id]
+			if ring then
+				ring.Color = Color3.fromHSV((h + 0.5) % 1, 0.6, 1)
+			end
+		end
+	end
+end)
 
 -- shine spots only on unpopped bubbles, and only in a look that has them
 local function updateShine(id: number)
@@ -165,8 +259,8 @@ local function newIntact(id: number)
 	p.CanTouch = false
 	p.CanQuery = true
 	p.CastShadow = false
-	styleIntact(p)
-	p.Transparency = intactTransparency()
+	styleIntact(p, id)
+	p.Transparency = intactTransparency(id)
 	p:SetAttribute("Id", id)
 	intact[id] = p
 	setShape(id, 1, 1)
@@ -191,6 +285,7 @@ local function newPopped(id: number): Instance
 		m:SetAttribute("Size", m.Size)
 		m.CFrame = frames[id] * turn(id) * CFrame.new(v3(Models.popped[k].center) * K)
 		m:SetAttribute("Texture", m.TextureID)
+		m:SetAttribute("BaseColor", m.Color)
 		m.Parent = folder
 		return m
 	end
@@ -253,9 +348,17 @@ local function stylePopped(id: number, model: Instance)
 	else
 		model.TextureID = model:GetAttribute("Texture") or ""
 		model.Transparency = 0
+		model.Color = model:GetAttribute("BaseColor") or model.Color
 		if tears[id] then
 			tears[id].Parent = nil
 		end
+	end
+	-- a popped rare bubble keeps its colour, so you can see where it was
+	local v = variantDef(id)
+	if v then
+		model.TextureID = ""
+		model.Color = v.rainbow and Color3.fromHSV((id * 0.013) % 1, 0.6, 1) or color(v.color)
+		model.Transparency = 0.15
 	end
 end
 
@@ -351,6 +454,7 @@ function BubbleView.pop(id: number, kind: string)
 	p.Transparency = 1
 	p.CanQuery = false
 	updateShine(id)
+	updateExtras(id)
 	setShape(id, 1, 1)
 	local model = popped[id] or newPopped(id)
 	popped[id] = model
@@ -362,7 +466,23 @@ function BubbleView.pop(id: number, kind: string)
 	punch(model)
 	local cf = frames[id] * CFrame.new(0, BubbleView.height * 0.4, 0)
 	fxAt.WorldCFrame = cf
-	bits:Emit(kind == "other" and 4 or 9)
+	local v = variantDef(id)
+	if v then
+		-- jackpot: a big burst in the bubble's colour, a chime and the coins it paid
+		local c = v.rainbow and Color3.fromHSV(math.random(), 0.7, 1) or color(v.sparkle or v.color)
+		bits.Color = ColorSequence.new(Color3.new(1, 1, 1), c)
+		bits:Emit(kind == "other" and 10 or 30)
+		bits.Color = ColorSequence.new(Color3.new(1, 1, 1), BUBBLE_COLOR)
+		if kind ~= "other" then
+			Sfx.play("rarePop")
+			BubbleView.floatText(cf.Position, "+" .. VariantRules.coins(Variants, variantOf[id]), c, true)
+		end
+	else
+		bits:Emit(kind == "other" and 4 or 9)
+		if kind == "click" then
+			BubbleView.floatText(cf.Position, "+" .. Variants.baseCoins, Color3.fromRGB(255, 225, 90), false)
+		end
+	end
 	puff:Emit(kind == "other" and 1 or 2)
 	if kind == "click" then
 		Sfx.play("pop")
@@ -389,9 +509,11 @@ function BubbleView.regrow(id: number)
 		tears[id].Parent = nil
 	end
 	local p = intact[id]
-	p.Transparency = intactTransparency()
+	styleIntact(p, id)
+	p.Transparency = intactTransparency(id)
 	p.CanQuery = true
 	updateShine(id)
+	updateExtras(id)
 	local t0 = os.clock()
 	local conn
 	conn = game:GetService("RunService").Heartbeat:Connect(function()
@@ -471,9 +593,9 @@ function BubbleView.setLook(index: number): string
 	local looks = Room.looks or { { name = "Cartoon" } }
 	look = looks[((index - 1) % #looks) + 1]
 	for id, p in intact do
-		styleIntact(p)
+		styleIntact(p, id)
 		if not isPopped[id] then
-			p.Transparency = intactTransparency()
+			p.Transparency = intactTransparency(id)
 		end
 	end
 	for id, model in popped do
@@ -516,15 +638,79 @@ function BubbleView.setLook(index: number): string
 	return look.name
 end
 
--- Server sync: changes = { id (popped) or -id (grew back) }
-function BubbleView.apply(changes: { number }, by: { number }, myUserId: number)
+-- Make a bubble rare (k = Config/Variants index) or normal (k = 0)
+function BubbleView.setVariant(id: number, k: number)
+	if not intact[id] then
+		return
+	end
+	local new = if Variants.list[k] then k else nil
+	if variantOf[id] == new then
+		return
+	end
+	variantOf[id] = new
+	if not new then
+		rainbowIds[id] = nil
+	end
+	if not isPopped[id] then
+		local p = intact[id]
+		styleIntact(p, id)
+		p.Transparency = intactTransparency(id)
+		updateExtras(id)
+	end
+end
+
+-- "+5" floating up from a popped bubble (big = rare)
+function BubbleView.floatText(at: Vector3, text: string, col: Color3, big: boolean)
+	local anchor = Instance.new("Part")
+	anchor.Anchored = true
+	anchor.CanCollide = false
+	anchor.CanQuery = false
+	anchor.CanTouch = false
+	anchor.Transparency = 1
+	anchor.Size = Vector3.one * 0.1
+	anchor.CFrame = CFrame.new(at)
+	local bb = Instance.new("BillboardGui")
+	bb.Size = UDim2.fromScale(big and 3 or 1.4, big and 1.5 or 0.7)
+	bb.AlwaysOnTop = true
+	bb.LightInfluence = 0
+	bb.Parent = anchor
+	local t = Instance.new("TextLabel")
+	t.Size = UDim2.fromScale(1, 1)
+	t.BackgroundTransparency = 1
+	t.Font = Enum.Font.FredokaOne
+	t.TextScaled = true
+	t.Text = text
+	t.TextColor3 = col
+	local st = Instance.new("UIStroke")
+	st.Thickness = big and 3 or 2
+	st.Color = Color3.fromRGB(20, 30, 70)
+	st.Parent = t
+	t.Parent = bb
+	anchor.Parent = workspace
+	local rise = big and 2.2 or 1.2
+	TweenService:Create(anchor, TweenInfo.new(big and 1.1 or 0.7, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), { CFrame = CFrame.new(at + Vector3.new(0, rise, 0)) }):Play()
+	TweenService:Create(t, TweenInfo.new(big and 1.1 or 0.7, Enum.EasingStyle.Quad, Enum.EasingDirection.In), { TextTransparency = 1 }):Play()
+	TweenService:Create(st, TweenInfo.new(big and 1.1 or 0.7, Enum.EasingStyle.Quad, Enum.EasingDirection.In), { Transparency = 1 }):Play()
+	game:GetService("Debris"):AddItem(anchor, big and 1.2 or 0.8)
+end
+
+-- Server sync: changes = { id (popped) or -id (grew back) }, kinds = variant per entry
+function BubbleView.apply(changes: { number }, by: { number }, kinds: { number }?, myUserId: number)
 	for i, c in changes do
+		local k = kinds and kinds[i] or 0
 		if c > 0 then
 			if not isPopped[c] then
+				BubbleView.setVariant(c, k)
 				BubbleView.pop(c, by[i] == myUserId and "stomp" or "other")
 			end
 		else
-			BubbleView.regrow(-c)
+			if isPopped[-c] then
+				-- the variant is set as it grows back, so a new rare bubble appears
+				variantOf[-c] = if Variants.list[k] then k else nil
+				BubbleView.regrow(-c)
+			else
+				BubbleView.setVariant(-c, k)
+			end
 		end
 	end
 end

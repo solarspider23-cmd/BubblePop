@@ -20,7 +20,8 @@ A Roblox simulator for kids 8-14: pop bubble wrap for coins, upgrade your bag, t
 - Server `Main.server.lua`: builds the room and sheets, tracks popped ids, checks every pop (distance, press time, rate limits), grows bubbles back, `leaderstats.Pops`.
 - Client: `BubbleView` draws bubbles locally (placeholder squashed spheres until the Blender meshes are uploaded) and plays pop / grow-back animations; `Popper` is the stick view model, press-squeeze-pop animation and hold-to-keep-popping; `Stomp` pops floor bubbles underfoot; `Hud` crosshair, counter, phone POP button.
 - Real meshes in game (2026-11-24): place published (placeId 130268639532321). Server loads the uploaded models with InsertService into `ReplicatedStorage.BubbleAssets`; clients clone them (placeholders if missing). Ids in `Config/Models.lua` (Blue textures only so far).
-- Not yet: coins, bag, recycler, hub, pads, upgrades, saves.
+- Bubble variants (2026-11-25): `Config/Variants.lua` (Gold 1/50 = 5 coins, Diamond 1/500 = 25, Rainbow 1/5000 = 100; normal = 1), pure `Rules/Variants.lua` + `tests/variant_tests.luau`. Server rolls every bubble's variant at start and again on each regrow, pays coins per pop (`leaderstats.Coins`); BubbleChanged carries the variant per entry, GetPopped returns { popped, variantIds, variantKinds }. Client: glow ring + glitter, rainbow colour cycle, rare pop burst + chime (Sfx `rarePop`), floating "+N", COINS counter.
+- Not yet: bag, recycler selling, hub, pads, upgrades, saves (coins reset on rejoin).
 
 ## Build and test
 

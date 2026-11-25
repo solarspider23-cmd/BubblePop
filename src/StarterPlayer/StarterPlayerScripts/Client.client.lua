@@ -20,16 +20,19 @@ BubbleView.build()
 
 -- listen first, then ask for the current state, so nothing is missed in between
 local BubbleChanged = remotes:WaitForChild("BubbleChanged") :: RemoteEvent
-BubbleChanged.OnClientEvent:Connect(function(changes, by)
+BubbleChanged.OnClientEvent:Connect(function(changes, by, kinds)
 	if type(changes) == "table" and type(by) == "table" then
-		BubbleView.apply(changes, by, player.UserId)
+		BubbleView.apply(changes, by, if type(kinds) == "table" then kinds else nil, player.UserId)
 	end
 end)
 local ok, list = pcall(function()
 	return (remotes:WaitForChild("GetPopped") :: RemoteFunction):InvokeServer()
 end)
 if ok and type(list) == "table" then
-	for _, id in list do
+	for i, id in list.variantIds or {} do
+		BubbleView.setVariant(id, list.variantKinds[i])
+	end
+	for _, id in list.popped or {} do
 		BubbleView.pop(id, "quiet")
 	end
 end

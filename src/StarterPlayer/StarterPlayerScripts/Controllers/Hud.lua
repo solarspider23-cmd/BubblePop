@@ -86,6 +86,39 @@ local function watchPops()
 end
 task.spawn(watchPops)
 
+-- Coins (top left)
+local coinsLabel = Instance.new("TextLabel")
+coinsLabel.AnchorPoint = Vector2.new(0, 0)
+coinsLabel.Position = UDim2.new(0, 24, 0, 46)
+coinsLabel.Size = UDim2.fromOffset(280, 50)
+coinsLabel.BackgroundTransparency = 1
+coinsLabel.Font = Enum.Font.FredokaOne
+coinsLabel.TextScaled = true
+coinsLabel.TextXAlignment = Enum.TextXAlignment.Left
+coinsLabel.TextColor3 = Color3.fromRGB(255, 215, 60)
+coinsLabel.Text = "COINS: 0"
+local coinsStroke = Instance.new("UIStroke")
+coinsStroke.Thickness = 3
+coinsStroke.Color = Color3.fromRGB(90, 50, 0)
+coinsStroke.Parent = coinsLabel
+local coinsScale = Instance.new("UIScale")
+coinsScale.Parent = coinsLabel
+coinsLabel.Parent = gui
+task.spawn(function()
+	local stats = player:WaitForChild("leaderstats")
+	local coins = stats:WaitForChild("Coins") :: IntValue
+	local last = coins.Value
+	local function show()
+		coinsLabel.Text = "COINS: " .. coins.Value
+		local jump = coins.Value - last
+		last = coins.Value
+		coinsScale.Scale = jump >= 5 and 1.4 or 1.12
+		TweenService:Create(coinsScale, TweenInfo.new(jump >= 5 and 0.3 or 0.12, Enum.EasingStyle.Back), { Scale = 1 }):Play()
+	end
+	coins.Changed:Connect(show)
+	show()
+end)
+
 -- Hint
 local hint = Instance.new("TextLabel")
 hint.AnchorPoint = Vector2.new(0.5, 1)
