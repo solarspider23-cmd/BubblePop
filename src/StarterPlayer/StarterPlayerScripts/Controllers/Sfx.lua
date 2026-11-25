@@ -10,7 +10,19 @@ local Sfx = {}
 local holder: BasePart? = nil
 local lastPlayed: { [string]: number } = {}
 
-local function source(def): string
+local lastTake: { [string]: number } = {}
+
+local function source(def, key: string): string
+	-- several takes: pick a random one, never the same twice in a row
+	if def.ids and #def.ids > 0 then
+		local n = #def.ids
+		local k = math.random(n)
+		if n > 1 and k == lastTake[key] then
+			k = k % n + 1
+		end
+		lastTake[key] = k
+		return "rbxassetid://" .. def.ids[k]
+	end
 	if def.id and def.id ~= 0 then
 		return "rbxassetid://" .. def.id
 	end
@@ -21,7 +33,7 @@ end
 local overrides: { [string]: any } = {}
 function Sfx.override(key: string, def)
 	local base = Sounds[key]
-	overrides[key] = setmetatable({ id = def.id, pitch = def.pitch }, { __index = base })
+	overrides[key] = setmetatable({ id = def.id or 0, ids = def.ids or false, pitch = def.pitch }, { __index = base })
 end
 
 -- play(key) = 2D (your own pops); play(key, position) = 3D at that spot (other players' pops)
@@ -30,7 +42,7 @@ function Sfx.play(key: string, position: Vector3?)
 	if not def then
 		return
 	end
-	local id = source(def)
+	local id = source(def, key)
 	if id == "" then
 		return
 	end

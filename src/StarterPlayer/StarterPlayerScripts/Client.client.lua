@@ -38,10 +38,10 @@ UserInputService.MouseIconEnabled = false -- the Hud draws its own crosshair
 Popper.start(remotes)
 Stomp.start(remotes)
 
--- Test-room switches: L = look, 1-6 = pop sound
+-- Test-room switches: L = look, 1-9 = pop sound
 local lookIndex = #(Room.looks or {}) -- start on the newest look
 BubbleView.setLook(lookIndex)
-local keys = { Enum.KeyCode.One, Enum.KeyCode.Two, Enum.KeyCode.Three, Enum.KeyCode.Four, Enum.KeyCode.Five, Enum.KeyCode.Six }
+local keys = { Enum.KeyCode.One, Enum.KeyCode.Two, Enum.KeyCode.Three, Enum.KeyCode.Four, Enum.KeyCode.Five, Enum.KeyCode.Six, Enum.KeyCode.Seven, Enum.KeyCode.Eight, Enum.KeyCode.Nine }
 UserInputService.InputBegan:Connect(function(input, processed)
 	if processed then
 		return
@@ -55,7 +55,7 @@ UserInputService.InputBegan:Connect(function(input, processed)
 		local opt = Sounds.popOptions and Sounds.popOptions[i]
 		if input.KeyCode == k and opt then
 			Sfx.override("pop", opt)
-			Sfx.override("stompPop", { id = opt.id, pitch = (opt.pitch or 1) * 0.85 })
+			Sfx.override("stompPop", { id = opt.id, ids = opt.ids, pitch = (opt.pitch or 1) * 0.85 })
 			Sfx.override("otherPop", opt)
 			Hud.toast("Pop sound " .. i .. ": " .. opt.name)
 			Sfx.play("pop")
