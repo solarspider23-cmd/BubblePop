@@ -7,17 +7,17 @@ return {
 	baseCoins = 1,
 	list = {
 		{
-			key = "Gold", chance = 1 / 50, coins = 5,
+			key = "Gold", chance = 1 / 200, coins = 5,
 			color = { 255, 185, 25 }, transparency = 0.05, reflectance = 0.45,
 			glow = { 255, 215, 80 }, sparkle = { 255, 240, 150 }, sparkleRate = 4,
 		},
 		{
-			key = "Diamond", chance = 1 / 500, coins = 25,
+			key = "Diamond", chance = 1 / 2000, coins = 25,
 			color = { 170, 245, 255 }, transparency = 0.15, reflectance = 0.6,
 			glow = { 120, 230, 255 }, sparkle = { 230, 255, 255 }, sparkleRate = 10,
 		},
 		{
-			key = "Rainbow", chance = 1 / 5000, coins = 100,
+			key = "Rainbow", chance = 1 / 20000, coins = 100,
 			color = { 255, 90, 200 }, transparency = 0.05, reflectance = 0.4,
 			glow = { 255, 255, 255 }, sparkle = { 255, 255, 255 }, sparkleRate = 16, rainbow = true,
 		},
