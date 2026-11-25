@@ -1,0 +1,22 @@
+{
+ "Bubble_Intact": {
+  "size": [
+   1.123,
+   0.48,
+   1.1238
+  ],
+  "center": [
+   -0.0022,
+   0.24,
+   -0.0018
+  ],
+  "tris": 98,
+  "origin": "bottom centre of footprint",
+  "textures": [
+   "Bubble_Intact_Blue.png",
+   "Bubble_Intact_Pink.png",
+   "Bubble_Intact_Gold.png",
+   "Bubble_Intact_Neon.png"
+  ]
+ }
+}

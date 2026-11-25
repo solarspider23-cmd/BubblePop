@@ -1,0 +1,17 @@
+{
+ "Bubble_Outline": {
+  "size": [
+   1.1826,
+   0.51,
+   1.1834
+  ],
+  "center": [
+   -0.0022,
+   0.255,
+   -0.0018
+  ],
+  "tris": 98,
+  "origin": "bottom centre of footprint",
+  "note": "optional inverted hull for Bubble_Intact, same origin; dark SmoothPlastic or Neon, no texture"
+ }
+}
