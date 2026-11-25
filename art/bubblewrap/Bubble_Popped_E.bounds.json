@@ -1,0 +1,22 @@
+{
+ "Bubble_Popped_E": {
+  "size": [
+   1.13,
+   0.1712,
+   1.13
+  ],
+  "center": [
+   0.0,
+   0.0856,
+   -0.0
+  ],
+  "tris": 106,
+  "origin": "bottom centre of footprint",
+  "textures": [
+   "Bubble_Popped_E_Blue.png",
+   "Bubble_Popped_E_Pink.png",
+   "Bubble_Popped_E_Gold.png",
+   "Bubble_Popped_E_Neon.png"
+  ]
+ }
+}

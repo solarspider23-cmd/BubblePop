@@ -65,6 +65,12 @@ function Popper.start(remotes: Folder)
 	local raycast = RaycastParams.new()
 	raycast.FilterType = Enum.RaycastFilterType.Include
 	raycast.FilterDescendantsInstances = { BubbleView.folder }
+	local solid = RaycastParams.new() -- walls, sheets, floor (not you, not the stick)
+	solid.FilterType = Enum.RaycastFilterType.Include
+	solid.FilterDescendantsInstances = { workspace:WaitForChild("Room") }
+	local near = OverlapParams.new()
+	near.FilterType = Enum.RaycastFilterType.Include
+	near.FilterDescendantsInstances = { BubbleView.folder }
 
 	local holding = 0 -- number of inputs holding "poke" down
 	local press: { id: number, t0: number, creaked: boolean }? = nil
@@ -106,7 +112,23 @@ function Popper.start(remotes: Folder)
 		if id and BubbleView.isIntact(id) then
 			return id
 		end
-		return nil
+		-- Nothing right under the crosshair (e.g. you just popped it): take the nearest bubble
+		-- next to where you're looking, so holding the button keeps popping.
+		local surface = workspace:Raycast(cf.Position, cf.LookVector * Pop.reach, solid)
+		if not surface then
+			return nil
+		end
+		local best, bestDist = nil, Pop.stickyRadius + 0.6 -- 0.6 = about half a bubble
+		for _, part in workspace:GetPartBoundsInRadius(surface.Position, Pop.stickyRadius, near) do
+			local pid = BubbleView.idOf(part)
+			if pid and BubbleView.isIntact(pid) then
+				local d = (BubbleView.frame(pid).Position - surface.Position).Magnitude
+				if d < bestDist then
+					best, bestDist = pid, d
+				end
+			end
+		end
+		return best
 	end
 
 	-- top of the bubble's dome right now (follows the squash)

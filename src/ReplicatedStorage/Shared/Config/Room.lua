@@ -29,16 +29,29 @@ return {
 		bubbleTransparency = 0.1,
 		popped = rgb(140, 205, 250),
 		tear = rgb(14, 36, 96),
-		sheet = rgb(28, 88, 180),
-		wall = rgb(20, 60, 130),
-		floor = rgb(20, 60, 130),
+		sheet = rgb(214, 220, 230), -- light grey film so the blue bubbles stand out
+		wall = rgb(150, 156, 168),
+		floor = rgb(130, 136, 148),
 		ceiling = rgb(245, 245, 250),
+	},
+
+	-- Room lighting (bright and clear, so every bubble reads)
+	lighting = {
+		brightness = 1,
+		ambient = rgb(135, 140, 155),
+		exposure = 0,
+		contrast = 0.1,
+		saturation = 0.1,
+		lampRange = 18,
+		lampBrightness = 0.5,
 	},
 
 	-- Looks to compare in the test room (press L in game). "Cartoon" = the colours above with
 	-- the painted textures; "Clear" = plain see-through plastic like real bubble wrap.
+	-- A look may set sheet / wall / floor colours; anything it leaves out uses `colors`.
 	looks = {
 		{ name = "Cartoon" },
+		{ name = "Cartoon (all blue)", sheet = rgb(28, 88, 180), wall = rgb(20, 60, 130), floor = rgb(20, 60, 130) },
 		{
 			name = "Clear",
 			plain = true,

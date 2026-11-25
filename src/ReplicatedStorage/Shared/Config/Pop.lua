@@ -4,6 +4,7 @@ return {
 	popTime = 0.56, -- seconds from click to POP (the press/squeeze). Upgrades will lower this.
 	reach = 9, -- studs from the camera the tool can poke
 	aimRadius = 0.25, -- aim forgiveness: the crosshair picks a bubble this close to its line
+	stickyRadius = 0.75, -- holding on a popped spot moves on to a neighbour this close
 	reachSlack = 5, -- extra distance the server allows (camera vs body position, lag)
 	timeTolerance = 0.12, -- the server accepts pops this much faster than popTime (lag)
 

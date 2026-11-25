@@ -83,8 +83,8 @@ for x = -half + lightStep / 2, half - lightStep / 2, lightStep do
 		local panel = block("Light", Vector3.new(4, 0.2, 4), CFrame.new(x, y0 + height - 0.1, z), Color3.fromRGB(255, 250, 235), Enum.Material.Neon)
 		panel.CanCollide = false
 		local l = Instance.new("PointLight")
-		l.Range = 22
-		l.Brightness = 0.9
+		l.Range = Room.lighting.lampRange
+		l.Brightness = Room.lighting.lampBrightness
 		l.Shadows = false
 		l.Parent = panel
 	end
@@ -168,10 +168,16 @@ end
 
 world.Parent = workspace
 
-Lighting.Ambient = Color3.fromRGB(120, 130, 150)
-Lighting.OutdoorAmbient = Color3.fromRGB(140, 150, 170)
-Lighting.Brightness = 1
+local lit = Room.lighting
+Lighting.Ambient = color(lit.ambient)
+Lighting.OutdoorAmbient = color(lit.ambient)
+Lighting.Brightness = lit.brightness
+Lighting.ExposureCompensation = lit.exposure
 Lighting.ClockTime = 14
+local cc = Instance.new("ColorCorrectionEffect")
+cc.Contrast = lit.contrast
+cc.Saturation = lit.saturation
+cc.Parent = Lighting
 
 ---------------------------------------------------------------- remotes
 local remotes = Instance.new("Folder")

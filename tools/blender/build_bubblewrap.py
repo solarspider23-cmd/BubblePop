@@ -4,7 +4,10 @@
 #
 #   /Applications/Blender.app/Contents/MacOS/Blender -b -P tools/blender/build_bubblewrap.py
 #   (add "-- fast" after the script for quick low-sample previews,
-#    "-- noprev" to only build + export)
+#    "-- noprev" to only build + export,
+#    "-- popmix" to only rebuild/export the popped variants D..J and render
+#    the popped lineup + mixed popped wall; A..C, intact, outline and sheet
+#    files are then left untouched and their textures read from disk)
 #
 # Conventions copied from ~/Documents/StealAFish/tools/blender (ckit.py):
 #   * 1 unit = 1 stud. Blender +Z is up (Roblox +Y).
@@ -23,6 +26,10 @@
 #   Bubble_Popped_A/B/C  deflated squishy pancake with a rounded tear (slit,
 #                     3-way burst, crooked slit). Smooth shading. Toon texture
 #                     per zone: Bubble_Popped_<X>_<Zone>.png.
+#   Bubble_Popped_D..J  seven more popped looks (popped_more.py, same footprint,
+#                     <= 120 tris each): half-deflated, 5-petal star burst,
+#                     long rip with a lifted flap, pin-prick cup, crumpled flat,
+#                     caved-in cup, shredded. Textures Bubble_Popped_<X>_<Zone>.png.
 #   Sheet_Base        6 x 6 stud film tile for a 5 x 5 grid (1.2 stud spacing),
 #                     0.04 thick, perforated overlap flap on +X / +Y. Tiles
 #                     every 6 studs on floors and walls. Untextured (use Color).
@@ -40,13 +47,16 @@ from mathutils import Matrix, Vector
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
-ART = os.path.join(ROOT, "art", "bubblewrap")
-PREV = os.path.join(ROOT, "art", "previews")
+ART = os.environ.get("BUBBLEWRAP_OUT") or os.path.join(ROOT, "art", "bubblewrap")   # env override = test builds
+PREV = os.path.join(os.environ["BUBBLEWRAP_OUT"], "previews") if os.environ.get("BUBBLEWRAP_OUT") else os.path.join(ROOT, "art", "previews")
 os.makedirs(ART, exist_ok=True)
 os.makedirs(PREV, exist_ok=True)
 ARGS = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
 FAST = "fast" in ARGS
 NOPREV = "noprev" in ARGS
+POPMIX = "popmix" in ARGS
+sys.path.insert(0, HERE)
+import popped_more as PM  # noqa: E402
 
 # ---------------------------------------------------------------- dimensions
 R_SKIRT = 0.565      # outer edge of a bubble's footprint (1.13 studs across)
@@ -703,15 +713,29 @@ def main():
     popped, layouts = {}, {}
     for k, p in POPPED.items():
         popped[k], layouts[k] = build_popped("Bubble_Popped_" + k, p)
+    PM.bind(globals())
+    more = PM.build_all()
+    for k, (o, _) in more.items():
+        popped[k] = o
+    ALLPOP = list(POPPED) + list(more)
     sheet = build_sheet()
     sources = [intact, outline] + list(popped.values()) + [sheet]
     for o in [intact] + list(popped.values()):
         problems += check_mesh(o)
 
+    def old_tex(path, fn, *a):
+        # popmix: the uploaded A..C / intact textures stay exactly as they are on disk
+        if POPMIX and os.path.exists(path):
+            return bpy.data.images.load(path)
+        return fn(path, *a)
+
     # textures per zone
-    tex = {z: {"intact": paint_intact(os.path.join(ART, f"Bubble_Intact_{z}.png"), d),
-               "popped": {k: paint_popped(os.path.join(ART, f"Bubble_Popped_{k}_{z}.png"), layouts[k], d) for k in POPPED}}
+    tex = {z: {"intact": old_tex(os.path.join(ART, f"Bubble_Intact_{z}.png"), paint_intact, d),
+               "popped": {k: old_tex(os.path.join(ART, f"Bubble_Popped_{k}_{z}.png"), paint_popped, layouts[k], d) for k in POPPED}}
            for z, d in ZONES.items()}
+    for z, d in ZONES.items():
+        for k, (o, spec) in more.items():
+            tex[z]["popped"][k] = PM.paint(os.path.join(ART, f"Bubble_Popped_{k}_{z}.png"), o, spec, d)
 
     # preview / export materials per zone
     mats = {}
@@ -719,7 +743,7 @@ def main():
         neon = z == "Neon"
         mats[z] = dict(
             intact=roblox_mat(f"{z}_Intact", img=tex[z]["intact"], transp=INTACT_T, rough=0.3),
-            popped={k: roblox_mat(f"{z}_Popped_{k}", img=tex[z]["popped"][k], transp=POPPED_T, rough=0.45) for k in POPPED},
+            popped={k: roblox_mat(f"{z}_Popped_{k}", img=tex[z]["popped"][k], transp=POPPED_T, rough=0.45) for k in ALLPOP},
             sheet=roblox_mat(f"{z}_Sheet", color=d["sheet"], transp=SHEET_TR, rough=0.4),
             outline=roblox_mat(f"{z}_Outline", color=d["outline"], rough=0.8) if not neon else
             roblox_mat(f"{z}_Outline", color=(20, 150, 30), rough=0.8, emit=2.5),   # Neon material outline
@@ -732,6 +756,9 @@ def main():
 
     report = {}
     for o in sources:
+        if POPMIX and o.name[-1] not in more or POPMIX and not o.name.startswith("Bubble_Popped"):
+            report[o.name] = tris(o)
+            continue
         extra = {}
         if o is intact:
             extra["textures"] = [f"Bubble_Intact_{z}.png" for z in ZONES]
@@ -747,7 +774,8 @@ def main():
     print("TRIS", json.dumps(report))
     print("PROBLEMS", problems)
     if NOPREV:
-        bpy.ops.wm.save_as_mainfile(filepath=os.path.join(ART, "bubblewrap.blend"))
+        if not POPMIX:
+            bpy.ops.wm.save_as_mainfile(filepath=os.path.join(ART, "bubblewrap.blend"))
         return
 
     outlines = []
@@ -783,6 +811,10 @@ def main():
         g = bpy.context.active_object
         g.data.materials.append(mat)
         return g
+
+    if POPMIX:
+        popped_previews(dict(popped=popped, more=more, mats=mats, intact=intact, sheet=sheet, ground=ground))
+        return
 
     # 1. hero close-up
     H = Vector((0, 0, 0))
@@ -881,6 +913,8 @@ def main():
     side_by_side([os.path.join(PREV, n) for n in ("bubblewrap_fp_wall_v1.png", "bubblewrap_fp_wall.png", "bubblewrap_fp_wall_outline.png")],
                  os.path.join(PREV, "bubblewrap_wall_v1_vs_v2.png"))
 
+    popped_previews(dict(popped=popped, more=more, mats=mats, intact=intact, sheet=sheet, ground=ground), qa=False)
+
     for src, base in qa:
         lo = Vector([min(v.co[i] for v in src.data.vertices) for i in range(3)])
         hi = Vector([max(v.co[i] for v in src.data.vertices) for i in range(3)])
@@ -893,6 +927,88 @@ def main():
             c = camera(f"QA_{src.name}_{vn}", mid + off, mid, ortho=ext)
             pth = os.path.join(PREV, f"_qa_{src.name}_{vn}.png")
             render(c, pth, (600, 450))
+            paths.append(pth)
+        stitch(paths, os.path.join(PREV, f"qa_{src.name}.png"))
+
+
+def popped_previews(c, qa=True):
+    """Popped lineup A..J head-on + a first-person wall with ~40% popped in a
+    random mix of all ten, randomly turned. qa=True also renders clay QA
+    sheets for D..J (the full build does that in its own QA loop)."""
+    popped, more, mats, intact, sheet, ground = (c[k] for k in ("popped", "more", "mats", "intact", "sheet", "ground"))
+    keys = sorted(popped)
+    mz = mats["Blue"]
+    # 1. lineup: two rows of five on a sheet-coloured pad, camera straight on
+    P = Vector((-300, 0, 0))
+    ground(P + Vector((0, 0, -0.001)), 40, mz["sheet"])
+    txt = roblox_mat("P_Label", color=(255, 255, 255), rough=0.8)
+    for n, k in enumerate(keys):
+        r, col = divmod(n, 5)
+        loc = P + Vector(((col - 2) * 1.5, (0.9 - r * 1.9), SHEET_T))
+        inst(popped[k], mz["popped"][k], None, loc)
+        bpy.ops.object.text_add(location=loc + Vector((0, -0.85, 0.01)))
+        t = bpy.context.active_object
+        t.data.body = k
+        t.data.align_x = "CENTER"
+        t.data.size = 0.32
+        t.data.materials.append(txt)
+    cam_line = camera("CamLineup", P + Vector((0, -0.2, 12)), P + Vector((0, -0.2, 0)), ortho=8.2)
+    cam_line34 = camera("CamLineup34", P + Vector((0, -6.5, 5.2)), P + Vector((0, -0.3, 0)), lens=38)
+
+    # 2. first-person wall, ~40% popped, all ten variants, random turns
+    W = Vector((-300, 80, 0))
+    ground(W + Vector((0, -10, -0.001)), 60)
+    rnd = random.Random(2026)
+    deck = []
+
+    def draw():  # shuffled deck: every variant shows up about equally often
+        if not deck:
+            deck.extend(keys)
+            rnd.shuffle(deck)
+        return deck.pop()
+    for a in range(-2, 3):
+        for b in range(0, 3):
+            e = empty(f"MixWall_{a}_{b}", W + Vector((a * TILE, 0, b * TILE + TILE / 2)), (math.radians(90), 0, 0))
+            inst(sheet, mz["sheet"], e)
+            for i in range(GRID):
+                for j in range(GRID):
+                    x, y = (i - 2) * SPACING, (j - 2) * SPACING
+                    if rnd.random() < 0.4:
+                        k = draw()
+                        inst(popped[k], mz["popped"][k], e, (x, y, SHEET_T), rz=rnd.uniform(0, 2 * math.pi))
+                    else:
+                        inst(intact, mz["intact"], e, (x, y, SHEET_T))
+    cam_mix = camera("CamMixWall", W + Vector((0.3, -4.0, 5.0)), W + Vector((0.3, 0, 4.9)), vfov=70)
+    cam_mix6 = camera("CamMixWall6", W + Vector((0.3, -6.0, 5.0)), W + Vector((0.3, 0, 4.9)), vfov=70)
+
+    render(cam_line, os.path.join(PREV, "bubblewrap_popped_lineup.png"), (1700, 1000))
+    render(cam_line34, os.path.join(PREV, "bubblewrap_popped_lineup_34.png"), (1700, 1000))
+    render(cam_mix, os.path.join(PREV, "bubblewrap_fp_wall_popmix.png"), (1600, 900))
+    crosshair(os.path.join(PREV, "bubblewrap_fp_wall_popmix.png"))
+    render(cam_mix6, os.path.join(PREV, "bubblewrap_fp_wall_popmix_6studs.png"), (1600, 900))
+    crosshair(os.path.join(PREV, "bubblewrap_fp_wall_popmix_6studs.png"))
+    if not qa:
+        return
+    clay = roblox_mat("QA_Clay2", color=(190, 196, 210), rough=0.45)
+    wire = roblox_mat("QA_Wire2", color=(25, 30, 60), rough=0.9)
+    wire.use_backface_culling = False
+    for n, k in enumerate(more):
+        src = popped[k]
+        base = Vector((-500 - n * 30, -300 - n * 30, 0))
+        inst(src, clay, None, base, name="QA_" + src.name)
+        w = inst(src, wire, None, base, name="QAW_" + src.name)
+        w.modifiers.new("Wire", "WIREFRAME").thickness = 0.004
+        lo = Vector([min(v.co[i] for v in src.data.vertices) for i in range(3)])
+        hi = Vector([max(v.co[i] for v in src.data.vertices) for i in range(3)])
+        mid = base + (lo + hi) / 2
+        ext = max(hi.x - lo.x, hi.y - lo.y) * 1.25
+        views = [("front", Vector((0, -10, 0))), ("side", Vector((10, 0, 0))), ("back", Vector((0, 10, 0))),
+                 ("top", Vector((0, -0.001, 10))), ("34", Vector((5, -7, 5)))]
+        paths = []
+        for vn, off in views:
+            cm = camera(f"QA_{src.name}_{vn}", mid + off, mid, ortho=ext)
+            pth = os.path.join(PREV, f"_qa_{src.name}_{vn}.png")
+            render(cm, pth, (600, 450))
             paths.append(pth)
         stitch(paths, os.path.join(PREV, f"qa_{src.name}.png"))
 

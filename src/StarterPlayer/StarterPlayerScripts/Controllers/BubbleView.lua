@@ -375,20 +375,20 @@ function BubbleView.setLook(index: number): string
 		if sheets then
 			for _, sh in sheets:GetChildren() do
 				if sh:IsA("BasePart") then
-					sh.Color = color(look.plain and look.sheet or Room.colors.sheet)
-					sh.Transparency = look.plain and (look.sheetTransparency or 0) or 0
+					sh.Color = color(look.sheet or Room.colors.sheet)
+					sh.Transparency = look.sheetTransparency or 0
 				end
 			end
 		end
 		for _, name in { "WallN", "WallS", "WallW", "WallE" } do
 			local w = room:FindFirstChild(name)
 			if w and w:IsA("BasePart") then
-				w.Color = color(look.plain and look.wall or Room.colors.wall)
+				w.Color = color(look.wall or Room.colors.wall)
 			end
 		end
 		local floor = room:FindFirstChild("Floor")
 		if floor and floor:IsA("BasePart") then
-			floor.Color = color(look.plain and look.floor or Room.colors.floor)
+			floor.Color = color(look.floor or Room.colors.floor)
 		end
 	end
 	return look.name
