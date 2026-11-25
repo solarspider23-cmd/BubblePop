@@ -25,7 +25,7 @@ import time  # noqa: E402
 def upload_decal(studio, sid, user_id, name):
     path = os.path.join(ART, name + ".png")
     req = {"request": {
-        "assetType": "Decal", "displayName": os.path.basename(name), "description": "Steal a Fish " + name,
+        "assetType": "Decal", "displayName": os.path.basename(name), "description": "BubblePop " + name,
         "creationContext": {"creator": {"userId": str(user_id)}},
     }}
     text = call(studio, sid, "open_cloud_invoke", {

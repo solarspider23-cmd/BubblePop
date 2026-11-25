@@ -1,0 +1,19 @@
+{
+ "model": 96857663396623,
+ "moderation": "Approved",
+ "parts": {
+  "Bubble_Popped_B": {
+   "meshId": 131903177130981,
+   "size": [
+    1.1053,
+    0.1098,
+    1.1299
+   ],
+   "position": [
+    0.0,
+    0.0549,
+    0.0
+   ]
+  }
+ }
+}

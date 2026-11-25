@@ -9,7 +9,6 @@ local TweenService = game:GetService("TweenService")
 
 local Shared = ReplicatedStorage:WaitForChild("Shared")
 local Pop = require(Shared.Config.Pop)
-local Room = require(Shared.Config.Room)
 local BubbleView = require(script.Parent.BubbleView)
 local Hud = require(script.Parent.Hud)
 local Sfx = require(script.Parent.Sfx)
@@ -17,7 +16,7 @@ local Sfx = require(script.Parent.Sfx)
 local Popper = {}
 
 local player = Players.LocalPlayer
-local H = Room.bubbleHeight
+local H = BubbleView.height
 
 local GRIP_OFFSET = Vector3.new(0.95, -0.85, -1.5) -- where the hand holds it, from the camera
 local REST_AIM = Vector3.new(0.05, -0.3, -10) -- the stick points at this spot while resting

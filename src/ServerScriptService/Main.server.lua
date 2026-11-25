@@ -63,22 +63,79 @@ for x = -half + lightStep / 2, half - lightStep / 2, lightStep do
 	end
 end
 
+---------------------------------------------------------------- uploaded models
+-- Load each Blender model once and keep its MeshPart in ReplicatedStorage.BubbleAssets for
+-- clients to copy. Anything that fails to load is simply missing: placeholders are used instead.
+local InsertService = game:GetService("InsertService")
+local Models = require(Shared.Config.Models)
+
+local assets = Instance.new("Folder")
+assets.Name = "BubbleAssets"
+
+local function loadMesh(name: string, def, textureId: number?): MeshPart?
+	if not Models.enabled or not def or (def.model or 0) == 0 then
+		return nil
+	end
+	local ok, model = pcall(function()
+		return InsertService:LoadAsset(def.model)
+	end)
+	if not ok or not model then
+		warn("BubblePop: model " .. name .. " didn't load: " .. tostring(model))
+		return nil
+	end
+	local mesh = model:FindFirstChildWhichIsA("MeshPart", true)
+	if not mesh then
+		model:Destroy()
+		return nil
+	end
+	mesh = mesh:Clone()
+	model:Destroy()
+	mesh.Name = name
+	mesh.Anchored = true
+	mesh.CanCollide = false
+	mesh.CanTouch = false
+	mesh.CastShadow = false
+	mesh.Material = Enum.Material.SmoothPlastic
+	if textureId and textureId ~= 0 then
+		mesh.TextureID = "rbxassetid://" .. textureId
+	end
+	mesh.Parent = assets
+	return mesh
+end
+
+local zone = Models.zone
+loadMesh("Intact", Models.intact, Models.intact and Models.intact.texture[zone])
+for i, def in Models.popped or {} do
+	loadMesh("Popped" .. i, def, def.texture[zone])
+end
+local sheetMesh = loadMesh("Sheet", Models.sheet, nil)
+assets.Parent = ReplicatedStorage
+
 -- Bubble wrap sheets (the bubbles themselves are drawn by each client)
 local sheetFolder = Instance.new("Folder")
 sheetFolder.Name = "Sheets"
 sheetFolder.Parent = world
 for _, s in layout.sheets do
-	local p = Instance.new("Part")
-	p.Name = "Sheet"
-	p.Anchored = true
-	p.CanCollide = s.surface ~= "floor" -- the floor slab already holds players up
-	p.CastShadow = false
-	p.Material = Enum.Material.SmoothPlastic
-	p.Color = color(Room.colors.sheet)
-	p.Size = Vector3.new(s.size - 0.02, s.thickness, s.size - 0.02) -- tiny gap: no flicker at seams
 	local n = Vector3.new(s.nx, s.ny, s.nz)
 	local r = Vector3.new(s.rx, s.ry, s.rz)
-	p.CFrame = CFrame.fromMatrix(Vector3.new(s.x, s.y, s.z), r, n)
+	local p: BasePart
+	if sheetMesh then
+		-- the mesh's origin sits under the bubble plane by its top offset
+		local base = Vector3.new(s.x, s.y, s.z) + n * (s.thickness / 2 - Models.sheet.topOffset)
+		local c = Models.sheet.center
+		p = sheetMesh:Clone()
+		p.CFrame = CFrame.fromMatrix(base, r, n) * CFrame.new(c[1], c[2], c[3])
+	else
+		p = Instance.new("Part")
+		p.Size = Vector3.new(s.size - 0.02, s.thickness, s.size - 0.02) -- tiny gap: no flicker at seams
+		p.CFrame = CFrame.fromMatrix(Vector3.new(s.x, s.y, s.z), r, n)
+		p.Material = Enum.Material.SmoothPlastic
+	end
+	p.Name = "Sheet"
+	p.Anchored = true
+	p.CanCollide = false -- the floor slab and walls behind already hold players in
+	p.CastShadow = false
+	p.Color = color(Room.colors.sheet)
 	p.Parent = sheetFolder
 end
 

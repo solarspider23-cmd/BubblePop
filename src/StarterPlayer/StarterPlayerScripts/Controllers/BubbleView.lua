@@ -1,12 +1,14 @@
 -- Draws every bubble on this client and plays the press / pop / grow-back animations.
 -- The server only sends which bubbles are popped; the look lives here.
--- Placeholder shapes for now (squashed spheres); the Blender meshes slot in later.
+-- Uses the uploaded Blender meshes (ReplicatedStorage.BubbleAssets, loaded by the server);
+-- if they're missing it falls back to placeholder squashed spheres.
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local TweenService = game:GetService("TweenService")
 
 local Shared = ReplicatedStorage:WaitForChild("Shared")
 local Room = require(Shared.Config.Room)
 local Pop = require(Shared.Config.Pop)
+local Models = require(Shared.Config.Models)
 local RoomLayout = require(Shared.Rules.RoomLayout)
 local Sfx = require(script.Parent.Sfx)
 
@@ -19,18 +21,36 @@ local bubbles = layout.bubbles
 local function color(c)
 	return Color3.fromRGB(c[1], c[2], c[3])
 end
+local function v3(t)
+	return Vector3.new(t[1], t[2], t[3])
+end
 local BUBBLE_COLOR = color(Room.colors.bubble)
 local POPPED_COLOR = color(Room.colors.popped)
 local TEAR_COLOR = color(Room.colors.tear)
 local W, H, PH = Room.bubbleWidth, Room.bubbleHeight, Room.poppedHeight
+
+-- Real meshes, if the server managed to load them
+local assets = ReplicatedStorage:WaitForChild("BubbleAssets", 15)
+local intactTemplate: MeshPart? = assets and assets:FindFirstChild("Intact") :: MeshPart?
+local poppedTemplates: { MeshPart } = {}
+if assets then
+	for i = 1, #(Models.popped or {}) do
+		local t = assets:FindFirstChild("Popped" .. i)
+		if t then
+			table.insert(poppedTemplates, t :: MeshPart)
+		end
+	end
+end
+local INTACT_SIZE = intactTemplate and v3(Models.intact.size) or Vector3.new(W, H * 2, W)
+local INTACT_CENTER = intactTemplate and v3(Models.intact.center) or Vector3.zero
+BubbleView.height = intactTemplate and Models.intact.size[2] or H
 
 local folder = Instance.new("Folder")
 folder.Name = "Bubbles"
 BubbleView.folder = folder
 
 local intact: { [number]: BasePart } = {}
-local meshes: { [number]: SpecialMesh } = {}
-local popped: { [number]: Model } = {}
+local popped: { [number]: Instance } = {}
 local isPopped: { [number]: boolean } = {}
 local frames: { [number]: CFrame } = {}
 
@@ -39,31 +59,58 @@ for _, b in bubbles do
 	frames[b.id] = CFrame.fromMatrix(Vector3.new(b.x, b.y, b.z), Vector3.new(b.rx, b.ry, b.rz), Vector3.new(b.nx, b.ny, b.nz))
 end
 
+-- Shape of an intact bubble: side = sideways scale, up = height scale (1, 1 = normal).
+-- The bottom stays glued to the sheet.
+local function setShape(id: number, side: number, up: number)
+	local p = intact[id]
+	local scale = Vector3.new(side, up, side)
+	p.Size = INTACT_SIZE * scale
+	p.CFrame = frames[id] * CFrame.new(INTACT_CENTER * scale)
+end
+
 local function newIntact(id: number)
-	local p = Instance.new("Part")
+	local p: BasePart
+	if intactTemplate then
+		p = intactTemplate:Clone()
+	else
+		p = Instance.new("Part")
+		p.Material = Enum.Material.SmoothPlastic
+		p.Color = BUBBLE_COLOR
+		p.Reflectance = 0.08
+		-- a sphere centred on the sheet: the half sticking out is the dome
+		local m = Instance.new("SpecialMesh")
+		m.MeshType = Enum.MeshType.Sphere
+		m.Parent = p
+	end
 	p.Name = "Bubble"
 	p.Anchored = true
 	p.CanCollide = false
 	p.CanTouch = false
 	p.CanQuery = true
 	p.CastShadow = false
-	p.Material = Enum.Material.SmoothPlastic
-	p.Color = BUBBLE_COLOR
 	p.Transparency = Room.colors.bubbleTransparency
-	p.Reflectance = 0.08
-	-- a sphere centred on the sheet: the half sticking out is the dome
-	p.Size = Vector3.new(W, H * 2, W)
-	p.CFrame = frames[id]
-	local m = Instance.new("SpecialMesh")
-	m.MeshType = Enum.MeshType.Sphere
-	m.Parent = p
 	p:SetAttribute("Id", id)
-	p.Parent = folder
 	intact[id] = p
-	meshes[id] = m
+	setShape(id, 1, 1)
+	p.Parent = folder
 end
 
-local function newPopped(id: number): Model
+-- a random-looking but fixed turn per bubble, so the wall doesn't look copy-pasted
+local function turn(id: number): CFrame
+	return CFrame.Angles(0, (id * 2.399) % (math.pi * 2), 0)
+end
+
+local function newPopped(id: number): Instance
+	if #poppedTemplates > 0 then
+		local k = (id % #poppedTemplates) + 1
+		local m = poppedTemplates[k]:Clone()
+		m.Name = "Popped"
+		m.CanQuery = false
+		m:SetAttribute("Size", m.Size)
+		m.CFrame = frames[id] * turn(id) * CFrame.new(v3(Models.popped[k].center))
+		m.Parent = folder
+		return m
+	end
 	local model = Instance.new("Model")
 	model.Name = "Popped"
 	local cf = frames[id]
@@ -82,12 +129,11 @@ local function newPopped(id: number): Model
 	dm.MeshType = Enum.MeshType.Sphere
 	dm.Parent = disc
 	disc.Parent = model
-	-- the dark tear, turned a random way so the wall doesn't look copy-pasted
 	local tear = disc:Clone()
 	tear.Name = "Tear"
 	tear.Color = TEAR_COLOR
 	tear.Size = Vector3.new(0.62, 0.06, 0.2)
-	tear.CFrame = cf * CFrame.Angles(0, (id * 2.399) % math.pi, 0) * CFrame.new(0, PH * 0.75, 0)
+	tear.CFrame = cf * turn(id) * CFrame.new(0, PH * 0.75, 0)
 	tear.Parent = model
 	model.Parent = folder
 	return model
@@ -115,13 +161,12 @@ end
 
 -- During a press: squash 0 = full bubble, 1 = fully pressed. wobble adds a jiggle.
 function BubbleView.setSquash(id: number, s: number, wobble: number)
-	local m = meshes[id]
-	if not m or isPopped[id] then
+	if not intact[id] or isPopped[id] then
 		return
 	end
-	local y = 1 - (1 - Pop.squashHeight) * s
+	local up = 1 - (1 - Pop.squashHeight) * s
 	local side = 1 + (Pop.squashBulge - 1) * s + wobble
-	m.Scale = Vector3.new(side, y, side)
+	setShape(id, side, up)
 end
 
 -- Burst particles (one emitter, moved to each pop)
@@ -162,6 +207,20 @@ fxPart.Parent = workspace
 
 local POP_TWEEN = TweenInfo.new(0.18, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
 
+-- punch: the popped plastic splats out a bit bigger, then settles
+local function punch(model: Instance)
+	if model:IsA("MeshPart") then
+		local size = model:GetAttribute("Size") :: Vector3
+		model.Size = size * Vector3.new(1.3, 2.2, 1.3)
+		TweenService:Create(model, POP_TWEEN, { Size = size }):Play()
+	else
+		local disc = model:FindFirstChild("Disc") :: BasePart
+		local mesh = disc:FindFirstChildOfClass("SpecialMesh") :: SpecialMesh
+		mesh.Scale = Vector3.new(1.35, 2.2, 1.35)
+		TweenService:Create(mesh, POP_TWEEN, { Scale = Vector3.one }):Play()
+	end
+end
+
 -- kind: "click" (your tool), "stomp" (your feet), "other" (someone else), "quiet" (joining, no fx)
 function BubbleView.pop(id: number, kind: string)
 	if isPopped[id] or not intact[id] then
@@ -171,22 +230,17 @@ function BubbleView.pop(id: number, kind: string)
 	local p = intact[id]
 	p.Transparency = 1
 	p.CanQuery = false
-	meshes[id].Scale = Vector3.one
+	setShape(id, 1, 1)
 	local model = popped[id] or newPopped(id)
 	popped[id] = model
 	model.Parent = folder
 	if kind == "quiet" then
 		return
 	end
-	-- punch: the popped plastic splats out a bit bigger, then settles
-	local disc = model:FindFirstChild("Disc") :: BasePart
-	local mesh = disc:FindFirstChildOfClass("SpecialMesh") :: SpecialMesh
-	mesh.Scale = Vector3.new(1.35, 2.2, 1.35)
-	TweenService:Create(mesh, POP_TWEEN, { Scale = Vector3.one }):Play()
-	local cf = frames[id] * CFrame.new(0, H * 0.4, 0)
+	punch(model)
+	local cf = frames[id] * CFrame.new(0, BubbleView.height * 0.4, 0)
 	fxAt.WorldCFrame = cf
-	local n = kind == "other" and 4 or 9
-	bits:Emit(n)
+	bits:Emit(kind == "other" and 4 or 9)
 	puff:Emit(kind == "other" and 1 or 2)
 	if kind == "click" then
 		Sfx.play("pop")
@@ -197,8 +251,9 @@ function BubbleView.pop(id: number, kind: string)
 	end
 end
 
-local GROW_TWEEN = TweenInfo.new(0.35, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
+local GROW_TIME = 0.35
 
+-- grow back: the dome swells from flat with a little overshoot
 function BubbleView.regrow(id: number)
 	if not isPopped[id] then
 		return
@@ -208,11 +263,23 @@ function BubbleView.regrow(id: number)
 	if model then
 		model.Parent = nil
 	end
-	local p, m = intact[id], meshes[id]
+	local p = intact[id]
 	p.Transparency = Room.colors.bubbleTransparency
 	p.CanQuery = true
-	m.Scale = Vector3.new(0.2, 0.05, 0.2)
-	TweenService:Create(m, GROW_TWEEN, { Scale = Vector3.one }):Play()
+	local t0 = os.clock()
+	local conn
+	conn = game:GetService("RunService").Heartbeat:Connect(function()
+		local a = math.clamp((os.clock() - t0) / GROW_TIME, 0, 1)
+		if isPopped[id] then
+			conn:Disconnect()
+			return
+		end
+		local e = TweenService:GetValue(a, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
+		setShape(id, 0.2 + 0.8 * e, 0.05 + 0.95 * e)
+		if a >= 1 then
+			conn:Disconnect()
+		end
+	end)
 end
 
 -- Server sync: changes = { id (popped) or -id (grew back) }

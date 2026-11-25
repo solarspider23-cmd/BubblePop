@@ -18,7 +18,8 @@ A Roblox simulator for kids 8-14: pop bubble wrap for coins, upgrade your bag, t
 - `Rules/RoomLayout.lua` (pure): every bubble's position from the config; a bubble is just its id. `Rules/PopRules.lua` (pure): server checks. Tests: `tests/pop_tests.luau`.
 - Server `Main.server.lua`: builds the room and sheets, tracks popped ids, checks every pop (distance, press time, rate limits), grows bubbles back, `leaderstats.Pops`.
 - Client: `BubbleView` draws bubbles locally (placeholder squashed spheres until the Blender meshes are uploaded) and plays pop / grow-back animations; `Popper` is the stick view model, press-squeeze-pop animation and hold-to-keep-popping; `Stomp` pops floor bubbles underfoot; `Hud` crosshair, counter, phone POP button.
-- Not yet: coins, bag, recycler, hub, pads, upgrades, saves, real meshes (need the place published to upload), real pop sounds.
+- Real meshes in game (2026-11-24): place published (placeId 130268639532321). Server loads the uploaded models with InsertService into `ReplicatedStorage.BubbleAssets`; clients clone them (placeholders if missing). Ids in `Config/Models.lua` (Blue textures only so far).
+- Not yet: coins, bag, recycler, hub, pads, upgrades, saves.
 
 ## Build and test
 

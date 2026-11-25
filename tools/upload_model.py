@@ -46,7 +46,7 @@ def upload(studio, sid, user_id, name):
     if not os.path.exists(path):
         sys.exit("No such file: " + path)
     req = {"request": {
-        "assetType": "Model", "displayName": name, "description": "Steal a Fish " + name,
+        "assetType": "Model", "displayName": name, "description": "BubblePop " + name,
         "creationContext": {"creator": {"userId": str(user_id)}},
     }}
     text = call(studio, sid, "open_cloud_invoke", {
