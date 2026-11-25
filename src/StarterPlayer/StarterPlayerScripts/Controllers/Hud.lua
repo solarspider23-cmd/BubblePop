@@ -123,7 +123,7 @@ end)
 local BagState = require(script.Parent.BagState)
 local bagFrame = Instance.new("Frame")
 bagFrame.Position = UDim2.new(0, 24, 0, 102)
-bagFrame.Size = UDim2.fromOffset(240, 30)
+bagFrame.Size = UDim2.fromOffset(300, 30)
 bagFrame.BackgroundColor3 = Color3.fromRGB(20, 40, 110)
 bagFrame.BackgroundTransparency = 0.25
 local bc = Instance.new("UICorner")
@@ -164,12 +164,12 @@ bagFrame.Parent = gui
 local fullMsg = Instance.new("TextLabel")
 fullMsg.AnchorPoint = Vector2.new(0.5, 0.5)
 fullMsg.Position = UDim2.fromScale(0.5, 0.64)
-fullMsg.Size = UDim2.fromOffset(520, 44)
+fullMsg.Size = UDim2.fromOffset(620, 44)
 fullMsg.BackgroundTransparency = 1
 fullMsg.Font = Enum.Font.FredokaOne
 fullMsg.TextScaled = true
 fullMsg.TextColor3 = Color3.fromRGB(255, 80, 80)
-fullMsg.Text = "BAG FULL! Sell at the recycler"
+fullMsg.Text = "BAG FULL! Sell your plastic at the recycler"
 fullMsg.Visible = false
 local fms = Instance.new("UIStroke")
 fms.Thickness = 3
@@ -182,7 +182,7 @@ fullMsg.Parent = gui
 local function showBag()
 	local n, cap = BagState.count(), BagState.capacity()
 	local worth = player:GetAttribute("BagValue") or 0
-	bagText.Text = ("BAG %d/%d  •  %d coins"):format(n, cap, worth)
+	bagText.Text = ("BAG %d/%d scraps  •  %d coins"):format(n, cap, worth)
 	local full = n >= cap
 	TweenService:Create(bagFill, TweenInfo.new(0.1), { Size = UDim2.fromScale(math.clamp(n / cap, 0, 1), 1) }):Play()
 	bagFill.BackgroundColor3 = full and Color3.fromRGB(255, 70, 70) or Color3.fromRGB(90, 220, 120)
@@ -199,6 +199,19 @@ task.spawn(function()
 		showBag()
 	end
 end)
+
+-- Where scraps fly to (the middle of the bag bar, in screen pixels)
+function Hud.bagScreenPoint(): Vector2
+	-- the HUD ignores the top bar inset, so these are viewport pixels already
+	local p, s = bagFrame.AbsolutePosition, bagFrame.AbsoluteSize
+	return Vector2.new(p.X + s.X * 0.15, p.Y + s.Y / 2)
+end
+
+-- A scrap landed in the bag
+function Hud.bagBump()
+	bagScale.Scale = 1.06
+	TweenService:Create(bagScale, TweenInfo.new(0.1), { Scale = 1 }):Play()
+end
 
 -- Tried to pop with a full bag: shake the warning
 local lastNag = 0
@@ -236,7 +249,7 @@ local soldId = 0
 function Hud.sold(coins: number, n: number)
 	soldId += 1
 	local mine = soldId
-	soldMsg.Text = ("SOLD %d bubbles  +%d coins"):format(n, coins)
+	soldMsg.Text = ("SOLD %d scraps  +%d coins"):format(n, coins)
 	soldMsg.TextTransparency = 0
 	sms.Transparency = 0
 	soldScale.Scale = 0.5

@@ -13,6 +13,7 @@ local RoomLayout = require(Shared.Rules.RoomLayout)
 local Variants = require(Shared.Config.Variants)
 local VariantRules = require(Shared.Rules.Variants)
 local Sfx = require(script.Parent.Sfx)
+local Scraps = require(script.Parent.Scraps)
 
 local BubbleView = {}
 
@@ -484,6 +485,11 @@ function BubbleView.pop(id: number, kind: string)
 		end
 	end
 	puff:Emit(kind == "other" and 1 or 2)
+	if kind == "click" or kind == "stomp" then
+		-- your pop: a scrap of its plastic flies into your bag
+		local sc = v and (v.rainbow and Color3.fromHSV(math.random(), 0.6, 1) or color(v.color)) or nil
+		Scraps.toBag(cf.Position, sc)
+	end
 	if kind == "click" then
 		Sfx.play("pop")
 	elseif kind == "stomp" then

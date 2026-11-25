@@ -74,13 +74,13 @@ do
 		gui.SizingMode = Enum.SurfaceGuiSizingMode.PixelsPerStud
 		gui.PixelsPerStud = 40
 		local label = Instance.new("TextLabel")
-		label.Size = UDim2.fromScale(1, 0.4)
-		label.Position = UDim2.fromScale(0, 0.3)
+		label.Size = UDim2.fromScale(0.9, 0.5)
+		label.Position = UDim2.fromScale(0.05, 0.25)
 		label.BackgroundTransparency = 1
 		label.Font = Enum.Font.FredokaOne
 		label.TextScaled = true
 		label.TextColor3 = Color3.new(1, 1, 1)
-		label.Text = "RECYCLER"
+		label.Text = "RECYCLER\nsell plastic here"
 		local stroke = Instance.new("UIStroke")
 		stroke.Thickness = 4
 		stroke.Color = Color3.fromRGB(20, 80, 35)
@@ -206,7 +206,7 @@ local BubbleChanged = Instance.new("RemoteEvent")
 BubbleChanged.Name = "BubbleChanged" -- server -> clients: {id (popped) or -id (grew back)}, poppedBy userId, variant per entry
 BubbleChanged.Parent = remotes
 local Sold = Instance.new("RemoteEvent")
-Sold.Name = "Sold" -- server -> client: (coins, bubbles) you just sold at the recycler
+Sold.Name = "Sold" -- server -> client: (coins, scraps) you just sold at the recycler
 Sold.Parent = remotes
 local GetPopped = Instance.new("RemoteFunction")
 GetPopped.Name = "GetPopped" -- client -> server: { popped = {ids}, variantIds = {ids}, variantKinds = {variant} }

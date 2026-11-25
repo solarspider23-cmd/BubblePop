@@ -9,6 +9,7 @@ local Popper = require(Controllers.Popper)
 local Stomp = require(Controllers.Stomp)
 local Hud = require(Controllers.Hud)
 local Sfx = require(Controllers.Sfx)
+local Scraps = require(Controllers.Scraps)
 local Sounds = require(ReplicatedStorage.Shared.Config.Sounds)
 local Room = require(ReplicatedStorage.Shared.Config.Room)
 local Pop = require(ReplicatedStorage.Shared.Config.Pop)
@@ -30,6 +31,7 @@ local Sold = remotes:WaitForChild("Sold") :: RemoteEvent
 Sold.OnClientEvent:Connect(function(coins, n)
 	if type(coins) == "number" and type(n) == "number" then
 		Hud.sold(coins, n)
+		Scraps.toRecycler(n)
 		Sfx.play("sell")
 	end
 end)
