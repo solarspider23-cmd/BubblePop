@@ -34,7 +34,25 @@ test("bubble count matches floor (minus recycler) + 4 walls", function()
 	end
 	local sheets = Room.floorSheets * Room.floorSheets - skipped + 4 * Room.floorSheets * Room.wallRows
 	assert(#L.sheets == sheets, "sheets " .. #L.sheets)
-	assert(#L.bubbles == sheets * perSheet, "bubbles " .. #L.bubbles)
+	local floorSheets = Room.floorSheets * Room.floorSheets - skipped
+	local perWall = Room.floorSheets * Room.perSheet * (Room.wallBubbleRows or Room.wallRows * Room.perSheet)
+	assert(#L.bubbles == floorSheets * perSheet + 4 * perWall, "bubbles " .. #L.bubbles)
+end)
+
+test("every room size builds and walls fit under the ceiling", function()
+	for name, size in Room.sizes do
+		local r = table.clone(Room)
+		r.wallBubbleRows = nil
+		for k, v in size do
+			r[k] = v
+		end
+		r.sheetSize = 6 * r.bubbleScale
+		r.spacing = 1.2 * r.bubbleScale
+		local l = RoomLayout.new(r)
+		for _, b in l.bubbles do
+			assert(b.y < r.floorY + l.height, name .. ": bubble above the ceiling")
+		end
+	end
 end)
 
 test("ids are 1..n in order", function()
@@ -67,7 +85,7 @@ end)
 test("bubbles along a wall are evenly spaced across sheet seams", function()
 	local xs = {}
 	for _, b in L.bubbles do
-		if b.surface == "north" and math.abs(b.y - (Room.floorY + (Room.wallLift or 0) + 0.6)) < 1e-6 then
+		if b.surface == "north" and math.abs(b.y - (Room.floorY + (Room.wallLift or 0) + Room.spacing / 2)) < 1e-6 then
 			table.insert(xs, b.x)
 		end
 	end

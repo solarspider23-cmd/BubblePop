@@ -156,10 +156,12 @@ for _, s in layout.sheets do
 	local p: BasePart
 	if sheetMesh then
 		-- the mesh's origin sits under the bubble plane by its top offset
-		local base = Vector3.new(s.x, s.y, s.z) + n * (s.thickness / 2 - Models.sheet.topOffset)
+		local k = Room.bubbleScale or 1
+		local base = Vector3.new(s.x, s.y, s.z) + n * (s.thickness / 2 - Models.sheet.topOffset * k)
 		local c = Models.sheet.center
 		p = sheetMesh:Clone()
-		p.CFrame = CFrame.fromMatrix(base, r, n) * CFrame.new(c[1], c[2], c[3])
+		p.Size = sheetMesh.Size * k
+		p.CFrame = CFrame.fromMatrix(base, r, n) * CFrame.new(c[1] * k, c[2] * k, c[3] * k)
 	else
 		p = Instance.new("Part")
 		p.Size = Vector3.new(s.size - 0.02, s.thickness, s.size - 0.02) -- tiny gap: no flicker at seams

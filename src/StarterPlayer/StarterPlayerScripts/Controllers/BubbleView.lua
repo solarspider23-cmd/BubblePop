@@ -41,9 +41,10 @@ if assets then
 		end
 	end
 end
-local INTACT_SIZE = intactTemplate and v3(Models.intact.size) or Vector3.new(W, H * 2, W)
-local INTACT_CENTER = intactTemplate and v3(Models.intact.center) or Vector3.zero
-BubbleView.height = intactTemplate and Models.intact.size[2] or H
+local K = Room.bubbleScale or 1 -- room size setting: shrinks the bubble models
+local INTACT_SIZE = intactTemplate and v3(Models.intact.size) * K or Vector3.new(W, H * 2, W)
+local INTACT_CENTER = intactTemplate and v3(Models.intact.center) * K or Vector3.zero
+BubbleView.height = intactTemplate and Models.intact.size[2] * K or H
 
 local folder = Instance.new("Folder")
 folder.Name = "Bubbles"
@@ -106,7 +107,7 @@ local function setShape(id: number, side: number, up: number)
 	p.CFrame = frames[id] * CFrame.new(INTACT_CENTER * scale)
 	local sh = shines[id]
 	if sh then
-		local off = shineDir[id] * 0.27 * side
+		local off = shineDir[id] * 0.27 * K * side
 		sh.CFrame = frames[id] * CFrame.new(off.X, BubbleView.height * 0.84 * up, off.Z)
 	end
 end
@@ -122,7 +123,7 @@ local function newShine(id: number)
 	sh.Material = Enum.Material.Neon
 	sh.Color = Color3.new(1, 1, 1)
 	sh.Transparency = 0.15
-	sh.Size = Vector3.new(0.2, 0.05, 0.2)
+	sh.Size = Vector3.new(0.2, 0.05, 0.2) * K
 	local m = Instance.new("SpecialMesh")
 	m.MeshType = Enum.MeshType.Sphere
 	m.Parent = sh
@@ -186,9 +187,9 @@ local function newPopped(id: number): Instance
 		m.CanQuery = false
 		-- a little size and flatness variety per bubble (fixed per id)
 		local r1, r2 = (id * 7919 % 101) / 100, (id * 104729 % 103) / 102
-		m.Size = m.Size * Vector3.new(0.92 + 0.14 * r1, 0.7 + 0.6 * r2, 0.92 + 0.14 * r1)
+		m.Size = m.Size * K * Vector3.new(0.92 + 0.14 * r1, 0.7 + 0.6 * r2, 0.92 + 0.14 * r1)
 		m:SetAttribute("Size", m.Size)
-		m.CFrame = frames[id] * turn(id) * CFrame.new(v3(Models.popped[k].center))
+		m.CFrame = frames[id] * turn(id) * CFrame.new(v3(Models.popped[k].center) * K)
 		m:SetAttribute("Texture", m.TextureID)
 		m.Parent = folder
 		return m
@@ -240,11 +241,11 @@ local function stylePopped(id: number, model: Instance)
 			tear.CanTouch = false
 			tear.CastShadow = false
 			tear.Material = Enum.Material.SmoothPlastic
-			tear.Size = Vector3.new(0.6, 0.03, 0.16)
+			tear.Size = Vector3.new(0.6, 0.03, 0.16) * K
 			local m = Instance.new("SpecialMesh")
 			m.MeshType = Enum.MeshType.Sphere
 			m.Parent = tear
-			tear.CFrame = frames[id] * turn(id) * CFrame.new(0, 0.1, 0)
+			tear.CFrame = frames[id] * turn(id) * CFrame.new(0, 0.1 * K, 0)
 			tears[id] = tear
 		end
 		tear.Color = color(look.tear)

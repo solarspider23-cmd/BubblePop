@@ -35,8 +35,11 @@ function RoomLayout.new(room: any)
 	local half = room.floorSheets * S / 2
 	local y0 = room.floorY
 	local lift = room.wallLift or 0 -- wall wrap starts this far up, so it clears the floor bubbles
-	local height = room.wallRows * S + lift
 	local margin = (S - (n - 1) * sp) / 2
+	-- bubbles up each wall; the last sheet row may be cut short (its top tucks into the ceiling)
+	local wallBubbleRows = room.wallBubbleRows or room.wallRows * n
+	assert(wallBubbleRows <= room.wallRows * n and wallBubbleRows > (room.wallRows - 1) * n, "wallRows must fit wallBubbleRows")
+	local height = if room.wallBubbleRows then lift + wallBubbleRows * sp + 0.1 else room.wallRows * S + lift
 
 	-- origin = corner of the bubble plane (sheet top), right/up = tangents, normal = into the room
 	local surfaces = {
@@ -71,6 +74,9 @@ function RoomLayout.new(room: any)
 				local sheetIndex = #sheets
 				for j = 0, n - 1 do
 					for i = 0, n - 1 do
+						if s.name ~= "floor" and row * n + j >= wallBubbleRows then
+							continue -- above the ceiling
+						end
 						local x, y, z = at(col * S + margin + i * sp, row * S + margin + j * sp, 0)
 						local id = #bubbles + 1
 						bubbles[id] = {

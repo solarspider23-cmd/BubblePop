@@ -4,22 +4,18 @@ local function rgb(r, g, b)
 	return { r, g, b }
 end
 
-return {
-	floorY = 0, -- top of the floor slab
-	floorSheets = 10, -- the floor is floorSheets x floorSheets sheets (10 x 10 = 60 x 60 studs)
-	wallRows = 2, -- sheets stacked up each wall (2 x 6 = 12 studs tall); the ceiling sits on top
-	wallLift = 0.7, -- wall wrap starts this high, so the bottom row clears the floor bubbles (plain strip below)
-	sheetSize = 6, -- one sheet is 6 x 6 studs
+-- Which room size to build: "wide" or "small" (see `sizes` at the bottom).
+local SIZE = "small"
 
-	-- Recycler placeholder block in the middle of the room. Floor sheets under `clear` are left out.
-	recycler = { size = { 10, 7, 10 }, clear = 12, color = { 60, 200, 90 } },
+local room = {
+	floorY = 0, -- top of the floor slab
+	wallLift = 0.7, -- wall wrap starts this high, so the bottom row clears the floor bubbles (plain strip below)
 	spawn = { 0, 3, 18 }, -- where players appear (clear of the recycler)
-	perSheet = 5, -- 5 x 5 bubbles per sheet
-	spacing = 1.2, -- distance between bubble centres (perSheet * spacing must equal sheetSize)
+	perSheet = 5, -- 5 x 5 bubbles per sheet (the sheet model is made for 5 x 5)
 	sheetThickness = 0.04,
 
 	-- Placeholder bubble shapes (used until the Blender meshes are uploaded)
-	bubbleWidth = 1.12,
+	bubbleWidth = 1.12, -- at bubbleScale 1
 	bubbleHeight = 0.48,
 	poppedHeight = 0.11,
 
@@ -46,7 +42,7 @@ return {
 		contrast = 0.1,
 		saturation = 0.1,
 		lampSize = 6, -- the one ceiling light (studs across)
-		lampRange = 45,
+		lampRange = 60, -- the most Roblox allows
 		lampBrightness = 0.8,
 	},
 
@@ -93,3 +89,26 @@ return {
 		},
 	},
 }
+
+-- Room sizes to compare. bubbleScale shrinks the bubbles AND the sheets (1 = the original size).
+-- sheetSize = 6 x bubbleScale, spacing = 1.2 x bubbleScale.
+-- wallBubbleRows (optional) = bubbles up each wall; the top sheet row tucks into the ceiling.
+room.sizes = {
+	-- 78 x 78 room, normal bubbles: each wall 65 across x 10 up = 650
+	wide = { bubbleScale = 1, floorSheets = 13, wallRows = 2,
+		recycler = { size = { 10, 7, 10 }, clear = 18, color = { 60, 200, 90 } } },
+	-- 60 x 60 room (as before), bubbles 5/6 the size: each wall 60 across x 11 up = 660
+	small = { bubbleScale = 5 / 6, floorSheets = 12, wallRows = 3, wallBubbleRows = 11,
+		recycler = { size = { 10, 7, 10 }, clear = 12, color = { 60, 200, 90 } } },
+}
+for k, v in room.sizes[SIZE] do
+	room[k] = v
+end
+room.size = SIZE
+room.sheetSize = 6 * room.bubbleScale
+room.spacing = 1.2 * room.bubbleScale
+room.bubbleWidth *= room.bubbleScale
+room.bubbleHeight *= room.bubbleScale
+room.poppedHeight *= room.bubbleScale
+
+return room
