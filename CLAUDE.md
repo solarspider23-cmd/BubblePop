@@ -19,6 +19,9 @@ A Roblox simulator for kids 8-14: pop bubble wrap for coins, upgrade your bag, t
 - Art: cartoon v2 bubble wrap (bright, toon-banded textures; no outline mesh). First tool is just a basic stick (owner: quality later).
 - Subagents: allowed, as many as needed (owner, 2026-11-24).
 
+- 2026-11-26 LOBBY LOOK (owner): simple, tasteful, somewhat hand-crafted, for little kids. Props and buildings are SIMPLE ROBLOX SHAPES (studded blocks, cylinders, balls, wedges), not detailed Blender models (those are kept behind `Config/Hub.lua` `useModels = false`). Classic STUD floor. "Toy Box" colours: warm cream floor, sky blue, butter yellow, coral red; mint only for plants; warm white trim; almost no neon. Built in `HubToyBox.lua` + `HubPolish.lua`, all colours and positions in `Config/Hub.lua` (`toybox`, `polish`).
+- Running Blender: only ONE render on the whole Mac at a time (shared lock `/tmp/mb_blender.lock` with the owner's other game sessions); the Mac kernel-panics with several GPU renders.
+
 ## Built so far (2026-11-24): popping prototype
 
 - `Config/Room.lua` (room size, colours), `Config/Pop.lua` (press time, reach, aim forgiveness, stomp radius, regrow, squash feel), `Config/Sounds.lua` (ids from Roblox's licensed library only; id 0 = built-in stand-in).
