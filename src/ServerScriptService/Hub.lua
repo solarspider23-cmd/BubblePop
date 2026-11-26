@@ -128,8 +128,17 @@ local padParts: { BasePart } = {}
 local function buildPlaza()
 	local S = HubConfig.size
 	local half = S / 2
-	-- grass all around, the plaza sits 3 studs above it
-	part("Grass", Vector3.new(700, 2, 700), at(0, -4, 0), C.grass, { mat = Enum.Material.Grass })
+	-- an island: sea all around (real Roblox water), a sandy beach, a grassy top; the plaza sits 3 studs above it
+	local isl = HubConfig.island
+	local terrain = workspace.Terrain
+	terrain.WaterColor = Color3.fromRGB(20, 170, 220)
+	terrain.WaterTransparency = 0.6
+	terrain.WaterReflectance = 0.6
+	terrain.WaterWaveSize = 0.12
+	terrain:FillBlock(CFrame.new(at(0, -10, 0)), Vector3.new(isl.sea, 12, isl.sea), Enum.Material.Water)
+	terrain:FillBlock(CFrame.new(at(0, -20, 0)), Vector3.new(isl.sea, 8, isl.sea), Enum.Material.Sand) -- sea floor
+	terrain:FillCylinder(CFrame.new(at(0, -14, 0)), 12, isl.radius + 10, Enum.Material.Sand) -- beach (kept under the grass)
+	part("Grass", Vector3.new(5, isl.radius * 2, isl.radius * 2), CFrame.new(at(0, -5.5, 0)) * UP, C.grass, { mat = Enum.Material.Grass, shape = CYL })
 	part("Plaza", Vector3.new(S, 2.8, S), at(0, -1.6, 0), C.white)
 	part("PlazaTrim", Vector3.new(S + 1, 0.8, S + 1), at(0, -2.6, 0), C.blue)
 	-- checkerboard of studded tiles
@@ -387,8 +396,9 @@ local function buildBooths()
 		local accent = color(HubConfig.colors.booths[i])
 		local pos = at(s[1], 0, s[2])
 		local face = CFrame.lookAt(pos, pos - Vector3.xAxis) -- open side faces the middle
+		local k = HubConfig.boothScale or 1 -- everything in the booth is built at this size
 		local function piece(name, size, x, y, zz, col, opts)
-			return part(name, size, face * CFrame.new(x, y, zz), col, opts)
+			return part(name, size * k, face * CFrame.new(x * k, y * k, zz * k), col, opts)
 		end
 		piece("BoothBody", Vector3.new(9, 6, 7), 0, 3, 0, accent)
 		piece("BoothTrim", Vector3.new(9.4, 0.5, 7.4), 0, 6.25, 0, C.gold)
@@ -399,12 +409,12 @@ local function buildBooths()
 			piece("Awning", Vector3.new(2, 0.6, 8.4), -4 + k * 2, 7, -0.5, k % 2 == 0 and C.white or accent)
 		end
 		piece("RoofTop", Vector3.new(7, 1.6, 5), 0, 8.1, 0, C.white)
-		local roofBall = part("RoofBall", Vector3.new(2, 2, 2), (face * CFrame.new(0, 9.6, 0)).Position, C.gold, { shape = BALL })
-		label(roofBall, "COMING SOON", 3, 9, 2, Color3.new(1, 1, 1))
+		local roofBall = part("RoofBall", Vector3.new(2, 2, 2) * k, (face * CFrame.new(0, 9.6 * k, 0)).Position, C.gold, { shape = BALL })
+		label(roofBall, "COMING SOON", 3, 10, 2.2, Color3.new(1, 1, 1))
 		-- round pad in front
-		local padPos = (face * CFrame.new(0, 0, -7.5)).Position
-		vcyl("BoothPadRing", padPos + Vector3.new(0, 0.15, 0), 7, 0.3, accent, { mat = NEON, transparency = 0.2, shadow = false })
-		vcyl("BoothPad", padPos + Vector3.new(0, 0.2, 0), 5.6, 0.3, C.white, { shadow = false })
+		local padPos = (face * CFrame.new(0, 0, -7.5 * k)).Position
+		vcyl("BoothPadRing", padPos + Vector3.new(0, 0.15, 0), 7 * k, 0.3, accent, { mat = NEON, transparency = 0.2, shadow = false })
+		vcyl("BoothPad", padPos + Vector3.new(0, 0.2, 0), 5.6 * k, 0.3, C.white, { shadow = false })
 	end
 end
 
@@ -442,18 +452,26 @@ end
 local function buildScenery()
 	local rng = Random.new(7)
 	local greens = { Color3.fromRGB(80, 180, 80), Color3.fromRGB(100, 195, 85), Color3.fromRGB(65, 160, 75) }
-	-- rounded hills far away
-	for k = 1, 12 do
-		local a = (k / 12) * math.pi * 2 + rng:NextNumber(-0.2, 0.2)
-		local r = rng:NextNumber(200, 250)
-		local d = rng:NextNumber(90, 150)
-		ball("Hill", at(math.cos(a) * r, -3 - d * 0.22, math.sin(a) * r), d, greens[rng:NextInteger(1, #greens)], { mat = Enum.Material.Grass, shadow = false })
+	-- small islands far out at sea, each with a tree or two (just scenery)
+	for k = 1, 7 do
+		local a = (k / 7) * math.pi * 2 + rng:NextNumber(-0.3, 0.3)
+		local r = rng:NextNumber(260, 420)
+		local d = rng:NextNumber(30, 60)
+		local c = at(math.cos(a) * r, 0, math.sin(a) * r)
+		vcyl("FarIsland", c + Vector3.new(0, -4.5, 0), d, 3, C.grass, { mat = Enum.Material.Grass, shadow = false })
+		vcyl("FarBeach", c + Vector3.new(0, -5.5, 0), d + 8, 3, Color3.fromRGB(240, 225, 170), { mat = Enum.Material.Sand, shadow = false })
+		for t = 1, rng:NextInteger(1, 3) do
+			local tp = c + Vector3.new(rng:NextNumber(-d / 4, d / 4), -3, rng:NextNumber(-d / 4, d / 4))
+			vcyl("Trunk", tp + Vector3.new(0, 4, 0), 1.8, 8, Color3.fromRGB(140, 95, 60))
+			ball("Leaves", tp + Vector3.new(0, 10, 0), 9, greens[rng:NextInteger(1, #greens)])
+		end
 	end
-	-- round cartoon trees around the plaza
+	-- round cartoon trees on the island, between the plaza and the glass
 	local placed = 0
-	while placed < 44 do
-		local x, z = rng:NextNumber(-150, 150), rng:NextNumber(-150, 150)
-		if math.max(math.abs(x), math.abs(z)) > 66 then
+	local maxR = HubConfig.island.radius - 12
+	while placed < 26 do
+		local x, z = rng:NextNumber(-maxR, maxR), rng:NextNumber(-maxR, maxR)
+		if math.max(math.abs(x), math.abs(z)) > 64 and math.sqrt(x * x + z * z) < maxR then
 			placed += 1
 			local s = rng:NextNumber(0.8, 1.4)
 			local base = at(x, -3, z)
@@ -495,20 +513,12 @@ local function buildDome()
 			part("Dome", Vector3.new(w, h, 0.3), CFrame.lookAt(pos, centre, Vector3.yAxis), shine and Color3.new(1, 1, 1) or col, {
 				mat = Enum.Material.Glass,
 				transparency = shine and 0.45 or 0.72,
-				solid = false,
+				solid = b < 2, -- the low glass is a wall: nowhere to go but the island
 				shadow = false,
 			})
 		end
 	end
-	-- glassy bubbles floating around inside
-	local rng = Random.new(11)
-	for _ = 1, 26 do
-		local a, r = rng:NextNumber(0, math.pi * 2), rng:NextNumber(20, 80)
-		local pos = at(math.cos(a) * r, rng:NextNumber(14, 55), math.sin(a) * r)
-		local size = rng:NextNumber(2, 6)
-		ball("FloatBubble", pos, size, Color3.fromRGB(200, 240, 255), { mat = Enum.Material.Glass, transparency = 0.45, solid = false, shadow = false })
-		ball("FloatShine", pos + Vector3.new(-size * 0.2, size * 0.22, size * 0.2), size * 0.25, Color3.new(1, 1, 1), { solid = false, shadow = false })
-	end
+	-- (the floating bubbles are drawn and moved by each player: Controllers/HubBubbles)
 end
 
 function Hub.build()

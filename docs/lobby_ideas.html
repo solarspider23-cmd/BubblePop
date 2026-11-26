@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BubblePop Lobby Ideas</title>
+<style>
+:root{
+  --bg:#f6f8fb; --card:#ffffff; --ink:#1d2433; --muted:#5b6578; --line:#d9dfe8;
+  --floor:#eef3f8; --wall:#b9c3d1; --pad:#6fd35b; --padink:#123d0c;
+  --shop:#ffb347; --crys:#b48cff; --lb:#5ab8ff; --gift:#ff6f91; --spawn:#ffe15a;
+  --centre:#7fe0e6; --path:#c9d3df; --water:#cdeefe; --sky:#dff1ff; --accent:#0b84d8;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#12151c; --card:#1b2029; --ink:#e7ebf2; --muted:#9aa5b8; --line:#2d3441;
+    --floor:#232a35; --wall:#4a5466; --path:#36404f; --water:#1d3a4d; --sky:#1a2c3d; --accent:#5ab8ff;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#12151c; --card:#1b2029; --ink:#e7ebf2; --muted:#9aa5b8; --line:#2d3441;
+  --floor:#232a35; --wall:#4a5466; --path:#36404f; --water:#1d3a4d; --sky:#1a2c3d; --accent:#5ab8ff;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:980px;margin:0 auto;padding:28px 16px 60px}
+h1{font-size:30px;margin:0 0 6px}
+h2{font-size:22px;margin:0 0 2px}
+.pitch{color:var(--muted);margin:0 0 14px;font-style:italic}
+.intro{color:var(--muted);max-width:720px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin:22px 0}
+.grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:20px;align-items:start}
+@media (max-width:760px){.grid{grid-template-columns:1fr}}
+svg{width:100%;height:auto;display:block;border-radius:10px;background:var(--card)}
+svg text{font:600 10px system-ui,sans-serif;fill:#1d2433;text-anchor:middle;dominant-baseline:middle}
+svg .t-ink{fill:var(--ink)}
+.floor{fill:var(--floor);stroke:var(--wall);stroke-width:3}
+.wall{fill:var(--wall)}
+.water{fill:var(--water);stroke:var(--wall);stroke-width:3}
+.sky{fill:var(--sky)}
+.pad{fill:var(--pad);stroke:#2f8f22;stroke-width:2}
+.shop{fill:var(--shop)}
+.crys{fill:var(--crys)}
+.lb{fill:var(--lb)}
+.gift{fill:var(--gift)}
+.spawn{fill:var(--spawn);stroke:#c9a800;stroke-width:2}
+.centre{fill:var(--centre)}
+.path{fill:var(--path)}
+.route{stroke:var(--accent);stroke-width:2.5;stroke-dasharray:6 5;fill:none}
+.belt{fill:none;stroke:#8a96a8;stroke-width:12}
+dl{margin:0}
+dt{font-weight:700;margin-top:8px}
+dd{margin:0 0 2px 0;color:var(--ink)}
+.legend{display:flex;flex-wrap:wrap;gap:10px 16px;font-size:14px;color:var(--muted);margin:10px 0 0}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{width:14px;height:14px;border-radius:4px;display:inline-block}
+.tag{display:inline-block;font-size:13px;font-weight:700;padding:2px 9px;border-radius:99px;background:var(--floor);border:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.tablewrap{overflow-x:auto}
+.pick{border:2px solid var(--accent)}
+</style>
+</head>
+<body>
+<main>
+<h1>BubblePop: 6 lobby hub ideas</h1>
+<p class="intro">Six different hubs that could replace (or sit beside) the current glass-dome plaza. Every one has the same must-haves: a clear spawn, the 4 play pads easy to see straight from spawn, a passes booth, a crystal shop, a leaderboard and a free gift. The maps are rough top-down sketches, not to scale. The dashed blue line is the walk from spawn to the pads.</p>
+<div class="legend">
+  <span><i class="sw" style="background:var(--spawn)"></i>Spawn</span>
+  <span><i class="sw" style="background:var(--pad)"></i>Play pads (P1 to P4)</span>
+  <span><i class="sw" style="background:var(--shop)"></i>Passes booth</span>
+  <span><i class="sw" style="background:var(--crys)"></i>Crystal shop</span>
+  <span><i class="sw" style="background:var(--lb)"></i>Leaderboard</span>
+  <span><i class="sw" style="background:var(--gift)"></i>Free gift</span>
+  <span><i class="sw" style="background:var(--centre)"></i>Centrepiece / activity</span>
+</div>
+
+<!-- 1 BATHTUB -->
+<section class="card">
+<h2>1. Bubble Bath Bay</h2>
+<p class="pitch">You're tiny, and the lobby is a giant bubble bath full of rubber ducks.</p>
+<div class="grid">
+<svg viewBox="0 0 420 300" role="img" aria-label="Bubble Bath Bay layout">
+  <rect x="8" y="8" width="404" height="284" rx="64" class="wall"/>
+  <rect x="28" y="28" width="364" height="244" rx="48" class="water"/>
+  <rect x="180" y="10" width="60" height="22" rx="6" class="centre"/><text x="210" y="21">Big tap</text>
+  <rect x="62" y="12" width="96" height="16" rx="4" class="lb"/><text x="110" y="20">Leaderboard (tiles)</text>
+  <circle cx="105" cy="88" r="24" class="pad"/><text x="105" y="88">P1</text>
+  <circle cx="170" cy="78" r="24" class="pad"/><text x="170" y="78">P2</text>
+  <circle cx="250" cy="78" r="24" class="pad"/><text x="250" y="78">P3</text>
+  <circle cx="315" cy="88" r="24" class="pad"/><text x="315" y="88">P4</text>
+  <text x="210" y="118" class="t-ink">rubber-duck float pads</text>
+  <ellipse cx="210" cy="168" rx="62" ry="30" class="centre"/><text x="210" y="163">Foam hill</text><text x="210" y="176">+ slide</text>
+  <rect x="38" y="138" width="62" height="56" rx="10" class="shop"/><text x="69" y="158">Passes</text><text x="69" y="172">(shampoo</text><text x="69" y="184">bottle)</text>
+  <rect x="320" y="138" width="62" height="56" rx="10" class="crys"/><text x="351" y="158">Crystals</text><text x="351" y="172">(soap</text><text x="351" y="184">bar)</text>
+  <rect x="56" y="214" width="48" height="34" rx="6" class="gift"/><text x="80" y="226">Free</text><text x="80" y="238">gift</text>
+  <path d="M210 238 V 205 M 210 132 V 104" class="route"/>
+  <circle cx="210" cy="252" r="17" class="spawn"/><text x="210" y="252">Spawn</text>
+</svg>
+<dl>
+  <dt>Theme and look</dt><dd>Inside a huge white bathtub: pale blue "water" floor (just a flat blue part, no real water), mounds of white foam bubbles, a chrome tap, giant rubber ducks. Very bright and soft.</dd>
+  <dt>Layout</dt><dd>Spawn on the soap-dish end. Walk straight up past the foam hill to the 4 duck pads lined up under the tap. Shampoo-bottle passes booth on the left rim, soap-bar crystal shop on the right, leaderboard on the bathroom tiles above the tap, gift sponge front left.</dd>
+  <dt>Fun while waiting</dt><dd>Climb the foam hill and slide down; the tap drips giant bubbles you can bounce on.</dd>
+  <dt>Why it fits</dt><dd>Bubbles everywhere, instantly obvious to kids, and "tiny in a bathroom" feels silly and friendly.</dd>
+  <dt>Build effort</dt><dd><span class="tag">Medium</span> mostly big rounded parts; ducks and tap are simple Blender models.</dd>
+  <dt>Risk</dt><dd>Soap bubbles are not bubble wrap, so the link to the popping rooms is a bit loose. Keep the "water" a solid floor so nobody thinks they can swim.</dd>
+</dl>
+</div>
+</section>
+
+<!-- 2 DEPOT -->
+<section class="card pick">
+<h2>2. Pop &amp; Post Depot <span class="tag">Top pick</span></h2>
+<p class="pitch">A cheerful parcel warehouse where bubble wrap comes from, and delivery trucks take your team to the rooms.</p>
+<div class="grid">
+<svg viewBox="0 0 420 300" role="img" aria-label="Pop and Post Depot layout">
+  <rect x="10" y="10" width="400" height="280" rx="10" class="floor"/>
+  <rect x="58" y="12" width="64" height="12" class="wall"/><rect x="148" y="12" width="64" height="12" class="wall"/>
+  <rect x="238" y="12" width="64" height="12" class="wall"/><rect x="328" y="12" width="64" height="12" class="wall"/>
+  <rect x="60" y="28" width="60" height="40" rx="5" class="pad"/><text x="90" y="48">P1</text>
+  <rect x="150" y="28" width="60" height="40" rx="5" class="pad"/><text x="180" y="48">P2</text>
+  <rect x="240" y="28" width="60" height="40" rx="5" class="pad"/><text x="270" y="48">P3</text>
+  <rect x="330" y="28" width="60" height="40" rx="5" class="pad"/><text x="360" y="48">P4</text>
+  <text x="225" y="80" class="t-ink">loading docks (truck backs up to each pad)</text>
+  <rect x="140" y="92" width="170" height="20" rx="4" class="lb"/><text x="225" y="102">Departures board = leaderboard</text>
+  <rect x="122" y="136" width="176" height="74" rx="37" class="belt"/>
+  <rect x="170" y="155" width="80" height="36" rx="5" class="centre"/><text x="210" y="167">Box mountain</text><text x="210" y="180">+ practice wrap</text>
+  <text x="210" y="222" class="t-ink">conveyor loop</text>
+  <rect x="24" y="130" width="74" height="62" rx="8" class="shop"/><text x="61" y="152">Passes</text><text x="61" y="166">office</text>
+  <rect x="322" y="130" width="74" height="62" rx="8" class="crys"/><text x="359" y="152">Crystal</text><text x="359" y="166">vault</text>
+  <rect x="36" y="226" width="52" height="38" rx="5" class="gift"/><text x="62" y="240">Free</text><text x="62" y="252">parcel</text>
+  <path d="M210 250 C 110 240 100 120 110 76" class="route"/>
+  <circle cx="210" cy="262" r="17" class="spawn"/><text x="210" y="262">Spawn</text>
+</svg>
+<dl>
+  <dt>Theme and look</dt><dd>A bright, toy-like warehouse: yellow and blue steel, cardboard boxes, rolls of bubble wrap, big numbered roller doors. Little delivery trucks in the game's colours.</dd>
+  <dt>Layout</dt><dd>Spawn at the front door. The 4 loading docks run along the whole back wall, each with a big number and a truck, so you see them the moment you spawn. Passes office on the left, crystal vault on the right, the "departures board" over the docks is the leaderboard, free parcel by the door.</dd>
+  <dt>Fun while waiting</dt><dd>Ride the conveyor belt round the box mountain, climb the boxes, and pop a free practice sheet of bubble wrap (doesn't count, grows back) to try your tool.</dd>
+  <dt>Why it fits</dt><dd>Bubble wrap really lives in parcels, so the story makes sense: "pick a dock, the truck drives you to the room." When the countdown ends the truck doors shut and you teleport, which is a nice built-in transition.</dd>
+  <dt>Build effort</dt><dd><span class="tag">Medium</span> boxy parts are easy; trucks and the conveyor are the only extras (conveyor = a moving surface, no scripts needed beyond one line).</dd>
+  <dt>Risk</dt><dd>Warehouses can look grey and dull, so it must stay very colourful. The practice wrap sheet needs to be clearly "for fun" so kids don't think it earns money.</dd>
+</dl>
+</div>
+</section>
+
+<!-- 3 GUMBALL -->
+<section class="card">
+<h2>3. Gumball Park</h2>
+<p class="pitch">A round candy park around a giant gumball machine, with paths like a plus sign.</p>
+<div class="grid">
+<svg viewBox="0 0 420 300" role="img" aria-label="Gumball Park layout">
+  <circle cx="210" cy="150" r="138" class="floor"/>
+  <rect x="190" y="14" width="40" height="272" class="path"/>
+  <rect x="74" y="130" width="272" height="40" class="path"/>
+  <circle cx="210" cy="150" r="34" class="centre"/><text x="210" y="145">Giant</text><text x="210" y="158">gumball</text>
+  <circle cx="142" cy="84" r="23" class="pad"/><text x="142" y="84">P1</text>
+  <circle cx="278" cy="84" r="23" class="pad"/><text x="278" y="84">P2</text>
+  <circle cx="142" cy="216" r="23" class="pad"/><text x="142" y="216">P3</text>
+  <circle cx="278" cy="216" r="23" class="pad"/><text x="278" y="216">P4</text>
+  <rect x="166" y="16" width="88" height="22" rx="5" class="lb"/><text x="210" y="27">Leaderboard</text>
+  <rect x="76" y="130" width="54" height="40" rx="6" class="shop"/><text x="103" y="150">Passes</text>
+  <rect x="290" y="130" width="54" height="40" rx="6" class="crys"/><text x="317" y="150">Crystals</text>
+  <rect x="234" y="250" width="40" height="28" rx="5" class="gift"/><text x="254" y="264">Gift</text>
+  <path d="M210 250 V 186" class="route"/>
+  <circle cx="210" cy="266" r="16" class="spawn"/><text x="210" y="266">Spawn</text>
+</svg>
+<dl>
+  <dt>Theme and look</dt><dd>Pastel candy colours, lollipop lamp posts, candy-stripe paths, a huge glass gumball machine in the middle. Each pad is a giant gumball in a different colour (red, blue, yellow, green).</dd>
+  <dt>Layout</dt><dd>Spawn at the south end of the plus. The giant gumball machine is in the middle and the 4 coloured pads sit in the four corners around it, all within a few steps. Leaderboard at the top of the north path, passes on the west, crystals on the east, gift beside spawn.</dd>
+  <dt>Fun while waiting</dt><dd>Big bouncy gumballs roll around the park: kick them, bounce on them, knock them into a little goal.</dd>
+  <dt>Why it fits</dt><dd>Bubble gum = bubbles, colourful and simple. The symmetrical plus layout is the easiest of all six to find your way around.</dd>
+  <dt>Build effort</dt><dd><span class="tag">Small</span> spheres, cylinders and flat paths; the loose gumballs are just physics balls.</dd>
+  <dt>Risk</dt><dd>Rolling balls can block pads or get pushed outside; respawn them every so often. The theme is less "bubble wrap" and more "sweets".</dd>
+</dl>
+</div>
+</section>
+
+<!-- 4 REEF -->
+<section class="card">
+<h2>4. Bubble Reef</h2>
+<p class="pitch">A sunny sea-floor town where an air-bubble lift carries you up to see the top players.</p>
+<div class="grid">
+<svg viewBox="0 0 420 300" role="img" aria-label="Bubble Reef layout">
+  <ellipse cx="210" cy="152" rx="198" ry="140" class="water"/>
+  <rect x="150" y="16" width="120" height="20" rx="8" class="lb"/><text x="210" y="26">Coral leaderboard</text>
+  <circle cx="108" cy="80" r="22" class="pad"/><text x="108" y="80">P1</text>
+  <circle cx="172" cy="62" r="22" class="pad"/><text x="172" y="62">P2</text>
+  <circle cx="248" cy="62" r="22" class="pad"/><text x="248" y="62">P3</text>
+  <circle cx="312" cy="80" r="22" class="pad"/><text x="312" y="80">P4</text>
+  <text x="210" y="96" class="t-ink">giant clam pads</text>
+  <circle cx="210" cy="158" r="30" class="centre"/><text x="210" y="152">Bubble</text><text x="210" y="165">lift</text>
+  <ellipse cx="68" cy="160" rx="44" ry="28" class="shop"/><text x="68" y="154">Passes</text><text x="68" y="167">(sunken ship)</text>
+  <ellipse cx="352" cy="160" rx="44" ry="28" class="crys"/><text x="352" y="154">Crystals</text><text x="352" y="167">(grotto)</text>
+  <rect x="82" y="222" width="54" height="34" rx="6" class="gift"/><text x="109" y="233">Treasure</text><text x="109" y="246">chest</text>
+  <path d="M210 246 V 190 M 210 128 V 104" class="route"/>
+  <circle cx="210" cy="262" r="16" class="spawn"/><text x="210" y="262">Spawn</text>
+</svg>
+<dl>
+  <dt>Theme and look</dt><dd>Turquoise light, sandy floor, bright coral, cartoon fish swimming in loops, and streams of bubbles rising everywhere. It only looks underwater: you walk normally, no swimming.</dd>
+  <dt>Layout</dt><dd>Spawn at the south. Walk past the bubble lift to the 4 giant clam-shell pads in an arc at the back (the clam opens when a lobby forms). Sunken-ship passes booth on the left, glowing crystal grotto on the right, coral wall leaderboard behind the pads, treasure-chest gift front left.</dd>
+  <dt>Fun while waiting</dt><dd>Step into the bubble lift and float slowly up to a lookout, then drift back down. Fish can be "booped".</dd>
+  <dt>Why it fits</dt><dd>Rising bubbles all over, and crystals feel at home in a treasure grotto, which helps sell the rare currency.</dd>
+  <dt>Build effort</dt><dd><span class="tag">Medium</span> coral and fish need simple models; the lift is one upward-push zone.</dd>
+  <dt>Risk</dt><dd>Avoid real Roblox water and heavy fog (slow on phones and hard to read). Lots of moving fish and bubbles can cost performance, so keep the count low.</dd>
+</dl>
+</div>
+</section>
+
+<!-- 5 SKY ISLANDS -->
+<section class="card">
+<h2>5. Cloud Pop Islands</h2>
+<p class="pitch">Floating islands in a blue sky, joined by bridges, with a pad on each corner island.</p>
+<div class="grid">
+<svg viewBox="0 0 420 300" role="img" aria-label="Cloud Pop Islands layout">
+  <rect x="0" y="0" width="420" height="300" rx="10" class="sky"/>
+  <path d="M210 150 L 80 62 M210 150 L 340 62 M210 150 L 80 238 M210 150 L 340 238 M210 150 L 46 150 M210 150 L 374 150" stroke="#c9a57a" stroke-width="9"/>
+  <circle cx="210" cy="150" r="54" class="floor"/>
+  <circle cx="210" cy="132" r="15" class="spawn"/><text x="210" y="132">Spawn</text>
+  <rect x="172" y="156" width="76" height="20" rx="4" class="lb"/><text x="210" y="166">Leaderboard</text>
+  <circle cx="80" cy="62" r="30" class="pad"/><text x="80" y="62">P1</text>
+  <circle cx="340" cy="62" r="30" class="pad"/><text x="340" y="62">P2</text>
+  <circle cx="80" cy="238" r="30" class="pad"/><text x="80" y="238">P3</text>
+  <circle cx="340" cy="238" r="30" class="pad"/><text x="340" y="238">P4</text>
+  <circle cx="46" cy="150" r="28" class="shop"/><text x="46" y="150">Passes</text>
+  <circle cx="374" cy="150" r="28" class="crys"/><text x="374" y="150">Crystals</text>
+  <circle cx="210" cy="30" r="20" class="gift"/><text x="210" y="30">Gift</text>
+  <path d="M210 96 V 52" stroke="#c9a57a" stroke-width="7"/>
+  <circle cx="145" cy="105" r="9" class="centre"/><circle cx="275" cy="105" r="9" class="centre"/>
+  <circle cx="145" cy="195" r="9" class="centre"/><circle cx="275" cy="195" r="9" class="centre"/>
+  <path d="M195 120 L 102 78" class="route"/>
+</svg>
+<dl>
+  <dt>Theme and look</dt><dd>Grassy floating islands with fluffy clouds below, a hot-air balloon or two, rainbow bridges. Each pad island has its own colour and a tall flag with its number.</dd>
+  <dt>Layout</dt><dd>Spawn on the big middle island with the leaderboard. Six bridges like a star: four to the corner pad islands, one to the passes island (left), one to the crystal island (right), plus a short bridge to the gift island at the top.</dd>
+  <dt>Fun while waiting</dt><dd>Big bubble trampolines (small cyan dots on the map) let you bounce across shortcuts between islands. A "jump the gap" mini route for brave kids.</dd>
+  <dt>Why it fits</dt><dd>Feels like a big adventure for a small build, and the flags make every pad visible from the middle.</dd>
+  <dt>Build effort</dt><dd><span class="tag">Medium</span> islands are simple shapes; needs a safety net below.</dd>
+  <dt>Risk</dt><dd>Kids will fall off. Add clouds underneath that bounce you back up (or a quick respawn at the middle). Pads are spread out, so friends must walk a bit further to group up.</dd>
+</dl>
+</div>
+</section>
+
+<!-- 6 TOY ROOM -->
+<section class="card">
+<h2>6. Giant Toy Room</h2>
+<p class="pitch">You're toy-sized in a kid's bedroom: pads on the play rug, a toy train circling, a bed to bounce on.</p>
+<div class="grid">
+<svg viewBox="0 0 420 300" role="img" aria-label="Giant Toy Room layout">
+  <rect x="10" y="10" width="400" height="280" rx="6" class="floor"/>
+  <rect x="150" y="12" width="120" height="20" rx="3" class="lb"/><text x="210" y="22">Poster leaderboard</text>
+  <rect x="18" y="18" width="110" height="80" rx="10" class="centre"/><text x="73" y="52">Bed</text><text x="73" y="66">(bounce)</text>
+  <ellipse cx="210" cy="150" rx="150" ry="82" fill="none" stroke="#8a96a8" stroke-width="7" stroke-dasharray="3 6"/>
+  <text x="210" y="62" class="t-ink">toy train track</text>
+  <ellipse cx="210" cy="150" rx="118" ry="58" fill="#ffd6e7" opacity=".7"/>
+  <rect x="112" y="126" width="40" height="40" rx="4" class="pad"/><text x="132" y="146">P1</text>
+  <rect x="170" y="126" width="40" height="40" rx="4" class="pad"/><text x="190" y="146">P2</text>
+  <rect x="228" y="126" width="40" height="40" rx="4" class="pad"/><text x="248" y="146">P3</text>
+  <rect x="286" y="126" width="40" height="40" rx="4" class="pad"/><text x="306" y="146">P4</text>
+  <text x="219" y="182">play rug (pads = toy blocks)</text>
+  <rect x="18" y="128" width="40" height="80" rx="4" class="shop"/><text x="38" y="160">Toy</text><text x="38" y="173">shop</text>
+  <ellipse cx="382" cy="168" rx="24" ry="30" class="crys"/><text x="382" y="162">Piggy</text><text x="382" y="175">bank</text>
+  <rect x="40" y="236" width="48" height="38" rx="5" class="gift"/><text x="64" y="255">Present</text>
+  <path d="M210 252 V 168" class="route"/>
+  <rect x="180" y="276" width="60" height="12" class="wall"/>
+  <circle cx="210" cy="262" r="15" class="spawn"/><text x="210" y="262">Spawn</text>
+</svg>
+<dl>
+  <dt>Theme and look</dt><dd>A huge colourful bedroom seen from toy height: alphabet blocks, crayons as tall as trees, a toy train, a cosy rug. Bubble wrap could be poking out of an open delivery box in the corner.</dd>
+  <dt>Layout</dt><dd>Spawn at the door (bottom). The 4 pads are giant numbered toy blocks in a row on the play rug right in front of you. Toy-shelf passes shop on the left wall, piggy-bank crystal shop on the right, poster wall leaderboard at the back, present gift front left. The bed is in the back corner.</dd>
+  <dt>Fun while waiting</dt><dd>Hop on the toy train for a ride round the rug, or climb onto the bed and bounce.</dd>
+  <dt>Why it fits</dt><dd>Kids 8-14 know this place instantly; the piggy bank is a cute, clear "saved money" sign for crystals.</dd>
+  <dt>Build effort</dt><dd><span class="tag">Large</span> lots of different props (bed, toys, train, shelf) to make it feel real.</dd>
+  <dt>Risk</dt><dd>The train must not knock players off pads (put it outside the rug). Can get cluttered; keep the middle open. Shares the "tiny you" idea with Bubble Bath Bay, so pick one of the two.</dd>
+</dl>
+</div>
+</section>
+
+<!-- COMPARISON -->
+<section class="card">
+<h2>Comparison</h2>
+<div class="tablewrap">
+<table>
+<thead><tr><th>Idea</th><th>Fits bubble wrap</th><th>Pads easy to find</th><th>Waiting activity</th><th>Effort</th><th>Main risk</th></tr></thead>
+<tbody>
+<tr><td>1. Bubble Bath Bay</td><td>Good</td><td>Very easy (one row)</td><td>Foam slide, bubble bounces</td><td>Medium</td><td>Soap bubbles, not wrap</td></tr>
+<tr><td><b>2. Pop &amp; Post Depot</b></td><td><b>Best</b></td><td><b>Very easy (back wall)</b></td><td>Conveyor ride, practice wrap</td><td>Medium</td><td>Could look grey</td></tr>
+<tr><td>3. Gumball Park</td><td>OK</td><td>Easiest (symmetry)</td><td>Kick bouncy gumballs</td><td>Small</td><td>Balls block pads</td></tr>
+<tr><td>4. Bubble Reef</td><td>Good</td><td>Easy (arc)</td><td>Bubble lift ride</td><td>Medium</td><td>Phone performance</td></tr>
+<tr><td>5. Cloud Pop Islands</td><td>OK</td><td>Medium (spread out)</td><td>Bubble trampolines</td><td>Medium</td><td>Falling off</td></tr>
+<tr><td>6. Giant Toy Room</td><td>OK</td><td>Very easy (one row)</td><td>Train ride, bed bounce</td><td>Large</td><td>Too many props</td></tr>
+</tbody>
+</table>
+</div>
+<p style="margin-top:16px"><b>Top pick: Pop &amp; Post Depot.</b> It is the only idea where the hub tells the game's story (bubble wrap lives in parcels, and a truck takes your team to the room), and it keeps the pads in one obvious row with a free practice sheet to warm up on. All of that is simple boxy parts.</p>
+</section>
+</main>
+</body>
+</html>
