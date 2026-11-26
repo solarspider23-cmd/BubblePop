@@ -57,36 +57,101 @@ function Hud.kick()
 	TweenService:Create(crossScale, TweenInfo.new(0.15, Enum.EasingStyle.Quad), { Scale = aiming and 1.3 or 1 }):Play()
 end
 
--- Pop counter
-local counter = Instance.new("TextLabel")
-counter.AnchorPoint = Vector2.new(0.5, 0)
-counter.Position = UDim2.new(0.5, 0, 0, 46)
-counter.Size = UDim2.fromOffset(260, 50)
-counter.BackgroundTransparency = 1
-counter.Font = Enum.Font.FredokaOne
-counter.TextScaled = true
-counter.TextColor3 = Color3.new(1, 1, 1)
-counter.Text = "POPS: 0"
-local cs = Instance.new("UIStroke")
-cs.Thickness = 3
-cs.Color = Color3.fromRGB(20, 40, 110)
-cs.Parent = counter
-local counterScale = Instance.new("UIScale")
-counterScale.Parent = counter
-counter.Parent = gui
+-- Pops per player (top right): "Name 123", most pops first. Replaces Roblox's own player list.
+pcall(function()
+	game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.PlayerList, false)
+end)
+local board = Instance.new("Frame")
+board.AnchorPoint = Vector2.new(1, 0)
+board.Position = UDim2.new(1, -16, 0, 48)
+board.Size = UDim2.fromOffset(230, 4 * 30)
+board.BackgroundTransparency = 1
+board.Parent = gui
+local boardList = Instance.new("UIListLayout")
+boardList.SortOrder = Enum.SortOrder.LayoutOrder
+boardList.Padding = UDim.new(0, 4)
+boardList.Parent = board
 
-local function watchPops()
-	local stats = player:WaitForChild("leaderstats")
-	local pops = stats:WaitForChild("Pops") :: IntValue
-	local function show()
-		counter.Text = "POPS: " .. pops.Value
-		counterScale.Scale = 1.15
-		TweenService:Create(counterScale, TweenInfo.new(0.12), { Scale = 1 }):Play()
-	end
-	pops.Changed:Connect(show)
-	show()
+local rows: { [Player]: Frame } = {}
+local function popsOf(p: Player): number
+	local st = p:FindFirstChild("leaderstats")
+	local v = st and st:FindFirstChild("Pops")
+	return v and (v :: IntValue).Value or 0
 end
-task.spawn(watchPops)
+local function rowText(row: Frame, name: string, n: number)
+	(row:FindFirstChild("Name") :: TextLabel).Text = name;
+	(row:FindFirstChild("Count") :: TextLabel).Text = tostring(n)
+end
+local function sortBoard()
+	local list = {}
+	for p in rows do
+		table.insert(list, p)
+	end
+	table.sort(list, function(a, b)
+		local pa, pb = popsOf(a), popsOf(b)
+		if pa ~= pb then
+			return pa > pb
+		end
+		return a.Name < b.Name
+	end)
+	for i, p in list do
+		rows[p].LayoutOrder = i
+		rowText(rows[p], p.DisplayName, popsOf(p))
+	end
+end
+local function addRow(p: Player)
+	if rows[p] then
+		return
+	end
+	local mine = p == player
+	local row = Instance.new("Frame")
+	row.Size = UDim2.new(1, 0, 0, 26)
+	row.BackgroundColor3 = mine and Color3.fromRGB(60, 45, 10) or Color3.fromRGB(20, 35, 90)
+	row.BackgroundTransparency = 0.3
+	local c = Instance.new("UICorner")
+	c.CornerRadius = UDim.new(1, 0)
+	c.Parent = row
+	local function cell(name: string, x: number, w: number, align: Enum.TextXAlignment)
+		local t = Instance.new("TextLabel")
+		t.Name = name
+		t.Position = UDim2.new(x, name == "Name" and 12 or 0, 0, 3)
+		t.Size = UDim2.new(w, name == "Name" and -12 or -12, 1, -6)
+		t.BackgroundTransparency = 1
+		t.FontFace = Font.fromEnum(Enum.Font.LuckiestGuy)
+		t.TextScaled = true
+		t.TextXAlignment = align
+		t.TextColor3 = mine and Color3.fromRGB(255, 225, 80) or Color3.new(1, 1, 1)
+		local st = Instance.new("UIStroke")
+		st.Thickness = 2
+		st.Color = DARK_BLUE
+		st.Parent = t
+		t.Parent = row
+	end
+	cell("Name", 0, 0.7, Enum.TextXAlignment.Left)
+	cell("Count", 0.7, 0.3, Enum.TextXAlignment.Right)
+	row.Parent = board
+	rows[p] = row
+	task.spawn(function()
+		local st = p:WaitForChild("leaderstats", 30)
+		local v = st and st:WaitForChild("Pops", 30)
+		if v then
+			(v :: IntValue).Changed:Connect(sortBoard)
+		end
+		sortBoard()
+	end)
+	sortBoard()
+end
+Players.PlayerAdded:Connect(addRow)
+Players.PlayerRemoving:Connect(function(p)
+	if rows[p] then
+		rows[p]:Destroy()
+		rows[p] = nil
+		sortBoard()
+	end
+end)
+for _, p in Players:GetPlayers() do
+	addRow(p)
+end
 
 -- Bottom left: coins and bag in rounded "pills" with icons (Luckiest Guy, owner's pick)
 local PILL_FONT = Font.fromEnum(Enum.Font.LuckiestGuy)
