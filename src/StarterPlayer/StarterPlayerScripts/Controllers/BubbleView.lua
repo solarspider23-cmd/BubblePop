@@ -65,7 +65,8 @@ end
 
 -- Current look (Room.looks; press L in game to switch)
 local look = Room.looks and Room.looks[1] or { name = "Cartoon" }
-local tears: { [number]: BasePart } = {}
+local tears: { [number]: Instance } = {}
+local makeTear: (number, number) -> Instance
 local shines: { [number]: BasePart } = {}
 local variantOf: { [number]: number } = {} -- rare bubbles (Config/Variants); missing = normal
 local extras: { [number]: BasePart } = {} -- glow ring (+ sparkles) behind a rare bubble
@@ -318,6 +319,47 @@ local function newPopped(id: number): Instance
 	return model
 end
 
+-- Tear marks on a popped bubble (the plain looks). Each bubble gets one of these patterns,
+-- picked separately from its popped shape, so the shapes x tears x turns rarely repeat.
+-- Each mark: { x, z, length, width, angle (degrees) } in bubble widths, on top of the bubble.
+local TEARS = {
+	{ { 0, 0, 0.55, 0.15, 0 } }, -- slit
+	{ { 0, 0, 0.45, 0.12, 45 }, { 0, 0, 0.45, 0.12, -45 } }, -- X
+	{ { 0.1, 0, 0.3, 0.1, 0 }, { -0.05, 0.09, 0.3, 0.1, 120 }, { -0.05, -0.09, 0.3, 0.1, 240 } }, -- Y burst
+	{ { 0, 0, 0.26, 0.26, 0 } }, -- round hole
+	{ { 0, 0.11, 0.4, 0.1, 5 }, { 0, -0.11, 0.36, 0.1, -5 } }, -- double slit
+	{ { 0.12, 0.05, 0.24, 0.09, 30 } }, -- small nick off centre
+	{ { -0.18, 0, 0.24, 0.09, 35 }, { 0, 0, 0.24, 0.09, -35 }, { 0.18, 0, 0.24, 0.09, 35 } }, -- zigzag rip
+	{ { 0, 0, 0.3, 0.08, 0 }, { 0, 0, 0.3, 0.08, 45 }, { 0, 0, 0.3, 0.08, 90 }, { 0, 0, 0.3, 0.08, 135 } }, -- star
+	{}, -- no tear: just crumpled
+	{ { 0, 0, 0.8, 0.09, 0 }, { 0.2, 0.08, 0.2, 0.14, 20 } }, -- long rip with a flap
+	{ { 0, 0, 0.18, 0.18, 0 }, { 0.2, 0.12, 0.12, 0.12, 0 }, { -0.18, -0.1, 0.1, 0.1, 0 } }, -- pinholes
+}
+
+makeTear = function(id: number, height: number): Instance
+	local folder = Instance.new("Folder")
+	folder.Name = "Tear"
+	local k = ((id * 40503) % 65536 // 3) % #TEARS + 1
+	local w = INTACT_SIZE.X
+	local base = frames[id] * turn(id * 7) * CFrame.new(0, height * 0.75, 0)
+	for _, m in TEARS[k] do
+		local part = Instance.new("Part")
+		part.Anchored = true
+		part.CanCollide = false
+		part.CanQuery = false
+		part.CanTouch = false
+		part.CastShadow = false
+		part.Material = Enum.Material.SmoothPlastic
+		part.Size = Vector3.new(m[3] * w, 0.03 * K, m[4] * w)
+		local mesh = Instance.new("SpecialMesh")
+		mesh.MeshType = Enum.MeshType.Sphere
+		mesh.Parent = part
+		part.CFrame = base * CFrame.new(m[1] * w, 0, m[2] * w) * CFrame.Angles(0, math.rad(m[5]), 0)
+		part.Parent = folder
+	end
+	return folder
+end
+
 -- Paint a popped bubble for the current look (the plain look adds a grey tear on top)
 local function stylePopped(id: number, model: Instance)
 	if not model:IsA("MeshPart") then
@@ -329,22 +371,12 @@ local function stylePopped(id: number, model: Instance)
 		model.Transparency = look.poppedTransparency or 0
 		local tear = tears[id]
 		if not tear then
-			tear = Instance.new("Part")
-			tear.Name = "Tear"
-			tear.Anchored = true
-			tear.CanCollide = false
-			tear.CanQuery = false
-			tear.CanTouch = false
-			tear.CastShadow = false
-			tear.Material = Enum.Material.SmoothPlastic
-			tear.Size = Vector3.new(0.6, 0.03, 0.16) * K
-			local m = Instance.new("SpecialMesh")
-			m.MeshType = Enum.MeshType.Sphere
-			m.Parent = tear
-			tear.CFrame = frames[id] * turn(id) * CFrame.new(0, 0.1 * K, 0)
+			tear = makeTear(id, model.Size.Y)
 			tears[id] = tear
 		end
-		tear.Color = color(look.tear)
+		for _, part in tear:GetChildren() do
+			(part :: BasePart).Color = color(look.tear)
+		end
 		tear.Parent = model.Parent
 	else
 		model.TextureID = model:GetAttribute("Texture") or ""
