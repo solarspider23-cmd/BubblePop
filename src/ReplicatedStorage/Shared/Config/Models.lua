@@ -18,7 +18,7 @@ return {
 		{ model = 99501359932186, size = { 1.13, 0.1712, 1.13 }, center = { 0.0, 0.0856, -0.0 }, texture = { Blue = 97467581921901 } }, -- E
 		{ model = 130968089036837, size = { 1.13, 0.1986, 1.13 }, center = { 0.0, 0.0993, -0.0 }, texture = { Blue = 85450337595573 } }, -- F
 		{ model = 83008851952611, size = { 1.13, 0.112, 1.13 }, center = { 0.0, 0.056, -0.0 }, texture = { Blue = 72474087099384 } }, -- G
-		-- H (crumpled, faceted) removed 2026-11-25: owner said some popped looks were bad
+		{ model = 137095276416476, size = { 1.13, 0.07, 1.13 }, center = { 0.0, 0.035, -0.0 }, texture = { Blue = 135199124568848 } }, -- H (crumpled: owner likes it)
 		{ model = 79384248715427, size = { 1.13, 0.218, 1.13 }, center = { 0.0, 0.109, -0.0 }, texture = { Blue = 108557943965039 } }, -- I
 		{ model = 91291224227746, size = { 1.13, 0.15, 1.13 }, center = { 0.0, 0.075, -0.0 }, texture = { Blue = 136041281793338 } }, -- J
 	},
