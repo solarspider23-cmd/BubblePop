@@ -148,7 +148,7 @@ return {
 		},
 	},
 	-- CLEAN POP PLAZA (art/hub_clean; the "clean" theme in Config/Hub.lua). Same layout as hub; Main loads
-	-- these only with the clean theme. Glow, glass, shine and plain-colour meshes are flat (no look).
+	-- these only with the clean theme (hall, lamp, bench, planter, leaderboard from art/hub_clean_props). Glow, glass, shine and plain-colour meshes are flat (no look).
 	hubClean = {
 		CleanCentre = {
 			model = 124778207235213,
@@ -211,6 +211,35 @@ return {
 			look = "HubCleanTreeLook",
 			meshes = { CleanTree_Ball_Body = { 0, 3.9, 0 }, CleanTree_Ball_Shine = { -1.731, 13.308, -2.542 }, CleanTree_Ball_Tint = { 0, 11, 0 }, CleanTree_Cloud_Body = { 0, 4.05, 0 }, CleanTree_Cloud_Shine = { -1.432, 12.511, -2.105 }, CleanTree_Cloud_Tint = { -0.1, 11.15, 0 }, CleanTree_Stack_Body = { 0, 3.2, 0 }, CleanTree_Stack_Shine = { -1.475, 10.967, -2.167 }, CleanTree_Stack_Tint = { 0, 10.65, 0 } },
 			flat = { "CleanTree_Ball_Shine", "CleanTree_Cloud_Shine", "CleanTree_Stack_Shine" },
+		},
+		CleanHall = {
+			model = 137514423673097,
+			look = "HubCleanHallLook",
+			meshes = { CleanHall_Body = { 0, 11.95, 0 }, CleanHall_Glow = { 0, 12.075, -2.778 }, CleanHall_Shine = { -1.881, 19.496, -3.002 } },
+			flat = { "CleanHall_Glow", "CleanHall_Shine" },
+		},
+		CleanLamp = {
+			model = 76839913878040,
+			look = "HubCleanPropsLook",
+			meshes = { CleanLamp_Body = { 0, 4.7, 0 }, CleanLamp_Glow = { 0, 7.75, 0 } },
+			flat = { "CleanLamp_Glow" },
+		},
+		CleanBench = {
+			model = 127932715983672,
+			look = "HubCleanPropsLook",
+			meshes = { CleanBench_Body = { 0, 1.385, 0 }, CleanBench_Tint = { 0, 2.457, 0.117 } },
+		},
+		CleanPlanter = {
+			model = 75183826623658,
+			look = "HubCleanPropsLook",
+			meshes = { CleanPlanter_Body = { 0, 1.225, 0 }, CleanPlanter_Shine = { -0.492, 4.738, -1.291 }, CleanPlanter_Tint = { 0.101, 3.7, -0.1 } },
+			flat = { "CleanPlanter_Shine" },
+		},
+		CleanLeaderboard = {
+			model = 72308914723039,
+			look = "HubCleanBoardLook",
+			meshes = { CleanLeaderboard_Body = { 0, 5.585, -0.2 }, CleanLeaderboard_Glow = { 0, 4.6, -0.32 } },
+			flat = { "CleanLeaderboard_Glow" },
 		},
 	},
 	zone = "Blue", -- which texture set the test room uses

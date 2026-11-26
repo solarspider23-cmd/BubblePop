@@ -1,0 +1,32 @@
+{
+ "model": 127932715983672,
+ "moderation": "Approved",
+ "parts": {
+  "CleanBench_Body": {
+   "meshId": 125484722823637,
+   "size": [
+    5.3989,
+    2.77,
+    2.1
+   ],
+   "position": [
+    0.0,
+    1.385,
+    0.0
+   ]
+  },
+  "CleanBench_Tint": {
+   "meshId": 80566942618224,
+   "size": [
+    4.16,
+    2.3137,
+    2.3735
+   ],
+   "position": [
+    0.0,
+    2.4569,
+    0.1168
+   ]
+  }
+ }
+}

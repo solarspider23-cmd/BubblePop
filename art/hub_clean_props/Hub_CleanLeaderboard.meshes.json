@@ -1,0 +1,32 @@
+{
+ "model": 72308914723039,
+ "moderation": "Approved",
+ "parts": {
+  "CleanLeaderboard_Body": {
+   "meshId": 123728287851793,
+   "size": [
+    12.0,
+    11.17,
+    3.2
+   ],
+   "position": [
+    0.0,
+    5.585,
+    -0.2
+   ]
+  },
+  "CleanLeaderboard_Glow": {
+   "meshId": 73581755315533,
+   "size": [
+    10.15,
+    5.15,
+    0.28
+   ],
+   "position": [
+    0.0,
+    4.6,
+    -0.32
+   ]
+  }
+ }
+}

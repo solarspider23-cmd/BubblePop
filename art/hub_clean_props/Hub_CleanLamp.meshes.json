@@ -1,0 +1,32 @@
+{
+ "model": 76839913878040,
+ "moderation": "Approved",
+ "parts": {
+  "CleanLamp_Body": {
+   "meshId": 125004145389861,
+   "size": [
+    2.66,
+    9.4,
+    2.66
+   ],
+   "position": [
+    0.0,
+    4.7,
+    0.0
+   ]
+  },
+  "CleanLamp_Glow": {
+   "meshId": 73386538333813,
+   "size": [
+    2.4,
+    2.4,
+    2.3635
+   ],
+   "position": [
+    0.0,
+    7.75,
+    0.0
+   ]
+  }
+ }
+}

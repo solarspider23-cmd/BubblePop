@@ -2,7 +2,8 @@
 -- stations, a round rug round the centrepiece), props (planters with bushes, lamp posts, benches),
 -- a colonnade along the back, floating islands and a soft rainbow.
 -- Everything is placed from Config/Hub.lua `polish`. One function per prop type (planter, lamp,
--- bench, colonnade, island) so a modelled version can replace the part-built one later.
+-- bench, colonnade, island). The modelled planter, lamp, bench, hall (instead of the colonnade) and
+-- leaderboard (art/hub_clean_props) are used when they loaded; the part versions otherwise.
 -- Ground layers: floor top = 0; each layer sits at least 0.02 above the one below (no z-fighting).
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local HubConfig = require(ReplicatedStorage:WaitForChild("Shared").Config.Hub)
@@ -94,6 +95,13 @@ function Polish.build(h)
 		local m = Instance.new("Model")
 		m.Name = "Planter"
 		m.Parent = props
+		if h.has("CleanPlanter") then -- the modelled planter (6 x 4, bushes up to 5.6), one solid box
+			h.mesh("CleanPlanter", "CleanPlanter_Body", cf, { parent = m })
+			h.mesh("CleanPlanter", "CleanPlanter_Tint", cf, { tint = bushColor(), parent = m })
+			h.mesh("CleanPlanter", "CleanPlanter_Shine", cf, { color = Color3.new(1, 1, 1), transparency = 0.15, shadow = false, parent = m })
+			part("PlanterBox", Vector3.new(6, 2.45, 3.9), cf * CFrame.new(0, 1.225, 0), WHITE, { parent = m, transparency = 1, shadow = false })
+			return
+		end
 		part("PlanterBox", Vector3.new(6, 2, 2.4), cf * CFrame.new(0, 1, 0), WHITE, { parent = m })
 		part("PlanterRim", Vector3.new(6.4, 0.35, 2.8), cf * CFrame.new(0, 2.15, 0), color(P.pathTrim), { parent = m })
 		part("PlanterSoil", Vector3.new(5.6, 0.2, 2), cf * CFrame.new(0, 2.3, 0), Color3.fromRGB(150, 120, 110), { parent = m, solid = false, shadow = false })
@@ -108,6 +116,18 @@ function Polish.build(h)
 		m.Name = "Lamp"
 		m.Parent = props
 		local p = cf.Position
+		if h.has("CleanLamp") then -- the modelled lamp post (9.4 tall) with a neon bubble globe and a soft light
+			h.mesh("CleanLamp", "CleanLamp_Body", cf, { parent = m })
+			local globe = h.mesh("CleanLamp", "CleanLamp_Glow", cf, { mat = NEON, color = color(P.lampGlow), shadow = false, parent = m })
+			local light = Instance.new("PointLight")
+			light.Color = Color3.fromRGB(170, 215, 255)
+			light.Range = 16
+			light.Brightness = 0.8
+			light.Shadows = false
+			light.Parent = globe
+			vcyl("LampPost", p + Vector3.new(0, 3.5, 0), 1.2, 7, WHITE, { parent = m, transparency = 1, shadow = false })
+			return
+		end
 		vcyl("LampBase", p + Vector3.new(0, 0.35, 0), 1.8, 0.7, WHITE, { parent = m })
 		vcyl("LampBand", p + Vector3.new(0, 0.8, 0), 1.2, 0.3, color(P.pathTrim), { parent = m, shadow = false })
 		vcyl("LampPole", p + Vector3.new(0, 4.6, 0), 0.55, 8, WHITE, { parent = m })
@@ -123,10 +143,18 @@ function Polish.build(h)
 		light.Parent = glow
 	end
 	-- bench: rounded-ish white seat and back on two sky legs (6 wide); seat faces the cf's -z
+	local benchRng = Random.new(8)
 	local function bench(cf: CFrame)
 		local m = Instance.new("Model")
 		m.Name = "Bench"
 		m.Parent = props
+		if h.has("CleanBench") then -- the modelled bench (5.2 x 2.1, seat top 1.9), pastel cushion
+			local cols = P.benchColors or P.bushColors
+			h.mesh("CleanBench", "CleanBench_Body", cf, { parent = m })
+			h.mesh("CleanBench", "CleanBench_Tint", cf, { tint = color(cols[benchRng:NextInteger(1, #cols)]), parent = m })
+			part("BenchSeat", Vector3.new(5.2, 1.9, 2), cf * CFrame.new(0, 0.95, 0), WHITE, { parent = m, transparency = 1, shadow = false })
+			return
+		end
 		for _, dx in { -2.3, 2.3 } do
 			part("BenchLeg", Vector3.new(0.6, 1.5, 1.8), cf * CFrame.new(dx, 0.75, 0), color(P.pathTrim), { parent = m })
 		end
@@ -216,8 +244,76 @@ function Polish.build(h)
 		part("CrestTop", Vector3.new(1.2, 10, 10), CFrame.new(at(mid, g + H + 5, c.z)) * CFrame.Angles(0, math.pi / 2, 0), band, { parent = m, shape = CYL })
 		part("CrestTopIn", Vector3.new(1.4, 7.4, 7.4), CFrame.new(at(mid, g + H + 5, c.z)) * CFrame.Angles(0, math.pi / 2, 0), beam, { parent = m, shape = CYL })
 	end
-	if P.colonnade then
+	-- the modelled back hall (domed towers, arches, medallion) replaces the colonnade when it loads
+	local function hall(c)
+		local m = Instance.new("Model")
+		m.Name = "Hall"
+		m.Parent = props
+		local s = c.scale or 1
+		local pos = at(c.x, 0, c.z)
+		local cf = CFrame.lookAt(pos, pos + Vector3.new(0, 0, 1)) -- front faces the spawn
+		h.mesh("CleanHall", "CleanHall_Body", cf, { scale = s, parent = m })
+		h.mesh("CleanHall", "CleanHall_Glow", cf, { scale = s, mat = NEON, color = color(c.glow), shadow = false, parent = m })
+		h.mesh("CleanHall", "CleanHall_Shine", cf, { scale = s, color = Color3.new(1, 1, 1), transparency = 0.2, shadow = false, parent = m })
+		part("HallWall", Vector3.new(60 * s, 14 * s, 9 * s), cf * CFrame.new(0, 7 * s, 0), WHITE, { parent = m, transparency = 1, shadow = false })
+	end
+	if P.hall and h.has("CleanHall") then
+		hall(P.hall)
+	elseif P.colonnade then
 		colonnade(P.colonnade)
+	end
+
+	-- the modelled leaderboard stand: "FASTEST CLEARS" header and a placeholder top 3 (SurfaceGui on thin invisible parts)
+	local lb = P.leaderboard
+	if lb and h.has("CleanLeaderboard") then
+		local m = Instance.new("Model")
+		m.Name = "Leaderboard"
+		m.Parent = props
+		local pos = at(lb.x, 0, lb.z)
+		local centre = at(0, 0, 0)
+		local cf = CFrame.lookAt(pos, Vector3.new(centre.X, pos.Y, centre.Z))
+		h.mesh("CleanLeaderboard", "CleanLeaderboard_Body", cf, { parent = m })
+		h.mesh("CleanLeaderboard", "CleanLeaderboard_Glow", cf, { mat = NEON, color = Color3.fromRGB(20, 100, 200), shadow = false, parent = m })
+		part("BoardStand", Vector3.new(12, 8, 3), cf * CFrame.new(0, 4, -0.2), WHITE, { parent = m, transparency = 1, shadow = false })
+		local function face(name, size, z, y)
+			local p = part(name, Vector3.new(size.X, size.Y, 0.05), cf * CFrame.new(0, y, z), WHITE, { parent = m, transparency = 1, shadow = false, solid = false })
+			local g = Instance.new("SurfaceGui")
+			g.Face = Enum.NormalId.Front
+			g.SizingMode = Enum.SurfaceGuiSizingMode.PixelsPerStud
+			g.PixelsPerStud = 50
+			g.LightInfluence = 0
+			g.Parent = p
+			return g
+		end
+		local head = face("BoardTitle", Vector2.new(6, 1.1), -1.16 - 0.04, 8.25)
+		local t = Instance.new("TextLabel")
+		t.BackgroundTransparency = 1
+		t.Size = UDim2.fromScale(1, 1)
+		t.Font = Enum.Font.FredokaOne
+		t.TextScaled = true
+		t.TextColor3 = Color3.new(1, 1, 1)
+		t.Text = lb.title
+		t.Parent = head
+		local list = face("BoardList", Vector2.new(10, 5), -0.12 - 0.04, 4.6)
+		local pad = Instance.new("UIPadding")
+		pad.PaddingTop = UDim.new(0.08, 0)
+		pad.PaddingBottom = UDim.new(0.08, 0)
+		pad.PaddingLeft = UDim.new(0.08, 0)
+		pad.PaddingRight = UDim.new(0.08, 0)
+		pad.Parent = list
+		local rowColors = { Color3.fromRGB(230, 170, 30), Color3.fromRGB(140, 150, 170), Color3.fromRGB(200, 120, 70) }
+		for i, row in lb.rows do
+			local r = Instance.new("TextLabel")
+			r.BackgroundTransparency = 1
+			r.Position = UDim2.fromScale(0, (i - 1) / #lb.rows)
+			r.Size = UDim2.fromScale(1, 1 / #lb.rows)
+			r.Font = Enum.Font.FredokaOne
+			r.TextScaled = true
+			r.TextXAlignment = Enum.TextXAlignment.Center
+			r.TextColor3 = rowColors[i] or Color3.fromRGB(60, 80, 120)
+			r.Text = row
+			r.Parent = list
+		end
 	end
 
 	------------------------------------------------------------ surroundings

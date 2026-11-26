@@ -1,0 +1,45 @@
+{
+ "model": 75183826623658,
+ "moderation": "Approved",
+ "parts": {
+  "CleanPlanter_Body": {
+   "meshId": 91049330762666,
+   "size": [
+    6.02,
+    2.45,
+    3.96
+   ],
+   "position": [
+    0.0,
+    1.225,
+    0.0
+   ]
+  },
+  "CleanPlanter_Shine": {
+   "meshId": 77314743933451,
+   "size": [
+    0.9579,
+    1.0425,
+    0.5935
+   ],
+   "position": [
+    -0.4917,
+    4.7379,
+    -1.2909
+   ]
+  },
+  "CleanPlanter_Tint": {
+   "meshId": 115514722085976,
+   "size": [
+    5.7348,
+    3.7,
+    3.4122
+   ],
+   "position": [
+    0.1013,
+    3.7,
+    -0.1
+   ]
+  }
+ }
+}

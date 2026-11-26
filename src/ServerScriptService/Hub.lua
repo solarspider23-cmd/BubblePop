@@ -366,6 +366,9 @@ local function buildPlaza()
 	if has("CleanFence") then
 		-- white posts with sky-blue bands and glowing caps, rails between, taller corner posts with a glow orb
 		local step = edge / 7
+		-- the modelled back hall stands across the back fence: leave the fence out there (the invisible wall stays)
+		local hall = HubConfig.polish and HubConfig.polish.hall
+		local hallHalf = (hall and has("CleanHall")) and 30 * (hall.scale or 1) or 0
 		for _, side in { { 1, 0 }, { -1, 0 }, { 0, 1 }, { 0, -1 } } do
 			local alongX = side[2] ~= 0
 			local turn = alongX and CFrame.identity or CFrame.Angles(0, math.pi / 2, 0) -- own X along the fence
@@ -373,12 +376,19 @@ local function buildPlaza()
 				local x, z = alongX and u or side[1] * edge, alongX and side[2] * edge or u
 				return CFrame.new(at(x, 0, z)) * turn
 			end
+			local function hidden(u: number): boolean
+				return side[2] == -1 and math.abs(u - (hall and hall.x or 0)) < hallHalf
+			end
 			for k = -6, 6 do
-				mesh("CleanFence", "CleanFence_Post", spot(k * step), { shadow = false })
-				mesh("CleanFence", "CleanFence_PostGlow", spot(k * step), { mat = NEON, color = color(MD.glow), shadow = false })
+				if not hidden(k * step) then
+					mesh("CleanFence", "CleanFence_Post", spot(k * step), { shadow = false })
+					mesh("CleanFence", "CleanFence_PostGlow", spot(k * step), { mat = NEON, color = color(MD.glow), shadow = false })
+				end
 			end
 			for k = -7, 6 do
-				mesh("CleanFence", "CleanFence_Rail", spot((k + 0.5) * step), { shadow = false })
+				if not hidden((k + 0.5) * step) then
+					mesh("CleanFence", "CleanFence_Rail", spot((k + 0.5) * step), { shadow = false })
+				end
 			end
 			local wall = alongX and Vector3.new(S - 2, 3.4, 0.8) or Vector3.new(0.8, 3.4, S - 2)
 			blocker("FenceWall", wall, at(alongX and 0 or side[1] * edge, 1.7, alongX and side[2] * edge or 0))
@@ -1215,7 +1225,7 @@ function Hub.build()
 	buildBooths()
 	buildChest()
 	if CLEAN then -- paths, rings, rug, planters, lamps, benches, back colonnade, islands, rainbow
-		HubPolish.build({ part = part, ball = ball, vcyl = vcyl, at = at, has = has, mesh = mesh, folder = folder })
+		HubPolish.build({ part = part, ball = ball, vcyl = vcyl, at = at, has = has, mesh = mesh, folder = folder, blocker = blocker })
 	end
 	buildScenery()
 	buildDome()

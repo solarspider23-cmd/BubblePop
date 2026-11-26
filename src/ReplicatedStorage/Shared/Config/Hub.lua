@@ -71,7 +71,7 @@ local Hub = {
 		clean = {
 			-- Clean Pop Plaza: soft white, cream and light grey; pastel sky, mint, lilac and peach; bubble blue.
 			-- Tints from art/hub_clean/*.bounds.json.
-			floor = rgb(245, 243, 238), -- one studded floor, warm off-white (owner: classic Roblox studs)
+			floor = rgb(232, 228, 220), -- one studded floor, warm off-white (owner: classic Roblox studs; a bit darker than 245,243,238 under the sun)
 			tileA = rgb(250, 251, 253), -- soft white
 			tileB = rgb(232, 238, 246), -- light grey-blue
 			white = rgb(250, 251, 253),
@@ -155,7 +155,7 @@ local Hub = {
 		bushColors = { rgb(140, 203, 255), rgb(143, 230, 198), rgb(195, 174, 247), rgb(255, 190, 210), rgb(255, 225, 150) },
 		lamps = { -- { x, z }
 			{ -6.5, 26 }, { 6.5, 26 }, { -31, -14.5 }, { 31, -14.5 },
-			{ 33, -5.5 }, { 33, 13.5 }, { -14, -4 }, { -14, 20 }, { 40, 34 }, { -40, -32 }, { 38, -32 },
+			{ 33, -5.5 }, { 33, 13.5 }, { -14, -4 }, { -14, 20 }, { 40, 34 }, { -40, -32 }, { 24, -38 },
 		},
 		lampGlow = rgb(25, 85, 185), -- neon globe (dark-ish: bright neon blows out to white)
 		lampGlass = rgb(200, 230, 255),
@@ -166,6 +166,11 @@ local Hub = {
 		benches = { -- { x, z, turn } (turn 0 = seat faces +z)
 			{ -12, 26, 90 }, { 12, 26, -90 }, { -30, 30, 45 }, { 20, 38, 180 },
 		},
+		-- the modelled back hall (Hub_CleanHall) replaces the colonnade when it loads; the back fence is left out where it stands
+		hall = { x = 0, z = -52, scale = 1.25, glow = rgb(20, 100, 200) },
+		-- the modelled leaderboard stand, turned to face the hub centre
+		leaderboard = { x = 38, z = -33, title = "FASTEST CLEARS", rows = { "1.  ---   --:--", "2.  ---   --:--", "3.  ---   --:--" } },
+		benchColors = { rgb(140, 203, 255), rgb(143, 230, 198), rgb(195, 174, 247), rgb(255, 190, 156) }, -- cushion tints
 		colonnade = { z = -63, x1 = -48, x2 = 48, bays = 8, height = 24, column = rgb(250, 251, 253), arch = rgb(200, 185, 250), beam = rgb(255, 246, 232), band = rgb(111, 191, 255), crest = rgb(150, 205, 255) },
 		islands = { -- { x, y, z, radius } from the hub origin, outside the glass
 			{ -190, 25, -150, 22 }, { 210, 55, -120, 18 }, { -260, -15, 90, 26 }, { 240, 5, 170, 20 }, { 40, 70, -300, 24 }, { -120, 80, 280, 16 },
