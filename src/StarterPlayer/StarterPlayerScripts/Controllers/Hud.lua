@@ -305,8 +305,8 @@ end
 -- Run timer (top left): how long this run has lasted, and bubbles left
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local timerLabel = Instance.new("TextLabel")
-timerLabel.Position = UDim2.fromOffset(20, 50)
-timerLabel.Size = UDim2.fromOffset(200, 40)
+timerLabel.Position = UDim2.fromOffset(20, 48)
+timerLabel.Size = UDim2.fromOffset(120, 26)
 timerLabel.BackgroundTransparency = 1
 timerLabel.Font = Enum.Font.FredokaOne
 timerLabel.TextScaled = true
@@ -314,23 +314,47 @@ timerLabel.TextXAlignment = Enum.TextXAlignment.Left
 timerLabel.TextColor3 = Color3.new(1, 1, 1)
 timerLabel.Text = "00:00"
 local tls = Instance.new("UIStroke")
-tls.Thickness = 3
+tls.Thickness = 2
 tls.Color = DARK_BLUE
 tls.Parent = timerLabel
 timerLabel.Parent = gui
-local leftLabel = Instance.new("TextLabel")
-leftLabel.Position = UDim2.fromOffset(20, 90)
-leftLabel.Size = UDim2.fromOffset(240, 24)
-leftLabel.BackgroundTransparency = 1
-leftLabel.Font = Enum.Font.FredokaOne
-leftLabel.TextScaled = true
-leftLabel.TextXAlignment = Enum.TextXAlignment.Left
-leftLabel.TextColor3 = Color3.fromRGB(200, 225, 255)
-local lls = Instance.new("UIStroke")
-lls.Thickness = 2
-lls.Color = DARK_BLUE
-lls.Parent = leftLabel
-leftLabel.Parent = gui
+-- room progress: how much of the room is popped
+local progBack = Instance.new("Frame")
+progBack.Position = UDim2.fromOffset(20, 78)
+progBack.Size = UDim2.fromOffset(150, 10)
+progBack.BackgroundColor3 = DARK_BLUE
+progBack.BackgroundTransparency = 0.3
+local pbc = Instance.new("UICorner")
+pbc.CornerRadius = UDim.new(1, 0)
+pbc.Parent = progBack
+local pbs = Instance.new("UIStroke")
+pbs.Thickness = 1.5
+pbs.Color = Color3.new(1, 1, 1)
+pbs.Transparency = 0.3
+pbs.Parent = progBack
+local progFill = Instance.new("Frame")
+progFill.Size = UDim2.fromScale(0, 1)
+progFill.BackgroundColor3 = Color3.fromRGB(110, 230, 140)
+local pfc = Instance.new("UICorner")
+pfc.CornerRadius = UDim.new(1, 0)
+pfc.Parent = progFill
+progFill.Parent = progBack
+progBack.Parent = gui
+local progText = Instance.new("TextLabel")
+progText.AnchorPoint = Vector2.new(0, 0.5)
+progText.Position = UDim2.new(1, 8, 0.5, 0)
+progText.Size = UDim2.fromOffset(60, 20)
+progText.BackgroundTransparency = 1
+progText.FontFace = Font.fromEnum(Enum.Font.LuckiestGuy)
+progText.TextScaled = true
+progText.TextXAlignment = Enum.TextXAlignment.Left
+progText.TextColor3 = Color3.new(1, 1, 1)
+progText.Text = "0%"
+local pts = Instance.new("UIStroke")
+pts.Thickness = 2
+pts.Color = DARK_BLUE
+pts.Parent = progText
+progText.Parent = progBack
 
 local function clock(seconds: number): string
 	seconds = math.max(0, math.floor(seconds))
@@ -361,7 +385,15 @@ clearedMsg.Parent = gui
 
 local function showLeft()
 	local left = ReplicatedStorage:GetAttribute("BubblesLeft")
-	leftLabel.Text = left and (left .. " bubbles left") or ""
+	if not left then
+		return
+	end
+	local total = ReplicatedStorage:GetAttribute("RoomTotal") or left
+	local done = total > 0 and 1 - left / total or 0
+	TweenService:Create(progFill, TweenInfo.new(0.3), { Size = UDim2.fromScale(math.clamp(done, 0, 1), 1) }):Play()
+	-- whole percent; only shows 100% once every bubble is popped
+	local pct = left == 0 and 100 or math.min(99, math.floor(done * 100))
+	progText.Text = pct .. "%"
 end
 ReplicatedStorage:GetAttributeChangedSignal("BubblesLeft"):Connect(showLeft)
 showLeft()

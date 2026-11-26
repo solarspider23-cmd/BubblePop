@@ -2,6 +2,7 @@
 --   chance: how often a bubble is this variant (1/50 = one in fifty), rolled again every time
 --           a bubble grows back, so rare bubbles turn up in new spots
 --   coins:  coins for popping it (normal bubbles give baseCoins)
+--   maxPerRoom: (optional) never more than this many in one room
 --   look:   colour, see-through, shine; glow = ring behind it; sparkle = glitter; rainbow = cycles colours
 return {
 	baseCoins = 1,
@@ -11,7 +12,7 @@ return {
 	list = {
 		-- Gold (1/300, 5 coins) removed 2026-11-25 by the owner; add it back here if wanted.
 		{
-			key = "Diamond", chance = 1 / 2000, coins = 50, -- about 3 per room
+			key = "Diamond", chance = 1 / 800, coins = 10, maxPerRoom = 10, -- about 4 per starter room, never more than 10
 			color = { 170, 245, 255 }, transparency = 0.15, reflectance = 0.6,
 			glow = { 120, 230, 255 }, sparkle = { 230, 255, 255 }, sparkleRate = 10,
 		},

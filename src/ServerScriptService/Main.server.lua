@@ -240,6 +240,20 @@ end
 for id = 1, COUNT do
 	rollVariant(id)
 end
+-- some variants have a cap per room: turn any extra ones back into normal bubbles
+do
+	local seen: { [number]: number } = {}
+	for id = 1, COUNT do
+		local k = variantOf[id]
+		local cap = k and Variants.list[k].maxPerRoom
+		if cap then
+			seen[k] = (seen[k] or 0) + 1
+			if seen[k] > cap then
+				variantOf[id] = nil
+			end
+		end
+	end
+end
 
 local function queue(change, userId)
 	table.insert(pending, change)
@@ -479,6 +493,7 @@ end
 -- Clients read ReplicatedStorage attributes RunStart (server time), BubblesLeft and
 -- RunClearTime (seconds it took; set once the room is cleared).
 ReplicatedStorage:SetAttribute("BubblesLeft", COUNT)
+ReplicatedStorage:SetAttribute("RoomTotal", COUNT)
 updateRun = function(left: number)
 	if ReplicatedStorage:GetAttribute("BubblesLeft") ~= left then
 		ReplicatedStorage:SetAttribute("BubblesLeft", left)
