@@ -1,0 +1,154 @@
+{
+ "_about": "Gumball machine. Roblox axes: X right, Y up, Z = -Blender Y. The model stands on the origin (bottom centre of the stage) and its front (coin plate, chute) faces Roblox -Z.",
+ "_size": [
+  28.0,
+  47.091,
+  28.0
+ ],
+ "_tris_total": 11224,
+ "_globe": {
+  "center": [
+   0.0,
+   29.0,
+   -0.0
+  ],
+  "radius": 14.0,
+  "note": "GumballPile_Globe.json positions are measured from this point"
+ },
+ "Machine_Body": {
+  "size": [
+   28.0,
+   47.091,
+   28.0
+  ],
+  "center": [
+   0.0,
+   23.545,
+   -0.0
+  ],
+  "tris": 8451,
+  "material": "SmoothPlastic + SurfaceAppearance",
+  "color": [
+   255,
+   255,
+   255
+  ],
+  "textures": [
+   "Hub_Machine_color.png",
+   "Hub_Machine_normal.png",
+   "Hub_Machine_roughness.png"
+  ]
+ },
+ "Machine_Knob": {
+  "size": [
+   3.6,
+   1.9,
+   1.59
+  ],
+  "center": [
+   0.0,
+   7.9,
+   -10.045
+  ],
+  "tris": 646,
+  "material": "SmoothPlastic + SurfaceAppearance",
+  "color": [
+   255,
+   255,
+   255
+  ],
+  "spin_point": [
+   0.0,
+   7.9,
+   -9.0
+  ],
+  "spin_axis": [
+   0,
+   0,
+   1
+  ],
+  "note": "turn about spin_axis through spin_point",
+  "textures": [
+   "Hub_Machine_color.png",
+   "Hub_Machine_normal.png",
+   "Hub_Machine_roughness.png"
+  ]
+ },
+ "Machine_Flap": {
+  "size": [
+   4.56,
+   2.08,
+   0.795
+  ],
+  "center": [
+   0.0,
+   3.54,
+   -9.548
+  ],
+  "tris": 320,
+  "material": "SmoothPlastic + SurfaceAppearance",
+  "color": [
+   255,
+   255,
+   255
+  ],
+  "hinge": [
+   0.0,
+   4.55,
+   -9.35
+  ],
+  "hinge_axis": [
+   1,
+   0,
+   0
+  ],
+  "note": "swings outward (toward the front) about hinge_axis through hinge",
+  "textures": [
+   "Hub_Machine_color.png",
+   "Hub_Machine_normal.png",
+   "Hub_Machine_roughness.png"
+  ]
+ },
+ "Machine_Glass": {
+  "size": [
+   28.0,
+   22.65,
+   28.0
+  ],
+  "center": [
+   0.0,
+   30.875,
+   -0.0
+  ],
+  "tris": 1632,
+  "material": "Glass",
+  "color": [
+   235,
+   248,
+   255
+  ],
+  "transparency": 0.6,
+  "note": "no texture, no shadow"
+ },
+ "Machine_Shine": {
+  "size": [
+   4.851,
+   7.375,
+   5.414
+  ],
+  "center": [
+   4.75,
+   36.086,
+   -10.781
+  ],
+  "tris": 175,
+  "material": "SmoothPlastic (or Neon)",
+  "color": [
+   255,
+   255,
+   255
+  ],
+  "transparency": 0.15,
+  "note": "no texture, no shadow, no collision"
+ }
+}

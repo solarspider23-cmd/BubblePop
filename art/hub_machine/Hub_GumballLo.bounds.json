@@ -1,0 +1,57 @@
+{
+ "GumballLo": {
+  "size": [
+   0.976,
+   0.976,
+   0.976
+  ],
+  "center": [
+   0.0,
+   0.0,
+   -0.0
+  ],
+  "tris": 300,
+  "material": "SmoothPlastic + the existing Gumball SurfaceAppearance (tinted)",
+  "note": "1 stud across, centred; same UV layout as art/gumball/Gumball.fbx; scale to 3.8 (globe) or 1.6 (jar)"
+ },
+ "GumballCore_Globe": {
+  "size": [
+   17.648,
+   9.074,
+   17.68
+  ],
+  "center": [
+   -0.209,
+   -4.263,
+   0.245
+  ],
+  "tris": 182,
+  "color": [
+   143,
+   43,
+   88
+  ],
+  "material": "SmoothPlastic",
+  "note": "origin = globe centre; no texture; no shadow"
+ },
+ "GumballCore_Jar": {
+  "size": [
+   1.59,
+   3.399,
+   1.608
+  ],
+  "center": [
+   0.009,
+   1.749,
+   0.014
+  ],
+  "tris": 120,
+  "color": [
+   143,
+   43,
+   88
+  ],
+  "material": "SmoothPlastic",
+  "note": "origin = centre of the jar's floor; no texture; no shadow"
+ }
+}

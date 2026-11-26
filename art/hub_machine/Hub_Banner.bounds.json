@@ -1,0 +1,91 @@
+{
+ "_about": "Logo banner. Roblox axes: X right, Y up, Z = -Blender Y. Stands on the origin; its front faces Roblox -Z. Flat colours, no textures.",
+ "_size": [
+  46.7,
+  9.2,
+  9.52
+ ],
+ "_tris_total": 1304,
+ "mount_on_machine": {
+  "origin": [
+   0.0,
+   12.9,
+   -10.56
+  ],
+  "note": "put the banner's origin here, measured from the machine's origin, both facing the same way; the brackets then reach into the machine's neck"
+ },
+ "text_face": {
+  "center": [
+   0.0,
+   4.6,
+   -3.94
+  ],
+  "size": [
+   37.5,
+   7.0
+  ],
+  "normal": [
+   0,
+   0,
+   -1
+  ],
+  "note": "flat front of Banner_Body; the whole flat area is a 44.5 x 7 pill"
+ },
+ "Banner_Body": {
+  "size": [
+   45.4,
+   7.9,
+   1.28
+  ],
+  "center": [
+   0.0,
+   4.6,
+   -3.3
+  ],
+  "tris": 306,
+  "color": [
+   230,
+   45,
+   70
+  ],
+  "material": "SmoothPlastic"
+ },
+ "Banner_Trim": {
+  "size": [
+   46.7,
+   9.2,
+   7.87
+  ],
+  "center": [
+   0.0,
+   4.6,
+   0.825
+  ],
+  "tris": 746,
+  "color": [
+   255,
+   252,
+   250
+  ],
+  "material": "SmoothPlastic"
+ },
+ "Banner_Bolts": {
+  "size": [
+   43.5,
+   2.827,
+   0.92
+  ],
+  "center": [
+   0.0,
+   4.6,
+   -4.3
+  ],
+  "tris": 252,
+  "color": [
+   255,
+   200,
+   60
+  ],
+  "material": "SmoothPlastic"
+ }
+}
