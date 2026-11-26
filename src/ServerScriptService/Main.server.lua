@@ -242,12 +242,26 @@ do -- the lobby gumball: mesh + its glossy candy look (SurfaceAppearance saved i
 end
 assets.Parent = ReplicatedStorage
 
-do -- the candy lobby models (Config/Models.hub) -> ReplicatedStorage.HubAssets/<entry>/<mesh>.
+do -- the lobby models -> ReplicatedStorage.HubAssets/<entry>/<mesh>: the candy sets (Config/Models.hub) with
+	-- the gumball theme, the Clean Pop Plaza sets (Models.hubClean) plus the candy sets it reuses with the clean theme.
 	-- A set only appears when every one of its meshes loaded; Hub builds the part version otherwise.
 	local hubAssets = Instance.new("Folder")
 	hubAssets.Name = "HubAssets"
 	local ServerStorage = game:GetService("ServerStorage")
-	for key, def in Models.hub or {} do
+	local wanted: { [string]: any } = {}
+	if HubConfig.theme == "gumball" then
+		for key, def in Models.hub or {} do
+			wanted[key] = def
+		end
+	elseif HubConfig.theme == "clean" then
+		for key, def in Models.hubClean or {} do
+			wanted[key] = def
+		end
+		for _, key in (HubConfig.modelsClean and HubConfig.modelsClean.reuse) or {} do
+			wanted[key] = Models.hub and Models.hub[key]
+		end
+	end
+	for key, def in wanted do
 		if not Models.enabled or (def.model or 0) == 0 then
 			continue
 		end

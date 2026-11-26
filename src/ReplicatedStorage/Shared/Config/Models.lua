@@ -147,5 +147,71 @@ return {
 			meshes = { Dressing_Cupcake_Body = { 0, 2.875, 0 }, Dressing_Cupcake_Tint = { 0, 3.5, 0 }, Dressing_Gumdrop_Tint = { 0, 1.425, 0 }, Dressing_Sweet_Tint = { 0, 0.864, 0 } },
 		},
 	},
+	-- CLEAN POP PLAZA (art/hub_clean; the "clean" theme in Config/Hub.lua). Same layout as hub; Main loads
+	-- these only with the clean theme. Glow, glass, shine and plain-colour meshes are flat (no look).
+	hubClean = {
+		CleanCentre = {
+			model = 124778207235213,
+			look = "HubCleanCentreLook",
+			meshes = { CleanCentre_Body = { 0, 11.44, 0 }, CleanCentre_Core = { 0.25, 31.3, -0.377 }, CleanCentre_Glass = { 0, 31.5, 0 }, CleanCentre_Glow = { 0, 11.475, 0 }, CleanCentre_Ring = { 0, 31.802, 0.428 }, CleanCentre_Shine = { -4.546, 37.552, -9.719 } },
+			flat = { "CleanCentre_Glass", "CleanCentre_Glow", "CleanCentre_Shine" },
+		},
+		CleanBanner = {
+			model = 91391836801130,
+			meshes = { CleanBanner_Body = { 0, 4.6, -0.45 }, CleanBanner_Bubbles = { 0, 4.6, -1.075 }, CleanBanner_Glow = { 0, 4.6, -0.27 }, CleanBanner_Trim = { 0, 4.6, 2.815 } },
+		},
+		CleanPad = {
+			model = 101691221986884,
+			look = "HubCleanPadLook",
+			meshes = { CleanPad_Body = { 0, 0.26, 0 }, CleanPad_Glow = { 0, 0.335, 0 }, CleanPad_Tint = { 0, 0.325, 0 } },
+			flat = { "CleanPad_Glow" },
+		},
+		CleanPadSign = {
+			model = 93859490575056,
+			look = "HubCleanPadLook",
+			meshes = { CleanPadSign_Body = { 0, 3.31, 0 }, CleanPadSign_Tint = { 0, 5, 0 } },
+		},
+		CleanSpawnPad = {
+			model = 129742043957840,
+			look = "HubCleanPadLook",
+			meshes = { CleanSpawnPad_Body = { 0, 0.185, 0 } },
+		},
+		CleanFence = {
+			model = 87577223014707,
+			look = "HubCleanFenceLook",
+			meshes = { CleanFence_Corner = { 0, 2.04, 0 }, CleanFence_CornerGlow = { 0, 4.855, 0 }, CleanFence_Post = { 0, 1.55, 0 }, CleanFence_PostGlow = { 0, 3.31, 0 }, CleanFence_Rail = { 0, 1.87, 0 } },
+			flat = { "CleanFence_CornerGlow", "CleanFence_PostGlow" },
+		},
+		CleanBooth = {
+			model = 72234480176616,
+			look = "HubCleanBoothLook",
+			meshes = { CleanBooth_Body = { 0, 5.13, -0.64 }, CleanBooth_Glow = { 0, 8.685, 0 }, CleanBooth_Tint = { 0, 4.63, -0.5 } },
+			flat = { "CleanBooth_Glow" },
+		},
+		CleanBoothPad = {
+			model = 107932624449180,
+			look = "HubCleanBoothLook",
+			meshes = { CleanBoothPad_Body = { 0, 0.175, 0 }, CleanBoothPad_Glow = { 0, 0.3, 0 } },
+			flat = { "CleanBoothPad_Glow" },
+		},
+		CleanGift = {
+			model = 101301662501219,
+			look = "HubCleanGiftLook",
+			meshes = { CleanGift_Body = { 0, 1.6, 0 }, CleanGift_Glow = { 0, 0.04, 0 }, CleanGift_Lid = { 0, 4.326, 0 } },
+			flat = { "CleanGift_Glow" },
+		},
+		CleanIsland = {
+			model = 71592646245579,
+			look = "HubCleanIslandLook",
+			meshes = { CleanIsland_Crystal = { 2.157, -42.959, 12.485 }, CleanIsland_Glow = { 0, -6.63, 0 }, CleanIsland_Rim = { 0, -5.85, 0 }, CleanIsland_Under = { -0.066, -35.25, -0.596 } },
+			flat = { "CleanIsland_Glow" },
+		},
+		CleanTree = {
+			model = 90648958603988,
+			look = "HubCleanTreeLook",
+			meshes = { CleanTree_Ball_Body = { 0, 3.9, 0 }, CleanTree_Ball_Shine = { -1.731, 13.308, -2.542 }, CleanTree_Ball_Tint = { 0, 11, 0 }, CleanTree_Cloud_Body = { 0, 4.05, 0 }, CleanTree_Cloud_Shine = { -1.432, 12.511, -2.105 }, CleanTree_Cloud_Tint = { -0.1, 11.15, 0 }, CleanTree_Stack_Body = { 0, 3.2, 0 }, CleanTree_Stack_Shine = { -1.475, 10.967, -2.167 }, CleanTree_Stack_Tint = { 0, 10.65, 0 } },
+			flat = { "CleanTree_Ball_Shine", "CleanTree_Cloud_Shine", "CleanTree_Stack_Shine" },
+		},
+	},
 	zone = "Blue", -- which texture set the test room uses
 }

@@ -1,0 +1,32 @@
+{
+ "model": 107932624449180,
+ "moderation": "Approved",
+ "parts": {
+  "CleanBoothPad_Body": {
+   "meshId": 123122180513011,
+   "size": [
+    9.1,
+    0.35,
+    9.0074
+   ],
+   "position": [
+    0.0,
+    0.175,
+    0.0
+   ]
+  },
+  "CleanBoothPad_Glow": {
+   "meshId": 86843250031984,
+   "size": [
+    7.68,
+    0.001,
+    7.68
+   ],
+   "position": [
+    0.0,
+    0.3,
+    0.0
+   ]
+  }
+ }
+}

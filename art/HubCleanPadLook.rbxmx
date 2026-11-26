@@ -1,0 +1,12 @@
+<roblox xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.roblox.com/roblox.xsd" version="4">
+	<Item class="SurfaceAppearance" referent="RBXHUBCLEANPADLOOK0001">
+		<Properties>
+			<string name="Name">HubCleanPadLook</string>
+			<token name="AlphaMode">0</token>
+			<Color3 name="Color"><R>1</R><G>1</G><B>1</B></Color3>
+			<Content name="ColorMap"><url>rbxassetid://93383886614070</url></Content>
+			<Content name="NormalMap"><url>rbxassetid://72038420742487</url></Content>
+			<Content name="RoughnessMap"><url>rbxassetid://99298165533437</url></Content>
+		</Properties>
+	</Item>
+</roblox>

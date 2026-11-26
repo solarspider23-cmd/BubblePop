@@ -25,8 +25,9 @@ local Hub = {
 	backToHubSeconds = 8, -- after the room is cleared
 	rooms = { { name = "Starter Room" } }, -- what the pad owner can pick (more later)
 
-	-- Which look the hub uses: "gumball" (giant gumball machine, candy colours) or "aero" (glossy bubble HQ).
-	theme = "gumball",
+	-- Which look the hub uses: "clean" (Clean Pop Plaza: bubble centrepiece, soft pastels), "gumball"
+	-- (giant gumball machine, candy colours) or "aero" (glossy bubble HQ).
+	theme = "clean",
 	themes = {
 		aero = {
 			-- Frutiger Aero: glossy white, aqua, sky blue and lime green, glass and bubbles
@@ -67,6 +68,32 @@ local Hub = {
 			boothGlow = { rgb(190, 30, 90), rgb(30, 156, 120), rgb(200, 140, 10) },
 			gumballs = { rgb(230, 45, 60), rgb(40, 120, 230), rgb(255, 175, 0), rgb(50, 175, 70), rgb(255, 120, 190), rgb(255, 140, 40), rgb(150, 90, 230), rgb(255, 255, 255) },
 		},
+		clean = {
+			-- Clean Pop Plaza: soft white, cream and light grey; pastel sky, mint, lilac and peach; bubble blue.
+			-- Tints from art/hub_clean/*.bounds.json.
+			tileA = rgb(250, 251, 253), -- soft white
+			tileB = rgb(232, 238, 246), -- light grey-blue
+			white = rgb(250, 251, 253),
+			cream = rgb(255, 246, 232),
+			grey = rgb(225, 230, 238),
+			blue = rgb(46, 155, 255), -- bubble blue: the main accent
+			lightBlue = rgb(111, 191, 255), -- pastel sky
+			pink = rgb(180, 156, 245), -- (lilac)
+			lavender = rgb(255, 246, 232), -- (cream stage, part fallback)
+			chrome = rgb(225, 230, 238),
+			dome = rgb(190, 228, 255),
+			gold = rgb(255, 170, 128), -- (peach)
+			glow = rgb(20, 100, 200),
+			grass = rgb(160, 225, 175), -- pastel mint grass
+			padBase = rgb(250, 251, 253),
+			pad = { rgb(111, 191, 255), rgb(111, 221, 182), rgb(180, 156, 245), rgb(255, 170, 128) }, -- sky, mint, lilac, peach
+			padGlow = { rgb(20, 100, 200), rgb(15, 150, 112), rgb(100, 64, 210), rgb(210, 90, 40) },
+			booths = { rgb(111, 191, 255), rgb(111, 221, 182), rgb(180, 156, 245) }, -- sky, mint, lilac
+			boothGlow = { rgb(20, 100, 200), rgb(15, 150, 112), rgb(100, 64, 210) },
+			-- tree tints: sky, mint, lilac, pale sky (the bounds' peach and white tints came out brown and grey in game)
+			gumballs = { rgb(140, 203, 255), rgb(143, 230, 198), rgb(195, 174, 247), rgb(190, 228, 255) },
+			grassSmooth = true, -- smooth pastel grass instead of the Grass material
+		},
 	},
 
 	-- How the uploaded candy models are placed (Config/Models.hub; only used with the gumball theme;
@@ -84,6 +111,20 @@ local Hub = {
 		cornerGumballs = { 1, 2, 3, 4 }, -- gumball colour per fence corner (red, blue, amber, green)
 		lollipops = { "Swirl", "Ball", "Heart" },
 		dressing = { count = 24, kinds = { "Gumdrop", "Sweet", "Cupcake" }, maxRadius = 92, minEdge = 61, size = { 0.8, 1.3 } },
+	},
+
+	-- How the Clean Pop Plaza models are placed (Config/Models.hubClean; only with the clean theme).
+	-- reuse = candy sets (Config/Models.hub) the clean theme also uses, recoloured here.
+	modelsClean = {
+		reuse = { "Board", "Ground" },
+		glass = rgb(190, 228, 255), glassTransparency = 0.5, -- the centrepiece's giant bubble
+		shine = rgb(255, 255, 255), shineTransparency = 0.15,
+		glow = rgb(20, 100, 200), -- neon rings and lines
+		bannerBlue = rgb(46, 155, 255), bannerTrim = rgb(250, 251, 253), bannerBubbles = rgb(168, 216, 255), bannerBubblesGloss = 0.3,
+		kerb = rgb(250, 251, 253), kerbBand = rgb(111, 191, 255), -- candy kerb, recoloured
+		board = rgb(111, 191, 255), boardFace = rgb(250, 251, 253), -- candy board as plain sky blue with a white face
+		trees = { "Ball", "Stack", "Cloud" },
+		giftGlowTransparency = 0.35,
 	},
 }
 Hub.colors = Hub.themes[Hub.theme] or Hub.themes.aero

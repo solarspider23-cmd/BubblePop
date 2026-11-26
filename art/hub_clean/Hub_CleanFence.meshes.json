@@ -1,0 +1,71 @@
+{
+ "model": 87577223014707,
+ "moderation": "Approved",
+ "parts": {
+  "CleanFence_Corner": {
+   "meshId": 77197413598025,
+   "size": [
+    2.72,
+    4.08,
+    2.72
+   ],
+   "position": [
+    0.0,
+    2.04,
+    0.0
+   ]
+  },
+  "CleanFence_CornerGlow": {
+   "meshId": 124018190201671,
+   "size": [
+    1.9,
+    1.8308,
+    1.9
+   ],
+   "position": [
+    0.0,
+    4.8546,
+    0.0
+   ]
+  },
+  "CleanFence_Post": {
+   "meshId": 71691917205043,
+   "size": [
+    2.0,
+    3.1,
+    1.9021
+   ],
+   "position": [
+    0.0,
+    1.55,
+    0.0
+   ]
+  },
+  "CleanFence_PostGlow": {
+   "meshId": 79790299933220,
+   "size": [
+    1.4,
+    0.46,
+    1.4
+   ],
+   "position": [
+    0.0,
+    3.31,
+    0.0
+   ]
+  },
+  "CleanFence_Rail": {
+   "meshId": 124563385340050,
+   "size": [
+    7.857,
+    1.6205,
+    0.6
+   ],
+   "position": [
+    0.0,
+    1.8697,
+    0.0
+   ]
+  }
+ }
+}

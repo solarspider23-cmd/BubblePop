@@ -1,0 +1,45 @@
+{
+ "model": 72234480176616,
+ "moderation": "Approved",
+ "parts": {
+  "CleanBooth_Body": {
+   "meshId": 92648532508924,
+   "size": [
+    11.3,
+    8.86,
+    9.98
+   ],
+   "position": [
+    0.0,
+    5.13,
+    -0.64
+   ]
+  },
+  "CleanBooth_Glow": {
+   "meshId": 128495124158485,
+   "size": [
+    11.54,
+    3.47,
+    8.94
+   ],
+   "position": [
+    0.0,
+    8.685,
+    0.0
+   ]
+  },
+  "CleanBooth_Tint": {
+   "meshId": 84380820454448,
+   "size": [
+    12.3,
+    9.26,
+    10.3
+   ],
+   "position": [
+    0.0,
+    4.63,
+    -0.5
+   ]
+  }
+ }
+}

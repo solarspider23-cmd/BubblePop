@@ -1,0 +1,58 @@
+{
+ "model": 91391836801130,
+ "moderation": "Approved",
+ "parts": {
+  "CleanBanner_Body": {
+   "meshId": 99090041227022,
+   "size": [
+    44.88,
+    7.5,
+    0.5
+   ],
+   "position": [
+    0.0,
+    4.6,
+    -0.45
+   ]
+  },
+  "CleanBanner_Bubbles": {
+   "meshId": 86071793950694,
+   "size": [
+    43.4,
+    2.6,
+    0.75
+   ],
+   "position": [
+    0.0,
+    4.6,
+    -1.075
+   ]
+  },
+  "CleanBanner_Glow": {
+   "meshId": 76642119381266,
+   "size": [
+    45.32,
+    7.94,
+    0.001
+   ],
+   "position": [
+    0.0,
+    4.6,
+    -0.27
+   ]
+  },
+  "CleanBanner_Trim": {
+   "meshId": 87771697911033,
+   "size": [
+    46.4,
+    9.02,
+    6.57
+   ],
+   "position": [
+    0.0,
+    4.6,
+    2.815
+   ]
+  }
+ }
+}

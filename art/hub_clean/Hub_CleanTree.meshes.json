@@ -1,0 +1,123 @@
+{
+ "model": 90648958603988,
+ "moderation": "Approved",
+ "parts": {
+  "CleanTree_Ball_Body": {
+   "meshId": 103743432662365,
+   "size": [
+    4.1,
+    7.8,
+    3.8993
+   ],
+   "position": [
+    0.0,
+    3.9,
+    0.0
+   ]
+  },
+  "CleanTree_Ball_Shine": {
+   "meshId": 98379333073280,
+   "size": [
+    2.3475,
+    2.4592,
+    1.4944
+   ],
+   "position": [
+    -1.7307,
+    13.3076,
+    -2.5424
+   ]
+  },
+  "CleanTree_Ball_Tint": {
+   "meshId": 124979111432907,
+   "size": [
+    7.9186,
+    8.0,
+    7.7983
+   ],
+   "position": [
+    0.0,
+    11.0,
+    0.0
+   ]
+  },
+  "CleanTree_Cloud_Body": {
+   "meshId": 130246026582890,
+   "size": [
+    4.1,
+    8.1,
+    3.8993
+   ],
+   "position": [
+    0.0,
+    4.05,
+    0.0
+   ]
+  },
+  "CleanTree_Cloud_Shine": {
+   "meshId": 120492029313617,
+   "size": [
+    1.9374,
+    2.0292,
+    1.2328
+   ],
+   "position": [
+    -1.4321,
+    12.5107,
+    -2.1049
+   ]
+  },
+  "CleanTree_Cloud_Tint": {
+   "meshId": 138080020980334,
+   "size": [
+    9.8,
+    8.3,
+    6.4345
+   ],
+   "position": [
+    -0.1,
+    11.15,
+    0.0
+   ]
+  },
+  "CleanTree_Stack_Body": {
+   "meshId": 120454984978722,
+   "size": [
+    4.1,
+    6.4,
+    3.8993
+   ],
+   "position": [
+    0.0,
+    3.2,
+    0.0
+   ]
+  },
+  "CleanTree_Stack_Shine": {
+   "meshId": 133100587922298,
+   "size": [
+    1.996,
+    2.0906,
+    1.2701
+   ],
+   "position": [
+    -1.4748,
+    10.9674,
+    -2.1674
+   ]
+  },
+  "CleanTree_Stack_Tint": {
+   "meshId": 103645638413023,
+   "size": [
+    6.6967,
+    10.1,
+    6.6967
+   ],
+   "position": [
+    0.0,
+    10.65,
+    0.0
+   ]
+  }
+ }
+}
