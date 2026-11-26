@@ -1,4 +1,5 @@
--- The lobby hub: builds the studded brick plaza with 4 pads, and runs the pads.
+-- The lobby hub: builds the plaza (HQ + logo, 4 play pads, fountain, booths, gift chest, scenery)
+-- and runs the pads.
 -- Main calls Hub.start({ canStart = fn() -> boolean, startRun = fn(players, roomIndex), inRun = fn(player) -> boolean }).
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
@@ -14,30 +15,72 @@ local O = Vector3.new(HubConfig.origin[1], HubConfig.origin[2], HubConfig.origin
 local function color(c)
 	return Color3.fromRGB(c[1], c[2], c[3])
 end
+local C = {}
+for k, v in HubConfig.colors do
+	if type(v[1]) == "number" then
+		C[k] = color(v)
+	end
+end
 
 local folder = Instance.new("Folder")
 folder.Name = "Hub"
 
--- a classic Roblox brick: studs on top
-local function brick(name: string, size: Vector3, pos: Vector3, col: Color3, studs: boolean?): Part
+local function at(x: number, y: number, z: number): Vector3
+	return O + Vector3.new(x, y, z)
+end
+
+-- One anchored part. cf may be a Vector3 (position) or a CFrame.
+local function part(name: string, size: Vector3, cf: any, col: Color3, opts: { [string]: any }?): Part
+	local o = opts or {}
 	local p = Instance.new("Part")
 	p.Name = name
 	p.Anchored = true
 	p.Size = size
-	p.Position = pos
+	p.CFrame = typeof(cf) == "Vector3" and CFrame.new(cf) or cf
 	p.Color = col
-	p.Material = Enum.Material.Plastic
-	p.TopSurface = studs == false and Enum.SurfaceType.Smooth or Enum.SurfaceType.Studs
-	p.BottomSurface = Enum.SurfaceType.Inlet
-	p.Parent = folder
+	p.Material = o.mat or Enum.Material.SmoothPlastic
+	p.TopSurface = o.studs and Enum.SurfaceType.Studs or Enum.SurfaceType.Smooth
+	p.BottomSurface = Enum.SurfaceType.Smooth
+	if o.shape then
+		p.Shape = o.shape
+	end
+	p.Transparency = o.transparency or 0
+	p.CanCollide = o.solid ~= false
+	p.CastShadow = o.shadow ~= false
+	p.Parent = o.parent or folder
 	return p
 end
+local BALL, CYL = Enum.PartType.Ball, Enum.PartType.Cylinder
+local NEON, GLASS = Enum.Material.Neon, Enum.Material.Glass
+local UP = CFrame.Angles(0, 0, math.pi / 2) -- cylinder standing up
+local FACE_Z = CFrame.Angles(0, math.pi / 2, 0) -- cylinder facing +Z (a disc on a wall)
 
-local function sign(parent: BasePart, face: Enum.NormalId, text: string, col: Color3?, stroke: Color3?)
+local function vcyl(name: string, pos: Vector3, d: number, h: number, col: Color3, opts: { [string]: any }?): Part
+	local o = opts or {}
+	o.shape = CYL
+	return part(name, Vector3.new(h, d, d), CFrame.new(pos) * UP, col, o)
+end
+local function ball(name: string, pos: Vector3, d: number, col: Color3, opts: { [string]: any }?): Part
+	local o = opts or {}
+	o.shape = BALL
+	return part(name, Vector3.new(d, d, d), pos, col, o)
+end
+
+local function stroke(t: TextLabel, thick: number, col: Color3)
+	local st = Instance.new("UIStroke")
+	st.Thickness = thick
+	st.Color = col
+	st.Parent = t
+end
+
+-- Text on a part's face
+-- (text can't be bigger than 100 px, so big signs use fewer pixels per stud)
+local function sign(parent: BasePart, face: Enum.NormalId, text: string, col: Color3?, strokeCol: Color3?, pixelsPerStud: number?)
 	local gui = Instance.new("SurfaceGui")
 	gui.Face = face
 	gui.SizingMode = Enum.SurfaceGuiSizingMode.PixelsPerStud
-	gui.PixelsPerStud = 30
+	gui.PixelsPerStud = pixelsPerStud or 30
+	gui.LightInfluence = 0
 	local t = Instance.new("TextLabel")
 	t.Size = UDim2.fromScale(0.92, 0.8)
 	t.Position = UDim2.fromScale(0.04, 0.1)
@@ -46,94 +89,387 @@ local function sign(parent: BasePart, face: Enum.NormalId, text: string, col: Co
 	t.TextScaled = true
 	t.Text = text
 	t.TextColor3 = col or Color3.new(1, 1, 1)
-	local st = Instance.new("UIStroke")
-	st.Thickness = 4
-	st.Color = stroke or Color3.fromRGB(20, 40, 110)
-	st.Parent = t
+	stroke(t, math.max(2, (pixelsPerStud or 30) / 7), strokeCol or Color3.fromRGB(20, 40, 110))
 	t.Parent = gui
 	gui.Parent = parent
 end
 
-Hub.spawnCFrame = CFrame.lookAt(O + Vector3.new(HubConfig.spawn[1], HubConfig.spawn[2], HubConfig.spawn[3]), O + Vector3.new(0, HubConfig.spawn[2], -10))
+-- Floating text above a part
+local function label(parent: BasePart, text: string, height: number, w: number, h: number, col: Color3?): TextLabel
+	local bb = Instance.new("BillboardGui")
+	bb.Name = "Info"
+	bb.Size = UDim2.fromScale(w, h)
+	bb.StudsOffsetWorldSpace = Vector3.new(0, height, 0)
+	bb.LightInfluence = 0
+	bb.MaxDistance = 140
+	local t = Instance.new("TextLabel")
+	t.Name = "Text"
+	t.Size = UDim2.fromScale(1, 1)
+	t.BackgroundTransparency = 1
+	t.FontFace = Font.fromEnum(Enum.Font.LuckiestGuy)
+	t.TextScaled = true
+	t.TextColor3 = col or Color3.new(1, 1, 1)
+	t.Text = text
+	stroke(t, 3, Color3.fromRGB(20, 40, 110))
+	t.Parent = bb
+	bb.Parent = parent
+	return t
+end
+
+Hub.spawnCFrame = CFrame.lookAt(at(HubConfig.spawn[1], HubConfig.spawn[2], HubConfig.spawn[3]), at(0, HubConfig.spawn[2], -10))
 
 local padParts: { BasePart } = {}
 
-function Hub.build()
-	local c = HubConfig.colors
+---------------------------------------------------------------- pieces
+
+local function buildPlaza()
 	local S = HubConfig.size
-	brick("Baseplate", Vector3.new(S, 2, S), O + Vector3.new(0, -1, 0), color(c.baseplate))
-	-- low brick border, in rows of bright colours
-	local wallCols = { Color3.fromRGB(13, 105, 172), Color3.fromRGB(196, 40, 28), Color3.fromRGB(245, 205, 48), Color3.fromRGB(75, 151, 75) }
-	for i, side in { { 0, -S / 2, S, 2 }, { 0, S / 2, S, 2 }, { -S / 2, 0, 2, S }, { S / 2, 0, 2, S } } do
-		for row = 0, 2 do
-			brick("Wall", Vector3.new(side[3], 1.2, side[4]), O + Vector3.new(side[1], 0.6 + row * 1.2, side[2]), wallCols[(i + row) % #wallCols + 1])
+	local half = S / 2
+	-- grass all around, the plaza sits 3 studs above it
+	part("Grass", Vector3.new(700, 2, 700), at(0, -4, 0), C.grass, { mat = Enum.Material.Grass })
+	part("Plaza", Vector3.new(S, 2.8, S), at(0, -1.6, 0), C.white)
+	part("PlazaTrim", Vector3.new(S + 1, 0.8, S + 1), at(0, -2.6, 0), C.blue)
+	-- checkerboard of studded tiles
+	local n = 8
+	local t = S / n
+	for i = 0, n - 1 do
+		for j = 0, n - 1 do
+			local x, z = -half + t * (i + 0.5), -half + t * (j + 0.5)
+			part("Tile", Vector3.new(t, 0.2, t), at(x, -0.1, z), (i + j) % 2 == 0 and C.tileA or C.tileB, { studs = true, shadow = false })
 		end
 	end
-	-- spawn brick
-	local sp = brick("SpawnBrick", Vector3.new(8, 1, 8), Hub.spawnCFrame.Position - Vector3.new(0, HubConfig.spawn[2] - 0.5, 0), Color3.fromRGB(99, 95, 98))
-	sign(sp, Enum.NormalId.Top, "SPAWN", Color3.new(1, 1, 1))
-
-	-- the pads, with a big "PICK A PAD!" sign behind them
-	local back = brick("PadSign", Vector3.new(76, 10, 1), O + Vector3.new(0, 7, -18), Color3.fromRGB(13, 105, 172))
-	sign(back, Enum.NormalId.Back, "STEP ON A PAD TO PLAY!", Color3.fromRGB(255, 225, 80))
-	for _, leg in { -36, 36 } do
-		brick("SignLeg", Vector3.new(2, 12, 2), O + Vector3.new(leg, 6, -18), Color3.fromRGB(99, 95, 98))
+	-- low fence: posts with little glowing caps, one blue rail
+	local edge = half - 1
+	for _, side in { { 1, 0 }, { -1, 0 }, { 0, 1 }, { 0, -1 } } do
+		local alongX = side[2] ~= 0
+		local rail = alongX and Vector3.new(S - 2, 0.6, 0.6) or Vector3.new(0.6, 0.6, S - 2)
+		part("Rail", rail, at(side[1] * edge, 2.4, side[2] * edge), C.lightBlue)
+		part("Rail", rail, at(side[1] * edge, 1.2, side[2] * edge), C.lightBlue)
+		for k = -7, 7 do
+			local u = k * (edge / 7)
+			local x, z = alongX and u or side[1] * edge, alongX and side[2] * edge or u
+			part("Post", Vector3.new(1.2, 3.2, 1.2), at(x, 1.6, z), C.white)
+			part("PostLight", Vector3.new(0.8, 0.8, 0.8), at(x, 3.6, z), C.glow, { mat = NEON, shadow = false })
+		end
 	end
+	-- spawn spot
+	vcyl("SpawnRing", at(HubConfig.spawn[1], 0.15, HubConfig.spawn[3]), 11, 0.3, C.blue)
+	vcyl("SpawnDisc", at(HubConfig.spawn[1], 0.2, HubConfig.spawn[3]), 9.5, 0.3, C.white)
+end
+
+-- a little blocky person (decoration)
+local function npc(feet: Vector3, shirt: Color3, pants: Color3)
+	local base = CFrame.lookAt(feet, feet + Vector3.zAxis)
+	local skin = Color3.fromRGB(255, 205, 150)
+	local function bit(name, size, x, y, col)
+		part(name, size, base * CFrame.new(x, y, 0), col)
+	end
+	bit("Leg", Vector3.new(1, 2, 1), -0.5, 1, pants)
+	bit("Leg", Vector3.new(1, 2, 1), 0.5, 1, pants)
+	bit("Torso", Vector3.new(2, 2, 1), 0, 3, shirt)
+	bit("Arm", Vector3.new(1, 2, 1), -1.5, 3, skin)
+	bit("Arm", Vector3.new(1, 2, 1), 1.5, 3, skin)
+	local head = part("Head", Vector3.new(2, 1, 1), base * CFrame.new(0, 4.5, 0), skin)
+	local mesh = Instance.new("SpecialMesh")
+	mesh.MeshType = Enum.MeshType.Head
+	mesh.Scale = Vector3.new(1.25, 1.25, 1.25)
+	mesh.Parent = head
+	local face = Instance.new("Decal")
+	face.Texture = "rbxasset://textures/face.png"
+	face.Face = Enum.NormalId.Front
+	face.Parent = head
+end
+
+local function buildHQ()
+	local z = -47
+	-- stage and back wall
+	part("Stage", Vector3.new(30, 1.5, 14), at(0, 0.75, -42), C.lavender)
+	part("StageEdge", Vector3.new(30.4, 0.4, 0.4), at(0, 1.3, -34.9), C.gold)
+	part("BackWall", Vector3.new(30, 16, 2), at(0, 8, -50), C.white)
+	for _, x in { -10, 0, 10 } do
+		part("WallStripe", Vector3.new(1.5, 16, 0.4), at(x, 8, -48.8), C.lightBlue)
+	end
+	-- two towers with glowing windows, domed roofs and flags
+	for _, sx in { -1, 1 } do
+		local x = sx * 19.5
+		part("Tower", Vector3.new(9, 22, 9), at(x, 11, z), C.white)
+		for _, dx in { -4.6, 4.6 } do
+			part("TowerStripe", Vector3.new(0.6, 22, 0.6), at(x + dx, 11, z + 4.6), C.blue)
+		end
+		for row = 0, 2 do
+			for _, dx in { -2, 2 } do
+				part("Window", Vector3.new(2, 3, 0.3), at(x + dx, 6 + row * 5, z + 4.55), Color3.fromRGB(210, 150, 40), { mat = NEON, shadow = false })
+			end
+		end
+		vcyl("TowerCap", at(x, 22.5, z), 11, 1, C.pink)
+		ball("TowerDome", at(x, 23, z), 8, C.lightBlue)
+		vcyl("FlagPole", at(x, 29, z), 0.4, 8, C.white)
+		part("Flag", Vector3.new(4, 2.5, 0.2), at(x + sx * 2.2, 31.5, z), sx < 0 and C.pink or C.blue, { shadow = false })
+	end
+	-- pipes joining the towers
+	for _, y in { 15, 18.5 } do
+		part("Pipe", Vector3.new(30, 1.6, 1.6), at(0, y, -47), Color3.fromRGB(200, 205, 215), { shape = CYL, mat = Enum.Material.Metal })
+		for _, x in { -9, 0, 9 } do
+			part("PipeRing", Vector3.new(0.8, 2.1, 2.1), at(x, y, -47), C.gold, { shape = CYL })
+		end
+	end
+	-- counter with two helpers behind it
+	local counter = part("Counter", Vector3.new(16, 3.5, 3), CFrame.lookAt(at(0, 3.25, -38), at(0, 3.25, 0)), C.blue)
+	part("CounterTop", Vector3.new(16.6, 0.5, 3.6), at(0, 5.25, -38), C.pink)
+	local _ = counter
+	local hqSign = part("HQSign", Vector3.new(14, 3, 0.4), CFrame.lookAt(at(0, 11.5, -48.6), at(0, 11.5, 0)), C.pink)
+	sign(hqSign, Enum.NormalId.Front, "BUBBLE HQ", Color3.new(1, 1, 1), nil, 18)
+	npc(at(-4, 1.5, -41.5), C.pink, Color3.fromRGB(60, 70, 110))
+	npc(at(4, 1.5, -41.5), C.blue, Color3.fromRGB(60, 70, 110))
+
+	-- the floating logo, a bubble-wrap emblem behind it and two crossed pop sticks
+	local ey, ez = 39, -46
+	for _, sgn in { -1, 1 } do
+		local cf = CFrame.new(at(0, ey, ez - 1.5)) * CFrame.Angles(0, 0, sgn * math.rad(42))
+		part("PopStick", Vector3.new(50, 2, 2), cf, Color3.fromRGB(255, 160, 50), { shape = CYL })
+		local tip = (cf * CFrame.new(sgn * 25, 0, 0)).Position
+		ball("StickTip", tip, 5, C.pink)
+		part("StickBand", Vector3.new(1, 2.7, 2.7), cf * CFrame.new(sgn * 21.5, 0, 0), C.white, { shape = CYL })
+	end
+	part("EmblemRim", Vector3.new(1, 24.5, 24.5), CFrame.new(at(0, ey, ez - 0.6)) * FACE_Z, C.white, { shape = CYL })
+	part("Emblem", Vector3.new(1, 22, 22), CFrame.new(at(0, ey, ez)) * FACE_Z, C.lightBlue, { shape = CYL })
+	local bubbles = { { 0, 0, 7 } }
+	for k = 0, 5 do
+		local a = math.rad(k * 60)
+		table.insert(bubbles, { math.cos(a) * 6.6, math.sin(a) * 6.6, 5.4 })
+	end
+	for _, b in bubbles do
+		local pos = at(b[1], ey + b[2], ez + 0.5)
+		ball("EmblemBubble", pos, b[3], Color3.fromRGB(215, 245, 255), { mat = GLASS, transparency = 0.15 })
+		ball("EmblemShine", pos + Vector3.new(-b[3] * 0.18, b[3] * 0.18, b[3] * 0.4), b[3] * 0.22, Color3.new(1, 1, 1))
+	end
+	local lz = -43
+	part("LogoRim", Vector3.new(47.5, 10.5, 1), at(0, 29, lz - 0.6), C.white)
+	for _, sx in { -1, 1 } do
+		part("LogoRimEnd", Vector3.new(1, 10.5, 10.5), CFrame.new(at(sx * 23.75, 29, lz - 0.6)) * FACE_Z, C.white, { shape = CYL })
+		part("LogoEnd", Vector3.new(1.4, 9, 9), CFrame.new(at(sx * 23.75, 29, lz)) * FACE_Z, C.blue, { shape = CYL })
+	end
+	local plaque = part("Logo", Vector3.new(47.5, 9, 1.4), CFrame.lookAt(at(0, 29, lz), at(0, 29, 100)), C.blue)
+	sign(plaque, Enum.NormalId.Front, "BUBBLE POP", Color3.new(1, 1, 1), Color3.fromRGB(15, 50, 140), 11)
+end
+
+local function buildPads()
+	local w, d = HubConfig.padSize[1], HubConfig.padSize[2]
 	for i, xz in HubConfig.pads do
-		local pos = O + Vector3.new(xz[1], 0, xz[2])
-		brick("PadBase", Vector3.new(HubConfig.padRadius * 2 + 2, 0.6, HubConfig.padRadius * 2 + 2), pos + Vector3.new(0, 0.3, 0), color(c.padBase))
-		local pad = Instance.new("Part")
-		pad.Name = "Pad" .. i
-		pad.Anchored = true
-		pad.CanCollide = false
-		pad.Shape = Enum.PartType.Cylinder
-		pad.Size = Vector3.new(0.3, HubConfig.padRadius * 2, HubConfig.padRadius * 2)
-		pad.CFrame = CFrame.new(pos + Vector3.new(0, 0.7, 0)) * CFrame.Angles(0, 0, math.pi / 2)
-		pad.Color = color(c.pad[i] or c.pad[1])
-		pad.Material = Enum.Material.Neon
-		pad.Transparency = 0.25
+		local x, z = xz[1], xz[2]
+		local col = color(HubConfig.colors.pad[i] or HubConfig.colors.pad[1])
+		part("PadBase", Vector3.new(w + 0.8, 0.4, d + 0.8), at(x, 0.2, z), C.padBase)
+		part("PadEdge", Vector3.new(w + 0.8, 0.5, 0.4), at(x, 0.25, z - d / 2 - 0.6), col)
+		local pad = part("Pad" .. i, Vector3.new(w, 0.3, d), at(x, 0.45, z), col, { mat = NEON, transparency = 0.3, solid = false, shadow = false })
 		pad:SetAttribute("Index", i)
 		pad:SetAttribute("Members", 0)
-		pad.Parent = folder
-		local bb = Instance.new("BillboardGui")
-		bb.Name = "Info"
-		bb.Size = UDim2.fromScale(8, 3)
-		bb.StudsOffsetWorldSpace = Vector3.new(0, 5, 0)
-		bb.LightInfluence = 0
-		local t = Instance.new("TextLabel")
-		t.Name = "Text"
-		t.Size = UDim2.fromScale(1, 1)
-		t.BackgroundTransparency = 1
-		t.FontFace = Font.fromEnum(Enum.Font.LuckiestGuy)
-		t.TextScaled = true
-		t.TextColor3 = Color3.new(1, 1, 1)
-		t.Text = ("PAD %d\n0/%d"):format(i, HubConfig.maxPlayers)
-		local st = Instance.new("UIStroke")
-		st.Thickness = 3
-		st.Color = Color3.fromRGB(20, 40, 110)
-		st.Parent = t
-		t.Parent = bb
-		bb.Parent = pad
+		label(pad, ("PAD %d\n0/%d"):format(i, HubConfig.maxPlayers), 5, 9, 3.4)
 		padParts[i] = pad
 	end
+end
 
-	-- two booths (placeholders): game passes and the crystal shop
-	for _, b in { { -30, 26, "PASSES", c.boothRoofPasses }, { 30, 26, "SHOP", c.boothRoofShop } } do
-		local base = O + Vector3.new(b[1], 0, b[2])
-		brick("Counter", Vector3.new(10, 3, 3), base + Vector3.new(0, 1.5, 0), color(c.booth))
-		for _, dx in { -4.5, 4.5 } do
-			brick("Post", Vector3.new(1, 8, 1), base + Vector3.new(dx, 4, -2), color(c.booth))
-		end
-		local roof = brick("Roof", Vector3.new(12, 1, 6), base + Vector3.new(0, 8.5, -1), color(b[4]))
-		local board = brick("Board", Vector3.new(10, 2.5, 0.6), base + Vector3.new(0, 10.3, 1.2), color(b[4]), false)
-		sign(board, Enum.NormalId.Back, b[3], Color3.new(1, 1, 1))
-		local _ = roof
+local function buildLeft()
+	-- how-to-play board, turned towards the middle
+	local bpos = at(-46, 6.5, -20)
+	local face = CFrame.lookAt(bpos, at(0, 6.5, 4))
+	part("BoardFrame", Vector3.new(14, 10, 0.6), face * CFrame.new(0, 0, 0.35), C.blue)
+	local board = part("Board", Vector3.new(13, 9, 0.6), face, C.white)
+	for _, dx in { -6, 6 } do
+		part("BoardLeg", Vector3.new(1, 6.5, 1), face * CFrame.new(dx, -5.5, 0.3), C.white)
+	end
+	local alert = part("Alert", Vector3.new(0.6, 3, 3), face * CFrame.new(-6.5, 5.5, 0) * FACE_Z, Color3.fromRGB(230, 50, 60), { shape = CYL })
+	label(alert, "!", 0, 2, 2)
+	local gui = Instance.new("SurfaceGui")
+	gui.Face = Enum.NormalId.Front
+	gui.SizingMode = Enum.SurfaceGuiSizingMode.PixelsPerStud
+	gui.PixelsPerStud = 30
+	gui.LightInfluence = 0
+	local title = Instance.new("TextLabel")
+	title.Size = UDim2.fromScale(0.9, 0.22)
+	title.Position = UDim2.fromScale(0.05, 0.04)
+	title.BackgroundTransparency = 1
+	title.FontFace = Font.fromEnum(Enum.Font.LuckiestGuy)
+	title.TextScaled = true
+	title.Text = "HOW TO PLAY"
+	title.TextColor3 = C.blue
+	title.Parent = gui
+	local body = Instance.new("TextLabel")
+	body.Size = UDim2.fromScale(0.86, 0.68)
+	body.Position = UDim2.fromScale(0.07, 0.28)
+	body.BackgroundTransparency = 1
+	body.FontFace = Font.fromEnum(Enum.Font.FredokaOne)
+	body.TextScaled = true
+	body.TextXAlignment = Enum.TextXAlignment.Left
+	body.TextYAlignment = Enum.TextYAlignment.Top
+	body.TextColor3 = Color3.fromRGB(40, 50, 80)
+	body.Text = "1. Stand on a pad with your friends\n2. Pop every bubble in the room\n3. Sell your scraps at the chute\n4. Upgrade and clear it FAST!"
+	body.Parent = gui
+	gui.Parent = board
+
+	-- bubble fountain: round basin, water, a giant bubble floating in the middle, water jets
+	local f = at(-38, 0, 16)
+	vcyl("FountainRim", f + Vector3.new(0, 1.1, 0), 21, 2.2, C.lightBlue)
+	vcyl("FountainWall", f + Vector3.new(0, 1.2, 0), 20, 2.4, C.white)
+	vcyl("Water", f + Vector3.new(0, 2.0, 0), 18, 0.6, Color3.fromRGB(70, 180, 255), { transparency = 0.15, solid = false })
+	vcyl("FountainColumn", f + Vector3.new(0, 3.5, 0), 3, 4, C.white)
+	vcyl("FountainCup", f + Vector3.new(0, 5.6, 0), 6, 0.6, C.lightBlue)
+	local bubble = ball("FountainBubble", f + Vector3.new(0, 10, 0), 8, Color3.fromRGB(190, 235, 255), { mat = GLASS, transparency = 0.25, solid = false })
+	ball("FountainShine", f + Vector3.new(-1.6, 11.6, 3), 1.6, Color3.new(1, 1, 1), { solid = false })
+	local rise = Instance.new("ParticleEmitter") -- little bubbles drifting up
+	rise.Rate = 3
+	rise.Lifetime = NumberRange.new(2, 3)
+	rise.Speed = NumberRange.new(2, 3)
+	rise.SpreadAngle = Vector2.new(40, 40)
+	rise.Size = NumberSequence.new(0.6, 0.2)
+	rise.Transparency = NumberSequence.new(0.3, 1)
+	rise.Color = ColorSequence.new(Color3.fromRGB(200, 240, 255))
+	rise.Parent = bubble
+	for k = 0, 5 do
+		local a = math.rad(k * 60)
+		local npos = f + Vector3.new(math.cos(a) * 8.5, 2.6, math.sin(a) * 8.5)
+		local dir = (f + Vector3.new(0, 9, 0) - npos).Unit
+		local nozzle = part("Nozzle", Vector3.new(0.6, 0.6, 0.6), CFrame.lookAt(npos, npos + dir) * CFrame.Angles(-math.pi / 2, 0, 0), C.gold, { solid = false })
+		local jet = Instance.new("ParticleEmitter")
+		jet.EmissionDirection = Enum.NormalId.Top
+		jet.Rate = 30
+		jet.Lifetime = NumberRange.new(0.9, 1)
+		jet.Speed = NumberRange.new(13, 14)
+		jet.SpreadAngle = Vector2.new(3, 3)
+		jet.Acceleration = Vector3.new(0, -32, 0)
+		jet.Size = NumberSequence.new(0.5, 0.25)
+		jet.Transparency = NumberSequence.new(0.2, 0.6)
+		jet.Color = ColorSequence.new(Color3.fromRGB(170, 225, 255))
+		jet.Parent = nozzle
 	end
 
-	-- leaderboard wall (placeholder)
-	local lb = brick("Leaderboard", Vector3.new(20, 12, 1), O + Vector3.new(0, 6, S / 2 - 4), Color3.fromRGB(17, 17, 17))
-	sign(lb, Enum.NormalId.Front, "FASTEST CLEARS\n(coming soon)", Color3.fromRGB(255, 225, 80))
+	-- bubble display: a rare rainbow bubble in a glass case
+	local dpos = at(-26, 0, -6)
+	vcyl("DisplayBase", dpos + Vector3.new(0, 0.6, 0), 8, 1.2, C.gold)
+	vcyl("DisplayPedestal", dpos + Vector3.new(0, 2.2, 0), 6.5, 2, C.white)
+	part("DisplayCase", Vector3.new(6, 7, 6), dpos + Vector3.new(0, 6.7, 0), Color3.fromRGB(220, 240, 255), { mat = GLASS, transparency = 0.7 })
+	part("DisplayLid", Vector3.new(6.6, 0.6, 6.6), dpos + Vector3.new(0, 10.5, 0), C.gold)
+	for _, c in { { -1, -1 }, { -1, 1 }, { 1, -1 }, { 1, 1 } } do
+		part("DisplayPost", Vector3.new(0.5, 7, 0.5), dpos + Vector3.new(c[1] * 2.9, 6.7, c[2] * 2.9), C.gold)
+	end
+	local rb = ball("RainbowBubble", dpos + Vector3.new(0, 6.5, 0), 4.2, Color3.fromRGB(255, 130, 220), { solid = false })
+	rb.Reflectance = 0.15
+	ball("RainbowShine", dpos + Vector3.new(-0.8, 7.4, 1.4), 1, Color3.new(1, 1, 1), { solid = false })
+	local hl = Instance.new("Highlight") -- rainbow-ish rim so it pops out of the case
+	hl.FillTransparency = 1
+	hl.OutlineColor = Color3.fromRGB(255, 220, 80)
+	hl.DepthMode = Enum.HighlightDepthMode.Occluded
+	hl.Parent = rb
+	local sparkle = Instance.new("ParticleEmitter")
+	sparkle.Rate = 8
+	sparkle.Lifetime = NumberRange.new(0.8, 1.4)
+	sparkle.Speed = NumberRange.new(1, 2)
+	sparkle.SpreadAngle = Vector2.new(180, 180)
+	sparkle.Size = NumberSequence.new(0.5, 0)
+	sparkle.LightEmission = 0.6
+	sparkle.Color = ColorSequence.new({
+		ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 90, 90)),
+		ColorSequenceKeypoint.new(0.25, Color3.fromRGB(255, 220, 60)),
+		ColorSequenceKeypoint.new(0.5, Color3.fromRGB(80, 220, 120)),
+		ColorSequenceKeypoint.new(0.75, Color3.fromRGB(80, 160, 255)),
+		ColorSequenceKeypoint.new(1, Color3.fromRGB(200, 100, 255)),
+	})
+	sparkle.Parent = rb
+	label(rb, "RAINBOW BUBBLE", 6, 10, 2, Color3.fromRGB(255, 225, 80))
+end
 
+local function buildBooths()
+	local spots = { { 38, -20 }, { 43, -4 }, { 48, 12 } }
+	for i, s in spots do
+		local accent = color(HubConfig.colors.booths[i])
+		local pos = at(s[1], 0, s[2])
+		local face = CFrame.lookAt(pos, pos - Vector3.xAxis) -- open side faces the middle
+		local function piece(name, size, x, y, zz, col, opts)
+			return part(name, size, face * CFrame.new(x, y, zz), col, opts)
+		end
+		piece("BoothBody", Vector3.new(9, 6, 7), 0, 3, 0, accent)
+		piece("BoothTrim", Vector3.new(9.4, 0.5, 7.4), 0, 6.25, 0, C.gold)
+		piece("BoothWindow", Vector3.new(6, 2.6, 0.3), 0, 3.8, -3.55, Color3.fromRGB(40, 50, 80))
+		piece("BoothSill", Vector3.new(7, 0.5, 1.2), 0, 2.3, -3.9, C.white)
+		-- striped awning roof
+		for k = 0, 4 do
+			piece("Awning", Vector3.new(2, 0.6, 8.4), -4 + k * 2, 7, -0.5, k % 2 == 0 and C.white or accent)
+		end
+		piece("RoofTop", Vector3.new(7, 1.6, 5), 0, 8.1, 0, C.white)
+		local roofBall = part("RoofBall", Vector3.new(2, 2, 2), (face * CFrame.new(0, 9.6, 0)).Position, C.gold, { shape = BALL })
+		label(roofBall, "COMING SOON", 3, 9, 2, Color3.new(1, 1, 1))
+		-- round pad in front
+		local padPos = (face * CFrame.new(0, 0, -7.5)).Position
+		vcyl("BoothPadRing", padPos + Vector3.new(0, 0.15, 0), 7, 0.3, accent, { mat = NEON, transparency = 0.2, shadow = false })
+		vcyl("BoothPad", padPos + Vector3.new(0, 0.2, 0), 5.6, 0.3, C.white, { shadow = false })
+	end
+end
+
+local function buildChest()
+	local pos = at(-24, 0, 40)
+	local face = CFrame.lookAt(pos, at(-14, 0, 20))
+	local red, gold = Color3.fromRGB(230, 60, 90), C.gold
+	vcyl("ChestGlow", pos + Vector3.new(0, 0.15, 0), 10, 0.3, Color3.fromRGB(200, 150, 20), { mat = NEON, transparency = 0.35, shadow = false })
+	part("ChestBody", Vector3.new(6, 3.5, 4), face * CFrame.new(0, 2.05, 0), red)
+	part("ChestLid", Vector3.new(6, 4, 4), face * CFrame.new(0, 3.8, 0), red, { shape = CYL })
+	for _, dx in { -2, 2 } do
+		part("ChestBand", Vector3.new(0.6, 3.6, 4.1), face * CFrame.new(dx, 2.05, 0), gold)
+		part("ChestBandLid", Vector3.new(0.6, 4.1, 4.1), face * CFrame.new(dx, 3.8, 0), gold, { shape = CYL })
+	end
+	local lock = part("ChestLock", Vector3.new(1.2, 1.4, 0.4), face * CFrame.new(0, 3.6, -2.1), gold)
+	local light = Instance.new("PointLight")
+	light.Color = Color3.fromRGB(255, 210, 90)
+	light.Range = 12
+	light.Brightness = 1.5
+	light.Parent = lock
+	local sp = Instance.new("Sparkles")
+	sp.SparkleColor = Color3.fromRGB(255, 220, 80)
+	sp.Parent = lock
+	local t = label(lock, "FREE GIFT!", 4.5, 9, 2.2, Color3.new(1, 1, 1))
+	local g = Instance.new("UIGradient")
+	g.Color = ColorSequence.new({
+		ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 120, 120)),
+		ColorSequenceKeypoint.new(0.35, Color3.fromRGB(255, 230, 90)),
+		ColorSequenceKeypoint.new(0.7, Color3.fromRGB(120, 230, 140)),
+		ColorSequenceKeypoint.new(1, Color3.fromRGB(120, 190, 255)),
+	})
+	g.Parent = t
+end
+
+local function buildScenery()
+	local rng = Random.new(7)
+	local greens = { Color3.fromRGB(80, 180, 80), Color3.fromRGB(100, 195, 85), Color3.fromRGB(65, 160, 75) }
+	-- rounded hills far away
+	for k = 1, 12 do
+		local a = (k / 12) * math.pi * 2 + rng:NextNumber(-0.2, 0.2)
+		local r = rng:NextNumber(200, 250)
+		local d = rng:NextNumber(90, 150)
+		ball("Hill", at(math.cos(a) * r, -3 - d * 0.22, math.sin(a) * r), d, greens[rng:NextInteger(1, #greens)], { mat = Enum.Material.Grass, shadow = false })
+	end
+	-- round cartoon trees around the plaza
+	local placed = 0
+	while placed < 44 do
+		local x, z = rng:NextNumber(-150, 150), rng:NextNumber(-150, 150)
+		if math.max(math.abs(x), math.abs(z)) > 66 then
+			placed += 1
+			local s = rng:NextNumber(0.8, 1.4)
+			local base = at(x, -3, z)
+			vcyl("Trunk", base + Vector3.new(0, 4 * s, 0), 1.8 * s, 8 * s, Color3.fromRGB(140, 95, 60))
+			local g = greens[rng:NextInteger(1, #greens)]
+			ball("Leaves", base + Vector3.new(0, 10 * s, 0), 9 * s, g)
+			ball("Leaves", base + Vector3.new(2 * s, 8 * s, 1 * s), 6 * s, g)
+			ball("Leaves", base + Vector3.new(-2 * s, 8.5 * s, -1 * s), 6.5 * s, g)
+		end
+	end
+end
+
+function Hub.build()
+	buildPlaza()
+	buildHQ()
+	buildPads()
+	buildLeft()
+	buildBooths()
+	buildChest()
+	buildScenery()
 	folder.Parent = workspace
 end
 
@@ -187,8 +523,8 @@ function Hub.start(hooks)
 				local char = p.Character
 				local r = char and char:FindFirstChild("HumanoidRootPart") :: BasePart?
 				if r and not hooks.inRun(p) then
-					local d = Vector3.new(r.Position.X - centre.X, 0, r.Position.Z - centre.Z).Magnitude
-					if d <= HubConfig.padRadius and math.abs(r.Position.Y - centre.Y) < 6 then
+					local dx, dz = math.abs(r.Position.X - centre.X), math.abs(r.Position.Z - centre.Z)
+					if dx <= HubConfig.padSize[1] / 2 + 0.5 and dz <= HubConfig.padSize[2] / 2 + 0.5 and math.abs(r.Position.Y - centre.Y) < 6 then
 						table.insert(standing, p.UserId)
 					end
 				end
