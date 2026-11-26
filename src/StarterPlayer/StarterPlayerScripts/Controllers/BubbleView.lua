@@ -552,9 +552,7 @@ function BubbleView.pop(id: number, kind: string)
 		end
 	else
 		bits:Emit(kind == "other" and 4 or 9)
-		if kind == "click" then
-			BubbleView.floatText(cf.Position, "+" .. Format.short(Variants.baseCoins * (BubbleView.groupSize or 1)), Color3.fromRGB(255, 225, 90), false)
-		end
+		-- normal pops show no "+1¢": the scrap flying to your bag is enough (owner)
 	end
 	puff:Emit(kind == "other" and 1 or 2)
 	if kind == "click" or kind == "stomp" or kind == "multi" then

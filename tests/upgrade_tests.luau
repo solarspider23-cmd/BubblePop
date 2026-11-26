@@ -55,10 +55,11 @@ test("first bag upgrade is cheap (about one bag's worth)", function()
 end)
 
 test("buying: enough coins levels up and pays, not enough does nothing, maxed does nothing", function()
-	local ok, lvl, left = UpgradeRules.buy(Upgrades, "bag", 1, 20)
+	local c2, c3 = Upgrades.bag.costs[2], Upgrades.bag.costs[3]
+	local ok, lvl, left = UpgradeRules.buy(Upgrades, "bag", 1, c2 + 5)
 	assert(ok and lvl == 2 and left == 5)
-	ok, lvl, left = UpgradeRules.buy(Upgrades, "bag", 2, 39)
-	assert(not ok and lvl == 2 and left == 39)
+	ok, lvl, left = UpgradeRules.buy(Upgrades, "bag", 2, c3 - 1)
+	assert(not ok and lvl == 2 and left == c3 - 1)
 	local max = #Upgrades.bag.values
 	ok, lvl, left = UpgradeRules.buy(Upgrades, "bag", max, 1e9)
 	assert(not ok and lvl == max and left == 1e9)
