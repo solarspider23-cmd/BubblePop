@@ -324,16 +324,14 @@ end
 -- Each mark: { x, z, length, width, angle (degrees) } in bubble widths, on top of the bubble.
 local TEARS = {
 	{ { 0, 0, 0.55, 0.15, 0 } }, -- slit
-	{ { 0, 0, 0.45, 0.12, 45 }, { 0, 0, 0.45, 0.12, -45 } }, -- X
-	{ { 0.1, 0, 0.3, 0.1, 0 }, { -0.05, 0.09, 0.3, 0.1, 120 }, { -0.05, -0.09, 0.3, 0.1, 240 } }, -- Y burst
+	{ { 0, 0, 0.55, 0.15, 0 } }, -- slit (most common, like real bubble wrap)
 	{ { 0, 0, 0.26, 0.26, 0 } }, -- round hole
 	{ { 0, 0.11, 0.4, 0.1, 5 }, { 0, -0.11, 0.36, 0.1, -5 } }, -- double slit
-	{ { 0.12, 0.05, 0.24, 0.09, 30 } }, -- small nick off centre
-	{ { -0.18, 0, 0.24, 0.09, 35 }, { 0, 0, 0.24, 0.09, -35 }, { 0.18, 0, 0.24, 0.09, 35 } }, -- zigzag rip
-	{ { 0, 0, 0.3, 0.08, 0 }, { 0, 0, 0.3, 0.08, 45 }, { 0, 0, 0.3, 0.08, 90 }, { 0, 0, 0.3, 0.08, 135 } }, -- star
-	{}, -- no tear: just crumpled
-	{ { 0, 0, 0.8, 0.09, 0 }, { 0.2, 0.08, 0.2, 0.14, 20 } }, -- long rip with a flap
-	{ { 0, 0, 0.18, 0.18, 0 }, { 0.2, 0.12, 0.12, 0.12, 0 }, { -0.18, -0.1, 0.1, 0.1, 0 } }, -- pinholes
+	{ { 0.12, 0.05, 0.28, 0.1, 30 } }, -- small split off centre
+	{}, -- no tear: just deflated
+	{ { 0, 0, 0.6, 0.1, 0 }, { 0.15, 0.06, 0.18, 0.12, 20 } }, -- long rip with a flap
+	{ { -0.1, 0, 0.32, 0.12, 12 }, { 0.12, 0.03, 0.3, 0.12, -14 } }, -- bent slit
+	{ { 0.24, 0, 0.36, 0.12, 90 } }, -- split along the edge
 }
 
 makeTear = function(id: number, height: number): Instance
@@ -492,13 +490,13 @@ puff.EmissionDirection = Enum.NormalId.Top
 puff.Parent = fxAt
 fxPart.Parent = workspace
 
-local POP_TWEEN = TweenInfo.new(0.18, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
+local POP_TWEEN = TweenInfo.new(0.22, Enum.EasingStyle.Elastic, Enum.EasingDirection.Out, 0, false, 0)
 
 -- punch: the popped plastic splats out a bit bigger, then settles
 local function punch(model: Instance)
 	if model:IsA("MeshPart") then
 		local size = model:GetAttribute("Size") :: Vector3
-		model.Size = size * Vector3.new(1.3, 2.2, 1.3)
+		model.Size = size * Vector3.new(1.18, 1.5, 1.18)
 		TweenService:Create(model, POP_TWEEN, { Size = size }):Play()
 	else
 		local disc = model:FindFirstChild("Disc") :: BasePart

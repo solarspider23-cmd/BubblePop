@@ -88,38 +88,99 @@ local function watchPops()
 end
 task.spawn(watchPops)
 
--- Bottom left, small: coins and bag ("Bag 12/25")
-local function smallText(y: number, col: Color3, strokeCol: Color3): TextLabel
+-- Bottom left: coins and bag in rounded "pills" with icons (Luckiest Guy, owner's pick)
+local PILL_FONT = Font.fromEnum(Enum.Font.LuckiestGuy)
+
+local function withCommas(n: number): string
+	local s = tostring(math.floor(n))
+	local out = s:reverse():gsub("(%d%d%d)", "%1,"):reverse()
+	return (out:gsub("^,", ""))
+end
+
+local function pill(y: number, edge: Color3): Frame
+	local f = Instance.new("Frame")
+	f.AnchorPoint = Vector2.new(0, 1)
+	f.Position = UDim2.new(0, 18, 1, y)
+	f.Size = UDim2.fromOffset(190, 44)
+	f.BackgroundColor3 = Color3.fromRGB(20, 35, 90)
+	f.BackgroundTransparency = 0.2
+	local c = Instance.new("UICorner")
+	c.CornerRadius = UDim.new(1, 0)
+	c.Parent = f
+	local st = Instance.new("UIStroke")
+	st.Thickness = 2.5
+	st.Color = edge
+	st.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+	st.Parent = f
+	f.Parent = gui
+	return f
+end
+
+local function pillText(parent: Frame, strokeCol: Color3): TextLabel
 	local t = Instance.new("TextLabel")
-	t.AnchorPoint = Vector2.new(0, 1)
-	t.Position = UDim2.new(0, 20, 1, y)
-	t.Size = UDim2.fromOffset(220, 30)
+	t.Position = UDim2.fromOffset(48, 5)
+	t.Size = UDim2.new(1, -60, 1, -8)
 	t.BackgroundTransparency = 1
-	t.Font = Enum.Font.FredokaOne
+	t.FontFace = PILL_FONT
 	t.TextScaled = true
 	t.TextXAlignment = Enum.TextXAlignment.Left
-	t.TextColor3 = col
+	t.TextColor3 = Color3.new(1, 1, 1)
 	local st = Instance.new("UIStroke")
 	st.Thickness = 2.5
 	st.Color = strokeCol
 	st.Parent = t
-	t.Parent = gui
+	t.Parent = parent
 	return t
 end
 
-local coinsLabel = smallText(-98, Color3.fromRGB(255, 215, 60), Color3.fromRGB(90, 50, 0))
-coinsLabel.Text = "Coins: 0"
+-- a drawn coin: gold disc with a lighter middle
+local function coinIcon(parent: Instance, size: number)
+	local c = Instance.new("Frame")
+	c.Position = UDim2.fromOffset(5, 5)
+	c.Size = UDim2.fromOffset(size, size)
+	c.BackgroundColor3 = Color3.new(1, 1, 1)
+	local k = Instance.new("UICorner")
+	k.CornerRadius = UDim.new(1, 0)
+	k.Parent = c
+	local st = Instance.new("UIStroke")
+	st.Thickness = 2.5
+	st.Color = Color3.fromRGB(150, 90, 0)
+	st.Parent = c
+	local g = Instance.new("UIGradient")
+	g.Color = ColorSequence.new(Color3.fromRGB(255, 240, 150), Color3.fromRGB(255, 170, 20))
+	g.Rotation = 90
+	g.Parent = c
+	local inner = Instance.new("Frame")
+	inner.AnchorPoint = Vector2.new(0.5, 0.5)
+	inner.Position = UDim2.fromScale(0.5, 0.5)
+	inner.Size = UDim2.fromScale(0.55, 0.55)
+	inner.BackgroundColor3 = Color3.fromRGB(255, 225, 110)
+	local k2 = Instance.new("UICorner")
+	k2.CornerRadius = UDim.new(1, 0)
+	k2.Parent = inner
+	inner.Parent = c
+	c.Parent = parent
+end
+
+local coinsPill = pill(-110, Color3.fromRGB(255, 215, 80))
+coinIcon(coinsPill, 34)
+local coinsLabel = pillText(coinsPill, Color3.fromRGB(90, 45, 0))
+local coinGrad = Instance.new("UIGradient")
+coinGrad.Color = ColorSequence.new(Color3.fromRGB(255, 245, 170), Color3.fromRGB(255, 185, 30))
+coinGrad.Rotation = 90
+coinGrad.Parent = coinsLabel
+coinsLabel.Text = "0"
 local coinsScale = Instance.new("UIScale")
-coinsScale.Parent = coinsLabel
+coinsScale.Parent = coinsPill
 task.spawn(function()
 	local stats = player:WaitForChild("leaderstats")
 	local coins = stats:WaitForChild("Coins") :: IntValue
 	local last = coins.Value
 	local function show()
-		coinsLabel.Text = "Coins: " .. coins.Value
+		coinsLabel.Text = withCommas(coins.Value)
 		local jump = coins.Value - last
 		last = coins.Value
-		coinsScale.Scale = jump >= 5 and 1.3 or 1.1
+		coinsScale.Scale = jump >= 5 and 1.2 or 1.08
 		TweenService:Create(coinsScale, TweenInfo.new(jump >= 5 and 0.3 or 0.12, Enum.EasingStyle.Back), { Scale = 1 }):Play()
 	end
 	coins.Changed:Connect(show)
@@ -127,8 +188,15 @@ task.spawn(function()
 end)
 
 local BagState = require(script.Parent.BagState)
-local bagFrame = smallText(-64, Color3.new(1, 1, 1), DARK_BLUE)
-local bagText = bagFrame
+local bagFrame = pill(-58, Color3.fromRGB(150, 210, 255))
+local bagIcon = Instance.new("TextLabel")
+bagIcon.BackgroundTransparency = 1
+bagIcon.Text = "🎒"
+bagIcon.TextScaled = true
+bagIcon.Position = UDim2.fromOffset(6, 5)
+bagIcon.Size = UDim2.fromOffset(34, 34)
+bagIcon.Parent = bagFrame
+local bagText = pillText(bagFrame, DARK_BLUE)
 local bagScale = Instance.new("UIScale")
 bagScale.Parent = bagFrame
 
@@ -155,7 +223,7 @@ local function showBag()
 	local n, cap = BagState.count(), BagState.capacity()
 	local worth = player:GetAttribute("BagValue") or 0
 	local full = n >= cap
-	bagText.Text = ("Bag %d/%d"):format(n, cap)
+	bagText.Text = withCommas(n) .. "/" .. withCommas(cap)
 	bagText.TextColor3 = full and Color3.fromRGB(255, 80, 80) or Color3.new(1, 1, 1)
 	fullMsg.Visible = full
 	local _ = worth
