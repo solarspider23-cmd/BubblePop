@@ -1,0 +1,83 @@
+{
+ "_axes": "Roblox studs: X = Blender X, Y = up (Blender Z), Z = -Blender Y. 'center' is the middle of each mesh's box, measured from the model origin (bottom centre of the footprint, on the floor).",
+ "_front": "Front faces Roblox -Z (Blender +Y): CFrame.lookAt(pos, pos + faceDirection) points it.",
+ "_notes": "CLEAN POP PLAZA gift box. Replaces ChestBody, ChestLid, ChestBand x2, ChestBandLid x2, ChestLock, ChestGlow in buildChest(). Origin on the plaza floor at hub (-24, 0, 40), front (+Y here = Roblox -Z) facing (-14, 0, 20) as today. Box 5.6 x 4.0 x 3.2, lid 6.0 x 4.4, 5.75 tall with the bow.",
+ "_tris_total": 1710,
+ "lidHinge": {
+  "point": [
+   0,
+   3.2,
+   2.0
+  ],
+  "axis": [
+   1,
+   0,
+   0
+  ],
+  "note": "Roblox axes: back top edge of the box. Turn CleanGift_Lid about this line by up to about 100 degrees (top swinging backwards, towards Roblox +Z) to open; or simply lift the lid straight up 2 studs"
+ },
+ "CleanGift_Body": {
+  "size": [
+   5.6,
+   3.2,
+   4.0
+  ],
+  "center": [
+   0.0,
+   1.6,
+   -0.0
+  ],
+  "tris": 338,
+  "textures": {
+   "color": "Hub_CleanGift_color.png",
+   "normal": "Hub_CleanGift_normal.png",
+   "roughness": "Hub_CleanGift_roughness.png"
+  },
+  "tint": null,
+  "material": "SmoothPlastic (SurfaceAppearance)",
+  "note": "cream box, blue ribbon, sky-blue inside (floor at 1.4)"
+ },
+ "CleanGift_Lid": {
+  "size": [
+   6.0,
+   2.952,
+   4.4
+  ],
+  "center": [
+   0.0,
+   4.326,
+   -0.0
+  ],
+  "tris": 1180,
+  "textures": {
+   "color": "Hub_CleanGift_color.png",
+   "normal": "Hub_CleanGift_normal.png",
+   "roughness": "Hub_CleanGift_roughness.png"
+  },
+  "tint": null,
+  "material": "SmoothPlastic (SurfaceAppearance)",
+  "note": "lid with the ribbon cross and the bow; separate so it can open"
+ },
+ "CleanGift_Glow": {
+  "size": [
+   10.0,
+   0.08,
+   10.0
+  ],
+  "center": [
+   0.0,
+   0.04,
+   -0.0
+  ],
+  "tris": 192,
+  "textures": null,
+  "material": "Neon",
+  "color": [
+   20,
+   100,
+   200
+  ],
+  "castShadow": false,
+  "note": "Neon floor ring 10 across round the box, no shadow"
+ }
+}

@@ -1,0 +1,113 @@
+{
+ "_axes": "Roblox studs: X = Blender X, Y = up (Blender Z), Z = -Blender Y. 'center' is the middle of each mesh's box, measured from the model origin (bottom centre of the footprint, on the floor).",
+ "_front": "Front faces Roblox -Z (Blender +Y): CFrame.lookAt(pos, pos + faceDirection) points it.",
+ "_notes": "CLEAN POP PLAZA logo banner. Replaces LogoRim, LogoRimEnd x2, LogoEnd x2, Logo, LogoShine in buildGumballMachine(). 46.4 long x 9 high; plaque 44.8 x 7.4 with a flat 44.4 x 7 face. Put the BUBBLE POP SurfaceGui on an invisible 37.5 x 7 part at text_face.center. Flat colours, no textures.",
+ "_tris_total": 1204,
+ "mount_on_centre": {
+  "origin": [
+   0.0,
+   12.9,
+   -10.6
+  ],
+  "note": "put the banner's origin here, measured from the centrepiece origin, both facing the same way (plaque centre ends up 17.5 above the floor); the two arms then reach into the pedestal's cup"
+ },
+ "text_face": {
+  "center": [
+   0.0,
+   4.6,
+   -0.7
+  ],
+  "size": [
+   37.5,
+   7.0
+  ],
+  "normal": [
+   0,
+   0,
+   -1
+  ],
+  "note": "flat front of CleanBanner_Body; the whole flat area is a 44.4 x 7 pill"
+ },
+ "CleanBanner_Body": {
+  "size": [
+   44.88,
+   7.5,
+   0.5
+  ],
+  "center": [
+   0.0,
+   4.6,
+   -0.45
+  ],
+  "tris": 222,
+  "material": "SmoothPlastic",
+  "color": [
+   46,
+   155,
+   255
+  ],
+  "note": "bubble-blue plaque, flat text-free face"
+ },
+ "CleanBanner_Trim": {
+  "size": [
+   46.4,
+   9.02,
+   6.57
+  ],
+  "center": [
+   0.0,
+   4.6,
+   2.815
+  ],
+  "tris": 694,
+  "material": "SmoothPlastic",
+  "color": [
+   250,
+   251,
+   253
+  ],
+  "note": "white rim and the two mounting arms"
+ },
+ "CleanBanner_Bubbles": {
+  "size": [
+   43.4,
+   2.6,
+   0.75
+  ],
+  "center": [
+   0.0,
+   4.6,
+   -1.075
+  ],
+  "tris": 224,
+  "material": "SmoothPlastic",
+  "color": [
+   168,
+   216,
+   255
+  ],
+  "reflectance": 0.3,
+  "note": "two pastel bubble studs at the ends"
+ },
+ "CleanBanner_Glow": {
+  "size": [
+   45.32,
+   7.94,
+   0.0
+  ],
+  "center": [
+   0.0,
+   4.6,
+   -0.27
+  ],
+  "tris": 64,
+  "material": "Neon",
+  "color": [
+   20,
+   100,
+   200
+  ],
+  "castShadow": false,
+  "note": "thin light line in the groove round the plaque"
+ }
+}

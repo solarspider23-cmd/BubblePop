@@ -1,0 +1,90 @@
+{
+ "_axes": "Roblox studs: X = Blender X, Y = up (Blender Z), Z = -Blender Y. 'center' is the middle of each mesh's box, measured from the model origin (bottom centre of the footprint, on the floor).",
+ "_front": "Front faces Roblox -Z (Blender +Y): CFrame.lookAt(pos, pos + faceDirection) points it.",
+ "_notes": "CLEAN POP PLAZA island. Height 0 here = the grass surface = hub y -3: place each mesh at hub (center.x, center.y - 3, center.z). CleanIsland_Rim replaces the edge of Grass + Frosting; CleanIsland_Under replaces IslandRock x6. The flat Grass part (cylinder radius 99, top at y = -3) stays; the rim rolls over its edge.",
+ "grassTopBlenderZ": 0.0,
+ "grassTopHubY": -3.0,
+ "_tris_total": 7236,
+ "CleanIsland_Rim": {
+  "size": [
+   204.8,
+   12.9,
+   204.8
+  ],
+  "center": [
+   0.0,
+   -5.85,
+   -0.0
+  ],
+  "tris": 2688,
+  "textures": {
+   "color": "Hub_CleanIsland_color.png",
+   "normal": "Hub_CleanIsland_normal.png",
+   "roughness": "Hub_CleanIsland_roughness.png"
+  },
+  "material": "SmoothPlastic (SurfaceAppearance)",
+  "note": "white bumper lip rolling over the grass edge, sky-blue band"
+ },
+ "CleanIsland_Under": {
+  "size": [
+   194.172,
+   49.5,
+   194.069
+  ],
+  "center": [
+   -0.066,
+   -35.25,
+   -0.596
+  ],
+  "tris": 3816,
+  "textures": {
+   "color": "Hub_CleanIsland_color.png",
+   "normal": "Hub_CleanIsland_normal.png",
+   "roughness": "Hub_CleanIsland_roughness.png"
+  },
+  "material": "SmoothPlastic (SurfaceAppearance)",
+  "note": "four soft tiers of white rock and pale stone, rounded tip"
+ },
+ "CleanIsland_Crystal": {
+  "size": [
+   160.747,
+   38.887,
+   154.109
+  ],
+  "center": [
+   2.157,
+   -42.959,
+   12.485
+  ],
+  "tris": 540,
+  "textures": {
+   "color": "Hub_CleanIsland_color.png",
+   "normal": "Hub_CleanIsland_normal.png",
+   "roughness": "Hub_CleanIsland_roughness.png"
+  },
+  "material": "SmoothPlastic (SurfaceAppearance) (or Glass / Neon tint for sparkle)",
+  "note": "6 clusters of pastel crystals growing out of the ledges; flat-shaded on purpose"
+ },
+ "CleanIsland_Glow": {
+  "size": [
+   203.96,
+   0.5,
+   203.96
+  ],
+  "center": [
+   0.0,
+   -6.63,
+   -0.0
+  ],
+  "tris": 192,
+  "textures": null,
+  "material": "Neon",
+  "color": [
+   20,
+   100,
+   200
+  ],
+  "castShadow": false,
+  "note": "thin light line round the whole rim"
+ }
+}

@@ -1,0 +1,272 @@
+{
+ "_axes": "Roblox studs: X = Blender X, Y = up (Blender Z), Z = -Blender Y. 'center' is the middle of each mesh's box, measured from the model origin (bottom centre of the footprint, on the floor).",
+ "_front": "Front faces Roblox -Z (Blender +Y): CFrame.lookAt(pos, pos + faceDirection) points it.",
+ "_notes": "CLEAN POP PLAZA bubble trees. Replace LollyStick, Lolly, LollySwirl, LollyMiddle in Hub.lua lollipop() (26 copies). Three models (Ball, Stack, Cloud); each = its _Tint, _Body and _Shine MeshParts, standing on the origin (base = the grass point), about 15 tall, head 8 wide (Cloud 10). Scale all three parts together (0.8 - 1.4) as today. The shine faces front-left (+Y here).",
+ "CleanTree_Ball_Tint": {
+  "size": [
+   7.919,
+   8.0,
+   7.798
+  ],
+  "center": [
+   0.0,
+   11.0,
+   -0.0
+  ],
+  "tris": 360,
+  "textures": {
+   "color": "Hub_CleanTree_color.png",
+   "normal": "Hub_CleanTree_normal.png",
+   "roughness": "Hub_CleanTree_roughness.png"
+  },
+  "tint": "tree colour (SurfaceAppearance.Color)",
+  "variants": {
+   "Sky": [
+    140,
+    203,
+    255
+   ],
+   "Mint": [
+    143,
+    230,
+    198
+   ],
+   "Lilac": [
+    195,
+    174,
+    247
+   ],
+   "Peach": [
+    255,
+    190,
+    156
+   ],
+   "White": [
+    250,
+    251,
+    253
+   ]
+  },
+  "material": "SmoothPlastic (SurfaceAppearance)"
+ },
+ "CleanTree_Ball_Body": {
+  "size": [
+   4.1,
+   7.8,
+   3.899
+  ],
+  "center": [
+   0.0,
+   3.9,
+   -0.0
+  ],
+  "tris": 160,
+  "textures": {
+   "color": "Hub_CleanTree_color.png",
+   "normal": "Hub_CleanTree_normal.png",
+   "roughness": "Hub_CleanTree_roughness.png"
+  },
+  "tint": null,
+  "material": "SmoothPlastic (SurfaceAppearance)",
+  "note": "white stem, round planter foot, sky-blue collar"
+ },
+ "CleanTree_Ball_Shine": {
+  "size": [
+   2.348,
+   2.459,
+   1.494
+  ],
+  "center": [
+   -1.731,
+   13.308,
+   -2.542
+  ],
+  "tris": 36,
+  "textures": null,
+  "material": "SmoothPlastic (flat white)",
+  "color": [
+   255,
+   255,
+   255
+  ],
+  "castShadow": false
+ },
+ "CleanTree_Stack_Tint": {
+  "size": [
+   6.697,
+   10.1,
+   6.697
+  ],
+  "center": [
+   0.0,
+   10.65,
+   -0.0
+  ],
+  "tris": 500,
+  "textures": {
+   "color": "Hub_CleanTree_color.png",
+   "normal": "Hub_CleanTree_normal.png",
+   "roughness": "Hub_CleanTree_roughness.png"
+  },
+  "tint": "tree colour (SurfaceAppearance.Color)",
+  "variants": {
+   "Sky": [
+    140,
+    203,
+    255
+   ],
+   "Mint": [
+    143,
+    230,
+    198
+   ],
+   "Lilac": [
+    195,
+    174,
+    247
+   ],
+   "Peach": [
+    255,
+    190,
+    156
+   ],
+   "White": [
+    250,
+    251,
+    253
+   ]
+  },
+  "material": "SmoothPlastic (SurfaceAppearance)"
+ },
+ "CleanTree_Stack_Body": {
+  "size": [
+   4.1,
+   6.4,
+   3.899
+  ],
+  "center": [
+   0.0,
+   3.2,
+   -0.0
+  ],
+  "tris": 160,
+  "textures": {
+   "color": "Hub_CleanTree_color.png",
+   "normal": "Hub_CleanTree_normal.png",
+   "roughness": "Hub_CleanTree_roughness.png"
+  },
+  "tint": null,
+  "material": "SmoothPlastic (SurfaceAppearance)",
+  "note": "white stem, round planter foot, sky-blue collar"
+ },
+ "CleanTree_Stack_Shine": {
+  "size": [
+   1.996,
+   2.091,
+   1.27
+  ],
+  "center": [
+   -1.475,
+   10.967,
+   -2.167
+  ],
+  "tris": 36,
+  "textures": null,
+  "material": "SmoothPlastic (flat white)",
+  "color": [
+   255,
+   255,
+   255
+  ],
+  "castShadow": false
+ },
+ "CleanTree_Cloud_Tint": {
+  "size": [
+   9.8,
+   8.3,
+   6.435
+  ],
+  "center": [
+   -0.1,
+   11.15,
+   -0.0
+  ],
+  "tris": 476,
+  "textures": {
+   "color": "Hub_CleanTree_color.png",
+   "normal": "Hub_CleanTree_normal.png",
+   "roughness": "Hub_CleanTree_roughness.png"
+  },
+  "tint": "tree colour (SurfaceAppearance.Color)",
+  "variants": {
+   "Sky": [
+    140,
+    203,
+    255
+   ],
+   "Mint": [
+    143,
+    230,
+    198
+   ],
+   "Lilac": [
+    195,
+    174,
+    247
+   ],
+   "Peach": [
+    255,
+    190,
+    156
+   ],
+   "White": [
+    250,
+    251,
+    253
+   ]
+  },
+  "material": "SmoothPlastic (SurfaceAppearance)"
+ },
+ "CleanTree_Cloud_Body": {
+  "size": [
+   4.1,
+   8.1,
+   3.899
+  ],
+  "center": [
+   0.0,
+   4.05,
+   -0.0
+  ],
+  "tris": 160,
+  "textures": {
+   "color": "Hub_CleanTree_color.png",
+   "normal": "Hub_CleanTree_normal.png",
+   "roughness": "Hub_CleanTree_roughness.png"
+  },
+  "tint": null,
+  "material": "SmoothPlastic (SurfaceAppearance)",
+  "note": "white stem, round planter foot, sky-blue collar"
+ },
+ "CleanTree_Cloud_Shine": {
+  "size": [
+   1.937,
+   2.029,
+   1.233
+  ],
+  "center": [
+   -1.432,
+   12.511,
+   -2.105
+  ],
+  "tris": 36,
+  "textures": null,
+  "material": "SmoothPlastic (flat white)",
+  "color": [
+   255,
+   255,
+   255
+  ],
+  "castShadow": false
+ }
+}

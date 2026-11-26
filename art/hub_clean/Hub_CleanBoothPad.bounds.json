@@ -1,0 +1,47 @@
+{
+ "_axes": "Roblox studs: X = Blender X, Y = up (Blender Z), Z = -Blender Y. 'center' is the middle of each mesh's box, measured from the model origin (bottom centre of the footprint, on the floor).",
+ "_front": "Front faces Roblox -Z (Blender +Y): CFrame.lookAt(pos, pos + faceDirection) points it.",
+ "_notes": "Replaces BoothPadRing and BoothPad. 9.1 across, 0.35 high; centre 9.75 in front of the booth origin.",
+ "CleanBoothPad_Body": {
+  "size": [
+   9.1,
+   0.35,
+   9.007
+  ],
+  "center": [
+   0.0,
+   0.175,
+   -0.0
+  ],
+  "tris": 240,
+  "textures": {
+   "color": "Hub_CleanBooth_color.png",
+   "normal": "Hub_CleanBooth_normal.png",
+   "roughness": "Hub_CleanBooth_roughness.png"
+  },
+  "tint": null,
+  "material": "SmoothPlastic (SurfaceAppearance)",
+  "note": "white disc, flat walkable top at 0.33"
+ },
+ "CleanBoothPad_Glow": {
+  "size": [
+   7.68,
+   0.0,
+   7.68
+  ],
+  "center": [
+   0.0,
+   0.3,
+   -0.0
+  ],
+  "tris": 48,
+  "textures": null,
+  "material": "Neon",
+  "color": [
+   20,
+   100,
+   200
+  ],
+  "castShadow": false
+ }
+}

@@ -1,0 +1,108 @@
+{
+ "_axes": "Roblox studs: X = Blender X, Y = up (Blender Z), Z = -Blender Y. 'center' is the middle of each mesh's box, measured from the model origin (bottom centre of the footprint, on the floor).",
+ "_front": "Front faces Roblox -Z (Blender +Y): CFrame.lookAt(pos, pos + faceDirection) points it.",
+ "_notes": "CLEAN POP PLAZA play pad. Replaces PadBase, PadEdge and Pad1..Pad4 in Hub.lua buildPads(). Footprint 13.5 x 10.5 at the floor, 0.52 high, standing area (tinted top) 11.4 x 8.4 flat at 0.45. Origin at the pad centre on the plaza floor (pads at x = -21, -7, 7, 21, z = -28), front (+Y) towards the spawn. The invisible 12 x 9 standing part stays.",
+ "CleanPad_Body": {
+  "size": [
+   13.5,
+   0.52,
+   10.5
+  ],
+  "center": [
+   0.0,
+   0.26,
+   -0.0
+  ],
+  "tris": 240,
+  "textures": {
+   "color": "Hub_CleanPad_color.png",
+   "normal": "Hub_CleanPad_normal.png",
+   "roughness": "Hub_CleanPad_roughness.png"
+  },
+  "tint": null,
+  "material": "SmoothPlastic (SurfaceAppearance)",
+  "note": "white rim and groove floor; fixed colours"
+ },
+ "CleanPad_Tint": {
+  "size": [
+   11.44,
+   0.25,
+   8.44
+  ],
+  "center": [
+   0.0,
+   0.325,
+   -0.0
+  ],
+  "tris": 138,
+  "textures": {
+   "color": "Hub_CleanPad_color.png",
+   "normal": "Hub_CleanPad_normal.png",
+   "roughness": "Hub_CleanPad_roughness.png"
+  },
+  "tint": "pad colour (SurfaceAppearance.Color)",
+  "material": "SmoothPlastic (SurfaceAppearance)",
+  "variants": {
+   "Sky": [
+    111,
+    191,
+    255
+   ],
+   "Mint": [
+    111,
+    221,
+    182
+   ],
+   "Lilac": [
+    180,
+    156,
+    245
+   ],
+   "Peach": [
+    255,
+    170,
+    128
+   ]
+  },
+  "note": "walkable top is flat at height 0.45; a lighter bubble mark is printed in the middle"
+ },
+ "CleanPad_Glow": {
+  "size": [
+   12.26,
+   0.15,
+   9.26
+  ],
+  "center": [
+   0.0,
+   0.335,
+   -0.0
+  ],
+  "tris": 120,
+  "textures": null,
+  "material": "Neon",
+  "castShadow": false,
+  "variants": {
+   "Sky": [
+    20,
+    100,
+    200
+   ],
+   "Mint": [
+    15,
+    150,
+    112
+   ],
+   "Lilac": [
+    100,
+    64,
+    210
+   ],
+   "Peach": [
+    210,
+    90,
+    40
+   ]
+  },
+  "note": "flat colour, recoloured per pad (dark saturated version of the pad colour)"
+ }
+}

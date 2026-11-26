@@ -1,0 +1,120 @@
+{
+ "_axes": "Roblox studs: X = Blender X, Y = up (Blender Z), Z = -Blender Y. 'center' is the middle of each mesh's box, measured from the model origin (bottom centre of the footprint, on the floor).",
+ "_front": "Front faces Roblox -Z (Blender +Y): CFrame.lookAt(pos, pos + faceDirection) points it.",
+ "_notes": "CLEAN POP PLAZA booth. Replaces BoothBody, BoothTrim, BoothWindow, BoothSill, Awning x5, RoofTop, RoofBall in buildBooths(). One per HubConfig.booths entry (x = 44, z = -15 / 4 / 23), origin on the plaza floor, front (+Y here) facing the plaza middle. Built at final size (boothScale 1.3 included): plinth 11.9 x 9.3, body 11.3 x 8.7, canopy 12.3 x 9.9 (0.4 further forward), 10.4 tall.",
+ "_tris_total": 2074,
+ "window": {
+  "opening": [
+   7.4,
+   3.4
+  ],
+  "sillHeight": 3.05,
+  "frontFaceZ": -4.42
+ },
+ "signFace": {
+  "size": [
+   6.6,
+   1.0
+  ],
+  "center": [
+   0,
+   8.2,
+   -5.630000000000001
+  ],
+  "normal": [
+   0,
+   0,
+   -1
+  ],
+  "note": "flat white plate on the canopy front for in-game text (SHOP, PASSES ...)"
+ },
+ "boothPad": {
+  "position": [
+   0,
+   0,
+   -9.75
+  ],
+  "note": "Hub_CleanBoothPad centre, in front of the window (same as the candy booth)"
+ },
+ "CleanBooth_Body": {
+  "size": [
+   11.3,
+   8.86,
+   9.98
+  ],
+  "center": [
+   0.0,
+   5.13,
+   -0.64
+  ],
+  "tris": 692,
+  "textures": {
+   "color": "Hub_CleanBooth_color.png",
+   "normal": "Hub_CleanBooth_normal.png",
+   "roughness": "Hub_CleanBooth_roughness.png"
+  },
+  "tint": null,
+  "material": "SmoothPlastic (SurfaceAppearance)",
+  "note": "white body, window frame, dark window, sign plate"
+ },
+ "CleanBooth_Tint": {
+  "size": [
+   12.3,
+   9.26,
+   10.3
+  ],
+  "center": [
+   0.0,
+   4.63,
+   -0.5
+  ],
+  "tris": 1214,
+  "textures": {
+   "color": "Hub_CleanBooth_color.png",
+   "normal": "Hub_CleanBooth_normal.png",
+   "roughness": "Hub_CleanBooth_roughness.png"
+  },
+  "tint": "booth colour (SurfaceAppearance.Color)",
+  "material": "SmoothPlastic (SurfaceAppearance)",
+  "variants": {
+   "Sky": [
+    111,
+    191,
+    255
+   ],
+   "Mint": [
+    111,
+    221,
+    182
+   ],
+   "Lilac": [
+    180,
+    156,
+    245
+   ]
+  },
+  "note": "plinth, counter sill, pillow canopy"
+ },
+ "CleanBooth_Glow": {
+  "size": [
+   11.54,
+   3.47,
+   8.94
+  ],
+  "center": [
+   0.0,
+   8.685,
+   -0.0
+  ],
+  "tris": 168,
+  "textures": null,
+  "material": "Neon",
+  "color": [
+   20,
+   100,
+   200
+  ],
+  "castShadow": false,
+  "note": "light bar under the canopy and the small orb on the roof"
+ }
+}

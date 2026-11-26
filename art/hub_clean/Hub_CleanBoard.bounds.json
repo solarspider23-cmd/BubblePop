@@ -1,0 +1,71 @@
+{
+ "_axes": "Roblox studs: X = Blender X, Y = up (Blender Z), Z = -Blender Y. 'center' is the middle of each mesh's box, measured from the model origin (bottom centre of the footprint, on the floor).",
+ "_front": "Front faces Roblox -Z (Blender +Y): CFrame.lookAt(pos, pos + faceDirection) points it.",
+ "_notes": "CLEAN POP PLAZA how-to-play board. Replaces BoardFrame, Board, BoardLeg x2 and Alert in buildLeft(). Origin on the floor under the middle of the board; same spot and facing as today: (-46, 0, -20) with the front turned to (0, _, 4). Frame 14.7 x 10.7, top edge 11.8 above the floor (badge top 12.8). Put the SurfaceGui on an invisible 13 x 9 part at textFace.center and the '!' on a 2.4 x 2.4 part at badgeFace.center.",
+ "CleanBoard_Body": {
+  "size": [
+   15.85,
+   12.82,
+   2.435
+  ],
+  "center": [
+   0.595,
+   6.41,
+   0.05
+  ],
+  "tris": 730,
+  "textures": {
+   "color": "Hub_CleanBoard_color.png",
+   "normal": "Hub_CleanBoard_normal.png",
+   "roughness": "Hub_CleanBoard_roughness.png"
+  },
+  "tint": null,
+  "material": "SmoothPlastic (SurfaceAppearance)",
+  "textFace": {
+   "size": [
+    13.0,
+    9.0
+   ],
+   "center": [
+    0,
+    6.5,
+    -0.12
+   ],
+   "note": "flat cream face; corners rounded 0.6"
+  },
+  "badgeFace": {
+   "size": [
+    2.4,
+    2.4
+   ],
+   "center": [
+    6.9,
+    11.2,
+    -0.95
+   ],
+   "note": "flat blue disc for the '!' label"
+  }
+ },
+ "CleanBoard_Glow": {
+  "size": [
+   13.15,
+   9.15,
+   0.28
+  ],
+  "center": [
+   0.0,
+   6.5,
+   -0.32
+  ],
+  "tris": 48,
+  "textures": null,
+  "material": "Neon",
+  "color": [
+   20,
+   100,
+   200
+  ],
+  "castShadow": false,
+  "note": "thin light line just inside the frame"
+ }
+}

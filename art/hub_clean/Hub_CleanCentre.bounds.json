@@ -1,0 +1,165 @@
+{
+ "_axes": "Roblox studs: X = Blender X, Y = up (Blender Z), Z = -Blender Y. 'center' is the middle of each mesh's box, measured from the model origin (bottom centre of the footprint, on the floor).",
+ "_front": "Front faces Roblox -Z (Blender +Y): CFrame.lookAt(pos, pos + faceDirection) points it.",
+ "_notes": "CLEAN POP PLAZA hero. Replaces everything in Hub.lua buildGumballMachine() except the logo (MachineStage .. GlobeKnob and the gumballs). Origin = centre of the stage on the plaza floor: hub (0, 0, -45), front (+Y here = Roblox -Z after the usual lookAt) facing the spawn. Stage 28 across x 1.5 high (keep an invisible cylinder for walking), pedestal up to 22.6, bubble 25 across centred at height 31.5 (top 44). The orbit ring with its bubbles is about 30 across.",
+ "_size": [
+  30.0,
+  44.0,
+  29.8
+ ],
+ "_tris_total": 11528,
+ "CleanCentre_Body": {
+  "size": [
+   27.956,
+   22.88,
+   27.956
+  ],
+  "center": [
+   0.0,
+   11.44,
+   -0.0
+  ],
+  "tris": 6280,
+  "textures": {
+   "color": "Hub_CleanCentre_color.png",
+   "normal": "Hub_CleanCentre_normal.png",
+   "roughness": "Hub_CleanCentre_roughness.png"
+  },
+  "tint": null,
+  "material": "SmoothPlastic (SurfaceAppearance)",
+  "note": "stage (walkable flat top at 1.5), tulip pedestal, blue waist band, pastel collar"
+ },
+ "CleanCentre_Core": {
+  "size": [
+   13.9,
+   15.0,
+   9.755
+  ],
+  "center": [
+   0.25,
+   31.3,
+   -0.377
+  ],
+  "tris": 1308,
+  "textures": {
+   "color": "Hub_CleanCentre_color.png",
+   "normal": "Hub_CleanCentre_normal.png",
+   "roughness": "Hub_CleanCentre_roughness.png"
+  },
+  "tint": null,
+  "material": "SmoothPlastic (SurfaceAppearance)",
+  "note": "5 solid pastel bubbles inside the glass; optional slow bob / turn about the bubble centre",
+  "spin": {
+   "point": [
+    0,
+    31.5,
+    0
+   ],
+   "axis": [
+    0,
+    1,
+    0
+   ]
+  }
+ },
+ "CleanCentre_Ring": {
+  "size": [
+   28.069,
+   10.14,
+   30.056
+  ],
+  "center": [
+   0.0,
+   31.802,
+   0.428
+  ],
+  "tris": 1612,
+  "textures": {
+   "color": "Hub_CleanCentre_color.png",
+   "normal": "Hub_CleanCentre_normal.png",
+   "roughness": "Hub_CleanCentre_roughness.png"
+  },
+  "tint": null,
+  "material": "SmoothPlastic (SurfaceAppearance)",
+  "note": "orbit ring with 3 small bubbles; optional slow spin about its own (tilted) axis",
+  "spin": {
+   "point": [
+    0,
+    31.5,
+    0
+   ],
+   "axis": [
+    -0.2756,
+    0.9613,
+    0.0
+   ]
+  }
+ },
+ "CleanCentre_Glass": {
+  "size": [
+   25.0,
+   25.0,
+   25.0
+  ],
+  "center": [
+   0.0,
+   31.5,
+   -0.0
+  ],
+  "tris": 2016,
+  "textures": null,
+  "material": "Glass",
+  "color": [
+   190,
+   228,
+   255
+  ],
+  "transparency": 0.45,
+  "castShadow": false,
+  "note": "the giant bubble: sphere radius 12.5, centre height 31.5"
+ },
+ "CleanCentre_Shine": {
+  "size": [
+   5.697,
+   7.145,
+   4.893
+  ],
+  "center": [
+   -4.546,
+   37.552,
+   -9.719
+  ],
+  "tris": 120,
+  "textures": null,
+  "material": "SmoothPlastic (or Neon)",
+  "color": [
+   255,
+   255,
+   255
+  ],
+  "castShadow": false,
+  "note": "thin one-sided white highlight on the bubble, front left"
+ },
+ "CleanCentre_Glow": {
+  "size": [
+   25.12,
+   20.05,
+   25.12
+  ],
+  "center": [
+   0.0,
+   11.475,
+   -0.0
+  ],
+  "tris": 192,
+  "textures": null,
+  "material": "Neon",
+  "color": [
+   20,
+   100,
+   200
+  ],
+  "castShadow": false,
+  "note": "ring in the stage groove + ring in the groove under the cup rim"
+ }
+}

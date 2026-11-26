@@ -1,0 +1,114 @@
+{
+ "_axes": "Roblox studs: X = Blender X, Y = up (Blender Z), Z = -Blender Y. 'center' is the middle of each mesh's box, measured from the model origin (bottom centre of the footprint, on the floor).",
+ "_front": "Front faces Roblox -Z (Blender +Y): CFrame.lookAt(pos, pos + faceDirection) points it.",
+ "_notes": "CLEAN POP PLAZA ground. Kerb replaces the Plaza slab's side faces and PlazaTrim (keep the slab as the walkable part). Kerb origin = on the slab edge line at grass height (plaza floor - 3), front (+Y) facing out of the plaza; it sits outside the 112 slab (1.55 out), top lip flush with the plaza floor. 8 segments per side, centres at u = -49, -35, ..., 49. KerbCorner origin = the slab corner; unturned it fills the quadrant +X/+Y (Blender) = +X/-Z (Roblox).",
+ "CleanGround_Tile": {
+  "size": [
+   14.0,
+   0.2,
+   14.0
+  ],
+  "center": [
+   0.0,
+   0.1,
+   -0.0
+  ],
+  "tris": 26,
+  "material": "SmoothPlastic",
+  "castShadow": false,
+  "variants": {
+   "A": [
+    250,
+    251,
+    253
+   ],
+   "B": [
+    227,
+    233,
+    242
+   ],
+   "optional warm": [
+    255,
+    244,
+    230
+   ]
+  },
+  "note": "replaces each Tile part 1:1 (same 14 x 14 x 0.2 box, top at plaza height 0)"
+ },
+ "CleanGround_Kerb": {
+  "size": [
+   14.0,
+   2.15,
+   1.25
+  ],
+  "center": [
+   0.0,
+   1.925,
+   -0.625
+  ],
+  "tris": 12,
+  "material": "SmoothPlastic",
+  "color": [
+   250,
+   251,
+   253
+  ]
+ },
+ "CleanGround_KerbBand": {
+  "size": [
+   14.0,
+   1.0,
+   0.55
+  ],
+  "center": [
+   0.0,
+   0.5,
+   -1.275
+  ],
+  "tris": 10,
+  "material": "SmoothPlastic",
+  "color": [
+   168,
+   216,
+   255
+  ]
+ },
+ "CleanGround_KerbCorner": {
+  "size": [
+   1.25,
+   2.15,
+   1.25
+  ],
+  "center": [
+   0.625,
+   1.925,
+   -0.625
+  ],
+  "tris": 66,
+  "material": "SmoothPlastic",
+  "color": [
+   250,
+   251,
+   253
+  ]
+ },
+ "CleanGround_KerbCornerBand": {
+  "size": [
+   1.55,
+   1.0,
+   1.55
+  ],
+  "center": [
+   0.775,
+   0.5,
+   -0.775
+  ],
+  "tris": 60,
+  "material": "SmoothPlastic",
+  "color": [
+   168,
+   216,
+   255
+  ]
+ }
+}

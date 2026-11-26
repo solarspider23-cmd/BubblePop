@@ -1,0 +1,84 @@
+{
+ "_axes": "Roblox studs: X = Blender X, Y = up (Blender Z), Z = -Blender Y. 'center' is the middle of each mesh's box, measured from the model origin (bottom centre of the footprint, on the floor).",
+ "_front": "Front faces Roblox -Z (Blender +Y): CFrame.lookAt(pos, pos + faceDirection) points it.",
+ "_notes": "Replaces the floating 'PAD n  0/4' label. Stands on the floor behind the pad: origin at pad centre + (0, 0, +5.9) in Roblox, facing the spawn like the pad. Put the SurfaceGui on an invisible 8 x 3 part at textFace.center.",
+ "CleanPadSign_Body": {
+  "size": [
+   8.24,
+   6.62,
+   2.853
+  ],
+  "center": [
+   0.0,
+   3.31,
+   -0.0
+  ],
+  "tris": 156,
+  "textures": {
+   "color": "Hub_CleanPad_color.png",
+   "normal": "Hub_CleanPad_normal.png",
+   "roughness": "Hub_CleanPad_roughness.png"
+  },
+  "tint": null,
+  "material": "SmoothPlastic (SurfaceAppearance)",
+  "textFace": {
+   "size": [
+    8.0,
+    3.0
+   ],
+   "center": [
+    0,
+    5.0,
+    -0.16
+   ],
+   "back": [
+    0,
+    5.0,
+    0.16
+   ]
+  },
+  "note": "white text face front and back, one white mast on a round foot"
+ },
+ "CleanPadSign_Tint": {
+  "size": [
+   9.14,
+   4.14,
+   0.84
+  ],
+  "center": [
+   0.0,
+   5.0,
+   -0.0
+  ],
+  "tris": 240,
+  "textures": {
+   "color": "Hub_CleanPad_color.png",
+   "normal": "Hub_CleanPad_normal.png",
+   "roughness": "Hub_CleanPad_roughness.png"
+  },
+  "tint": "pad colour",
+  "material": "SmoothPlastic (SurfaceAppearance)",
+  "variants": {
+   "Sky": [
+    111,
+    191,
+    255
+   ],
+   "Mint": [
+    111,
+    221,
+    182
+   ],
+   "Lilac": [
+    180,
+    156,
+    245
+   ],
+   "Peach": [
+    255,
+    170,
+    128
+   ]
+  }
+ }
+}
