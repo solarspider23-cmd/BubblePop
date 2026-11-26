@@ -10,6 +10,7 @@ local Sounds = {
 	press = { id = 101809582107091, file = "", volume = 0.35, pitch = 1, pitchVar = 0.05, fit = true, length = 0.45 },
 	rarePop = { id = 127645268874265, file = "", volume = 0.6, pitch = 1.1, pitchVar = 0.05 }, -- chime when you pop a rare bubble (Roblox CoinTransfer_01)
 	sell = { id = 127645268874265, file = "", volume = 0.9, pitch = 0.9, pitchVar = 0 }, -- selling your bag at the recycler
+	reveal = { id = 127645268874265, file = "", volume = 0.35, pitch = 1.6, pitchVar = 0.05, range = 30 }, -- a rare bubble lights up as you get close
 	regrow = { id = 0, file = "", volume = 0.2, pitch = 1.6, pitchVar = 0.1 },
 	otherPop = { id = 73858435411469, file = "rbxasset://sounds/volume_slider.ogg", volume = 0.35, pitch = 1, pitchVar = 0.15, range = 60, gap = 0.03 },
 }

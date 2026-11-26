@@ -72,9 +72,19 @@ local variantOf: { [number]: number } = {} -- rare bubbles (Config/Variants); mi
 local extras: { [number]: BasePart } = {} -- glow ring (+ sparkles) behind a rare bubble
 local rainbowIds: { [number]: boolean } = {}
 
+local revealed: { [number]: boolean } = {} -- rare bubbles you've come close to (they look normal before)
+
 local function variantDef(id: number)
 	local k = variantOf[id]
 	return k and Variants.list[k] or nil
+end
+
+-- the variant only shows once revealed (or once popped)
+local function shownVariant(id: number)
+	if revealed[id] or isPopped[id] then
+		return variantDef(id)
+	end
+	return nil
 end
 local applyLighting: () -> ()
 
@@ -87,7 +97,7 @@ for id, cf in frames do
 end
 
 local function intactTransparency(id: number?): number
-	local v = id and variantDef(id)
+	local v = id and shownVariant(id)
 	if v then
 		return v.transparency or 0
 	end
@@ -95,7 +105,7 @@ local function intactTransparency(id: number?): number
 end
 
 local function styleVariant(p: BasePart, id: number?)
-	local v = id and variantDef(id)
+	local v = id and shownVariant(id)
 	if not v then
 		return
 	end
@@ -163,7 +173,7 @@ end
 
 -- Rare bubbles: a glowing ring on the sheet behind them, glitter, and (rainbow) changing colours
 local function updateExtras(id: number)
-	local v = variantDef(id)
+	local v = shownVariant(id)
 	local want = v ~= nil and not isPopped[id]
 	local ring = extras[id]
 	if want and v then
@@ -717,6 +727,7 @@ function BubbleView.setVariant(id: number, k: number)
 		return
 	end
 	variantOf[id] = new
+	revealed[id] = nil
 	if not new then
 		rainbowIds[id] = nil
 	end
@@ -783,5 +794,39 @@ function BubbleView.apply(changes: { number }, by: { number }, kinds: { number }
 		end
 	end
 end
+
+-- Reveal rare bubbles when you get close: they light up with a little sparkle burst
+local revealSound = 0
+task.spawn(function()
+	local camera = workspace.CurrentCamera
+	local range = Variants.revealDistance or 9
+	while true do
+		task.wait(0.15)
+		local here = camera.CFrame.Position
+		for id in variantOf do
+			if not revealed[id] and not isPopped[id] and intact[id] then
+				if (frames[id].Position - here).Magnitude <= range then
+					revealed[id] = true
+					local p = intact[id]
+					styleIntact(p, id)
+					p.Transparency = intactTransparency(id)
+					updateExtras(id)
+					local v = variantDef(id)
+					fxAt.WorldCFrame = frames[id] * CFrame.new(0, BubbleView.height * 0.5, 0)
+					if v then
+						local c = v.rainbow and Color3.fromHSV(math.random(), 0.7, 1) or color(v.sparkle or v.color)
+						bits.Color = ColorSequence.new(Color3.new(1, 1, 1), c)
+						bits:Emit(12)
+						bits.Color = ColorSequence.new(Color3.new(1, 1, 1), BUBBLE_COLOR)
+					end
+					if os.clock() - revealSound > 0.3 then
+						revealSound = os.clock()
+						Sfx.play("reveal", frames[id].Position)
+					end
+				end
+			end
+		end
+	end
+end)
 
 return BubbleView
