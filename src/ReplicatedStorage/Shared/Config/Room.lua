@@ -5,12 +5,11 @@ local function rgb(r, g, b)
 end
 
 -- Which room size to build: "wide" or "small" (see `sizes` at the bottom).
-local SIZE = "small"
+local SIZE = "starter"
 
 local room = {
 	floorY = 0, -- top of the floor slab
 	wallLift = 0.7, -- wall wrap starts this high, so the bottom row clears the floor bubbles (plain strip below)
-	spawn = { 0, 3, 18 }, -- where players appear (clear of the recycler)
 	perSheet = 5, -- 5 x 5 bubbles per sheet (the sheet model is made for 5 x 5)
 	sheetThickness = 0.04,
 
@@ -94,11 +93,14 @@ local room = {
 -- sheetSize = 6 x bubbleScale, spacing = 1.2 x bubbleScale.
 -- wallBubbleRows (optional) = bubbles up each wall; the top sheet row tucks into the ceiling.
 room.sizes = {
+	-- 40 x 40 room, small bubbles: each wall 40 across x 11 up = 440 (first room: not intimidating)
+	starter = { bubbleScale = 5 / 6, floorSheets = 8, wallRows = 3, wallBubbleRows = 11, spawn = { 0, 3, 12 },
+		recycler = { size = { 10, 7, 10 }, clear = 12, color = { 60, 200, 90 } } },
 	-- 78 x 78 room, normal bubbles: each wall 65 across x 10 up = 650
-	wide = { bubbleScale = 1, floorSheets = 13, wallRows = 2,
+	wide = { bubbleScale = 1, floorSheets = 13, wallRows = 2, spawn = { 0, 3, 18 },
 		recycler = { size = { 10, 7, 10 }, clear = 18, color = { 60, 200, 90 } } },
 	-- 60 x 60 room (as before), bubbles 5/6 the size: each wall 60 across x 11 up = 660
-	small = { bubbleScale = 5 / 6, floorSheets = 12, wallRows = 3, wallBubbleRows = 11,
+	small = { bubbleScale = 5 / 6, floorSheets = 12, wallRows = 3, wallBubbleRows = 11, spawn = { 0, 3, 18 },
 		recycler = { size = { 10, 7, 10 }, clear = 12, color = { 60, 200, 90 } } },
 }
 for k, v in room.sizes[SIZE] do

@@ -10,6 +10,7 @@ A Roblox simulator for kids 8-14: pop bubble wrap for coins, upgrade your bag, t
 - Room: bubble wrap on floor and walls, plain ceiling.
 - 2026-11-25: Players collect PLASTIC SCRAPS: each pop puts a scrap in the bag (rare bubbles drop gold / crystal / rainbow scraps worth more); the recycler buys plastic. Scraps fly into the bag on pop and out to the recycler on sell.
 - 2026-11-25: Walking does NOT pop floor wrap at first. A "Spiky Boots" upgrade (shop) unlocks popping by walking (floor pops then drop scraps). Not built yet: owner is finding a UI template for the shop first. Until then the current walk-popping stays in the test build.
+- 2026-11-25 (later): first room shrunk to "starter" (40 x 40, 440 bubbles per wall, ~3,260 in the room) so it isn't intimidating; gold bubbles removed for now (diamond + rainbow stay).
 - 2026-11-25: Room size "small" (Config/Room.lua `SIZE`): bubbles 5/6 size, 60 x 60 room, 660 bubbles per wall (60 across x 11 up), one ceiling light. Look 4 "Clear+" is the starting look. Default pop sound: Tiny; squeeze and pop still being auditioned (K and 1-9 in game).
 - Popping a bubble with the tool takes a press time (starts 0.56 s, like the genre reference); the press time becomes an upgrade ("Pop Speed"). Walking over floor wrap pops instantly.
 - Bag: popped bubbles fill your bag (starts at 25); a full bag blocks popping until you sell at the recycler in the middle of the hub. Coins, not cents. First bag upgrades are cheap.

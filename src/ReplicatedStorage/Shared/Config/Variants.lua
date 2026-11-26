@@ -9,11 +9,7 @@ return {
 	-- so players can't spot them all from across the room and rush the good ones.
 	revealDistance = 9,
 	list = {
-		{
-			key = "Gold", chance = 1 / 300, coins = 5, -- about 20 per room
-			color = { 255, 185, 25 }, transparency = 0.05, reflectance = 0.45,
-			glow = { 255, 215, 80 }, sparkle = { 255, 240, 150 }, sparkleRate = 4,
-		},
+		-- Gold (1/300, 5 coins) removed 2026-11-25 by the owner; add it back here if wanted.
 		{
 			key = "Diamond", chance = 1 / 2000, coins = 50, -- about 3 per room
 			color = { 170, 245, 255 }, transparency = 0.15, reflectance = 0.6,
