@@ -233,6 +233,13 @@ for i, def in Models.popped or {} do
 	loadMesh("Popped" .. i, def, def.texture[zone])
 end
 local sheetMesh = loadMesh("Sheet", Models.sheet, nil)
+do -- the lobby gumball: mesh + its glossy candy look (SurfaceAppearance saved in art/GumballLook.rbxmx)
+	local gum = loadMesh("Gumball", Models.gumball, nil)
+	local look = game:GetService("ServerStorage"):FindFirstChild("GumballLook")
+	if gum and look then
+		look:Clone().Parent = gum
+	end
+end
 assets.Parent = ReplicatedStorage
 
 -- Bubble wrap sheets (the bubbles themselves are drawn by each client)

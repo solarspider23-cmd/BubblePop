@@ -1,0 +1,13 @@
+<roblox xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.roblox.com/roblox.xsd" version="4">
+	<Item class="SurfaceAppearance" referent="RBXGUMBALLLOOK0001">
+		<Properties>
+			<string name="Name">GumballLook</string>
+			<token name="AlphaMode">0</token>
+			<Color3 name="Color"><R>1</R><G>1</G><B>1</B></Color3>
+			<Content name="ColorMap"><url>rbxassetid://95711767485834</url></Content>
+			<Content name="NormalMap"><url>rbxassetid://135854173628793</url></Content>
+			<Content name="RoughnessMap"><url>rbxassetid://119594612790878</url></Content>
+			<Content name="MetalnessMap"><url>rbxassetid://96962788681730</url></Content>
+		</Properties>
+	</Item>
+</roblox>

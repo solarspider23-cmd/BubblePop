@@ -28,5 +28,12 @@ return {
 		center = { 0.025, 0.0295, -0.025 },
 		topOffset = 0.04, -- the sheet's top (where bubbles sit) is this far above its origin
 	},
+	-- the lobby gumball (one near-white glossy ball, tinted per colour in game). Its textures are in
+	-- art/GumballLook.rbxmx (a SurfaceAppearance: games can't set texture maps from scripts).
+	gumball = {
+		model = 119599622536830,
+		size = { 0.9949, 0.9949, 0.9949 },
+		maps = { color = 95711767485834, normal = 135854173628793, roughness = 119594612790878, metalness = 96962788681730 },
+	},
 	zone = "Blue", -- which texture set the test room uses
 }

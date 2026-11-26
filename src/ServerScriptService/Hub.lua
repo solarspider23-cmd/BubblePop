@@ -467,6 +467,29 @@ local function gumColor(rng: Random): Color3
 	return color(GUM[rng:NextInteger(1, #GUM)])
 end
 
+-- one gumball: the uploaded glossy mesh (tinted), or a plain ball if it didn't load
+local function gumball(name: string, pos: Vector3, d: number, col: Color3, solid: boolean?): BasePart
+	local assets = ReplicatedStorage:FindFirstChild("BubbleAssets")
+	local template = assets and assets:FindFirstChild("Gumball") :: MeshPart?
+	if not template then
+		return ball(name, pos, d, col, { solid = solid == true, shadow = false, gloss = 0.15 })
+	end
+	local g = template:Clone()
+	g.Name = name
+	g.Size = Vector3.new(d, d, d)
+	g.CFrame = CFrame.new(pos) * CFrame.Angles(math.random() * 6.3, math.random() * 6.3, 0)
+	g.Color = col
+	g.CanCollide = solid == true
+	g.CanQuery = solid == true
+	g.CastShadow = solid == true
+	local look = g:FindFirstChildOfClass("SurfaceAppearance")
+	if look then
+		look.Color = col
+	end
+	g.Parent = folder
+	return g
+end
+
 -- a giant gumball machine where the HQ stands: red base, coin slot and knob, a glass globe full of gumballs
 local function buildGumballMachine()
 	local z = -45
@@ -494,7 +517,7 @@ local function buildGumballMachine()
 		local v = Vector3.new(rng:NextNumber(-1, 1), rng:NextNumber(-1, 1), rng:NextNumber(-1, 1))
 		if v.Magnitude <= 1 and v.Y < 0.25 then
 			n += 1
-			ball("Gumball", gc + v * (R - 2.2), 3.8, gumColor(rng), { solid = false, shadow = false, gloss = 0.15 })
+			gumball("Gumball", gc + v * (R - 2.2), 3.8, gumColor(rng))
 		end
 	end
 	ball("Globe", gc, R * 2, Color3.fromRGB(235, 248, 255), { mat = GLASS, transparency = 0.6, shadow = false })
@@ -525,7 +548,7 @@ local function buildGumballPit()
 	end
 	for k = 1, 7 do
 		local a = k / 7 * math.pi * 2
-		local g = ball("BouncyGumball", c + Vector3.new(math.cos(a) * 5, 3, math.sin(a) * 5), 4, gumColor(rng), { gloss = 0.15 })
+		local g = gumball("BouncyGumball", c + Vector3.new(math.cos(a) * 5, 3, math.sin(a) * 5), 4, gumColor(rng), true)
 		g.Anchored = false
 		g.CustomPhysicalProperties = PhysicalProperties.new(0.3, 0.3, 0.8, 1, 1) -- light and bouncy
 	end
@@ -541,7 +564,7 @@ local function buildCandyJar()
 	vcyl("JarPedestal", d + Vector3.new(0, 2.2, 0), 6.5, 2, C.white)
 	for _ = 1, 40 do
 		local a, r = rng:NextNumber(0, math.pi * 2), rng:NextNumber(0, 2)
-		ball("JarGumball", d + Vector3.new(math.cos(a) * r, rng:NextNumber(4, 8.5), math.sin(a) * r), 1.6, gumColor(rng), { solid = false, shadow = false })
+		gumball("JarGumball", d + Vector3.new(math.cos(a) * r, rng:NextNumber(4, 8.5), math.sin(a) * r), 1.6, gumColor(rng))
 	end
 	local jar = vcyl("Jar", d + Vector3.new(0, 7, 0), 6.2, 7.6, Color3.fromRGB(235, 248, 255), { mat = GLASS, transparency = 0.65 })
 	vcyl("JarLid", d + Vector3.new(0, 11.1, 0), 6.8, 0.8, C.blue)

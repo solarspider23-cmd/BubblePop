@@ -31,7 +31,7 @@ PREVIEWS = os.path.join(ROOT, "art", "previews")
 os.makedirs(OUT, exist_ok=True)
 os.makedirs(PREVIEWS, exist_ok=True)
 
-N = 10          # quads per cube-face edge -> 6*N*N*2 = 1200 triangles
+N = 11          # quads per cube-face edge -> 6*N*N*2 = 1452 triangles
 RADIUS = 0.5    # 1 stud diameter
 TEX = 1024
 QUICK = os.environ.get("GUMBALL_QUICK") == "1"
@@ -179,7 +179,7 @@ rough = math_op(nodes, links, "ADD", rough, math_op(nodes, links, "MULTIPLY", sp
 dvor = nodes.new("ShaderNodeTexVoronoi")
 dvor.voronoi_dimensions = "3D"
 dvor.feature = "SMOOTH_F1"
-dvor.inputs["Scale"].default_value = 22.0
+dvor.inputs["Scale"].default_value = 30.0
 dvor.inputs["Smoothness"].default_value = 0.6
 links.new(co, dvor.inputs["Vector"])
 dimple = maprange(nodes, links, dvor.outputs["Distance"], 0.0, 0.6, 0.0, 1.0)
@@ -187,9 +187,9 @@ fine = noise(nodes, links, co, 60.0, 2.0, 0.5, 1.3)
 height = math_op(nodes, links, "ADD", dimple,
                  math_op(nodes, links, "MULTIPLY", fine, 0.35))
 height = math_op(nodes, links, "ADD", height,
-                 math_op(nodes, links, "MULTIPLY", coat, 0.6))
+                 math_op(nodes, links, "MULTIPLY", coat, 0.15))
 bump = nodes.new("ShaderNodeBump")
-bump.inputs["Strength"].default_value = 0.22
+bump.inputs["Strength"].default_value = 0.08
 bump.inputs["Distance"].default_value = 0.004
 links.new(height, bump.inputs["Height"])
 
@@ -368,7 +368,7 @@ fb.inputs["Base Color"].default_value = (0.55, 0.53, 0.52, 1)
 fb.inputs["Roughness"].default_value = 0.35
 floor.data.materials.append(fm)
 
-add_light("Key", "AREA", (-1.6, -1.8, 2.2), 120, (1.4, 1.0))
+add_light("Key", "AREA", (-1.6, -1.8, 2.2), 140, (0.8, 0.6))
 add_light("Fill", "AREA", (2.4, -1.2, 0.9), 35, (2.0, 2.0), (0.92, 0.96, 1.0))
 add_light("Rim", "AREA", (0.6, 2.4, 1.6), 90, (2.0, 0.6))
 add_light("Top", "AREA", (0, 0, 3.0), 25, (3.0, 3.0))
@@ -401,26 +401,26 @@ def render(path):
 # single red gumball
 ball.data.materials.clear()
 ball.data.materials.append(tinted("Red", "#e0161b"))
-aim((0.0, -3.2, 0.9), (0, 0, -0.02), 100)
+aim((0.0, -4.2, 1.1), (0, 0, -0.05), 85)
 render(os.path.join(PREVIEWS, "gumball_single.png"))
 
 # colour cluster: 8 gumballs sharing the one mesh
-colours = [("Red", "#e0161b"), ("Blue", "#1a5fe0"), ("Yellow", "#ffd11a"),
+colours = [("Red", "#e0161b"), ("Blue", "#1a5fe0"), ("Yellow", "#ffdc1a"),
            ("Green", "#2fbf3a"), ("Pink", "#ff6fb5"), ("Orange", "#ff7a12"),
            ("Purple", "#8a3ad6"), ("White", "#f4f1ea")]
 spots = [(-1.65, 0.0), (-0.55, 0.05), (0.55, -0.02), (1.65, 0.04),
-         (-1.1, 1.0), (0.0, 1.02), (1.1, 0.98), (2.2, 1.05)]
+         (-1.1, 1.0), (0.0, 1.02), (1.1, 0.98), (-2.2, 1.05)]
 balls = []
 for (nm_, hx), (x, y) in zip(colours, spots):
     o = bpy.data.objects.new("Gumball_" + nm_, ball.data.copy())
     o.data.materials.clear()
     o.data.materials.append(tinted(nm_ + "2", hx))
-    o.location = (x - 0.3, y, 0)
+    o.location = (x, y, 0)
     o.rotation_euler = (x * 1.7, y * 2.3, x + y)
     sc.collection.objects.link(o)
     balls.append(o)
 ball.hide_render = True
-aim((0.0, -6.4, 2.6), (0, 0.5, -0.05), 62)
+aim((0.0, -8.0, 3.2), (0.0, 0.5, -0.05), 55)
 sc.render.resolution_x = 1600
 render(os.path.join(PREVIEWS, "gumball_colours.png"))
 
