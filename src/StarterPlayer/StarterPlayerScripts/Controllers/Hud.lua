@@ -13,6 +13,7 @@ gui.Name = "Hud"
 gui.ResetOnSpawn = false
 gui.IgnoreGuiInset = true
 gui.Parent = player:WaitForChild("PlayerGui")
+Hud.gui = gui -- the run HUD (Lobby turns it off in the hub)
 
 -- Crosshair: a small plus with a dark outline
 local cross = Instance.new("Frame")

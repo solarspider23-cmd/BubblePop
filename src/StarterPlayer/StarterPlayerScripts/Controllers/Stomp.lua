@@ -22,7 +22,7 @@ function Stomp.start(remotes: Folder)
 		local char = player.Character
 		local root = char and char:FindFirstChild("HumanoidRootPart") :: BasePart?
 		local hum = char and char:FindFirstChildOfClass("Humanoid")
-		if root and hum and hum.Health > 0 and hum.FloorMaterial ~= Enum.Material.Air then
+		if root and hum and hum.Health > 0 and hum.FloorMaterial ~= Enum.Material.Air and player:GetAttribute("InRun") == true then
 			local pos = root.Position
 			-- walking only pops with Spiky Boots (the server sets StompRadius; 0 = no boots)
 			local radius = player:GetAttribute("StompRadius") or 0

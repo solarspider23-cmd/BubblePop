@@ -17,6 +17,8 @@ local BagConfig = require(Shared.Config.Bag)
 local BagRules = require(Shared.Rules.Bag)
 local Upgrades = require(Shared.Config.Upgrades)
 local UpgradeRules = require(Shared.Rules.Upgrades)
+local HubConfig = require(Shared.Config.Hub)
+local Hub = require(script.Parent:WaitForChild("Hub"))
 
 Players.CharacterAutoLoads = false -- spawn players only after the room exists
 
@@ -264,6 +266,7 @@ for _, s in layout.sheets do
 end
 
 world.Parent = workspace
+Hub.build()
 
 local lit = Room.lighting
 Lighting.Ambient = color(lit.ambient)
@@ -318,11 +321,11 @@ local function rollVariant(id: number)
 	local k = VariantRules.roll(Variants, rng:NextNumber())
 	variantOf[id] = if k > 0 then k else nil
 end
-for id = 1, COUNT do
-	rollVariant(id)
-end
--- some variants have a cap per room: turn any extra ones back into normal bubbles
-do
+-- roll every bubble's variant for a new run; some variants have a cap per room
+local function rollRoom()
+	for id = 1, COUNT do
+		rollVariant(id)
+	end
 	local seen: { [number]: number } = {}
 	for id = 1, COUNT do
 		local k = variantOf[id]
@@ -334,6 +337,12 @@ do
 			end
 		end
 	end
+end
+rollRoom()
+
+-- who is in the popping room right now (player attribute InRun); everyone else is in the hub
+local function inRun(player: Player): boolean
+	return player:GetAttribute("InRun") == true
 end
 
 local function queue(change, userId)
@@ -446,6 +455,9 @@ local function refuse(player: Player, id: number)
 end
 
 PopRequest.OnServerEvent:Connect(function(player, id, extras)
+	if not inRun(player) then
+		return
+	end
 	local now = os.clock()
 	local allow = clickLimit[player]
 	if not allow or not allow(now) then
@@ -502,7 +514,7 @@ PopRequest.OnServerEvent:Connect(function(player, id, extras)
 end)
 
 StompRequest.OnServerEvent:Connect(function(player, ids)
-	if type(ids) ~= "table" or #ids > 30 then
+	if type(ids) ~= "table" or #ids > 30 or not inRun(player) then
 		return
 	end
 	local r = root(player)
@@ -556,7 +568,7 @@ local rc = Room.recycler
 local function sellNearby()
 	for player, bag in bags do
 		local r = root(player)
-		if bag.count > 0 and r
+		if bag.count > 0 and r and inRun(player)
 			and BagRules.nearRecycler(r.Position.X, r.Position.Z, 0, 0, rc.pad or rc.size[1], rc.pad or rc.size[3], BagConfig.sellReach) then
 			local n = bag.count
 			local coins = BagRules.sell(bag)
@@ -575,6 +587,26 @@ end
 -- RunClearTime (seconds it took; set once the room is cleared).
 ReplicatedStorage:SetAttribute("BubblesLeft", COUNT)
 ReplicatedStorage:SetAttribute("RoomTotal", COUNT)
+local runId = 0
+
+-- Back to the hub (third person)
+local function sendToHub(player: Player)
+	player:SetAttribute("InRun", nil)
+	player.CameraMode = Enum.CameraMode.Classic
+	local char = player.Character
+	if char then
+		char:PivotTo(Hub.spawnCFrame)
+	end
+end
+
+local function endRun()
+	for _, p in Players:GetPlayers() do
+		if inRun(p) then
+			sendToHub(p)
+		end
+	end
+end
+
 updateRun = function(left: number)
 	if ReplicatedStorage:GetAttribute("BubblesLeft") ~= left then
 		ReplicatedStorage:SetAttribute("BubblesLeft", left)
@@ -582,8 +614,69 @@ updateRun = function(left: number)
 	local start = ReplicatedStorage:GetAttribute("RunStart")
 	if left == 0 and start and not ReplicatedStorage:GetAttribute("RunClearTime") then
 		ReplicatedStorage:SetAttribute("RunClearTime", workspace:GetServerTimeNow() - start)
+		local mine = runId
+		task.delay(HubConfig.backToHubSeconds, function()
+			if runId == mine then
+				endRun()
+			end
+		end)
 	end
 end
+
+-- Every run starts fresh: coins, pops, bag and upgrades back to the start
+local function resetRunState(player: Player)
+	local stats = player:FindFirstChild("leaderstats")
+	for _, n in { "Coins", "Pops" } do
+		local v = stats and stats:FindFirstChild(n)
+		if v then
+			(v :: IntValue).Value = 0
+		end
+	end
+	for _, kind in Upgrades.order do
+		player:SetAttribute("Upg_" .. kind, nil)
+	end
+	bags[player] = BagRules.new()
+	lastClick[player] = nil
+	applyUpgrades(player)
+	showBag(player)
+end
+
+-- A group from a hub pad goes into a fresh room
+local function startRun(group: { Player }, _roomIndex: number)
+	runId += 1
+	-- reset the room: every bubble back, rare ones rolled again
+	table.clear(poppedAt)
+	rollRoom()
+	for id = 1, COUNT do
+		queue(-id, 0)
+	end
+	ReplicatedStorage:SetAttribute("RunClearTime", nil)
+	ReplicatedStorage:SetAttribute("BubblesLeft", COUNT)
+	ReplicatedStorage:SetAttribute("RunStart", workspace:GetServerTimeNow())
+	local s = Room.spawn
+	for i, p in group do
+		resetRunState(p)
+		p:SetAttribute("InRun", true)
+		p.CameraMode = Enum.CameraMode.LockFirstPerson
+		local char = p.Character
+		if char then
+			char:PivotTo(CFrame.new(s[1] + (i - 2.5) * 2, s[2], s[3]))
+		end
+	end
+end
+
+Hub.start({
+	canStart = function()
+		for _, p in Players:GetPlayers() do
+			if inRun(p) then
+				return false -- one room for now: wait until it's free
+			end
+		end
+		return true
+	end,
+	startRun = startRun,
+	inRun = inRun,
+})
 
 TestClear.OnServerEvent:Connect(function()
 	if not RunService:IsStudio() then
@@ -635,9 +728,6 @@ end)
 
 ---------------------------------------------------------------- players
 local function onPlayer(player: Player)
-	if not ReplicatedStorage:GetAttribute("RunStart") then
-		ReplicatedStorage:SetAttribute("RunStart", workspace:GetServerTimeNow()) -- the run clock starts
-	end
 	local stats = Instance.new("Folder")
 	stats.Name = "leaderstats"
 	local pops = Instance.new("IntValue")
@@ -652,11 +742,15 @@ local function onPlayer(player: Player)
 	showBag(player)
 	clickLimit[player] = PopRules.rateLimiter(10)
 	stompLimit[player] = PopRules.rateLimiter(Pop.stompMaxPerSecond)
-	player.CameraMode = Enum.CameraMode.LockFirstPerson
+	player.CameraMode = Enum.CameraMode.Classic -- the hub is third person
 	player.CharacterAdded:Connect(function(char)
 		local s = Room.spawn
 		task.defer(function()
-			char:PivotTo(CFrame.new(s[1], s[2], s[3]))
+			if inRun(player) then
+				char:PivotTo(CFrame.new(s[1], s[2], s[3]))
+			else
+				char:PivotTo(Hub.spawnCFrame)
+			end
 		end)
 		local hum = char:WaitForChild("Humanoid") :: Humanoid
 		hum.Died:Connect(function()

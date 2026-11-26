@@ -35,7 +35,15 @@ if "--no-reload" not in sys.argv:
     print(studio("start_stop_play", '{"is_start": true}'))
     time.sleep(10)
 
-print("camera:", client('return game.Players.LocalPlayer.CameraMode.Name'))
+print("hub camera:", client('return game.Players.LocalPlayer.CameraMode.Name'))
+# go through the hub: stand on pad 1, press Start, wait to be in the room
+print(client('local p=game.Players.LocalPlayer; local pad=workspace.Hub.Pad1; '
+             'p.Character.HumanoidRootPart.CFrame=CFrame.new(pad.Position+Vector3.new(0,3,0)); '
+             'local t0=os.clock(); repeat task.wait(0.1) until p:GetAttribute("PadOwner") or os.clock()-t0>5; '
+             'game.ReplicatedStorage.Remotes.StartPad:FireServer(); '
+             'local t=os.clock(); repeat task.wait(0.1) until p:GetAttribute("InRun") or os.clock()-t>5; '
+             'task.wait(0.5); return "in run: "..tostring(p:GetAttribute("InRun"))'))
+print("run camera:", client('return game.Players.LocalPlayer.CameraMode.Name'))
 client('local S=game.ReplicatedStorage.Shared; local L=require(S.Rules.RoomLayout).new(require(S.Config.Room)); '
        'local r=game.Players.LocalPlayer.Character.HumanoidRootPart; r.CFrame=CFrame.new(0.3,3,-L.half+6); task.wait(0.3); '
        'local c=workspace.CurrentCamera; c.CFrame=CFrame.lookAt(c.CFrame.Position, Vector3.new(0.3, c.CFrame.Position.Y, -L.half)); return "moved"')

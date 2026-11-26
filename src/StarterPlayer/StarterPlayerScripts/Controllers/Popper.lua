@@ -182,6 +182,16 @@ function Popper.start(remotes: Folder)
 	RunService.RenderStepped:Connect(function(dt)
 		local now = os.clock()
 		local cf = camera.CFrame
+		-- the stick only exists in the popping room
+		if player:GetAttribute("InRun") ~= true then
+			model.Parent = nil
+			if press then
+				stopSqueeze()
+			end
+			press, retract = nil, nil
+			return
+		end
+		model.Parent = camera
 
 		-- walking bob
 		local char = player.Character

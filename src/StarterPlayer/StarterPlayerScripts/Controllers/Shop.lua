@@ -63,6 +63,7 @@ function Shop.start(remotes: Folder)
 	gui.IgnoreGuiInset = true
 	gui.DisplayOrder = 5
 	gui.Parent = player:WaitForChild("PlayerGui")
+	Shop.gui = gui -- run-only (Lobby turns it off in the hub)
 
 	-- open button (right side)
 	local open = Instance.new("TextButton")
