@@ -106,8 +106,7 @@ local function addRow(p: Player)
 	local mine = p == player
 	local row = Instance.new("Frame")
 	row.Size = UDim2.new(1, 0, 0, 26)
-	row.BackgroundColor3 = mine and Color3.fromRGB(60, 45, 10) or Color3.fromRGB(20, 35, 90)
-	row.BackgroundTransparency = 0.3
+	row.BackgroundTransparency = 1 -- just text: the screen is busy enough
 	local c = Instance.new("UICorner")
 	c.CornerRadius = UDim.new(1, 0)
 	c.Parent = row
@@ -120,7 +119,7 @@ local function addRow(p: Player)
 		t.FontFace = Font.fromEnum(Enum.Font.LuckiestGuy)
 		t.TextScaled = true
 		t.TextXAlignment = align
-		t.TextColor3 = mine and Color3.fromRGB(255, 225, 80) or Color3.new(1, 1, 1)
+		t.TextColor3 = Color3.new(1, 1, 1)
 		local st = Instance.new("UIStroke")
 		st.Thickness = 2
 		st.Color = DARK_BLUE
