@@ -1,0 +1,55 @@
+{
+ "model": "Hub_BoothPad",
+ "fbx": "Hub_BoothPad.fbx",
+ "units": "1 unit = 1 stud",
+ "axes": "Roblox: X right, Y up, Z = -Blender Y; front faces Roblox -Z",
+ "origin": "bottom centre of the footprint at (0,0,0)",
+ "size": [
+  9.1,
+  0.35,
+  9.034
+ ],
+ "center": [
+  0.0,
+  0.175,
+  -0.0
+ ],
+ "tris": 286,
+ "meshes": {
+  "BoothPad_Body": {
+   "size": [
+    9.1,
+    0.35,
+    9.034
+   ],
+   "center": [
+    0.0,
+    0.175,
+    -0.0
+   ],
+   "tris": 234,
+   "material": "SmoothPlastic",
+   "color": "#FFFCFA",
+   "castShadow": false
+  },
+  "BoothPad_Glow": {
+   "size": [
+    8.04,
+    0.0,
+    7.981
+   ],
+   "center": [
+    0.0,
+    0.28,
+    -0.0
+   ],
+   "tris": 52,
+   "material": "Neon",
+   "color": "#BE1E5A",
+   "castShadow": false,
+   "note": "Neon; recolour per booth: pink #BE1E5A, mint #1E9C78, lemon #C88C0A"
+  }
+ },
+ "replaces": "Hub.lua buildBooths(): BoothPadRing, BoothPad",
+ "placement": "in front of each booth, centre 5.2 studs in front of the booth front (Hub_Booth boothPad)"
+}

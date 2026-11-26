@@ -1,0 +1,95 @@
+{
+ "model": "Hub_Booth",
+ "fbx": "Hub_Booth.fbx",
+ "units": "1 unit = 1 stud",
+ "axes": "Roblox: X right, Y up, Z = -Blender Y; front faces Roblox -Z",
+ "origin": "bottom centre of the footprint at (0,0,0)",
+ "size": [
+  13.123,
+  11.0,
+  12.124
+ ],
+ "center": [
+  0.0,
+  5.5,
+  -0.0
+ ],
+ "tris": 2884,
+ "meshes": {
+  "Booth_Body": {
+   "size": [
+    13.123,
+    11.0,
+    12.124
+   ],
+   "center": [
+    0.0,
+    5.5,
+    -0.0
+   ],
+   "tris": 1748,
+   "material": "SmoothPlastic (SurfaceAppearance)",
+   "textures": {
+    "color": "Hub_Booth_color.png",
+    "normal": "Hub_Booth_normal.png",
+    "roughness": "Hub_Booth_roughness.png"
+   },
+   "tinted": false,
+   "color": "#FFFFFF (texture carries the colours)",
+   "note": "white base, gold band, window, sill, white awning stripes, ridge, topper mount"
+  },
+  "Booth_Tint": {
+   "size": [
+    12.993,
+    9.761,
+    12.124
+   ],
+   "center": [
+    0.0,
+    5.731,
+    -0.0
+   ],
+   "tris": 1136,
+   "material": "SmoothPlastic (SurfaceAppearance)",
+   "textures": {
+    "color": "Hub_Booth_color.png",
+    "normal": "Hub_Booth_normal.png",
+    "roughness": "Hub_Booth_roughness.png"
+   },
+   "tinted": true,
+   "color": "tint per variant (SurfaceAppearance.Color)",
+   "note": "walls + coloured awning stripes: neutral, set SurfaceAppearance.Color to the booth accent"
+  }
+ },
+ "replaces": "Hub.lua buildBooths(): BoothBody, BoothTrim, BoothWindow, BoothSill, Awning x5, RoofTop (and RoofBall -> topper)",
+ "placement": "one per HubConfig.booths entry (right side, x=44, z=-15/4/23), front (+Y here) faces the plaza middle; built at final size (boothScale 1.3 already included)",
+ "tints": {
+  "pink": "#FF69AA",
+  "mint": "#46CDA5",
+  "lemon": "#F5B928"
+ },
+ "topperMount": {
+  "position": [
+   0,
+   11.0,
+   0
+  ],
+  "note": "put the topper model's origin (bottom centre) here"
+ },
+ "window": {
+  "opening": [
+   7.8,
+   3.4
+  ],
+  "sillHeight": 3.0,
+  "frontFaceZ": -4.55
+ },
+ "boothPad": {
+  "position": [
+   0,
+   0,
+   -9.75
+  ],
+  "note": "Hub_BoothPad centre, in front of the window"
+ }
+}

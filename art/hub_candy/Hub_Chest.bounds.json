@@ -1,0 +1,104 @@
+{
+ "model": "Hub_Chest",
+ "fbx": "Hub_Chest.fbx",
+ "units": "1 unit = 1 stud",
+ "axes": "Roblox: X right, Y up, Z = -Blender Y; front faces Roblox -Z",
+ "origin": "bottom centre of the footprint at (0,0,0)",
+ "size": [
+  10.0,
+  6.13,
+  10.0
+ ],
+ "center": [
+  0.0,
+  3.065,
+  -0.0
+ ],
+ "tris": 2190,
+ "meshes": {
+  "Chest_Body": {
+   "size": [
+    6.44,
+    3.5,
+    4.57
+   ],
+   "center": [
+    0.0,
+    1.75,
+    -0.065
+   ],
+   "tris": 1180,
+   "material": "SmoothPlastic (SurfaceAppearance)",
+   "textures": {
+    "color": "Hub_Chest_color.png",
+    "normal": "Hub_Chest_normal.png",
+    "roughness": "Hub_Chest_roughness.png"
+   },
+   "tinted": false,
+   "color": "#FFFFFF (texture carries the colours)",
+   "note": "body, corner caps, bands, star lock, gold-coin interior"
+  },
+  "Chest_Lid": {
+   "size": [
+    6.1,
+    2.92,
+    4.71
+   ],
+   "center": [
+    0.0,
+    4.67,
+    -0.205
+   ],
+   "tris": 914,
+   "material": "SmoothPlastic (SurfaceAppearance)",
+   "textures": {
+    "color": "Hub_Chest_color.png",
+    "normal": "Hub_Chest_normal.png",
+    "roughness": "Hub_Chest_roughness.png"
+   },
+   "tinted": false,
+   "color": "#FFFFFF (texture carries the colours)",
+   "note": "opens: hinge line along X at the back top edge of the body"
+  },
+  "Chest_Glow": {
+   "size": [
+    10.0,
+    0.08,
+    10.0
+   ],
+   "center": [
+    0.0,
+    0.04,
+    -0.0
+   ],
+   "tris": 96,
+   "material": "Neon",
+   "color": "#C89614",
+   "castShadow": false,
+   "note": "Neon floor disc, transparency ~0.35, no shadow"
+  }
+ },
+ "replaces": "Hub.lua buildChest(): ChestBody, ChestLid, ChestBand x2, ChestBandLid x2, ChestLock, ChestGlow",
+ "placement": "front left of the plaza at hub (-24, 0, 40), front (+Y here = Roblox -Z) faces (-14, 0, 20) as today",
+ "lidHinge": {
+  "point": [
+   0,
+   3.5,
+   2.0
+  ],
+  "axis": [
+   1,
+   0,
+   0
+  ],
+  "note": "Roblox axes: back top edge of the body. Rotate Chest_Lid about this line by up to about 105 degrees, top swinging backwards (towards Roblox +Z), to open"
+ },
+ "lockLight": {
+  "position": [
+   0,
+   2.02,
+   -2.3
+  ],
+  "note": "good spot for the PointLight / Sparkles that sit on ChestLock today"
+ }
+}

@@ -1,0 +1,43 @@
+{
+ "model": "Hub_BoothTopper_Bag",
+ "fbx": "Hub_BoothTopper_Bag.fbx",
+ "units": "1 unit = 1 stud",
+ "axes": "Roblox: X right, Y up, Z = -Blender Y; front faces Roblox -Z",
+ "origin": "bottom centre of the footprint at (0,0,0)",
+ "size": [
+  2.46,
+  3.073,
+  1.61
+ ],
+ "center": [
+  0.0,
+  1.537,
+  -0.055
+ ],
+ "tris": 460,
+ "meshes": {
+  "BoothTopper_Bag_Body": {
+   "size": [
+    2.46,
+    3.073,
+    1.61
+   ],
+   "center": [
+    0.0,
+    1.537,
+    -0.055
+   ],
+   "tris": 460,
+   "material": "SmoothPlastic (SurfaceAppearance)",
+   "textures": {
+    "color": "Hub_Booth_color.png",
+    "normal": "Hub_Booth_normal.png",
+    "roughness": "Hub_Booth_roughness.png"
+   },
+   "tinted": false,
+   "color": "#FFFFFF (texture carries the colours)"
+  }
+ },
+ "replaces": "RoofBall on the Shop booth",
+ "mountOn": "Hub_Booth topperMount"
+}

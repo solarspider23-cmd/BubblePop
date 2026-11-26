@@ -1,0 +1,43 @@
+{
+ "model": "Hub_BoothTopper_Crystal",
+ "fbx": "Hub_BoothTopper_Crystal.fbx",
+ "units": "1 unit = 1 stud",
+ "axes": "Roblox: X right, Y up, Z = -Blender Y; front faces Roblox -Z",
+ "origin": "bottom centre of the footprint at (0,0,0)",
+ "size": [
+  2.491,
+  2.95,
+  1.9
+ ],
+ "center": [
+  -0.047,
+  1.475,
+  -0.0
+ ],
+ "tris": 167,
+ "meshes": {
+  "BoothTopper_Crystal_Body": {
+   "size": [
+    2.491,
+    2.95,
+    1.9
+   ],
+   "center": [
+    -0.047,
+    1.475,
+    -0.0
+   ],
+   "tris": 167,
+   "material": "SmoothPlastic (SurfaceAppearance)",
+   "textures": {
+    "color": "Hub_Booth_color.png",
+    "normal": "Hub_Booth_normal.png",
+    "roughness": "Hub_Booth_roughness.png"
+   },
+   "tinted": false,
+   "color": "#FFFFFF (texture carries the colours)"
+  }
+ },
+ "replaces": "RoofBall on the Crystals booth",
+ "mountOn": "Hub_Booth topperMount"
+}

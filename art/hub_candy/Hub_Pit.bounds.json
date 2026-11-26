@@ -1,0 +1,57 @@
+{
+ "model": "Hub_Pit",
+ "fbx": "Hub_Pit.fbx",
+ "units": "1 unit = 1 stud",
+ "axes": "Roblox: X right, Y up, Z = -Blender Y; front faces Roblox -Z",
+ "origin": "bottom centre of the footprint at (0,0,0)",
+ "size": [
+  22.773,
+  3.001,
+  24.337
+ ],
+ "center": [
+  0.0,
+  1.5,
+  -0.782
+ ],
+ "tris": 2398,
+ "meshes": {
+  "Pit_Body": {
+   "size": [
+    22.773,
+    3.001,
+    24.337
+   ],
+   "center": [
+    0.0,
+    1.5,
+    -0.782
+   ],
+   "tris": 2398,
+   "material": "SmoothPlastic (SurfaceAppearance)",
+   "textures": {
+    "color": "Hub_Pit_color.png",
+    "normal": "Hub_Pit_normal.png",
+    "roughness": "Hub_Pit_roughness.png"
+   },
+   "tinted": false,
+   "color": "#FFFFFF (texture carries the colours)",
+   "note": "ring + floor + ramp, one textured mesh"
+  }
+ },
+ "replaces": "Hub.lua buildGumballPit(): PitFloor, PitWall x16 (the 7 BouncyGumballs and the sign stay)",
+ "placement": "centre at hub (-38, 0, 16); the entrance (Blender +Y = Roblox -Z) should face the plaza middle, i.e. turn it so the gap points to +X",
+ "insideFloorHeight": 0.3,
+ "ring": {
+  "outerDiameter": 22.8,
+  "innerDiameter": 19.6,
+  "height": 3.0,
+  "entranceWidth": 5.0,
+  "entranceDirection": [
+   0,
+   0,
+   -1
+  ]
+ },
+ "collision": "keep simple invisible parts: a ring of wall blocks (skip the 5-stud gap) and a floor slab 0.3 high"
+}

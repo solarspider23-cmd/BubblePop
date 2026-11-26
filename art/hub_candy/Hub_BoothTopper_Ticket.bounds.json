@@ -1,0 +1,43 @@
+{
+ "model": "Hub_BoothTopper_Ticket",
+ "fbx": "Hub_BoothTopper_Ticket.fbx",
+ "units": "1 unit = 1 stud",
+ "axes": "Roblox: X right, Y up, Z = -Blender Y; front faces Roblox -Z",
+ "origin": "bottom centre of the footprint at (0,0,0)",
+ "size": [
+  3.37,
+  2.848,
+  1.7
+ ],
+ "center": [
+  0.0,
+  1.424,
+  -0.0
+ ],
+ "tris": 479,
+ "meshes": {
+  "BoothTopper_Ticket_Body": {
+   "size": [
+    3.37,
+    2.848,
+    1.7
+   ],
+   "center": [
+    0.0,
+    1.424,
+    -0.0
+   ],
+   "tris": 479,
+   "material": "SmoothPlastic (SurfaceAppearance)",
+   "textures": {
+    "color": "Hub_Booth_color.png",
+    "normal": "Hub_Booth_normal.png",
+    "roughness": "Hub_Booth_roughness.png"
+   },
+   "tinted": false,
+   "color": "#FFFFFF (texture carries the colours)"
+  }
+ },
+ "replaces": "RoofBall on the Passes booth",
+ "mountOn": "Hub_Booth topperMount"
+}

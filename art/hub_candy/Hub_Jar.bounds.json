@@ -1,0 +1,85 @@
+{
+ "model": "Hub_Jar",
+ "fbx": "Hub_Jar.fbx",
+ "units": "1 unit = 1 stud",
+ "axes": "Roblox: X right, Y up, Z = -Blender Y; front faces Roblox -Z",
+ "origin": "bottom centre of the footprint at (0,0,0)",
+ "size": [
+  8.0,
+  12.61,
+  8.0
+ ],
+ "center": [
+  0.0,
+  6.305,
+  -0.0
+ ],
+ "tris": 1968,
+ "meshes": {
+  "Jar_Body": {
+   "size": [
+    8.0,
+    12.61,
+    8.0
+   ],
+   "center": [
+    0.0,
+    6.305,
+    -0.0
+   ],
+   "tris": 1416,
+   "material": "SmoothPlastic (SurfaceAppearance)",
+   "textures": {
+    "color": "Hub_Jar_color.png",
+    "normal": "Hub_Jar_normal.png",
+    "roughness": "Hub_Jar_roughness.png"
+   },
+   "tinted": false,
+   "color": "#FFFFFF (texture carries the colours)",
+   "note": "gold base, white pedestal with gold band, red lid and knob"
+  },
+  "Jar_Glass": {
+   "size": [
+    6.4,
+    7.35,
+    6.4
+   ],
+   "center": [
+    0.0,
+    6.825,
+    -0.0
+   ],
+   "tris": 504,
+   "material": "Glass",
+   "color": "#EBF8FF",
+   "transparency": 0.7,
+   "castShadow": false,
+   "note": "Roblox Glass, see-through ~0.6, no shadow"
+  },
+  "Jar_Shine": {
+   "size": [
+    0.634,
+    5.2,
+    0.288
+   ],
+   "center": [
+    -0.996,
+    6.5,
+    -3.019
+   ],
+   "tris": 48,
+   "material": "SmoothPlastic",
+   "color": "#FFFCFA",
+   "transparency": 0.25,
+   "castShadow": false,
+   "note": "flat white highlight, SmoothPlastic, no shadow"
+  }
+ },
+ "replaces": "Hub.lua buildCandyJar(): JarBase, JarPedestal, Jar, JarLid, JarLidKnob (the 40 JarGumballs become Batch A's pile)",
+ "placement": "centre at hub (-26, 0, -6), as today; the shine sits on the front, slightly left (front = Roblox -Z)",
+ "insideFloor": {
+  "height": 3.2,
+  "diameter": 5.8,
+  "note": "gumball pile positions are measured from (0, 3.2, 0)"
+ }
+}
