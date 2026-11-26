@@ -1,0 +1,68 @@
+{
+ "_notes": [
+  "Three cloud models, each with its bottom centre on the origin, ~20 wide; scale 14 - 80 wide in game.",
+  "Flat colour, no texture: SmoothPlastic, Color 255,255,255, CastShadow false, CanCollide false.",
+  "Replaces the Cloud balls made by puff() in Hub.lua buildScenery (one model per puff cluster)."
+ ],
+ "totalTris": 836,
+ "Cloud_A": {
+  "size": [
+   16.969,
+   7.183,
+   9.492
+  ],
+  "center": [
+   0.0,
+   3.591,
+   -0.0
+  ],
+  "tris": 256,
+  "color": [
+   255,
+   255,
+   255
+  ],
+  "material": "SmoothPlastic (flat, no texture)",
+  "castShadow": false
+ },
+ "Cloud_B": {
+  "size": [
+   16.11,
+   7.762,
+   8.685
+  ],
+  "center": [
+   0.0,
+   3.881,
+   -0.0
+  ],
+  "tris": 296,
+  "color": [
+   255,
+   255,
+   255
+  ],
+  "material": "SmoothPlastic (flat, no texture)",
+  "castShadow": false
+ },
+ "Cloud_C": {
+  "size": [
+   18.922,
+   5.49,
+   6.587
+  ],
+  "center": [
+   0.0,
+   2.745,
+   -0.0
+  ],
+  "tris": 284,
+  "color": [
+   255,
+   255,
+   255
+  ],
+  "material": "SmoothPlastic (flat, no texture)",
+  "castShadow": false
+ }
+}

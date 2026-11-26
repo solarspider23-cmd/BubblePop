@@ -1,0 +1,82 @@
+{
+ "_notes": [
+  "Grass dressing (new, replaces nothing): scatter on the grass ring between the fence and the glass.",
+  "Each model stands on the origin, front +Y. Shares the lollipop SurfaceAppearance (Hub_Lollipop_*.png).",
+  "_Tint pieces: SurfaceAppearance Color = a gumball colour (also MeshPart.Color). _Body: no tint."
+ ],
+ "texture": {
+  "color": "Hub_Lollipop_color.png",
+  "normal": "Hub_Lollipop_normal.png",
+  "roughness": "Hub_Lollipop_roughness.png",
+  "size": 512
+ },
+ "totalTris": 1006,
+ "Dressing_Gumdrop_Tint": {
+  "size": [
+   4.2,
+   3.15,
+   4.2
+  ],
+  "center": [
+   0.0,
+   1.425,
+   -0.0
+  ],
+  "tris": 264,
+  "color": "tint (gumball colours)",
+  "material": "SmoothPlastic + SurfaceAppearance (tinted)",
+  "castShadow": true
+ },
+ "Dressing_Sweet_Tint": {
+  "size": [
+   5.2,
+   2.149,
+   2.395
+  ],
+  "center": [
+   0.0,
+   0.864,
+   -0.0
+  ],
+  "tris": 364,
+  "color": "tint (gumball colours)",
+  "material": "SmoothPlastic + SurfaceAppearance (tinted)",
+  "castShadow": true
+ },
+ "Dressing_Cupcake_Tint": {
+  "size": [
+   3.9,
+   3.1,
+   3.802
+  ],
+  "center": [
+   0.0,
+   3.5,
+   -0.0
+  ],
+  "tris": 210,
+  "color": "tint (gumball colours)",
+  "material": "SmoothPlastic + SurfaceAppearance (tinted)",
+  "castShadow": true
+ },
+ "Dressing_Cupcake_Body": {
+  "size": [
+   3.402,
+   5.85,
+   3.235
+  ],
+  "center": [
+   0.0,
+   2.875,
+   -0.0
+  ],
+  "tris": 168,
+  "color": [
+   255,
+   180,
+   210
+  ],
+  "material": "SmoothPlastic + SurfaceAppearance",
+  "castShadow": true
+ }
+}

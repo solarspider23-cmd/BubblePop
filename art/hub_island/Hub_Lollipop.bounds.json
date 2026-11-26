@@ -1,0 +1,185 @@
+{
+ "_notes": [
+  "Three lollipop models; each stands on the origin (bottom centre at 0,0,0), front +Y, ~15 tall.",
+  "In game, each model = its _Tint, _Body and _Shine MeshParts; scale all three together (0.8 - 1.4).",
+  "_Tint: SurfaceAppearance Hub_Lollipop_* with Color = a gumball colour (also MeshPart.Color).",
+  "_Body: same SurfaceAppearance, no tint (cream stick, pink frosting dollop, gold bow).",
+  "_Shine: flat white SmoothPlastic (no texture), no shadow; optional Transparency 0.15.",
+  "Replaces LollyStick, Lolly, LollySwirl, LollyMiddle in Hub.lua lollipop(); base = the grass point."
+ ],
+ "texture": {
+  "color": "Hub_Lollipop_color.png",
+  "normal": "Hub_Lollipop_normal.png",
+  "roughness": "Hub_Lollipop_roughness.png",
+  "size": 512
+ },
+ "totalTris": 1624,
+ "Lollipop_Swirl_Tint": {
+  "size": [
+   8.0,
+   8.0,
+   2.0
+  ],
+  "center": [
+   0.0,
+   11.0,
+   -0.0
+  ],
+  "color": "tint (gumball colours)",
+  "material": "SmoothPlastic + SurfaceAppearance (tinted)",
+  "castShadow": true,
+  "tris": 320
+ },
+ "Lollipop_Swirl_Body": {
+  "size": [
+   4.7,
+   8.75,
+   4.47
+  ],
+  "center": [
+   0.0,
+   4.225,
+   -0.0
+  ],
+  "color": [
+   255,
+   252,
+   250
+  ],
+  "material": "SmoothPlastic + SurfaceAppearance",
+  "castShadow": true,
+  "tris": 140
+ },
+ "Lollipop_Swirl_Shine": {
+  "size": [
+   4.972,
+   1.845,
+   2.045
+  ],
+  "center": [
+   0.0,
+   12.563,
+   -0.0
+  ],
+  "color": [
+   255,
+   252,
+   250
+  ],
+  "material": "SmoothPlastic (flat, no texture)",
+  "castShadow": false,
+  "tris": 16
+ },
+ "Lollipop_Ball_Tint": {
+  "size": [
+   7.514,
+   7.514,
+   7.514
+  ],
+  "center": [
+   0.0,
+   11.2,
+   -0.0
+  ],
+  "color": "tint (gumball colours)",
+  "material": "SmoothPlastic + SurfaceAppearance (tinted)",
+  "castShadow": true,
+  "tris": 300
+ },
+ "Lollipop_Ball_Body": {
+  "size": [
+   6.149,
+   8.817,
+   4.47
+  ],
+  "center": [
+   0.0,
+   4.259,
+   -0.0
+  ],
+  "color": [
+   255,
+   252,
+   250
+  ],
+  "material": "SmoothPlastic + SurfaceAppearance",
+  "castShadow": true,
+  "tris": 356
+ },
+ "Lollipop_Ball_Shine": {
+  "size": [
+   4.158,
+   1.549,
+   6.959
+  ],
+  "center": [
+   -0.0,
+   12.505,
+   -0.0
+  ],
+  "color": [
+   255,
+   252,
+   250
+  ],
+  "material": "SmoothPlastic (flat, no texture)",
+  "castShadow": false,
+  "tris": 16
+ },
+ "Lollipop_Heart_Tint": {
+  "size": [
+   8.0,
+   7.201,
+   1.9
+  ],
+  "center": [
+   0.0,
+   10.601,
+   -0.0
+  ],
+  "color": "tint (gumball colours)",
+  "material": "SmoothPlastic + SurfaceAppearance (tinted)",
+  "castShadow": true,
+  "tris": 320
+ },
+ "Lollipop_Heart_Body": {
+  "size": [
+   4.7,
+   8.15,
+   4.47
+  ],
+  "center": [
+   0.0,
+   3.925,
+   -0.0
+  ],
+  "color": [
+   255,
+   252,
+   250
+  ],
+  "material": "SmoothPlastic + SurfaceAppearance",
+  "castShadow": true,
+  "tris": 140
+ },
+ "Lollipop_Heart_Shine": {
+  "size": [
+   5.565,
+   0.781,
+   1.768
+  ],
+  "center": [
+   0.0,
+   12.93,
+   -0.0
+  ],
+  "color": [
+   255,
+   252,
+   250
+  ],
+  "material": "SmoothPlastic (flat, no texture)",
+  "castShadow": false,
+  "tris": 16
+ }
+}

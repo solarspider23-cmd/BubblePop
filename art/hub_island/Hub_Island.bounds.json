@@ -1,0 +1,58 @@
+{
+ "_notes": [
+  "Blender height 0 = the grass surface. In the hub, grass top is at hub y = -3, so place each mesh",
+  "at hub (center.x, center.y - 3, center.z) (Roblox puts a MeshPart's origin at its box centre).",
+  "Both meshes share one SurfaceAppearance: Hub_Island_color/_normal/_roughness.png (1024).",
+  "The flat Grass part (cylinder radius 99, 5 thick, top at y = -3) stays; the rim rolls over its edge.",
+  "Island_Rim replaces the edge of Grass + Frosting; Island_Under replaces IslandRock x6."
+ ],
+ "grassTopBlenderZ": 0.0,
+ "grassTopHubY": -3.0,
+ "totalTris": 7896,
+ "texture": {
+  "color": "Hub_Island_color.png",
+  "normal": "Hub_Island_normal.png",
+  "roughness": "Hub_Island_roughness.png",
+  "size": 1024
+ },
+ "Island_Rim": {
+  "size": [
+   204.3,
+   18.37,
+   204.3
+  ],
+  "center": [
+   0.0,
+   -8.665,
+   -0.0
+  ],
+  "tris": 4200,
+  "color": [
+   255,
+   180,
+   210
+  ],
+  "material": "SmoothPlastic + SurfaceAppearance",
+  "castShadow": true
+ },
+ "Island_Under": {
+  "size": [
+   198.472,
+   55.0,
+   198.472
+  ],
+  "center": [
+   0.0,
+   -31.5,
+   -0.0
+  ],
+  "tris": 3696,
+  "color": [
+   110,
+   65,
+   45
+  ],
+  "material": "SmoothPlastic + SurfaceAppearance",
+  "castShadow": false
+ }
+}
