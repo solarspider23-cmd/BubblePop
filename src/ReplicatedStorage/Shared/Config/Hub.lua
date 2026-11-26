@@ -8,7 +8,7 @@ local function rgb(r, g, b)
 end
 
 local Hub = {
-	origin = { 0, 0, 1500 }, -- hub centre (far away, so the popping room is out of sight across the sea)
+	origin = { 0, 300, 1500 }, -- hub centre: a floating island high in the sky, far from the popping room (hidden under the clouds)
 	size = 112, -- the plaza is size x size studs (8 x 8 tiles)
 	spawn = { 0, 4, 34 }, -- from the origin: where players appear, facing the pads
 	pads = {
@@ -19,7 +19,7 @@ local Hub = {
 	boothScale = 1.3,
 	floatingBubbles = { count = 40, minSize = 1.5, maxSize = 6, riseSpeed = { 1.5, 4 }, topY = 75, radius = 85 },
 	dome = { radius = 100, centreY = -20 }, -- the glass bubble the whole hub sits in
-	island = { radius = 99, sea = 1600 }, -- the hub is a grassy island (sandy beach) in the sea; the bubble's lower glass is solid
+	island = { radius = 99 }, -- the hub is a floating island in the sky; the bubble's lower glass is solid
 	maxPlayers = 4,
 	countdown = 10, -- seconds before a pad starts on its own
 	backToHubSeconds = 8, -- after the room is cleared

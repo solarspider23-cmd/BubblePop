@@ -128,17 +128,16 @@ local padParts: { BasePart } = {}
 local function buildPlaza()
 	local S = HubConfig.size
 	local half = S / 2
-	-- an island: sea all around (real Roblox water), a sandy beach, a grassy top; the plaza sits 3 studs above it
+	-- a floating island in the sky: grassy top, a frosting drip, then a chocolate underside that
+	-- narrows to a point (candy theme), with clouds below. The plaza sits 3 studs above the grass.
 	local isl = HubConfig.island
-	local terrain = workspace.Terrain
-	terrain.WaterColor = Color3.fromRGB(20, 170, 220)
-	terrain.WaterTransparency = 0.25
-	terrain.WaterReflectance = 0.6
-	terrain.WaterWaveSize = 0.12
-	terrain:FillBlock(CFrame.new(at(0, -10, 0)), Vector3.new(isl.sea, 12, isl.sea), Enum.Material.Water)
-	terrain:FillBlock(CFrame.new(at(0, -20, 0)), Vector3.new(isl.sea, 8, isl.sea), Enum.Material.Sand) -- sea floor
-	terrain:FillCylinder(CFrame.new(at(0, -14, 0)), 12, isl.radius + 10, Enum.Material.Sand) -- beach (kept under the grass)
 	part("Grass", Vector3.new(5, isl.radius * 2, isl.radius * 2), CFrame.new(at(0, -5.5, 0)) * UP, C.grass, { mat = Enum.Material.Grass, shape = CYL })
+	local under = HubConfig.theme == "gumball" and Color3.fromRGB(110, 65, 45) or Color3.fromRGB(150, 110, 80)
+	vcyl("Frosting", at(0, -8.5, 0), isl.radius * 2 + 1, 1.6, C.lavender)
+	for k, layer in { { 0.97, 8 }, { 0.86, 9 }, { 0.7, 9 }, { 0.5, 9 }, { 0.3, 8 }, { 0.14, 7 } } do
+		local y = -9.3 - (k - 0.5) * 8.6
+		vcyl("IslandRock", at(0, y, 0), isl.radius * 2 * layer[1], layer[2], under, { mat = Enum.Material.Slate, shadow = false })
+	end
 	part("Plaza", Vector3.new(S, 2.8, S), at(0, -1.6, 0), C.white)
 	part("PlazaTrim", Vector3.new(S + 1, 0.8, S + 1), at(0, -2.6, 0), C.blue)
 	-- checkerboard of studded tiles
@@ -562,19 +561,21 @@ end
 local function buildScenery()
 	local rng = Random.new(7)
 	local greens = { Color3.fromRGB(80, 180, 80), Color3.fromRGB(100, 195, 85), Color3.fromRGB(65, 160, 75) }
-	-- small islands far out at sea, each with a tree or two (just scenery)
-	for k = 1, 7 do
-		local a = (k / 7) * math.pi * 2 + rng:NextNumber(-0.3, 0.3)
-		local r = rng:NextNumber(260, 420)
-		local d = rng:NextNumber(30, 60)
-		local c = at(math.cos(a) * r, 0, math.sin(a) * r)
-		vcyl("FarIsland", c + Vector3.new(0, -4.5, 0), d, 3, C.grass, { mat = Enum.Material.Grass, shadow = false })
-		vcyl("FarBeach", c + Vector3.new(0, -5.5, 0), d + 8, 3, Color3.fromRGB(240, 225, 170), { mat = Enum.Material.Sand, shadow = false })
-		for t = 1, rng:NextInteger(1, 3) do
-			local tp = c + Vector3.new(rng:NextNumber(-d / 4, d / 4), -3, rng:NextNumber(-d / 4, d / 4))
-			vcyl("Trunk", tp + Vector3.new(0, 4, 0), 1.8, 8, Color3.fromRGB(140, 95, 60))
-			ball("Leaves", tp + Vector3.new(0, 10, 0), 9, greens[rng:NextInteger(1, #greens)])
+	-- puffy clouds: a thick cloud floor far below (hides the popping room), and a few puffs around
+	local cloud = Color3.fromRGB(255, 255, 255)
+	local function puff(c: Vector3, size: number)
+		for _ = 1, rng:NextInteger(3, 5) do
+			local off = Vector3.new(rng:NextNumber(-0.6, 0.6) * size, rng:NextNumber(-0.15, 0.2) * size, rng:NextNumber(-0.6, 0.6) * size)
+			ball("Cloud", c + off, size * rng:NextNumber(0.6, 1), cloud, { solid = false, shadow = false, gloss = 0 })
 		end
+	end
+	for _ = 1, 110 do
+		local a, r = rng:NextNumber(0, math.pi * 2), rng:NextNumber(40, 700)
+		puff(at(math.cos(a) * r, rng:NextNumber(-130, -110), math.sin(a) * r), rng:NextNumber(40, 80))
+	end
+	for _ = 1, 14 do
+		local a, r = rng:NextNumber(0, math.pi * 2), rng:NextNumber(170, 400)
+		puff(at(math.cos(a) * r, rng:NextNumber(-50, 40), math.sin(a) * r), rng:NextNumber(14, 28))
 	end
 	-- round cartoon trees on the island, between the plaza and the glass
 	local placed = 0
