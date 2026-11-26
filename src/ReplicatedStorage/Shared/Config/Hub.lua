@@ -227,8 +227,18 @@ Hub.toybox = {
 	trunk = rgb(190, 140, 95),
 	ink = rgb(70, 60, 80), -- text outline and the board's writing
 	stone = { rgb(215, 195, 165), rgb(195, 172, 142), rgb(175, 152, 125), rgb(160, 138, 115), rgb(145, 125, 105) }, -- island underside, top to bottom
-	glass = { colour = rgb(170, 215, 245), transparency = 0.35 }, -- the big centrepiece bubble
+	glass = { colour = rgb(125, 190, 245), transparency = 0.22, rim = rgb(70, 140, 210), rimTransparency = 0.15 }, -- the big centrepiece bubble
 	water = rgb(120, 190, 240),
+	-- block fountain: water rings from the edge in (darker to lighter), a raised bowl, a spout with jets and bubbles
+	fountain = {
+		x = -38, z = 16,
+		rings = { { 18.4, rgb(95, 170, 235) }, { 13, rgb(135, 195, 245) }, { 7.5, rgb(180, 222, 252) } }, -- diameter, colour
+		bowl = { d = 8, colour = CORAL, water = rgb(165, 215, 250) },
+		floaters = { { 5, 4, 2 }, { -6, 2, 1.6 }, { 1, -6.5, 1.8 }, { -3, 6, 1.3 } }, -- x, z, size: ball bubbles bobbing in the water
+		jet = rgb(200, 232, 255), bubble = rgb(235, 248, 255),
+	},
+	-- pad sign blocks behind each pad: big "PAD n" and the player count, readable from the spawn
+	padSign = { w = 11.6, h = 5.6, y = 6.4, postH = 4 },
 	lampLight = rgb(255, 225, 160),
 	-- the centrepiece (x 0, z -45, about 28 across): stacked pedestal tiers { diameter, height, colour } from the stage up
 	centre = {

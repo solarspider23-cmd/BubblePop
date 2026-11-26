@@ -112,8 +112,8 @@ function ToyBox.build(h)
 	local bubble = ball("CentreBubble", at(0, bubbleY, cz), C.bubble, color(T.glass.colour), { transparency = T.glass.transparency, mat = Enum.Material.SmoothPlastic, gloss = 0.15, shadow = false })
 	local rim = Instance.new("Highlight") -- a soft white edge so the bubble reads against the sky
 	rim.FillTransparency = 1
-	rim.OutlineColor = TRIM
-	rim.OutlineTransparency = 0.3
+	rim.OutlineColor = color(T.glass.rim)
+	rim.OutlineTransparency = T.glass.rimTransparency
 	rim.DepthMode = Enum.HighlightDepthMode.Occluded
 	rim.Parent = bubble
 	ball("BubbleShine", at(-C.bubble * 0.2, bubbleY + C.bubble * 0.24, cz + C.bubble * 0.3), C.bubble * 0.16, TRIM, { solid = false, shadow = false })
@@ -188,18 +188,20 @@ function ToyBox.build(h)
 		local pad = part("Pad" .. i, Vector3.new(w, 0.3, d), at(x, 0.45, z), col, { transparency = 1, solid = false, shadow = false })
 		-- block sign behind the pad: big "PAD n", the player count under it
 		local sz = z - d / 2 - 2
+		local ps = T.padSign
 		for _, sx in { -1, 1 } do
-			blk("PadSignPost", Vector3.new(1, 5, 1), at(x + sx * 3.4, 2.5, sz), TRIM)
+			blk("PadSignPost", Vector3.new(1.2, ps.postH, 1.2), at(x + sx * (ps.w / 2 - 1.4), ps.postH / 2, sz), TRIM)
 		end
-		local board = blk("PadSign", Vector3.new(8.4, 3.6, 0.8), at(x, 5.6, sz), col)
-		blk("PadSignCap", Vector3.new(9, 0.6, 1.2), at(x, 7.7, sz), TRIM, { studs = true })
-		local t = write(board, Enum.NormalId.Back, ("PAD %d"):format(i), TRIM, 40)
-		t.Size = UDim2.fromScale(0.96, 0.6)
-		t.Position = UDim2.fromScale(0.02, 0)
+		blk("PadSignFrame", Vector3.new(ps.w + 0.8, ps.h + 0.8, 0.8), at(x, ps.y, sz - 0.3), TRIM)
+		local board = blk("PadSign", Vector3.new(ps.w, ps.h, 0.8), at(x, ps.y, sz), col)
+		blk("PadSignCap", Vector3.new(ps.w + 1.4, 0.7, 1.4), at(x, ps.y + ps.h / 2 + 0.75, sz - 0.1), TRIM, { studs = true })
+		local t = write(board, Enum.NormalId.Back, ("PAD %d"):format(i), TRIM, 20)
+		t.Size = UDim2.fromScale(0.94, 0.6)
+		t.Position = UDim2.fromScale(0.03, 0.03)
 		local cnt = t:Clone()
 		cnt.Text = ("0/%d"):format(HubConfig.maxPlayers)
-		cnt.Size = UDim2.fromScale(0.9, 0.36)
-		cnt.Position = UDim2.fromScale(0.05, 0.6)
+		cnt.Size = UDim2.fromScale(0.8, 0.34)
+		cnt.Position = UDim2.fromScale(0.1, 0.62)
 		cnt.Parent = t.Parent
 		h.padText[i] = t
 		h.padCount[i] = cnt
@@ -312,24 +314,49 @@ function ToyBox.build(h)
 
 	------------------------------------------------------------ block fountain (the fountain spot)
 	do
-		local fp = at(-38, 0, 16)
+		local F = T.fountain
+		local fp = at(F.x, 0, F.z)
 		cyl("FountainBase", fp + Vector3.new(0, 0.6, 0), 21, 1.2, TRIM)
-		cyl("FountainWall", fp + Vector3.new(0, 1.6, 0), 20, 1.4, SKY) -- sky rim round brim-full water
-		cyl("Water", fp + Vector3.new(0, 2.15, 0), 18.4, 0.6, color(T.water), { transparency = 0.15, solid = false, mat = Enum.Material.SmoothPlastic, gloss = 0.2 })
+		cyl("FountainWall", fp + Vector3.new(0, 1.6, 0), 20, 1.4, SKY, { studs = true })
+		for k, r in F.rings do -- stepped water rings, lighter towards the middle
+			cyl("Water", fp + Vector3.new(0, 2.15 + (k - 1) * 0.08, 0), r[1], 0.6, color(r[2]), { transparency = 0.1, solid = false, mat = Enum.Material.SmoothPlastic, gloss = 0.3, shadow = false })
+		end
 		blk("FountainBlock", Vector3.new(4.4, 3, 4.4), fp + Vector3.new(0, 3.2, 0), BUTTER, { studs = true })
-		blk("FountainBlock2", Vector3.new(3, 2.4, 3), fp + Vector3.new(0, 5.9, 0), CORAL, { studs = true })
-		local top = ball("FountainBall", fp + Vector3.new(0, 8.6, 0), 3.4, SKY)
-		local jet = Instance.new("ParticleEmitter") -- water spraying up and falling back
+		local bw = F.bowl
+		cyl("FountainBowl", fp + Vector3.new(0, 5.2, 0), bw.d, 1, color(bw.colour))
+		cyl("FountainBowlRim", fp + Vector3.new(0, 5.85, 0), bw.d + 0.6, 0.4, TRIM)
+		cyl("BowlWater", fp + Vector3.new(0, 5.95, 0), bw.d - 1, 0.3, color(bw.water), { transparency = 0.1, solid = false, mat = Enum.Material.SmoothPlastic, gloss = 0.3, shadow = false })
+		cyl("FountainSpout", fp + Vector3.new(0, 6.9, 0), 1.4, 1.8, TRIM)
+		local top = ball("FountainSpoutTop", fp + Vector3.new(0, 7.9, 0), 1.6, SKY)
+		local jet = Instance.new("ParticleEmitter") -- gentle water jet arcing back into the bowl
+		jet.Name = "WaterJet"
 		jet.EmissionDirection = Enum.NormalId.Top
-		jet.Rate = 40
-		jet.Lifetime = NumberRange.new(1.1, 1.3)
-		jet.Speed = NumberRange.new(11, 13)
-		jet.SpreadAngle = Vector2.new(22, 22)
-		jet.Acceleration = Vector3.new(0, -26, 0)
-		jet.Size = NumberSequence.new(0.6, 0.3)
-		jet.Transparency = NumberSequence.new(0.2, 0.6)
-		jet.Color = ColorSequence.new(Color3.fromRGB(180, 220, 250))
+		jet.Rate = 45
+		jet.Lifetime = NumberRange.new(0.9, 1.1)
+		jet.Speed = NumberRange.new(8, 10)
+		jet.SpreadAngle = Vector2.new(16, 16)
+		jet.Acceleration = Vector3.new(0, -22, 0)
+		jet.Size = NumberSequence.new(0.5, 0.25)
+		jet.Transparency = NumberSequence.new(0.15, 0.6)
+		jet.LightInfluence = 0.3
+		jet.Color = ColorSequence.new(color(F.jet))
 		jet.Parent = top
+		local bub = Instance.new("ParticleEmitter") -- little bubbles drifting up
+		bub.Name = "Bubbles"
+		bub.EmissionDirection = Enum.NormalId.Top
+		bub.Rate = 5
+		bub.Lifetime = NumberRange.new(3, 4.5)
+		bub.Speed = NumberRange.new(1.5, 3)
+		bub.SpreadAngle = Vector2.new(40, 40)
+		bub.Size = NumberSequence.new({ NumberSequenceKeypoint.new(0, 0.3), NumberSequenceKeypoint.new(1, 0.9) })
+		bub.Transparency = NumberSequence.new({ NumberSequenceKeypoint.new(0, 0.3), NumberSequenceKeypoint.new(0.85, 0.4), NumberSequenceKeypoint.new(1, 1) })
+		bub.LightInfluence = 0.2
+		bub.Color = ColorSequence.new(color(F.bubble))
+		bub.Parent = top
+		for _, fb in F.floaters do -- ball bubbles bobbing in the water
+			ball("FountainBubble", fp + Vector3.new(fb[1], 2.4 + fb[3] * 0.3, fb[2]), fb[3], color(T.glass.colour), { transparency = 0.3, mat = Enum.Material.SmoothPlastic, gloss = 0.3, solid = false, shadow = false })
+			ball("FountainBubbleShine", fp + Vector3.new(fb[1] - fb[3] * 0.18, 2.4 + fb[3] * 0.55, fb[2] + fb[3] * 0.18), fb[3] * 0.25, TRIM, { solid = false, shadow = false })
+		end
 	end
 
 	------------------------------------------------------------ ball pit (the old display spot)
