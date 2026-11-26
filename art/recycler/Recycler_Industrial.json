@@ -1,0 +1,24 @@
+{
+ "model": "Recycler_Industrial",
+ "fbx": "Recycler_Industrial.fbx",
+ "front": "Blender +Y = MeshPart Front (-Z / LookVector) in Roblox: output slot, tray, gauges",
+ "parts": [
+  {
+   "name": "Recycler_Industrial_Body",
+   "texture": "Recycler_Industrial_Body.png",
+   "material": "SmoothPlastic",
+   "tris": 3570
+  },
+  {
+   "name": "Recycler_Industrial_Glow",
+   "neon": [
+    255,
+    176,
+    32
+   ],
+   "material": "Neon",
+   "tris": 128
+  }
+ ],
+ "total_tris": 3698
+}

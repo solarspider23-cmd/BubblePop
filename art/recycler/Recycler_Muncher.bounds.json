@@ -1,0 +1,58 @@
+{
+ "Body": {
+  "size": [
+   4.6972,
+   5.2745,
+   4.502
+  ],
+  "center": [
+   0.0869,
+   2.6373,
+   -0.0189
+  ],
+  "tris": 5397,
+  "origin": "bottom centre of footprint (model origin)"
+ },
+ "Glass": {
+  "size": [
+   1.56,
+   1.56,
+   0.33
+  ],
+  "center": [
+   0.0,
+   1.8,
+   -2.185
+  ],
+  "tris": 120,
+  "origin": "bottom centre of footprint (model origin)"
+ },
+ "Glow": {
+  "size": [
+   4.43,
+   5.29,
+   4.43
+  ],
+  "center": [
+   0.0,
+   2.845,
+   -0.0
+  ],
+  "tris": 208,
+  "origin": "bottom centre of footprint (model origin)"
+ },
+ "_model": {
+  "size": [
+   4.6972,
+   5.49,
+   4.5822
+  ],
+  "center": [
+   0.0869,
+   2.745,
+   -0.0589
+  ],
+  "tris": 5725,
+  "front": "Roblox -Z (Blender +Y)"
+ }
+}

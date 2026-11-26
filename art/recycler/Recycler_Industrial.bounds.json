@@ -1,0 +1,30 @@
+{
+ "Recycler_Industrial_Body": {
+  "size": [
+   4.6207,
+   5.5,
+   4.765
+  ],
+  "center": [
+   0.0604,
+   2.75,
+   -0.1075
+  ],
+  "tris": 3570,
+  "origin": "bottom centre of footprint"
+ },
+ "Recycler_Industrial_Glow": {
+  "size": [
+   3.12,
+   2.825,
+   1.1
+  ],
+  "center": [
+   0.41,
+   3.3475,
+   -1.31
+  ],
+  "tris": 128,
+  "origin": "bottom centre of footprint"
+ }
+}

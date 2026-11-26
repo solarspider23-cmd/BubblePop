@@ -1,0 +1,43 @@
+{
+ "model": "Recycler_Muncher",
+ "fbx": "Recycler_Muncher.fbx",
+ "front": "Roblox -Z (Blender +Y); origin at the bottom centre of the footprint",
+ "parts": [
+  {
+   "name": "Body",
+   "texture": "Recycler_Muncher_Body.png",
+   "material": "SmoothPlastic",
+   "glass": false,
+   "neon": false
+  },
+  {
+   "name": "Glass",
+   "color": [
+    190,
+    235,
+    255
+   ],
+   "material": "Glass",
+   "transparency": 0.6,
+   "glass": true,
+   "neon": false
+  },
+  {
+   "name": "Glow",
+   "color": [
+    255,
+    196,
+    30
+   ],
+   "material": "Neon",
+   "glass": false,
+   "neon": true
+  }
+ ],
+ "tris": {
+  "Body": 5397,
+  "Glass": 120,
+  "Glow": 208,
+  "total": 5725
+ }
+}
