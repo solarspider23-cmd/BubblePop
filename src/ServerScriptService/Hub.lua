@@ -132,7 +132,7 @@ local function buildPlaza()
 	local isl = HubConfig.island
 	local terrain = workspace.Terrain
 	terrain.WaterColor = Color3.fromRGB(20, 170, 220)
-	terrain.WaterTransparency = 0.6
+	terrain.WaterTransparency = 0.25
 	terrain.WaterReflectance = 0.6
 	terrain.WaterWaveSize = 0.12
 	terrain:FillBlock(CFrame.new(at(0, -10, 0)), Vector3.new(isl.sea, 12, isl.sea), Enum.Material.Water)
@@ -160,7 +160,13 @@ local function buildPlaza()
 		for k = -7, 7 do
 			local u = k * (edge / 7)
 			local x, z = alongX and u or side[1] * edge, alongX and side[2] * edge or u
-			part("Post", Vector3.new(1.2, 3.2, 1.2), at(x, 1.6, z), C.white)
+			if HubConfig.theme == "gumball" then -- candy-cane stripes
+				for seg = 0, 3 do
+					part("Post", Vector3.new(1.2, 0.8, 1.2), at(x, 0.4 + seg * 0.8, z), seg % 2 == 0 and C.white or C.blue)
+				end
+			else
+				part("Post", Vector3.new(1.2, 3.2, 1.2), at(x, 1.6, z), C.white)
+			end
 			part("PostLight", Vector3.new(0.8, 0.8, 0.8), at(x, 3.6, z), C.glow, { mat = NEON, shadow = false })
 		end
 	end
@@ -320,6 +326,9 @@ local function buildLeft()
 	body.Parent = gui
 	gui.Parent = board
 
+end
+
+local function buildFountain()
 	-- bubble fountain: round basin, water, a giant bubble floating in the middle, water jets
 	local f = at(-38, 0, 16)
 	vcyl("FountainRim", f + Vector3.new(0, 1.1, 0), 21, 2.2, C.lightBlue)
@@ -356,6 +365,9 @@ local function buildLeft()
 		jet.Parent = nozzle
 	end
 
+end
+
+local function buildDisplay()
 	-- bubble display: a rare rainbow bubble in a glass case
 	local dpos = at(-26, 0, -6)
 	vcyl("DisplayBase", dpos + Vector3.new(0, 0.6, 0), 8, 1.2, C.gold)
@@ -449,6 +461,104 @@ local function buildChest()
 	g.Parent = t
 end
 
+
+---------------------------------------------------------------- gumball theme pieces
+local GUM = (HubConfig.colors.gumballs or {}) :: { any }
+local function gumColor(rng: Random): Color3
+	return color(GUM[rng:NextInteger(1, #GUM)])
+end
+
+-- a giant gumball machine where the HQ stands: red base, coin slot and knob, a glass globe full of gumballs
+local function buildGumballMachine()
+	local z = -45
+	local red = C.blue
+	vcyl("MachineStage", at(0, 0.75, z), 28, 1.5, C.lavender)
+	part("MachineStageEdge", Vector3.new(28.6, 0.4, 0.4), at(0, 1.3, z + 14.1), C.gold)
+	part("MachineBase", Vector3.new(18, 12, 16), at(0, 7.5, z), red)
+	part("MachineBaseTrim", Vector3.new(18.6, 0.8, 16.6), at(0, 1.9, z), C.gold)
+	vcyl("MachineNeck", at(0, 14.5, z), 20, 2, red)
+	vcyl("MachineCollar", at(0, 15.8, z), 22, 0.8, C.gold)
+	-- coin slot plate, turning knob and the chute where gumballs come out
+	local front = z + 8.05
+	part("CoinPlate", Vector3.new(6, 6, 0.4), at(0, 8.5, front), Color3.fromRGB(215, 220, 230), { mat = Enum.Material.Metal })
+	part("CoinSlot", Vector3.new(0.5, 2, 0.2), at(0, 10, front + 0.25), Color3.fromRGB(40, 40, 50))
+	part("Knob", Vector3.new(1, 3.6, 3.6), CFrame.new(at(0, 7.6, front + 0.6)) * FACE_Z, C.white, { shape = CYL })
+	part("KnobBar", Vector3.new(3.2, 0.7, 0.6), at(0, 7.6, front + 1.2), Color3.fromRGB(215, 220, 230), { mat = Enum.Material.Metal })
+	part("Chute", Vector3.new(5, 3, 0.3), at(0, 3.6, front), Color3.fromRGB(50, 40, 60))
+	part("ChuteFlap", Vector3.new(5.4, 0.5, 1.6), at(0, 2.3, front + 0.7), Color3.fromRGB(215, 220, 230), { mat = Enum.Material.Metal })
+	-- the glass globe, two thirds full of gumballs
+	local gc = at(0, 29, z)
+	local R = 14
+	local rng = Random.new(5)
+	local n = 0
+	while n < 110 do
+		local v = Vector3.new(rng:NextNumber(-1, 1), rng:NextNumber(-1, 1), rng:NextNumber(-1, 1))
+		if v.Magnitude <= 1 and v.Y < 0.25 then
+			n += 1
+			ball("Gumball", gc + v * (R - 2.2), 3.8, gumColor(rng), { solid = false, shadow = false, gloss = 0.15 })
+		end
+	end
+	ball("Globe", gc, R * 2, Color3.fromRGB(235, 248, 255), { mat = GLASS, transparency = 0.6, shadow = false })
+	ball("GlobeShine", gc + Vector3.new(-5, 6, 10.5), 3, Color3.new(1, 1, 1), { solid = false, shadow = false })
+	vcyl("GlobeCap", at(0, 43, z), 10, 2.4, red)
+	ball("GlobeKnob", at(0, 45, z), 3.6, red)
+	-- the logo as a banner across the machine's neck
+	local lz = z + 11
+	part("LogoRim", Vector3.new(37.5, 8.5, 1), at(0, 17.5, lz - 0.6), C.white)
+	for _, sx in { -1, 1 } do
+		part("LogoRimEnd", Vector3.new(1, 8.5, 8.5), CFrame.new(at(sx * 18.75, 17.5, lz - 0.6)) * FACE_Z, C.white, { shape = CYL })
+		part("LogoEnd", Vector3.new(1.4, 7, 7), CFrame.new(at(sx * 18.75, 17.5, lz)) * FACE_Z, red, { shape = CYL })
+	end
+	local plaque = part("Logo", Vector3.new(37.5, 7, 1.4), CFrame.lookAt(at(0, 17.5, lz), at(0, 17.5, 100)), red)
+	sign(plaque, Enum.NormalId.Front, "BUBBLE POP", Color3.new(1, 1, 1), Color3.fromRGB(120, 10, 30), 11)
+	part("LogoShine", Vector3.new(34, 2.2, 0.2), at(0, 19.4, lz + 0.8), Color3.new(1, 1, 1), { transparency = 0.65, solid = false, shadow = false })
+end
+
+-- a gumball pit where the fountain was: big bouncy gumballs to kick around while you wait
+local function buildGumballPit()
+	local c = at(-38, 0, 16)
+	local rng = Random.new(3)
+	vcyl("PitFloor", c + Vector3.new(0, 0.15, 0), 20, 0.3, C.lightBlue, { shadow = false })
+	for k = 0, 15 do
+		local a = k / 16 * math.pi * 2
+		local pos = c + Vector3.new(math.cos(a) * 10.5, 1.5, math.sin(a) * 10.5)
+		part("PitWall", Vector3.new(4.4, 3, 1), CFrame.lookAt(pos, c + Vector3.new(0, 1.5, 0)), k % 2 == 0 and C.white or C.blue)
+	end
+	for k = 1, 7 do
+		local a = k / 7 * math.pi * 2
+		local g = ball("BouncyGumball", c + Vector3.new(math.cos(a) * 5, 3, math.sin(a) * 5), 4, gumColor(rng), { gloss = 0.15 })
+		g.Anchored = false
+		g.CustomPhysicalProperties = PhysicalProperties.new(0.3, 0.3, 0.8, 1, 1) -- light and bouncy
+	end
+	local sign0 = part("PitSign", Vector3.new(1, 1, 1), c + Vector3.new(0, 1, -10.5), C.white, { transparency = 1, solid = false })
+	label(sign0, "GUMBALL PIT", 6, 10, 2.2, color(HubConfig.colors.pink))
+end
+
+-- a big gumball jar where the rainbow bubble display was
+local function buildCandyJar()
+	local d = at(-26, 0, -6)
+	local rng = Random.new(9)
+	vcyl("JarBase", d + Vector3.new(0, 0.6, 0), 8, 1.2, C.gold)
+	vcyl("JarPedestal", d + Vector3.new(0, 2.2, 0), 6.5, 2, C.white)
+	for _ = 1, 40 do
+		local a, r = rng:NextNumber(0, math.pi * 2), rng:NextNumber(0, 2)
+		ball("JarGumball", d + Vector3.new(math.cos(a) * r, rng:NextNumber(4, 8.5), math.sin(a) * r), 1.6, gumColor(rng), { solid = false, shadow = false })
+	end
+	local jar = vcyl("Jar", d + Vector3.new(0, 7, 0), 6.2, 7.6, Color3.fromRGB(235, 248, 255), { mat = GLASS, transparency = 0.65 })
+	vcyl("JarLid", d + Vector3.new(0, 11.1, 0), 6.8, 0.8, C.blue)
+	ball("JarLidKnob", d + Vector3.new(0, 11.8, 0), 1.6, C.blue)
+	label(jar, "GUMBALL JAR", 7, 10, 2, color(HubConfig.colors.pink))
+end
+
+-- a lollipop tree: a white stick with a round candy (and a swirl) on top
+local function lollipop(base: Vector3, s: number, rng: Random)
+	vcyl("LollyStick", base + Vector3.new(0, 4.5 * s, 0), 0.9 * s, 9 * s, C.white)
+	local cf = CFrame.new(base + Vector3.new(0, 11 * s, 0)) * CFrame.Angles(0, rng:NextNumber(0, math.pi), 0) * FACE_Z
+	part("Lolly", Vector3.new(1.4 * s, 8 * s, 8 * s), cf, gumColor(rng), { shape = CYL })
+	part("LollySwirl", Vector3.new(1.6 * s, 4.5 * s, 4.5 * s), cf, C.white, { shape = CYL })
+	part("LollyMiddle", Vector3.new(1.8 * s, 2 * s, 2 * s), cf, gumColor(rng), { shape = CYL })
+end
+
 local function buildScenery()
 	local rng = Random.new(7)
 	local greens = { Color3.fromRGB(80, 180, 80), Color3.fromRGB(100, 195, 85), Color3.fromRGB(65, 160, 75) }
@@ -475,6 +585,10 @@ local function buildScenery()
 			placed += 1
 			local s = rng:NextNumber(0.8, 1.4)
 			local base = at(x, -3, z)
+			if HubConfig.theme == "gumball" then
+				lollipop(base, s, rng)
+				continue
+			end
 			vcyl("Trunk", base + Vector3.new(0, 4 * s, 0), 1.8 * s, 8 * s, Color3.fromRGB(140, 95, 60))
 			local g = greens[rng:NextInteger(1, #greens)]
 			ball("Leaves", base + Vector3.new(0, 10 * s, 0), 9 * s, g)
@@ -522,8 +636,17 @@ local function buildDome()
 end
 
 function Hub.build()
+	local gumball = HubConfig.theme == "gumball"
 	buildPlaza()
-	buildHQ()
+	if gumball then
+		buildGumballMachine()
+		buildGumballPit()
+		buildCandyJar()
+	else
+		buildHQ()
+		buildFountain()
+		buildDisplay()
+	end
 	buildPads()
 	buildLeft()
 	buildBooths()
