@@ -1,0 +1,19 @@
+{
+ "model": 97415859542233,
+ "moderation": "Approved",
+ "parts": {
+  "SpawnPad_Body": {
+   "meshId": 101933770635885,
+   "size": [
+    11.0,
+    0.37,
+    11.0
+   ],
+   "position": [
+    0.0,
+    0.185,
+    0.0
+   ]
+  }
+ }
+}

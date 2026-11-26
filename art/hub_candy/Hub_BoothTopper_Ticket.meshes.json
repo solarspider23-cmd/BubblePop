@@ -1,0 +1,19 @@
+{
+ "model": 84486230080434,
+ "moderation": "Approved",
+ "parts": {
+  "BoothTopper_Ticket_Body": {
+   "meshId": 115709299789629,
+   "size": [
+    3.3702,
+    2.8479,
+    1.7
+   ],
+   "position": [
+    0.0,
+    1.424,
+    0.0
+   ]
+  }
+ }
+}

@@ -8,6 +8,8 @@ local RunService = game:GetService("RunService")
 local Shared = ReplicatedStorage:WaitForChild("Shared")
 local HubConfig = require(Shared.Config.Hub)
 local LobbyRules = require(Shared.Rules.Lobby)
+local Models = require(Shared.Config.Models)
+local Piles = require(Shared.Config.GumballPiles)
 
 local Hub = {}
 
@@ -78,7 +80,7 @@ end
 
 -- Text on a part's face
 -- (text can't be bigger than 100 px, so big signs use fewer pixels per stud)
-local function sign(parent: BasePart, face: Enum.NormalId, text: string, col: Color3?, strokeCol: Color3?, pixelsPerStud: number?)
+local function sign(parent: BasePart, face: Enum.NormalId, text: string, col: Color3?, strokeCol: Color3?, pixelsPerStud: number?): TextLabel
 	local gui = Instance.new("SurfaceGui")
 	gui.Face = face
 	gui.SizingMode = Enum.SurfaceGuiSizingMode.PixelsPerStud
@@ -95,6 +97,7 @@ local function sign(parent: BasePart, face: Enum.NormalId, text: string, col: Co
 	stroke(t, math.max(2, (pixelsPerStud or 30) / 7), strokeCol or Color3.fromRGB(20, 40, 110))
 	t.Parent = gui
 	gui.Parent = parent
+	return t
 end
 
 -- Floating text above a part
@@ -119,11 +122,120 @@ local function label(parent: BasePart, text: string, height: number, w: number, 
 	return t
 end
 
-Hub.spawnCFrame = CFrame.lookAt(at(HubConfig.spawn[1], HubConfig.spawn[2], HubConfig.spawn[3]), at(0, HubConfig.spawn[2], -10))
+---------------------------------------------------------------- uploaded candy models
+-- Main loads Config/Models.hub into ReplicatedStorage.HubAssets/<set>/<mesh>. Each build function
+-- uses a set when it's there and its part-built pieces when it isn't. The candy models only go
+-- with the gumball theme.
+local MD = HubConfig.models or {}
+local function has(set: string): boolean
+	if HubConfig.theme ~= "gumball" or not Models.hub or not Models.hub[set] then
+		return false
+	end
+	local a = ReplicatedStorage:FindFirstChild("HubAssets")
+	return a ~= nil and a:FindFirstChild(set) ~= nil
+end
+
+-- One mesh of a set, placed by its model's origin (origin = where the model's bottom centre
+-- stands, its front facing the CFrame's look direction).
+-- opts: scale, tint (texture colour), color (plain colour), mat, transparency, shadow, name, pivot (model-space point)
+local function mesh(set: string, name: string, origin: CFrame, opts: { [string]: any }?): MeshPart
+	local o = opts or {}
+	local s = o.scale or 1
+	local a = ReplicatedStorage:FindFirstChild("HubAssets") :: Folder
+	local template = (a:FindFirstChild(set) :: Folder):FindFirstChild(name) :: MeshPart
+	local c = Models.hub[set].meshes[name]
+	local m = template:Clone()
+	m.Name = o.name or name
+	m.Size = template.Size * s
+	m.CFrame = origin * CFrame.new(c[1] * s, c[2] * s, c[3] * s)
+	if o.tint then
+		m.Color = o.tint
+		local look = m:FindFirstChildOfClass("SurfaceAppearance")
+		if look then
+			look.Color = o.tint
+		end
+	end
+	if o.color then -- a plain-colour piece: no texture
+		m.Color = o.color
+		local look = m:FindFirstChildOfClass("SurfaceAppearance")
+		if look then
+			look:Destroy()
+		end
+	end
+	if o.mat then
+		m.Material = o.mat
+	end
+	m.Transparency = o.transparency or 0
+	m.CastShadow = o.shadow ~= false
+	if o.pivot then -- a hinge or spin point, so the piece can be turned about it later
+		local p = o.pivot
+		m.PivotOffset = m.CFrame:ToObjectSpace(origin * CFrame.new(p[1] * s, p[2] * s, p[3] * s))
+	end
+	m.Parent = o.parent or folder
+	return m
+end
+
+-- an invisible solid block for walking on and bumping into (meshes don't collide)
+local function blocker(name: string, size: Vector3, cf: any, shape: Enum.PartType?): Part
+	return part(name, size, cf, Color3.new(1, 1, 1), { transparency = 1, shadow = false, shape = shape })
+end
+
+local function glassOpts(): { [string]: any }
+	return { mat = Enum.Material.Glass, color = color(MD.glass), transparency = MD.glassTransparency, shadow = false }
+end
+local function shineOpts(): { [string]: any }
+	return { color = color(MD.shine), transparency = MD.shineTransparency, shadow = false }
+end
+
+Hub.spawnCFrame =CFrame.lookAt(at(HubConfig.spawn[1], HubConfig.spawn[2], HubConfig.spawn[3]), at(0, HubConfig.spawn[2], -10))
 
 local padParts: { BasePart } = {}
 
 ---------------------------------------------------------------- pieces
+
+-- quarter turns for a corner piece whose unturned shape fills the +X / -Z quadrant
+local function cornerTurn(sx: number, sz: number): CFrame
+	local q = (sx > 0 and sz < 0) and 0 or (sx < 0 and sz < 0) and 1 or (sx < 0 and sz > 0) and 2 or 3
+	return CFrame.Angles(0, q * math.pi / 2, 0)
+end
+
+---------------------------------------------------------------- gumball theme pieces
+local GUM = (HubConfig.colors.gumballs or {}) :: { any }
+local function gumColor(rng: Random): Color3
+	return color(GUM[rng:NextInteger(1, #GUM)])
+end
+
+-- one gumball: the uploaded glossy mesh (tinted), or a plain ball if it didn't load
+local function gumball(name: string, pos: Vector3, d: number, col: Color3, solid: boolean?): BasePart
+	local assets = ReplicatedStorage:FindFirstChild("BubbleAssets")
+	local template = assets and assets:FindFirstChild("Gumball") :: MeshPart?
+	if not template then
+		return ball(name, pos, d, col, { solid = solid == true, shadow = false, gloss = 0.15 })
+	end
+	local g = template:Clone()
+	g.Name = name
+	g.Size = Vector3.new(d, d, d)
+	g.CFrame = CFrame.new(pos) * CFrame.Angles(math.random() * 6.3, math.random() * 6.3, 0)
+	g.Color = col
+	g.CanCollide = solid == true
+	g.CanQuery = solid == true
+	g.CastShadow = solid == true
+	local look = g:FindFirstChildOfClass("SurfaceAppearance")
+	if look then
+		look.Color = col
+	end
+	g.Parent = folder
+	return g
+end
+
+-- a low-detail gumball (globe, jar, fence corners): the 300-triangle mesh, or the full one if it's missing
+local function lowGumball(name: string, pos: Vector3, d: number, col: Color3): BasePart
+	if not has("GumballLo") then
+		return gumball(name, pos, d, col)
+	end
+	local g = mesh("GumballLo", "GumballLo", CFrame.new(pos) * CFrame.Angles(math.random() * 6.3, math.random() * 6.3, 0), { name = name, scale = d, tint = col, shadow = false })
+	return g
+end
 
 local function buildPlaza()
 	local S = HubConfig.size
@@ -132,46 +244,109 @@ local function buildPlaza()
 	-- narrows to a point (candy theme), with clouds below. The plaza sits 3 studs above the grass.
 	local isl = HubConfig.island
 	part("Grass", Vector3.new(5, isl.radius * 2, isl.radius * 2), CFrame.new(at(0, -5.5, 0)) * UP, C.grass, { mat = Enum.Material.Grass, shape = CYL })
-	local under = HubConfig.theme == "gumball" and Color3.fromRGB(110, 65, 45) or Color3.fromRGB(150, 110, 80)
-	vcyl("Frosting", at(0, -8.5, 0), isl.radius * 2 + 1, 1.6, C.lavender)
-	for k, layer in { { 0.97, 8 }, { 0.86, 9 }, { 0.7, 9 }, { 0.5, 9 }, { 0.3, 8 }, { 0.14, 7 } } do
-		local y = -9.3 - (k - 0.5) * 8.6
-		vcyl("IslandRock", at(0, y, 0), isl.radius * 2 * layer[1], layer[2], under, { mat = Enum.Material.Slate, shadow = false })
+	if has("Island") then -- cake slice: frosting rim with drips, chocolate tiers underneath
+		mesh("Island", "Island_Rim", CFrame.new(at(0, -3, 0)))
+		mesh("Island", "Island_Under", CFrame.new(at(0, -3, 0)), { shadow = false })
+	else
+		local under = HubConfig.theme == "gumball" and Color3.fromRGB(110, 65, 45) or Color3.fromRGB(150, 110, 80)
+		vcyl("Frosting", at(0, -8.5, 0), isl.radius * 2 + 1, 1.6, C.lavender)
+		for k, layer in { { 0.97, 8 }, { 0.86, 9 }, { 0.7, 9 }, { 0.5, 9 }, { 0.3, 8 }, { 0.14, 7 } } do
+			local y = -9.3 - (k - 0.5) * 8.6
+			vcyl("IslandRock", at(0, y, 0), isl.radius * 2 * layer[1], layer[2], under, { mat = Enum.Material.Slate, shadow = false })
+		end
 	end
 	part("Plaza", Vector3.new(S, 2.8, S), at(0, -1.6, 0), C.white)
-	part("PlazaTrim", Vector3.new(S + 1, 0.8, S + 1), at(0, -2.6, 0), C.blue)
-	-- checkerboard of studded tiles
+	local ground = has("Ground")
+	if ground then -- rounded kerb round the slab, like a cake board: 8 pieces a side + 4 corners
+		for _, side in { { 1, 0 }, { -1, 0 }, { 0, 1 }, { 0, -1 } } do
+			local out = Vector3.new(side[1], 0, side[2])
+			for k = 0, 7 do
+				local u = -49 + k * 14
+				local pos = at(side[1] * half, -3, side[2] * half) + (side[1] == 0 and Vector3.new(u, 0, 0) or Vector3.new(0, 0, u))
+				local cf = CFrame.lookAt(pos, pos + out)
+				mesh("Ground", "Ground_Kerb", cf, { color = color(MD.kerb) })
+				mesh("Ground", "Ground_KerbBand", cf, { color = color(MD.kerbBand) })
+			end
+		end
+		for _, c in { { 1, 1 }, { 1, -1 }, { -1, 1 }, { -1, -1 } } do
+			local cf = CFrame.new(at(c[1] * half, -3, c[2] * half)) * cornerTurn(c[1], c[2])
+			mesh("Ground", "Ground_KerbCorner", cf, { color = color(MD.kerb) })
+			mesh("Ground", "Ground_KerbCornerBand", cf, { color = color(MD.kerbBand) })
+		end
+	else
+		part("PlazaTrim", Vector3.new(S + 1, 0.8, S + 1), at(0, -2.6, 0), C.blue)
+	end
+	-- checkerboard of tiles
 	local n = 8
 	local t = S / n
 	for i = 0, n - 1 do
 		for j = 0, n - 1 do
 			local x, z = -half + t * (i + 0.5), -half + t * (j + 0.5)
-			part("Tile", Vector3.new(t, 0.2, t), at(x, -0.1, z), (i + j) % 2 == 0 and C.tileA or C.tileB, { shadow = false, gloss = 0.1 })
+			local col = (i + j) % 2 == 0 and C.tileA or C.tileB
+			if ground then
+				mesh("Ground", "Ground_Tile", CFrame.new(at(x, -0.2, z)), { name = "Tile", color = col, shadow = false })
+			else
+				part("Tile", Vector3.new(t, 0.2, t), at(x, -0.1, z), col, { shadow = false, gloss = 0.1 })
+			end
 		end
 	end
-	-- low fence: posts with little glowing caps, one blue rail
+	-- low fence: posts with little glowing caps and rails
 	local edge = half - 1
-	for _, side in { { 1, 0 }, { -1, 0 }, { 0, 1 }, { 0, -1 } } do
-		local alongX = side[2] ~= 0
-		local rail = alongX and Vector3.new(S - 2, 0.6, 0.6) or Vector3.new(0.6, 0.6, S - 2)
-		part("Rail", rail, at(side[1] * edge, 2.4, side[2] * edge), C.chrome, { mat = Enum.Material.Metal })
-		part("Rail", rail, at(side[1] * edge, 1.2, side[2] * edge), C.lightBlue)
-		for k = -7, 7 do
-			local u = k * (edge / 7)
-			local x, z = alongX and u or side[1] * edge, alongX and side[2] * edge or u
-			if HubConfig.theme == "gumball" then -- candy-cane stripes
-				for seg = 0, 3 do
-					part("Post", Vector3.new(1.2, 0.8, 1.2), at(x, 0.4 + seg * 0.8, z), seg % 2 == 0 and C.white or C.blue)
-				end
-			else
-				part("Post", Vector3.new(1.2, 3.2, 1.2), at(x, 1.6, z), C.white)
+	if has("Fence") and has("GumballLo") then
+		-- candy-cane posts, glowing gumdrop caps, rails between, a gumball in each corner cup
+		local step = edge / 7
+		for _, side in { { 1, 0 }, { -1, 0 }, { 0, 1 }, { 0, -1 } } do
+			local alongX = side[2] ~= 0
+			local turn = alongX and CFrame.identity or CFrame.Angles(0, math.pi / 2, 0) -- own X along the fence
+			local function spot(u: number): CFrame
+				local x, z = alongX and u or side[1] * edge, alongX and side[2] * edge or u
+				return CFrame.new(at(x, 0, z)) * turn
 			end
-			part("PostLight", Vector3.new(0.8, 0.8, 0.8), at(x, 3.6, z), C.glow, { mat = NEON, shadow = false })
+			for k = -6, 6 do
+				mesh("Fence", "Fence_Post", spot(k * step), { shadow = false })
+				mesh("Fence", "Fence_PostGlow", spot(k * step), { mat = NEON, color = C.glow, shadow = false })
+			end
+			for k = -7, 6 do
+				mesh("Fence", "Fence_Rail", spot((k + 0.5) * step), { shadow = false })
+			end
+			-- invisible wall where the rails are (meshes don't collide)
+			local wall = alongX and Vector3.new(S - 2, 3.4, 0.8) or Vector3.new(0.8, 3.4, S - 2)
+			blocker("FenceWall", wall, at(alongX and 0 or side[1] * edge, 1.7, alongX and side[2] * edge or 0))
+		end
+		for k, c in { { 1, -1 }, { -1, -1 }, { -1, 1 }, { 1, 1 } } do
+			local cf = CFrame.new(at(c[1] * edge, 0, c[2] * edge)) * cornerTurn(c[1], c[2])
+			mesh("Fence", "Fence_Corner", cf, { shadow = false })
+			local gi = MD.cornerGumballs[k] or 1
+			lowGumball("CornerGumball", cf.Position + Vector3.new(0, 5.34, 0), 2.4, color(HubConfig.colors.gumballs[gi]))
+		end
+	else
+		for _, side in { { 1, 0 }, { -1, 0 }, { 0, 1 }, { 0, -1 } } do
+			local alongX = side[2] ~= 0
+			local rail = alongX and Vector3.new(S - 2, 0.6, 0.6) or Vector3.new(0.6, 0.6, S - 2)
+			part("Rail", rail, at(side[1] * edge, 2.4, side[2] * edge), C.chrome, { mat = Enum.Material.Metal })
+			part("Rail", rail, at(side[1] * edge, 1.2, side[2] * edge), C.lightBlue)
+			for k = -7, 7 do
+				local u = k * (edge / 7)
+				local x, z = alongX and u or side[1] * edge, alongX and side[2] * edge or u
+				if HubConfig.theme == "gumball" then -- candy-cane stripes
+					for seg = 0, 3 do
+						part("Post", Vector3.new(1.2, 0.8, 1.2), at(x, 0.4 + seg * 0.8, z), seg % 2 == 0 and C.white or C.blue)
+					end
+				else
+					part("Post", Vector3.new(1.2, 3.2, 1.2), at(x, 1.6, z), C.white)
+				end
+				part("PostLight", Vector3.new(0.8, 0.8, 0.8), at(x, 3.6, z), C.glow, { mat = NEON, shadow = false })
+			end
 		end
 	end
 	-- spawn spot
-	vcyl("SpawnRing", at(HubConfig.spawn[1], 0.15, HubConfig.spawn[3]), 11, 0.3, C.blue)
-	vcyl("SpawnDisc", at(HubConfig.spawn[1], 0.2, HubConfig.spawn[3]), 9.5, 0.3, C.white)
+	local sp = at(HubConfig.spawn[1], 0, HubConfig.spawn[3])
+	if has("SpawnPad") then -- star points at the pads
+		mesh("SpawnPad", "SpawnPad_Body", CFrame.lookAt(sp, at(HubConfig.spawn[1], 0, HubConfig.pads[1][2])), { shadow = false })
+	else
+		vcyl("SpawnRing", sp + Vector3.new(0, 0.15, 0), 11, 0.3, C.blue)
+		vcyl("SpawnDisc", sp + Vector3.new(0, 0.2, 0), 9.5, 0.3, C.white)
+	end
 end
 
 -- a little blocky person (decoration)
@@ -272,17 +447,38 @@ local function buildHQ()
 	part("LogoShine", Vector3.new(44, 3, 0.2), at(0, 31.6, lz + 0.8), Color3.new(1, 1, 1), { transparency = 0.65, solid = false, shadow = false })
 end
 
+local padText: { TextLabel } = {}
+
 local function buildPads()
 	local w, d = HubConfig.padSize[1], HubConfig.padSize[2]
+	local models = has("Pad") and has("PadSign")
 	for i, xz in HubConfig.pads do
 		local x, z = xz[1], xz[2]
 		local col = color(HubConfig.colors.pad[i] or HubConfig.colors.pad[1])
-		part("PadBase", Vector3.new(w + 0.8, 0.4, d + 0.8), at(x, 0.2, z), C.padBase)
-		part("PadEdge", Vector3.new(w + 0.8, 0.5, 0.4), at(x, 0.25, z - d / 2 - 0.6), col)
-		local pad = part("Pad" .. i, Vector3.new(w, 0.3, d), at(x, 0.45, z), col, { mat = NEON, transparency = 0.3, solid = false, shadow = false })
+		local pad: Part
+		if models then
+			-- jelly pad with a glow ring, and a sign standing just behind it, both facing the spawn
+			local glow = HubConfig.colors.padGlow and HubConfig.colors.padGlow[i]
+			local o = CFrame.lookAt(at(x, 0, z), at(x, 0, HubConfig.spawn[3]))
+			mesh("Pad", "Pad_Body", o)
+			mesh("Pad", "Pad_Tint", o, { tint = col })
+			mesh("Pad", "Pad_Glow", o, { mat = NEON, color = glow and color(glow) or col, shadow = false })
+			blocker("PadFloor", Vector3.new(13.5, 0.45, 10.5), at(x, 0.225, z)) -- walkable top at 0.45
+			pad = part("Pad" .. i, Vector3.new(w, 0.3, d), at(x, 0.45, z), col, { transparency = 1, solid = false, shadow = false })
+			local so = CFrame.lookAt(at(x, 0, z - 5.9), at(x, 0, HubConfig.spawn[3]))
+			mesh("PadSign", "PadSign_Body", so)
+			mesh("PadSign", "PadSign_Tint", so, { tint = col })
+			blocker("PadSignPost", Vector3.new(8.2, 6.6, 0.8), so * CFrame.new(0, 3.3, 0))
+			local face = part("PadSignFace", Vector3.new(8, 3, 0.05), so * CFrame.new(0, 5, -0.2), C.white, { transparency = 1, solid = false, shadow = false })
+			padText[i] = sign(face, Enum.NormalId.Front, ("PAD %d\n0/%d"):format(i, HubConfig.maxPlayers), Color3.new(1, 1, 1), Color3.fromRGB(20, 40, 110), 40)
+		else
+			part("PadBase", Vector3.new(w + 0.8, 0.4, d + 0.8), at(x, 0.2, z), C.padBase)
+			part("PadEdge", Vector3.new(w + 0.8, 0.5, 0.4), at(x, 0.25, z - d / 2 - 0.6), col)
+			pad = part("Pad" .. i, Vector3.new(w, 0.3, d), at(x, 0.45, z), col, { mat = NEON, transparency = 0.3, solid = false, shadow = false })
+			padText[i] = label(pad, ("PAD %d\n0/%d"):format(i, HubConfig.maxPlayers), 5, 9, 3.4)
+		end
 		pad:SetAttribute("Index", i)
 		pad:SetAttribute("Members", 0)
-		label(pad, ("PAD %d\n0/%d"):format(i, HubConfig.maxPlayers), 5, 9, 3.4)
 		padParts[i] = pad
 	end
 end
@@ -291,13 +487,25 @@ local function buildLeft()
 	-- how-to-play board, turned towards the middle
 	local bpos = at(-46, 6.5, -20)
 	local face = CFrame.lookAt(bpos, at(0, 6.5, 4))
-	part("BoardFrame", Vector3.new(14, 10, 0.6), face * CFrame.new(0, 0, 0.35), C.blue)
-	local board = part("Board", Vector3.new(13, 9, 0.6), face, C.white)
-	for _, dx in { -6, 6 } do
-		part("BoardLeg", Vector3.new(1, 6.5, 1), face * CFrame.new(dx, -5.5, 0.3), C.white)
+	local board: BasePart
+	if has("Board") then -- puffy red frame on candy-cane legs, the text on an invisible part on its cream face
+		local o = CFrame.lookAt(at(-46, 0, -20), at(0, 0, 4))
+		mesh("Board", "Board_Body", o)
+		blocker("BoardBox", Vector3.new(14, 10, 1.6), o * CFrame.new(0, 6.5, 0.4))
+		blocker("BoardLeg", Vector3.new(1, 5, 1), o * CFrame.new(-6, 2.5, 0.3))
+		blocker("BoardLeg", Vector3.new(1, 5, 1), o * CFrame.new(6, 2.5, 0.3))
+		board = part("Board", Vector3.new(13, 9, 0.05), o * CFrame.new(0, 6.5, -0.28), C.white, { transparency = 1, solid = false, shadow = false })
+		local badge = part("Alert", Vector3.new(2, 2, 0.05), o * CFrame.new(6.6, 12.1, -0.87), C.white, { transparency = 1, solid = false, shadow = false })
+		sign(badge, Enum.NormalId.Front, "!", Color3.new(1, 1, 1), Color3.fromRGB(120, 10, 30), 40)
+	else
+		part("BoardFrame", Vector3.new(14, 10, 0.6), face * CFrame.new(0, 0, 0.35), C.blue)
+		board = part("Board", Vector3.new(13, 9, 0.6), face, C.white)
+		for _, dx in { -6, 6 } do
+			part("BoardLeg", Vector3.new(1, 6.5, 1), face * CFrame.new(dx, -5.5, 0.3), C.white)
+		end
+		local alert = part("Alert", Vector3.new(0.6, 3, 3), face * CFrame.new(-6.5, 5.5, 0) * FACE_Z, Color3.fromRGB(230, 50, 60), { shape = CYL })
+		label(alert, "!", 0, 2, 2)
 	end
-	local alert = part("Alert", Vector3.new(0.6, 3, 3), face * CFrame.new(-6.5, 5.5, 0) * FACE_Z, Color3.fromRGB(230, 50, 60), { shape = CYL })
-	label(alert, "!", 0, 2, 2)
 	local gui = Instance.new("SurfaceGui")
 	gui.Face = Enum.NormalId.Front
 	gui.SizingMode = Enum.SurfaceGuiSizingMode.PixelsPerStud
@@ -407,6 +615,28 @@ local function buildBooths()
 		local accent = color(HubConfig.colors.booths[i])
 		local pos = at(s[1], 0, s[2])
 		local face = CFrame.lookAt(pos, pos - Vector3.xAxis) -- open side faces the middle
+		if has("Booth") and has("BoothPad") then
+			-- candy booth (tinted walls and awning) with its topper on the roof and a glowing pad in front
+			mesh("Booth", "Booth_Body", face)
+			mesh("Booth", "Booth_Tint", face, { tint = accent })
+			blocker("BoothBox", Vector3.new(12.4, 8, 11.4), face * CFrame.new(0, 4, 0.3))
+			local topper = MD.toppers and MD.toppers[i]
+			local top: BasePart
+			if topper and has(topper) then
+				local set = Models.hub[topper]
+				local meshName = next(set.meshes) :: string
+				top = mesh(topper, meshName, face * CFrame.new(0, 11, 0), { scale = MD.topperScale or 1 })
+			else
+				top = part("RoofBall", Vector3.new(2.6, 2.6, 2.6), (face * CFrame.new(0, 12.3, 0)).Position, C.gold, { shape = BALL })
+			end
+			label(top, "COMING SOON", 4, 10, 2.2, Color3.new(1, 1, 1))
+			local glow = HubConfig.colors.boothGlow and HubConfig.colors.boothGlow[i]
+			local po = face * CFrame.new(0, 0, -9.75)
+			mesh("BoothPad", "BoothPad_Body", po, { color = color(MD.boothPad), shadow = false })
+			mesh("BoothPad", "BoothPad_Glow", po, { mat = NEON, color = glow and color(glow) or accent, shadow = false })
+			blocker("BoothPadFloor", Vector3.new(0.35, 9, 9), CFrame.new(po.Position + Vector3.new(0, 0.175, 0)) * UP, CYL)
+			continue
+		end
 		local k = HubConfig.boothScale or 1 -- everything in the booth is built at this size
 		local function piece(name, size, x, y, zz, col, opts)
 			return part(name, size * k, face * CFrame.new(x * k, y * k, zz * k), col, opts)
@@ -433,14 +663,23 @@ local function buildChest()
 	local pos = at(-24, 0, 40)
 	local face = CFrame.lookAt(pos, at(-14, 0, 20))
 	local red, gold = Color3.fromRGB(230, 60, 90), C.gold
-	vcyl("ChestGlow", pos + Vector3.new(0, 0.15, 0), 10, 0.3, Color3.fromRGB(200, 150, 20), { mat = NEON, transparency = 0.35, shadow = false })
-	part("ChestBody", Vector3.new(6, 3.5, 4), face * CFrame.new(0, 2.05, 0), red)
-	part("ChestLid", Vector3.new(6, 4, 4), face * CFrame.new(0, 3.8, 0), red, { shape = CYL })
-	for _, dx in { -2, 2 } do
-		part("ChestBand", Vector3.new(0.6, 3.6, 4.1), face * CFrame.new(dx, 2.05, 0), gold)
-		part("ChestBandLid", Vector3.new(0.6, 4.1, 4.1), face * CFrame.new(dx, 3.8, 0), gold, { shape = CYL })
+	local lock: BasePart
+	if has("Chest") then -- fat red chest; the lid turns about its back top edge (pivot) to open later
+		mesh("Chest", "Chest_Body", face)
+		mesh("Chest", "Chest_Lid", face, { pivot = { 0, 3.5, 2.0 } })
+		mesh("Chest", "Chest_Glow", face, { mat = NEON, color = color(MD.chestGlow), transparency = MD.chestGlowTransparency, shadow = false })
+		blocker("ChestBox", Vector3.new(6.4, 6, 4.6), face * CFrame.new(0, 3, 0))
+		lock = part("ChestLock", Vector3.new(0.2, 0.2, 0.2), face * CFrame.new(0, 2.02, -2.3), gold, { transparency = 1, solid = false, shadow = false })
+	else
+		vcyl("ChestGlow", pos + Vector3.new(0, 0.15, 0), 10, 0.3, Color3.fromRGB(200, 150, 20), { mat = NEON, transparency = 0.35, shadow = false })
+		part("ChestBody", Vector3.new(6, 3.5, 4), face * CFrame.new(0, 2.05, 0), red)
+		part("ChestLid", Vector3.new(6, 4, 4), face * CFrame.new(0, 3.8, 0), red, { shape = CYL })
+		for _, dx in { -2, 2 } do
+			part("ChestBand", Vector3.new(0.6, 3.6, 4.1), face * CFrame.new(dx, 2.05, 0), gold)
+			part("ChestBandLid", Vector3.new(0.6, 4.1, 4.1), face * CFrame.new(dx, 3.8, 0), gold, { shape = CYL })
+		end
+		lock = part("ChestLock", Vector3.new(1.2, 1.4, 0.4), face * CFrame.new(0, 3.6, -2.1), gold)
 	end
-	local lock = part("ChestLock", Vector3.new(1.2, 1.4, 0.4), face * CFrame.new(0, 3.6, -2.1), gold)
 	local light = Instance.new("PointLight")
 	light.Color = Color3.fromRGB(255, 210, 90)
 	light.Range = 12
@@ -461,38 +700,59 @@ local function buildChest()
 end
 
 
----------------------------------------------------------------- gumball theme pieces
-local GUM = (HubConfig.colors.gumballs or {}) :: { any }
-local function gumColor(rng: Random): Color3
-	return color(GUM[rng:NextInteger(1, #GUM)])
-end
-
--- one gumball: the uploaded glossy mesh (tinted), or a plain ball if it didn't load
-local function gumball(name: string, pos: Vector3, d: number, col: Color3, solid: boolean?): BasePart
-	local assets = ReplicatedStorage:FindFirstChild("BubbleAssets")
-	local template = assets and assets:FindFirstChild("Gumball") :: MeshPart?
-	if not template then
-		return ball(name, pos, d, col, { solid = solid == true, shadow = false, gloss = 0.15 })
-	end
-	local g = template:Clone()
-	g.Name = name
-	g.Size = Vector3.new(d, d, d)
-	g.CFrame = CFrame.new(pos) * CFrame.Angles(math.random() * 6.3, math.random() * 6.3, 0)
-	g.Color = col
-	g.CanCollide = solid == true
-	g.CanQuery = solid == true
-	g.CastShadow = solid == true
-	local look = g:FindFirstChildOfClass("SurfaceAppearance")
-	if look then
-		look.Color = col
-	end
-	g.Parent = folder
-	return g
-end
-
 -- a giant gumball machine where the HQ stands: red base, coin slot and knob, a glass globe full of gumballs
+-- the BUBBLE POP banner across the machine's neck: the model, or the part-built one
+local function buildBanner(machine: CFrame)
+	if has("Banner") then
+		local bo = machine * CFrame.new(0, 12.9, -10.56)
+		mesh("Banner", "Banner_Body", bo, { color = color(MD.bannerRed) })
+		mesh("Banner", "Banner_Trim", bo, { color = color(MD.bannerTrim) })
+		mesh("Banner", "Banner_Bolts", bo, { color = color(MD.bannerBolts) })
+		local face = part("Logo", Vector3.new(37.5, 7, 0.1), bo * CFrame.new(0, 4.6, -3.99), C.white, { transparency = 1, solid = false, shadow = false })
+		sign(face, Enum.NormalId.Front, "BUBBLE POP", Color3.new(1, 1, 1), Color3.fromRGB(120, 10, 30), 11)
+		return
+	end
+	local red = C.blue
+	local z = machine.Position.Z - O.Z
+	local lz = z + 11
+	part("LogoRim", Vector3.new(37.5, 8.5, 1), at(0, 17.5, lz - 0.6), C.white)
+	for _, sx in { -1, 1 } do
+		part("LogoRimEnd", Vector3.new(1, 8.5, 8.5), CFrame.new(at(sx * 18.75, 17.5, lz - 0.6)) * FACE_Z, C.white, { shape = CYL })
+		part("LogoEnd", Vector3.new(1.4, 7, 7), CFrame.new(at(sx * 18.75, 17.5, lz)) * FACE_Z, red, { shape = CYL })
+	end
+	local plaque = part("Logo", Vector3.new(37.5, 7, 1.4), CFrame.lookAt(at(0, 17.5, lz), at(0, 17.5, 100)), red)
+	sign(plaque, Enum.NormalId.Front, "BUBBLE POP", Color3.new(1, 1, 1), Color3.fromRGB(120, 10, 30), 11)
+	part("LogoShine", Vector3.new(34, 2.2, 0.2), at(0, 19.4, lz + 0.8), Color3.new(1, 1, 1), { transparency = 0.65, solid = false, shadow = false })
+end
+
+-- the gumball model: body, knob and flap (with their pivots), glass globe, shine, a neat pile of
+-- low-detail gumballs round a dark core. Invisible stage, base and globe for walking and bumping.
+local function buildMachineModel(z: number)
+	local o = CFrame.lookAt(at(0, 0, z), at(0, 0, HubConfig.spawn[3])) -- front towards the spawn
+	mesh("Machine", "Machine_Body", o)
+	mesh("Machine", "Machine_Knob", o, { pivot = { 0, 7.9, -9.0 } })
+	mesh("Machine", "Machine_Flap", o, { pivot = { 0, 4.55, -9.35 } })
+	mesh("Machine", "Machine_Glass", o, glassOpts())
+	mesh("Machine", "Machine_Shine", o, shineOpts())
+	blocker("MachineStage", Vector3.new(1.5, 28, 28), CFrame.new(at(0, 0.75, z)) * UP, CYL)
+	blocker("MachineBase", Vector3.new(18, 14, 16), at(0, 8, z))
+	blocker("Globe", Vector3.new(28, 28, 28), at(0, 29, z), BALL)
+	local gc = o * CFrame.new(0, 29, 0)
+	for _, b in Piles.globe.balls do
+		lowGumball("Gumball", (gc * CFrame.new(b[1], b[2], b[3])).Position, Piles.globe.diameter, color(GUM[b[4]] or GUM[1]))
+	end
+	if has("GumballLo") then
+		mesh("GumballLo", "GumballCore_Globe", gc, { color = color(MD.gumCore), shadow = false })
+	end
+	buildBanner(o)
+end
+
 local function buildGumballMachine()
 	local z = -45
+	if has("Machine") then
+		buildMachineModel(z)
+		return
+	end
 	local red = C.blue
 	vcyl("MachineStage", at(0, 0.75, z), 28, 1.5, C.lavender)
 	part("MachineStageEdge", Vector3.new(28.6, 0.4, 0.4), at(0, 1.3, z + 14.1), C.gold)
@@ -524,27 +784,33 @@ local function buildGumballMachine()
 	ball("GlobeShine", gc + Vector3.new(-5, 6, 10.5), 3, Color3.new(1, 1, 1), { solid = false, shadow = false })
 	vcyl("GlobeCap", at(0, 43, z), 10, 2.4, red)
 	ball("GlobeKnob", at(0, 45, z), 3.6, red)
-	-- the logo as a banner across the machine's neck
-	local lz = z + 11
-	part("LogoRim", Vector3.new(37.5, 8.5, 1), at(0, 17.5, lz - 0.6), C.white)
-	for _, sx in { -1, 1 } do
-		part("LogoRimEnd", Vector3.new(1, 8.5, 8.5), CFrame.new(at(sx * 18.75, 17.5, lz - 0.6)) * FACE_Z, C.white, { shape = CYL })
-		part("LogoEnd", Vector3.new(1.4, 7, 7), CFrame.new(at(sx * 18.75, 17.5, lz)) * FACE_Z, red, { shape = CYL })
-	end
-	local plaque = part("Logo", Vector3.new(37.5, 7, 1.4), CFrame.lookAt(at(0, 17.5, lz), at(0, 17.5, 100)), red)
-	sign(plaque, Enum.NormalId.Front, "BUBBLE POP", Color3.new(1, 1, 1), Color3.fromRGB(120, 10, 30), 11)
-	part("LogoShine", Vector3.new(34, 2.2, 0.2), at(0, 19.4, lz + 0.8), Color3.new(1, 1, 1), { transparency = 0.65, solid = false, shadow = false })
+	buildBanner(CFrame.lookAt(at(0, 0, z), at(0, 0, HubConfig.spawn[3])))
 end
 
 -- a gumball pit where the fountain was: big bouncy gumballs to kick around while you wait
 local function buildGumballPit()
 	local c = at(-38, 0, 16)
 	local rng = Random.new(3)
-	vcyl("PitFloor", c + Vector3.new(0, 0.15, 0), 20, 0.3, C.lightBlue, { shadow = false })
-	for k = 0, 15 do
-		local a = k / 16 * math.pi * 2
-		local pos = c + Vector3.new(math.cos(a) * 10.5, 1.5, math.sin(a) * 10.5)
-		part("PitWall", Vector3.new(4.4, 3, 1), CFrame.lookAt(pos, c + Vector3.new(0, 1.5, 0)), k % 2 == 0 and C.white or C.blue)
+	if has("Pit") then
+		-- inflatable candy-striped ring; its entrance (the model's front) points at the plaza middle (+X).
+		-- Invisible walls round the ring with a 5-stud gap at the entrance, and a 0.3 floor slab.
+		mesh("Pit", "Pit_Body", CFrame.lookAt(c, c + Vector3.xAxis))
+		blocker("PitFloor", Vector3.new(0.3, 19.6, 19.6), CFrame.new(c + Vector3.new(0, 0.15, 0)) * UP, CYL)
+		local r, w = 10.6, 4
+		local a0 = math.asin((2.5 + w / 2) / r) -- first wall clears half the gap
+		local n = 14
+		for k = 0, n - 1 do
+			local a = a0 + k / (n - 1) * (math.pi * 2 - 2 * a0)
+			local pos = c + Vector3.new(math.cos(a) * r, 1.5, math.sin(a) * r)
+			blocker("PitWall", Vector3.new(w, 3, 1.6), CFrame.lookAt(pos, c + Vector3.new(0, 1.5, 0)))
+		end
+	else
+		vcyl("PitFloor", c + Vector3.new(0, 0.15, 0), 20, 0.3, C.lightBlue, { shadow = false })
+		for k = 0, 15 do
+			local a = k / 16 * math.pi * 2
+			local pos = c + Vector3.new(math.cos(a) * 10.5, 1.5, math.sin(a) * 10.5)
+			part("PitWall", Vector3.new(4.4, 3, 1), CFrame.lookAt(pos, c + Vector3.new(0, 1.5, 0)), k % 2 == 0 and C.white or C.blue)
+		end
 	end
 	for k = 1, 7 do
 		local a = k / 7 * math.pi * 2
@@ -560,6 +826,23 @@ end
 local function buildCandyJar()
 	local d = at(-26, 0, -6)
 	local rng = Random.new(9)
+	if has("Jar") then
+		-- bulging glass jar on a gold and white base; the shine faces the plaza; a neat pile inside
+		local o = CFrame.lookAt(d, at(0, 0, 0))
+		mesh("Jar", "Jar_Body", o)
+		local glass = mesh("Jar", "Jar_Glass", o, glassOpts())
+		mesh("Jar", "Jar_Shine", o, shineOpts())
+		blocker("JarBox", Vector3.new(12.6, 8, 8), CFrame.new(d + Vector3.new(0, 6.3, 0)) * UP, CYL)
+		local floor = o * CFrame.new(0, 3.2, 0)
+		for _, b in Piles.jar.balls do
+			lowGumball("JarGumball", (floor * CFrame.new(b[1], b[2], b[3])).Position, Piles.jar.diameter, color(GUM[b[4]] or GUM[1]))
+		end
+		if has("GumballLo") then
+			mesh("GumballLo", "GumballCore_Jar", floor, { color = color(MD.gumCore), shadow = false })
+		end
+		label(glass, "GUMBALL JAR", 7, 10, 2, color(HubConfig.colors.pink))
+		return
+	end
 	vcyl("JarBase", d + Vector3.new(0, 0.6, 0), 8, 1.2, C.gold)
 	vcyl("JarPedestal", d + Vector3.new(0, 2.2, 0), 6.5, 2, C.white)
 	for _ = 1, 40 do
@@ -603,12 +886,23 @@ local function buildScenery()
 	-- round cartoon trees on the island, between the plaza and the glass
 	local placed = 0
 	local maxR = HubConfig.island.radius - 12
+	local trees: { Vector2 } = {}
 	while placed < 26 do
 		local x, z = rng:NextNumber(-maxR, maxR), rng:NextNumber(-maxR, maxR)
 		if math.max(math.abs(x), math.abs(z)) > 64 and math.sqrt(x * x + z * z) < maxR then
 			placed += 1
 			local s = rng:NextNumber(0.8, 1.4)
 			local base = at(x, -3, z)
+			if has("Lollipop") then -- swirl, ball and heart lollipops in turn, tinted, each turned at random
+				local shape = MD.lollipops[placed % #MD.lollipops + 1]
+				local o = CFrame.new(base) * CFrame.Angles(0, rng:NextNumber(0, math.pi * 2), 0)
+				mesh("Lollipop", "Lollipop_" .. shape .. "_Tint", o, { scale = s, tint = gumColor(rng) })
+				mesh("Lollipop", "Lollipop_" .. shape .. "_Body", o, { scale = s })
+				mesh("Lollipop", "Lollipop_" .. shape .. "_Shine", o, { scale = s, color = color(MD.shine), transparency = MD.shineTransparency, shadow = false })
+				blocker("LollyStick", Vector3.new(9 * s, 1 * s, 1 * s), CFrame.new(base + Vector3.new(0, 4.5 * s, 0)) * UP, CYL)
+				table.insert(trees, Vector2.new(x, z))
+				continue
+			end
 			if HubConfig.theme == "gumball" then
 				lollipop(base, s, rng)
 				continue
@@ -618,6 +912,33 @@ local function buildScenery()
 			ball("Leaves", base + Vector3.new(0, 10 * s, 0), 9 * s, g)
 			ball("Leaves", base + Vector3.new(2 * s, 8 * s, 1 * s), 6 * s, g)
 			ball("Leaves", base + Vector3.new(-2 * s, 8.5 * s, -1 * s), 6.5 * s, g)
+		end
+	end
+	-- grass dressing: gumdrops, wrapped sweets and cupcakes on the grass ring outside the fence
+	local dr = MD.dressing
+	if dr and has("Dressing") then
+		local drng = Random.new(11)
+		local made, tries = 0, 0
+		while made < dr.count and tries < 2000 do
+			tries += 1
+			local x, z = drng:NextNumber(-dr.maxRadius, dr.maxRadius), drng:NextNumber(-dr.maxRadius, dr.maxRadius)
+			local clear = math.max(math.abs(x), math.abs(z)) > dr.minEdge and math.sqrt(x * x + z * z) < dr.maxRadius
+			for _, t in trees do
+				if clear and (t - Vector2.new(x, z)).Magnitude < 7 then
+					clear = false
+				end
+			end
+			if clear then
+				local kind = dr.kinds[made % #dr.kinds + 1]
+				local sc = drng:NextNumber(dr.size[1], dr.size[2])
+				local o = CFrame.new(at(x, -3, z)) * CFrame.Angles(0, drng:NextNumber(0, math.pi * 2), 0)
+				mesh("Dressing", "Dressing_" .. kind .. "_Tint", o, { scale = sc, tint = gumColor(drng) })
+				if kind == "Cupcake" then
+					mesh("Dressing", "Dressing_Cupcake_Body", o, { scale = sc })
+				end
+				table.insert(trees, Vector2.new(x, z))
+				made += 1
+			end
 		end
 	end
 end
@@ -702,7 +1023,7 @@ function Hub.start(hooks)
 
 	local function show(i: number)
 		local pad, part = pads[i], padParts[i]
-		local text = part:FindFirstChild("Info") and part.Info:FindFirstChild("Text") :: TextLabel?
+		local text = padText[i]
 		part:SetAttribute("Members", #pad.members)
 		part:SetAttribute("Owner", LobbyRules.owner(pad) or 0)
 		part:SetAttribute("Countdown", pad.countdown and math.ceil(pad.countdown) or 0)

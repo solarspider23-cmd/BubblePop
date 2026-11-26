@@ -1,0 +1,12 @@
+<roblox xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.roblox.com/roblox.xsd" version="4">
+	<Item class="SurfaceAppearance" referent="RBXHUBMACHINELOOK0001">
+		<Properties>
+			<string name="Name">HubMachineLook</string>
+			<token name="AlphaMode">0</token>
+			<Color3 name="Color"><R>1</R><G>1</G><B>1</B></Color3>
+			<Content name="ColorMap"><url>rbxassetid://99246593458673</url></Content>
+			<Content name="NormalMap"><url>rbxassetid://78271388427361</url></Content>
+			<Content name="RoughnessMap"><url>rbxassetid://127236435871680</url></Content>
+		</Properties>
+	</Item>
+</roblox>

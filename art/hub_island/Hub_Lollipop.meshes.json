@@ -1,0 +1,123 @@
+{
+ "model": 123214833283791,
+ "moderation": "Approved",
+ "parts": {
+  "Lollipop_Ball_Body": {
+   "meshId": 134017426755753,
+   "size": [
+    6.1493,
+    8.8174,
+    4.47
+   ],
+   "position": [
+    0.0,
+    4.2587,
+    0.0
+   ]
+  },
+  "Lollipop_Ball_Shine": {
+   "meshId": 73905735007335,
+   "size": [
+    4.1583,
+    1.5492,
+    6.9586
+   ],
+   "position": [
+    -0.0,
+    12.5045,
+    0.0
+   ]
+  },
+  "Lollipop_Ball_Tint": {
+   "meshId": 89527737116197,
+   "size": [
+    7.5138,
+    7.5138,
+    7.5138
+   ],
+   "position": [
+    0.0,
+    11.2,
+    0.0
+   ]
+  },
+  "Lollipop_Heart_Body": {
+   "meshId": 122060653058449,
+   "size": [
+    4.7,
+    8.15,
+    4.47
+   ],
+   "position": [
+    0.0,
+    3.925,
+    0.0
+   ]
+  },
+  "Lollipop_Heart_Shine": {
+   "meshId": 89557132818243,
+   "size": [
+    5.5651,
+    0.7807,
+    1.7682
+   ],
+   "position": [
+    0.0,
+    12.93,
+    0.0
+   ]
+  },
+  "Lollipop_Heart_Tint": {
+   "meshId": 133025642045370,
+   "size": [
+    8.0,
+    7.2011,
+    1.9
+   ],
+   "position": [
+    0.0,
+    10.6006,
+    0.0
+   ]
+  },
+  "Lollipop_Swirl_Body": {
+   "meshId": 79898772876847,
+   "size": [
+    4.7,
+    8.75,
+    4.47
+   ],
+   "position": [
+    0.0,
+    4.225,
+    0.0
+   ]
+  },
+  "Lollipop_Swirl_Shine": {
+   "meshId": 128316135415037,
+   "size": [
+    4.9721,
+    1.8452,
+    2.045
+   ],
+   "position": [
+    0.0,
+    12.5635,
+    0.0
+   ]
+  },
+  "Lollipop_Swirl_Tint": {
+   "meshId": 118480276567857,
+   "size": [
+    8.0,
+    8.0,
+    2.0
+   ],
+   "position": [
+    0.0,
+    11.0,
+    0.0
+   ]
+  }
+ }
+}

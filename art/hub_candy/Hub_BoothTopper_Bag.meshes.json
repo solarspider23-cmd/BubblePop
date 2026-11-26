@@ -1,0 +1,19 @@
+{
+ "model": 123738322552133,
+ "moderation": "Approved",
+ "parts": {
+  "BoothTopper_Bag_Body": {
+   "meshId": 107378205775595,
+   "size": [
+    2.46,
+    3.0732,
+    1.61
+   ],
+   "position": [
+    0.0,
+    1.5366,
+    -0.055
+   ]
+  }
+ }
+}

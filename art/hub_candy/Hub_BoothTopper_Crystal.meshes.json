@@ -1,0 +1,19 @@
+{
+ "model": 128124075571544,
+ "moderation": "Approved",
+ "parts": {
+  "BoothTopper_Crystal_Body": {
+   "meshId": 104690432373862,
+   "size": [
+    2.4911,
+    2.95,
+    1.9
+   ],
+   "position": [
+    -0.0471,
+    1.475,
+    0.0
+   ]
+  }
+ }
+}

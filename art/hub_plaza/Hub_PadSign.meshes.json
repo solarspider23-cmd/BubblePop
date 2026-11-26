@@ -1,0 +1,32 @@
+{
+ "model": 92044368166549,
+ "moderation": "Approved",
+ "parts": {
+  "PadSign_Body": {
+   "meshId": 97013629962803,
+   "size": [
+    8.24,
+    6.62,
+    0.8314
+   ],
+   "position": [
+    0.0,
+    3.31,
+    0.0
+   ]
+  },
+  "PadSign_Tint": {
+   "meshId": 77507496230551,
+   "size": [
+    9.14,
+    4.14,
+    0.8
+   ],
+   "position": [
+    0.0,
+    5.0,
+    0.0
+   ]
+  }
+ }
+}

@@ -12,7 +12,7 @@ local Hub = {
 	size = 112, -- the plaza is size x size studs (8 x 8 tiles)
 	spawn = { 0, 4, 34 }, -- from the origin: where players appear, facing the pads
 	pads = {
-		{ -21, -28 }, { -7, -28 }, { 7, -28 }, { 21, -28 }, -- x, z from the origin
+		{ -21, -23 }, { -7, -23 }, { 7, -23 }, { 21, -23 }, -- x, z from the origin (z -23 keeps the signs clear of the machine's stage)
 	},
 	padSize = { 12, 9 }, -- each play pad is a rectangle, x by z studs
 	booths = { { 44, -15 }, { 44, 4 }, { 44, 23 } }, -- right side, evenly spaced, facing the middle
@@ -63,10 +63,28 @@ local Hub = {
 			padBase = rgb(255, 252, 250),
 			pad = { rgb(225, 45, 60), rgb(40, 120, 230), rgb(240, 185, 20), rgb(50, 175, 70) }, -- gumball colours
 			booths = { rgb(255, 105, 170), rgb(70, 205, 165), rgb(245, 185, 40) }, -- pink, mint, lemon
+			padGlow = { rgb(180, 20, 45), rgb(20, 90, 190), rgb(190, 125, 0), rgb(25, 140, 45) }, -- neon rings on the pad models
+			boothGlow = { rgb(190, 30, 90), rgb(30, 156, 120), rgb(200, 140, 10) },
 			gumballs = { rgb(230, 45, 60), rgb(40, 120, 230), rgb(255, 175, 0), rgb(50, 175, 70), rgb(255, 120, 190), rgb(255, 140, 40), rgb(150, 90, 230), rgb(255, 255, 255) },
 		},
 	},
 
+	-- How the uploaded candy models are placed (Config/Models.hub; only used with the gumball theme;
+	-- anything that didn't load falls back to the part-built pieces). Numbers from docs/art_review.md.
+	models = {
+		glass = rgb(235, 248, 255), glassTransparency = 0.6, -- globe and jar glass
+		shine = rgb(255, 255, 255), shineTransparency = 0.15, -- the white highlight pieces (not Neon: it blows out)
+		gumCore = rgb(143, 43, 88), -- the dark filler inside the globe and jar piles
+		bannerRed = rgb(230, 45, 70), bannerTrim = rgb(255, 252, 250), bannerBolts = rgb(255, 200, 60),
+		kerb = rgb(255, 252, 250), kerbBand = rgb(230, 45, 70),
+		boothPad = rgb(255, 252, 250),
+		chestGlow = rgb(200, 150, 20), chestGlowTransparency = 0.35,
+		toppers = { "TopperBag", "TopperTicket", "TopperCrystal" }, -- booth 1 shop, 2 passes, 3 crystals
+		topperScale = 1.5,
+		cornerGumballs = { 1, 2, 3, 4 }, -- gumball colour per fence corner (red, blue, amber, green)
+		lollipops = { "Swirl", "Ball", "Heart" },
+		dressing = { count = 24, kinds = { "Gumdrop", "Sweet", "Cupcake" }, maxRadius = 92, minEdge = 61, size = { 0.8, 1.3 } },
+	},
 }
 Hub.colors = Hub.themes[Hub.theme] or Hub.themes.aero
 

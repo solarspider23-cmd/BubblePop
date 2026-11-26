@@ -242,6 +242,61 @@ do -- the lobby gumball: mesh + its glossy candy look (SurfaceAppearance saved i
 end
 assets.Parent = ReplicatedStorage
 
+do -- the candy lobby models (Config/Models.hub) -> ReplicatedStorage.HubAssets/<entry>/<mesh>.
+	-- A set only appears when every one of its meshes loaded; Hub builds the part version otherwise.
+	local hubAssets = Instance.new("Folder")
+	hubAssets.Name = "HubAssets"
+	local ServerStorage = game:GetService("ServerStorage")
+	for key, def in Models.hub or {} do
+		if not Models.enabled or (def.model or 0) == 0 then
+			continue
+		end
+		local ok, model = pcall(function()
+			return InsertService:LoadAsset(def.model)
+		end)
+		if not ok or not model then
+			warn("BubblePop: hub model " .. key .. " didn't load: " .. tostring(model))
+			continue
+		end
+		local flat = {}
+		for _, n in def.flat or {} do
+			flat[n] = true
+		end
+		local look = def.look and ServerStorage:FindFirstChild(def.look)
+		local set = Instance.new("Folder")
+		set.Name = key
+		local missing = 0
+		for name in def.meshes do
+			local m = model:FindFirstChild(name, true)
+			if m and m:IsA("MeshPart") then
+				local c = m:Clone()
+				c.Anchored = true
+				c.CanCollide = false
+				c.CanTouch = false
+				c.CanQuery = false
+				c.Material = Enum.Material.SmoothPlastic
+				c.Reflectance = 0
+				c.Color = Color3.new(1, 1, 1)
+				c.CFrame = CFrame.identity
+				if look and not flat[name] then
+					look:Clone().Parent = c
+				end
+				c.Parent = set
+			else
+				missing += 1
+			end
+		end
+		model:Destroy()
+		if missing > 0 then
+			warn(("BubblePop: hub model %s is missing %d meshes"):format(key, missing))
+			set:Destroy()
+		else
+			set.Parent = hubAssets
+		end
+	end
+	hubAssets.Parent = ReplicatedStorage
+end
+
 -- Bubble wrap sheets (the bubbles themselves are drawn by each client)
 local sheetFolder = Instance.new("Folder")
 sheetFolder.Name = "Sheets"
