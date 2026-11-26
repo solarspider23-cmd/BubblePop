@@ -12,6 +12,7 @@ local Models = require(Shared.Config.Models)
 local RoomLayout = require(Shared.Rules.RoomLayout)
 local Variants = require(Shared.Config.Variants)
 local VariantRules = require(Shared.Rules.Variants)
+local Format = require(Shared.Format)
 local Sfx = require(script.Parent.Sfx)
 local Scraps = require(script.Parent.Scraps)
 
@@ -547,12 +548,12 @@ function BubbleView.pop(id: number, kind: string)
 		bits.Color = ColorSequence.new(Color3.new(1, 1, 1), BUBBLE_COLOR)
 		if kind ~= "other" then
 			Sfx.play("rarePop", nil)
-			BubbleView.floatText(cf.Position, "+" .. VariantRules.coins(Variants, variantOf[id]), c, true)
+			BubbleView.floatText(cf.Position, "+" .. Format.short(VariantRules.coins(Variants, variantOf[id])), c, true)
 		end
 	else
 		bits:Emit(kind == "other" and 4 or 9)
 		if kind == "click" then
-			BubbleView.floatText(cf.Position, "+" .. Variants.baseCoins * (BubbleView.groupSize or 1), Color3.fromRGB(255, 225, 90), false)
+			BubbleView.floatText(cf.Position, "+" .. Format.short(Variants.baseCoins * (BubbleView.groupSize or 1)), Color3.fromRGB(255, 225, 90), false)
 		end
 	end
 	puff:Emit(kind == "other" and 1 or 2)

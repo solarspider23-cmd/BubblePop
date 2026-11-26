@@ -13,7 +13,7 @@ A Roblox simulator for kids 8-14: pop bubble wrap for coins, upgrade your bag, t
 - 2026-11-25 (later): first room shrunk to "starter" (40 x 40, 440 bubbles per wall, ~3,260 in the room) so it isn't intimidating; gold bubbles removed for now; DIAMOND is the common rare (1/800 = ~4 per room, max 10, 10 coins), rainbow stays rare (1/10000, 150 coins). HUD: small timer with a room progress bar under it (no bubbles-left number).
 - 2026-11-25: Room size "small" (Config/Room.lua `SIZE`): bubbles 5/6 size, 60 x 60 room, 660 bubbles per wall (60 across x 11 up), one ceiling light. Look 4 "Clear+" is the starting look. Default pop sound: Tiny; squeeze and pop still being auditioned (K and 1-9 in game).
 - Popping a bubble with the tool takes a press time (starts 0.56 s, like the genre reference); the press time becomes an upgrade ("Pop Speed"). Walking over floor wrap pops instantly.
-- Bag: popped bubbles fill your bag (starts at 25); a full bag blocks popping until you sell at the recycler in the middle of the hub. Coins, not cents. First bag upgrades are cheap.
+- Bag: popped bubbles fill your bag (starts at 25); a full bag blocks popping until you sell at the recycler in the middle of the hub. Money is DOLLARS AND CENTS (owner, 2026-11-25; replaces "coins, not cents"): 1 bubble = 1 cent; diamond 10¢, rainbow $1.50. Stored as whole cents (leaderstats.Coins = cents), shown with Shared/Format.lua. First bag upgrades are cheap.
 - Monetisation: Auto-Sell, 2x Bag, 2x Coins, 2x Pop Speed passes, instant bag upgrade product. Bag/tool upgrades also buyable with coins.
 - Art: cartoon v2 bubble wrap (bright, toon-banded textures; no outline mesh). First tool is just a basic stick (owner: quality later).
 - Subagents: allowed, as many as needed (owner, 2026-11-24).

@@ -1,7 +1,7 @@
 -- Upgrades bought with coins in the shop. Each has levels; level 1 is what you start with.
 -- To change prices or add a level, edit the lists (value and cost lists must be the same length).
 --   values: what the upgrade gives at each level
---   costs:  coins to reach that level (level 1 is free: you start there)
+--   costs:  money to reach that level, in CENTS (1500 = $15.00; level 1 is free: you start there)
 return {
 	order = { "bag", "popSpeed", "tool", "boots" },
 

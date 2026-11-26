@@ -7,6 +7,7 @@ local UserInputService = game:GetService("UserInputService")
 
 local Upgrades = require(ReplicatedStorage.Shared.Config.Upgrades)
 local UpgradeRules = require(ReplicatedStorage.Shared.Rules.Upgrades)
+local Format = require(ReplicatedStorage.Shared.Format)
 local Hud = require(script.Parent.Hud)
 local Sfx = require(script.Parent.Sfx)
 
@@ -145,7 +146,7 @@ function Shop.start(remotes: Folder)
 				Sfx.play("sell")
 				Hud.toast(u.name .. "!  " .. describe(kind, player:GetAttribute("Upg_" .. kind) or 1))
 			else
-				Hud.toast(msg == "maxed" and "Already maxed" or "Not enough coins")
+				Hud.toast(msg == "maxed" and "Already maxed" or "Not enough money")
 			end
 		end)
 	end
@@ -158,7 +159,7 @@ function Shop.start(remotes: Folder)
 		test.Font = Enum.Font.FredokaOne
 		test.TextScaled = true
 		test.TextColor3 = Color3.new(1, 1, 1)
-		test.Text = "+1000 coins (test)"
+		test.Text = "+$10 (test)"
 		round(test, 12)
 		local tp = Instance.new("UIPadding")
 		tp.PaddingTop, tp.PaddingBottom = UDim.new(0, 8), UDim.new(0, 8)
@@ -190,7 +191,7 @@ function Shop.start(remotes: Folder)
 			local cost = UpgradeRules.nextCost(Upgrades, kind, lvl)
 			if cost then
 				r.desc.Text = describe(kind, lvl) .. "  →  " .. describe(kind, lvl + 1):gsub("^.-: ", "")
-				r.buy.Text = cost .. " coins"
+				r.buy.Text = Format.money(cost) -- prices are in cents
 				r.buy.BackgroundColor3 = coins() >= cost and Color3.fromRGB(60, 200, 90) or Color3.fromRGB(110, 120, 140)
 			else
 				r.desc.Text = describe(kind, lvl)

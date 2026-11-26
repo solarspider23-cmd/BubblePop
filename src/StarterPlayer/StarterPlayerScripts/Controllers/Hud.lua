@@ -155,27 +155,16 @@ end
 -- Bottom left: coins and bag in rounded "pills" with icons (Luckiest Guy, owner's pick)
 local PILL_FONT = Font.fromEnum(Enum.Font.LuckiestGuy)
 
-local function withCommas(n: number): string
-	local s = tostring(math.floor(n))
-	local out = s:reverse():gsub("(%d%d%d)", "%1,"):reverse()
-	return (out:gsub("^,", ""))
-end
+local Format = require(game:GetService("ReplicatedStorage").Shared.Format)
+local withCommas = Format.commas
 
 local function pill(y: number, edge: Color3): Frame
 	local f = Instance.new("Frame")
 	f.AnchorPoint = Vector2.new(0, 1)
 	f.Position = UDim2.new(0, 18, 1, y)
 	f.Size = UDim2.fromOffset(190, 44)
-	f.BackgroundColor3 = Color3.fromRGB(20, 35, 90)
-	f.BackgroundTransparency = 0.2
-	local c = Instance.new("UICorner")
-	c.CornerRadius = UDim.new(1, 0)
-	c.Parent = f
-	local st = Instance.new("UIStroke")
-	st.Thickness = 2.5
-	st.Color = edge
-	st.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-	st.Parent = f
+	f.BackgroundTransparency = 1 -- clear: just the icon and the number (less on screen)
+	local _ = edge
 	f.Parent = gui
 	return f
 end
@@ -233,7 +222,7 @@ local coinGrad = Instance.new("UIGradient")
 coinGrad.Color = ColorSequence.new(Color3.fromRGB(255, 245, 170), Color3.fromRGB(255, 185, 30))
 coinGrad.Rotation = 90
 coinGrad.Parent = coinsLabel
-coinsLabel.Text = "0"
+coinsLabel.Text = "$0.00"
 local coinsScale = Instance.new("UIScale")
 coinsScale.Parent = coinsPill
 task.spawn(function()
@@ -241,7 +230,7 @@ task.spawn(function()
 	local coins = stats:WaitForChild("Coins") :: IntValue
 	local last = coins.Value
 	local function show()
-		coinsLabel.Text = withCommas(coins.Value)
+		coinsLabel.Text = Format.money(coins.Value) -- coins are cents
 		local jump = coins.Value - last
 		last = coins.Value
 		coinsScale.Scale = jump >= 5 and 1.2 or 1.08
@@ -353,7 +342,7 @@ local soldId = 0
 function Hud.sold(coins: number, n: number)
 	soldId += 1
 	local mine = soldId
-	soldMsg.Text = ("SOLD %d scraps  +%d coins"):format(n, coins)
+	soldMsg.Text = ("SOLD %d scraps  +%s"):format(n, Format.money(coins))
 	soldMsg.TextTransparency = 0
 	sms.Transparency = 0
 	soldScale.Scale = 0.5

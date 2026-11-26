@@ -37,7 +37,8 @@ if "--no-reload" not in sys.argv:
 
 print("camera:", client('return game.Players.LocalPlayer.CameraMode.Name'))
 client('local S=game.ReplicatedStorage.Shared; local L=require(S.Rules.RoomLayout).new(require(S.Config.Room)); '
-       'local r=game.Players.LocalPlayer.Character.HumanoidRootPart; r.CFrame=CFrame.new(0.3,3,-L.half+6); return "moved"')
+       'local r=game.Players.LocalPlayer.Character.HumanoidRootPart; r.CFrame=CFrame.new(0.3,3,-L.half+6); task.wait(0.3); '
+       'local c=workspace.CurrentCamera; c.CFrame=CFrame.lookAt(c.CFrame.Position, Vector3.new(0.3, c.CFrame.Position.Y, -L.half)); return "moved"')
 time.sleep(1)
 before = client('return game.Players.LocalPlayer.leaderstats.Pops.Value')
 studio("user_mouse_input", '{"datamodel_type":"Client","actions":[{"action":"moveTo","x":400,"y":300},'
