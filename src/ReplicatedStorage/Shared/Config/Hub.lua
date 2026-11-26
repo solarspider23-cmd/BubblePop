@@ -71,6 +71,7 @@ local Hub = {
 		clean = {
 			-- Clean Pop Plaza: soft white, cream and light grey; pastel sky, mint, lilac and peach; bubble blue.
 			-- Tints from art/hub_clean/*.bounds.json.
+			floor = rgb(245, 243, 238), -- one studded floor, warm off-white (owner: classic Roblox studs)
 			tileA = rgb(250, 251, 253), -- soft white
 			tileB = rgb(232, 238, 246), -- light grey-blue
 			white = rgb(250, 251, 253),
@@ -113,11 +114,92 @@ local Hub = {
 		dressing = { count = 24, kinds = { "Gumdrop", "Sweet", "Cupcake" }, maxRadius = 92, minEdge = 61, size = { 0.8, 1.3 } },
 	},
 
+	-- Booth names (1 shop, 2 passes, 3 crystals) and their sign icons
+	boothNames = { "SHOP", "PASSES", "CRYSTALS" },
+	boothIcons = { "🛒", "🎟️", "💎" },
+
+	-- CLEAN THEME POLISH (ServerScriptService/HubPolish.lua): ground paths and rings, props, a back
+	-- colonnade, floating islands and a rainbow. Positions are x, z from the hub origin (floor top = 0);
+	-- turn = degrees about the up axis. Each prop type is built by one function, so a modelled prop
+	-- (hall facade, lamp, bench, planter) can replace the part-built one later.
+	polish = {
+		path = rgb(214, 234, 255), -- pale sky walkway
+		pathTrim = rgb(111, 191, 255), -- sky kerb line along every path
+		-- rectangles { x1, z1, x2, z2 }: from the spawn to the pads, across to the booths and the left stations
+		paths = {
+			{ -4, -17, 4, 29 }, -- spawn -> pads
+			{ -29, -17, 29, -12 }, -- along the front of the pads
+			{ -20, 1, 30, 7 }, -- the cross walk (left stations <-> booths)
+			{ 26, -17, 30, 27 }, -- along the booth pads
+			{ -20, -14, -16, 33 }, -- along the left stations, down to the gift
+		},
+		-- rings round stations { x, z, inner radius, outer radius }
+		rings = {
+			{ -38, 16, 11.2, 13 }, -- fountain
+			{ -26, -6, 4.6, 6.2 }, -- rainbow bubble display
+			{ -24, 40, 5, 6.6 }, -- gift
+			{ 0, 34, 6.2, 7.8 }, -- spawn
+			{ 34.25, -15, 5, 6.2 }, { 34.25, 4, 5, 6.2 }, { 34.25, 23, 5, 6.2 }, -- booth pads
+		},
+		ringColors = { rgb(150, 205, 255), rgb(200, 185, 250), rgb(255, 200, 170), rgb(150, 205, 255), rgb(150, 205, 255), rgb(150, 228, 200), rgb(200, 185, 250) },
+		-- the round rug round the centrepiece stage (only the part in front of the back fence)
+		rug = { centre = { 0, -45 }, bands = { { 14, 15.6, rgb(150, 205, 255) }, { 15.6, 16.4, rgb(250, 251, 253) }, { 16.4, 19.2, rgb(200, 185, 250) }, { 19.2, 20, rgb(250, 251, 253) } } },
+		planters = { -- { x, z, turn }
+			{ -14, 51, 0 }, { 14, 51, 0 }, { -38, 51, 0 }, { 38, 51, 0 },
+			{ -26, -51, 0 }, { 26, -51, 0 }, { -42, -51, 0 }, { 42, -51, 0 },
+			{ -51, -38, 90 }, { -51, 0, 90 }, { -51, 36, 90 },
+			{ 51, -36, 90 }, { 51, -5.5, 90 }, { 51, 13.5, 90 }, { 51, 40, 90 },
+			{ 9, 16, 90 }, { -9, 16, 90 }, -- beside the spawn walk
+			{ 14, -8, 0 }, { -14, -8, 0 }, -- between the walks in front of the pads
+		},
+		bushColors = { rgb(140, 203, 255), rgb(143, 230, 198), rgb(195, 174, 247), rgb(255, 190, 210), rgb(255, 225, 150) },
+		lamps = { -- { x, z }
+			{ -6.5, 26 }, { 6.5, 26 }, { -31, -14.5 }, { 31, -14.5 },
+			{ 33, -5.5 }, { 33, 13.5 }, { -14, -4 }, { -14, 20 }, { 40, 34 }, { -40, -32 }, { 38, -32 },
+		},
+		lampGlow = rgb(25, 85, 185), -- neon globe (dark-ish: bright neon blows out to white)
+		lampGlass = rgb(200, 230, 255),
+		gardens = { -- round flower beds { x, z, radius } in the empty corners
+			{ 40, 42, 6 }, { -44, 43, 5 }, { -34, -41, 6 }, { 36, -41, 6 },
+		},
+		gardenTop = rgb(170, 230, 190),
+		benches = { -- { x, z, turn } (turn 0 = seat faces +z)
+			{ -12, 26, 90 }, { 12, 26, -90 }, { -30, 30, 45 }, { 20, 38, 180 },
+		},
+		colonnade = { z = -63, x1 = -48, x2 = 48, bays = 8, height = 24, column = rgb(250, 251, 253), arch = rgb(200, 185, 250), beam = rgb(255, 246, 232), band = rgb(111, 191, 255), crest = rgb(150, 205, 255) },
+		islands = { -- { x, y, z, radius } from the hub origin, outside the glass
+			{ -190, 25, -150, 22 }, { 210, 55, -120, 18 }, { -260, -15, 90, 26 }, { 240, 5, 170, 20 }, { 40, 70, -300, 24 }, { -120, 80, 280, 16 },
+		},
+		islandGrass = rgb(160, 225, 175),
+		islandRock = rgb(215, 205, 235),
+		rainbow = { centre = { 0, -125, -440 }, radius = 210, width = 9, transparency = 0.2, colors = { rgb(255, 150, 160), rgb(255, 200, 140), rgb(255, 240, 150), rgb(160, 230, 170), rgb(150, 200, 255), rgb(195, 170, 250) } },
+	},
+
+	-- Hub lighting (clean theme; this client only, while not in a run: Controllers/Lobby.lua).
+	-- The popping room keeps its own lighting.
+	lighting = {
+		brightness = 1.8,
+		clockTime = 14.2,
+		latitude = 35,
+		ambient = rgb(150, 160, 185),
+		outdoor = rgb(165, 175, 200),
+		colorShiftTop = rgb(255, 238, 215), -- slightly warm sun
+		exposure = -0.1,
+		shadowSoftness = 0.35,
+		envDiffuse = 0.5,
+		envSpecular = 0.5,
+		bloom = { intensity = 0.15, size = 24, threshold = 1.2 }, -- (soft: the white floor blows out easily)
+		colorCorrection = { saturation = 0.12, contrast = 0.04, brightness = 0, tint = rgb(255, 252, 246) },
+		atmosphere = { density = 0.2, offset = 0.12, color = rgb(205, 230, 255), decay = rgb(150, 195, 240), glare = 0, haze = 0.4 },
+	},
+
 	-- How the Clean Pop Plaza models are placed (Config/Models.hubClean; only with the clean theme).
 	-- reuse = candy sets (Config/Models.hub) the clean theme also uses, recoloured here.
 	modelsClean = {
 		reuse = { "Board", "Ground" },
-		glass = rgb(190, 228, 255), glassTransparency = 0.5, -- the centrepiece's giant bubble
+		glass = rgb(190, 228, 255), glassTransparency = 0.5, -- the centrepiece's giant bubble (lower looks darker and turns the peach bubble tan)
+		glassRim = rgb(255, 255, 255), glassRimTransparency = 0.35, -- a soft white Highlight outline round it
+		coreTint = rgb(255, 235, 255), -- (multiplies the bubbles inside: a touch of pink takes the tan out of the peach one)
 		shine = rgb(255, 255, 255), shineTransparency = 0.15,
 		glow = rgb(20, 100, 200), -- neon rings and lines
 		bannerBlue = rgb(46, 155, 255), bannerTrim = rgb(250, 251, 253), bannerBubbles = rgb(168, 216, 255), bannerBubblesGloss = 0.3,

@@ -7,9 +7,85 @@ local UserInputService = game:GetService("UserInputService")
 
 local HubConfig = require(ReplicatedStorage.Shared.Config.Hub)
 local Hud = require(script.Parent.Hud)
+local BubbleView = require(script.Parent.BubbleView)
 local Shop = require(script.Parent.Shop)
 
 local Lobby = {}
+
+---------------------------------------------------------------- hub lighting (clean theme)
+-- Lighting is global, so the hub's look is put on while not in a run and the room's taken back
+-- for a run: the properties below are saved as they are now (the server's values), the hub's own
+-- effects are only enabled in the hub, and BubbleView puts the room look's lighting back.
+local Lighting = game:GetService("Lighting")
+local HUB_LIT = HubConfig.theme == "clean" and HubConfig.lighting or nil
+local PROPS = { "Brightness", "ClockTime", "GeographicLatitude", "Ambient", "OutdoorAmbient", "ColorShift_Top", "ExposureCompensation", "GlobalShadows", "ShadowSoftness", "EnvironmentDiffuseScale", "EnvironmentSpecularScale" }
+local saved: { [string]: any } = {}
+for _, k in PROPS do
+	saved[k] = (Lighting :: any)[k]
+end
+local function rgb(c)
+	return Color3.fromRGB(c[1], c[2], c[3])
+end
+local hubBloom, hubCC, hubAtmo
+if HUB_LIT then
+	hubBloom = Instance.new("BloomEffect")
+	hubBloom.Name = "HubBloom"
+	hubBloom.Enabled = false
+	hubBloom.Intensity = HUB_LIT.bloom.intensity
+	hubBloom.Size = HUB_LIT.bloom.size
+	hubBloom.Threshold = HUB_LIT.bloom.threshold
+	hubBloom.Parent = Lighting
+	hubCC = Instance.new("ColorCorrectionEffect")
+	hubCC.Name = "HubColour"
+	hubCC.Enabled = false
+	hubCC.Saturation = HUB_LIT.colorCorrection.saturation
+	hubCC.Contrast = HUB_LIT.colorCorrection.contrast
+	hubCC.Brightness = HUB_LIT.colorCorrection.brightness
+	hubCC.TintColor = rgb(HUB_LIT.colorCorrection.tint)
+	hubCC.Parent = Lighting
+	local a = HUB_LIT.atmosphere
+	hubAtmo = Instance.new("Atmosphere") -- (no Enabled switch: parented to Lighting only in the hub)
+	hubAtmo.Name = "HubAtmosphere"
+	hubAtmo.Density = a.density
+	hubAtmo.Offset = a.offset
+	hubAtmo.Color = rgb(a.color)
+	hubAtmo.Decay = rgb(a.decay)
+	hubAtmo.Glare = a.glare
+	hubAtmo.Haze = a.haze
+end
+
+local function hubLighting(on: boolean)
+	if not HUB_LIT then
+		return
+	end
+	local L = Lighting :: any
+	if on then
+		L.Brightness = HUB_LIT.brightness
+		L.ClockTime = HUB_LIT.clockTime
+		L.GeographicLatitude = HUB_LIT.latitude
+		L.Ambient = rgb(HUB_LIT.ambient)
+		L.OutdoorAmbient = rgb(HUB_LIT.outdoor)
+		L.ColorShift_Top = rgb(HUB_LIT.colorShiftTop)
+		L.ExposureCompensation = HUB_LIT.exposure
+		L.GlobalShadows = true
+		L.ShadowSoftness = HUB_LIT.shadowSoftness
+		L.EnvironmentDiffuseScale = HUB_LIT.envDiffuse
+		L.EnvironmentSpecularScale = HUB_LIT.envSpecular
+		local roomBloom = Lighting:FindFirstChild("LookBloom") :: BloomEffect?
+		if roomBloom then
+			roomBloom.Enabled = false
+		end
+		hubAtmo.Parent = Lighting
+	else
+		for _, k in PROPS do
+			L[k] = saved[k]
+		end
+		hubAtmo.Parent = nil
+		BubbleView.applyLighting() -- the room look's brightness, time, ambient, bloom
+	end
+	hubBloom.Enabled = on
+	hubCC.Enabled = on
+end
 
 local player = Players.LocalPlayer
 local DARK = Color3.fromRGB(20, 40, 110)
@@ -108,6 +184,7 @@ function Lobby.start(remotes: Folder)
 			Shop.gui.Enabled = inRun
 		end
 		hint.Visible = not inRun
+		hubLighting(not inRun)
 		player.CameraMode = inRun and Enum.CameraMode.LockFirstPerson or Enum.CameraMode.Classic
 		UserInputService.MouseIconEnabled = not inRun -- in a run the Hud draws a crosshair
 		if not inRun then

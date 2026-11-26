@@ -610,6 +610,8 @@ end
 
 -- Per-look lighting (this client only). The server's lighting is remembered as the default.
 local Lighting = game:GetService("Lighting")
+local HubCfg = require(game:GetService("ReplicatedStorage").Shared.Config.Hub)
+local HubLighting = HubCfg.theme == "clean" and HubCfg.lighting or nil
 local defaults: { [string]: any }? = nil
 local bloom = Instance.new("BloomEffect")
 bloom.Name = "LookBloom"
@@ -617,18 +619,23 @@ bloom.Enabled = false
 bloom.Threshold = 0.92
 bloom.Size = 18
 bloom.Parent = Lighting
+-- (taken when this module loads, before the hub lighting is put on)
+defaults = {
+	brightness = Lighting.Brightness,
+	clockTime = Lighting.ClockTime,
+	ambient = Lighting.Ambient,
+	outdoor = Lighting.OutdoorAmbient,
+}
 applyLighting = function()
-	local ceiling = workspace:FindFirstChild("Room") and workspace.Room:FindFirstChild("Ceiling") :: BasePart?
-	if not defaults then
-		defaults = {
-			brightness = Lighting.Brightness,
-			clockTime = Lighting.ClockTime,
-			ambient = Lighting.Ambient,
-			outdoor = Lighting.OutdoorAmbient,
-			shadow = ceiling and ceiling.CastShadow,
-		}
+	-- in the hub, Controllers/Lobby owns the lighting; it calls this again when a run starts
+	if HubLighting and game:GetService("Players").LocalPlayer:GetAttribute("InRun") ~= true then
+		return
 	end
+	local ceiling = workspace:FindFirstChild("Room") and workspace.Room:FindFirstChild("Ceiling") :: BasePart?
 	local d = defaults :: { [string]: any }
+	if d.shadow == nil and ceiling then
+		d.shadow = ceiling.CastShadow
+	end
 	local l = look.lighting or {}
 	Lighting.Brightness = l.brightness or d.brightness
 	Lighting.ClockTime = l.clockTime or d.clockTime
@@ -667,6 +674,11 @@ function BubbleView.setAim(id: number?)
 end
 
 -- Switch look: every bubble, popped bubble, sheet, wall and floor (this client only)
+-- put the room look's lighting back (Lobby calls this when a run starts)
+function BubbleView.applyLighting()
+	applyLighting()
+end
+
 function BubbleView.setLook(index: number): string
 	local looks = Room.looks or { { name = "Cartoon" } }
 	look = looks[((index - 1) % #looks) + 1]

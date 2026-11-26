@@ -10,6 +10,7 @@ local HubConfig = require(Shared.Config.Hub)
 local LobbyRules = require(Shared.Rules.Lobby)
 local Models = require(Shared.Config.Models)
 local Piles = require(Shared.Config.GumballPiles)
+local HubPolish = require(script.Parent.HubPolish)
 
 local Hub = {}
 
@@ -100,8 +101,46 @@ local function sign(parent: BasePart, face: Enum.NormalId, text: string, col: Co
 	return t
 end
 
--- Floating text above a part
-local function label(parent: BasePart, text: string, height: number, w: number, h: number, col: Color3?): TextLabel
+-- Floating text above a part. Clean theme: a rounded pastel panel with a white edge, bold white
+-- text and an optional icon (fill = panel colour).
+local function label(parent: BasePart, text: string, height: number, w: number, h: number, col: Color3?, icon: string?, fill: Color3?): TextLabel
+	if HubConfig.theme == "clean" then
+		local bb = Instance.new("BillboardGui")
+		bb.Name = "Info"
+		bb.Size = UDim2.fromScale(w, h)
+		bb.StudsOffsetWorldSpace = Vector3.new(0, height, 0)
+		bb.LightInfluence = 0
+		bb.MaxDistance = 160
+		local panel = Instance.new("Frame")
+		panel.Size = UDim2.fromScale(1, 1)
+		panel.BackgroundColor3 = fill or Color3.fromRGB(46, 155, 255)
+		local corner = Instance.new("UICorner")
+		corner.CornerRadius = UDim.new(0.45, 0)
+		corner.Parent = panel
+		local edge = Instance.new("UIStroke")
+		edge.Thickness = 3
+		edge.Color = Color3.new(1, 1, 1)
+		edge.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+		edge.Parent = panel
+		local grad = Instance.new("UIGradient") -- a little lighter at the top: glossy
+		grad.Rotation = 90
+		grad.Color = ColorSequence.new(Color3.new(1, 1, 1), Color3.fromRGB(215, 215, 225))
+		grad.Parent = panel
+		local t = Instance.new("TextLabel")
+		t.Name = "Text"
+		t.Size = UDim2.fromScale(0.86, 0.72)
+		t.Position = UDim2.fromScale(0.07, 0.14)
+		t.BackgroundTransparency = 1
+		t.FontFace = Font.fromEnum(Enum.Font.LuckiestGuy)
+		t.TextScaled = true
+		t.TextColor3 = Color3.new(1, 1, 1)
+		t.Text = icon and (icon .. " " .. text) or text
+		stroke(t, 2, Color3.fromRGB(20, 50, 120))
+		t.Parent = panel
+		panel.Parent = bb
+		bb.Parent = parent
+		return t
+	end
 	local bb = Instance.new("BillboardGui")
 	bb.Name = "Info"
 	bb.Size = UDim2.fromScale(w, h)
@@ -303,8 +342,13 @@ local function buildPlaza()
 	else
 		part("PlazaTrim", Vector3.new(S + 1, 0.8, S + 1), at(0, -2.6, 0), C.blue)
 	end
-	-- checkerboard of tiles
+	-- clean theme: one classic studded floor in a soft warm off-white (no checkerboard)
 	local n = 8
+	if CLEAN and HubConfig.colors.floor then
+		part("Floor", Vector3.new(S, 0.2, S), at(0, -0.1, 0), color(HubConfig.colors.floor), { mat = Enum.Material.Plastic, studs = true, shadow = false })
+		n = 0
+	end
+	-- checkerboard of tiles
 	local t = S / n
 	for i = 0, n - 1 do
 		for j = 0, n - 1 do
@@ -502,6 +546,7 @@ local function buildHQ()
 end
 
 local padText: { TextLabel } = {}
+local padCount: { TextLabel } = {} -- (clean pad signs: the count on its own line)
 
 local function buildPads()
 	local w, d = HubConfig.padSize[1], HubConfig.padSize[2]
@@ -524,7 +569,28 @@ local function buildPads()
 			mesh("CleanPadSign", "CleanPadSign_Tint", so, { tint = col })
 			blocker("PadSignPost", Vector3.new(8.2, 6.6, 0.8), so * CFrame.new(0, 3.3, 0))
 			local face = part("PadSignFace", Vector3.new(8, 3, 0.05), so * CFrame.new(0, 5, -0.2), C.white, { transparency = 1, solid = false, shadow = false })
-			padText[i] = sign(face, Enum.NormalId.Front, ("PAD %d\n0/%d"):format(i, HubConfig.maxPlayers), color(HubConfig.colors.blue), Color3.new(1, 1, 1), 40)
+			-- big "PAD n" on top, the player count under it (readable from the spawn)
+			local t = sign(face, Enum.NormalId.Front, ("PAD %d"):format(i), Color3.new(1, 1, 1), Color3.fromRGB(15, 60, 150), 40)
+			t.Size = UDim2.fromScale(0.96, 0.62)
+			t.Position = UDim2.fromScale(0.02, -0.02)
+			local cnt = t:Clone()
+			cnt.Text = ("0/%d"):format(HubConfig.maxPlayers)
+			cnt.TextColor3 = color(HubConfig.colors.blue)
+			local cs = cnt:FindFirstChildOfClass("UIStroke")
+			if cs then
+				cs.Color = Color3.new(1, 1, 1)
+				cs.Thickness = 4
+			end
+			cnt.Size = UDim2.fromScale(0.9, 0.36)
+			cnt.Position = UDim2.fromScale(0.05, 0.62)
+			cnt.Parent = t.Parent
+			padText[i] = t
+			padCount[i] = cnt
+			local glowC = HubConfig.colors.padGlow and HubConfig.colors.padGlow[i]
+			local big = label(face, ("PAD %d"):format(i), 4.6, 4, 1.4, nil, "▶", glowC and color(glowC) or col)
+			local bb = (big.Parent :: Instance).Parent :: BillboardGui
+			bb.Size = UDim2.new(4, 26, 1.4, 9) -- (a little extra so it stays readable from the spawn)
+			bb.MaxDistance = 90
 		elseif models then
 			-- jelly pad with a glow ring, and a sign standing just behind it, both facing the spawn
 			local glow = HubConfig.colors.padGlow and HubConfig.colors.padGlow[i]
@@ -678,7 +744,7 @@ local function buildDisplay()
 		ColorSequenceKeypoint.new(1, Color3.fromRGB(200, 100, 255)),
 	})
 	sparkle.Parent = rb
-	label(rb, "RAINBOW BUBBLE", 6, 10, 2, Color3.fromRGB(255, 225, 80))
+	label(rb, "RAINBOW BUBBLE", 6, 10, 2, Color3.fromRGB(255, 225, 80), "🌈", Color3.fromRGB(190, 140, 245))
 end
 
 local function buildBooths()
@@ -694,7 +760,11 @@ local function buildBooths()
 			mesh("CleanBooth", "CleanBooth_Glow", face, { mat = NEON, color = glowCol and color(glowCol) or accent, shadow = false })
 			blocker("BoothBox", Vector3.new(12, 9.2, 10), face * CFrame.new(0, 4.6, -0.5))
 			local plate = part("BoothSign", Vector3.new(6.6, 1, 0.05), face * CFrame.new(0, 8.2, -5.66), C.white, { transparency = 1, solid = false, shadow = false })
-			sign(plate, Enum.NormalId.Front, "COMING SOON", color(HubConfig.colors.blue), Color3.new(1, 1, 1), 40)
+			local name = HubConfig.boothNames and HubConfig.boothNames[i] or "COMING SOON"
+			sign(plate, Enum.NormalId.Front, name, color(HubConfig.colors.blue), Color3.new(1, 1, 1), 40)
+			local icon = HubConfig.boothIcons and HubConfig.boothIcons[i]
+			local anchor = part("BoothLabel", Vector3.new(0.2, 0.2, 0.2), face * CFrame.new(0, 12.5, 0), C.white, { transparency = 1, solid = false, shadow = false })
+			label(anchor, name, 0, 9, 2.6, nil, icon, glowCol and color(glowCol) or accent)
 			local po = face * CFrame.new(0, 0, -9.75)
 			mesh("CleanBoothPad", "CleanBoothPad_Body", po, { shadow = false })
 			mesh("CleanBoothPad", "CleanBoothPad_Glow", po, { mat = NEON, color = glowCol and color(glowCol) or accent, shadow = false })
@@ -715,7 +785,7 @@ local function buildBooths()
 			else
 				top = part("RoofBall", Vector3.new(2.6, 2.6, 2.6), (face * CFrame.new(0, 12.3, 0)).Position, C.gold, { shape = BALL })
 			end
-			label(top, "COMING SOON", 4, 10, 2.2, Color3.new(1, 1, 1))
+			label(top, HubConfig.boothNames and HubConfig.boothNames[i] or "COMING SOON", 4, 10, 2.2, Color3.new(1, 1, 1))
 			local po = face * CFrame.new(0, 0, -9.75)
 			mesh("BoothPad", "BoothPad_Body", po, { color = color(MD.boothPad), shadow = false })
 			mesh("BoothPad", "BoothPad_Glow", po, { mat = NEON, color = glowCol and color(glowCol) or accent, shadow = false })
@@ -736,7 +806,7 @@ local function buildBooths()
 		end
 		piece("RoofTop", Vector3.new(7, 1.6, 5), 0, 8.1, 0, C.white)
 		local roofBall = part("RoofBall", Vector3.new(2, 2, 2) * k, (face * CFrame.new(0, 9.6 * k, 0)).Position, C.gold, { shape = BALL })
-		label(roofBall, "COMING SOON", 3, 10, 2.2, Color3.new(1, 1, 1))
+		label(roofBall, HubConfig.boothNames and HubConfig.boothNames[i] or "COMING SOON", 3, 10, 2.2, Color3.new(1, 1, 1))
 		-- round pad in front
 		local padPos = (face * CFrame.new(0, 0, -7.5 * k)).Position
 		vcyl("BoothPadRing", padPos + Vector3.new(0, 0.15, 0), 7 * k, 0.3, accent, { mat = NEON, transparency = 0.2, shadow = false })
@@ -779,7 +849,7 @@ local function buildChest()
 	local sp = Instance.new("Sparkles")
 	sp.SparkleColor = Color3.fromRGB(255, 220, 80)
 	sp.Parent = lock
-	local t = label(lock, "FREE GIFT!", 4.5, 9, 2.2, Color3.new(1, 1, 1))
+	local t = label(lock, "FREE GIFT!", 4.5, 9, 2.2, Color3.new(1, 1, 1), "🎁", Color3.fromRGB(255, 150, 120))
 	local g = Instance.new("UIGradient")
 	g.Color = ColorSequence.new({
 		ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 120, 120)),
@@ -890,9 +960,18 @@ local function buildCleanCentre()
 	local z = -45
 	local o = CFrame.lookAt(at(0, 0, z), at(0, 0, HubConfig.spawn[3])) -- front towards the spawn
 	mesh("CleanCentre", "CleanCentre_Body", o)
-	mesh("CleanCentre", "CleanCentre_Core", o, { pivot = { 0, 31.5, 0 } })
-	mesh("CleanCentre", "CleanCentre_Ring", o, { pivot = { 0, 31.5, 0 } })
-	mesh("CleanCentre", "CleanCentre_Glass", o, { mat = GLASS, color = color(MD.glass), transparency = MD.glassTransparency, shadow = false })
+	local coreTint = MD.coreTint and color(MD.coreTint) or nil
+	mesh("CleanCentre", "CleanCentre_Core", o, { pivot = { 0, 31.5, 0 }, tint = coreTint })
+	mesh("CleanCentre", "CleanCentre_Ring", o, { pivot = { 0, 31.5, 0 }, tint = coreTint })
+	local glass = mesh("CleanCentre", "CleanCentre_Glass", o, { mat = GLASS, color = color(MD.glass), transparency = MD.glassTransparency, shadow = false })
+	if MD.glassRim then -- a soft white outline so the big bubble reads against the sky
+		local rim = Instance.new("Highlight")
+		rim.FillTransparency = 1
+		rim.OutlineColor = color(MD.glassRim)
+		rim.OutlineTransparency = MD.glassRimTransparency or 0.4
+		rim.DepthMode = Enum.HighlightDepthMode.Occluded
+		rim.Parent = glass
+	end
 	mesh("CleanCentre", "CleanCentre_Shine", o, { color = color(MD.shine), transparency = MD.shineTransparency, shadow = false })
 	mesh("CleanCentre", "CleanCentre_Glow", o, { mat = NEON, color = color(MD.glow), shadow = false })
 	blocker("CentreStage", Vector3.new(1.5, 28, 28), CFrame.new(at(0, 0.75, z)) * UP, CYL)
@@ -944,7 +1023,7 @@ local function buildGumballPit()
 		g.CustomPhysicalProperties = PhysicalProperties.new(0.3, 0.3, 0.8, 1, 1) -- light and bouncy
 	end
 	local sign0 = part("PitSign", Vector3.new(1, 1, 1), c + Vector3.new(0, 1, -10.5), C.white, { transparency = 1, solid = false })
-	label(sign0, "GUMBALL PIT", 6, 10, 2.2, color(HubConfig.colors.pink))
+	label(sign0, "GUMBALL PIT", 6, 10, 2.2, color(HubConfig.colors.pink), "🍬")
 end
 
 -- a big gumball jar where the rainbow bubble display was
@@ -1014,7 +1093,7 @@ local function buildScenery()
 	local trees: { Vector2 } = {}
 	while placed < 26 do
 		local x, z = rng:NextNumber(-maxR, maxR), rng:NextNumber(-maxR, maxR)
-		if math.max(math.abs(x), math.abs(z)) > 64 and math.sqrt(x * x + z * z) < maxR then
+		if math.max(math.abs(x), math.abs(z)) > 64 and math.sqrt(x * x + z * z) < maxR and not HubPolish.blocksTree(x, z) then
 			placed += 1
 			local s = rng:NextNumber(0.8, 1.4)
 			local base = at(x, -3, z)
@@ -1135,6 +1214,9 @@ function Hub.build()
 	buildLeft()
 	buildBooths()
 	buildChest()
+	if CLEAN then -- paths, rings, rug, planters, lamps, benches, back colonnade, islands, rainbow
+		HubPolish.build({ part = part, ball = ball, vcyl = vcyl, at = at, has = has, mesh = mesh, folder = folder })
+	end
 	buildScenery()
 	buildDome()
 	folder.Parent = workspace
@@ -1171,7 +1253,11 @@ function Hub.start(hooks)
 			if #pad.members > 0 then
 				line2 ..= hooks.canStart() and ("  •  " .. math.max(0, math.ceil(pad.countdown or 0))) or "  •  room busy"
 			end
-			text.Text = ("PAD %d\n%s"):format(i, line2)
+			if padCount[i] then
+				padCount[i].Text = line2
+			else
+				text.Text = ("PAD %d\n%s"):format(i, line2)
+			end
 		end
 	end
 
