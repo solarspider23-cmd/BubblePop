@@ -45,6 +45,9 @@ local function part(name: string, size: Vector3, cf: any, col: Color3, opts: { [
 		p.Shape = o.shape
 	end
 	p.Transparency = o.transparency or 0
+	if p.Material == Enum.Material.SmoothPlastic then
+		p.Reflectance = o.gloss or 0.06 -- a little shine everywhere (aero look)
+	end
 	p.CanCollide = o.solid ~= false
 	p.CastShadow = o.shadow ~= false
 	p.Parent = o.parent or folder
@@ -135,7 +138,7 @@ local function buildPlaza()
 	for i = 0, n - 1 do
 		for j = 0, n - 1 do
 			local x, z = -half + t * (i + 0.5), -half + t * (j + 0.5)
-			part("Tile", Vector3.new(t, 0.2, t), at(x, -0.1, z), (i + j) % 2 == 0 and C.tileA or C.tileB, { studs = true, shadow = false })
+			part("Tile", Vector3.new(t, 0.2, t), at(x, -0.1, z), (i + j) % 2 == 0 and C.tileA or C.tileB, { shadow = false, gloss = 0.1 })
 		end
 	end
 	-- low fence: posts with little glowing caps, one blue rail
@@ -143,7 +146,7 @@ local function buildPlaza()
 	for _, side in { { 1, 0 }, { -1, 0 }, { 0, 1 }, { 0, -1 } } do
 		local alongX = side[2] ~= 0
 		local rail = alongX and Vector3.new(S - 2, 0.6, 0.6) or Vector3.new(0.6, 0.6, S - 2)
-		part("Rail", rail, at(side[1] * edge, 2.4, side[2] * edge), C.lightBlue)
+		part("Rail", rail, at(side[1] * edge, 2.4, side[2] * edge), C.chrome, { mat = Enum.Material.Metal })
 		part("Rail", rail, at(side[1] * edge, 1.2, side[2] * edge), C.lightBlue)
 		for k = -7, 7 do
 			local u = k * (edge / 7)
@@ -251,6 +254,8 @@ local function buildHQ()
 	end
 	local plaque = part("Logo", Vector3.new(47.5, 9, 1.4), CFrame.lookAt(at(0, 29, lz), at(0, 29, 100)), C.blue)
 	sign(plaque, Enum.NormalId.Front, "BUBBLE POP", Color3.new(1, 1, 1), Color3.fromRGB(15, 50, 140), 11)
+	-- glossy shine across the top half of the logo
+	part("LogoShine", Vector3.new(44, 3, 0.2), at(0, 31.6, lz + 0.8), Color3.new(1, 1, 1), { transparency = 0.65, solid = false, shadow = false })
 end
 
 local function buildPads()
@@ -378,8 +383,7 @@ local function buildLeft()
 end
 
 local function buildBooths()
-	local spots = { { 38, -20 }, { 43, -4 }, { 48, 12 } }
-	for i, s in spots do
+	for i, s in HubConfig.booths do
 		local accent = color(HubConfig.colors.booths[i])
 		local pos = at(s[1], 0, s[2])
 		local face = CFrame.lookAt(pos, pos - Vector3.xAxis) -- open side faces the middle
@@ -462,6 +466,51 @@ local function buildScenery()
 	end
 end
 
+-- The giant glass bubble over the hub. One big ball is invisible from inside (back faces aren't
+-- drawn), so it's built from thin curved-glass panels: rings of panels from the ground to the top.
+local function buildDome()
+	local R, cy = HubConfig.dome.radius, HubConfig.dome.centreY
+	local centre = at(0, cy, 0)
+	local e0 = math.asin(math.clamp((-3 - cy) / R, -1, 1)) -- where the bubble meets the grass
+	local bands = 10
+	local de = (math.pi / 2 - e0) / bands
+	local sheen = { -- a soft rainbow sheen from bottom to top, like a soap bubble
+		C.dome, Color3.fromRGB(190, 240, 255), Color3.fromRGB(200, 255, 235), Color3.fromRGB(230, 220, 255), C.dome,
+	}
+	for b = 0, bands - 1 do
+		local ea, eb = e0 + b * de, e0 + (b + 1) * de
+		local em = (ea + eb) / 2
+		local ring = R * math.cos(ea) -- widest edge of this band
+		local n = math.max(6, math.floor(2 * math.pi * ring / 14 + 0.5))
+		local w = 2 * ring * math.sin(math.pi / n) + 0.3
+		local h = 2 * R * math.sin(de / 2) + 0.3
+		local d = R * math.cos(de / 2)
+		local col = sheen[math.floor(b / bands * (#sheen - 1) + 0.5) + 1]
+		for k = 0, n - 1 do
+			local phi = (k + (b % 2) * 0.5) / n * math.pi * 2
+			local dir = Vector3.new(math.cos(em) * math.cos(phi), math.sin(em), math.cos(em) * math.sin(phi))
+			local pos = centre + dir * d
+			-- a bright window-like reflection on one side of the bubble
+			local shine = em > 0.55 and em < 1.05 and phi > 3.6 and phi < 4.3
+			part("Dome", Vector3.new(w, h, 0.3), CFrame.lookAt(pos, centre, Vector3.yAxis), shine and Color3.new(1, 1, 1) or col, {
+				mat = Enum.Material.Glass,
+				transparency = shine and 0.45 or 0.72,
+				solid = false,
+				shadow = false,
+			})
+		end
+	end
+	-- glassy bubbles floating around inside
+	local rng = Random.new(11)
+	for _ = 1, 26 do
+		local a, r = rng:NextNumber(0, math.pi * 2), rng:NextNumber(20, 80)
+		local pos = at(math.cos(a) * r, rng:NextNumber(14, 55), math.sin(a) * r)
+		local size = rng:NextNumber(2, 6)
+		ball("FloatBubble", pos, size, Color3.fromRGB(200, 240, 255), { mat = Enum.Material.Glass, transparency = 0.45, solid = false, shadow = false })
+		ball("FloatShine", pos + Vector3.new(-size * 0.2, size * 0.22, size * 0.2), size * 0.25, Color3.new(1, 1, 1), { solid = false, shadow = false })
+	end
+end
+
 function Hub.build()
 	buildPlaza()
 	buildHQ()
@@ -470,6 +519,7 @@ function Hub.build()
 	buildBooths()
 	buildChest()
 	buildScenery()
+	buildDome()
 	folder.Parent = workspace
 end
 

@@ -15,24 +15,29 @@ return {
 		{ -21, -28 }, { -7, -28 }, { 7, -28 }, { 21, -28 }, -- x, z from the origin
 	},
 	padSize = { 12, 9 }, -- each play pad is a rectangle, x by z studs
+	booths = { { 45, -14 }, { 45, 4 }, { 45, 22 } }, -- right side, evenly spaced, facing the middle
+	dome = { radius = 100, centreY = -20 }, -- the glass bubble the whole hub sits in
 	maxPlayers = 4,
 	countdown = 10, -- seconds before a pad starts on its own
 	backToHubSeconds = 8, -- after the room is cleared
 	rooms = { { name = "Starter Room" } }, -- what the pad owner can pick (more later)
 
 	colors = {
-		tileA = rgb(250, 250, 252), -- checkerboard floor
-		tileB = rgb(222, 228, 238),
-		white = rgb(248, 248, 250),
-		blue = rgb(30, 140, 255), -- bubble blue: the main accent
-		lightBlue = rgb(140, 215, 255),
-		pink = rgb(255, 105, 180),
-		lavender = rgb(185, 160, 255),
+		-- Frutiger Aero: glossy white, aqua, sky blue and lime green, glass and bubbles
+		tileA = rgb(252, 253, 255), -- checkerboard floor
+		tileB = rgb(220, 243, 252),
+		white = rgb(250, 251, 253),
+		blue = rgb(20, 130, 235), -- glossy sky blue: the main accent
+		lightBlue = rgb(110, 215, 245), -- aqua
+		pink = rgb(120, 205, 45), -- (lime green; was pink before the aero look)
+		lavender = rgb(160, 232, 248), -- (pale aqua stage)
+		chrome = rgb(215, 225, 235),
+		dome = rgb(170, 230, 255), -- the big glass bubble over the hub
 		gold = rgb(255, 200, 60),
 		glow = rgb(30, 110, 210), -- neon bits use dark colours (bright ones blow out to white)
-		grass = rgb(110, 200, 90),
+		grass = rgb(115, 210, 70),
 		padBase = rgb(248, 248, 250),
 		pad = { rgb(230, 70, 90), rgb(230, 150, 20), rgb(40, 170, 90), rgb(130, 90, 230) },
-		booths = { rgb(60, 200, 140), rgb(160, 110, 255), rgb(255, 100, 170) }, -- mint, lavender, pink
+		booths = { rgb(0, 185, 220), rgb(105, 195, 40), rgb(50, 130, 250) }, -- aqua, lime, sky blue
 	},
 }
