@@ -83,13 +83,15 @@ def add_obj(name, bm, mat):
 def face_colour(n_world, z_rel, is_top):
     """Toon band colour for one facet."""
     d = n_world.dot(LIGHT)
-    if d > 0.72:
-        c = CYAN_HI if is_top else CYAN
-    elif d > 0.40:
-        c = HI if is_top else lerp(HI, MID, 0.35)
-    elif d > 0.0:
+    if is_top and d > 0.75:
+        c = CYAN_HI
+    elif is_top and d > 0.45:
+        c = CYAN
+    elif d > 0.60:
+        c = HI
+    elif d > 0.15:
         c = MID
-    elif d > -0.45:
+    elif d > -0.35:
         c = LOW
     else:
         c = DEEP
@@ -180,24 +182,24 @@ CAM_ROT = (Matrix.Rotation(CAM_AZ, 3, 'Z') @ Matrix.Rotation(-CAM_EL, 3, 'X'))
 parts = []
 # main crystal: tall, slightly leaning right
 parts.append(crystal("Main", 0.62, 2.55, 0.66,
-                     Matrix.Translation((0.05, 0, -1.25)) @ Matrix.Rotation(math.radians(-6), 4, 'Y'),
-                     twist=math.radians(10)))
+                     Matrix.Translation((0.05, 0, -1.25)) @ Matrix.Rotation(math.radians(5), 4, 'Y'),
+                     twist=math.radians(42)))
 # left small crystal leaning out
 parts.append(crystal("Left", 0.40, 1.45, 0.62,
-                     Matrix.Translation((-0.55, -0.20, -1.25)) @ Matrix.Rotation(math.radians(38), 4, 'Y')
-                     @ Matrix.Rotation(math.radians(14), 4, 'X'),
+                     Matrix.Translation((-0.62, -0.05, -1.30)) @ Matrix.Rotation(math.radians(-34), 4, 'Y')
+                     @ Matrix.Rotation(math.radians(4), 4, 'X'),
                      twist=math.radians(25)))
 # right small crystal leaning out, in front
 parts.append(crystal("Right", 0.34, 1.10, 0.60,
-                     Matrix.Translation((0.55, -0.35, -1.28)) @ Matrix.Rotation(math.radians(-42), 4, 'Y')
-                     @ Matrix.Rotation(math.radians(16), 4, 'X'),
+                     Matrix.Translation((0.62, -0.12, -1.32)) @ Matrix.Rotation(math.radians(38), 4, 'Y')
+                     @ Matrix.Rotation(math.radians(6), 4, 'X'),
                      twist=math.radians(5)))
 outlines = [hull(p, OUTLINE) for p in parts]
 
 # sparkles (placed on the camera-facing side of the main crystal)
 cam_fwd = CAM_ROT @ Vector((0, 1, 0))
-sp1 = sparkle("Sparkle", Vector((0.62, 0, 0.62)) - cam_fwd * 2.0, 0.34)
-sp2 = sparkle("SparkleSmall", Vector((-0.58, 0, 0.95)) - cam_fwd * 2.0, 0.17)
+sp1 = sparkle("Sparkle", Vector((0.78, 0, 0.78)) - cam_fwd * 2.0, 0.27)
+sp2 = sparkle("SparkleSmall", Vector((-0.72, 0, 0.55)) - cam_fwd * 2.0, 0.15)
 
 # camera
 cam_data = bpy.data.cameras.new("Cam")
