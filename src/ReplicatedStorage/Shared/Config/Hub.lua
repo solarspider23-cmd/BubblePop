@@ -28,6 +28,9 @@ local Hub = {
 	-- Which look the hub uses: "clean" (Clean Pop Plaza: bubble centrepiece, soft pastels), "gumball"
 	-- (giant gumball machine, candy colours) or "aero" (glossy bubble HQ).
 	theme = "clean",
+	-- false = build every lobby piece from plain Roblox parts (the clean theme then uses the Toy Box look
+	-- below); true = use the uploaded Blender models (Config/Models.hub / hubClean). The model code stays.
+	useModels = false,
 	themes = {
 		aero = {
 			-- Frutiger Aero: glossy white, aqua, sky blue and lime green, glass and bubbles
@@ -214,6 +217,57 @@ local Hub = {
 		giftGlowTransparency = 0.35,
 	},
 }
-Hub.colors = Hub.themes[Hub.theme] or Hub.themes.aero
+
+-- TOY BOX (clean theme with useModels = false; owner 2026-11-26): simple chunky Roblox parts, studs,
+-- warm cream floor, only sky / butter / coral, mint for plants, warm white trim, no neon but lamp lights.
+local SKY, BUTTER, CORAL, MINT, TRIM = rgb(110, 175, 230), rgb(250, 210, 100), rgb(235, 110, 95), rgb(140, 210, 160), rgb(250, 244, 232)
+Hub.toybox = {
+	sky = SKY, butter = BUTTER, coral = CORAL, mint = MINT, trim = TRIM,
+	mintDark = rgb(105, 185, 130), -- second leaf tone
+	trunk = rgb(190, 140, 95),
+	ink = rgb(70, 60, 80), -- text outline and the board's writing
+	stone = { rgb(215, 195, 165), rgb(195, 172, 142), rgb(175, 152, 125), rgb(160, 138, 115), rgb(145, 125, 105) }, -- island underside, top to bottom
+	glass = { colour = rgb(170, 215, 245), transparency = 0.35 }, -- the big centrepiece bubble
+	water = rgb(120, 190, 240),
+	lampLight = rgb(255, 225, 160),
+	-- the centrepiece (x 0, z -45, about 28 across): stacked pedestal tiers { diameter, height, colour } from the stage up
+	centre = {
+		z = -45,
+		tiers = { { 28, 1.5, TRIM }, { 24, 1, SKY }, { 20, 2, CORAL }, { 15, 2, BUTTER }, { 9, 8, TRIM }, { 15, 1.5, SKY } },
+		bubble = 20, -- big see-through bubble on top
+		small = { { -11, 2.5, 6, 4, CORAL }, { 11.5, 2.5, 5, 3.6, BUTTER }, { -8, 2.5, -9, 3.2, SKY }, { 9, 2.5, -9, 3, CORAL } }, -- x, y, z, size
+	},
+	logo = { z = -32, y = 17, w = 32, h = 6.5, face = CORAL, frame = TRIM, posts = SKY },
+	-- the back building behind the centrepiece (on the grass, y -3)
+	back = { z = -66, wallW = 44, wallH = 20, towerX = 26, towerD = 11, towerH = 30, wingX = 40, wingW = 14, wingH = 13 },
+	padColours = { CORAL, SKY, BUTTER, MINT },
+	boothColours = { CORAL, SKY, BUTTER },
+}
+local tb = Hub.toybox
+Hub.themes.toybox = {
+	floor = rgb(236, 226, 204), tileA = TRIM, tileB = TRIM, white = TRIM, cream = TRIM, grey = TRIM,
+	blue = SKY, lightBlue = SKY, pink = CORAL, lavender = TRIM, chrome = TRIM, dome = rgb(200, 225, 245),
+	gold = BUTTER, glow = rgb(200, 150, 50), grass = MINT, padBase = TRIM,
+	pad = tb.padColours, booths = tb.boothColours, gumballs = { MINT, tb.mintDark },
+	grassSmooth = true,
+}
+Hub.toyboxOn = Hub.theme == "clean" and not Hub.useModels
+if Hub.toyboxOn then
+	-- recolour the clean polish (paths, rings, rug, props, islands) to Toy Box; no rainbow
+	local P = Hub.polish
+	P.path, P.pathTrim = TRIM, SKY
+	P.ringColors = { SKY, BUTTER, CORAL, BUTTER, CORAL, SKY, BUTTER }
+	P.rug.bands = { { 14, 15.6, SKY }, { 15.6, 16.4, TRIM }, { 16.4, 19.2, BUTTER }, { 19.2, 20, TRIM } }
+	P.bushColors = { MINT, tb.mintDark }
+	P.benchColors = { CORAL, SKY, BUTTER }
+	P.lampGlow, P.lampGlass, P.lampCap = rgb(200, 140, 40), TRIM, CORAL
+	P.gardenTop = MINT
+	P.islandGrass, P.islandRock = MINT, rgb(195, 172, 142)
+	P.trim, P.trunk = TRIM, tb.trunk
+	P.planterBox = { CORAL, SKY, BUTTER }
+	P.rainbow = nil
+	P.leaderboard.frame, P.leaderboard.face = SKY, TRIM
+end
+Hub.colors = Hub.toyboxOn and Hub.themes.toybox or Hub.themes[Hub.theme] or Hub.themes.aero
 
 return Hub

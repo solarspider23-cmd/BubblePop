@@ -11,6 +11,7 @@ local LobbyRules = require(Shared.Rules.Lobby)
 local Models = require(Shared.Config.Models)
 local Piles = require(Shared.Config.GumballPiles)
 local HubPolish = require(script.Parent.HubPolish)
+local HubToyBox = require(script.Parent.HubToyBox)
 
 local Hub = {}
 
@@ -176,7 +177,11 @@ end
 local function setDef(set: string): any
 	return (Models.hubClean and Models.hubClean[set]) or (Models.hub and Models.hub[set])
 end
+local TOYBOX = HubConfig.toyboxOn == true -- clean theme built from plain parts (HubToyBox.lua)
 local function has(set: string): boolean
+	if not HubConfig.useModels then
+		return false
+	end
 	local ok
 	if THEME == "gumball" then
 		ok = Models.hub ~= nil and Models.hub[set] ~= nil
@@ -1127,6 +1132,10 @@ local function buildScenery()
 				table.insert(trees, Vector2.new(x, z))
 				continue
 			end
+			if TOYBOX then -- cylinder trunk, mint ball tops
+				HubToyBox.tree({ vcyl = vcyl, ball = ball }, base, s, rng)
+				continue
+			end
 			if HubConfig.theme ~= "aero" then -- (clean fallback: pastel lollipops)
 				lollipop(base, s, rng)
 				continue
@@ -1206,6 +1215,17 @@ end
 
 function Hub.build()
 	local gumball = HubConfig.theme == "gumball"
+	if TOYBOX then -- every piece from plain parts (HubToyBox), then the recoloured polish, clouds, trees, glass
+		HubToyBox.build({
+			part = part, at = at, folder = folder, blocker = blocker, sign = sign, label = label,
+			padParts = padParts, padText = padText, padCount = padCount,
+		})
+		HubPolish.build({ part = part, ball = ball, vcyl = vcyl, at = at, has = has, mesh = mesh, folder = folder, blocker = blocker })
+		buildScenery()
+		buildDome()
+		folder.Parent = workspace
+		return
+	end
 	buildPlaza()
 	if gumball then
 		buildGumballMachine()

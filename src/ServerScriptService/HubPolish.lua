@@ -24,7 +24,13 @@ function Polish.build(h)
 	local CYL = Enum.PartType.Cylinder
 	local UP = CFrame.Angles(0, 0, math.pi / 2)
 	local NEON, GLASS = Enum.Material.Neon, Enum.Material.Glass
-	local WHITE = Color3.fromRGB(250, 251, 253)
+	local WHITE = P.trim and color(P.trim) or Color3.fromRGB(250, 251, 253) -- (Toy Box: warm white trim)
+	local TOY = HubConfig.toyboxOn == true
+	local boxRng = Random.new(3)
+	local function boxColor()
+		local list = P.planterBox
+		return list and color(list[boxRng:NextInteger(1, #list)]) or WHITE
+	end
 	local flat = { shadow = false, solid = false, gloss = 0.02 }
 	local function opts(extra)
 		local o = table.clone(flat)
@@ -102,8 +108,8 @@ function Polish.build(h)
 			part("PlanterBox", Vector3.new(6, 2.45, 3.9), cf * CFrame.new(0, 1.225, 0), WHITE, { parent = m, transparency = 1, shadow = false })
 			return
 		end
-		part("PlanterBox", Vector3.new(6, 2, 2.4), cf * CFrame.new(0, 1, 0), WHITE, { parent = m })
-		part("PlanterRim", Vector3.new(6.4, 0.35, 2.8), cf * CFrame.new(0, 2.15, 0), color(P.pathTrim), { parent = m })
+		part("PlanterBox", Vector3.new(6, 2, 2.4), cf * CFrame.new(0, 1, 0), TOY and boxColor() or WHITE, { parent = m, mat = TOY and Enum.Material.Plastic or nil })
+		part("PlanterRim", Vector3.new(6.4, 0.35, 2.8), cf * CFrame.new(0, 2.15, 0), TOY and WHITE or color(P.pathTrim), { parent = m, mat = TOY and Enum.Material.Plastic or nil })
 		part("PlanterSoil", Vector3.new(5.6, 0.2, 2), cf * CFrame.new(0, 2.3, 0), Color3.fromRGB(150, 120, 110), { parent = m, solid = false, shadow = false })
 		for k, dx in { -1.9, 0, 1.9 } do
 			local d = k == 2 and 2.9 or 2.4
@@ -128,11 +134,26 @@ function Polish.build(h)
 			vcyl("LampPost", p + Vector3.new(0, 3.5, 0), 1.2, 7, WHITE, { parent = m, transparency = 1, shadow = false })
 			return
 		end
+		if TOY then -- chunky block lamp: trim post, sky collar, a tiny warm light under a coral cap
+			local pm = { parent = m, mat = Enum.Material.Plastic }
+			part("LampBase", Vector3.new(2, 0.8, 2), p + Vector3.new(0, 0.4, 0), color(P.pathTrim), { parent = m, mat = Enum.Material.Plastic, studs = true })
+			part("LampPole", Vector3.new(0.8, 8, 0.8), p + Vector3.new(0, 4.8, 0), WHITE, pm)
+			part("LampCollar", Vector3.new(1.6, 0.5, 1.6), p + Vector3.new(0, 8.9, 0), color(P.pathTrim), pm)
+			local glow = part("LampGlow", Vector3.new(1, 1, 1), p + Vector3.new(0, 9.65, 0), color(P.lampGlow), { parent = m, mat = NEON, solid = false, shadow = false })
+			part("LampCap", Vector3.new(2, 0.7, 2), p + Vector3.new(0, 10.5, 0), color(P.lampCap or P.pathTrim), { parent = m, mat = Enum.Material.Plastic, studs = true })
+			local light = Instance.new("PointLight")
+			light.Color = Color3.fromRGB(255, 225, 160)
+			light.Range = 12
+			light.Brightness = 0.7
+			light.Shadows = false
+			light.Parent = glow
+			return
+		end
 		vcyl("LampBase", p + Vector3.new(0, 0.35, 0), 1.8, 0.7, WHITE, { parent = m })
 		vcyl("LampBand", p + Vector3.new(0, 0.8, 0), 1.2, 0.3, color(P.pathTrim), { parent = m, shadow = false })
 		vcyl("LampPole", p + Vector3.new(0, 4.6, 0), 0.55, 8, WHITE, { parent = m })
 		vcyl("LampCup", p + Vector3.new(0, 8.7, 0), 1.4, 0.4, color(P.pathTrim), { parent = m })
-		local glow = ball("LampGlow", p + Vector3.new(0, 10.1, 0), 1.6, color(P.lampGlow), { parent = m, mat = NEON, solid = false, shadow = false })
+		local glow = ball("LampGlow", p + Vector3.new(0, 10.1, 0), TOY and 1.1 or 1.6, color(P.lampGlow), { parent = m, mat = NEON, solid = false, shadow = false })
 		ball("LampGlass", p + Vector3.new(0, 10.1, 0), 2.6, color(P.lampGlass), { parent = m, mat = GLASS, transparency = 0.55, solid = false, shadow = false })
 		ball("LampShine", p + Vector3.new(-0.5, 10.7, 0.55), 0.6, Color3.new(1, 1, 1), { parent = m, solid = false, shadow = false, transparency = 0.2 })
 		local light = Instance.new("PointLight")
@@ -153,6 +174,18 @@ function Polish.build(h)
 			h.mesh("CleanBench", "CleanBench_Body", cf, { parent = m })
 			h.mesh("CleanBench", "CleanBench_Tint", cf, { tint = color(cols[benchRng:NextInteger(1, #cols)]), parent = m })
 			part("BenchSeat", Vector3.new(5.2, 1.9, 2), cf * CFrame.new(0, 0.95, 0), WHITE, { parent = m, transparency = 1, shadow = false })
+			return
+		end
+		if TOY then -- chunky block bench: trim legs, a coloured seat and back
+			local cols = P.benchColors or P.bushColors
+			local seat = color(cols[benchRng:NextInteger(1, #cols)])
+			local pm = { parent = m, mat = Enum.Material.Plastic }
+			for _, dx in { -2.3, 2.3 } do
+				part("BenchLeg", Vector3.new(1, 1.5, 2), cf * CFrame.new(dx, 0.75, 0), WHITE, pm)
+			end
+			part("BenchSeat", Vector3.new(6, 0.6, 2.2), cf * CFrame.new(0, 1.8, 0), seat, { parent = m, mat = Enum.Material.Plastic, studs = true })
+			part("BenchBack", Vector3.new(6, 1.6, 0.6), cf * CFrame.new(0, 3, 0.85), seat, pm)
+			part("BenchBackCap", Vector3.new(6.2, 0.4, 0.8), cf * CFrame.new(0, 3.9, 0.85), WHITE, pm)
 			return
 		end
 		for _, dx in { -2.3, 2.3 } do
@@ -259,7 +292,7 @@ function Polish.build(h)
 	end
 	if P.hall and h.has("CleanHall") then
 		hall(P.hall)
-	elseif P.colonnade then
+	elseif P.colonnade and not TOY then -- (Toy Box: HubToyBox builds the back building)
 		colonnade(P.colonnade)
 	end
 
@@ -345,7 +378,7 @@ function Polish.build(h)
 				h.mesh("CleanTree", "CleanTree_" .. shape .. "_Body", o, { scale = s, parent = m })
 				h.mesh("CleanTree", "CleanTree_" .. shape .. "_Shine", o, { scale = s, color = Color3.new(1, 1, 1), transparency = 0.15, shadow = false, parent = m })
 			else
-				vcyl("Stem", base + Vector3.new(0, 4 * s, 0), 1.2 * s, 8 * s, WHITE, { parent = m, solid = false })
+				vcyl("Stem", base + Vector3.new(0, 4 * s, 0), 1.2 * s, 8 * s, P.trunk and color(P.trunk) or WHITE, { parent = m, solid = false })
 				ball("Crown", base + Vector3.new(0, 10 * s, 0), 8 * s, tint, { parent = m, solid = false })
 			end
 		end

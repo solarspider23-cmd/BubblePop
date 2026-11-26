@@ -249,7 +249,9 @@ do -- the lobby models -> ReplicatedStorage.HubAssets/<entry>/<mesh>: the candy 
 	hubAssets.Name = "HubAssets"
 	local ServerStorage = game:GetService("ServerStorage")
 	local wanted: { [string]: any } = {}
-	if HubConfig.theme == "gumball" then
+	if not HubConfig.useModels then
+		-- (Config/Hub.lua useModels = false: the hub is built from plain parts, nothing to load)
+	elseif HubConfig.theme == "gumball" then
 		for key, def in Models.hub or {} do
 			wanted[key] = def
 		end
