@@ -12,13 +12,13 @@ return {
 		name = "Bigger Bag",
 		describe = "Carry %d scraps",
 		values = { 25, 40, 60, 90, 130, 180, 250, 350, 500, 750 },
-		costs = { 0, 25, 60, 120, 220, 400, 700, 1200, 2000, 3500 }, -- $0.25 (one full bag) .. $35
+		costs = { 0, 100, 120, 220, 400, 700, 1200, 2000, 3500, 5000 }, -- first upgrade $1 (owner); the rest to be set later
 	},
 	popSpeed = {
 		name = "Pop Speed",
 		describe = "%.2fs per pop",
 		values = { 0.56, 0.5, 0.45, 0.4, 0.35, 0.3, 0.26, 0.22 },
-		costs = { 0, 50, 120, 250, 450, 800, 1400, 2500 }, -- $0.50 .. $25
+		costs = { 0, 25, 120, 250, 450, 800, 1400, 2500 }, -- first upgrade 25¢ (owner); the rest to be set later
 	},
 	tool = {
 		-- bubbles one press pops: the one you aim at plus its nearest neighbours on the same wall/floor

@@ -50,8 +50,9 @@ test("upgrades always get better", function()
 	end
 end)
 
-test("first bag upgrade is cheap (about one bag's worth)", function()
-	assert(Upgrades.bag.costs[2] <= Bag.startCapacity)
+test("first upgrades are owner-set: bag $1, pop speed 25 cents", function()
+	assert(Upgrades.bag.costs[2] == 100)
+	assert(Upgrades.popSpeed.costs[2] == 25)
 end)
 
 test("buying: enough coins levels up and pays, not enough does nothing, maxed does nothing", function()
