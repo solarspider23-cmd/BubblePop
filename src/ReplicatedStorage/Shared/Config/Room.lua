@@ -89,7 +89,7 @@ local room = {
 	},
 }
 
--- recycler: size = the machine, pad = the square sell pad it stands on (fills the gap in the floor
+-- recycler: style = "chute" (a glowing drain in the floor) or "box" (a machine); size = the machine, pad = the square sell pad it stands on (fills the gap in the floor
 -- wrap; stand on it to sell), clear = floor sheets left out under it.
 -- Room sizes to compare. bubbleScale shrinks the bubbles AND the sheets (1 = the original size).
 -- sheetSize = 6 x bubbleScale, spacing = 1.2 x bubbleScale.
@@ -97,7 +97,7 @@ local room = {
 room.sizes = {
 	-- 40 x 40 room, small bubbles: each wall 40 across x 11 up = 440 (first room: not intimidating)
 	starter = { bubbleScale = 5 / 6, floorSheets = 8, wallRows = 3, wallBubbleRows = 11, spawn = { 0, 3, 12 },
-		recycler = { size = { 4.5, 5.5, 4.5 }, pad = 9.8, clear = 12, color = { 60, 200, 90 } } },
+		recycler = { style = "chute", size = { 4.5, 5.5, 4.5 }, pad = 9.8, clear = 12, color = { 60, 200, 90 } } },
 	-- 78 x 78 room, normal bubbles: each wall 65 across x 10 up = 650
 	wide = { bubbleScale = 1, floorSheets = 13, wallRows = 2, spawn = { 0, 3, 18 },
 		recycler = { size = { 4.5, 5.5, 4.5 }, pad = 17.8, clear = 18, color = { 60, 200, 90 } } },

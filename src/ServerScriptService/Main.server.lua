@@ -85,6 +85,69 @@ do
 		local edge = block("SellPadEdge", e[1], CFrame.new(e[2] + Vector3.new(0, y0 + h / 2, 0)), Color3.fromRGB(255, 200, 40))
 		edge.CanCollide = false
 	end
+	if rc.style == "chute" then
+		-- a round glowing drain in the pad: scraps get sucked down into it
+		local top = y0 + 0.2
+		local function disc(name: string, d: number, h: number, y: number, col: Color3, mat: Enum.Material?): BasePart
+			local part = block(name, Vector3.new(h, d, d), CFrame.new(0, y, 0) * CFrame.Angles(0, 0, math.pi / 2), col, mat)
+			part.Shape = Enum.PartType.Cylinder
+			part.CanCollide = false
+			return part
+		end
+		disc("ChuteRing", 7.2, 0.3, top + 0.05, Color3.fromRGB(255, 200, 40))
+		disc("ChuteHole", 6.2, 0.3, top + 0.02, Color3.fromRGB(15, 20, 30))
+		local glow = disc("ChuteGlow", 5.4, 0.06, top + 0.2, Color3.fromRGB(40, 170, 90), Enum.Material.Neon)
+		glow.Transparency = 0.25
+		local light = Instance.new("PointLight")
+		light.Color = Color3.fromRGB(90, 255, 140)
+		light.Range = 10
+		light.Brightness = 1.5
+		light.Parent = glow
+		-- grate bars across the hole
+		for i = -2, 2 do
+			local len = math.sqrt(math.max(0, 3.1 ^ 2 - (i * 1.1) ^ 2)) * 2
+			local bar = block("ChuteBar", Vector3.new(len, 0.12, 0.22), CFrame.new(0, top + 0.3, i * 1.1), Color3.fromRGB(60, 66, 78), Enum.Material.Metal)
+			bar.CanCollide = false
+		end
+		-- green sparkles drifting up out of the drain
+		local at = Instance.new("Attachment")
+		at.Parent = glow
+		local fx = Instance.new("ParticleEmitter")
+		fx.Texture = "rbxasset://textures/particles/sparkles_main.dds"
+		fx.Rate = 8
+		fx.Lifetime = NumberRange.new(0.8, 1.4)
+		fx.Speed = NumberRange.new(1.5, 3)
+		fx.SpreadAngle = Vector2.new(25, 25)
+		fx.EmissionDirection = Enum.NormalId.Right -- the cylinder's axis points up
+		fx.LightEmission = 1
+		fx.Color = ColorSequence.new(Color3.fromRGB(150, 255, 180))
+		fx.Size = NumberSequence.new({ NumberSequenceKeypoint.new(0, 0.3), NumberSequenceKeypoint.new(1, 0) })
+		fx.Parent = at
+		-- "SELL" floating over it
+		local sign = Instance.new("BillboardGui")
+		sign.Size = UDim2.fromScale(5, 1.6)
+		sign.StudsOffsetWorldSpace = Vector3.new(0, 3.5, 0)
+		sign.AlwaysOnTop = true
+		sign.LightInfluence = 0
+		local t = Instance.new("TextLabel")
+		t.Size = UDim2.fromScale(1, 1)
+		t.BackgroundTransparency = 1
+		t.FontFace = Font.fromEnum(Enum.Font.LuckiestGuy)
+		t.TextScaled = true
+		t.Text = "SELL"
+		t.TextColor3 = Color3.fromRGB(140, 255, 170)
+		local st = Instance.new("UIStroke")
+		st.Thickness = 3
+		st.Color = Color3.fromRGB(10, 60, 30)
+		st.Parent = t
+		t.Parent = sign
+		sign.Parent = glow
+		-- invisible target the sold scraps fly into (just under the grate)
+		local target = block("Recycler", Vector3.new(3, 0.4, 3), CFrame.new(0, top - 0.1, 0), Color3.new(0, 0, 0))
+		target.Transparency = 1
+		target.CanCollide = false
+		target.CanQuery = false
+	else
 	local r = block("Recycler", size, CFrame.new(0, y0 + 0.2 + size.Y / 2, 0), color(rc.color))
 	for _, face in { Enum.NormalId.Front, Enum.NormalId.Back, Enum.NormalId.Left, Enum.NormalId.Right } do
 		local gui = Instance.new("SurfaceGui")
@@ -106,6 +169,7 @@ do
 		stroke.Parent = label
 		label.Parent = gui
 		gui.Parent = r
+	end
 	end
 end
 
