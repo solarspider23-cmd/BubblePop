@@ -1,0 +1,26 @@
+{
+ "_axes": "Roblox studs: X = Blender X, Y = up (Blender Z), Z = -Blender Y. 'center' is the middle of each mesh's box, measured from the model origin (bottom centre of the footprint, on the floor).",
+ "_front": "Front faces Roblox -Z (Blender +Y): CFrame.lookAt(pos, pos + faceDirection) points it.",
+ "_notes": "Replaces SpawnRing and SpawnDisc. 11 across, 0.38 high. Origin on the plaza floor at the spawn point (0, 0, 34); turn it so the star points at the pads (front = -Z after lookAt towards the pads).",
+ "SpawnPad_Body": {
+  "size": [
+   11.0,
+   0.37,
+   11.0
+  ],
+  "center": [
+   0.0,
+   0.185,
+   -0.0
+  ],
+  "tris": 286,
+  "textures": {
+   "color": "Hub_Pad_color.png",
+   "normal": "Hub_Pad_normal.png",
+   "roughness": "Hub_Pad_roughness.png"
+  },
+  "tint": null,
+  "material": "SmoothPlastic (SurfaceAppearance)",
+  "note": "red rim, white disc, embossed gold star (one point towards +Y = front)"
+ }
+}

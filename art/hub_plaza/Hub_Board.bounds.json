@@ -1,0 +1,45 @@
+{
+ "_axes": "Roblox studs: X = Blender X, Y = up (Blender Z), Z = -Blender Y. 'center' is the middle of each mesh's box, measured from the model origin (bottom centre of the footprint, on the floor).",
+ "_front": "Front faces Roblox -Z (Blender +Y): CFrame.lookAt(pos, pos + faceDirection) points it.",
+ "_notes": "Replaces BoardFrame, Board, BoardLeg x2 and Alert in buildLeft(). Origin on the floor under the middle of the board; same spot and facing as today: bpos = (-46, 0, -20) with the front turned to (0, _, 4). Put the existing SurfaceGui on an invisible 13 x 9 x 0.1 part at textFace.center, and the '!' label on a 2 x 2 part at badgeFace.center.",
+ "Board_Body": {
+  "size": [
+   17.9,
+   14.96,
+   2.39
+  ],
+  "center": [
+   0.0,
+   7.48,
+   0.245
+  ],
+  "tris": 1432,
+  "textures": {
+   "color": "Hub_Board_color.png",
+   "normal": "Hub_Board_normal.png",
+   "roughness": "Hub_Board_roughness.png"
+  },
+  "material": "SmoothPlastic (SurfaceAppearance)",
+  "textFace": {
+   "size": [
+    13.0,
+    9.0
+   ],
+   "center": [
+    0,
+    6.5,
+    -0.25
+   ],
+   "note": "flat cream face; corners rounded 0.6 (text stays inset)"
+  },
+  "badgeFace": {
+   "diameter": 2.0,
+   "center": [
+    6.6,
+    12.1,
+    -0.8400000000000001
+   ],
+   "note": "flat red disc for the '!' text"
+  }
+ }
+}

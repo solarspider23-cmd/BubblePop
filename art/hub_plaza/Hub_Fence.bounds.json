@@ -1,0 +1,95 @@
+{
+ "_axes": "Roblox studs: X = Blender X, Y = up (Blender Z), Z = -Blender Y. 'center' is the middle of each mesh's box, measured from the model origin (bottom centre of the footprint, on the floor).",
+ "_front": "Front faces Roblox -Z (Blender +Y): CFrame.lookAt(pos, pos + faceDirection) points it.",
+ "_notes": "Replaces Rail x8, Post x60, PostLight x60 in buildPlaza(). Fence line 55 studs from the plaza centre (edge = half - 1). Per side: posts at u = k * 7.857 for k = -6..6 (13 Fence_Post + Fence_PostGlow), corners at k = +-7 (Fence_Corner + the game's gumball), 14 Fence_Rail segments centred at u = (k + 0.5) * 7.857, k = -7..6. All origins on the plaza floor (height 0).",
+ "Fence_Post": {
+  "size": [
+   2.0,
+   3.38,
+   2.0
+  ],
+  "center": [
+   0.0,
+   1.69,
+   -0.0
+  ],
+  "tris": 192,
+  "textures": {
+   "color": "Hub_Fence_color.png",
+   "normal": "Hub_Fence_normal.png",
+   "roughness": "Hub_Fence_roughness.png"
+  },
+  "material": "SmoothPlastic (SurfaceAppearance)",
+  "note": "turn so its X axis runs along the fence (rail grommets are on +-X)"
+ },
+ "Fence_PostGlow": {
+  "size": [
+   1.28,
+   0.67,
+   1.217
+  ],
+  "center": [
+   0.0,
+   3.655,
+   -0.0
+  ],
+  "tris": 70,
+  "textures": null,
+  "material": "Neon",
+  "color": [
+   190,
+   30,
+   90
+  ],
+  "castShadow": false,
+  "note": "same origin as Fence_Post"
+ },
+ "Fence_Rail": {
+  "size": [
+   7.857,
+   1.76,
+   0.56
+  ],
+  "center": [
+   0.0,
+   1.8,
+   -0.0
+  ],
+  "tris": 32,
+  "textures": {
+   "color": "Hub_Fence_color.png",
+   "normal": "Hub_Fence_normal.png",
+   "roughness": "Hub_Fence_roughness.png"
+  },
+  "material": "SmoothPlastic (SurfaceAppearance)",
+  "note": "one segment, post centre to post centre (7.857); X along the fence"
+ },
+ "Fence_Corner": {
+  "size": [
+   2.76,
+   4.5,
+   2.76
+  ],
+  "center": [
+   0.0,
+   2.25,
+   -0.0
+  ],
+  "tris": 304,
+  "textures": {
+   "color": "Hub_Fence_color.png",
+   "normal": "Hub_Fence_normal.png",
+   "roughness": "Hub_Fence_roughness.png"
+  },
+  "material": "SmoothPlastic (SurfaceAppearance)",
+  "gumball": {
+   "diameter": 2.4,
+   "center": [
+    0,
+    5.34,
+    0
+   ]
+  },
+  "note": "rail rings on its -X and +Z sides (Roblox; Blender -X and -Y): turn it so those face along the two fence runs"
+ }
+}

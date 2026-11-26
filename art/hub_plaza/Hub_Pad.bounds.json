@@ -1,0 +1,113 @@
+{
+ "_axes": "Roblox studs: X = Blender X, Y = up (Blender Z), Z = -Blender Y. 'center' is the middle of each mesh's box, measured from the model origin (bottom centre of the footprint, on the floor).",
+ "_front": "Front faces Roblox -Z (Blender +Y): CFrame.lookAt(pos, pos + faceDirection) points it.",
+ "_notes": "Replaces PadBase, PadEdge and Pad1..Pad4 in Hub.lua buildPads(). Footprint 13.5 x 10.5 at the floor, 0.6 high (studs), standing area (tinted top) 11.4 x 8.4 flat at 0.45. Place the origin at the pad centre on the plaza floor (pads at x = -21, -7, 7, 21, z = -28), front (+Y) towards the spawn. The invisible 12 x 9 standing part in code stays as it is.",
+ "Pad_Body": {
+  "size": [
+   13.5,
+   0.6,
+   10.5
+  ],
+  "center": [
+   0.0,
+   0.3,
+   -0.0
+  ],
+  "tris": 328,
+  "textures": {
+   "color": "Hub_Pad_color.png",
+   "normal": "Hub_Pad_normal.png",
+   "roughness": "Hub_Pad_roughness.png"
+  },
+  "tint": null,
+  "material": "SmoothPlastic (SurfaceAppearance)",
+  "color": [
+   255,
+   252,
+   250
+  ],
+  "note": "white rim, groove floor, gold studs; fixed colours"
+ },
+ "Pad_Tint": {
+  "size": [
+   11.44,
+   0.25,
+   8.44
+  ],
+  "center": [
+   0.0,
+   0.325,
+   -0.0
+  ],
+  "tris": 138,
+  "textures": {
+   "color": "Hub_Pad_color.png",
+   "normal": "Hub_Pad_normal.png",
+   "roughness": "Hub_Pad_roughness.png"
+  },
+  "tint": "pad colour (SurfaceAppearance.Color)",
+  "material": "SmoothPlastic (SurfaceAppearance)",
+  "variants": {
+   "Red": [
+    225,
+    45,
+    60
+   ],
+   "Blue": [
+    40,
+    120,
+    230
+   ],
+   "Yellow": [
+    240,
+    185,
+    20
+   ],
+   "Green": [
+    50,
+    175,
+    70
+   ]
+  },
+  "note": "walkable top is flat at height 0.45"
+ },
+ "Pad_Glow": {
+  "size": [
+   12.26,
+   0.15,
+   9.26
+  ],
+  "center": [
+   0.0,
+   0.335,
+   -0.0
+  ],
+  "tris": 120,
+  "textures": null,
+  "material": "Neon",
+  "castShadow": false,
+  "variants": {
+   "Red": [
+    180,
+    20,
+    45
+   ],
+   "Blue": [
+    20,
+    90,
+    190
+   ],
+   "Yellow": [
+    190,
+    125,
+    0
+   ],
+   "Green": [
+    25,
+    140,
+    45
+   ]
+  },
+  "note": "flat colour, recoloured per pad (dark saturated version of the pad colour)"
+ }
+}
