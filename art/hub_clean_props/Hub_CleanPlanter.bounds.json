@@ -1,0 +1,94 @@
+{
+ "_axes": "Roblox studs: X = Blender X, Y = up (Blender Z), Z = -Blender Y. 'center' is the middle of each mesh's box, measured from the model origin (bottom centre of the footprint, on the floor).",
+ "_front": "Front faces Roblox -Z (Blender +Y): CFrame.lookAt(pos, pos + faceDirection) points it.",
+ "_notes": "CLEAN POP PLAZA planter, 6.0 wide x 4.0 deep, bushes up to 5.6. Origin on the floor under the middle; long side along X. Tint the bushes per planter (sky / mint / lilac / peach). Suggested: between benches, either side of the hall steps, and at the booth row ends. Textures: the shared Hub_CleanProps_* 512 set (lamp, bench and planter use the same three maps).",
+ "CleanPlanter_Body": {
+  "size": [
+   6.02,
+   2.45,
+   3.96
+  ],
+  "center": [
+   0.0,
+   1.225,
+   -0.0
+  ],
+  "tris": 622,
+  "textures": {
+   "color": "Hub_CleanProps_color.png",
+   "normal": "Hub_CleanProps_normal.png",
+   "roughness": "Hub_CleanProps_roughness.png"
+  },
+  "tint": null,
+  "material": "SmoothPlastic (SurfaceAppearance)",
+  "note": "pill-shaped white tub, sky lip, grey foot"
+ },
+ "CleanPlanter_Tint": {
+  "size": [
+   5.735,
+   3.7,
+   3.412
+  ],
+  "center": [
+   0.101,
+   3.7,
+   -0.1
+  ],
+  "tris": 676,
+  "textures": {
+   "color": "Hub_CleanProps_color.png",
+   "normal": "Hub_CleanProps_normal.png",
+   "roughness": "Hub_CleanProps_roughness.png"
+  },
+  "tint": "bush colour (SurfaceAppearance.Color)",
+  "variants": {
+   "Sky": [
+    140,
+    203,
+    255
+   ],
+   "Mint": [
+    143,
+    230,
+    198
+   ],
+   "Lilac": [
+    195,
+    174,
+    247
+   ],
+   "Peach": [
+    255,
+    190,
+    156
+   ],
+   "White": [
+    250,
+    251,
+    253
+   ]
+  },
+  "material": "SmoothPlastic (SurfaceAppearance)"
+ },
+ "CleanPlanter_Shine": {
+  "size": [
+   0.958,
+   1.042,
+   0.594
+  ],
+  "center": [
+   -0.492,
+   4.738,
+   -1.291
+  ],
+  "tris": 36,
+  "textures": null,
+  "material": "SmoothPlastic (flat white)",
+  "color": [
+   255,
+   255,
+   255
+  ],
+  "castShadow": false
+ }
+}

@@ -1,0 +1,77 @@
+{
+ "_axes": "Roblox studs: X = Blender X, Y = up (Blender Z), Z = -Blender Y. 'center' is the middle of each mesh's box, measured from the model origin (bottom centre of the footprint, on the floor).",
+ "_front": "Front faces Roblox -Z (Blender +Y): CFrame.lookAt(pos, pos + faceDirection) points it.",
+ "_notes": "CLEAN POP PLAZA bench, 5.2 long x 2.1 deep x 3.6 tall, seat top 1.9. Origin on the floor under the middle; you sit facing +Y here (Roblox -Z after the usual lookAt). Suggested: pairs facing the centre along the left and right edges, e.g. hub (+-50, 0, 10) and (+-50, 0, 30), with a planter between each pair. Textures: the shared Hub_CleanProps_* 512 set (lamp, bench and planter use the same three maps).",
+ "CleanBench_Body": {
+  "size": [
+   5.399,
+   2.77,
+   2.1
+  ],
+  "center": [
+   0.0,
+   1.385,
+   -0.0
+  ],
+  "tris": 792,
+  "textures": {
+   "color": "Hub_CleanProps_color.png",
+   "normal": "Hub_CleanProps_normal.png",
+   "roughness": "Hub_CleanProps_roughness.png"
+  },
+  "tint": null,
+  "material": "SmoothPlastic (SurfaceAppearance)",
+  "note": "white arm panels with sky knobs, two grey rails"
+ },
+ "CleanBench_Tint": {
+  "size": [
+   4.16,
+   2.314,
+   2.374
+  ],
+  "center": [
+   0.0,
+   2.457,
+   0.117
+  ],
+  "tris": 568,
+  "textures": {
+   "color": "Hub_CleanProps_color.png",
+   "normal": "Hub_CleanProps_normal.png",
+   "roughness": "Hub_CleanProps_roughness.png"
+  },
+  "tint": "cushion colour (SurfaceAppearance.Color)",
+  "variants": {
+   "Sky": [
+    140,
+    203,
+    255
+   ],
+   "Mint": [
+    143,
+    230,
+    198
+   ],
+   "Lilac": [
+    195,
+    174,
+    247
+   ],
+   "Peach": [
+    255,
+    190,
+    156
+   ],
+   "White": [
+    250,
+    251,
+    253
+   ]
+  },
+  "material": "SmoothPlastic (SurfaceAppearance)",
+  "seatTop": {
+   "height": 1.9,
+   "note": "top of the seat cushion, for a Seat part 4 x 0.4 x 1.8"
+  }
+ }
+}

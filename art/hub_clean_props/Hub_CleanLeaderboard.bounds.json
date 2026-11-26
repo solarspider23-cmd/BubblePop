@@ -1,0 +1,71 @@
+{
+ "_axes": "Roblox studs: X = Blender X, Y = up (Blender Z), Z = -Blender Y. 'center' is the middle of each mesh's box, measured from the model origin (bottom centre of the footprint, on the floor).",
+ "_front": "Front faces Roblox -Z (Blender +Y): CFrame.lookAt(pos, pos + faceDirection) points it.",
+ "_notes": "CLEAN POP PLAZA leaderboard stand. Origin on the floor under the middle; front = +Y here (Roblox -Z after the usual lookAt). Frame 12 wide x 7 tall (1.1 to 8.1 above the floor), header plate 7 x 1.8 on the top edge, crown top about 11.1. Put the list SurfaceGui on an invisible 10 x 5 part at textFace.center and the title on a 6 x 1.1 part at headerFace.center. Suggested spot: hub (-40, 0, -43) turned to face the spawn, or wherever the leaderboard wall placeholder is.",
+ "CleanLeaderboard_Body": {
+  "size": [
+   12.0,
+   11.17,
+   3.2
+  ],
+  "center": [
+   0.0,
+   5.585,
+   -0.2
+  ],
+  "tris": 1418,
+  "textures": {
+   "color": "Hub_CleanLeaderboard_color.png",
+   "normal": "Hub_CleanLeaderboard_normal.png",
+   "roughness": "Hub_CleanLeaderboard_roughness.png"
+  },
+  "tint": null,
+  "material": "SmoothPlastic (SurfaceAppearance)",
+  "textFace": {
+   "size": [
+    10.0,
+    5.0
+   ],
+   "center": [
+    0,
+    4.6,
+    -0.12
+   ],
+   "note": "flat cream face for the list; corners rounded 0.6"
+  },
+  "headerFace": {
+   "size": [
+    6.0,
+    1.1
+   ],
+   "center": [
+    0,
+    8.25,
+    -1.16
+   ],
+   "note": "flat blue front of the header plate, for the title (white text)"
+  }
+ },
+ "CleanLeaderboard_Glow": {
+  "size": [
+   10.15,
+   5.15,
+   0.28
+  ],
+  "center": [
+   0.0,
+   4.6,
+   -0.32
+  ],
+  "tris": 48,
+  "textures": null,
+  "material": "Neon",
+  "color": [
+   20,
+   100,
+   200
+  ],
+  "castShadow": false,
+  "note": "thin light line just inside the frame"
+ }
+}

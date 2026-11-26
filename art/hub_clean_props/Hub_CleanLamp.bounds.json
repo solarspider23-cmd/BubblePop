@@ -1,0 +1,55 @@
+{
+ "_axes": "Roblox studs: X = Blender X, Y = up (Blender Z), Z = -Blender Y. 'center' is the middle of each mesh's box, measured from the model origin (bottom centre of the footprint, on the floor).",
+ "_front": "Front faces Roblox -Z (Blender +Y): CFrame.lookAt(pos, pos + faceDirection) points it.",
+ "_notes": "CLEAN POP PLAZA lamp post, 9.4 tall, base 2.7 across. Origin on the floor under the post. Suggested: 8 lamps, one each side of every path / at plaza corners, e.g. hub (+-20, 0, -30), (+-44, 0, -44), (+-44, 0, 0), (+-20, 0, 40). Textures: the shared Hub_CleanProps_* 512 set (lamp, bench and planter use the same three maps).",
+ "CleanLamp_Body": {
+  "size": [
+   2.66,
+   9.4,
+   2.66
+  ],
+  "center": [
+   0.0,
+   4.7,
+   -0.0
+  ],
+  "tris": 526,
+  "textures": {
+   "color": "Hub_CleanProps_color.png",
+   "normal": "Hub_CleanProps_normal.png",
+   "roughness": "Hub_CleanProps_roughness.png"
+  },
+  "tint": null,
+  "material": "SmoothPlastic (SurfaceAppearance)"
+ },
+ "CleanLamp_Glow": {
+  "size": [
+   2.4,
+   2.4,
+   2.364
+  ],
+  "center": [
+   0.0,
+   7.75,
+   -0.0
+  ],
+  "tris": 324,
+  "textures": null,
+  "material": "Neon",
+  "color": [
+   124,
+   196,
+   255
+  ],
+  "castShadow": false,
+  "globe": {
+   "center": [
+    0,
+    7.75,
+    0
+   ],
+   "radius": 1.2
+  },
+  "note": "the bubble globe; put a PointLight here (range ~18, soft sky blue). If Neon blows out to white use [20, 100, 200]."
+ }
+}

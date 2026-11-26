@@ -1,0 +1,78 @@
+{
+ "_axes": "Roblox studs: X = Blender X, Y = up (Blender Z), Z = -Blender Y. 'center' is the middle of each mesh's box, measured from the model origin (bottom centre of the footprint, on the floor).",
+ "_front": "Front faces Roblox -Z (Blender +Y): CFrame.lookAt(pos, pos + faceDirection) points it.",
+ "_notes": "CLEAN POP PLAZA back hall (facade only, no inside). Origin on the floor under the middle. Place at hub (0, 0, -52), front (+Y here = Roblox -Z after the usual lookAt) facing the spawn: its front-most point is 5.1 in front of the origin (hub z -46.9), so it stays behind z -46. The centrepiece stage (radius 14 at z -45, 1.5 high) overlaps the middle columns at floor level; that is intended (the columns rise out of the stage). 60 wide, 10 deep, towers 23 tall, medallion top 23.9. Collision: one invisible box 60 x 14 x 9 is enough.",
+ "CleanHall_Body": {
+  "size": [
+   60.2,
+   23.9,
+   10.2
+  ],
+  "center": [
+   0.0,
+   11.95,
+   -0.0
+  ],
+  "tris": 7378,
+  "textures": {
+   "color": "Hub_CleanHall_color.png",
+   "normal": "Hub_CleanHall_normal.png",
+   "roughness": "Hub_CleanHall_roughness.png"
+  },
+  "tint": null,
+  "material": "SmoothPlastic (SurfaceAppearance)",
+  "medallionFace": {
+   "diameter": 12.6,
+   "center": [
+    0,
+    15.9,
+    -1.65
+   ],
+   "note": "flat empty soft-blue disc (for a logo image later, or leave empty)"
+  }
+ },
+ "CleanHall_Glow": {
+  "size": [
+   57.635,
+   20.21,
+   3.456
+  ],
+  "center": [
+   0.0,
+   12.075,
+   -2.778
+  ],
+  "tris": 193,
+  "textures": null,
+  "material": "Neon",
+  "color": [
+   124,
+   196,
+   255
+  ],
+  "castShadow": false,
+  "note": "12 tower windows, 5 wall niches and the thin ring inside the medallion. Soft sky glow; if it blows out to white in game use the darker house glow [20, 100, 200]."
+ },
+ "CleanHall_Shine": {
+  "size": [
+   52.382,
+   2.402,
+   1.542
+  ],
+  "center": [
+   -1.881,
+   19.496,
+   -3.002
+  ],
+  "tris": 72,
+  "textures": null,
+  "material": "SmoothPlastic (flat white)",
+  "color": [
+   255,
+   255,
+   255
+  ],
+  "castShadow": false,
+  "note": "white highlight on each dome"
+ }
+}
