@@ -65,24 +65,41 @@ do
 	block("TrimE", Vector3.new(t, h, half * 2), CFrame.new(half - t / 2, ty, 0), trimColor).CanCollide = false
 end
 
--- Recycler placeholder: a plain block in the middle; walk up to it to sell your bag (real model later)
+-- Recycler: a sell pad in the middle of the room (stand on it to sell) with the machine on it.
+-- "Recycler" is the machine's box: solid, and where sold scraps fly to. A real model
+-- (Config/Models.recycler) replaces the look when it's uploaded; the box then goes invisible.
 do
 	local rc = Room.recycler
 	local size = Vector3.new(rc.size[1], rc.size[2], rc.size[3])
-	local r = block("Recycler", size, CFrame.new(0, y0 + size.Y / 2, 0), color(rc.color))
+	local padSize = rc.pad or (rc.size[1] + 4)
+	local pad = block("SellPad", Vector3.new(padSize, 0.2, padSize), CFrame.new(0, y0 + 0.1, 0), Color3.fromRGB(70, 78, 92), Enum.Material.DiamondPlate)
+	pad.CanCollide = true
+	-- hazard-yellow border so the pad reads as "stand here"
+	local t, h = 0.45, 0.24
+	for _, e in {
+		{ Vector3.new(padSize, h, t), Vector3.new(0, 0, padSize / 2 - t / 2) },
+		{ Vector3.new(padSize, h, t), Vector3.new(0, 0, -padSize / 2 + t / 2) },
+		{ Vector3.new(t, h, padSize - 2 * t), Vector3.new(padSize / 2 - t / 2, 0, 0) },
+		{ Vector3.new(t, h, padSize - 2 * t), Vector3.new(-padSize / 2 + t / 2, 0, 0) },
+	} do
+		local edge = block("SellPadEdge", e[1], CFrame.new(e[2] + Vector3.new(0, y0 + h / 2, 0)), Color3.fromRGB(255, 200, 40))
+		edge.CanCollide = false
+	end
+	local r = block("Recycler", size, CFrame.new(0, y0 + 0.2 + size.Y / 2, 0), color(rc.color))
 	for _, face in { Enum.NormalId.Front, Enum.NormalId.Back, Enum.NormalId.Left, Enum.NormalId.Right } do
 		local gui = Instance.new("SurfaceGui")
+		gui.Name = "Label"
 		gui.Face = face
 		gui.SizingMode = Enum.SurfaceGuiSizingMode.PixelsPerStud
 		gui.PixelsPerStud = 40
 		local label = Instance.new("TextLabel")
-		label.Size = UDim2.fromScale(0.9, 0.5)
-		label.Position = UDim2.fromScale(0.05, 0.25)
+		label.Size = UDim2.fromScale(0.9, 0.3)
+		label.Position = UDim2.fromScale(0.05, 0.35)
 		label.BackgroundTransparency = 1
 		label.Font = Enum.Font.FredokaOne
 		label.TextScaled = true
 		label.TextColor3 = Color3.new(1, 1, 1)
-		label.Text = "RECYCLER\nsell plastic here"
+		label.Text = "RECYCLER"
 		local stroke = Instance.new("UIStroke")
 		stroke.Thickness = 4
 		stroke.Color = Color3.fromRGB(20, 80, 35)
@@ -476,7 +493,7 @@ local function sellNearby()
 	for player, bag in bags do
 		local r = root(player)
 		if bag.count > 0 and r
-			and BagRules.nearRecycler(r.Position.X, r.Position.Z, 0, 0, rc.size[1], rc.size[3], BagConfig.sellReach) then
+			and BagRules.nearRecycler(r.Position.X, r.Position.Z, 0, 0, rc.pad or rc.size[1], rc.pad or rc.size[3], BagConfig.sellReach) then
 			local n = bag.count
 			local coins = BagRules.sell(bag)
 			local stats = player:FindFirstChild("leaderstats")
