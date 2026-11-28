@@ -1,0 +1,20 @@
+{
+ "rules": [
+  [
+   "^(HighBay\\d|Skylight[NS]|RoofTruss|RunwayBeam\\d+|CraneBridge|CraneTrolley|WheelChock|Building_Seams|Building_RoofLines|Floor_Lines|Yard_Lines)$",
+   "none"
+  ],
+  [
+   "^(Building_Walls|Building_Roof|Building_Floor|Yard_Ground|Mezzanine|SiteOffice|DockStair)$|^(Trailer|DockDoor)[A-Z]",
+   "precise"
+  ],
+  [
+   "^(Rack(Bay[DS]|End[DS]|Guard[DS])|Pallet[A-Z][a-z]+|PalletStack|IBC|Stillage|PackBench|Conveyor|Barrier|YardBin|Charger)\\d*(_v\\d+)?$|^(SteelColumn\\w*|Container\\w+|PersonnelDoor|FirePoint|Bollard|FencePanel\\d+|YardLight|Cone|StretchWrapper)(_v\\d+)?$",
+   "box"
+  ],
+  [
+   "^(Forklift\\d|PalletJack\\d|Tractor[A-Z][a-z]+)(_v\\d+)?$",
+   "hull"
+  ]
+ ]
+}

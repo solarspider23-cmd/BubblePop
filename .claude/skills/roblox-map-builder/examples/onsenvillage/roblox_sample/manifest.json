@@ -1,0 +1,1528 @@
+{
+ "name": "YumoriSprings",
+ "format": "glb",
+ "props": {
+  "BathPavilion": {
+   "parts": [
+    {
+     "name": "BathPavilion",
+     "tris": 7548,
+     "size": [
+      25.55,
+      13.74,
+      20.3
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "BathPavilion_Glow_lamp",
+     "tris": 192,
+     "size": [
+      15.0,
+      0.9,
+      0.95
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      179,
+      92
+     ]
+    }
+   ],
+   "tris": 7740,
+   "collision": "precise",
+   "size": [
+    25.55,
+    13.74,
+    20.3
+   ]
+  },
+  "Bench1": {
+   "parts": [
+    {
+     "name": "Bench1",
+     "tris": 372,
+     "size": [
+      4.24,
+      1.74,
+      1.5
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 372,
+   "collision": "box",
+   "size": [
+    4.24,
+    1.74,
+    1.5
+   ]
+  },
+  "Boulder1": {
+   "parts": [
+    {
+     "name": "Boulder1",
+     "tris": 62,
+     "size": [
+      4.9,
+      2.83,
+      4.26
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 62,
+   "collision": "hull",
+   "size": [
+    4.9,
+    2.83,
+    4.26
+   ]
+  },
+  "Boulder2": {
+   "parts": [
+    {
+     "name": "Boulder2",
+     "tris": 64,
+     "size": [
+      3.13,
+      2.09,
+      2.92
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 64,
+   "collision": "hull",
+   "size": [
+    3.13,
+    2.09,
+    2.92
+   ]
+  },
+  "Cedar1": {
+   "parts": [
+    {
+     "name": "Cedar1",
+     "tris": 266,
+     "size": [
+      11.04,
+      28.56,
+      10.94
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 266,
+   "collision": "hull",
+   "size": [
+    11.04,
+    28.56,
+    10.94
+   ]
+  },
+  "Cedar2": {
+   "parts": [
+    {
+     "name": "Cedar2",
+     "tris": 272,
+     "size": [
+      14.21,
+      34.92,
+      13.59
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 272,
+   "collision": "hull",
+   "size": [
+    14.21,
+    34.92,
+    13.59
+   ]
+  },
+  "Cedar3": {
+   "parts": [
+    {
+     "name": "Cedar3",
+     "tris": 260,
+     "size": [
+      9.84,
+      24.32,
+      9.49
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 260,
+   "collision": "hull",
+   "size": [
+    9.84,
+    24.32,
+    9.49
+   ]
+  },
+  "CloudTree1": {
+   "parts": [
+    {
+     "name": "CloudTree1",
+     "tris": 1126,
+     "size": [
+      8.9,
+      10.91,
+      10.63
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1126,
+   "collision": "hull",
+   "size": [
+    8.9,
+    10.91,
+    10.63
+   ]
+  },
+  "CloudTree3": {
+   "parts": [
+    {
+     "name": "CloudTree3",
+     "tris": 1112,
+     "size": [
+      7.76,
+      9.33,
+      8.11
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1112,
+   "collision": "hull",
+   "size": [
+    7.76,
+    9.33,
+    8.11
+   ]
+  },
+  "Crag1": {
+   "parts": [
+    {
+     "name": "Crag1",
+     "tris": 292,
+     "size": [
+      18.61,
+      19.72,
+      12.31
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 292,
+   "collision": "hull",
+   "size": [
+    18.61,
+    19.72,
+    12.31
+   ]
+  },
+  "Crag2": {
+   "parts": [
+    {
+     "name": "Crag2",
+     "tris": 316,
+     "size": [
+      9.87,
+      26.66,
+      13.93
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 316,
+   "collision": "hull",
+   "size": [
+    9.87,
+    26.66,
+    13.93
+   ]
+  },
+  "Crag3": {
+   "parts": [
+    {
+     "name": "Crag3",
+     "tris": 300,
+     "size": [
+      15.04,
+      33.3,
+      18.33
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 300,
+   "collision": "hull",
+   "size": [
+    15.04,
+    33.3,
+    18.33
+   ]
+  },
+  "Crag4": {
+   "parts": [
+    {
+     "name": "Crag4",
+     "tris": 312,
+     "size": [
+      18.72,
+      23.14,
+      13.7
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 312,
+   "collision": "hull",
+   "size": [
+    18.72,
+    23.14,
+    13.7
+   ]
+  },
+  "Crag5": {
+   "parts": [
+    {
+     "name": "Crag5",
+     "tris": 310,
+     "size": [
+      12.63,
+      12.9,
+      10.81
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 310,
+   "collision": "hull",
+   "size": [
+    12.63,
+    12.9,
+    10.81
+   ]
+  },
+  "Crag6": {
+   "parts": [
+    {
+     "name": "Crag6",
+     "tris": 318,
+     "size": [
+      6.55,
+      11.71,
+      10.5
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 318,
+   "collision": "hull",
+   "size": [
+    6.55,
+    11.71,
+    10.5
+   ]
+  },
+  "Crag7": {
+   "parts": [
+    {
+     "name": "Crag7",
+     "tris": 294,
+     "size": [
+      17.0,
+      15.99,
+      14.42
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 294,
+   "collision": "hull",
+   "size": [
+    17.0,
+    15.99,
+    14.42
+   ]
+  },
+  "Crag8": {
+   "parts": [
+    {
+     "name": "Crag8",
+     "tris": 314,
+     "size": [
+      13.72,
+      15.58,
+      12.79
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 314,
+   "collision": "hull",
+   "size": [
+    13.72,
+    15.58,
+    12.79
+   ]
+  },
+  "Crates1": {
+   "parts": [
+    {
+     "name": "Crates1",
+     "tris": 836,
+     "size": [
+      7.37,
+      3.44,
+      3.35
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 836,
+   "collision": "box",
+   "size": [
+    7.37,
+    3.44,
+    3.35
+   ]
+  },
+  "Crates2": {
+   "parts": [
+    {
+     "name": "Crates2",
+     "tris": 840,
+     "size": [
+      7.39,
+      3.45,
+      3.35
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 840,
+   "collision": "box",
+   "size": [
+    7.39,
+    3.45,
+    3.35
+   ]
+  },
+  "FootBridge": {
+   "parts": [
+    {
+     "name": "FootBridge",
+     "tris": 5500,
+     "size": [
+      6.47,
+      11.03,
+      20.37
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 5500,
+   "collision": "precise",
+   "size": [
+    6.47,
+    11.03,
+    20.37
+   ]
+  },
+  "HandCart1": {
+   "parts": [
+    {
+     "name": "HandCart1",
+     "tris": 1812,
+     "size": [
+      3.83,
+      3.19,
+      7.4
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1812,
+   "collision": "box",
+   "size": [
+    3.83,
+    3.19,
+    7.4
+   ]
+  },
+  "HotPool1": {
+   "parts": [
+    {
+     "name": "HotPool1",
+     "tris": 2214,
+     "size": [
+      17.57,
+      4.29,
+      12.69
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 2214,
+   "collision": "precise",
+   "size": [
+    17.57,
+    4.29,
+    12.69
+   ]
+  },
+  "HotPool2": {
+   "parts": [
+    {
+     "name": "HotPool2",
+     "tris": 2210,
+     "size": [
+      17.54,
+      4.29,
+      13.29
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 2210,
+   "collision": "precise",
+   "size": [
+    17.54,
+    4.29,
+    13.29
+   ]
+  },
+  "HotPool3": {
+   "parts": [
+    {
+     "name": "HotPool3",
+     "tris": 1708,
+     "size": [
+      11.07,
+      2.17,
+      7.82
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1708,
+   "collision": "precise",
+   "size": [
+    11.07,
+    2.17,
+    7.82
+   ]
+  },
+  "HotPool4": {
+   "parts": [
+    {
+     "name": "HotPool4",
+     "tris": 1700,
+     "size": [
+      9.47,
+      1.97,
+      7.46
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1700,
+   "collision": "precise",
+   "size": [
+    9.47,
+    1.97,
+    7.46
+   ]
+  },
+  "InnB": {
+   "parts": [
+    {
+     "name": "InnB",
+     "tris": 9722,
+     "size": [
+      20.93,
+      21.24,
+      16.73
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "InnB_Glow_shoji",
+     "tris": 132,
+     "size": [
+      13.72,
+      10.3,
+      6.06
+     ],
+     "glow": "shoji",
+     "color": [
+      255,
+      217,
+      166
+     ]
+    },
+    {
+     "name": "InnB_Glow_lamp",
+     "tris": 192,
+     "size": [
+      6.1,
+      0.85,
+      0.86
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      179,
+      92
+     ]
+    }
+   ],
+   "tris": 10046,
+   "collision": "precise",
+   "size": [
+    20.93,
+    21.24,
+    16.73
+   ]
+  },
+  "JpPine1": {
+   "parts": [
+    {
+     "name": "JpPine1",
+     "tris": 1102,
+     "size": [
+      13.33,
+      16.22,
+      13.16
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1102,
+   "collision": "hull",
+   "size": [
+    13.33,
+    16.22,
+    13.16
+   ]
+  },
+  "JpPine2": {
+   "parts": [
+    {
+     "name": "JpPine2",
+     "tris": 1106,
+     "size": [
+      10.41,
+      13.4,
+      10.88
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1106,
+   "collision": "hull",
+   "size": [
+    10.41,
+    13.4,
+    10.88
+   ]
+  },
+  "JpPine3": {
+   "parts": [
+    {
+     "name": "JpPine3",
+     "tris": 1094,
+     "size": [
+      14.5,
+      19.08,
+      14.97
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1094,
+   "collision": "hull",
+   "size": [
+    14.5,
+    19.08,
+    14.97
+   ]
+  },
+  "KoiPond1": {
+   "parts": [
+    {
+     "name": "KoiPond1",
+     "tris": 1116,
+     "size": [
+      8.47,
+      1.42,
+      8.56
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1116,
+   "collision": "precise",
+   "size": [
+    8.47,
+    1.42,
+    8.56
+   ]
+  },
+  "LanternPost1": {
+   "parts": [
+    {
+     "name": "LanternPost1",
+     "tris": 652,
+     "size": [
+      1.24,
+      6.86,
+      2.4
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "LanternPost1_Glow_lamp",
+     "tris": 96,
+     "size": [
+      0.9,
+      0.85,
+      0.86
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      179,
+      92
+     ]
+    }
+   ],
+   "tris": 748,
+   "collision": "box",
+   "size": [
+    1.24,
+    6.86,
+    2.4
+   ]
+  },
+  "LanternPost2": {
+   "parts": [
+    {
+     "name": "LanternPost2",
+     "tris": 652,
+     "size": [
+      1.24,
+      7.26,
+      2.4
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "LanternPost2_Glow_lamp",
+     "tris": 96,
+     "size": [
+      0.9,
+      0.85,
+      0.86
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      179,
+      92
+     ]
+    }
+   ],
+   "tris": 748,
+   "collision": "box",
+   "size": [
+    1.24,
+    7.26,
+    2.4
+   ]
+  },
+  "Maple2": {
+   "parts": [
+    {
+     "name": "Maple2",
+     "tris": 1124,
+     "size": [
+      8.99,
+      10.03,
+      9.03
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1124,
+   "collision": "hull",
+   "size": [
+    8.99,
+    10.03,
+    9.03
+   ]
+  },
+  "Maple4": {
+   "parts": [
+    {
+     "name": "Maple4",
+     "tris": 1094,
+     "size": [
+      7.7,
+      8.99,
+      7.24
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1094,
+   "collision": "hull",
+   "size": [
+    7.7,
+    8.99,
+    7.24
+   ]
+  },
+  "NoodleStall": {
+   "parts": [
+    {
+     "name": "NoodleStall",
+     "tris": 5136,
+     "size": [
+      8.13,
+      9.74,
+      5.59
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "NoodleStall_Glow_lamp",
+     "tris": 96,
+     "size": [
+      1.0,
+      0.9,
+      0.95
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      179,
+      92
+     ]
+    }
+   ],
+   "tris": 5232,
+   "collision": "box",
+   "size": [
+    8.13,
+    9.74,
+    5.59
+   ]
+  },
+  "PagodaBase": {
+   "parts": [
+    {
+     "name": "PagodaBase",
+     "tris": 12116,
+     "size": [
+      19.5,
+      17.3,
+      20.45
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "PagodaBase_Glow_shoji",
+     "tris": 180,
+     "size": [
+      11.72,
+      10.8,
+      11.72
+     ],
+     "glow": "shoji",
+     "color": [
+      255,
+      217,
+      166
+     ]
+    },
+    {
+     "name": "PagodaBase_Glow_lamp",
+     "tris": 192,
+     "size": [
+      7.9,
+      1.0,
+      1.05
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      179,
+      92
+     ]
+    }
+   ],
+   "tris": 12488,
+   "collision": "precise",
+   "size": [
+    19.5,
+    17.3,
+    20.45
+   ]
+  },
+  "PagodaTop": {
+   "parts": [
+    {
+     "name": "PagodaTop",
+     "tris": 12140,
+     "size": [
+      15.47,
+      28.45,
+      15.47
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "PagodaTop_Glow_shoji",
+     "tris": 156,
+     "size": [
+      8.92,
+      11.1,
+      8.92
+     ],
+     "glow": "shoji",
+     "color": [
+      255,
+      217,
+      166
+     ]
+    }
+   ],
+   "tris": 12296,
+   "collision": "precise",
+   "size": [
+    15.47,
+    28.45,
+    15.47
+   ]
+  },
+  "Planter1": {
+   "parts": [
+    {
+     "name": "Planter1",
+     "tris": 1170,
+     "size": [
+      4.38,
+      2.98,
+      2.1
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1170,
+   "collision": "box",
+   "size": [
+    4.38,
+    2.98,
+    2.1
+   ]
+  },
+  "Planter2": {
+   "parts": [
+    {
+     "name": "Planter2",
+     "tris": 1178,
+     "size": [
+      3.41,
+      2.98,
+      2.1
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1178,
+   "collision": "box",
+   "size": [
+    3.41,
+    2.98,
+    2.1
+   ]
+  },
+  "RailPost": {
+   "parts": [
+    {
+     "name": "RailPost",
+     "tris": 246,
+     "size": [
+      0.76,
+      4.08,
+      0.76
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 246,
+   "collision": "box",
+   "size": [
+    0.76,
+    4.08,
+    0.76
+   ]
+  },
+  "Railing6": {
+   "parts": [
+    {
+     "name": "Railing6",
+     "tris": 466,
+     "size": [
+      6.16,
+      4.08,
+      0.76
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 466,
+   "collision": "box",
+   "size": [
+    6.16,
+    4.08,
+    0.76
+   ]
+  },
+  "SakeBarrels1": {
+   "parts": [
+    {
+     "name": "SakeBarrels1",
+     "tris": 3704,
+     "size": [
+      8.81,
+      4.07,
+      3.92
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 3704,
+   "collision": "box",
+   "size": [
+    8.81,
+    4.07,
+    3.92
+   ]
+  },
+  "ShopD": {
+   "parts": [
+    {
+     "name": "ShopD",
+     "tris": 11312,
+     "size": [
+      19.88,
+      19.69,
+      15.68
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "ShopD_Glow_shoji",
+     "tris": 108,
+     "size": [
+      12.72,
+      8.9,
+      8.72
+     ],
+     "glow": "shoji",
+     "color": [
+      255,
+      217,
+      166
+     ]
+    },
+    {
+     "name": "ShopD_Glow_lamp",
+     "tris": 192,
+     "size": [
+      9.5,
+      0.8,
+      0.86
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      179,
+      92
+     ]
+    }
+   ],
+   "tris": 11612,
+   "collision": "precise",
+   "size": [
+    19.88,
+    19.69,
+    15.68
+   ]
+  },
+  "Shrub1": {
+   "parts": [
+    {
+     "name": "Shrub1",
+     "tris": 168,
+     "size": [
+      3.18,
+      1.64,
+      3.62
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 168,
+   "collision": "none",
+   "size": [
+    3.18,
+    1.64,
+    3.62
+   ]
+  },
+  "Stair65_8": {
+   "parts": [
+    {
+     "name": "Stair65_8",
+     "tris": 1288,
+     "size": [
+      10.9,
+      9.7,
+      12.8
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1288,
+   "collision": "precise",
+   "size": [
+    10.9,
+    9.7,
+    12.8
+   ]
+  },
+  "Stair80_6": {
+   "parts": [
+    {
+     "name": "Stair80_6",
+     "tris": 1456,
+     "size": [
+      8.9,
+      11.2,
+      13.8
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1456,
+   "collision": "precise",
+   "size": [
+    8.9,
+    11.2,
+    13.8
+   ]
+  },
+  "SteppingStones1": {
+   "parts": [
+    {
+     "name": "SteppingStones1",
+     "tris": 158,
+     "size": [
+      2.83,
+      1.02,
+      14.86
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 158,
+   "collision": "precise",
+   "size": [
+    2.83,
+    1.02,
+    14.86
+   ]
+  },
+  "SteppingStones2": {
+   "parts": [
+    {
+     "name": "SteppingStones2",
+     "tris": 136,
+     "size": [
+      2.89,
+      0.98,
+      12.7
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 136,
+   "collision": "precise",
+   "size": [
+    2.89,
+    0.98,
+    12.7
+   ]
+  },
+  "TallC": {
+   "parts": [
+    {
+     "name": "TallC",
+     "tris": 10836,
+     "size": [
+      18.83,
+      26.94,
+      16.73
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "TallC_Glow_shoji",
+     "tris": 156,
+     "size": [
+      11.72,
+      15.8,
+      6.06
+     ],
+     "glow": "shoji",
+     "color": [
+      255,
+      217,
+      166
+     ]
+    },
+    {
+     "name": "TallC_Glow_lamp",
+     "tris": 192,
+     "size": [
+      6.1,
+      0.85,
+      0.86
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      179,
+      92
+     ]
+    }
+   ],
+   "tris": 11184,
+   "collision": "precise",
+   "size": [
+    18.83,
+    26.94,
+    16.73
+   ]
+  },
+  "Torii": {
+   "parts": [
+    {
+     "name": "Torii",
+     "tris": 460,
+     "size": [
+      13.32,
+      10.13,
+      1.52
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 460,
+   "collision": "precise",
+   "size": [
+    13.32,
+    10.13,
+    1.52
+   ]
+  },
+  "Toro1": {
+   "parts": [
+    {
+     "name": "Toro1",
+     "tris": 1658,
+     "size": [
+      3.26,
+      6.0,
+      2.86
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Toro1_Glow_lamp",
+     "tris": 20,
+     "size": [
+      0.8,
+      0.9,
+      0.69
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      179,
+      92
+     ]
+    }
+   ],
+   "tris": 1678,
+   "collision": "box",
+   "size": [
+    3.26,
+    6.0,
+    2.86
+   ]
+  },
+  "TowelRack1": {
+   "parts": [
+    {
+     "name": "TowelRack1",
+     "tris": 2316,
+     "size": [
+      8.26,
+      4.4,
+      2.03
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 2316,
+   "collision": "box",
+   "size": [
+    8.26,
+    4.4,
+    2.03
+   ]
+  },
+  "TowelRack2": {
+   "parts": [
+    {
+     "name": "TowelRack2",
+     "tris": 2316,
+     "size": [
+      8.26,
+      4.4,
+      2.03
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 2316,
+   "collision": "box",
+   "size": [
+    8.26,
+    4.4,
+    2.03
+   ]
+  },
+  "Tuft1": {
+   "parts": [
+    {
+     "name": "Tuft1",
+     "tris": 98,
+     "size": [
+      2.69,
+      0.92,
+      2.31
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 98,
+   "collision": "none",
+   "size": [
+    2.69,
+    0.92,
+    2.31
+   ]
+  }
+ },
+ "static": [
+  {
+   "name": "Ground_Stage_0",
+   "group": "Ground",
+   "tris": 10212,
+   "size": [
+    132.0,
+    27.56,
+    336.0
+   ]
+  },
+  {
+   "name": "Cliff_Mountains_0",
+   "group": "Mountains",
+   "tris": 17240,
+   "size": [
+    656.61,
+    95.15,
+    396.29
+   ]
+  },
+  {
+   "name": "Cliff_Mountains_1",
+   "group": "Mountains",
+   "tris": 17240,
+   "size": [
+    656.53,
+    88.03,
+    313.72
+   ]
+  },
+  {
+   "name": "Horizon_Peaks_0",
+   "group": "Horizon",
+   "tris": 440,
+   "size": [
+    1400.0,
+    196.73,
+    990.0
+   ]
+  },
+  {
+   "name": "Horizon_Peaks_1",
+   "group": "Horizon",
+   "tris": 440,
+   "size": [
+    1400.0,
+    194.79,
+    990.0
+   ]
+  },
+  {
+   "name": "River_Water_0",
+   "group": "Stream",
+   "tris": 5024,
+   "size": [
+    216.0,
+    0.0,
+    208.3
+   ]
+  },
+  {
+   "name": "Hardscape_T1_0",
+   "group": "Terraces",
+   "tris": 10198,
+   "size": [
+    132.0,
+    8.06,
+    23.25
+   ]
+  },
+  {
+   "name": "Hardscape_T2_0",
+   "group": "Terraces",
+   "tris": 11148,
+   "size": [
+    132.0,
+    7.06,
+    27.25
+   ]
+  },
+  {
+   "name": "Hardscape_T3_0",
+   "group": "Terraces",
+   "tris": 13392,
+   "size": [
+    136.0,
+    8.56,
+    39.25
+   ]
+  }
+ ],
+ "bigparts": [],
+ "look": {
+  "SunDir": [
+   -0.811,
+   0.292,
+   0.507
+  ],
+  "SunElevation": 17.0,
+  "ClockTime": 16.87,
+  "SunColor": [
+   255,
+   173,
+   107
+  ],
+  "Brightness": 3.71,
+  "AtmosphereDensity": 0.224,
+  "AtmosphereColor": [
+   255,
+   228,
+   228
+  ],
+  "Horizon": [
+   255,
+   208,
+   172
+  ],
+  "Zenith": [
+   152,
+   160,
+   220
+  ]
+ }
+}

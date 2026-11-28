@@ -1,0 +1,1661 @@
+{
+ "anchors": [
+  {
+   "name": "SpawnLocation",
+   "kind": "spawn",
+   "group": "Spawn",
+   "pos": [
+    0.0,
+    1.44,
+    60.0
+   ],
+   "yaw": 0,
+   "size": [
+    10,
+    1,
+    10
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "MineShopLabel",
+   "kind": "station",
+   "group": "Stations",
+   "pos": [
+    180.08,
+    11.92,
+    25.01
+   ],
+   "yaw": 80.5,
+   "size": [
+    10,
+    3,
+    1
+   ],
+   "attrs": {
+    "Station": "MineShop"
+   }
+  },
+  {
+   "name": "MineShopPrompt",
+   "kind": "prompt",
+   "group": "Stations",
+   "pos": [
+    177.12,
+    2.92,
+    24.52
+   ],
+   "yaw": 80.5,
+   "size": [
+    8,
+    6,
+    4
+   ],
+   "attrs": {
+    "Station": "MineShop"
+   }
+  },
+  {
+   "name": "CrystalForgeLabel",
+   "kind": "station",
+   "group": "Stations",
+   "pos": [
+    116.49,
+    12.78,
+    -149.14
+   ],
+   "yaw": 144.2,
+   "size": [
+    10,
+    3,
+    1
+   ],
+   "attrs": {
+    "Station": "CrystalForge"
+   }
+  },
+  {
+   "name": "CrystalForgePrompt",
+   "kind": "prompt",
+   "group": "Stations",
+   "pos": [
+    114.73,
+    2.78,
+    -146.7
+   ],
+   "yaw": 144.2,
+   "size": [
+    8,
+    6,
+    4
+   ],
+   "attrs": {
+    "Station": "CrystalForge"
+   }
+  },
+  {
+   "name": "DeepLiftLabel",
+   "kind": "station",
+   "group": "Stations",
+   "pos": [
+    -25.68,
+    15.05,
+    -196.01
+   ],
+   "yaw": 183.0,
+   "size": [
+    10,
+    3,
+    1
+   ],
+   "attrs": {
+    "Station": "DeepLift"
+   }
+  },
+  {
+   "name": "DeepLiftPrompt",
+   "kind": "prompt",
+   "group": "Stations",
+   "pos": [
+    -25.53,
+    3.05,
+    -193.01
+   ],
+   "yaw": 183.0,
+   "size": [
+    8,
+    6,
+    4
+   ],
+   "attrs": {
+    "Station": "DeepLift"
+   }
+  },
+  {
+   "name": "BrewStationLabel",
+   "kind": "station",
+   "group": "Stations",
+   "pos": [
+    -123.58,
+    12.06,
+    103.95
+   ],
+   "yaw": 312.5,
+   "size": [
+    10,
+    3,
+    1
+   ],
+   "attrs": {
+    "Station": "BrewStation"
+   }
+  },
+  {
+   "name": "BrewStationPrompt",
+   "kind": "prompt",
+   "group": "Stations",
+   "pos": [
+    -121.37,
+    3.06,
+    101.92
+   ],
+   "yaw": 312.5,
+   "size": [
+    8,
+    6,
+    4
+   ],
+   "attrs": {
+    "Station": "BrewStation"
+   }
+  },
+  {
+   "name": "QuestCampLabel",
+   "kind": "station",
+   "group": "Stations",
+   "pos": [
+    -160,
+    4.36,
+    -16
+   ],
+   "yaw": 235.0,
+   "size": [
+    6,
+    4.4,
+    0.4
+   ],
+   "attrs": {
+    "Station": "QuestCamp",
+    "Surface": "Front"
+   }
+  },
+  {
+   "name": "QuestCampPrompt",
+   "kind": "prompt",
+   "group": "Stations",
+   "pos": [
+    -156.72,
+    2.96,
+    -13.71
+   ],
+   "yaw": 235.0,
+   "size": [
+    8,
+    6,
+    4
+   ],
+   "attrs": {
+    "Station": "QuestCamp"
+   }
+  },
+  {
+   "name": "DeepDiveTrigger",
+   "kind": "elevator",
+   "group": "Lift",
+   "pos": [
+    -26.0,
+    3.9,
+    -202.0
+   ],
+   "yaw": 183.0,
+   "size": [
+    5.6,
+    7.2,
+    5.6
+   ],
+   "attrs": {
+    "Destination": "DeepMine",
+    "TravelTime": 4
+   }
+  },
+  {
+   "name": "ChasmKill",
+   "kind": "killzone",
+   "group": "Hazard",
+   "pos": [
+    -24,
+    -45,
+    -132
+   ],
+   "yaw": 0,
+   "size": [
+    80,
+    10,
+    22
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "LiftShaftKill",
+   "kind": "killzone",
+   "group": "Hazard",
+   "pos": [
+    -26.0,
+    -50,
+    -202.0
+   ],
+   "yaw": 0,
+   "size": [
+    12,
+    10,
+    12
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "ChasmBridge",
+   "kind": "bridge",
+   "group": "Paths",
+   "pos": [
+    -24,
+    0,
+    -132
+   ],
+   "yaw": 0,
+   "size": [
+    6,
+    2,
+    34
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "Rail1_01",
+   "kind": "cartpath",
+   "group": "MineCart",
+   "pos": [
+    16,
+    0.94,
+    56
+   ],
+   "yaw": 0,
+   "size": [
+    1,
+    1,
+    1
+   ],
+   "attrs": {
+    "Line": 1,
+    "Order": 1
+   }
+  },
+  {
+   "name": "Rail1_02",
+   "kind": "cartpath",
+   "group": "MineCart",
+   "pos": [
+    40,
+    0.86,
+    46
+   ],
+   "yaw": 0,
+   "size": [
+    1,
+    1,
+    1
+   ],
+   "attrs": {
+    "Line": 1,
+    "Order": 2
+   }
+  },
+  {
+   "name": "Rail1_03",
+   "kind": "cartpath",
+   "group": "MineCart",
+   "pos": [
+    70,
+    0.85,
+    32
+   ],
+   "yaw": 0,
+   "size": [
+    1,
+    1,
+    1
+   ],
+   "attrs": {
+    "Line": 1,
+    "Order": 3
+   }
+  },
+  {
+   "name": "Rail1_04",
+   "kind": "cartpath",
+   "group": "MineCart",
+   "pos": [
+    96,
+    1.05,
+    20
+   ],
+   "yaw": 0,
+   "size": [
+    1,
+    1,
+    1
+   ],
+   "attrs": {
+    "Line": 1,
+    "Order": 4
+   }
+  },
+  {
+   "name": "Rail1_05",
+   "kind": "cartpath",
+   "group": "MineCart",
+   "pos": [
+    142,
+    1.02,
+    24
+   ],
+   "yaw": 0,
+   "size": [
+    1,
+    1,
+    1
+   ],
+   "attrs": {
+    "Line": 1,
+    "Order": 5
+   }
+  },
+  {
+   "name": "Rail1_06",
+   "kind": "cartpath",
+   "group": "MineCart",
+   "pos": [
+    168,
+    0.8,
+    32
+   ],
+   "yaw": 0,
+   "size": [
+    1,
+    1,
+    1
+   ],
+   "attrs": {
+    "Line": 1,
+    "Order": 6
+   }
+  },
+  {
+   "name": "MineCart1_1",
+   "kind": "cartspawn",
+   "group": "MineCart",
+   "pos": [
+    36.0,
+    2.37,
+    47.67
+   ],
+   "yaw": 292.6,
+   "size": [
+    4,
+    4,
+    6
+   ],
+   "attrs": {
+    "Line": 1
+   }
+  },
+  {
+   "name": "MineCart1_2",
+   "kind": "cartspawn",
+   "group": "MineCart",
+   "pos": [
+    146.33,
+    2.52,
+    25.33
+   ],
+   "yaw": 252.9,
+   "size": [
+    4,
+    4,
+    6
+   ],
+   "attrs": {
+    "Line": 1
+   }
+  },
+  {
+   "name": "Rail2_01",
+   "kind": "cartpath",
+   "group": "MineCart",
+   "pos": [
+    70,
+    0.85,
+    32
+   ],
+   "yaw": 0,
+   "size": [
+    1,
+    1,
+    1
+   ],
+   "attrs": {
+    "Line": 2,
+    "Order": 1
+   }
+  },
+  {
+   "name": "Rail2_02",
+   "kind": "cartpath",
+   "group": "MineCart",
+   "pos": [
+    66,
+    1.09,
+    -8
+   ],
+   "yaw": 0,
+   "size": [
+    1,
+    1,
+    1
+   ],
+   "attrs": {
+    "Line": 2,
+    "Order": 2
+   }
+  },
+  {
+   "name": "Rail2_03",
+   "kind": "cartpath",
+   "group": "MineCart",
+   "pos": [
+    64,
+    1.04,
+    -40
+   ],
+   "yaw": 0,
+   "size": [
+    1,
+    1,
+    1
+   ],
+   "attrs": {
+    "Line": 2,
+    "Order": 3
+   }
+  },
+  {
+   "name": "Rail2_04",
+   "kind": "cartpath",
+   "group": "MineCart",
+   "pos": [
+    74,
+    1.03,
+    -70
+   ],
+   "yaw": 0,
+   "size": [
+    1,
+    1,
+    1
+   ],
+   "attrs": {
+    "Line": 2,
+    "Order": 4
+   }
+  },
+  {
+   "name": "Rail2_05",
+   "kind": "cartpath",
+   "group": "MineCart",
+   "pos": [
+    90,
+    0.99,
+    -104
+   ],
+   "yaw": 0,
+   "size": [
+    1,
+    1,
+    1
+   ],
+   "attrs": {
+    "Line": 2,
+    "Order": 5
+   }
+  },
+  {
+   "name": "Rail2_06",
+   "kind": "cartpath",
+   "group": "MineCart",
+   "pos": [
+    104,
+    1.05,
+    -128
+   ],
+   "yaw": 0,
+   "size": [
+    1,
+    1,
+    1
+   ],
+   "attrs": {
+    "Line": 2,
+    "Order": 6
+   }
+  },
+  {
+   "name": "MineCart2_1",
+   "kind": "cartspawn",
+   "group": "MineCart",
+   "pos": [
+    68.0,
+    2.49,
+    12.0
+   ],
+   "yaw": 5.7,
+   "size": [
+    4,
+    4,
+    6
+   ],
+   "attrs": {
+    "Line": 2
+   }
+  },
+  {
+   "name": "MineCart2_2",
+   "kind": "cartspawn",
+   "group": "MineCart",
+   "pos": [
+    92.33,
+    2.5,
+    -108.0
+   ],
+   "yaw": 329.7,
+   "size": [
+    4,
+    4,
+    6
+   ],
+   "attrs": {
+    "Line": 2
+   }
+  },
+  {
+   "name": "LakeWater",
+   "kind": "water",
+   "group": "Lake",
+   "pos": [
+    2,
+    -3.4,
+    -40
+   ],
+   "yaw": 0,
+   "size": [
+    110,
+    6,
+    90
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "OrePile00",
+   "kind": "breakable",
+   "group": "Crystals",
+   "pos": [
+    78,
+    2.83,
+    -50
+   ],
+   "yaw": 0,
+   "size": [
+    7.0,
+    7.0,
+    7.0
+   ],
+   "attrs": {
+    "Kind": "cyan",
+    "Tier": 1,
+    "Ore": true
+   }
+  },
+  {
+   "name": "OrePile01",
+   "kind": "breakable",
+   "group": "Crystals",
+   "pos": [
+    92,
+    3.12,
+    -22
+   ],
+   "yaw": 0,
+   "size": [
+    7.0,
+    7.0,
+    7.0
+   ],
+   "attrs": {
+    "Kind": "cyan",
+    "Tier": 1,
+    "Ore": true
+   }
+  },
+  {
+   "name": "Geode00",
+   "kind": "breakable",
+   "group": "Crystals",
+   "pos": [
+    -41.23,
+    4.66,
+    6.88
+   ],
+   "yaw": 0,
+   "size": [
+    11.2,
+    11.2,
+    11.2
+   ],
+   "attrs": {
+    "Kind": "cyan",
+    "Tier": 1,
+    "Ore": false
+   }
+  },
+  {
+   "name": "Geode01",
+   "kind": "breakable",
+   "group": "Crystals",
+   "pos": [
+    39.34,
+    4.29,
+    3.24
+   ],
+   "yaw": 0,
+   "size": [
+    9.8,
+    9.8,
+    9.8
+   ],
+   "attrs": {
+    "Kind": "cyan",
+    "Tier": 1,
+    "Ore": false
+   }
+  },
+  {
+   "name": "Geode02",
+   "kind": "breakable",
+   "group": "Crystals",
+   "pos": [
+    -34,
+    7.09,
+    -24
+   ],
+   "yaw": 0,
+   "size": [
+    16.8,
+    16.8,
+    16.8
+   ],
+   "attrs": {
+    "Kind": "cyan",
+    "Tier": 1,
+    "Ore": false
+   }
+  },
+  {
+   "name": "Geode03",
+   "kind": "breakable",
+   "group": "Crystals",
+   "pos": [
+    44,
+    4.45,
+    -30
+   ],
+   "yaw": 0,
+   "size": [
+    10.5,
+    10.5,
+    10.5
+   ],
+   "attrs": {
+    "Kind": "cyan",
+    "Tier": 1,
+    "Ore": false
+   }
+  },
+  {
+   "name": "Geode04",
+   "kind": "breakable",
+   "group": "Crystals",
+   "pos": [
+    -70,
+    7.76,
+    -40
+   ],
+   "yaw": 0,
+   "size": [
+    18.2,
+    18.2,
+    18.2
+   ],
+   "attrs": {
+    "Kind": "cyan",
+    "Tier": 1,
+    "Ore": false
+   }
+  },
+  {
+   "name": "Geode05",
+   "kind": "breakable",
+   "group": "Crystals",
+   "pos": [
+    78,
+    4.0,
+    -6
+   ],
+   "yaw": 0,
+   "size": [
+    9.1,
+    9.1,
+    9.1
+   ],
+   "attrs": {
+    "Kind": "cyan",
+    "Tier": 1,
+    "Ore": false
+   }
+  },
+  {
+   "name": "Geode06",
+   "kind": "breakable",
+   "group": "Crystals",
+   "pos": [
+    -72,
+    3.36,
+    18
+   ],
+   "yaw": 0,
+   "size": [
+    8.4,
+    8.4,
+    8.4
+   ],
+   "attrs": {
+    "Kind": "cyan",
+    "Tier": 1,
+    "Ore": false
+   }
+  },
+  {
+   "name": "Geode07",
+   "kind": "breakable",
+   "group": "Crystals",
+   "pos": [
+    20,
+    3.31,
+    78
+   ],
+   "yaw": 0,
+   "size": [
+    7.7,
+    7.7,
+    7.7
+   ],
+   "attrs": {
+    "Kind": "cyan",
+    "Tier": 1,
+    "Ore": false
+   }
+  },
+  {
+   "name": "Geode08",
+   "kind": "breakable",
+   "group": "Crystals",
+   "pos": [
+    -27.27,
+    4.98,
+    -90.47
+   ],
+   "yaw": 0,
+   "size": [
+    11.9,
+    11.9,
+    11.9
+   ],
+   "attrs": {
+    "Kind": "cyan",
+    "Tier": 2,
+    "Ore": false
+   }
+  },
+  {
+   "name": "Geode09",
+   "kind": "breakable",
+   "group": "Crystals",
+   "pos": [
+    55.84,
+    4.11,
+    -74.2
+   ],
+   "yaw": 0,
+   "size": [
+    9.8,
+    9.8,
+    9.8
+   ],
+   "attrs": {
+    "Kind": "cyan",
+    "Tier": 2,
+    "Ore": false
+   }
+  },
+  {
+   "name": "Geode10",
+   "kind": "breakable",
+   "group": "Crystals",
+   "pos": [
+    -130.9,
+    3.92,
+    -10.73
+   ],
+   "yaw": 0,
+   "size": [
+    9.1,
+    9.1,
+    9.1
+   ],
+   "attrs": {
+    "Kind": "cyan",
+    "Tier": 2,
+    "Ore": false
+   }
+  },
+  {
+   "name": "Geode12",
+   "kind": "breakable",
+   "group": "Crystals",
+   "pos": [
+    -200,
+    5.47,
+    16
+   ],
+   "yaw": 0,
+   "size": [
+    12.6,
+    12.6,
+    12.6
+   ],
+   "attrs": {
+    "Kind": "amber",
+    "Tier": 3,
+    "Ore": false
+   }
+  },
+  {
+   "name": "Geode13",
+   "kind": "breakable",
+   "group": "Crystals",
+   "pos": [
+    196,
+    4.81,
+    44
+   ],
+   "yaw": 0,
+   "size": [
+    11.2,
+    11.2,
+    11.2
+   ],
+   "attrs": {
+    "Kind": "cyan",
+    "Tier": 3,
+    "Ore": false
+   }
+  },
+  {
+   "name": "Geode14",
+   "kind": "breakable",
+   "group": "Crystals",
+   "pos": [
+    138.59,
+    5.91,
+    -162.76
+   ],
+   "yaw": 0,
+   "size": [
+    14.0,
+    14.0,
+    14.0
+   ],
+   "attrs": {
+    "Kind": "amber",
+    "Tier": 3,
+    "Ore": false
+   }
+  },
+  {
+   "name": "Geode15",
+   "kind": "breakable",
+   "group": "Crystals",
+   "pos": [
+    -52.75,
+    6.6,
+    -211.54
+   ],
+   "yaw": 0,
+   "size": [
+    15.4,
+    15.4,
+    15.4
+   ],
+   "attrs": {
+    "Kind": "cyan",
+    "Tier": 4,
+    "Ore": false
+   }
+  },
+  {
+   "name": "Geode16",
+   "kind": "breakable",
+   "group": "Crystals",
+   "pos": [
+    -4,
+    5.43,
+    -214
+   ],
+   "yaw": 0,
+   "size": [
+    12.6,
+    12.6,
+    12.6
+   ],
+   "attrs": {
+    "Kind": "cyan",
+    "Tier": 4,
+    "Ore": false
+   }
+  },
+  {
+   "name": "Geode18",
+   "kind": "breakable",
+   "group": "Crystals",
+   "pos": [
+    -163.99,
+    3.55,
+    -24.83
+   ],
+   "yaw": 0,
+   "size": [
+    8.4,
+    8.4,
+    8.4
+   ],
+   "attrs": {
+    "Kind": "amber",
+    "Tier": 3,
+    "Ore": false
+   }
+  },
+  {
+   "name": "Geode19",
+   "kind": "breakable",
+   "group": "Crystals",
+   "pos": [
+    -106,
+    4.01,
+    118
+   ],
+   "yaw": 0,
+   "size": [
+    9.1,
+    9.1,
+    9.1
+   ],
+   "attrs": {
+    "Kind": "violet",
+    "Tier": 3,
+    "Ore": false
+   }
+  },
+  {
+   "name": "Spray00",
+   "kind": "breakable",
+   "group": "Crystals",
+   "pos": [
+    -184.28,
+    3.08,
+    -33.64
+   ],
+   "yaw": 0,
+   "size": [
+    7.0,
+    7.0,
+    7.0
+   ],
+   "attrs": {
+    "Kind": "cyan",
+    "Tier": 2,
+    "Ore": false
+   }
+  },
+  {
+   "name": "Spray01",
+   "kind": "breakable",
+   "group": "Crystals",
+   "pos": [
+    23.89,
+    3.17,
+    -92.8
+   ],
+   "yaw": 0,
+   "size": [
+    7.0,
+    7.0,
+    7.0
+   ],
+   "attrs": {
+    "Kind": "cyan",
+    "Tier": 2,
+    "Ore": false
+   }
+  },
+  {
+   "name": "Spray02",
+   "kind": "breakable",
+   "group": "Crystals",
+   "pos": [
+    -74.47,
+    3.12,
+    48.06
+   ],
+   "yaw": 0,
+   "size": [
+    7.0,
+    7.0,
+    7.0
+   ],
+   "attrs": {
+    "Kind": "cyan",
+    "Tier": 1,
+    "Ore": false
+   }
+  },
+  {
+   "name": "Spray03",
+   "kind": "breakable",
+   "group": "Crystals",
+   "pos": [
+    -110.43,
+    3.12,
+    6.67
+   ],
+   "yaw": 0,
+   "size": [
+    7.0,
+    7.0,
+    7.0
+   ],
+   "attrs": {
+    "Kind": "cyan",
+    "Tier": 2,
+    "Ore": false
+   }
+  },
+  {
+   "name": "Spray04",
+   "kind": "breakable",
+   "group": "Crystals",
+   "pos": [
+    -165.7,
+    2.87,
+    34.03
+   ],
+   "yaw": 0,
+   "size": [
+    7.0,
+    7.0,
+    7.0
+   ],
+   "attrs": {
+    "Kind": "cyan",
+    "Tier": 2,
+    "Ore": false
+   }
+  },
+  {
+   "name": "Spray05",
+   "kind": "breakable",
+   "group": "Crystals",
+   "pos": [
+    99.58,
+    3.0,
+    -13.78
+   ],
+   "yaw": 0,
+   "size": [
+    7.0,
+    7.0,
+    7.0
+   ],
+   "attrs": {
+    "Kind": "cyan",
+    "Tier": 1,
+    "Ore": false
+   }
+  },
+  {
+   "name": "Spray06",
+   "kind": "breakable",
+   "group": "Crystals",
+   "pos": [
+    -31.04,
+    2.95,
+    70.48
+   ],
+   "yaw": 0,
+   "size": [
+    7.0,
+    7.0,
+    7.0
+   ],
+   "attrs": {
+    "Kind": "cyan",
+    "Tier": 1,
+    "Ore": false
+   }
+  },
+  {
+   "name": "Spray07",
+   "kind": "breakable",
+   "group": "Crystals",
+   "pos": [
+    -147.91,
+    3.03,
+    120.36
+   ],
+   "yaw": 0,
+   "size": [
+    7.0,
+    7.0,
+    7.0
+   ],
+   "attrs": {
+    "Kind": "violet",
+    "Tier": 2,
+    "Ore": false
+   }
+  },
+  {
+   "name": "Spray08",
+   "kind": "breakable",
+   "group": "Crystals",
+   "pos": [
+    -155.44,
+    3.07,
+    29.91
+   ],
+   "yaw": 0,
+   "size": [
+    7.0,
+    7.0,
+    7.0
+   ],
+   "attrs": {
+    "Kind": "cyan",
+    "Tier": 2,
+    "Ore": false
+   }
+  },
+  {
+   "name": "Spray09",
+   "kind": "breakable",
+   "group": "Crystals",
+   "pos": [
+    -100.91,
+    3.01,
+    -56.47
+   ],
+   "yaw": 0,
+   "size": [
+    7.0,
+    7.0,
+    7.0
+   ],
+   "attrs": {
+    "Kind": "cyan",
+    "Tier": 1,
+    "Ore": false
+   }
+  },
+  {
+   "name": "OreCart00",
+   "kind": "breakable",
+   "group": "Crystals",
+   "pos": [
+    -90.78,
+    3.0,
+    -71.38
+   ],
+   "yaw": 0,
+   "size": [
+    7.0,
+    7.0,
+    7.0
+   ],
+   "attrs": {
+    "Kind": "cyan",
+    "Tier": 1,
+    "Ore": true
+   }
+  },
+  {
+   "name": "Outcrop01",
+   "kind": "breakable",
+   "group": "Crystals",
+   "pos": [
+    -61.25,
+    3.94,
+    -21.31
+   ],
+   "yaw": 0,
+   "size": [
+    9.1,
+    9.1,
+    9.1
+   ],
+   "attrs": {
+    "Kind": "cyan",
+    "Tier": 1,
+    "Ore": false
+   }
+  },
+  {
+   "name": "OreCart04",
+   "kind": "breakable",
+   "group": "Crystals",
+   "pos": [
+    34.1,
+    3.05,
+    -12.09
+   ],
+   "yaw": 0,
+   "size": [
+    7.0,
+    7.0,
+    7.0
+   ],
+   "attrs": {
+    "Kind": "cyan",
+    "Tier": 1,
+    "Ore": true
+   }
+  },
+  {
+   "name": "Outcrop05",
+   "kind": "breakable",
+   "group": "Crystals",
+   "pos": [
+    -62.84,
+    3.97,
+    -58.65
+   ],
+   "yaw": 0,
+   "size": [
+    9.1,
+    9.1,
+    9.1
+   ],
+   "attrs": {
+    "Kind": "cyan",
+    "Tier": 1,
+    "Ore": false
+   }
+  },
+  {
+   "name": "SunShaftTop",
+   "kind": "sunshaft",
+   "group": "Hero",
+   "pos": [
+    36.67,
+    165,
+    26.93
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "SunShaftBottom",
+   "kind": "sunshaft",
+   "group": "Hero",
+   "pos": [
+    2.0,
+    1.96,
+    -30.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "Waterfall",
+   "kind": "waterfall",
+   "group": "Hero",
+   "pos": [
+    -57.0,
+    -0.4,
+    -96.0
+   ],
+   "yaw": 0,
+   "size": [
+    16,
+    4,
+    10
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "GlowrootHeart",
+   "kind": "secret",
+   "group": "Hero",
+   "pos": [
+    2.0,
+    5.54,
+    -29.5
+   ],
+   "yaw": 180,
+   "size": [
+    8,
+    8,
+    8
+   ],
+   "attrs": {}
+  }
+ ],
+ "spawn": [
+  0.0,
+  60.0
+ ],
+ "water_y": -0.4,
+ "lights": [
+  [
+   2.0,
+   4,
+   -30.0,
+   "amber",
+   11000,
+   3.0
+  ],
+  [
+   6.0,
+   45,
+   -33.0,
+   "root",
+   9000,
+   4.0
+  ],
+  [
+   -54.0,
+   10,
+   -90.0,
+   "falls",
+   8000,
+   3.0
+  ],
+  [
+   0.0,
+   4,
+   60.0,
+   "amber",
+   1500,
+   3
+  ],
+  [
+   -174,
+   3,
+   2,
+   "fire",
+   5000,
+   1.5
+  ],
+  [
+   186,
+   8,
+   30,
+   "lamp",
+   8000,
+   2.0
+  ],
+  [
+   120,
+   4,
+   -160,
+   "fire",
+   8000,
+   2.0
+  ],
+  [
+   -31.0,
+   6,
+   -206.0,
+   "pale",
+   8000,
+   2.0
+  ],
+  [
+   -128,
+   4,
+   107,
+   "brew",
+   8000,
+   2.0
+  ],
+  [
+   -26.0,
+   -20,
+   -202.0,
+   "pale",
+   3000,
+   2.0
+  ],
+  [
+   83.0,
+   26,
+   -38.0,
+   "lamp",
+   2000,
+   1.5
+  ],
+  [
+   -6.621767504076897,
+   6.5,
+   39.787211820311,
+   "lamp",
+   2200,
+   0.4
+  ],
+  [
+   -44.90729050806026,
+   6.5,
+   13.83170141578469,
+   "lamp",
+   2200,
+   0.4
+  ],
+  [
+   18.122769321068954,
+   6.5,
+   34.72965756701683,
+   "lamp",
+   2200,
+   0.4
+  ],
+  [
+   59.471718077813186,
+   6.5,
+   -21.813502761339464,
+   "lamp",
+   2200,
+   0.4
+  ],
+  [
+   2,
+   -3.5,
+   -10,
+   "lake",
+   8000,
+   0.5
+  ],
+  [
+   -24,
+   -3.5,
+   -62,
+   "lake",
+   8000,
+   0.5
+  ],
+  [
+   22,
+   -3.5,
+   -48,
+   "lake",
+   8000,
+   0.5
+  ],
+  [
+   -34,
+   16.8,
+   -24,
+   "cyan",
+   12000.0,
+   2.0
+  ],
+  [
+   -70,
+   18.2,
+   -40,
+   "cyan",
+   13000.0,
+   2.0
+  ],
+  [
+   -27.272731023208216,
+   11.9,
+   -90.46628631878727,
+   "cyan",
+   8500.0,
+   2.0
+  ],
+  [
+   -200,
+   12.6,
+   16,
+   "amber",
+   9000.0,
+   2.0
+  ],
+  [
+   138.58627705119696,
+   14.0,
+   -162.75758942259867,
+   "amber",
+   10000.0,
+   2.0
+  ],
+  [
+   -52.753923823620624,
+   15.400000000000002,
+   -211.5356423396746,
+   "cyan",
+   11000.0,
+   2.0
+  ],
+  [
+   -4,
+   12.6,
+   -214,
+   "cyan",
+   9000.0,
+   2.0
+  ],
+  [
+   -97.48456743160551,
+   6.5,
+   -69.38721700487113,
+   "lamp",
+   2200,
+   0.4
+  ],
+  [
+   -53.51078288113116,
+   6.5,
+   25.155525265096554,
+   "lamp",
+   2200,
+   0.4
+  ],
+  [
+   27.311080160701042,
+   6.5,
+   -13.782268089908253,
+   "lamp",
+   2200,
+   0.4
+  ],
+  [
+   -148,
+   15.6,
+   96,
+   "brew",
+   3600.0,
+   3.0
+  ],
+  [
+   -112,
+   13.0,
+   124,
+   "brew",
+   3000.0,
+   3.0
+  ],
+  [
+   -78,
+   14.3,
+   18,
+   "shroom",
+   3300.0000000000005,
+   3.0
+  ],
+  [
+   -80,
+   13.0,
+   -60,
+   "shroom",
+   3000.0,
+   3.0
+  ]
+ ]
+}

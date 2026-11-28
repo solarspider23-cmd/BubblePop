@@ -1,0 +1,81 @@
+{
+ "columns": {
+  "0": "SmoothPlastic",
+  "1": "Sand",
+  "2": "Sandstone",
+  "3": "Sandstone",
+  "4": "Sandstone",
+  "5": "Slate",
+  "6": "Wood",
+  "7": "Fabric",
+  "8": "Fabric",
+  "9": "Fabric",
+  "10": "Fabric",
+  "11": "Glass",
+  "12": "LeafyGrass",
+  "13": "Grass",
+  "14": "Metal"
+ },
+ "names": [
+  "white",
+  "sand",
+  "stone",
+  "cliff",
+  "cliff2",
+  "terra",
+  "wood",
+  "rope",
+  "teal",
+  "saffron",
+  "plum",
+  "water",
+  "palm",
+  "scrub",
+  "brass"
+ ],
+ "overrides": {
+  "Horizon_Buttes": "SmoothPlastic",
+  "Paving_Main": "Limestone",
+  "Paving_SpawnStar": "SmoothPlastic",
+  "Cliff_Walls": {
+   "cliff": "Sandstone",
+   "cliff2": "Sandstone",
+   "stone": "Sandstone",
+   "sand": "Sand"
+  },
+  "Palm": {
+   "wood": "Wood",
+   "rope": "Wood",
+   "saffron": "SmoothPlastic",
+   "terra": "SmoothPlastic"
+  },
+  "Hoodoo": "Sandstone",
+  "Boulder": "Sandstone",
+  "Pots": {
+   "terra": "SmoothPlastic"
+  },
+  "Stall_": {
+   "terra": "SmoothPlastic",
+   "stone": "Sandstone"
+  },
+  "SpawnFountain": {
+   "teal": "SmoothPlastic",
+   "saffron": "SmoothPlastic"
+  },
+  "MarketGate": {
+   "teal": "SmoothPlastic",
+   "saffron": "SmoothPlastic",
+   "terra": "Brick"
+  },
+  "RelicKiosk": {
+   "teal": "SmoothPlastic",
+   "terra": "Brick"
+  },
+  "SunTemple": {
+   "terra": "Brick",
+   "saffron": "SmoothPlastic",
+   "cliff": "Sandstone",
+   "cliff2": "Sandstone"
+  }
+ }
+}

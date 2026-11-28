@@ -1,0 +1,575 @@
+{
+ "spawn": [
+  0.0,
+  0.0,
+  200.0
+ ],
+ "anchors": [
+  {
+   "name": "Spawn",
+   "kind": "spawn",
+   "pos": [
+    0.0,
+    1.6,
+    200.0
+   ],
+   "yaw": 0,
+   "size": [
+    8,
+    1,
+    8
+   ],
+   "attrs": {
+    "note": "SpawnLocation on the sun dais, facing -Z: pylon gate frames the pyramid"
+   }
+  },
+  {
+   "name": "QuestStele",
+   "kind": "station",
+   "pos": [
+    -26.09,
+    5.0,
+    188.41
+   ],
+   "yaw": 246.0,
+   "size": [
+    6,
+    7,
+    1
+   ],
+   "attrs": {
+    "prompt": "Quests",
+    "note": "three blank panels take quest SurfaceGuis"
+   }
+  },
+  {
+   "name": "Upgrades",
+   "kind": "station",
+   "pos": [
+    23.53,
+    3.0,
+    188.24
+   ],
+   "yaw": 116.6,
+   "size": [
+    6,
+    6,
+    4
+   ],
+   "attrs": {
+    "prompt": "Upgrade",
+    "note": "ProximityPrompt at the armillary pedestal"
+   }
+  },
+  {
+   "name": "PyramidSummit",
+   "kind": "poi",
+   "pos": [
+    0.0,
+    52.0,
+    -30.0
+   ],
+   "yaw": 180,
+   "size": [
+    16,
+    10,
+    16
+   ],
+   "attrs": {
+    "note": "summit shrine: sun disc / leaderboard / rebirth spot"
+   }
+  },
+  {
+   "name": "CaravanTrader",
+   "kind": "station",
+   "pos": [
+    123.41,
+    3.4,
+    190.36
+   ],
+   "yaw": 94.5,
+   "size": [
+    10,
+    4,
+    2
+   ],
+   "attrs": {
+    "prompt": "Shop",
+    "note": "counter front; trader NPC stands behind the counter"
+   }
+  },
+  {
+   "name": "CampZone",
+   "kind": "zone",
+   "pos": [
+    140.0,
+    4,
+    196.0
+   ],
+   "yaw": 0,
+   "size": [
+    70,
+    10,
+    70
+   ],
+   "attrs": {
+    "poi": "Caravan Camp"
+   }
+  },
+  {
+   "name": "OasisWell",
+   "kind": "poi",
+   "pos": [
+    -136.84,
+    3.2,
+    167.21
+   ],
+   "yaw": 20,
+   "size": [
+    5,
+    5,
+    5
+   ],
+   "attrs": {
+    "note": "well head: heal / refill prompt"
+   }
+  },
+  {
+   "name": "OasisZone",
+   "kind": "zone",
+   "pos": [
+    -150.0,
+    4,
+    172.0
+   ],
+   "yaw": 0,
+   "size": [
+    60,
+    10,
+    60
+   ],
+   "attrs": {
+    "poi": "Palm Oasis"
+   }
+  },
+  {
+   "name": "ObeliskZone",
+   "kind": "zone",
+   "pos": [
+    245.0,
+    4,
+    5.0
+   ],
+   "yaw": 0,
+   "size": [
+    90,
+    10,
+    70
+   ],
+   "attrs": {
+    "poi": "Obelisk Field"
+   }
+  },
+  {
+   "name": "ColossusZone",
+   "kind": "zone",
+   "pos": [
+    178.0,
+    6,
+    -196.0
+   ],
+   "yaw": 134.7,
+   "size": [
+    60,
+    12,
+    60
+   ],
+   "attrs": {
+    "poi": "Colossus Head"
+   }
+  },
+  {
+   "name": "SkeletonZone",
+   "kind": "zone",
+   "pos": [
+    -195,
+    6,
+    -90
+   ],
+   "yaw": 0,
+   "size": [
+    60,
+    14,
+    170
+   ],
+   "attrs": {
+    "poi": "Wyrm Skeleton"
+   }
+  },
+  {
+   "name": "DungeonPortal",
+   "kind": "portal",
+   "pos": [
+    -243.8,
+    -6.5,
+    10.0
+   ],
+   "yaw": 270,
+   "size": [
+    7,
+    11,
+    2
+   ],
+   "attrs": {
+    "prompt": "Enter Dungeon",
+    "note": "glowing doorway at the foot of the trench stair"
+   }
+  },
+  {
+   "name": "TempleZone",
+   "kind": "zone",
+   "pos": [
+    -225.0,
+    0,
+    10.0
+   ],
+   "yaw": 0,
+   "size": [
+    60,
+    30,
+    40
+   ],
+   "attrs": {
+    "poi": "Sunken Temple"
+   }
+  },
+  {
+   "name": "DigSpot01",
+   "kind": "dig",
+   "pos": [
+    60,
+    12.86,
+    150
+   ],
+   "yaw": 0,
+   "size": [
+    6,
+    3,
+    6
+   ],
+   "attrs": {
+    "tier": 1
+   }
+  },
+  {
+   "name": "DigSpot02",
+   "kind": "dig",
+   "pos": [
+    -58,
+    12.02,
+    150
+   ],
+   "yaw": 47,
+   "size": [
+    6,
+    3,
+    6
+   ],
+   "attrs": {
+    "tier": 1
+   }
+  },
+  {
+   "name": "DigSpot03",
+   "kind": "dig",
+   "pos": [
+    110,
+    1.39,
+    80
+   ],
+   "yaw": 94,
+   "size": [
+    6,
+    3,
+    6
+   ],
+   "attrs": {
+    "tier": 1
+   }
+  },
+  {
+   "name": "DigSpot04",
+   "kind": "dig",
+   "pos": [
+    -115,
+    2.5,
+    70
+   ],
+   "yaw": 141,
+   "size": [
+    6,
+    3,
+    6
+   ],
+   "attrs": {
+    "tier": 1
+   }
+  },
+  {
+   "name": "DigSpot05",
+   "kind": "dig",
+   "pos": [
+    -100,
+    3.89,
+    -150
+   ],
+   "yaw": 188,
+   "size": [
+    6,
+    3,
+    6
+   ],
+   "attrs": {
+    "tier": 1
+   }
+  },
+  {
+   "name": "DigSpot06",
+   "kind": "dig",
+   "pos": [
+    85,
+    2.72,
+    -150
+   ],
+   "yaw": 235,
+   "size": [
+    6,
+    3,
+    6
+   ],
+   "attrs": {
+    "tier": 1
+   }
+  },
+  {
+   "name": "DigSpot07",
+   "kind": "dig",
+   "pos": [
+    200,
+    7.58,
+    150
+   ],
+   "yaw": 282,
+   "size": [
+    6,
+    3,
+    6
+   ],
+   "attrs": {
+    "tier": 2
+   }
+  },
+  {
+   "name": "DigSpot08",
+   "kind": "dig",
+   "pos": [
+    -215,
+    10.9,
+    210
+   ],
+   "yaw": 329,
+   "size": [
+    6,
+    3,
+    6
+   ],
+   "attrs": {
+    "tier": 2
+   }
+  },
+  {
+   "name": "DigSpot09",
+   "kind": "dig",
+   "pos": [
+    285,
+    9.38,
+    110
+   ],
+   "yaw": 16,
+   "size": [
+    6,
+    3,
+    6
+   ],
+   "attrs": {
+    "tier": 2
+   }
+  },
+  {
+   "name": "DigSpot10",
+   "kind": "dig",
+   "pos": [
+    -300,
+    9.72,
+    -40
+   ],
+   "yaw": 63,
+   "size": [
+    6,
+    3,
+    6
+   ],
+   "attrs": {
+    "tier": 2
+   }
+  },
+  {
+   "name": "DigSpot11",
+   "kind": "dig",
+   "pos": [
+    120,
+    3.4,
+    -245
+   ],
+   "yaw": 110,
+   "size": [
+    6,
+    3,
+    6
+   ],
+   "attrs": {
+    "tier": 2
+   }
+  },
+  {
+   "name": "DigSpot12",
+   "kind": "dig",
+   "pos": [
+    -95,
+    19.55,
+    -255
+   ],
+   "yaw": 157,
+   "size": [
+    6,
+    3,
+    6
+   ],
+   "attrs": {
+    "tier": 2
+   }
+  },
+  {
+   "name": "DigSpot13",
+   "kind": "dig",
+   "pos": [
+    285,
+    10.35,
+    -100
+   ],
+   "yaw": 204,
+   "size": [
+    6,
+    3,
+    6
+   ],
+   "attrs": {
+    "tier": 2
+   }
+  },
+  {
+   "name": "DigSpot14",
+   "kind": "dig",
+   "pos": [
+    325,
+    5.4,
+    -40
+   ],
+   "yaw": 251,
+   "size": [
+    6,
+    3,
+    6
+   ],
+   "attrs": {
+    "tier": 3
+   }
+  },
+  {
+   "name": "DigSpot15",
+   "kind": "dig",
+   "pos": [
+    -140,
+    7.04,
+    -310
+   ],
+   "yaw": 298,
+   "size": [
+    6,
+    3,
+    6
+   ],
+   "attrs": {
+    "tier": 3
+   }
+  },
+  {
+   "name": "DigSpot16",
+   "kind": "dig",
+   "pos": [
+    250,
+    8.32,
+    -255
+   ],
+   "yaw": 345,
+   "size": [
+    6,
+    3,
+    6
+   ],
+   "attrs": {
+    "tier": 3
+   }
+  },
+  {
+   "name": "DigSpot17",
+   "kind": "dig",
+   "pos": [
+    -320,
+    4.0,
+    125
+   ],
+   "yaw": 32,
+   "size": [
+    6,
+    3,
+    6
+   ],
+   "attrs": {
+    "tier": 3
+   }
+  },
+  {
+   "name": "DigSpot18",
+   "kind": "dig",
+   "pos": [
+    55,
+    7.7,
+    -330
+   ],
+   "yaw": 79,
+   "size": [
+    6,
+    3,
+    6
+   ],
+   "attrs": {
+    "tier": 3
+   }
+  }
+ ],
+ "sun": {
+  "elevation": 64.0,
+  "azimuth": 205.0
+ }
+}

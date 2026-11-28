@@ -1,0 +1,2843 @@
+{
+ "name": "MoonSweepers",
+ "format": "glb",
+ "props": {
+  "Airlock_z1": {
+   "parts": [
+    {
+     "name": "Airlock_z1",
+     "tris": 1992,
+     "size": [
+      33.04,
+      22.65,
+      9.0
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Airlock_z1_Glow_z1",
+     "tris": 356,
+     "size": [
+      27.6,
+      21.48,
+      4.8
+     ],
+     "glow": "z1",
+     "color": [
+      255,
+      210,
+      58
+     ]
+    }
+   ],
+   "tris": 2348,
+   "collision": "precise",
+   "size": [
+    33.04,
+    23.28,
+    9.0
+   ]
+  },
+  "Airlock_z2": {
+   "parts": [
+    {
+     "name": "Airlock_z2",
+     "tris": 1992,
+     "size": [
+      33.04,
+      22.65,
+      9.0
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Airlock_z2_Glow_z2",
+     "tris": 356,
+     "size": [
+      27.6,
+      21.48,
+      4.8
+     ],
+     "glow": "z2",
+     "color": [
+      255,
+      122,
+      58
+     ]
+    }
+   ],
+   "tris": 2348,
+   "collision": "precise",
+   "size": [
+    33.04,
+    23.28,
+    9.0
+   ]
+  },
+  "Airlock_z3": {
+   "parts": [
+    {
+     "name": "Airlock_z3",
+     "tris": 1992,
+     "size": [
+      33.04,
+      22.65,
+      9.0
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Airlock_z3_Glow_z3",
+     "tris": 356,
+     "size": [
+      27.6,
+      21.48,
+      4.8
+     ],
+     "glow": "z3",
+     "color": [
+      58,
+      224,
+      255
+     ]
+    }
+   ],
+   "tris": 2348,
+   "collision": "precise",
+   "size": [
+    33.04,
+    23.28,
+    9.0
+   ]
+  },
+  "Airlock_z4": {
+   "parts": [
+    {
+     "name": "Airlock_z4",
+     "tris": 1992,
+     "size": [
+      33.04,
+      22.65,
+      9.0
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Airlock_z4_Glow_z4",
+     "tris": 356,
+     "size": [
+      27.6,
+      21.48,
+      4.8
+     ],
+     "glow": "z4",
+     "color": [
+      165,
+      122,
+      255
+     ]
+    }
+   ],
+   "tris": 2348,
+   "collision": "precise",
+   "size": [
+    33.04,
+    23.28,
+    9.0
+   ]
+  },
+  "BeaconRail_beacon": {
+   "parts": [
+    {
+     "name": "BeaconRail_beacon",
+     "tris": 242,
+     "size": [
+      10.82,
+      2.65,
+      1.6
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "BeaconRail_beacon_Glow_beacon",
+     "tris": 48,
+     "size": [
+      0.8,
+      0.66,
+      0.8
+     ],
+     "glow": "beacon",
+     "color": [
+      255,
+      174,
+      42
+     ]
+    }
+   ],
+   "tris": 290,
+   "collision": "box",
+   "size": [
+    10.82,
+    3.28,
+    1.6
+   ]
+  },
+  "BeaconRail_beacon_v001": {
+   "parts": [
+    {
+     "name": "BeaconRail_beacon_v001",
+     "tris": 242,
+     "size": [
+      15.26,
+      2.65,
+      1.6
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "BeaconRail_beacon_v001_Glow_beacon",
+     "tris": 48,
+     "size": [
+      0.8,
+      0.66,
+      0.8
+     ],
+     "glow": "beacon",
+     "color": [
+      255,
+      174,
+      42
+     ]
+    }
+   ],
+   "tris": 290,
+   "collision": "box",
+   "size": [
+    15.26,
+    3.28,
+    1.6
+   ]
+  },
+  "BeaconRail_beacon_v002": {
+   "parts": [
+    {
+     "name": "BeaconRail_beacon_v002",
+     "tris": 242,
+     "size": [
+      20.49,
+      2.65,
+      1.6
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "BeaconRail_beacon_v002_Glow_beacon",
+     "tris": 48,
+     "size": [
+      0.8,
+      0.66,
+      0.8
+     ],
+     "glow": "beacon",
+     "color": [
+      255,
+      174,
+      42
+     ]
+    }
+   ],
+   "tris": 290,
+   "collision": "box",
+   "size": [
+    20.49,
+    3.28,
+    1.6
+   ]
+  },
+  "BeaconRail_beacon_v003": {
+   "parts": [
+    {
+     "name": "BeaconRail_beacon_v003",
+     "tris": 242,
+     "size": [
+      20.64,
+      2.65,
+      1.6
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "BeaconRail_beacon_v003_Glow_beacon",
+     "tris": 48,
+     "size": [
+      0.8,
+      0.66,
+      0.8
+     ],
+     "glow": "beacon",
+     "color": [
+      255,
+      174,
+      42
+     ]
+    }
+   ],
+   "tris": 290,
+   "collision": "box",
+   "size": [
+    20.64,
+    3.28,
+    1.6
+   ]
+  },
+  "BeaconRail_beacon_v004": {
+   "parts": [
+    {
+     "name": "BeaconRail_beacon_v004",
+     "tris": 242,
+     "size": [
+      20.38,
+      2.65,
+      1.6
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "BeaconRail_beacon_v004_Glow_beacon",
+     "tris": 48,
+     "size": [
+      0.8,
+      0.66,
+      0.8
+     ],
+     "glow": "beacon",
+     "color": [
+      255,
+      174,
+      42
+     ]
+    }
+   ],
+   "tris": 290,
+   "collision": "box",
+   "size": [
+    20.38,
+    3.28,
+    1.6
+   ]
+  },
+  "BeaconRail_z1": {
+   "parts": [
+    {
+     "name": "BeaconRail_z1",
+     "tris": 242,
+     "size": [
+      5.37,
+      2.65,
+      1.6
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "BeaconRail_z1_Glow_z1",
+     "tris": 48,
+     "size": [
+      0.8,
+      0.66,
+      0.8
+     ],
+     "glow": "z1",
+     "color": [
+      255,
+      210,
+      58
+     ]
+    }
+   ],
+   "tris": 290,
+   "collision": "box",
+   "size": [
+    5.37,
+    3.28,
+    1.6
+   ]
+  },
+  "BeaconRail_z2": {
+   "parts": [
+    {
+     "name": "BeaconRail_z2",
+     "tris": 242,
+     "size": [
+      5.87,
+      2.65,
+      1.6
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "BeaconRail_z2_Glow_z2",
+     "tris": 48,
+     "size": [
+      0.8,
+      0.66,
+      0.8
+     ],
+     "glow": "z2",
+     "color": [
+      255,
+      122,
+      58
+     ]
+    }
+   ],
+   "tris": 290,
+   "collision": "box",
+   "size": [
+    5.87,
+    3.28,
+    1.6
+   ]
+  },
+  "BeaconRail_z3": {
+   "parts": [
+    {
+     "name": "BeaconRail_z3",
+     "tris": 242,
+     "size": [
+      6.37,
+      2.65,
+      1.6
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "BeaconRail_z3_Glow_z3",
+     "tris": 48,
+     "size": [
+      0.8,
+      0.66,
+      0.8
+     ],
+     "glow": "z3",
+     "color": [
+      58,
+      224,
+      255
+     ]
+    }
+   ],
+   "tris": 290,
+   "collision": "box",
+   "size": [
+    6.37,
+    3.28,
+    1.6
+   ]
+  },
+  "BeaconRail_z3_v001": {
+   "parts": [
+    {
+     "name": "BeaconRail_z3_v001",
+     "tris": 242,
+     "size": [
+      6.37,
+      2.65,
+      1.6
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "BeaconRail_z3_v001_Glow_z3",
+     "tris": 48,
+     "size": [
+      0.8,
+      0.66,
+      0.8
+     ],
+     "glow": "z3",
+     "color": [
+      58,
+      224,
+      255
+     ]
+    }
+   ],
+   "tris": 290,
+   "collision": "box",
+   "size": [
+    6.37,
+    3.28,
+    1.6
+   ]
+  },
+  "BeaconRail_z4": {
+   "parts": [
+    {
+     "name": "BeaconRail_z4",
+     "tris": 242,
+     "size": [
+      6.86,
+      2.65,
+      1.6
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "BeaconRail_z4_Glow_z4",
+     "tris": 48,
+     "size": [
+      0.8,
+      0.66,
+      0.8
+     ],
+     "glow": "z4",
+     "color": [
+      165,
+      122,
+      255
+     ]
+    }
+   ],
+   "tris": 290,
+   "collision": "box",
+   "size": [
+    6.86,
+    3.28,
+    1.6
+   ]
+  },
+  "BeaconRail_z4_v001": {
+   "parts": [
+    {
+     "name": "BeaconRail_z4_v001",
+     "tris": 242,
+     "size": [
+      6.86,
+      2.65,
+      1.6
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "BeaconRail_z4_v001_Glow_z4",
+     "tris": 48,
+     "size": [
+      0.8,
+      0.66,
+      0.8
+     ],
+     "glow": "z4",
+     "color": [
+      165,
+      122,
+      255
+     ]
+    }
+   ],
+   "tris": 290,
+   "collision": "box",
+   "size": [
+    6.86,
+    3.28,
+    1.6
+   ]
+  },
+  "CommsDish": {
+   "parts": [
+    {
+     "name": "CommsDish",
+     "tris": 1044,
+     "size": [
+      14.7,
+      15.49,
+      10.29
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "CommsDish_Glow_red",
+     "tris": 28,
+     "size": [
+      0.5,
+      0.3,
+      0.5
+     ],
+     "glow": "red",
+     "color": [
+      255,
+      42,
+      58
+     ]
+    }
+   ],
+   "tris": 1072,
+   "collision": "hull",
+   "size": [
+    14.7,
+    15.49,
+    10.29
+   ]
+  },
+  "Crater1_mare": {
+   "parts": [
+    {
+     "name": "Crater1_mare",
+     "tris": 802,
+     "size": [
+      3.5,
+      0.38,
+      3.5
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 802,
+   "collision": "box",
+   "size": [
+    3.5,
+    0.38,
+    3.5
+   ]
+  },
+  "Crater1_regA": {
+   "parts": [
+    {
+     "name": "Crater1_regA",
+     "tris": 802,
+     "size": [
+      3.5,
+      0.38,
+      3.5
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 802,
+   "collision": "box",
+   "size": [
+    3.5,
+    0.38,
+    3.5
+   ]
+  },
+  "Crater1_regB": {
+   "parts": [
+    {
+     "name": "Crater1_regB",
+     "tris": 802,
+     "size": [
+      3.5,
+      0.38,
+      3.5
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 802,
+   "collision": "box",
+   "size": [
+    3.5,
+    0.38,
+    3.5
+   ]
+  },
+  "Crater2_mare": {
+   "parts": [
+    {
+     "name": "Crater2_mare",
+     "tris": 798,
+     "size": [
+      3.49,
+      0.38,
+      3.49
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 798,
+   "collision": "box",
+   "size": [
+    3.49,
+    0.38,
+    3.49
+   ]
+  },
+  "Crater2_mare_v001": {
+   "parts": [
+    {
+     "name": "Crater2_mare_v001",
+     "tris": 798,
+     "size": [
+      3.49,
+      0.38,
+      3.49
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 798,
+   "collision": "box",
+   "size": [
+    3.49,
+    0.38,
+    3.49
+   ]
+  },
+  "Crater2_regA": {
+   "parts": [
+    {
+     "name": "Crater2_regA",
+     "tris": 798,
+     "size": [
+      3.49,
+      0.38,
+      3.49
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 798,
+   "collision": "box",
+   "size": [
+    3.49,
+    0.38,
+    3.49
+   ]
+  },
+  "Crater2_regB": {
+   "parts": [
+    {
+     "name": "Crater2_regB",
+     "tris": 798,
+     "size": [
+      3.49,
+      0.38,
+      3.49
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 798,
+   "collision": "box",
+   "size": [
+    3.49,
+    0.38,
+    3.49
+   ]
+  },
+  "Crater3_mare": {
+   "parts": [
+    {
+     "name": "Crater3_mare",
+     "tris": 840,
+     "size": [
+      3.49,
+      0.39,
+      3.49
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 840,
+   "collision": "box",
+   "size": [
+    3.49,
+    0.39,
+    3.49
+   ]
+  },
+  "Crater3_regA": {
+   "parts": [
+    {
+     "name": "Crater3_regA",
+     "tris": 840,
+     "size": [
+      3.49,
+      0.39,
+      3.49
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 840,
+   "collision": "box",
+   "size": [
+    3.49,
+    0.39,
+    3.49
+   ]
+  },
+  "Crater3_regB": {
+   "parts": [
+    {
+     "name": "Crater3_regB",
+     "tris": 840,
+     "size": [
+      3.49,
+      0.39,
+      3.49
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 840,
+   "collision": "box",
+   "size": [
+    3.49,
+    0.39,
+    3.49
+   ]
+  },
+  "DustExchange": {
+   "parts": [
+    {
+     "name": "DustExchange",
+     "tris": 6822,
+     "size": [
+      17.99,
+      17.02,
+      19.0
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "DustExchange_Glow_beacon",
+     "tris": 288,
+     "size": [
+      14.83,
+      0.66,
+      17.0
+     ],
+     "glow": "beacon",
+     "color": [
+      255,
+      174,
+      42
+     ]
+    },
+    {
+     "name": "DustExchange_Glow_sell",
+     "tris": 264,
+     "size": [
+      13.92,
+      12.2,
+      12.22
+     ],
+     "glow": "sell",
+     "color": [
+      61,
+      255,
+      138
+     ]
+    }
+   ],
+   "tris": 7374,
+   "collision": "precise",
+   "size": [
+    17.99,
+    17.02,
+    19.0
+   ]
+  },
+  "DustPatch10_regB": {
+   "parts": [
+    {
+     "name": "DustPatch10_regB",
+     "tris": 210,
+     "size": [
+      11.77,
+      1.0,
+      11.51
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 210,
+   "collision": "none",
+   "size": [
+    11.77,
+    1.0,
+    11.51
+   ]
+  },
+  "DustPatch11_regB": {
+   "parts": [
+    {
+     "name": "DustPatch11_regB",
+     "tris": 208,
+     "size": [
+      10.75,
+      0.94,
+      11.45
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 208,
+   "collision": "none",
+   "size": [
+    10.75,
+    0.94,
+    11.45
+   ]
+  },
+  "DustPile0_regA": {
+   "parts": [
+    {
+     "name": "DustPile0_regA",
+     "tris": 118,
+     "size": [
+      5.07,
+      1.48,
+      5.57
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "DustPile0_regA_Glow_cyan",
+     "tris": 56,
+     "size": [
+      2.66,
+      0.95,
+      2.98
+     ],
+     "glow": "cyan",
+     "color": [
+      63,
+      230,
+      255
+     ]
+    }
+   ],
+   "tris": 174,
+   "collision": "none",
+   "size": [
+    5.07,
+    2.01,
+    5.57
+   ]
+  },
+  "DustPile1_regA": {
+   "parts": [
+    {
+     "name": "DustPile1_regA",
+     "tris": 124,
+     "size": [
+      5.57,
+      1.58,
+      4.6
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "DustPile1_regA_Glow_cyan",
+     "tris": 56,
+     "size": [
+      3.07,
+      1.22,
+      2.94
+     ],
+     "glow": "cyan",
+     "color": [
+      63,
+      230,
+      255
+     ]
+    }
+   ],
+   "tris": 180,
+   "collision": "none",
+   "size": [
+    5.57,
+    2.04,
+    4.6
+   ]
+  },
+  "DustPile2_regA": {
+   "parts": [
+    {
+     "name": "DustPile2_regA",
+     "tris": 114,
+     "size": [
+      5.67,
+      1.57,
+      5.2
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "DustPile2_regA_Glow_cyan",
+     "tris": 56,
+     "size": [
+      3.26,
+      1.01,
+      2.28
+     ],
+     "glow": "cyan",
+     "color": [
+      63,
+      230,
+      255
+     ]
+    }
+   ],
+   "tris": 170,
+   "collision": "none",
+   "size": [
+    5.67,
+    2.02,
+    5.2
+   ]
+  },
+  "EggIncubator": {
+   "parts": [
+    {
+     "name": "EggIncubator",
+     "tris": 5748,
+     "size": [
+      17.99,
+      8.67,
+      19.0
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "EggIncubator_Glow_beacon",
+     "tris": 288,
+     "size": [
+      14.83,
+      0.66,
+      17.0
+     ],
+     "glow": "beacon",
+     "color": [
+      255,
+      174,
+      42
+     ]
+    },
+    {
+     "name": "EggIncubator_Glow_egg",
+     "tris": 120,
+     "size": [
+      7.27,
+      4.19,
+      3.97
+     ],
+     "glow": "egg",
+     "color": [
+      255,
+      79,
+      210
+     ]
+    },
+    {
+     "name": "EggIncubator_Glow_cyan",
+     "tris": 106,
+     "size": [
+      2.15,
+      4.22,
+      2.5
+     ],
+     "glow": "cyan",
+     "color": [
+      63,
+      230,
+      255
+     ]
+    },
+    {
+     "name": "EggIncubator_Glow_sell",
+     "tris": 106,
+     "size": [
+      2.66,
+      4.26,
+      2.63
+     ],
+     "glow": "sell",
+     "color": [
+      61,
+      255,
+      138
+     ]
+    }
+   ],
+   "tris": 6368,
+   "collision": "hull",
+   "size": [
+    17.99,
+    8.82,
+    19.0
+   ]
+  },
+  "FloodLight": {
+   "parts": [
+    {
+     "name": "FloodLight",
+     "tris": 740,
+     "size": [
+      6.1,
+      22.37,
+      6.8
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "FloodLight_Glow_window",
+     "tris": 48,
+     "size": [
+      3.9,
+      0.69,
+      0.33
+     ],
+     "glow": "window",
+     "color": [
+      159,
+      226,
+      255
+     ]
+    },
+    {
+     "name": "FloodLight_Glow_red",
+     "tris": 32,
+     "size": [
+      0.6,
+      0.55,
+      0.6
+     ],
+     "glow": "red",
+     "color": [
+      255,
+      42,
+      58
+     ]
+    }
+   ],
+   "tris": 820,
+   "collision": "hull",
+   "size": [
+    6.1,
+    23.25,
+    6.8
+   ]
+  },
+  "FuelTanks": {
+   "parts": [
+    {
+     "name": "FuelTanks",
+     "tris": 1796,
+     "size": [
+      10.72,
+      10.76,
+      13.1
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1796,
+   "collision": "box",
+   "size": [
+    10.72,
+    10.76,
+    13.1
+   ]
+  },
+  "GearLocker": {
+   "parts": [
+    {
+     "name": "GearLocker",
+     "tris": 6356,
+     "size": [
+      17.99,
+      17.09,
+      19.0
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "GearLocker_Glow_beacon",
+     "tris": 288,
+     "size": [
+      14.83,
+      0.66,
+      17.0
+     ],
+     "glow": "beacon",
+     "color": [
+      255,
+      174,
+      42
+     ]
+    },
+    {
+     "name": "GearLocker_Glow_cyan",
+     "tris": 488,
+     "size": [
+      9.13,
+      11.94,
+      11.65
+     ],
+     "glow": "cyan",
+     "color": [
+      63,
+      230,
+      255
+     ]
+    }
+   ],
+   "tris": 7132,
+   "collision": "hull",
+   "size": [
+    17.99,
+    17.09,
+    19.0
+   ]
+  },
+  "Horizon_Earth": {
+   "parts": [
+    {
+     "name": "Horizon_Earth",
+     "tris": 1280,
+     "size": [
+      2.0,
+      2.0,
+      2.0
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1280,
+   "collision": "none",
+   "size": [
+    2.0,
+    2.0,
+    2.0
+   ]
+  },
+  "IceCrystal0": {
+   "parts": [
+    {
+     "name": "IceCrystal0",
+     "tris": 176,
+     "size": [
+      8.09,
+      13.85,
+      7.33
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "IceCrystal0_Glow_ice",
+     "tris": 44,
+     "size": [
+      2.87,
+      9.17,
+      3.03
+     ],
+     "glow": "ice",
+     "color": [
+      121,
+      240,
+      255
+     ]
+    }
+   ],
+   "tris": 220,
+   "collision": "hull",
+   "size": [
+    8.09,
+    13.85,
+    7.33
+   ]
+  },
+  "IceCrystal1": {
+   "parts": [
+    {
+     "name": "IceCrystal1",
+     "tris": 156,
+     "size": [
+      7.35,
+      13.85,
+      6.75
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "IceCrystal1_Glow_ice",
+     "tris": 44,
+     "size": [
+      1.91,
+      9.16,
+      2.68
+     ],
+     "glow": "ice",
+     "color": [
+      121,
+      240,
+      255
+     ]
+    }
+   ],
+   "tris": 200,
+   "collision": "hull",
+   "size": [
+    7.35,
+    13.85,
+    6.75
+   ]
+  },
+  "IceCrystal2": {
+   "parts": [
+    {
+     "name": "IceCrystal2",
+     "tris": 150,
+     "size": [
+      7.91,
+      13.85,
+      7.86
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "IceCrystal2_Glow_ice",
+     "tris": 44,
+     "size": [
+      2.53,
+      9.18,
+      2.63
+     ],
+     "glow": "ice",
+     "color": [
+      121,
+      240,
+      255
+     ]
+    }
+   ],
+   "tris": 194,
+   "collision": "hull",
+   "size": [
+    7.91,
+    13.85,
+    7.86
+   ]
+  },
+  "JumpPad_cyan": {
+   "parts": [
+    {
+     "name": "JumpPad_cyan",
+     "tris": 736,
+     "size": [
+      10.0,
+      1.4,
+      10.0
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "JumpPad_cyan_Glow_cyan",
+     "tris": 620,
+     "size": [
+      7.48,
+      0.28,
+      7.48
+     ],
+     "glow": "cyan",
+     "color": [
+      63,
+      230,
+      255
+     ]
+    }
+   ],
+   "tris": 1356,
+   "collision": "box",
+   "size": [
+    10.0,
+    1.56,
+    10.0
+   ]
+  },
+  "JumpPad_z1": {
+   "parts": [
+    {
+     "name": "JumpPad_z1",
+     "tris": 736,
+     "size": [
+      10.0,
+      1.4,
+      10.0
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "JumpPad_z1_Glow_z1",
+     "tris": 620,
+     "size": [
+      7.48,
+      0.28,
+      7.48
+     ],
+     "glow": "z1",
+     "color": [
+      255,
+      210,
+      58
+     ]
+    }
+   ],
+   "tris": 1356,
+   "collision": "box",
+   "size": [
+    10.0,
+    1.56,
+    10.0
+   ]
+  },
+  "JumpPad_z2": {
+   "parts": [
+    {
+     "name": "JumpPad_z2",
+     "tris": 736,
+     "size": [
+      10.0,
+      1.4,
+      10.0
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "JumpPad_z2_Glow_z2",
+     "tris": 620,
+     "size": [
+      7.48,
+      0.28,
+      7.48
+     ],
+     "glow": "z2",
+     "color": [
+      255,
+      122,
+      58
+     ]
+    }
+   ],
+   "tris": 1356,
+   "collision": "box",
+   "size": [
+    10.0,
+    1.56,
+    10.0
+   ]
+  },
+  "JumpPad_z3": {
+   "parts": [
+    {
+     "name": "JumpPad_z3",
+     "tris": 736,
+     "size": [
+      10.0,
+      1.4,
+      10.0
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "JumpPad_z3_Glow_z3",
+     "tris": 620,
+     "size": [
+      7.48,
+      0.28,
+      7.48
+     ],
+     "glow": "z3",
+     "color": [
+      58,
+      224,
+      255
+     ]
+    }
+   ],
+   "tris": 1356,
+   "collision": "box",
+   "size": [
+    10.0,
+    1.56,
+    10.0
+   ]
+  },
+  "JumpPad_z4": {
+   "parts": [
+    {
+     "name": "JumpPad_z4",
+     "tris": 736,
+     "size": [
+      10.0,
+      1.4,
+      10.0
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "JumpPad_z4_Glow_z4",
+     "tris": 620,
+     "size": [
+      7.48,
+      0.28,
+      7.48
+     ],
+     "glow": "z4",
+     "color": [
+      165,
+      122,
+      255
+     ]
+    }
+   ],
+   "tris": 1356,
+   "collision": "box",
+   "size": [
+    10.0,
+    1.56,
+    10.0
+   ]
+  },
+  "JunkHeap0": {
+   "parts": [
+    {
+     "name": "JunkHeap0",
+     "tris": 422,
+     "size": [
+      5.33,
+      2.2,
+      4.83
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 422,
+   "collision": "hull",
+   "size": [
+    5.33,
+    2.2,
+    4.83
+   ]
+  },
+  "JunkHeap1": {
+   "parts": [
+    {
+     "name": "JunkHeap1",
+     "tris": 412,
+     "size": [
+      5.88,
+      2.27,
+      5.65
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 412,
+   "collision": "hull",
+   "size": [
+    5.88,
+    2.27,
+    5.65
+   ]
+  },
+  "JunkHeap2": {
+   "parts": [
+    {
+     "name": "JunkHeap2",
+     "tris": 422,
+     "size": [
+      5.04,
+      2.33,
+      5.05
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 422,
+   "collision": "hull",
+   "size": [
+    5.04,
+    2.33,
+    5.05
+   ]
+  },
+  "LaunchTower": {
+   "parts": [
+    {
+     "name": "LaunchTower",
+     "tris": 1932,
+     "size": [
+      28.2,
+      98.3,
+      12.0
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "LaunchTower_Glow_beacon",
+     "tris": 400,
+     "size": [
+      9.84,
+      64.3,
+      9.78
+     ],
+     "glow": "beacon",
+     "color": [
+      255,
+      174,
+      42
+     ]
+    },
+    {
+     "name": "LaunchTower_Glow_red",
+     "tris": 32,
+     "size": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "glow": "red",
+     "color": [
+      255,
+      42,
+      58
+     ]
+    }
+   ],
+   "tris": 2364,
+   "collision": "precise",
+   "size": [
+    28.2,
+    99.3,
+    12.0
+   ]
+  },
+  "LunarLander": {
+   "parts": [
+    {
+     "name": "LunarLander",
+     "tris": 2512,
+     "size": [
+      17.94,
+      21.51,
+      18.42
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "LunarLander_Glow_window",
+     "tris": 16,
+     "size": [
+      3.4,
+      1.3,
+      0.32
+     ],
+     "glow": "window",
+     "color": [
+      159,
+      226,
+      255
+     ]
+    },
+    {
+     "name": "LunarLander_Glow_red",
+     "tris": 20,
+     "size": [
+      0.4,
+      0.3,
+      0.35
+     ],
+     "glow": "red",
+     "color": [
+      255,
+      42,
+      58
+     ]
+    }
+   ],
+   "tris": 2548,
+   "collision": "precise",
+   "size": [
+    17.94,
+    21.51,
+    18.42
+   ]
+  },
+  "MeteorChunk0": {
+   "parts": [
+    {
+     "name": "MeteorChunk0",
+     "tris": 80,
+     "size": [
+      5.2,
+      1.55,
+      5.2
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "MeteorChunk0_Glow_meteor",
+     "tris": 44,
+     "size": [
+      1.85,
+      1.2,
+      2.04
+     ],
+     "glow": "meteor",
+     "color": [
+      255,
+      90,
+      26
+     ]
+    }
+   ],
+   "tris": 124,
+   "collision": "none",
+   "size": [
+    5.2,
+    1.55,
+    5.2
+   ]
+  },
+  "MeteorChunk1": {
+   "parts": [
+    {
+     "name": "MeteorChunk1",
+     "tris": 84,
+     "size": [
+      5.2,
+      1.62,
+      5.2
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "MeteorChunk1_Glow_meteor",
+     "tris": 38,
+     "size": [
+      2.1,
+      1.45,
+      1.69
+     ],
+     "glow": "meteor",
+     "color": [
+      255,
+      90,
+      26
+     ]
+    }
+   ],
+   "tris": 122,
+   "collision": "none",
+   "size": [
+    5.2,
+    1.68,
+    5.2
+   ]
+  },
+  "MeteorChunk2": {
+   "parts": [
+    {
+     "name": "MeteorChunk2",
+     "tris": 80,
+     "size": [
+      5.2,
+      1.62,
+      5.2
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "MeteorChunk2_Glow_meteor",
+     "tris": 44,
+     "size": [
+      2.23,
+      1.19,
+      2.03
+     ],
+     "glow": "meteor",
+     "color": [
+      255,
+      90,
+      26
+     ]
+    }
+   ],
+   "tris": 124,
+   "collision": "none",
+   "size": [
+    5.2,
+    1.62,
+    5.2
+   ]
+  },
+  "Meteorite7": {
+   "parts": [
+    {
+     "name": "Meteorite7",
+     "tris": 440,
+     "size": [
+      21.0,
+      5.25,
+      18.4
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Meteorite7_Glow_meteor",
+     "tris": 40,
+     "size": [
+      3.53,
+      3.74,
+      3.91
+     ],
+     "glow": "meteor",
+     "color": [
+      255,
+      90,
+      26
+     ]
+    }
+   ],
+   "tris": 480,
+   "collision": "hull",
+   "size": [
+    21.0,
+    5.25,
+    18.4
+   ]
+  },
+  "MoonRock0_regA": {
+   "parts": [
+    {
+     "name": "MoonRock0_regA",
+     "tris": 146,
+     "size": [
+      8.91,
+      3.48,
+      8.34
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 146,
+   "collision": "hull",
+   "size": [
+    8.91,
+    3.48,
+    8.34
+   ]
+  },
+  "MoonRock1_regA": {
+   "parts": [
+    {
+     "name": "MoonRock1_regA",
+     "tris": 142,
+     "size": [
+      8.36,
+      3.61,
+      9.7
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 142,
+   "collision": "hull",
+   "size": [
+    8.36,
+    3.61,
+    9.7
+   ]
+  },
+  "MoonRock20_regB": {
+   "parts": [
+    {
+     "name": "MoonRock20_regB",
+     "tris": 140,
+     "size": [
+      9.9,
+      3.96,
+      9.5
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 140,
+   "collision": "hull",
+   "size": [
+    9.9,
+    3.96,
+    9.5
+   ]
+  },
+  "MoonRock21_regB": {
+   "parts": [
+    {
+     "name": "MoonRock21_regB",
+     "tris": 130,
+     "size": [
+      8.88,
+      3.52,
+      9.79
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 130,
+   "collision": "hull",
+   "size": [
+    8.88,
+    3.52,
+    9.79
+   ]
+  },
+  "MoonRock22_regB": {
+   "parts": [
+    {
+     "name": "MoonRock22_regB",
+     "tris": 130,
+     "size": [
+      10.33,
+      3.59,
+      7.43
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 130,
+   "collision": "hull",
+   "size": [
+    10.33,
+    3.59,
+    7.43
+   ]
+  },
+  "MoonRock2_regA": {
+   "parts": [
+    {
+     "name": "MoonRock2_regA",
+     "tris": 138,
+     "size": [
+      10.6,
+      3.63,
+      8.1
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 138,
+   "collision": "hull",
+   "size": [
+    10.6,
+    3.63,
+    8.1
+   ]
+  },
+  "MoonRock30_mare": {
+   "parts": [
+    {
+     "name": "MoonRock30_mare",
+     "tris": 136,
+     "size": [
+      9.49,
+      3.03,
+      6.57
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 136,
+   "collision": "hull",
+   "size": [
+    9.49,
+    3.03,
+    6.57
+   ]
+  },
+  "MoonRock31_mare": {
+   "parts": [
+    {
+     "name": "MoonRock31_mare",
+     "tris": 136,
+     "size": [
+      8.6,
+      3.18,
+      7.24
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 136,
+   "collision": "hull",
+   "size": [
+    8.6,
+    3.18,
+    7.24
+   ]
+  },
+  "MoonRock40_mare": {
+   "parts": [
+    {
+     "name": "MoonRock40_mare",
+     "tris": 136,
+     "size": [
+      10.32,
+      2.84,
+      7.46
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 136,
+   "collision": "hull",
+   "size": [
+    10.32,
+    2.84,
+    7.46
+   ]
+  },
+  "MoonRock41_mare": {
+   "parts": [
+    {
+     "name": "MoonRock41_mare",
+     "tris": 148,
+     "size": [
+      8.66,
+      3.46,
+      8.6
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 148,
+   "collision": "hull",
+   "size": [
+    8.66,
+    3.46,
+    8.6
+   ]
+  },
+  "MoonRock50_regB": {
+   "parts": [
+    {
+     "name": "MoonRock50_regB",
+     "tris": 134,
+     "size": [
+      7.26,
+      2.63,
+      5.5
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 134,
+   "collision": "hull",
+   "size": [
+    7.26,
+    2.63,
+    5.5
+   ]
+  },
+  "MoonRock51_regB": {
+   "parts": [
+    {
+     "name": "MoonRock51_regB",
+     "tris": 140,
+     "size": [
+      6.22,
+      2.68,
+      6.92
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 140,
+   "collision": "hull",
+   "size": [
+    6.22,
+    2.68,
+    6.92
+   ]
+  },
+  "MoonRock52_regB": {
+   "parts": [
+    {
+     "name": "MoonRock52_regB",
+     "tris": 138,
+     "size": [
+      6.89,
+      2.97,
+      6.71
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 138,
+   "collision": "hull",
+   "size": [
+    6.89,
+    2.97,
+    6.71
+   ]
+  },
+  "MoonRock60_regA": {
+   "parts": [
+    {
+     "name": "MoonRock60_regA",
+     "tris": 152,
+     "size": [
+      9.39,
+      4.18,
+      11.61
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 152,
+   "collision": "hull",
+   "size": [
+    9.39,
+    4.18,
+    11.61
+   ]
+  },
+  "MoonRock61_regA": {
+   "parts": [
+    {
+     "name": "MoonRock61_regA",
+     "tris": 134,
+     "size": [
+      15.66,
+      5.22,
+      15.25
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 134,
+   "collision": "hull",
+   "size": [
+    15.66,
+    5.22,
+    15.25
+   ]
+  },
+  "MoonRock62_regA": {
+   "parts": [
+    {
+     "name": "MoonRock62_regA",
+     "tris": 134,
+     "size": [
+      19.93,
+      7.23,
+      14.24
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 134,
+   "collision": "hull",
+   "size": [
+    19.93,
+    7.23,
+    14.24
+   ]
+  },
+  "MoonRock63_regA": {
+   "parts": [
+    {
+     "name": "MoonRock63_regA",
+     "tris": 150,
+     "size": [
+      24.93,
+      8.51,
+      18.89
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 150,
+   "collision": "hull",
+   "size": [
+    24.93,
+    8.51,
+    18.89
+   ]
+  },
+  "MoonRocket": {
+   "parts": [
+    {
+     "name": "MoonRocket",
+     "tris": 6552,
+     "size": [
+      25.87,
+      97.2,
+      25.87
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "MoonRocket_Glow_beacon",
+     "tris": 384,
+     "size": [
+      25.19,
+      0.66,
+      25.19
+     ],
+     "glow": "beacon",
+     "color": [
+      255,
+      174,
+      42
+     ]
+    },
+    {
+     "name": "MoonRocket_Glow_engine",
+     "tris": 260,
+     "size": [
+      9.4,
+      0.15,
+      9.31
+     ],
+     "glow": "engine",
+     "color": [
+      255,
+      122,
+      34
+     ]
+    },
+    {
+     "name": "MoonRocket_Glow_window",
+     "tris": 156,
+     "size": [
+      5.44,
+      1.27,
+      1.52
+     ],
+     "glow": "window",
+     "color": [
+      159,
+      226,
+      255
+     ]
+    },
+    {
+     "name": "MoonRocket_Glow_red",
+     "tris": 28,
+     "size": [
+      0.6,
+      0.4,
+      0.6
+     ],
+     "glow": "red",
+     "color": [
+      255,
+      42,
+      58
+     ]
+    }
+   ],
+   "tris": 7380,
+   "collision": "hull",
+   "size": [
+    25.87,
+    97.5,
+    25.87
+   ]
+  },
+  "MoonRover": {
+   "parts": [
+    {
+     "name": "MoonRover",
+     "tris": 2504,
+     "size": [
+      6.5,
+      8.5,
+      10.43
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "MoonRover_Glow_cyan",
+     "tris": 12,
+     "size": [
+      1.6,
+      0.5,
+      0.26
+     ],
+     "glow": "cyan",
+     "color": [
+      63,
+      230,
+      255
+     ]
+    }
+   ],
+   "tris": 2516,
+   "collision": "hull",
+   "size": [
+    6.5,
+    8.5,
+    10.43
+   ]
+  },
+  "ReentryPod": {
+   "parts": [
+    {
+     "name": "ReentryPod",
+     "tris": 5050,
+     "size": [
+      17.99,
+      15.32,
+      19.6
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "ReentryPod_Glow_beacon",
+     "tris": 288,
+     "size": [
+      14.83,
+      0.66,
+      17.0
+     ],
+     "glow": "beacon",
+     "color": [
+      255,
+      174,
+      42
+     ]
+    },
+    {
+     "name": "ReentryPod_Glow_window",
+     "tris": 104,
+     "size": [
+      6.9,
+      1.16,
+      0.45
+     ],
+     "glow": "window",
+     "color": [
+      159,
+      226,
+      255
+     ]
+    },
+    {
+     "name": "ReentryPod_Glow_rebirth",
+     "tris": 564,
+     "size": [
+      19.7,
+      1.84,
+      19.75
+     ],
+     "glow": "rebirth",
+     "color": [
+      154,
+      77,
+      255
+     ]
+    }
+   ],
+   "tris": 6006,
+   "collision": "hull",
+   "size": [
+    19.7,
+    15.32,
+    19.95
+   ]
+  },
+  "SupplyCrates1": {
+   "parts": [
+    {
+     "name": "SupplyCrates1",
+     "tris": 560,
+     "size": [
+      8.96,
+      5.32,
+      3.79
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 560,
+   "collision": "box",
+   "size": [
+    8.96,
+    5.32,
+    3.79
+   ]
+  },
+  "SupplyCrates2": {
+   "parts": [
+    {
+     "name": "SupplyCrates2",
+     "tris": 560,
+     "size": [
+      8.96,
+      5.32,
+      3.79
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 560,
+   "collision": "box",
+   "size": [
+    8.96,
+    5.32,
+    3.79
+   ]
+  },
+  "SupplyCrates3": {
+   "parts": [
+    {
+     "name": "SupplyCrates3",
+     "tris": 560,
+     "size": [
+      8.96,
+      5.32,
+      3.79
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 560,
+   "collision": "box",
+   "size": [
+    8.96,
+    5.32,
+    3.79
+   ]
+  }
+ },
+ "static": [
+  {
+   "name": "Ground_Crater_0",
+   "group": "Ground",
+   "tris": 16250,
+   "size": [
+    329.17,
+    75.56,
+    408.4
+   ]
+  },
+  {
+   "name": "Ground_Crater_1",
+   "group": "Ground",
+   "tris": 16250,
+   "size": [
+    98.58,
+    100.38,
+    420.0
+   ]
+  },
+  {
+   "name": "Ground_Crater_2",
+   "group": "Ground",
+   "tris": 16250,
+   "size": [
+    328.63,
+    75.35,
+    409.89
+   ]
+  },
+  {
+   "name": "Ground_Crater_3",
+   "group": "Ground",
+   "tris": 16250,
+   "size": [
+    98.58,
+    100.46,
+    420.0
+   ]
+  },
+  {
+   "name": "Ground_Crater_4",
+   "group": "Ground",
+   "tris": 16250,
+   "size": [
+    98.58,
+    103.01,
+    420.0
+   ]
+  },
+  {
+   "name": "Ground_Crater_5",
+   "group": "Ground",
+   "tris": 16250,
+   "size": [
+    329.17,
+    77.06,
+    408.4
+   ]
+  },
+  {
+   "name": "Ground_Crater_6",
+   "group": "Ground",
+   "tris": 16250,
+   "size": [
+    98.58,
+    99.87,
+    420.0
+   ]
+  },
+  {
+   "name": "Ground_Crater_7",
+   "group": "Ground",
+   "tris": 16250,
+   "size": [
+    329.17,
+    77.44,
+    408.4
+   ]
+  },
+  {
+   "name": "Horizon_Plains_0",
+   "group": "Horizon",
+   "tris": 256,
+   "size": [
+    1948.57,
+    53.3,
+    1911.41
+   ]
+  },
+  {
+   "name": "Horizon_Plains_1",
+   "group": "Horizon",
+   "tris": 128,
+   "size": [
+    1614.02,
+    61.74,
+    701.33
+   ]
+  },
+  {
+   "name": "Horizon_Plains_2",
+   "group": "Horizon",
+   "tris": 128,
+   "size": [
+    524.44,
+    69.8,
+    659.71
+   ]
+  },
+  {
+   "name": "Horizon_Plains_3",
+   "group": "Horizon",
+   "tris": 128,
+   "size": [
+    670.62,
+    17.96,
+    1674.1
+   ]
+  },
+  {
+   "name": "Horizon_Plains_4",
+   "group": "Horizon",
+   "tris": 128,
+   "size": [
+    659.71,
+    15.09,
+    507.72
+   ]
+  },
+  {
+   "name": "Horizon_Plains_5",
+   "group": "Horizon",
+   "tris": 256,
+   "size": [
+    653.73,
+    47.42,
+    622.25
+   ]
+  },
+  {
+   "name": "Horizon_Plains_6",
+   "group": "Horizon",
+   "tris": 128,
+   "size": [
+    1664.12,
+    53.12,
+    626.19
+   ]
+  },
+  {
+   "name": "Horizon_Plains_7",
+   "group": "Horizon",
+   "tris": 128,
+   "size": [
+    494.75,
+    13.77,
+    659.71
+   ]
+  },
+  {
+   "name": "Horizon_Plains_8",
+   "group": "Horizon",
+   "tris": 256,
+   "size": [
+    615.44,
+    12.31,
+    653.73
+   ]
+  },
+  {
+   "name": "Horizon_Plains_9",
+   "group": "Horizon",
+   "tris": 256,
+   "size": [
+    1939.02,
+    60.73,
+    1948.57
+   ]
+  },
+  {
+   "name": "Horizon_Plains_10",
+   "group": "Horizon",
+   "tris": 128,
+   "size": [
+    693.81,
+    47.46,
+    511.37
+   ]
+  },
+  {
+   "name": "Horizon_Plains_11",
+   "group": "Horizon",
+   "tris": 128,
+   "size": [
+    701.33,
+    66.0,
+    1634.7
+   ]
+  },
+  {
+   "name": "Horizon_Plains_12",
+   "group": "Horizon",
+   "tris": 128,
+   "size": [
+    667.33,
+    65.51,
+    1664.12
+   ]
+  },
+  {
+   "name": "Horizon_Plains_13",
+   "group": "Horizon",
+   "tris": 128,
+   "size": [
+    656.54,
+    13.8,
+    509.08
+   ]
+  },
+  {
+   "name": "Horizon_Plains_14",
+   "group": "Horizon",
+   "tris": 256,
+   "size": [
+    652.78,
+    7.2,
+    615.44
+   ]
+  },
+  {
+   "name": "Horizon_Plains_15",
+   "group": "Horizon",
+   "tris": 256,
+   "size": [
+    1948.57,
+    61.86,
+    1908.58
+   ]
+  },
+  {
+   "name": "Horizon_Plains_16",
+   "group": "Horizon",
+   "tris": 128,
+   "size": [
+    511.37,
+    45.41,
+    698.36
+   ]
+  },
+  {
+   "name": "Horizon_Plains_17",
+   "group": "Horizon",
+   "tris": 128,
+   "size": [
+    1634.7,
+    51.74,
+    691.5
+   ]
+  },
+  {
+   "name": "Horizon_Plains_18",
+   "group": "Horizon",
+   "tris": 256,
+   "size": [
+    653.73,
+    7.29,
+    622.25
+   ]
+  },
+  {
+   "name": "Horizon_Plains_19",
+   "group": "Horizon",
+   "tris": 128,
+   "size": [
+    647.07,
+    48.09,
+    522.05
+   ]
+  },
+  {
+   "name": "Horizon_Plains_20",
+   "group": "Horizon",
+   "tris": 128,
+   "size": [
+    691.5,
+    50.55,
+    1664.12
+   ]
+  },
+  {
+   "name": "Horizon_Plains_21",
+   "group": "Horizon",
+   "tris": 128,
+   "size": [
+    531.95,
+    66.65,
+    659.71
+   ]
+  },
+  {
+   "name": "Horizon_Plains_22",
+   "group": "Horizon",
+   "tris": 128,
+   "size": [
+    1634.7,
+    68.2,
+    691.5
+   ]
+  },
+  {
+   "name": "Horizon_Plains_23",
+   "group": "Horizon",
+   "tris": 256,
+   "size": [
+    1965.61,
+    52.11,
+    1911.41
+   ]
+  },
+  {
+   "name": "Hardscape_HubDeck_0",
+   "group": "Hub",
+   "tris": 8672,
+   "size": [
+    124.2,
+    0.95,
+    124.2
+   ]
+  }
+ ],
+ "bigparts": [],
+ "look": {
+  "SunDir": [
+   0.689,
+   0.642,
+   -0.337
+  ],
+  "SunElevation": 39.9,
+  "ClockTime": 8.66,
+  "SunColor": [
+   255,
+   247,
+   235
+  ],
+  "Brightness": 3.57
+ }
+}

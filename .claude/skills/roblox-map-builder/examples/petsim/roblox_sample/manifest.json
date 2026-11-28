@@ -1,0 +1,2338 @@
+{
+ "name": "Puffpaw",
+ "format": "glb",
+ "props": {
+  "Bench_pink": {
+   "parts": [
+    {
+     "name": "Bench_pink",
+     "tris": 700,
+     "size": [
+      6.1,
+      4.19,
+      3.25
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 700,
+   "collision": "box",
+   "size": [
+    6.1,
+    4.19,
+    3.25
+   ]
+  },
+  "Bridge_1": {
+   "parts": [
+    {
+     "name": "Bridge_1",
+     "tris": 7608,
+     "size": [
+      14.9,
+      22.16,
+      72.74
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 7608,
+   "collision": "precise",
+   "size": [
+    14.9,
+    22.16,
+    72.74
+   ]
+  },
+  "Bridge_2": {
+   "parts": [
+    {
+     "name": "Bridge_2",
+     "tris": 6416,
+     "size": [
+      14.9,
+      26.06,
+      61.32
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 6416,
+   "collision": "precise",
+   "size": [
+    14.9,
+    26.06,
+    61.32
+   ]
+  },
+  "Bridge_3": {
+   "parts": [
+    {
+     "name": "Bridge_3",
+     "tris": 9528,
+     "size": [
+      14.9,
+      31.77,
+      93.0
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 9528,
+   "collision": "precise",
+   "size": [
+    14.9,
+    31.77,
+    93.0
+   ]
+  },
+  "CandyCane1": {
+   "parts": [
+    {
+     "name": "CandyCane1",
+     "tris": 556,
+     "size": [
+      3.85,
+      9.54,
+      1.1
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 556,
+   "collision": "box",
+   "size": [
+    3.85,
+    9.54,
+    1.1
+   ]
+  },
+  "Chest_T2": {
+   "parts": [
+    {
+     "name": "Chest_T2",
+     "tris": 198,
+     "size": [
+      4.2,
+      3.67,
+      3.25
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 198,
+   "collision": "box",
+   "size": [
+    4.2,
+    3.67,
+    3.25
+   ]
+  },
+  "Chest_T3": {
+   "parts": [
+    {
+     "name": "Chest_T3",
+     "tris": 198,
+     "size": [
+      4.2,
+      3.67,
+      3.25
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Chest_T3_Glow_gem",
+     "tris": 36,
+     "size": [
+      0.6,
+      0.6,
+      0.35
+     ],
+     "glow": "gem",
+     "color": [
+      255,
+      155,
+      224
+     ]
+    }
+   ],
+   "tris": 234,
+   "collision": "box",
+   "size": [
+    4.2,
+    3.67,
+    3.47
+   ]
+  },
+  "Cloud1": {
+   "parts": [
+    {
+     "name": "Cloud1",
+     "tris": 910,
+     "size": [
+      52.42,
+      15.06,
+      27.67
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 910,
+   "collision": "none",
+   "size": [
+    52.42,
+    15.06,
+    27.67
+   ]
+  },
+  "Cloud2": {
+   "parts": [
+    {
+     "name": "Cloud2",
+     "tris": 1092,
+     "size": [
+      59.84,
+      15.05,
+      27.02
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1092,
+   "collision": "none",
+   "size": [
+    59.84,
+    15.05,
+    27.02
+   ]
+  },
+  "Cloud3": {
+   "parts": [
+    {
+     "name": "Cloud3",
+     "tris": 728,
+     "size": [
+      43.86,
+      15.3,
+      30.82
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 728,
+   "collision": "none",
+   "size": [
+    43.86,
+    15.3,
+    30.82
+   ]
+  },
+  "Cloud4": {
+   "parts": [
+    {
+     "name": "Cloud4",
+     "tris": 910,
+     "size": [
+      51.89,
+      14.95,
+      28.17
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 910,
+   "collision": "none",
+   "size": [
+    51.89,
+    14.95,
+    28.17
+   ]
+  },
+  "CoinPile_L": {
+   "parts": [
+    {
+     "name": "CoinPile_L",
+     "tris": 280,
+     "size": [
+      7.25,
+      2.74,
+      6.9
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 280,
+   "collision": "hull",
+   "size": [
+    7.25,
+    2.74,
+    6.9
+   ]
+  },
+  "CoinPile_S": {
+   "parts": [
+    {
+     "name": "CoinPile_S",
+     "tris": 216,
+     "size": [
+      5.0,
+      1.77,
+      4.76
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 216,
+   "collision": "hull",
+   "size": [
+    5.0,
+    1.77,
+    4.76
+   ]
+  },
+  "CottonTree1": {
+   "parts": [
+    {
+     "name": "CottonTree1",
+     "tris": 1540,
+     "size": [
+      11.73,
+      18.41,
+      11.41
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1540,
+   "collision": "hull",
+   "size": [
+    11.73,
+    18.41,
+    11.41
+   ]
+  },
+  "CottonTree2": {
+   "parts": [
+    {
+     "name": "CottonTree2",
+     "tris": 1540,
+     "size": [
+      10.62,
+      18.8,
+      11.88
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1540,
+   "collision": "hull",
+   "size": [
+    10.62,
+    18.8,
+    11.88
+   ]
+  },
+  "CottonTree3": {
+   "parts": [
+    {
+     "name": "CottonTree3",
+     "tris": 1540,
+     "size": [
+      11.2,
+      18.38,
+      11.31
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1540,
+   "collision": "hull",
+   "size": [
+    11.2,
+    18.38,
+    11.31
+   ]
+  },
+  "CrystalClump_T2": {
+   "parts": [
+    {
+     "name": "CrystalClump_T2",
+     "tris": 64,
+     "size": [
+      3.62,
+      1.9,
+      3.73
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "CrystalClump_T2_Glow_crystal",
+     "tris": 96,
+     "size": [
+      2.6,
+      3.6,
+      3.77
+     ],
+     "glow": "crystal",
+     "color": [
+      200,
+      164,
+      255
+     ]
+    }
+   ],
+   "tris": 160,
+   "collision": "hull",
+   "size": [
+    3.97,
+    4.13,
+    3.9
+   ]
+  },
+  "CrystalClump_T3": {
+   "parts": [
+    {
+     "name": "CrystalClump_T3",
+     "tris": 64,
+     "size": [
+      5.43,
+      2.85,
+      5.6
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "CrystalClump_T3_Glow_crystal",
+     "tris": 120,
+     "size": [
+      4.01,
+      5.44,
+      5.3
+     ],
+     "glow": "crystal",
+     "color": [
+      200,
+      164,
+      255
+     ]
+    }
+   ],
+   "tris": 184,
+   "collision": "hull",
+   "size": [
+    5.43,
+    6.19,
+    5.6
+   ]
+  },
+  "CrystalSpire1": {
+   "parts": [
+    {
+     "name": "CrystalSpire1",
+     "tris": 196,
+     "size": [
+      7.03,
+      2.97,
+      6.43
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "CrystalSpire1_Glow_crystal",
+     "tris": 96,
+     "size": [
+      6.61,
+      9.58,
+      4.64
+     ],
+     "glow": "crystal",
+     "color": [
+      200,
+      164,
+      255
+     ]
+    }
+   ],
+   "tris": 292,
+   "collision": "precise",
+   "size": [
+    7.51,
+    10.45,
+    6.43
+   ]
+  },
+  "CrystalSpire2": {
+   "parts": [
+    {
+     "name": "CrystalSpire2",
+     "tris": 196,
+     "size": [
+      6.7,
+      2.97,
+      6.43
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "CrystalSpire2_Glow_crystal",
+     "tris": 120,
+     "size": [
+      5.76,
+      9.4,
+      5.44
+     ],
+     "glow": "crystal",
+     "color": [
+      200,
+      164,
+      255
+     ]
+    }
+   ],
+   "tris": 316,
+   "collision": "precise",
+   "size": [
+    6.7,
+    10.45,
+    7.0
+   ]
+  },
+  "CrystalSpire3": {
+   "parts": [
+    {
+     "name": "CrystalSpire3",
+     "tris": 196,
+     "size": [
+      8.03,
+      3.65,
+      7.59
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "CrystalSpire3_Glow_crystal",
+     "tris": 72,
+     "size": [
+      6.0,
+      11.52,
+      6.19
+     ],
+     "glow": "crystal",
+     "color": [
+      200,
+      164,
+      255
+     ]
+    }
+   ],
+   "tris": 268,
+   "collision": "precise",
+   "size": [
+    8.03,
+    12.53,
+    8.32
+   ]
+  },
+  "CrystalTree1sky": {
+   "parts": [
+    {
+     "name": "CrystalTree1sky",
+     "tris": 1266,
+     "size": [
+      9.64,
+      17.83,
+      11.33
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1266,
+   "collision": "hull",
+   "size": [
+    9.64,
+    17.83,
+    11.33
+   ]
+  },
+  "CrystalTree2pink": {
+   "parts": [
+    {
+     "name": "CrystalTree2pink",
+     "tris": 1266,
+     "size": [
+      11.24,
+      16.54,
+      10.63
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1266,
+   "collision": "hull",
+   "size": [
+    11.24,
+    16.54,
+    10.63
+   ]
+  },
+  "CrystalTree4sky": {
+   "parts": [
+    {
+     "name": "CrystalTree4sky",
+     "tris": 1266,
+     "size": [
+      9.91,
+      18.08,
+      9.84
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1266,
+   "collision": "hull",
+   "size": [
+    9.91,
+    18.08,
+    9.84
+   ]
+  },
+  "EggStand_basic": {
+   "parts": [
+    {
+     "name": "EggStand_basic",
+     "tris": 2354,
+     "size": [
+      9.2,
+      13.4,
+      9.2
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "EggStand_basic_Glow_ring_green",
+     "tris": 768,
+     "size": [
+      9.9,
+      4.47,
+      9.9
+     ],
+     "glow": "ring_green",
+     "color": [
+      156,
+      255,
+      122
+     ]
+    }
+   ],
+   "tris": 3122,
+   "collision": "precise",
+   "size": [
+    9.9,
+    13.4,
+    9.9
+   ]
+  },
+  "EggStand_candy": {
+   "parts": [
+    {
+     "name": "EggStand_candy",
+     "tris": 1550,
+     "size": [
+      9.2,
+      13.4,
+      9.2
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "EggStand_candy_Glow_ring_pink",
+     "tris": 768,
+     "size": [
+      9.9,
+      4.47,
+      9.9
+     ],
+     "glow": "ring_pink",
+     "color": [
+      255,
+      143,
+      208
+     ]
+    }
+   ],
+   "tris": 2318,
+   "collision": "precise",
+   "size": [
+    9.9,
+    13.4,
+    9.9
+   ]
+  },
+  "EggStand_crystal": {
+   "parts": [
+    {
+     "name": "EggStand_crystal",
+     "tris": 1334,
+     "size": [
+      9.2,
+      13.4,
+      9.2
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "EggStand_crystal_Glow_ring_lilac",
+     "tris": 768,
+     "size": [
+      9.9,
+      4.47,
+      9.9
+     ],
+     "glow": "ring_lilac",
+     "color": [
+      196,
+      162,
+      255
+     ]
+    },
+    {
+     "name": "EggStand_crystal_Glow_gem",
+     "tris": 408,
+     "size": [
+      5.83,
+      4.59,
+      6.15
+     ],
+     "glow": "gem",
+     "color": [
+      255,
+      155,
+      224
+     ]
+    }
+   ],
+   "tris": 2510,
+   "collision": "precise",
+   "size": [
+    9.9,
+    13.4,
+    9.9
+   ]
+  },
+  "EggStand_golden": {
+   "parts": [
+    {
+     "name": "EggStand_golden",
+     "tris": 2286,
+     "size": [
+      9.2,
+      13.4,
+      9.2
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "EggStand_golden_Glow_ring_gold",
+     "tris": 768,
+     "size": [
+      9.9,
+      4.47,
+      9.9
+     ],
+     "glow": "ring_gold",
+     "color": [
+      255,
+      216,
+      74
+     ]
+    }
+   ],
+   "tris": 3054,
+   "collision": "precise",
+   "size": [
+    9.9,
+    13.4,
+    9.9
+   ]
+  },
+  "EggStand_meadow": {
+   "parts": [
+    {
+     "name": "EggStand_meadow",
+     "tris": 4598,
+     "size": [
+      9.2,
+      13.4,
+      9.2
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "EggStand_meadow_Glow_ring_green",
+     "tris": 768,
+     "size": [
+      9.9,
+      4.47,
+      9.9
+     ],
+     "glow": "ring_green",
+     "color": [
+      156,
+      255,
+      122
+     ]
+    }
+   ],
+   "tris": 5366,
+   "collision": "precise",
+   "size": [
+    9.9,
+    13.4,
+    9.9
+   ]
+  },
+  "EggStand_spotted": {
+   "parts": [
+    {
+     "name": "EggStand_spotted",
+     "tris": 2354,
+     "size": [
+      9.2,
+      13.4,
+      9.2
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "EggStand_spotted_Glow_ring_sky",
+     "tris": 768,
+     "size": [
+      9.9,
+      4.47,
+      9.9
+     ],
+     "glow": "ring_sky",
+     "color": [
+      127,
+      212,
+      255
+     ]
+    }
+   ],
+   "tris": 3122,
+   "collision": "precise",
+   "size": [
+    9.9,
+    13.4,
+    9.9
+   ]
+  },
+  "Fence_candy": {
+   "parts": [
+    {
+     "name": "Fence_candy",
+     "tris": 280,
+     "size": [
+      13.86,
+      5.05,
+      1.62
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 280,
+   "collision": "box",
+   "size": [
+    13.86,
+    5.05,
+    1.62
+   ]
+  },
+  "Fence_crystal": {
+   "parts": [
+    {
+     "name": "Fence_crystal",
+     "tris": 280,
+     "size": [
+      13.86,
+      5.05,
+      1.62
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 280,
+   "collision": "box",
+   "size": [
+    13.86,
+    5.05,
+    1.62
+   ]
+  },
+  "Fence_hub": {
+   "parts": [
+    {
+     "name": "Fence_hub",
+     "tris": 280,
+     "size": [
+      13.86,
+      5.05,
+      1.62
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 280,
+   "collision": "box",
+   "size": [
+    13.86,
+    5.05,
+    1.62
+   ]
+  },
+  "Fence_meadow": {
+   "parts": [
+    {
+     "name": "Fence_meadow",
+     "tris": 280,
+     "size": [
+      13.86,
+      5.05,
+      1.62
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 280,
+   "collision": "box",
+   "size": [
+    13.86,
+    5.05,
+    1.62
+   ]
+  },
+  "FlowerPatch1": {
+   "parts": [
+    {
+     "name": "FlowerPatch1",
+     "tris": 496,
+     "size": [
+      2.72,
+      2.36,
+      2.47
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 496,
+   "collision": "none",
+   "size": [
+    2.72,
+    2.36,
+    2.47
+   ]
+  },
+  "FlowerPatch2": {
+   "parts": [
+    {
+     "name": "FlowerPatch2",
+     "tris": 496,
+     "size": [
+      2.52,
+      2.0,
+      3.04
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 496,
+   "collision": "none",
+   "size": [
+    2.52,
+    2.0,
+    3.04
+   ]
+  },
+  "FlowerPatch3": {
+   "parts": [
+    {
+     "name": "FlowerPatch3",
+     "tris": 496,
+     "size": [
+      3.15,
+      2.04,
+      2.31
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 496,
+   "collision": "none",
+   "size": [
+    3.15,
+    2.04,
+    2.31
+   ]
+  },
+  "FlowerPatch4": {
+   "parts": [
+    {
+     "name": "FlowerPatch4",
+     "tris": 496,
+     "size": [
+      2.04,
+      2.46,
+      3.17
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 496,
+   "collision": "none",
+   "size": [
+    2.04,
+    2.46,
+    3.17
+   ]
+  },
+  "FlowerPatch5": {
+   "parts": [
+    {
+     "name": "FlowerPatch5",
+     "tris": 620,
+     "size": [
+      2.47,
+      2.4,
+      3.04
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 620,
+   "collision": "none",
+   "size": [
+    2.47,
+    2.4,
+    3.04
+   ]
+  },
+  "GiftBox_lilac": {
+   "parts": [
+    {
+     "name": "GiftBox_lilac",
+     "tris": 240,
+     "size": [
+      3.08,
+      3.53,
+      3.08
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 240,
+   "collision": "box",
+   "size": [
+    3.08,
+    3.53,
+    3.08
+   ]
+  },
+  "GiftBox_pink": {
+   "parts": [
+    {
+     "name": "GiftBox_pink",
+     "tris": 240,
+     "size": [
+      3.08,
+      3.53,
+      3.08
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 240,
+   "collision": "box",
+   "size": [
+    3.08,
+    3.53,
+    3.08
+   ]
+  },
+  "GiftBox_sky": {
+   "parts": [
+    {
+     "name": "GiftBox_sky",
+     "tris": 240,
+     "size": [
+      3.08,
+      3.53,
+      3.08
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 240,
+   "collision": "box",
+   "size": [
+    3.08,
+    3.53,
+    3.08
+   ]
+  },
+  "GlowShroom1": {
+   "parts": [
+    {
+     "name": "GlowShroom1",
+     "tris": 144,
+     "size": [
+      3.22,
+      2.9,
+      2.1
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "GlowShroom1_Glow_shroom",
+     "tris": 360,
+     "size": [
+      3.65,
+      2.26,
+      3.03
+     ],
+     "glow": "shroom",
+     "color": [
+      127,
+      246,
+      255
+     ]
+    }
+   ],
+   "tris": 504,
+   "collision": "hull",
+   "size": [
+    3.65,
+    3.63,
+    3.03
+   ]
+  },
+  "GrassTuft1": {
+   "parts": [
+    {
+     "name": "GrassTuft1",
+     "tris": 192,
+     "size": [
+      1.95,
+      0.84,
+      1.97
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 192,
+   "collision": "none",
+   "size": [
+    1.95,
+    0.84,
+    1.97
+   ]
+  },
+  "Gumdrops1": {
+   "parts": [
+    {
+     "name": "Gumdrops1",
+     "tris": 512,
+     "size": [
+      6.01,
+      2.5,
+      6.75
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 512,
+   "collision": "hull",
+   "size": [
+    6.01,
+    2.5,
+    6.75
+   ]
+  },
+  "Gumdrops2": {
+   "parts": [
+    {
+     "name": "Gumdrops2",
+     "tris": 384,
+     "size": [
+      6.46,
+      2.5,
+      5.01
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 384,
+   "collision": "hull",
+   "size": [
+    6.46,
+    2.5,
+    5.01
+   ]
+  },
+  "LampPost_hub": {
+   "parts": [
+    {
+     "name": "LampPost_hub",
+     "tris": 396,
+     "size": [
+      2.6,
+      12.7,
+      2.6
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "LampPost_hub_Glow_lamp",
+     "tris": 196,
+     "size": [
+      2.4,
+      2.4,
+      2.34
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      240,
+      176
+     ]
+    }
+   ],
+   "tris": 592,
+   "collision": "box",
+   "size": [
+    2.6,
+    12.7,
+    2.6
+   ]
+  },
+  "LeaderboardFrame": {
+   "parts": [
+    {
+     "name": "LeaderboardFrame",
+     "tris": 2360,
+     "size": [
+      22.6,
+      20.4,
+      6.4
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 2360,
+   "collision": "precise",
+   "size": [
+    22.6,
+    20.4,
+    6.4
+   ]
+  },
+  "Lollipop1": {
+   "parts": [
+    {
+     "name": "Lollipop1",
+     "tris": 1324,
+     "size": [
+      7.71,
+      12.17,
+      1.16
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1324,
+   "collision": "box",
+   "size": [
+    7.71,
+    12.17,
+    1.16
+   ]
+  },
+  "Lollipop2": {
+   "parts": [
+    {
+     "name": "Lollipop2",
+     "tris": 1324,
+     "size": [
+      7.71,
+      10.17,
+      1.16
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1324,
+   "collision": "box",
+   "size": [
+    7.71,
+    10.17,
+    1.16
+   ]
+  },
+  "Lollipop3": {
+   "parts": [
+    {
+     "name": "Lollipop3",
+     "tris": 1324,
+     "size": [
+      7.71,
+      11.17,
+      1.16
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1324,
+   "collision": "box",
+   "size": [
+    7.71,
+    11.17,
+    1.16
+   ]
+  },
+  "Mushroom_orange2": {
+   "parts": [
+    {
+     "name": "Mushroom_orange2",
+     "tris": 504,
+     "size": [
+      3.35,
+      3.61,
+      3.4
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 504,
+   "collision": "hull",
+   "size": [
+    3.35,
+    3.61,
+    3.4
+   ]
+  },
+  "Mushroom_red1": {
+   "parts": [
+    {
+     "name": "Mushroom_red1",
+     "tris": 504,
+     "size": [
+      4.4,
+      4.7,
+      4.4
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 504,
+   "collision": "hull",
+   "size": [
+    4.4,
+    4.7,
+    4.4
+   ]
+  },
+  "PetFountain": {
+   "parts": [
+    {
+     "name": "PetFountain",
+     "tris": 16108,
+     "size": [
+      40.6,
+      17.9,
+      40.6
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 16108,
+   "collision": "precise",
+   "size": [
+    40.6,
+    17.9,
+    40.6
+   ]
+  },
+  "PetShop": {
+   "parts": [
+    {
+     "name": "PetShop",
+     "tris": 6810,
+     "size": [
+      22.8,
+      19.18,
+      22.8
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 6810,
+   "collision": "precise",
+   "size": [
+    22.8,
+    19.18,
+    22.8
+   ]
+  },
+  "PetStatue": {
+   "parts": [
+    {
+     "name": "PetStatue",
+     "tris": 6808,
+     "size": [
+      16.1,
+      29.1,
+      15.99
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 6808,
+   "collision": "precise",
+   "size": [
+    16.1,
+    29.1,
+    15.99
+   ]
+  },
+  "PuffBush_leaf1": {
+   "parts": [
+    {
+     "name": "PuffBush_leaf1",
+     "tris": 774,
+     "size": [
+      4.83,
+      4.11,
+      4.86
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 774,
+   "collision": "none",
+   "size": [
+    4.83,
+    4.11,
+    4.86
+   ]
+  },
+  "PuffBush_leaf2": {
+   "parts": [
+    {
+     "name": "PuffBush_leaf2",
+     "tris": 594,
+     "size": [
+      5.02,
+      4.11,
+      5.06
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 594,
+   "collision": "none",
+   "size": [
+    5.02,
+    4.11,
+    5.06
+   ]
+  },
+  "PuffBush_leaf3": {
+   "parts": [
+    {
+     "name": "PuffBush_leaf3",
+     "tris": 774,
+     "size": [
+      5.25,
+      4.11,
+      5.29
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 774,
+   "collision": "none",
+   "size": [
+    5.25,
+    4.11,
+    5.29
+   ]
+  },
+  "PuffBush_mint5": {
+   "parts": [
+    {
+     "name": "PuffBush_mint5",
+     "tris": 774,
+     "size": [
+      5.16,
+      4.11,
+      5.2
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 774,
+   "collision": "none",
+   "size": [
+    5.16,
+    4.11,
+    5.2
+   ]
+  },
+  "PuffBush_pink4": {
+   "parts": [
+    {
+     "name": "PuffBush_pink4",
+     "tris": 594,
+     "size": [
+      4.59,
+      4.11,
+      4.62
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 594,
+   "collision": "none",
+   "size": [
+    4.59,
+    4.11,
+    4.62
+   ]
+  },
+  "PuffBush_pink6": {
+   "parts": [
+    {
+     "name": "PuffBush_pink6",
+     "tris": 594,
+     "size": [
+      5.17,
+      4.11,
+      5.2
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 594,
+   "collision": "none",
+   "size": [
+    5.17,
+    4.11,
+    5.2
+   ]
+  },
+  "PuffBush_sky7": {
+   "parts": [
+    {
+     "name": "PuffBush_sky7",
+     "tris": 774,
+     "size": [
+      4.58,
+      4.11,
+      4.61
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 774,
+   "collision": "none",
+   "size": [
+    4.58,
+    4.11,
+    4.61
+   ]
+  },
+  "PuffTree_green1": {
+   "parts": [
+    {
+     "name": "PuffTree_green1",
+     "tris": 1216,
+     "size": [
+      11.1,
+      17.24,
+      11.5
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1216,
+   "collision": "hull",
+   "size": [
+    11.1,
+    17.24,
+    11.5
+   ]
+  },
+  "PuffTree_green3": {
+   "parts": [
+    {
+     "name": "PuffTree_green3",
+     "tris": 1216,
+     "size": [
+      12.68,
+      19.31,
+      12.08
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1216,
+   "collision": "hull",
+   "size": [
+    12.68,
+    19.31,
+    12.08
+   ]
+  },
+  "PuffTree_green7": {
+   "parts": [
+    {
+     "name": "PuffTree_green7",
+     "tris": 1216,
+     "size": [
+      9.64,
+      15.28,
+      9.72
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1216,
+   "collision": "hull",
+   "size": [
+    9.64,
+    15.28,
+    9.72
+   ]
+  },
+  "PuffTree_pink5": {
+   "parts": [
+    {
+     "name": "PuffTree_pink5",
+     "tris": 1216,
+     "size": [
+      11.01,
+      16.44,
+      11.25
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1216,
+   "collision": "hull",
+   "size": [
+    11.01,
+    16.44,
+    11.25
+   ]
+  },
+  "RainbowArch": {
+   "parts": [
+    {
+     "name": "RainbowArch",
+     "tris": 8016,
+     "size": [
+      61.62,
+      30.15,
+      14.86
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "RainbowArch_Glow_star",
+     "tris": 280,
+     "size": [
+      46.97,
+      13.64,
+      0.6
+     ],
+     "glow": "star",
+     "color": [
+      255,
+      243,
+      160
+     ]
+    }
+   ],
+   "tris": 8296,
+   "collision": "precise",
+   "size": [
+    61.62,
+    32.39,
+    14.86
+   ]
+  },
+  "SeaRock1": {
+   "parts": [
+    {
+     "name": "SeaRock1",
+     "tris": 456,
+     "size": [
+      8.76,
+      6.75,
+      10.03
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 456,
+   "collision": "hull",
+   "size": [
+    8.76,
+    6.75,
+    10.03
+   ]
+  },
+  "SeaRock2": {
+   "parts": [
+    {
+     "name": "SeaRock2",
+     "tris": 456,
+     "size": [
+      9.19,
+      6.86,
+      9.1
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 456,
+   "collision": "hull",
+   "size": [
+    9.19,
+    6.86,
+    9.1
+   ]
+  },
+  "SoftRock_stone1": {
+   "parts": [
+    {
+     "name": "SoftRock_stone1",
+     "tris": 288,
+     "size": [
+      6.18,
+      3.65,
+      6.02
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 288,
+   "collision": "hull",
+   "size": [
+    6.18,
+    3.65,
+    6.02
+   ]
+  },
+  "SoftRock_stone2": {
+   "parts": [
+    {
+     "name": "SoftRock_stone2",
+     "tris": 288,
+     "size": [
+      4.36,
+      2.59,
+      4.48
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 288,
+   "collision": "hull",
+   "size": [
+    4.36,
+    2.59,
+    4.48
+   ]
+  },
+  "SoftRock_stone3": {
+   "parts": [
+    {
+     "name": "SoftRock_stone3",
+     "tris": 288,
+     "size": [
+      5.41,
+      2.97,
+      5.4
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 288,
+   "collision": "hull",
+   "size": [
+    5.41,
+    2.97,
+    5.4
+   ]
+  },
+  "SpawnPad": {
+   "parts": [
+    {
+     "name": "SpawnPad",
+     "tris": 1888,
+     "size": [
+      16.0,
+      1.59,
+      16.0
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1888,
+   "collision": "precise",
+   "size": [
+    16.0,
+    1.59,
+    16.0
+   ]
+  },
+  "StarLamp1": {
+   "parts": [
+    {
+     "name": "StarLamp1",
+     "tris": 260,
+     "size": [
+      4.21,
+      10.31,
+      2.8
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "StarLamp1_Glow_star",
+     "tris": 56,
+     "size": [
+      2.09,
+      1.99,
+      0.7
+     ],
+     "glow": "star",
+     "color": [
+      255,
+      243,
+      160
+     ]
+    }
+   ],
+   "tris": 316,
+   "collision": "box",
+   "size": [
+    5.05,
+    10.31,
+    2.8
+   ]
+  },
+  "Stump1": {
+   "parts": [
+    {
+     "name": "Stump1",
+     "tris": 530,
+     "size": [
+      3.8,
+      2.57,
+      3.7
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 530,
+   "collision": "hull",
+   "size": [
+    3.8,
+    2.57,
+    3.7
+   ]
+  },
+  "TradeBooth_pink": {
+   "parts": [
+    {
+     "name": "TradeBooth_pink",
+     "tris": 1534,
+     "size": [
+      13.2,
+      14.3,
+      13.2
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1534,
+   "collision": "precise",
+   "size": [
+    13.2,
+    14.3,
+    13.2
+   ]
+  },
+  "TradeBooth_sky": {
+   "parts": [
+    {
+     "name": "TradeBooth_sky",
+     "tris": 1534,
+     "size": [
+      13.2,
+      14.3,
+      13.2
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1534,
+   "collision": "precise",
+   "size": [
+    13.2,
+    14.3,
+    13.2
+   ]
+  },
+  "TradePad": {
+   "parts": [
+    {
+     "name": "TradePad",
+     "tris": 1052,
+     "size": [
+      14.7,
+      0.8,
+      14.7
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "TradePad_Glow_trade",
+     "tris": 368,
+     "size": [
+      9.42,
+      0.37,
+      9.48
+     ],
+     "glow": "trade",
+     "color": [
+      255,
+      216,
+      74
+     ]
+    }
+   ],
+   "tris": 1420,
+   "collision": "none",
+   "size": [
+    14.7,
+    0.8,
+    14.7
+   ]
+  },
+  "UpgradeMachine": {
+   "parts": [
+    {
+     "name": "UpgradeMachine",
+     "tris": 8492,
+     "size": [
+      13.79,
+      26.6,
+      13.88
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "UpgradeMachine_Glow_arrow",
+     "tris": 20,
+     "size": [
+      2.4,
+      1.9,
+      0.3
+     ],
+     "glow": "arrow",
+     "color": [
+      156,
+      255,
+      122
+     ]
+    }
+   ],
+   "tris": 8512,
+   "collision": "precise",
+   "size": [
+    13.79,
+    26.6,
+    13.88
+   ]
+  },
+  "ZoneGate_candy": {
+   "parts": [
+    {
+     "name": "ZoneGate_candy",
+     "tris": 5704,
+     "size": [
+      27.4,
+      18.0,
+      9.5
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 5704,
+   "collision": "precise",
+   "size": [
+    27.4,
+    18.0,
+    9.5
+   ]
+  },
+  "ZoneGate_crystal": {
+   "parts": [
+    {
+     "name": "ZoneGate_crystal",
+     "tris": 5704,
+     "size": [
+      27.4,
+      18.0,
+      9.5
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 5704,
+   "collision": "precise",
+   "size": [
+    27.4,
+    18.0,
+    9.5
+   ]
+  },
+  "ZoneGate_meadow": {
+   "parts": [
+    {
+     "name": "ZoneGate_meadow",
+     "tris": 5704,
+     "size": [
+      27.4,
+      18.0,
+      9.5
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 5704,
+   "collision": "precise",
+   "size": [
+    27.4,
+    18.0,
+    9.5
+   ]
+  }
+ },
+ "static": [
+  {
+   "name": "Ground_Hub_0",
+   "group": "Ground",
+   "tris": 7224,
+   "size": [
+    195.89,
+    16.6,
+    194.39
+   ]
+  },
+  {
+   "name": "Ground_Meadow_0",
+   "group": "Ground",
+   "tris": 7224,
+   "size": [
+    184.24,
+    17.4,
+    183.51
+   ]
+  },
+  {
+   "name": "Ground_Candy_0",
+   "group": "Ground",
+   "tris": 7224,
+   "size": [
+    174.13,
+    17.4,
+    173.34
+   ]
+  },
+  {
+   "name": "Ground_Crystal_0",
+   "group": "Ground",
+   "tris": 7224,
+   "size": [
+    175.53,
+    17.4,
+    175.41
+   ]
+  },
+  {
+   "name": "Paving_HubPlaza_0",
+   "group": "Paths",
+   "tris": 2309,
+   "size": [
+    64.0,
+    0.21,
+    63.95
+   ]
+  },
+  {
+   "name": "Path_All_0",
+   "group": "Paths",
+   "tris": 1080,
+   "size": [
+    316.23,
+    14.43,
+    404.32
+   ]
+  },
+  {
+   "name": "Ground_SeaBed_0",
+   "group": "Water",
+   "tris": 50,
+   "size": [
+    1820.0,
+    8.0,
+    1820.0
+   ]
+  },
+  {
+   "name": "Ground_SeaBed_1",
+   "group": "Water",
+   "tris": 50,
+   "size": [
+    1820.0,
+    8.0,
+    1820.0
+   ]
+  },
+  {
+   "name": "Ground_SeaBed_2",
+   "group": "Water",
+   "tris": 50,
+   "size": [
+    1820.0,
+    8.0,
+    1820.0
+   ]
+  },
+  {
+   "name": "Ground_SeaBed_3",
+   "group": "Water",
+   "tris": 50,
+   "size": [
+    1820.0,
+    8.0,
+    1820.0
+   ]
+  },
+  {
+   "name": "Sea_ShallowsWater_0",
+   "group": "Water",
+   "tris": 768,
+   "size": [
+    423.1,
+    0.03,
+    513.56
+   ]
+  }
+ ],
+ "bigparts": [
+  {
+   "name": "Sea_LagoonWater_0_0",
+   "group": "Water",
+   "pos": [
+    -800.0,
+    -6.0,
+    -1000.0
+   ],
+   "size": [
+    1800.0,
+    0.2,
+    1800.0
+   ],
+   "color": [
+    63,
+    191,
+    241
+   ]
+  },
+  {
+   "name": "Sea_LagoonWater_0_1",
+   "group": "Water",
+   "pos": [
+    -800.0,
+    -6.0,
+    800.0
+   ],
+   "size": [
+    1800.0,
+    0.2,
+    1800.0
+   ],
+   "color": [
+    63,
+    191,
+    241
+   ]
+  },
+  {
+   "name": "Sea_LagoonWater_1_0",
+   "group": "Water",
+   "pos": [
+    1000.0,
+    -6.0,
+    -1000.0
+   ],
+   "size": [
+    1800.0,
+    0.2,
+    1800.0
+   ],
+   "color": [
+    63,
+    191,
+    241
+   ]
+  },
+  {
+   "name": "Sea_LagoonWater_1_1",
+   "group": "Water",
+   "pos": [
+    1000.0,
+    -6.0,
+    800.0
+   ],
+   "size": [
+    1800.0,
+    0.2,
+    1800.0
+   ],
+   "color": [
+    63,
+    191,
+    241
+   ]
+  }
+ ],
+ "look": {
+  "SunDir": [
+   0.287,
+   0.819,
+   0.497
+  ],
+  "SunElevation": 55.0,
+  "ClockTime": 9.67,
+  "SunColor": [
+   255,
+   245,
+   229
+  ],
+  "Brightness": 2.5,
+  "AtmosphereDensity": 0.2,
+  "AtmosphereColor": [
+   237,
+   247,
+   255
+  ],
+  "Horizon": [
+   205,
+   238,
+   255
+  ],
+  "Zenith": [
+   59,
+   143,
+   255
+  ]
+ }
+}

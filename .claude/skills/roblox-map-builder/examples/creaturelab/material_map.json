@@ -1,0 +1,51 @@
+{
+ "columns": {
+  "0": "SmoothPlastic",
+  "1": "SmoothPlastic",
+  "2": "SmoothPlastic",
+  "3": "SmoothPlastic",
+  "4": "SmoothPlastic",
+  "5": "SmoothPlastic",
+  "6": "SmoothPlastic",
+  "7": "SmoothPlastic",
+  "8": "Metal",
+  "9": "SmoothPlastic",
+  "10": "WoodPlanks",
+  "11": "LeafyGrass",
+  "12": "Grass",
+  "13": "Concrete",
+  "14": "Glass",
+  "15": "SmoothPlastic"
+ },
+ "names": [
+  "white",
+  "wall",
+  "cream",
+  "mint",
+  "teal",
+  "coral",
+  "gold",
+  "sky",
+  "steel",
+  "dark",
+  "wood",
+  "leaf",
+  "grass",
+  "paving",
+  "glass",
+  "berry"
+ ],
+ "overrides": {
+  "Floor_": {
+   "cream": "Marble",
+   "wall": "Marble"
+  },
+  "Tree": {
+   "wood": "Wood"
+  },
+  "Cloud": "SmoothPlastic",
+  "PottedTree": {
+   "wood": "Wood"
+  }
+ }
+}

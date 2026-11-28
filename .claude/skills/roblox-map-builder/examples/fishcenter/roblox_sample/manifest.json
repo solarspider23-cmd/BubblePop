@@ -1,0 +1,1937 @@
+{
+ "name": "TidehookLagoon",
+ "format": "glb",
+ "props": {
+  "AquaDome": {
+   "parts": [
+    {
+     "name": "AquaDome",
+     "tris": 13536,
+     "size": [
+      42.8,
+      23.16,
+      47.14
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 13536,
+   "collision": "precise",
+   "size": [
+    42.8,
+    23.16,
+    47.14
+   ]
+  },
+  "BaitShop": {
+   "parts": [
+    {
+     "name": "BaitShop",
+     "tris": 9544,
+     "size": [
+      17.2,
+      18.2,
+      18.01
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 9544,
+   "collision": "precise",
+   "size": [
+    17.2,
+    18.2,
+    18.01
+   ]
+  },
+  "Barrels1": {
+   "parts": [
+    {
+     "name": "Barrels1",
+     "tris": 1860,
+     "size": [
+      3.8,
+      2.21,
+      3.81
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1860,
+   "collision": "box",
+   "size": [
+    3.8,
+    2.21,
+    3.81
+   ]
+  },
+  "Bench1": {
+   "parts": [
+    {
+     "name": "Bench1",
+     "tris": 380,
+     "size": [
+      5.01,
+      2.39,
+      1.58
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 380,
+   "collision": "box",
+   "size": [
+    5.01,
+    2.39,
+    1.58
+   ]
+  },
+  "BoatHouse": {
+   "parts": [
+    {
+     "name": "BoatHouse",
+     "tris": 8500,
+     "size": [
+      16.2,
+      17.66,
+      14.2
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 8500,
+   "collision": "precise",
+   "size": [
+    16.2,
+    17.66,
+    14.2
+   ]
+  },
+  "BrainCoral1": {
+   "parts": [
+    {
+     "name": "BrainCoral1",
+     "tris": 742,
+     "size": [
+      3.34,
+      1.74,
+      3.34
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 742,
+   "collision": "none",
+   "size": [
+    3.34,
+    1.74,
+    3.34
+   ]
+  },
+  "BrainCoral2": {
+   "parts": [
+    {
+     "name": "BrainCoral2",
+     "tris": 742,
+     "size": [
+      2.95,
+      1.59,
+      2.95
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 742,
+   "collision": "none",
+   "size": [
+    2.95,
+    1.59,
+    2.95
+   ]
+  },
+  "BuoyStack1": {
+   "parts": [
+    {
+     "name": "BuoyStack1",
+     "tris": 992,
+     "size": [
+      3.7,
+      1.69,
+      3.26
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 992,
+   "collision": "box",
+   "size": [
+    3.7,
+    1.69,
+    3.26
+   ]
+  },
+  "Cloud1": {
+   "parts": [
+    {
+     "name": "Cloud1",
+     "tris": 604,
+     "size": [
+      78.12,
+      17.55,
+      33.87
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 604,
+   "collision": "none",
+   "size": [
+    78.12,
+    17.55,
+    33.87
+   ]
+  },
+  "Cloud2": {
+   "parts": [
+    {
+     "name": "Cloud2",
+     "tris": 610,
+     "size": [
+      86.21,
+      15.22,
+      33.9
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 610,
+   "collision": "none",
+   "size": [
+    86.21,
+    15.22,
+    33.9
+   ]
+  },
+  "Cloud3": {
+   "parts": [
+    {
+     "name": "Cloud3",
+     "tris": 592,
+     "size": [
+      76.76,
+      16.74,
+      37.75
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 592,
+   "collision": "none",
+   "size": [
+    76.76,
+    16.74,
+    37.75
+   ]
+  },
+  "Cooler1": {
+   "parts": [
+    {
+     "name": "Cooler1",
+     "tris": 464,
+     "size": [
+      2.9,
+      2.18,
+      1.66
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 464,
+   "collision": "box",
+   "size": [
+    2.9,
+    2.18,
+    1.66
+   ]
+  },
+  "Cooler2": {
+   "parts": [
+    {
+     "name": "Cooler2",
+     "tris": 464,
+     "size": [
+      2.9,
+      2.18,
+      1.66
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 464,
+   "collision": "box",
+   "size": [
+    2.9,
+    2.18,
+    1.66
+   ]
+  },
+  "CoralBranch1rd1": {
+   "parts": [
+    {
+     "name": "CoralBranch1rd1",
+     "tris": 696,
+     "size": [
+      2.74,
+      3.52,
+      3.16
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 696,
+   "collision": "none",
+   "size": [
+    2.74,
+    3.52,
+    3.16
+   ]
+  },
+  "CoralBranch2yd1": {
+   "parts": [
+    {
+     "name": "CoralBranch2yd1",
+     "tris": 696,
+     "size": [
+      3.3,
+      3.46,
+      2.52
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 696,
+   "collision": "none",
+   "size": [
+    3.3,
+    3.46,
+    2.52
+   ]
+  },
+  "CoralBranch3td1": {
+   "parts": [
+    {
+     "name": "CoralBranch3td1",
+     "tris": 694,
+     "size": [
+      2.29,
+      3.29,
+      2.81
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 694,
+   "collision": "none",
+   "size": [
+    2.29,
+    3.29,
+    2.81
+   ]
+  },
+  "Crates1": {
+   "parts": [
+    {
+     "name": "Crates1",
+     "tris": 2148,
+     "size": [
+      4.87,
+      3.11,
+      2.41
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 2148,
+   "collision": "box",
+   "size": [
+    4.87,
+    3.11,
+    2.41
+   ]
+  },
+  "DryRack1": {
+   "parts": [
+    {
+     "name": "DryRack1",
+     "tris": 2216,
+     "size": [
+      6.8,
+      5.05,
+      1.92
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 2216,
+   "collision": "box",
+   "size": [
+    6.8,
+    5.05,
+    1.92
+   ]
+  },
+  "FishIndexWall": {
+   "parts": [
+    {
+     "name": "FishIndexWall",
+     "tris": 5878,
+     "size": [
+      16.3,
+      13.35,
+      5.3
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 5878,
+   "collision": "box",
+   "size": [
+    16.3,
+    13.35,
+    5.3
+   ]
+  },
+  "FishMarket": {
+   "parts": [
+    {
+     "name": "FishMarket",
+     "tris": 11314,
+     "size": [
+      28.3,
+      19.75,
+      18.3
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 11314,
+   "collision": "precise",
+   "size": [
+    28.3,
+    19.75,
+    18.3
+   ]
+  },
+  "FishingBoat": {
+   "parts": [
+    {
+     "name": "FishingBoat",
+     "tris": 3064,
+     "size": [
+      8.45,
+      9.01,
+      19.27
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 3064,
+   "collision": "precise",
+   "size": [
+    8.45,
+    9.01,
+    19.27
+   ]
+  },
+  "GrassTuft1": {
+   "parts": [
+    {
+     "name": "GrassTuft1",
+     "tris": 224,
+     "size": [
+      2.87,
+      1.59,
+      2.95
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 224,
+   "collision": "none",
+   "size": [
+    2.87,
+    1.59,
+    2.95
+   ]
+  },
+  "GrassTuft2": {
+   "parts": [
+    {
+     "name": "GrassTuft2",
+     "tris": 224,
+     "size": [
+      3.17,
+      1.6,
+      3.33
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 224,
+   "collision": "none",
+   "size": [
+    3.17,
+    1.6,
+    3.33
+   ]
+  },
+  "HammockPalms1": {
+   "parts": [
+    {
+     "name": "HammockPalms1",
+     "tris": 4222,
+     "size": [
+      22.02,
+      19.05,
+      12.27
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 4222,
+   "collision": "hull",
+   "size": [
+    22.02,
+    19.05,
+    12.27
+   ]
+  },
+  "LifebuoyStand": {
+   "parts": [
+    {
+     "name": "LifebuoyStand",
+     "tris": 1044,
+     "size": [
+      2.74,
+      5.32,
+      1.52
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1044,
+   "collision": "box",
+   "size": [
+    2.74,
+    5.32,
+    1.52
+   ]
+  },
+  "Lighthouse": {
+   "parts": [
+    {
+     "name": "Lighthouse",
+     "tris": 4660,
+     "size": [
+      12.4,
+      64.6,
+      12.4
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Lighthouse_Glow_beacon",
+     "tris": 96,
+     "size": [
+      3.0,
+      3.6,
+      3.0
+     ],
+     "glow": "beacon",
+     "color": [
+      255,
+      240,
+      176
+     ]
+    }
+   ],
+   "tris": 4756,
+   "collision": "precise",
+   "size": [
+    12.4,
+    64.6,
+    12.4
+   ]
+  },
+  "MarkerBuoyRed": {
+   "parts": [
+    {
+     "name": "MarkerBuoyRed",
+     "tris": 590,
+     "size": [
+      2.92,
+      4.8,
+      2.85
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "MarkerBuoyRed_Glow_lamp",
+     "tris": 48,
+     "size": [
+      0.6,
+      0.6,
+      0.6
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      195,
+      90
+     ]
+    }
+   ],
+   "tris": 638,
+   "collision": "none",
+   "size": [
+    2.92,
+    4.8,
+    2.85
+   ]
+  },
+  "MarkerBuoyYellow": {
+   "parts": [
+    {
+     "name": "MarkerBuoyYellow",
+     "tris": 590,
+     "size": [
+      2.92,
+      4.8,
+      2.85
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "MarkerBuoyYellow_Glow_lamp",
+     "tris": 48,
+     "size": [
+      0.6,
+      0.6,
+      0.6
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      195,
+      90
+     ]
+    }
+   ],
+   "tris": 638,
+   "collision": "none",
+   "size": [
+    2.92,
+    4.8,
+    2.85
+   ]
+  },
+  "NetPile1": {
+   "parts": [
+    {
+     "name": "NetPile1",
+     "tris": 1690,
+     "size": [
+      4.0,
+      2.03,
+      3.34
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1690,
+   "collision": "none",
+   "size": [
+    4.0,
+    2.03,
+    3.34
+   ]
+  },
+  "Palapa1": {
+   "parts": [
+    {
+     "name": "Palapa1",
+     "tris": 876,
+     "size": [
+      9.2,
+      11.8,
+      9.2
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 876,
+   "collision": "hull",
+   "size": [
+    9.2,
+    11.8,
+    9.2
+   ]
+  },
+  "Palm1": {
+   "parts": [
+    {
+     "name": "Palm1",
+     "tris": 1940,
+     "size": [
+      17.05,
+      22.17,
+      14.63
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1940,
+   "collision": "hull",
+   "size": [
+    17.05,
+    22.17,
+    14.63
+   ]
+  },
+  "Palm2": {
+   "parts": [
+    {
+     "name": "Palm2",
+     "tris": 2014,
+     "size": [
+      18.45,
+      26.83,
+      17.44
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 2014,
+   "collision": "hull",
+   "size": [
+    18.45,
+    26.83,
+    17.44
+   ]
+  },
+  "Palm3": {
+   "parts": [
+    {
+     "name": "Palm3",
+     "tris": 1894,
+     "size": [
+      12.4,
+      19.46,
+      13.57
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1894,
+   "collision": "hull",
+   "size": [
+    12.4,
+    19.46,
+    13.57
+   ]
+  },
+  "Palm4": {
+   "parts": [
+    {
+     "name": "Palm4",
+     "tris": 1992,
+     "size": [
+      18.62,
+      24.56,
+      18.32
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1992,
+   "collision": "hull",
+   "size": [
+    18.62,
+    24.56,
+    18.32
+   ]
+  },
+  "PalmPlanter1": {
+   "parts": [
+    {
+     "name": "PalmPlanter1",
+     "tris": 1944,
+     "size": [
+      9.12,
+      13.56,
+      8.07
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1944,
+   "collision": "box",
+   "size": [
+    9.12,
+    13.56,
+    8.07
+   ]
+  },
+  "PalmPlanter2": {
+   "parts": [
+    {
+     "name": "PalmPlanter2",
+     "tris": 1944,
+     "size": [
+      7.75,
+      13.53,
+      9.85
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1944,
+   "collision": "box",
+   "size": [
+    7.75,
+    13.53,
+    9.85
+   ]
+  },
+  "QuestBoard": {
+   "parts": [
+    {
+     "name": "QuestBoard",
+     "tris": 3476,
+     "size": [
+      10.05,
+      9.69,
+      4.48
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "QuestBoard_Glow_lamp",
+     "tris": 44,
+     "size": [
+      0.76,
+      0.8,
+      0.76
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      195,
+      90
+     ]
+    }
+   ],
+   "tris": 3520,
+   "collision": "box",
+   "size": [
+    10.05,
+    9.69,
+    4.48
+   ]
+  },
+  "RailBay3p00": {
+   "parts": [
+    {
+     "name": "RailBay3p00",
+     "tris": 288,
+     "size": [
+      3.17,
+      4.84,
+      0.72
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 288,
+   "collision": "box",
+   "size": [
+    3.17,
+    4.84,
+    0.72
+   ]
+  },
+  "RailBay3p50": {
+   "parts": [
+    {
+     "name": "RailBay3p50",
+     "tris": 288,
+     "size": [
+      3.67,
+      4.84,
+      0.72
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 288,
+   "collision": "box",
+   "size": [
+    3.67,
+    4.84,
+    0.72
+   ]
+  },
+  "RailBay3p75": {
+   "parts": [
+    {
+     "name": "RailBay3p75",
+     "tris": 288,
+     "size": [
+      3.91,
+      4.84,
+      0.72
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 288,
+   "collision": "box",
+   "size": [
+    3.91,
+    4.84,
+    0.72
+   ]
+  },
+  "RailBay4p25": {
+   "parts": [
+    {
+     "name": "RailBay4p25",
+     "tris": 288,
+     "size": [
+      4.41,
+      4.84,
+      0.72
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 288,
+   "collision": "box",
+   "size": [
+    4.41,
+    4.84,
+    0.72
+   ]
+  },
+  "RailBay4p75": {
+   "parts": [
+    {
+     "name": "RailBay4p75",
+     "tris": 288,
+     "size": [
+      4.91,
+      4.84,
+      0.72
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 288,
+   "collision": "box",
+   "size": [
+    4.91,
+    4.84,
+    0.72
+   ]
+  },
+  "RailBay4p75B": {
+   "parts": [
+    {
+     "name": "RailBay4p75B",
+     "tris": 416,
+     "size": [
+      4.91,
+      4.84,
+      0.82
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 416,
+   "collision": "box",
+   "size": [
+    4.91,
+    4.84,
+    0.82
+   ]
+  },
+  "RailBay5p00": {
+   "parts": [
+    {
+     "name": "RailBay5p00",
+     "tris": 288,
+     "size": [
+      5.16,
+      4.84,
+      0.72
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 288,
+   "collision": "box",
+   "size": [
+    5.16,
+    4.84,
+    0.72
+   ]
+  },
+  "RailBay5p00B": {
+   "parts": [
+    {
+     "name": "RailBay5p00B",
+     "tris": 416,
+     "size": [
+      5.16,
+      4.84,
+      0.82
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 416,
+   "collision": "box",
+   "size": [
+    5.16,
+    4.84,
+    0.82
+   ]
+  },
+  "RailBay5p25": {
+   "parts": [
+    {
+     "name": "RailBay5p25",
+     "tris": 288,
+     "size": [
+      5.41,
+      4.84,
+      0.72
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 288,
+   "collision": "box",
+   "size": [
+    5.41,
+    4.84,
+    0.72
+   ]
+  },
+  "RailBay5p25B": {
+   "parts": [
+    {
+     "name": "RailBay5p25B",
+     "tris": 416,
+     "size": [
+      5.41,
+      4.84,
+      0.82
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 416,
+   "collision": "box",
+   "size": [
+    5.41,
+    4.84,
+    0.82
+   ]
+  },
+  "RailBay5p50": {
+   "parts": [
+    {
+     "name": "RailBay5p50",
+     "tris": 288,
+     "size": [
+      5.66,
+      4.84,
+      0.72
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 288,
+   "collision": "box",
+   "size": [
+    5.66,
+    4.84,
+    0.72
+   ]
+  },
+  "RailBay5p50B": {
+   "parts": [
+    {
+     "name": "RailBay5p50B",
+     "tris": 416,
+     "size": [
+      5.66,
+      4.84,
+      0.82
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 416,
+   "collision": "box",
+   "size": [
+    5.66,
+    4.84,
+    0.82
+   ]
+  },
+  "RailBay5p75": {
+   "parts": [
+    {
+     "name": "RailBay5p75",
+     "tris": 288,
+     "size": [
+      5.91,
+      4.84,
+      0.72
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 288,
+   "collision": "box",
+   "size": [
+    5.91,
+    4.84,
+    0.72
+   ]
+  },
+  "RailBay5p75B": {
+   "parts": [
+    {
+     "name": "RailBay5p75B",
+     "tris": 416,
+     "size": [
+      5.91,
+      4.84,
+      0.82
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 416,
+   "collision": "box",
+   "size": [
+    5.91,
+    4.84,
+    0.82
+   ]
+  },
+  "RailBay6p00": {
+   "parts": [
+    {
+     "name": "RailBay6p00",
+     "tris": 288,
+     "size": [
+      6.16,
+      4.84,
+      0.72
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 288,
+   "collision": "box",
+   "size": [
+    6.16,
+    4.84,
+    0.72
+   ]
+  },
+  "RailBay6p00B": {
+   "parts": [
+    {
+     "name": "RailBay6p00B",
+     "tris": 416,
+     "size": [
+      6.16,
+      4.84,
+      0.82
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 416,
+   "collision": "box",
+   "size": [
+    6.16,
+    4.84,
+    0.82
+   ]
+  },
+  "RailBay6p25": {
+   "parts": [
+    {
+     "name": "RailBay6p25",
+     "tris": 288,
+     "size": [
+      6.41,
+      4.84,
+      0.72
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 288,
+   "collision": "box",
+   "size": [
+    6.41,
+    4.84,
+    0.72
+   ]
+  },
+  "RailBay6p25B": {
+   "parts": [
+    {
+     "name": "RailBay6p25B",
+     "tris": 416,
+     "size": [
+      6.41,
+      4.84,
+      0.82
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 416,
+   "collision": "box",
+   "size": [
+    6.41,
+    4.84,
+    0.82
+   ]
+  },
+  "RailPost": {
+   "parts": [
+    {
+     "name": "RailPost",
+     "tris": 224,
+     "size": [
+      0.78,
+      4.84,
+      0.72
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 224,
+   "collision": "box",
+   "size": [
+    0.78,
+    4.84,
+    0.72
+   ]
+  },
+  "ReefRock1": {
+   "parts": [
+    {
+     "name": "ReefRock1",
+     "tris": 350,
+     "size": [
+      5.88,
+      3.25,
+      5.24
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 350,
+   "collision": "hull",
+   "size": [
+    5.88,
+    3.25,
+    5.24
+   ]
+  },
+  "ReefRock2": {
+   "parts": [
+    {
+     "name": "ReefRock2",
+     "tris": 340,
+     "size": [
+      7.38,
+      4.28,
+      6.54
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 340,
+   "collision": "hull",
+   "size": [
+    7.38,
+    4.28,
+    6.54
+   ]
+  },
+  "RodHolder1": {
+   "parts": [
+    {
+     "name": "RodHolder1",
+     "tris": 892,
+     "size": [
+      4.75,
+      5.8,
+      5.37
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 892,
+   "collision": "box",
+   "size": [
+    4.75,
+    5.8,
+    5.37
+   ]
+  },
+  "RodRack1": {
+   "parts": [
+    {
+     "name": "RodRack1",
+     "tris": 1532,
+     "size": [
+      6.42,
+      8.27,
+      1.72
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1532,
+   "collision": "box",
+   "size": [
+    6.42,
+    8.27,
+    1.72
+   ]
+  },
+  "RodShop": {
+   "parts": [
+    {
+     "name": "RodShop",
+     "tris": 8536,
+     "size": [
+      19.5,
+      18.62,
+      15.85
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 8536,
+   "collision": "precise",
+   "size": [
+    19.5,
+    18.62,
+    15.85
+   ]
+  },
+  "SeaStack1": {
+   "parts": [
+    {
+     "name": "SeaStack1",
+     "tris": 1614,
+     "size": [
+      16.92,
+      44.24,
+      18.43
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1614,
+   "collision": "none",
+   "size": [
+    16.92,
+    44.24,
+    18.43
+   ]
+  },
+  "SeaStack2": {
+   "parts": [
+    {
+     "name": "SeaStack2",
+     "tris": 1630,
+     "size": [
+      21.3,
+      50.62,
+      23.01
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1630,
+   "collision": "none",
+   "size": [
+    21.3,
+    50.62,
+    23.01
+   ]
+  },
+  "SeaStack3": {
+   "parts": [
+    {
+     "name": "SeaStack3",
+     "tris": 1610,
+     "size": [
+      15.77,
+      39.51,
+      15.31
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1610,
+   "collision": "none",
+   "size": [
+    15.77,
+    39.51,
+    15.31
+   ]
+  },
+  "SeaStack4": {
+   "parts": [
+    {
+     "name": "SeaStack4",
+     "tris": 1626,
+     "size": [
+      16.29,
+      35.64,
+      14.59
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1626,
+   "collision": "none",
+   "size": [
+    16.29,
+    35.64,
+    14.59
+   ]
+  },
+  "Shrub1": {
+   "parts": [
+    {
+     "name": "Shrub1",
+     "tris": 1648,
+     "size": [
+      5.32,
+      3.82,
+      5.7
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1648,
+   "collision": "none",
+   "size": [
+    5.32,
+    3.82,
+    5.7
+   ]
+  },
+  "Shrub2": {
+   "parts": [
+    {
+     "name": "Shrub2",
+     "tris": 1648,
+     "size": [
+      5.34,
+      4.32,
+      5.42
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1648,
+   "collision": "none",
+   "size": [
+    5.34,
+    4.32,
+    5.42
+   ]
+  },
+  "Skiff": {
+   "parts": [
+    {
+     "name": "Skiff",
+     "tris": 1796,
+     "size": [
+      4.42,
+      3.35,
+      13.43
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1796,
+   "collision": "precise",
+   "size": [
+    4.42,
+    3.35,
+    13.43
+   ]
+  },
+  "TikiTorchStilt": {
+   "parts": [
+    {
+     "name": "TikiTorchStilt",
+     "tris": 798,
+     "size": [
+      1.32,
+      17.62,
+      1.32
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "TikiTorchStilt_Glow_fire",
+     "tris": 36,
+     "size": [
+      0.79,
+      1.53,
+      0.79
+     ],
+     "glow": "fire",
+     "color": [
+      255,
+      122,
+      26
+     ]
+    }
+   ],
+   "tris": 834,
+   "collision": "box",
+   "size": [
+    1.32,
+    19.09,
+    1.32
+   ]
+  },
+  "WelcomeArch": {
+   "parts": [
+    {
+     "name": "WelcomeArch",
+     "tris": 3410,
+     "size": [
+      18.39,
+      12.0,
+      3.0
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "WelcomeArch_Glow_fire",
+     "tris": 44,
+     "size": [
+      15.93,
+      1.5,
+      0.99
+     ],
+     "glow": "fire",
+     "color": [
+      255,
+      122,
+      26
+     ]
+    }
+   ],
+   "tris": 3454,
+   "collision": "precise",
+   "size": [
+    18.39,
+    13.15,
+    3.0
+   ]
+  }
+ },
+ "static": [
+  {
+   "name": "Ground_Seabed_0",
+   "group": "Ground",
+   "tris": 6050,
+   "size": [
+    1600.0,
+    10.75,
+    1600.0
+   ]
+  },
+  {
+   "name": "Ground_Seabed_1",
+   "group": "Ground",
+   "tris": 6050,
+   "size": [
+    1600.0,
+    10.85,
+    1600.0
+   ]
+  },
+  {
+   "name": "Ground_Seabed_2",
+   "group": "Ground",
+   "tris": 6050,
+   "size": [
+    1600.0,
+    10.85,
+    1600.0
+   ]
+  },
+  {
+   "name": "Ground_Seabed_3",
+   "group": "Ground",
+   "tris": 6050,
+   "size": [
+    1600.0,
+    10.69,
+    1600.0
+   ]
+  },
+  {
+   "name": "Horizon_Islands_0",
+   "group": "Horizon",
+   "tris": 626,
+   "size": [
+    1312.24,
+    124.43,
+    940.58
+   ]
+  },
+  {
+   "name": "Horizon_Islands_1",
+   "group": "Horizon",
+   "tris": 627,
+   "size": [
+    1002.5,
+    82.0,
+    1299.02
+   ]
+  },
+  {
+   "name": "Horizon_Islands_2",
+   "group": "Horizon",
+   "tris": 626,
+   "size": [
+    1527.63,
+    132.0,
+    869.88
+   ]
+  },
+  {
+   "name": "Horizon_Islands_3",
+   "group": "Horizon",
+   "tris": 627,
+   "size": [
+    916.11,
+    76.0,
+    1571.71
+   ]
+  },
+  {
+   "name": "Islet_Grass_0",
+   "group": "Islets",
+   "tris": 3780,
+   "size": [
+    498.52,
+    2.61,
+    464.32
+   ]
+  },
+  {
+   "name": "Hardscape_Ring_0",
+   "group": "Boardwalk",
+   "tris": 12552,
+   "size": [
+    140.03,
+    10.18,
+    140.03
+   ]
+  },
+  {
+   "name": "Hardscape_Centre_0",
+   "group": "Centre",
+   "tris": 11566,
+   "size": [
+    118.05,
+    10.45,
+    118.07
+   ]
+  },
+  {
+   "name": "Hardscape_Spawn_0",
+   "group": "Stations",
+   "tris": 1512,
+   "size": [
+    44.05,
+    13.24,
+    31.07
+   ]
+  },
+  {
+   "name": "Hardscape_Rod_0",
+   "group": "Stations",
+   "tris": 864,
+   "size": [
+    36.77,
+    11.61,
+    36.77
+   ]
+  },
+  {
+   "name": "Hardscape_Bait_0",
+   "group": "Stations",
+   "tris": 792,
+   "size": [
+    35.36,
+    11.59,
+    35.36
+   ]
+  },
+  {
+   "name": "Hardscape_Market_0",
+   "group": "Stations",
+   "tris": 972,
+   "size": [
+    26.05,
+    12.05,
+    34.07
+   ]
+  },
+  {
+   "name": "Hardscape_Dock_0",
+   "group": "Stations",
+   "tris": 2496,
+   "size": [
+    63.05,
+    12.95,
+    33.07
+   ]
+  },
+  {
+   "name": "Hardscape_PierNE_0",
+   "group": "Piers",
+   "tris": 1368,
+   "size": [
+    50.56,
+    12.95,
+    50.56
+   ]
+  },
+  {
+   "name": "Hardscape_PierN_0",
+   "group": "Piers",
+   "tris": 1908,
+   "size": [
+    30.05,
+    12.95,
+    81.07
+   ]
+  },
+  {
+   "name": "Hardscape_PierNW_0",
+   "group": "Piers",
+   "tris": 1284,
+   "size": [
+    47.73,
+    12.95,
+    47.73
+   ]
+  }
+ ],
+ "bigparts": [
+  {
+   "name": "Sea_Water_0_0",
+   "group": "Water",
+   "pos": [
+    -750.0,
+    0.0,
+    -750.0
+   ],
+   "size": [
+    1500.0,
+    0.2,
+    1500.0
+   ],
+   "color": [
+    53,
+    181,
+    198
+   ]
+  },
+  {
+   "name": "Sea_Water_0_1",
+   "group": "Water",
+   "pos": [
+    -750.0,
+    0.0,
+    750.0
+   ],
+   "size": [
+    1500.0,
+    0.2,
+    1500.0
+   ],
+   "color": [
+    53,
+    181,
+    198
+   ]
+  },
+  {
+   "name": "Sea_Water_1_0",
+   "group": "Water",
+   "pos": [
+    750.0,
+    0.0,
+    -750.0
+   ],
+   "size": [
+    1500.0,
+    0.2,
+    1500.0
+   ],
+   "color": [
+    53,
+    181,
+    198
+   ]
+  },
+  {
+   "name": "Sea_Water_1_1",
+   "group": "Water",
+   "pos": [
+    750.0,
+    0.0,
+    750.0
+   ],
+   "size": [
+    1500.0,
+    0.2,
+    1500.0
+   ],
+   "color": [
+    53,
+    181,
+    198
+   ]
+  }
+ ],
+ "look": {
+  "SunDir": [
+   0.71,
+   0.643,
+   0.287
+  ],
+  "SunElevation": 40.0,
+  "ClockTime": 8.67,
+  "SunColor": [
+   255,
+   242,
+   219
+  ],
+  "Brightness": 3.29,
+  "AtmosphereDensity": 0.202,
+  "AtmosphereColor": [
+   186,
+   228,
+   249
+  ],
+  "Horizon": [
+   186,
+   233,
+   255
+  ],
+  "Zenith": [
+   52,
+   123,
+   228
+  ]
+ }
+}

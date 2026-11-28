@@ -1,0 +1,60 @@
+{
+ "columns": {
+  "0": "SmoothPlastic",
+  "1": "Concrete",
+  "2": "Asphalt",
+  "3": "Metal",
+  "4": "Metal",
+  "5": "Metal",
+  "6": "Cardboard",
+  "7": "WoodPlanks",
+  "8": "Plastic",
+  "9": "Rubber",
+  "10": "Metal",
+  "11": "Plastic",
+  "12": "Plastic",
+  "13": "SmoothPlastic",
+  "14": "Glass",
+  "15": "Plastic"
+ },
+ "names": [
+  "white",
+  "concrete",
+  "asphalt",
+  "steel",
+  "rack",
+  "beam",
+  "cardboard",
+  "pallet",
+  "yellow",
+  "rubber",
+  "cladding",
+  "red",
+  "plastic",
+  "paper",
+  "glass",
+  "green"
+ ],
+ "overrides": {
+  "Floor_Lines": "SmoothPlastic",
+  "Yard_Lines": "SmoothPlastic",
+  "Mezzanine": {
+   "pallet": "Wood"
+  },
+  "SiteOffice": {
+   "cladding": "SmoothPlastic"
+  },
+  "Trailer": {
+   "cladding": "SmoothPlastic"
+  },
+  "DockDoor": {
+   "steel": "DiamondPlate"
+  },
+  "Forklift": {
+   "yellow": "SmoothPlastic"
+  },
+  "Tractor": {
+   "green": "SmoothPlastic"
+  }
+ }
+}

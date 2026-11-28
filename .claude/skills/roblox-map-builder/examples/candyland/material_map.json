@@ -1,0 +1,56 @@
+{
+ "columns": {
+  "0": "SmoothPlastic",
+  "1": "SmoothPlastic",
+  "2": "SmoothPlastic",
+  "3": "SmoothPlastic",
+  "4": "Glass",
+  "5": "Sand",
+  "6": "Glass",
+  "7": "Glass",
+  "8": "Glass",
+  "9": "Glass",
+  "10": "Glass",
+  "11": "Glass",
+  "12": "Glass",
+  "13": "Glass",
+  "14": "SmoothPlastic",
+  "15": "SmoothPlastic"
+ },
+ "names": [
+  "white",
+  "frost",
+  "pinkf",
+  "vanilla",
+  "choc",
+  "ginger",
+  "cherry",
+  "berry",
+  "lime",
+  "lemon",
+  "grape",
+  "blue",
+  "orange",
+  "jelly",
+  "cotton",
+  "cloud"
+ ],
+ "overrides": {
+  "Ground": {
+   "frost": "Snow"
+  },
+  "Clouds_Horizon": "SmoothPlastic",
+  "GumdropBush": "SmoothPlastic",
+  "GumdropMountain": {
+   "cherry": "SmoothPlastic",
+   "berry": "SmoothPlastic",
+   "lime": "SmoothPlastic",
+   "lemon": "SmoothPlastic",
+   "grape": "SmoothPlastic",
+   "blue": "SmoothPlastic",
+   "orange": "SmoothPlastic"
+  },
+  "Path_Tiles": "SmoothPlastic",
+  "IcingCaps": "SmoothPlastic"
+ }
+}

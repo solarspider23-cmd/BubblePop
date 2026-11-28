@@ -1,0 +1,662 @@
+{
+ "anchors": [
+  {
+   "name": "Bridge_Spawn_Shop",
+   "kind": "bridge",
+   "group": "Paths",
+   "pos": [
+    -57.63,
+    5.52,
+    99.61
+   ],
+   "yaw": 62.2,
+   "size": [
+    9,
+    6,
+    74.24
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "Bridge_Spawn_Altar",
+   "kind": "bridge",
+   "group": "Paths",
+   "pos": [
+    57.96,
+    5.48,
+    99.44
+   ],
+   "yaw": 297.8,
+   "size": [
+    9,
+    6,
+    75.98
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "Bridge_Shop_Seer",
+   "kind": "bridge",
+   "group": "Paths",
+   "pos": [
+    -119.94,
+    11.51,
+    12.35
+   ],
+   "yaw": 9.5,
+   "size": [
+    9,
+    6,
+    74.5
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "Bridge_Seer_Arena",
+   "kind": "bridge",
+   "group": "Paths",
+   "pos": [
+    -75.48,
+    19.05,
+    -87.42
+   ],
+   "yaw": 305.9,
+   "size": [
+    9,
+    6,
+    87.69
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "Bridge_Rift_Arena",
+   "kind": "bridge",
+   "group": "Paths",
+   "pos": [
+    73.88,
+    18.99,
+    -89.39
+   ],
+   "yaw": 54.5,
+   "size": [
+    9,
+    6,
+    93.47
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "Step01",
+   "kind": "stepstone",
+   "group": "Paths",
+   "pos": [
+    113.05,
+    7.0,
+    43.26
+   ],
+   "yaw": 0,
+   "size": [
+    6.5,
+    1,
+    6.5
+   ],
+   "attrs": {
+    "Order": 1
+   }
+  },
+  {
+   "name": "Step02",
+   "kind": "stepstone",
+   "group": "Paths",
+   "pos": [
+    117.23,
+    8.37,
+    35.67
+   ],
+   "yaw": 0,
+   "size": [
+    6.5,
+    1,
+    6.5
+   ],
+   "attrs": {
+    "Order": 2
+   }
+  },
+  {
+   "name": "Step03",
+   "kind": "stepstone",
+   "group": "Paths",
+   "pos": [
+    120.16,
+    9.57,
+    27.86
+   ],
+   "yaw": 0,
+   "size": [
+    6.5,
+    1,
+    6.5
+   ],
+   "attrs": {
+    "Order": 3
+   }
+  },
+  {
+   "name": "Step04",
+   "kind": "stepstone",
+   "group": "Paths",
+   "pos": [
+    118.57,
+    10.57,
+    19.21
+   ],
+   "yaw": 0,
+   "size": [
+    6.5,
+    1,
+    6.5
+   ],
+   "attrs": {
+    "Order": 4
+   }
+  },
+  {
+   "name": "Step05",
+   "kind": "stepstone",
+   "group": "Paths",
+   "pos": [
+    119.4,
+    11.33,
+    11.01
+   ],
+   "yaw": 0,
+   "size": [
+    6.5,
+    1,
+    6.5
+   ],
+   "attrs": {
+    "Order": 5
+   }
+  },
+  {
+   "name": "Step06",
+   "kind": "stepstone",
+   "group": "Paths",
+   "pos": [
+    124.12,
+    11.85,
+    3.52
+   ],
+   "yaw": 0,
+   "size": [
+    6.5,
+    1,
+    6.5
+   ],
+   "attrs": {
+    "Order": 6
+   }
+  },
+  {
+   "name": "Step07",
+   "kind": "stepstone",
+   "group": "Paths",
+   "pos": [
+    125.42,
+    12.17,
+    -4.59
+   ],
+   "yaw": 0,
+   "size": [
+    6.5,
+    1,
+    6.5
+   ],
+   "attrs": {
+    "Order": 7
+   }
+  },
+  {
+   "name": "Step08",
+   "kind": "stepstone",
+   "group": "Paths",
+   "pos": [
+    123.71,
+    12.32,
+    -13.26
+   ],
+   "yaw": 0,
+   "size": [
+    6.5,
+    1,
+    6.5
+   ],
+   "attrs": {
+    "Order": 8
+   }
+  },
+  {
+   "name": "SpawnLocation",
+   "kind": "spawn",
+   "group": "Spawn",
+   "pos": [
+    0.0,
+    1.2,
+    140.0
+   ],
+   "yaw": 0,
+   "size": [
+    10,
+    1,
+    10
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "Overlook",
+   "kind": "viewpoint",
+   "group": "Spawn",
+   "pos": [
+    0.0,
+    2.93,
+    100.0
+   ],
+   "yaw": 0,
+   "size": [
+    12,
+    6,
+    12
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "LiftBottom",
+   "kind": "lift",
+   "group": "Lift",
+   "pos": [
+    -12.0,
+    29.89,
+    112.0
+   ],
+   "yaw": 0,
+   "size": [
+    7,
+    60,
+    7
+   ],
+   "attrs": {
+    "TargetY": 62,
+    "Speed": 60
+   }
+  },
+  {
+   "name": "LiftTop",
+   "kind": "lift",
+   "group": "Lift",
+   "pos": [
+    -30.76,
+    61.87,
+    130.76
+   ],
+   "yaw": 0,
+   "size": [
+    8,
+    4,
+    8
+   ],
+   "attrs": {
+    "Exit": true
+   }
+  },
+  {
+   "name": "HeartCrystal",
+   "kind": "secret",
+   "group": "Starwatch",
+   "pos": [
+    -44.0,
+    64.0,
+    142.0
+   ],
+   "yaw": 0,
+   "size": [
+    10,
+    8,
+    10
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "ShopSign",
+   "kind": "station",
+   "group": "Stations",
+   "pos": [
+    -104.87,
+    16.68,
+    74.24
+   ],
+   "yaw": 246.4,
+   "size": [
+    7,
+    1.8,
+    0.4
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "ShopPrompt",
+   "kind": "prompt",
+   "group": "Stations",
+   "pos": [
+    -104.5,
+    8.08,
+    74.4
+   ],
+   "yaw": 246.4,
+   "size": [
+    8,
+    6,
+    4
+   ],
+   "attrs": {
+    "Station": "Shop"
+   }
+  },
+  {
+   "name": "UpgradesSign",
+   "kind": "station",
+   "group": "Stations",
+   "pos": [
+    110.0,
+    25.04,
+    72.0
+   ],
+   "yaw": 113.6,
+   "size": [
+    7,
+    1.8,
+    0.4
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "UpgradesPrompt",
+   "kind": "prompt",
+   "group": "Stations",
+   "pos": [
+    104.5,
+    8.04,
+    74.4
+   ],
+   "yaw": 113.6,
+   "size": [
+    8,
+    6,
+    4
+   ],
+   "attrs": {
+    "Station": "Upgrades"
+   }
+  },
+  {
+   "name": "QuestsSign",
+   "kind": "station",
+   "group": "Stations",
+   "pos": [
+    -135.22,
+    18.28,
+    -49.73
+   ],
+   "yaw": 251.7,
+   "size": [
+    6.4,
+    3.4,
+    0.4
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "QuestsPrompt",
+   "kind": "prompt",
+   "group": "Stations",
+   "pos": [
+    -127.15,
+    15.08,
+    -47.06
+   ],
+   "yaw": 251.7,
+   "size": [
+    6,
+    6,
+    4
+   ],
+   "attrs": {
+    "Station": "Quests"
+   }
+  },
+  {
+   "name": "RiftGateSign",
+   "kind": "station",
+   "group": "Stations",
+   "pos": [
+    135.0,
+    50.11,
+    -48.0
+   ],
+   "yaw": 101.7,
+   "size": [
+    10,
+    2,
+    0.4
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "PortalTrigger",
+   "kind": "portal",
+   "group": "Stations",
+   "pos": [
+    135.0,
+    29.71,
+    -48.0
+   ],
+   "yaw": 101.7,
+   "size": [
+    22,
+    24,
+    3
+   ],
+   "attrs": {
+    "Destination": ""
+   }
+  },
+  {
+   "name": "ArenaBounds",
+   "kind": "arena",
+   "group": "Arena",
+   "pos": [
+    0.0,
+    30.0,
+    -142.0
+   ],
+   "yaw": 0,
+   "size": [
+    66,
+    20,
+    66
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "ArenaSpawn1",
+   "kind": "arenaspawn",
+   "group": "Arena",
+   "pos": [
+    16.97,
+    21.0,
+    -125.03
+   ],
+   "yaw": 45.0,
+   "size": [
+    4,
+    1,
+    4
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "ArenaSpawn2",
+   "kind": "arenaspawn",
+   "group": "Arena",
+   "pos": [
+    -16.97,
+    21.0,
+    -125.03
+   ],
+   "yaw": 315.0,
+   "size": [
+    4,
+    1,
+    4
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "ArenaSpawn3",
+   "kind": "arenaspawn",
+   "group": "Arena",
+   "pos": [
+    -16.97,
+    21.0,
+    -158.97
+   ],
+   "yaw": 225.0,
+   "size": [
+    4,
+    1,
+    4
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "ArenaSpawn4",
+   "kind": "arenaspawn",
+   "group": "Arena",
+   "pos": [
+    16.97,
+    21.0,
+    -158.97
+   ],
+   "yaw": 135.0,
+   "size": [
+    4,
+    1,
+    4
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "ArenaSign",
+   "kind": "station",
+   "group": "Stations",
+   "pos": [
+    0.0,
+    34.0,
+    -108.0
+   ],
+   "yaw": 0,
+   "size": [
+    10,
+    2,
+    0.4
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "SingularityCore",
+   "kind": "hazard",
+   "group": "Hero",
+   "pos": [
+    0.0,
+    50.0,
+    -5.0
+   ],
+   "yaw": 0,
+   "size": [
+    44,
+    44,
+    44
+   ],
+   "attrs": {
+    "Note": "pull / damage zone around the core"
+   }
+  },
+  {
+   "name": "VoidKill",
+   "kind": "killzone",
+   "group": "Spawn",
+   "pos": [
+    0,
+    -160,
+    -5
+   ],
+   "yaw": 0,
+   "size": [
+    2000,
+    20,
+    2000
+   ],
+   "attrs": {}
+  }
+ ],
+ "singularity": [
+  0.0,
+  50.0,
+  -5.0
+ ],
+ "islands": {
+  "Spawn": [
+   0.0,
+   130.0,
+   0.0,
+   32.0
+  ],
+  "Shop": [
+   -110.0,
+   72.0,
+   5.0,
+   25.0
+  ],
+  "Altar": [
+   110.0,
+   72.0,
+   5.0,
+   25.0
+  ],
+  "Seer": [
+   -130.0,
+   -48.0,
+   12.0,
+   26.0
+  ],
+  "Rift": [
+   132.0,
+   -48.0,
+   12.0,
+   31.0
+  ],
+  "Arena": [
+   0.0,
+   -142.0,
+   20.0,
+   46.0
+  ],
+  "Star": [
+   -40.0,
+   140.0,
+   60.0,
+   19.0
+  ]
+ }
+}

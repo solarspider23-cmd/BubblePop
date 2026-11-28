@@ -1,0 +1,63 @@
+{
+ "columns": {
+  "0": "SmoothPlastic",
+  "1": "Grass",
+  "2": "Ground",
+  "3": "Rock",
+  "4": "Slate",
+  "5": "Sand",
+  "6": "Snow",
+  "7": "Ice",
+  "8": "Basalt",
+  "9": "WoodPlanks",
+  "10": "LeafyGrass",
+  "11": "Foil",
+  "12": "SmoothPlastic",
+  "13": "Marble",
+  "14": "SmoothPlastic",
+  "15": "SmoothPlastic"
+ },
+ "names": [
+  "white",
+  "grass",
+  "dirt",
+  "rock",
+  "stone",
+  "sand",
+  "snow",
+  "ice",
+  "basalt",
+  "wood",
+  "leaf",
+  "gold",
+  "red",
+  "cloud",
+  "violet",
+  "pink"
+ ],
+ "overrides": {
+  "Cloud": "SmoothPlastic",
+  "Horizon": "SmoothPlastic",
+  "Puffy": {
+   "wood": "Wood",
+   "pink": "LeafyGrass"
+  },
+  "SnowTree": {
+   "wood": "Wood"
+  },
+  "Charred": {
+   "basalt": "Wood"
+  },
+  "Bush": {
+   "pink": "LeafyGrass"
+  },
+  "Cactus": {
+   "leaf": "Grass"
+  },
+  "IslandUnder": {
+   "wood": "Wood",
+   "leaf": "LeafyGrass"
+  },
+  "Gumdrop": "SmoothPlastic"
+ }
+}

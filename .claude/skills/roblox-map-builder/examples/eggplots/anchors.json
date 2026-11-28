@@ -1,0 +1,2940 @@
+{
+ "anchors": [
+  {
+   "name": "EggSlot1",
+   "kind": "eggslot",
+   "group": "Plot1",
+   "pos": [
+    -47.0,
+    4.03,
+    -118.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 1,
+    "SlotIndex": 1
+   }
+  },
+  {
+   "name": "EggSlot2",
+   "kind": "eggslot",
+   "group": "Plot1",
+   "pos": [
+    -47.0,
+    4.03,
+    -109.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 1,
+    "SlotIndex": 2
+   }
+  },
+  {
+   "name": "EggSlot3",
+   "kind": "eggslot",
+   "group": "Plot1",
+   "pos": [
+    -47.0,
+    4.03,
+    -83.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 1,
+    "SlotIndex": 3
+   }
+  },
+  {
+   "name": "EggSlot4",
+   "kind": "eggslot",
+   "group": "Plot1",
+   "pos": [
+    -47.0,
+    4.03,
+    -74.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 1,
+    "SlotIndex": 4
+   }
+  },
+  {
+   "name": "EggSlot5",
+   "kind": "eggslot",
+   "group": "Plot1",
+   "pos": [
+    -58.0,
+    4.03,
+    -118.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 1,
+    "SlotIndex": 5
+   }
+  },
+  {
+   "name": "EggSlot6",
+   "kind": "eggslot",
+   "group": "Plot1",
+   "pos": [
+    -58.0,
+    4.03,
+    -109.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 1,
+    "SlotIndex": 6
+   }
+  },
+  {
+   "name": "EggSlot7",
+   "kind": "eggslot",
+   "group": "Plot1",
+   "pos": [
+    -58.0,
+    4.03,
+    -83.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 1,
+    "SlotIndex": 7
+   }
+  },
+  {
+   "name": "EggSlot8",
+   "kind": "eggslot",
+   "group": "Plot1",
+   "pos": [
+    -58.0,
+    4.03,
+    -74.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 1,
+    "SlotIndex": 8
+   }
+  },
+  {
+   "name": "EggSlot9",
+   "kind": "eggslot",
+   "group": "Plot1",
+   "pos": [
+    -70.0,
+    4.03,
+    -108.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 1,
+    "SlotIndex": 9
+   }
+  },
+  {
+   "name": "EggSlot10",
+   "kind": "eggslot",
+   "group": "Plot1",
+   "pos": [
+    -70.0,
+    4.03,
+    -84.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 1,
+    "SlotIndex": 10
+   }
+  },
+  {
+   "name": "CollectPad",
+   "kind": "collectpad",
+   "group": "Plot1",
+   "pos": [
+    -69.0,
+    1.28,
+    -96.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    5.6,
+    1.2,
+    5.6
+   ],
+   "attrs": {
+    "PlotId": 1
+   }
+  },
+  {
+   "name": "Gate",
+   "kind": "gate",
+   "group": "Plot1",
+   "pos": [
+    -30.0,
+    5.2,
+    -96.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    14.0,
+    9.6,
+    1.0
+   ],
+   "attrs": {
+    "PlotId": 1
+   }
+  },
+  {
+   "name": "OwnerSign",
+   "kind": "ownersign",
+   "group": "Plot1",
+   "pos": [
+    -26.95,
+    6.0,
+    -77.5
+   ],
+   "yaw": 270.0,
+   "size": [
+    7.0,
+    3.5,
+    0.2
+   ],
+   "attrs": {
+    "PlotId": 1
+   }
+  },
+  {
+   "name": "CoopDoor",
+   "kind": "coopdoor",
+   "group": "Plot1",
+   "pos": [
+    -76.0,
+    4.0,
+    -96.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    6.8,
+    7.6,
+    2.0
+   ],
+   "attrs": {
+    "PlotId": 1
+   }
+  },
+  {
+   "name": "Plot1",
+   "kind": "plot",
+   "group": "Plot1",
+   "pos": [
+    -62.0,
+    8.0,
+    -96.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    56.0,
+    16.0,
+    64.0
+   ],
+   "attrs": {
+    "PlotId": 1,
+    "Accent": "red"
+   }
+  },
+  {
+   "name": "EggSlot1",
+   "kind": "eggslot",
+   "group": "Plot2",
+   "pos": [
+    -47.0,
+    4.03,
+    -54.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 2,
+    "SlotIndex": 1
+   }
+  },
+  {
+   "name": "EggSlot2",
+   "kind": "eggslot",
+   "group": "Plot2",
+   "pos": [
+    -47.0,
+    4.03,
+    -45.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 2,
+    "SlotIndex": 2
+   }
+  },
+  {
+   "name": "EggSlot3",
+   "kind": "eggslot",
+   "group": "Plot2",
+   "pos": [
+    -47.0,
+    4.03,
+    -19.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 2,
+    "SlotIndex": 3
+   }
+  },
+  {
+   "name": "EggSlot4",
+   "kind": "eggslot",
+   "group": "Plot2",
+   "pos": [
+    -47.0,
+    4.03,
+    -10.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 2,
+    "SlotIndex": 4
+   }
+  },
+  {
+   "name": "EggSlot5",
+   "kind": "eggslot",
+   "group": "Plot2",
+   "pos": [
+    -58.0,
+    4.03,
+    -54.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 2,
+    "SlotIndex": 5
+   }
+  },
+  {
+   "name": "EggSlot6",
+   "kind": "eggslot",
+   "group": "Plot2",
+   "pos": [
+    -58.0,
+    4.03,
+    -45.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 2,
+    "SlotIndex": 6
+   }
+  },
+  {
+   "name": "EggSlot7",
+   "kind": "eggslot",
+   "group": "Plot2",
+   "pos": [
+    -58.0,
+    4.03,
+    -19.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 2,
+    "SlotIndex": 7
+   }
+  },
+  {
+   "name": "EggSlot8",
+   "kind": "eggslot",
+   "group": "Plot2",
+   "pos": [
+    -58.0,
+    4.03,
+    -10.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 2,
+    "SlotIndex": 8
+   }
+  },
+  {
+   "name": "EggSlot9",
+   "kind": "eggslot",
+   "group": "Plot2",
+   "pos": [
+    -70.0,
+    4.03,
+    -44.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 2,
+    "SlotIndex": 9
+   }
+  },
+  {
+   "name": "EggSlot10",
+   "kind": "eggslot",
+   "group": "Plot2",
+   "pos": [
+    -70.0,
+    4.03,
+    -20.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 2,
+    "SlotIndex": 10
+   }
+  },
+  {
+   "name": "CollectPad",
+   "kind": "collectpad",
+   "group": "Plot2",
+   "pos": [
+    -69.0,
+    1.28,
+    -32.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    5.6,
+    1.2,
+    5.6
+   ],
+   "attrs": {
+    "PlotId": 2
+   }
+  },
+  {
+   "name": "Gate",
+   "kind": "gate",
+   "group": "Plot2",
+   "pos": [
+    -30.0,
+    5.2,
+    -32.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    14.0,
+    9.6,
+    1.0
+   ],
+   "attrs": {
+    "PlotId": 2
+   }
+  },
+  {
+   "name": "OwnerSign",
+   "kind": "ownersign",
+   "group": "Plot2",
+   "pos": [
+    -26.95,
+    6.0,
+    -13.5
+   ],
+   "yaw": 270.0,
+   "size": [
+    7.0,
+    3.5,
+    0.2
+   ],
+   "attrs": {
+    "PlotId": 2
+   }
+  },
+  {
+   "name": "CoopDoor",
+   "kind": "coopdoor",
+   "group": "Plot2",
+   "pos": [
+    -76.0,
+    4.0,
+    -32.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    6.8,
+    7.6,
+    2.0
+   ],
+   "attrs": {
+    "PlotId": 2
+   }
+  },
+  {
+   "name": "Plot2",
+   "kind": "plot",
+   "group": "Plot2",
+   "pos": [
+    -62.0,
+    8.0,
+    -32.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    56.0,
+    16.0,
+    64.0
+   ],
+   "attrs": {
+    "PlotId": 2,
+    "Accent": "yellow"
+   }
+  },
+  {
+   "name": "EggSlot1",
+   "kind": "eggslot",
+   "group": "Plot3",
+   "pos": [
+    -47.0,
+    4.03,
+    10.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 3,
+    "SlotIndex": 1
+   }
+  },
+  {
+   "name": "EggSlot2",
+   "kind": "eggslot",
+   "group": "Plot3",
+   "pos": [
+    -47.0,
+    4.03,
+    19.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 3,
+    "SlotIndex": 2
+   }
+  },
+  {
+   "name": "EggSlot3",
+   "kind": "eggslot",
+   "group": "Plot3",
+   "pos": [
+    -47.0,
+    4.03,
+    45.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 3,
+    "SlotIndex": 3
+   }
+  },
+  {
+   "name": "EggSlot4",
+   "kind": "eggslot",
+   "group": "Plot3",
+   "pos": [
+    -47.0,
+    4.03,
+    54.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 3,
+    "SlotIndex": 4
+   }
+  },
+  {
+   "name": "EggSlot5",
+   "kind": "eggslot",
+   "group": "Plot3",
+   "pos": [
+    -58.0,
+    4.03,
+    10.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 3,
+    "SlotIndex": 5
+   }
+  },
+  {
+   "name": "EggSlot6",
+   "kind": "eggslot",
+   "group": "Plot3",
+   "pos": [
+    -58.0,
+    4.03,
+    19.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 3,
+    "SlotIndex": 6
+   }
+  },
+  {
+   "name": "EggSlot7",
+   "kind": "eggslot",
+   "group": "Plot3",
+   "pos": [
+    -58.0,
+    4.03,
+    45.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 3,
+    "SlotIndex": 7
+   }
+  },
+  {
+   "name": "EggSlot8",
+   "kind": "eggslot",
+   "group": "Plot3",
+   "pos": [
+    -58.0,
+    4.03,
+    54.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 3,
+    "SlotIndex": 8
+   }
+  },
+  {
+   "name": "EggSlot9",
+   "kind": "eggslot",
+   "group": "Plot3",
+   "pos": [
+    -70.0,
+    4.03,
+    20.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 3,
+    "SlotIndex": 9
+   }
+  },
+  {
+   "name": "EggSlot10",
+   "kind": "eggslot",
+   "group": "Plot3",
+   "pos": [
+    -70.0,
+    4.03,
+    44.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 3,
+    "SlotIndex": 10
+   }
+  },
+  {
+   "name": "CollectPad",
+   "kind": "collectpad",
+   "group": "Plot3",
+   "pos": [
+    -69.0,
+    1.28,
+    32.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    5.6,
+    1.2,
+    5.6
+   ],
+   "attrs": {
+    "PlotId": 3
+   }
+  },
+  {
+   "name": "Gate",
+   "kind": "gate",
+   "group": "Plot3",
+   "pos": [
+    -30.0,
+    5.2,
+    32.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    14.0,
+    9.6,
+    1.0
+   ],
+   "attrs": {
+    "PlotId": 3
+   }
+  },
+  {
+   "name": "OwnerSign",
+   "kind": "ownersign",
+   "group": "Plot3",
+   "pos": [
+    -26.95,
+    6.0,
+    50.5
+   ],
+   "yaw": 270.0,
+   "size": [
+    7.0,
+    3.5,
+    0.2
+   ],
+   "attrs": {
+    "PlotId": 3
+   }
+  },
+  {
+   "name": "CoopDoor",
+   "kind": "coopdoor",
+   "group": "Plot3",
+   "pos": [
+    -76.0,
+    4.0,
+    32.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    6.8,
+    7.6,
+    2.0
+   ],
+   "attrs": {
+    "PlotId": 3
+   }
+  },
+  {
+   "name": "Plot3",
+   "kind": "plot",
+   "group": "Plot3",
+   "pos": [
+    -62.0,
+    8.0,
+    32.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    56.0,
+    16.0,
+    64.0
+   ],
+   "attrs": {
+    "PlotId": 3,
+    "Accent": "sky"
+   }
+  },
+  {
+   "name": "EggSlot1",
+   "kind": "eggslot",
+   "group": "Plot4",
+   "pos": [
+    -47.0,
+    4.03,
+    74.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 4,
+    "SlotIndex": 1
+   }
+  },
+  {
+   "name": "EggSlot2",
+   "kind": "eggslot",
+   "group": "Plot4",
+   "pos": [
+    -47.0,
+    4.03,
+    83.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 4,
+    "SlotIndex": 2
+   }
+  },
+  {
+   "name": "EggSlot3",
+   "kind": "eggslot",
+   "group": "Plot4",
+   "pos": [
+    -47.0,
+    4.03,
+    109.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 4,
+    "SlotIndex": 3
+   }
+  },
+  {
+   "name": "EggSlot4",
+   "kind": "eggslot",
+   "group": "Plot4",
+   "pos": [
+    -47.0,
+    4.03,
+    118.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 4,
+    "SlotIndex": 4
+   }
+  },
+  {
+   "name": "EggSlot5",
+   "kind": "eggslot",
+   "group": "Plot4",
+   "pos": [
+    -58.0,
+    4.03,
+    74.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 4,
+    "SlotIndex": 5
+   }
+  },
+  {
+   "name": "EggSlot6",
+   "kind": "eggslot",
+   "group": "Plot4",
+   "pos": [
+    -58.0,
+    4.03,
+    83.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 4,
+    "SlotIndex": 6
+   }
+  },
+  {
+   "name": "EggSlot7",
+   "kind": "eggslot",
+   "group": "Plot4",
+   "pos": [
+    -58.0,
+    4.03,
+    109.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 4,
+    "SlotIndex": 7
+   }
+  },
+  {
+   "name": "EggSlot8",
+   "kind": "eggslot",
+   "group": "Plot4",
+   "pos": [
+    -58.0,
+    4.03,
+    118.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 4,
+    "SlotIndex": 8
+   }
+  },
+  {
+   "name": "EggSlot9",
+   "kind": "eggslot",
+   "group": "Plot4",
+   "pos": [
+    -70.0,
+    4.03,
+    84.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 4,
+    "SlotIndex": 9
+   }
+  },
+  {
+   "name": "EggSlot10",
+   "kind": "eggslot",
+   "group": "Plot4",
+   "pos": [
+    -70.0,
+    4.03,
+    108.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 4,
+    "SlotIndex": 10
+   }
+  },
+  {
+   "name": "CollectPad",
+   "kind": "collectpad",
+   "group": "Plot4",
+   "pos": [
+    -69.0,
+    1.28,
+    96.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    5.6,
+    1.2,
+    5.6
+   ],
+   "attrs": {
+    "PlotId": 4
+   }
+  },
+  {
+   "name": "Gate",
+   "kind": "gate",
+   "group": "Plot4",
+   "pos": [
+    -30.0,
+    5.2,
+    96.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    14.0,
+    9.6,
+    1.0
+   ],
+   "attrs": {
+    "PlotId": 4
+   }
+  },
+  {
+   "name": "OwnerSign",
+   "kind": "ownersign",
+   "group": "Plot4",
+   "pos": [
+    -26.95,
+    6.0,
+    114.5
+   ],
+   "yaw": 270.0,
+   "size": [
+    7.0,
+    3.5,
+    0.2
+   ],
+   "attrs": {
+    "PlotId": 4
+   }
+  },
+  {
+   "name": "CoopDoor",
+   "kind": "coopdoor",
+   "group": "Plot4",
+   "pos": [
+    -76.0,
+    4.0,
+    96.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    6.8,
+    7.6,
+    2.0
+   ],
+   "attrs": {
+    "PlotId": 4
+   }
+  },
+  {
+   "name": "Plot4",
+   "kind": "plot",
+   "group": "Plot4",
+   "pos": [
+    -62.0,
+    8.0,
+    96.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    56.0,
+    16.0,
+    64.0
+   ],
+   "attrs": {
+    "PlotId": 4,
+    "Accent": "purple"
+   }
+  },
+  {
+   "name": "EggSlot1",
+   "kind": "eggslot",
+   "group": "Plot5",
+   "pos": [
+    47.0,
+    4.03,
+    -74.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 5,
+    "SlotIndex": 1
+   }
+  },
+  {
+   "name": "EggSlot2",
+   "kind": "eggslot",
+   "group": "Plot5",
+   "pos": [
+    47.0,
+    4.03,
+    -83.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 5,
+    "SlotIndex": 2
+   }
+  },
+  {
+   "name": "EggSlot3",
+   "kind": "eggslot",
+   "group": "Plot5",
+   "pos": [
+    47.0,
+    4.03,
+    -109.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 5,
+    "SlotIndex": 3
+   }
+  },
+  {
+   "name": "EggSlot4",
+   "kind": "eggslot",
+   "group": "Plot5",
+   "pos": [
+    47.0,
+    4.03,
+    -118.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 5,
+    "SlotIndex": 4
+   }
+  },
+  {
+   "name": "EggSlot5",
+   "kind": "eggslot",
+   "group": "Plot5",
+   "pos": [
+    58.0,
+    4.03,
+    -74.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 5,
+    "SlotIndex": 5
+   }
+  },
+  {
+   "name": "EggSlot6",
+   "kind": "eggslot",
+   "group": "Plot5",
+   "pos": [
+    58.0,
+    4.03,
+    -83.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 5,
+    "SlotIndex": 6
+   }
+  },
+  {
+   "name": "EggSlot7",
+   "kind": "eggslot",
+   "group": "Plot5",
+   "pos": [
+    58.0,
+    4.03,
+    -109.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 5,
+    "SlotIndex": 7
+   }
+  },
+  {
+   "name": "EggSlot8",
+   "kind": "eggslot",
+   "group": "Plot5",
+   "pos": [
+    58.0,
+    4.03,
+    -118.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 5,
+    "SlotIndex": 8
+   }
+  },
+  {
+   "name": "EggSlot9",
+   "kind": "eggslot",
+   "group": "Plot5",
+   "pos": [
+    70.0,
+    4.03,
+    -84.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 5,
+    "SlotIndex": 9
+   }
+  },
+  {
+   "name": "EggSlot10",
+   "kind": "eggslot",
+   "group": "Plot5",
+   "pos": [
+    70.0,
+    4.03,
+    -108.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 5,
+    "SlotIndex": 10
+   }
+  },
+  {
+   "name": "CollectPad",
+   "kind": "collectpad",
+   "group": "Plot5",
+   "pos": [
+    69.0,
+    1.28,
+    -96.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    5.6,
+    1.2,
+    5.6
+   ],
+   "attrs": {
+    "PlotId": 5
+   }
+  },
+  {
+   "name": "Gate",
+   "kind": "gate",
+   "group": "Plot5",
+   "pos": [
+    30.0,
+    5.2,
+    -96.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    14.0,
+    9.6,
+    1.0
+   ],
+   "attrs": {
+    "PlotId": 5
+   }
+  },
+  {
+   "name": "OwnerSign",
+   "kind": "ownersign",
+   "group": "Plot5",
+   "pos": [
+    26.95,
+    6.0,
+    -114.5
+   ],
+   "yaw": 90.0,
+   "size": [
+    7.0,
+    3.5,
+    0.2
+   ],
+   "attrs": {
+    "PlotId": 5
+   }
+  },
+  {
+   "name": "CoopDoor",
+   "kind": "coopdoor",
+   "group": "Plot5",
+   "pos": [
+    76.0,
+    4.0,
+    -96.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    6.8,
+    7.6,
+    2.0
+   ],
+   "attrs": {
+    "PlotId": 5
+   }
+  },
+  {
+   "name": "Plot5",
+   "kind": "plot",
+   "group": "Plot5",
+   "pos": [
+    62.0,
+    8.0,
+    -96.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    56.0,
+    16.0,
+    64.0
+   ],
+   "attrs": {
+    "PlotId": 5,
+    "Accent": "orange"
+   }
+  },
+  {
+   "name": "EggSlot1",
+   "kind": "eggslot",
+   "group": "Plot6",
+   "pos": [
+    47.0,
+    4.03,
+    -10.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 6,
+    "SlotIndex": 1
+   }
+  },
+  {
+   "name": "EggSlot2",
+   "kind": "eggslot",
+   "group": "Plot6",
+   "pos": [
+    47.0,
+    4.03,
+    -19.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 6,
+    "SlotIndex": 2
+   }
+  },
+  {
+   "name": "EggSlot3",
+   "kind": "eggslot",
+   "group": "Plot6",
+   "pos": [
+    47.0,
+    4.03,
+    -45.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 6,
+    "SlotIndex": 3
+   }
+  },
+  {
+   "name": "EggSlot4",
+   "kind": "eggslot",
+   "group": "Plot6",
+   "pos": [
+    47.0,
+    4.03,
+    -54.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 6,
+    "SlotIndex": 4
+   }
+  },
+  {
+   "name": "EggSlot5",
+   "kind": "eggslot",
+   "group": "Plot6",
+   "pos": [
+    58.0,
+    4.03,
+    -10.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 6,
+    "SlotIndex": 5
+   }
+  },
+  {
+   "name": "EggSlot6",
+   "kind": "eggslot",
+   "group": "Plot6",
+   "pos": [
+    58.0,
+    4.03,
+    -19.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 6,
+    "SlotIndex": 6
+   }
+  },
+  {
+   "name": "EggSlot7",
+   "kind": "eggslot",
+   "group": "Plot6",
+   "pos": [
+    58.0,
+    4.03,
+    -45.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 6,
+    "SlotIndex": 7
+   }
+  },
+  {
+   "name": "EggSlot8",
+   "kind": "eggslot",
+   "group": "Plot6",
+   "pos": [
+    58.0,
+    4.03,
+    -54.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 6,
+    "SlotIndex": 8
+   }
+  },
+  {
+   "name": "EggSlot9",
+   "kind": "eggslot",
+   "group": "Plot6",
+   "pos": [
+    70.0,
+    4.03,
+    -20.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 6,
+    "SlotIndex": 9
+   }
+  },
+  {
+   "name": "EggSlot10",
+   "kind": "eggslot",
+   "group": "Plot6",
+   "pos": [
+    70.0,
+    4.03,
+    -44.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 6,
+    "SlotIndex": 10
+   }
+  },
+  {
+   "name": "CollectPad",
+   "kind": "collectpad",
+   "group": "Plot6",
+   "pos": [
+    69.0,
+    1.28,
+    -32.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    5.6,
+    1.2,
+    5.6
+   ],
+   "attrs": {
+    "PlotId": 6
+   }
+  },
+  {
+   "name": "Gate",
+   "kind": "gate",
+   "group": "Plot6",
+   "pos": [
+    30.0,
+    5.2,
+    -32.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    14.0,
+    9.6,
+    1.0
+   ],
+   "attrs": {
+    "PlotId": 6
+   }
+  },
+  {
+   "name": "OwnerSign",
+   "kind": "ownersign",
+   "group": "Plot6",
+   "pos": [
+    26.95,
+    6.0,
+    -50.5
+   ],
+   "yaw": 90.0,
+   "size": [
+    7.0,
+    3.5,
+    0.2
+   ],
+   "attrs": {
+    "PlotId": 6
+   }
+  },
+  {
+   "name": "CoopDoor",
+   "kind": "coopdoor",
+   "group": "Plot6",
+   "pos": [
+    76.0,
+    4.0,
+    -32.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    6.8,
+    7.6,
+    2.0
+   ],
+   "attrs": {
+    "PlotId": 6
+   }
+  },
+  {
+   "name": "Plot6",
+   "kind": "plot",
+   "group": "Plot6",
+   "pos": [
+    62.0,
+    8.0,
+    -32.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    56.0,
+    16.0,
+    64.0
+   ],
+   "attrs": {
+    "PlotId": 6,
+    "Accent": "teal"
+   }
+  },
+  {
+   "name": "EggSlot1",
+   "kind": "eggslot",
+   "group": "Plot7",
+   "pos": [
+    47.0,
+    4.03,
+    54.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 7,
+    "SlotIndex": 1
+   }
+  },
+  {
+   "name": "EggSlot2",
+   "kind": "eggslot",
+   "group": "Plot7",
+   "pos": [
+    47.0,
+    4.03,
+    45.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 7,
+    "SlotIndex": 2
+   }
+  },
+  {
+   "name": "EggSlot3",
+   "kind": "eggslot",
+   "group": "Plot7",
+   "pos": [
+    47.0,
+    4.03,
+    19.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 7,
+    "SlotIndex": 3
+   }
+  },
+  {
+   "name": "EggSlot4",
+   "kind": "eggslot",
+   "group": "Plot7",
+   "pos": [
+    47.0,
+    4.03,
+    10.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 7,
+    "SlotIndex": 4
+   }
+  },
+  {
+   "name": "EggSlot5",
+   "kind": "eggslot",
+   "group": "Plot7",
+   "pos": [
+    58.0,
+    4.03,
+    54.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 7,
+    "SlotIndex": 5
+   }
+  },
+  {
+   "name": "EggSlot6",
+   "kind": "eggslot",
+   "group": "Plot7",
+   "pos": [
+    58.0,
+    4.03,
+    45.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 7,
+    "SlotIndex": 6
+   }
+  },
+  {
+   "name": "EggSlot7",
+   "kind": "eggslot",
+   "group": "Plot7",
+   "pos": [
+    58.0,
+    4.03,
+    19.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 7,
+    "SlotIndex": 7
+   }
+  },
+  {
+   "name": "EggSlot8",
+   "kind": "eggslot",
+   "group": "Plot7",
+   "pos": [
+    58.0,
+    4.03,
+    10.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 7,
+    "SlotIndex": 8
+   }
+  },
+  {
+   "name": "EggSlot9",
+   "kind": "eggslot",
+   "group": "Plot7",
+   "pos": [
+    70.0,
+    4.03,
+    44.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 7,
+    "SlotIndex": 9
+   }
+  },
+  {
+   "name": "EggSlot10",
+   "kind": "eggslot",
+   "group": "Plot7",
+   "pos": [
+    70.0,
+    4.03,
+    20.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 7,
+    "SlotIndex": 10
+   }
+  },
+  {
+   "name": "CollectPad",
+   "kind": "collectpad",
+   "group": "Plot7",
+   "pos": [
+    69.0,
+    1.28,
+    32.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    5.6,
+    1.2,
+    5.6
+   ],
+   "attrs": {
+    "PlotId": 7
+   }
+  },
+  {
+   "name": "Gate",
+   "kind": "gate",
+   "group": "Plot7",
+   "pos": [
+    30.0,
+    5.2,
+    32.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    14.0,
+    9.6,
+    1.0
+   ],
+   "attrs": {
+    "PlotId": 7
+   }
+  },
+  {
+   "name": "OwnerSign",
+   "kind": "ownersign",
+   "group": "Plot7",
+   "pos": [
+    26.95,
+    6.0,
+    13.5
+   ],
+   "yaw": 90.0,
+   "size": [
+    7.0,
+    3.5,
+    0.2
+   ],
+   "attrs": {
+    "PlotId": 7
+   }
+  },
+  {
+   "name": "CoopDoor",
+   "kind": "coopdoor",
+   "group": "Plot7",
+   "pos": [
+    76.0,
+    4.0,
+    32.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    6.8,
+    7.6,
+    2.0
+   ],
+   "attrs": {
+    "PlotId": 7
+   }
+  },
+  {
+   "name": "Plot7",
+   "kind": "plot",
+   "group": "Plot7",
+   "pos": [
+    62.0,
+    8.0,
+    32.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    56.0,
+    16.0,
+    64.0
+   ],
+   "attrs": {
+    "PlotId": 7,
+    "Accent": "blue"
+   }
+  },
+  {
+   "name": "EggSlot1",
+   "kind": "eggslot",
+   "group": "Plot8",
+   "pos": [
+    47.0,
+    4.03,
+    118.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 8,
+    "SlotIndex": 1
+   }
+  },
+  {
+   "name": "EggSlot2",
+   "kind": "eggslot",
+   "group": "Plot8",
+   "pos": [
+    47.0,
+    4.03,
+    109.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 8,
+    "SlotIndex": 2
+   }
+  },
+  {
+   "name": "EggSlot3",
+   "kind": "eggslot",
+   "group": "Plot8",
+   "pos": [
+    47.0,
+    4.03,
+    83.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 8,
+    "SlotIndex": 3
+   }
+  },
+  {
+   "name": "EggSlot4",
+   "kind": "eggslot",
+   "group": "Plot8",
+   "pos": [
+    47.0,
+    4.03,
+    74.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 8,
+    "SlotIndex": 4
+   }
+  },
+  {
+   "name": "EggSlot5",
+   "kind": "eggslot",
+   "group": "Plot8",
+   "pos": [
+    58.0,
+    4.03,
+    118.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 8,
+    "SlotIndex": 5
+   }
+  },
+  {
+   "name": "EggSlot6",
+   "kind": "eggslot",
+   "group": "Plot8",
+   "pos": [
+    58.0,
+    4.03,
+    109.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 8,
+    "SlotIndex": 6
+   }
+  },
+  {
+   "name": "EggSlot7",
+   "kind": "eggslot",
+   "group": "Plot8",
+   "pos": [
+    58.0,
+    4.03,
+    83.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 8,
+    "SlotIndex": 7
+   }
+  },
+  {
+   "name": "EggSlot8",
+   "kind": "eggslot",
+   "group": "Plot8",
+   "pos": [
+    58.0,
+    4.03,
+    74.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 8,
+    "SlotIndex": 8
+   }
+  },
+  {
+   "name": "EggSlot9",
+   "kind": "eggslot",
+   "group": "Plot8",
+   "pos": [
+    70.0,
+    4.03,
+    108.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 8,
+    "SlotIndex": 9
+   }
+  },
+  {
+   "name": "EggSlot10",
+   "kind": "eggslot",
+   "group": "Plot8",
+   "pos": [
+    70.0,
+    4.03,
+    84.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    2.6,
+    3.6,
+    2.6
+   ],
+   "attrs": {
+    "PlotId": 8,
+    "SlotIndex": 10
+   }
+  },
+  {
+   "name": "CollectPad",
+   "kind": "collectpad",
+   "group": "Plot8",
+   "pos": [
+    69.0,
+    1.28,
+    96.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    5.6,
+    1.2,
+    5.6
+   ],
+   "attrs": {
+    "PlotId": 8
+   }
+  },
+  {
+   "name": "Gate",
+   "kind": "gate",
+   "group": "Plot8",
+   "pos": [
+    30.0,
+    5.2,
+    96.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    14.0,
+    9.6,
+    1.0
+   ],
+   "attrs": {
+    "PlotId": 8
+   }
+  },
+  {
+   "name": "OwnerSign",
+   "kind": "ownersign",
+   "group": "Plot8",
+   "pos": [
+    26.95,
+    6.0,
+    77.5
+   ],
+   "yaw": 90.0,
+   "size": [
+    7.0,
+    3.5,
+    0.2
+   ],
+   "attrs": {
+    "PlotId": 8
+   }
+  },
+  {
+   "name": "CoopDoor",
+   "kind": "coopdoor",
+   "group": "Plot8",
+   "pos": [
+    76.0,
+    4.0,
+    96.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    6.8,
+    7.6,
+    2.0
+   ],
+   "attrs": {
+    "PlotId": 8
+   }
+  },
+  {
+   "name": "Plot8",
+   "kind": "plot",
+   "group": "Plot8",
+   "pos": [
+    62.0,
+    8.0,
+    96.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    56.0,
+    16.0,
+    64.0
+   ],
+   "attrs": {
+    "PlotId": 8,
+    "Accent": "pink"
+   }
+  },
+  {
+   "name": "Hatchery",
+   "kind": "station",
+   "group": "Shops",
+   "pos": [
+    0,
+    66.0,
+    -175.5
+   ],
+   "yaw": 180,
+   "size": [
+    6,
+    2,
+    6
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "HatchMouth",
+   "kind": "conveyor",
+   "group": "Conveyor",
+   "pos": [
+    0,
+    6.0,
+    -141.07
+   ],
+   "yaw": 180,
+   "size": [
+    12,
+    10,
+    2
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "ConveyorStart",
+   "kind": "conveyor",
+   "group": "Conveyor",
+   "pos": [
+    0,
+    2.45,
+    -147.0
+   ],
+   "yaw": 180,
+   "size": [
+    10.0,
+    1,
+    2
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "ConveyorEnd",
+   "kind": "conveyor",
+   "group": "Conveyor",
+   "pos": [
+    0,
+    2.45,
+    128.0
+   ],
+   "yaw": 180,
+   "size": [
+    10.0,
+    1,
+    2
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "Path01",
+   "kind": "conveyorpath",
+   "group": "Conveyor",
+   "pos": [
+    0,
+    2.45,
+    -147.0
+   ],
+   "yaw": 180,
+   "size": [
+    1,
+    1,
+    1
+   ],
+   "attrs": {
+    "Order": 1
+   }
+  },
+  {
+   "name": "Path02",
+   "kind": "conveyorpath",
+   "group": "Conveyor",
+   "pos": [
+    0,
+    2.45,
+    -127.36
+   ],
+   "yaw": 180,
+   "size": [
+    1,
+    1,
+    1
+   ],
+   "attrs": {
+    "Order": 2
+   }
+  },
+  {
+   "name": "Path03",
+   "kind": "conveyorpath",
+   "group": "Conveyor",
+   "pos": [
+    0,
+    2.45,
+    -107.71
+   ],
+   "yaw": 180,
+   "size": [
+    1,
+    1,
+    1
+   ],
+   "attrs": {
+    "Order": 3
+   }
+  },
+  {
+   "name": "Path04",
+   "kind": "conveyorpath",
+   "group": "Conveyor",
+   "pos": [
+    0,
+    2.45,
+    -88.07
+   ],
+   "yaw": 180,
+   "size": [
+    1,
+    1,
+    1
+   ],
+   "attrs": {
+    "Order": 4
+   }
+  },
+  {
+   "name": "Path05",
+   "kind": "conveyorpath",
+   "group": "Conveyor",
+   "pos": [
+    0,
+    2.45,
+    -68.43
+   ],
+   "yaw": 180,
+   "size": [
+    1,
+    1,
+    1
+   ],
+   "attrs": {
+    "Order": 5
+   }
+  },
+  {
+   "name": "Path06",
+   "kind": "conveyorpath",
+   "group": "Conveyor",
+   "pos": [
+    0,
+    2.45,
+    -48.79
+   ],
+   "yaw": 180,
+   "size": [
+    1,
+    1,
+    1
+   ],
+   "attrs": {
+    "Order": 6
+   }
+  },
+  {
+   "name": "Path07",
+   "kind": "conveyorpath",
+   "group": "Conveyor",
+   "pos": [
+    0,
+    2.45,
+    -29.14
+   ],
+   "yaw": 180,
+   "size": [
+    1,
+    1,
+    1
+   ],
+   "attrs": {
+    "Order": 7
+   }
+  },
+  {
+   "name": "Path08",
+   "kind": "conveyorpath",
+   "group": "Conveyor",
+   "pos": [
+    0,
+    2.45,
+    -9.5
+   ],
+   "yaw": 180,
+   "size": [
+    1,
+    1,
+    1
+   ],
+   "attrs": {
+    "Order": 8
+   }
+  },
+  {
+   "name": "Path09",
+   "kind": "conveyorpath",
+   "group": "Conveyor",
+   "pos": [
+    0,
+    2.45,
+    10.14
+   ],
+   "yaw": 180,
+   "size": [
+    1,
+    1,
+    1
+   ],
+   "attrs": {
+    "Order": 9
+   }
+  },
+  {
+   "name": "Path10",
+   "kind": "conveyorpath",
+   "group": "Conveyor",
+   "pos": [
+    0,
+    2.45,
+    29.79
+   ],
+   "yaw": 180,
+   "size": [
+    1,
+    1,
+    1
+   ],
+   "attrs": {
+    "Order": 10
+   }
+  },
+  {
+   "name": "Path11",
+   "kind": "conveyorpath",
+   "group": "Conveyor",
+   "pos": [
+    0,
+    2.45,
+    49.43
+   ],
+   "yaw": 180,
+   "size": [
+    1,
+    1,
+    1
+   ],
+   "attrs": {
+    "Order": 11
+   }
+  },
+  {
+   "name": "Path12",
+   "kind": "conveyorpath",
+   "group": "Conveyor",
+   "pos": [
+    0,
+    2.45,
+    69.07
+   ],
+   "yaw": 180,
+   "size": [
+    1,
+    1,
+    1
+   ],
+   "attrs": {
+    "Order": 12
+   }
+  },
+  {
+   "name": "Path13",
+   "kind": "conveyorpath",
+   "group": "Conveyor",
+   "pos": [
+    0,
+    2.45,
+    88.71
+   ],
+   "yaw": 180,
+   "size": [
+    1,
+    1,
+    1
+   ],
+   "attrs": {
+    "Order": 13
+   }
+  },
+  {
+   "name": "Path14",
+   "kind": "conveyorpath",
+   "group": "Conveyor",
+   "pos": [
+    0,
+    2.45,
+    108.36
+   ],
+   "yaw": 180,
+   "size": [
+    1,
+    1,
+    1
+   ],
+   "attrs": {
+    "Order": 14
+   }
+  },
+  {
+   "name": "Path15",
+   "kind": "conveyorpath",
+   "group": "Conveyor",
+   "pos": [
+    0,
+    2.45,
+    128.0
+   ],
+   "yaw": 180,
+   "size": [
+    1,
+    1,
+    1
+   ],
+   "attrs": {
+    "Order": 15
+   }
+  },
+  {
+   "name": "DrainTrigger",
+   "kind": "drain",
+   "group": "Conveyor",
+   "pos": [
+    0,
+    2.75,
+    132.5
+   ],
+   "yaw": 180,
+   "size": [
+    12.0,
+    5,
+    4
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "SpawnLocation",
+   "kind": "spawn",
+   "group": "Spawn",
+   "pos": [
+    0.0,
+    0.75,
+    178.0
+   ],
+   "yaw": 180,
+   "size": [
+    10,
+    1,
+    10
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "EggShop",
+   "kind": "shop",
+   "group": "Shops",
+   "pos": [
+    -34.0,
+    3.2,
+    174.0
+   ],
+   "yaw": 270,
+   "size": [
+    14,
+    6,
+    4
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "EggShopSign",
+   "kind": "shopsign",
+   "group": "Shops",
+   "pos": [
+    -43.9,
+    13.9,
+    174.0
+   ],
+   "yaw": 270,
+   "size": [
+    6.5,
+    2.4,
+    0.3
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "Sell",
+   "kind": "shop",
+   "group": "Shops",
+   "pos": [
+    34.0,
+    3.2,
+    174.0
+   ],
+   "yaw": 90,
+   "size": [
+    14,
+    6,
+    4
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "SellSign",
+   "kind": "shopsign",
+   "group": "Shops",
+   "pos": [
+    43.9,
+    13.9,
+    174.0
+   ],
+   "yaw": 90,
+   "size": [
+    6.5,
+    2.4,
+    0.3
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "Upgrades",
+   "kind": "shop",
+   "group": "Shops",
+   "pos": [
+    0.0,
+    3.2,
+    206.0
+   ],
+   "yaw": 0,
+   "size": [
+    14,
+    6,
+    4
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "UpgradesSign",
+   "kind": "shopsign",
+   "group": "Shops",
+   "pos": [
+    0.0,
+    13.9,
+    215.9
+   ],
+   "yaw": 0,
+   "size": [
+    6.5,
+    2.4,
+    0.3
+   ],
+   "attrs": {}
+  }
+ ],
+ "spawn": [
+  0.0,
+  0.25,
+  178.0
+ ],
+ "plots": [
+  {
+   "id": 1,
+   "centre": [
+    -62.0,
+    -96.0
+   ],
+   "yaw": -90.0,
+   "accent": "red"
+  },
+  {
+   "id": 2,
+   "centre": [
+    -62.0,
+    -32.0
+   ],
+   "yaw": -90.0,
+   "accent": "yellow"
+  },
+  {
+   "id": 3,
+   "centre": [
+    -62.0,
+    32.0
+   ],
+   "yaw": -90.0,
+   "accent": "sky"
+  },
+  {
+   "id": 4,
+   "centre": [
+    -62.0,
+    96.0
+   ],
+   "yaw": -90.0,
+   "accent": "purple"
+  },
+  {
+   "id": 5,
+   "centre": [
+    62.0,
+    -96.0
+   ],
+   "yaw": 90.0,
+   "accent": "orange"
+  },
+  {
+   "id": 6,
+   "centre": [
+    62.0,
+    -32.0
+   ],
+   "yaw": 90.0,
+   "accent": "teal"
+  },
+  {
+   "id": 7,
+   "centre": [
+    62.0,
+    32.0
+   ],
+   "yaw": 90.0,
+   "accent": "blue"
+  },
+  {
+   "id": 8,
+   "centre": [
+    62.0,
+    96.0
+   ],
+   "yaw": 90.0,
+   "accent": "pink"
+  }
+ ]
+}

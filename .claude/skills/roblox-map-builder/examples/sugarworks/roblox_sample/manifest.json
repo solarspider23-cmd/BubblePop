@@ -1,0 +1,2139 @@
+{
+ "name": "Sugarworks",
+ "format": "glb",
+ "props": {
+  "BuyButton": {
+   "parts": [
+    {
+     "name": "BuyButton",
+     "tris": 644,
+     "size": [
+      6.4,
+      7.28,
+      12.2
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "BuyButton_Glow_button",
+     "tris": 60,
+     "size": [
+      4.0,
+      0.55,
+      4.0
+     ],
+     "glow": "button",
+     "color": [
+      61,
+      255,
+      138
+     ]
+    }
+   ],
+   "tris": 704,
+   "collision": "box",
+   "size": [
+    6.4,
+    7.27,
+    12.2
+   ]
+  },
+  "CandyCorn0": {
+   "parts": [
+    {
+     "name": "CandyCorn0",
+     "tris": 240,
+     "size": [
+      3.21,
+      2.56,
+      4.14
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 240,
+   "collision": "hull",
+   "size": [
+    3.21,
+    2.56,
+    4.14
+   ]
+  },
+  "CandyCorn1": {
+   "parts": [
+    {
+     "name": "CandyCorn1",
+     "tris": 180,
+     "size": [
+      2.21,
+      2.48,
+      2.75
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 180,
+   "collision": "hull",
+   "size": [
+    2.21,
+    2.48,
+    2.75
+   ]
+  },
+  "CandyCorn2": {
+   "parts": [
+    {
+     "name": "CandyCorn2",
+     "tris": 180,
+     "size": [
+      3.44,
+      2.56,
+      3.53
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 180,
+   "collision": "hull",
+   "size": [
+    3.44,
+    2.56,
+    3.53
+   ]
+  },
+  "CandyCrate0": {
+   "parts": [
+    {
+     "name": "CandyCrate0",
+     "tris": 144,
+     "size": [
+      2.7,
+      2.65,
+      2.7
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 144,
+   "collision": "box",
+   "size": [
+    2.7,
+    2.65,
+    2.7
+   ]
+  },
+  "CandyCrate1": {
+   "parts": [
+    {
+     "name": "CandyCrate1",
+     "tris": 144,
+     "size": [
+      2.7,
+      2.65,
+      2.7
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 144,
+   "collision": "box",
+   "size": [
+    2.7,
+    2.65,
+    2.7
+   ]
+  },
+  "CandyCrate2": {
+   "parts": [
+    {
+     "name": "CandyCrate2",
+     "tris": 144,
+     "size": [
+      2.7,
+      2.65,
+      2.7
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 144,
+   "collision": "box",
+   "size": [
+    2.7,
+    2.65,
+    2.7
+   ]
+  },
+  "CandyLamp": {
+   "parts": [
+    {
+     "name": "CandyLamp",
+     "tris": 502,
+     "size": [
+      2.0,
+      15.51,
+      5.47
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "CandyLamp_Glow_lamp",
+     "tris": 20,
+     "size": [
+      1.4,
+      1.4,
+      1.21
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      207,
+      122
+     ]
+    }
+   ],
+   "tris": 522,
+   "collision": "box",
+   "size": [
+    2.0,
+    15.51,
+    5.47
+   ]
+  },
+  "CashPad": {
+   "parts": [
+    {
+     "name": "CashPad",
+     "tris": 620,
+     "size": [
+      8.4,
+      2.05,
+      8.4
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "CashPad_Glow_cash",
+     "tris": 280,
+     "size": [
+      7.95,
+      0.42,
+      7.96
+     ],
+     "glow": "cash",
+     "color": [
+      61,
+      255,
+      138
+     ]
+    }
+   ],
+   "tris": 900,
+   "collision": "box",
+   "size": [
+    8.4,
+    2.05,
+    8.4
+   ]
+  },
+  "ChocBench": {
+   "parts": [
+    {
+     "name": "ChocBench",
+     "tris": 464,
+     "size": [
+      5.95,
+      4.25,
+      2.47
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 464,
+   "collision": "box",
+   "size": [
+    5.95,
+    4.25,
+    2.47
+   ]
+  },
+  "ChocFountain": {
+   "parts": [
+    {
+     "name": "ChocFountain",
+     "tris": 2164,
+     "size": [
+      14.0,
+      11.88,
+      14.0
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 2164,
+   "collision": "precise",
+   "size": [
+    14.0,
+    11.88,
+    14.0
+   ]
+  },
+  "Cliff0": {
+   "parts": [
+    {
+     "name": "Cliff0",
+     "tris": 38,
+     "size": [
+      24.55,
+      23.88,
+      21.35
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 38,
+   "collision": "precise",
+   "size": [
+    24.55,
+    23.88,
+    21.35
+   ]
+  },
+  "Cliff1": {
+   "parts": [
+    {
+     "name": "Cliff1",
+     "tris": 46,
+     "size": [
+      18.37,
+      21.18,
+      15.54
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 46,
+   "collision": "precise",
+   "size": [
+    18.37,
+    21.18,
+    15.54
+   ]
+  },
+  "Cliff2": {
+   "parts": [
+    {
+     "name": "Cliff2",
+     "tris": 38,
+     "size": [
+      25.36,
+      27.03,
+      24.17
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 38,
+   "collision": "precise",
+   "size": [
+    25.36,
+    27.03,
+    24.17
+   ]
+  },
+  "CoinChute": {
+   "parts": [
+    {
+     "name": "CoinChute",
+     "tris": 396,
+     "size": [
+      2.25,
+      8.11,
+      13.42
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 396,
+   "collision": "hull",
+   "size": [
+    2.25,
+    8.11,
+    13.42
+   ]
+  },
+  "Collector1": {
+   "parts": [
+    {
+     "name": "Collector1",
+     "tris": 1080,
+     "size": [
+      11.53,
+      23.2,
+      11.26
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Collector1_Glow_furnace",
+     "tris": 12,
+     "size": [
+      0.3,
+      2.6,
+      3.6
+     ],
+     "glow": "furnace",
+     "color": [
+      255,
+      138,
+      42
+     ]
+    }
+   ],
+   "tris": 1092,
+   "collision": "hull",
+   "size": [
+    11.66,
+    23.2,
+    11.26
+   ]
+  },
+  "Conveyor": {
+   "parts": [
+    {
+     "name": "Conveyor",
+     "tris": 1256,
+     "size": [
+      12.0,
+      4.59,
+      4.85
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1256,
+   "collision": "hull",
+   "size": [
+    12.0,
+    4.59,
+    4.85
+   ]
+  },
+  "Dropper1": {
+   "parts": [
+    {
+     "name": "Dropper1",
+     "tris": 744,
+     "size": [
+      7.2,
+      18.98,
+      7.3
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Dropper1_Glow_furnace",
+     "tris": 16,
+     "size": [
+      0.78,
+      1.2,
+      0.72
+     ],
+     "glow": "furnace",
+     "color": [
+      255,
+      138,
+      42
+     ]
+    }
+   ],
+   "tris": 760,
+   "collision": "hull",
+   "size": [
+    7.2,
+    18.98,
+    7.3
+   ]
+  },
+  "Exchange": {
+   "parts": [
+    {
+     "name": "Exchange",
+     "tris": 12267,
+     "size": [
+      58.0,
+      62.2,
+      60.0
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Exchange_Glow_lamp",
+     "tris": 411,
+     "size": [
+      49.12,
+      17.0,
+      44.15
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      207,
+      122
+     ]
+    },
+    {
+     "name": "Exchange_Glow_ring",
+     "tris": 480,
+     "size": [
+      27.77,
+      5.82,
+      28.2
+     ],
+     "glow": "ring",
+     "color": [
+      255,
+      122,
+      217
+     ]
+    }
+   ],
+   "tris": 13158,
+   "collision": "precise",
+   "size": [
+    58.0,
+    62.2,
+    60.0
+   ]
+  },
+  "Fence12_t0": {
+   "parts": [
+    {
+     "name": "Fence12_t0",
+     "tris": 88,
+     "size": [
+      10.3,
+      3.5,
+      1.4
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Fence12_t0_Glow_t0",
+     "tris": 24,
+     "size": [
+      10.1,
+      0.25,
+      1.5
+     ],
+     "glow": "t0",
+     "color": [
+      255,
+      79,
+      163
+     ]
+    }
+   ],
+   "tris": 112,
+   "collision": "box",
+   "size": [
+    10.3,
+    3.5,
+    1.5
+   ]
+  },
+  "Fence12_t1": {
+   "parts": [
+    {
+     "name": "Fence12_t1",
+     "tris": 88,
+     "size": [
+      10.3,
+      3.5,
+      1.4
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Fence12_t1_Glow_t1",
+     "tris": 24,
+     "size": [
+      10.1,
+      0.25,
+      1.5
+     ],
+     "glow": "t1",
+     "color": [
+      51,
+      224,
+      176
+     ]
+    }
+   ],
+   "tris": 112,
+   "collision": "box",
+   "size": [
+    10.3,
+    3.5,
+    1.5
+   ]
+  },
+  "Fence12_t2": {
+   "parts": [
+    {
+     "name": "Fence12_t2",
+     "tris": 88,
+     "size": [
+      10.3,
+      3.5,
+      1.4
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Fence12_t2_Glow_t2",
+     "tris": 24,
+     "size": [
+      10.1,
+      0.25,
+      1.5
+     ],
+     "glow": "t2",
+     "color": [
+      255,
+      212,
+      58
+     ]
+    }
+   ],
+   "tris": 112,
+   "collision": "box",
+   "size": [
+    10.3,
+    3.5,
+    1.5
+   ]
+  },
+  "Fence12_t3": {
+   "parts": [
+    {
+     "name": "Fence12_t3",
+     "tris": 88,
+     "size": [
+      10.3,
+      3.5,
+      1.4
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Fence12_t3_Glow_t3",
+     "tris": 24,
+     "size": [
+      10.1,
+      0.25,
+      1.5
+     ],
+     "glow": "t3",
+     "color": [
+      154,
+      107,
+      255
+     ]
+    }
+   ],
+   "tris": 112,
+   "collision": "box",
+   "size": [
+    10.3,
+    3.5,
+    1.5
+   ]
+  },
+  "Fence12_t4": {
+   "parts": [
+    {
+     "name": "Fence12_t4",
+     "tris": 88,
+     "size": [
+      10.3,
+      3.5,
+      1.4
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Fence12_t4_Glow_t4",
+     "tris": 24,
+     "size": [
+      10.1,
+      0.25,
+      1.5
+     ],
+     "glow": "t4",
+     "color": [
+      255,
+      122,
+      58
+     ]
+    }
+   ],
+   "tris": 112,
+   "collision": "box",
+   "size": [
+    10.3,
+    3.5,
+    1.5
+   ]
+  },
+  "Fence12_t5": {
+   "parts": [
+    {
+     "name": "Fence12_t5",
+     "tris": 88,
+     "size": [
+      10.3,
+      3.5,
+      1.4
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Fence12_t5_Glow_t5",
+     "tris": 24,
+     "size": [
+      10.1,
+      0.25,
+      1.5
+     ],
+     "glow": "t5",
+     "color": [
+      58,
+      182,
+      255
+     ]
+    }
+   ],
+   "tris": 112,
+   "collision": "box",
+   "size": [
+    10.3,
+    3.5,
+    1.5
+   ]
+  },
+  "Fence12_t6": {
+   "parts": [
+    {
+     "name": "Fence12_t6",
+     "tris": 88,
+     "size": [
+      10.3,
+      3.5,
+      1.4
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Fence12_t6_Glow_t6",
+     "tris": 24,
+     "size": [
+      10.1,
+      0.25,
+      1.5
+     ],
+     "glow": "t6",
+     "color": [
+      255,
+      74,
+      90
+     ]
+    }
+   ],
+   "tris": 112,
+   "collision": "box",
+   "size": [
+    10.3,
+    3.5,
+    1.5
+   ]
+  },
+  "Fence12_t7": {
+   "parts": [
+    {
+     "name": "Fence12_t7",
+     "tris": 88,
+     "size": [
+      10.3,
+      3.5,
+      1.4
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Fence12_t7_Glow_t7",
+     "tris": 24,
+     "size": [
+      10.1,
+      0.25,
+      1.5
+     ],
+     "glow": "t7",
+     "color": [
+      140,
+      255,
+      90
+     ]
+    }
+   ],
+   "tris": 112,
+   "collision": "box",
+   "size": [
+    10.3,
+    3.5,
+    1.5
+   ]
+  },
+  "Fence8_t0": {
+   "parts": [
+    {
+     "name": "Fence8_t0",
+     "tris": 88,
+     "size": [
+      6.4,
+      3.5,
+      1.4
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Fence8_t0_Glow_t0",
+     "tris": 24,
+     "size": [
+      6.2,
+      0.25,
+      1.5
+     ],
+     "glow": "t0",
+     "color": [
+      255,
+      79,
+      163
+     ]
+    }
+   ],
+   "tris": 112,
+   "collision": "box",
+   "size": [
+    6.4,
+    3.5,
+    1.5
+   ]
+  },
+  "Fence8_t1": {
+   "parts": [
+    {
+     "name": "Fence8_t1",
+     "tris": 88,
+     "size": [
+      6.4,
+      3.5,
+      1.4
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Fence8_t1_Glow_t1",
+     "tris": 24,
+     "size": [
+      6.2,
+      0.25,
+      1.5
+     ],
+     "glow": "t1",
+     "color": [
+      51,
+      224,
+      176
+     ]
+    }
+   ],
+   "tris": 112,
+   "collision": "box",
+   "size": [
+    6.4,
+    3.5,
+    1.5
+   ]
+  },
+  "Fence8_t2": {
+   "parts": [
+    {
+     "name": "Fence8_t2",
+     "tris": 88,
+     "size": [
+      6.4,
+      3.5,
+      1.4
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Fence8_t2_Glow_t2",
+     "tris": 24,
+     "size": [
+      6.2,
+      0.25,
+      1.5
+     ],
+     "glow": "t2",
+     "color": [
+      255,
+      212,
+      58
+     ]
+    }
+   ],
+   "tris": 112,
+   "collision": "box",
+   "size": [
+    6.4,
+    3.5,
+    1.5
+   ]
+  },
+  "Fence8_t3": {
+   "parts": [
+    {
+     "name": "Fence8_t3",
+     "tris": 88,
+     "size": [
+      6.4,
+      3.5,
+      1.4
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Fence8_t3_Glow_t3",
+     "tris": 24,
+     "size": [
+      6.2,
+      0.25,
+      1.5
+     ],
+     "glow": "t3",
+     "color": [
+      154,
+      107,
+      255
+     ]
+    }
+   ],
+   "tris": 112,
+   "collision": "box",
+   "size": [
+    6.4,
+    3.5,
+    1.5
+   ]
+  },
+  "Fence8_t4": {
+   "parts": [
+    {
+     "name": "Fence8_t4",
+     "tris": 88,
+     "size": [
+      6.4,
+      3.5,
+      1.4
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Fence8_t4_Glow_t4",
+     "tris": 24,
+     "size": [
+      6.2,
+      0.25,
+      1.5
+     ],
+     "glow": "t4",
+     "color": [
+      255,
+      122,
+      58
+     ]
+    }
+   ],
+   "tris": 112,
+   "collision": "box",
+   "size": [
+    6.4,
+    3.5,
+    1.5
+   ]
+  },
+  "Fence8_t5": {
+   "parts": [
+    {
+     "name": "Fence8_t5",
+     "tris": 88,
+     "size": [
+      6.4,
+      3.5,
+      1.4
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Fence8_t5_Glow_t5",
+     "tris": 24,
+     "size": [
+      6.2,
+      0.25,
+      1.5
+     ],
+     "glow": "t5",
+     "color": [
+      58,
+      182,
+      255
+     ]
+    }
+   ],
+   "tris": 112,
+   "collision": "box",
+   "size": [
+    6.4,
+    3.5,
+    1.5
+   ]
+  },
+  "Fence8_t6": {
+   "parts": [
+    {
+     "name": "Fence8_t6",
+     "tris": 88,
+     "size": [
+      6.4,
+      3.5,
+      1.4
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Fence8_t6_Glow_t6",
+     "tris": 24,
+     "size": [
+      6.2,
+      0.25,
+      1.5
+     ],
+     "glow": "t6",
+     "color": [
+      255,
+      74,
+      90
+     ]
+    }
+   ],
+   "tris": 112,
+   "collision": "box",
+   "size": [
+    6.4,
+    3.5,
+    1.5
+   ]
+  },
+  "Fence8_t7": {
+   "parts": [
+    {
+     "name": "Fence8_t7",
+     "tris": 88,
+     "size": [
+      6.4,
+      3.5,
+      1.4
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Fence8_t7_Glow_t7",
+     "tris": 24,
+     "size": [
+      6.2,
+      0.25,
+      1.5
+     ],
+     "glow": "t7",
+     "color": [
+      140,
+      255,
+      90
+     ]
+    }
+   ],
+   "tris": 112,
+   "collision": "box",
+   "size": [
+    6.4,
+    3.5,
+    1.5
+   ]
+  },
+  "FencePost": {
+   "parts": [
+    {
+     "name": "FencePost",
+     "tris": 66,
+     "size": [
+      1.67,
+      4.1,
+      1.6
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 66,
+   "collision": "box",
+   "size": [
+    1.67,
+    4.1,
+    1.6
+   ]
+  },
+  "Gate_t0": {
+   "parts": [
+    {
+     "name": "Gate_t0",
+     "tris": 852,
+     "size": [
+      21.8,
+      15.8,
+      12.42
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Gate_t0_Glow_t0",
+     "tris": 352,
+     "size": [
+      14.0,
+      11.67,
+      9.73
+     ],
+     "glow": "t0",
+     "color": [
+      255,
+      79,
+      163
+     ]
+    }
+   ],
+   "tris": 1204,
+   "collision": "precise",
+   "size": [
+    21.8,
+    15.8,
+    12.42
+   ]
+  },
+  "Gate_t1": {
+   "parts": [
+    {
+     "name": "Gate_t1",
+     "tris": 852,
+     "size": [
+      21.8,
+      15.8,
+      12.42
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Gate_t1_Glow_t1",
+     "tris": 352,
+     "size": [
+      14.0,
+      11.67,
+      9.73
+     ],
+     "glow": "t1",
+     "color": [
+      51,
+      224,
+      176
+     ]
+    }
+   ],
+   "tris": 1204,
+   "collision": "precise",
+   "size": [
+    21.8,
+    15.8,
+    12.42
+   ]
+  },
+  "Gate_t2": {
+   "parts": [
+    {
+     "name": "Gate_t2",
+     "tris": 852,
+     "size": [
+      21.8,
+      15.8,
+      12.42
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Gate_t2_Glow_t2",
+     "tris": 352,
+     "size": [
+      14.0,
+      11.67,
+      9.73
+     ],
+     "glow": "t2",
+     "color": [
+      255,
+      212,
+      58
+     ]
+    }
+   ],
+   "tris": 1204,
+   "collision": "precise",
+   "size": [
+    21.8,
+    15.8,
+    12.42
+   ]
+  },
+  "Gate_t3": {
+   "parts": [
+    {
+     "name": "Gate_t3",
+     "tris": 852,
+     "size": [
+      21.8,
+      15.8,
+      12.42
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Gate_t3_Glow_t3",
+     "tris": 352,
+     "size": [
+      14.0,
+      11.67,
+      9.73
+     ],
+     "glow": "t3",
+     "color": [
+      154,
+      107,
+      255
+     ]
+    }
+   ],
+   "tris": 1204,
+   "collision": "precise",
+   "size": [
+    21.8,
+    15.8,
+    12.42
+   ]
+  },
+  "Gate_t4": {
+   "parts": [
+    {
+     "name": "Gate_t4",
+     "tris": 852,
+     "size": [
+      21.8,
+      15.8,
+      12.42
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Gate_t4_Glow_t4",
+     "tris": 352,
+     "size": [
+      14.0,
+      11.67,
+      9.73
+     ],
+     "glow": "t4",
+     "color": [
+      255,
+      122,
+      58
+     ]
+    }
+   ],
+   "tris": 1204,
+   "collision": "precise",
+   "size": [
+    21.8,
+    15.8,
+    12.42
+   ]
+  },
+  "Gate_t5": {
+   "parts": [
+    {
+     "name": "Gate_t5",
+     "tris": 852,
+     "size": [
+      21.8,
+      15.8,
+      12.42
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Gate_t5_Glow_t5",
+     "tris": 352,
+     "size": [
+      14.0,
+      11.67,
+      9.73
+     ],
+     "glow": "t5",
+     "color": [
+      58,
+      182,
+      255
+     ]
+    }
+   ],
+   "tris": 1204,
+   "collision": "precise",
+   "size": [
+    21.8,
+    15.8,
+    12.42
+   ]
+  },
+  "Gate_t6": {
+   "parts": [
+    {
+     "name": "Gate_t6",
+     "tris": 852,
+     "size": [
+      21.8,
+      15.8,
+      12.42
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Gate_t6_Glow_t6",
+     "tris": 352,
+     "size": [
+      14.0,
+      11.67,
+      9.73
+     ],
+     "glow": "t6",
+     "color": [
+      255,
+      74,
+      90
+     ]
+    }
+   ],
+   "tris": 1204,
+   "collision": "precise",
+   "size": [
+    21.8,
+    15.8,
+    12.42
+   ]
+  },
+  "Gate_t7": {
+   "parts": [
+    {
+     "name": "Gate_t7",
+     "tris": 852,
+     "size": [
+      21.8,
+      15.8,
+      12.42
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Gate_t7_Glow_t7",
+     "tris": 352,
+     "size": [
+      14.0,
+      11.67,
+      9.73
+     ],
+     "glow": "t7",
+     "color": [
+      140,
+      255,
+      90
+     ]
+    }
+   ],
+   "tris": 1204,
+   "collision": "precise",
+   "size": [
+    21.8,
+    15.8,
+    12.42
+   ]
+  },
+  "Gumdrop0": {
+   "parts": [
+    {
+     "name": "Gumdrop0",
+     "tris": 552,
+     "size": [
+      5.66,
+      2.87,
+      6.99
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 552,
+   "collision": "hull",
+   "size": [
+    5.66,
+    2.87,
+    6.99
+   ]
+  },
+  "Gumdrop1": {
+   "parts": [
+    {
+     "name": "Gumdrop1",
+     "tris": 414,
+     "size": [
+      6.61,
+      3.38,
+      4.51
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 414,
+   "collision": "hull",
+   "size": [
+    6.61,
+    3.38,
+    4.51
+   ]
+  },
+  "Gumdrop2": {
+   "parts": [
+    {
+     "name": "Gumdrop2",
+     "tris": 414,
+     "size": [
+      4.71,
+      2.88,
+      5.65
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 414,
+   "collision": "hull",
+   "size": [
+    4.71,
+    2.88,
+    5.65
+   ]
+  },
+  "Hazard36": {
+   "parts": [
+    {
+     "name": "Hazard36",
+     "tris": 360,
+     "size": [
+      36.0,
+      0.08,
+      1.0
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 360,
+   "collision": "none",
+   "size": [
+    36.0,
+    0.08,
+    1.0
+   ]
+  },
+  "Lolly0": {
+   "parts": [
+    {
+     "name": "Lolly0",
+     "tris": 652,
+     "size": [
+      9.5,
+      21.62,
+      4.5
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 652,
+   "collision": "hull",
+   "size": [
+    9.5,
+    21.62,
+    4.5
+   ]
+  },
+  "Lolly1": {
+   "parts": [
+    {
+     "name": "Lolly1",
+     "tris": 652,
+     "size": [
+      9.51,
+      21.62,
+      4.41
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 652,
+   "collision": "hull",
+   "size": [
+    9.51,
+    21.62,
+    4.41
+   ]
+  },
+  "Lolly2": {
+   "parts": [
+    {
+     "name": "Lolly2",
+     "tris": 652,
+     "size": [
+      9.53,
+      21.63,
+      4.59
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 652,
+   "collision": "hull",
+   "size": [
+    9.53,
+    21.63,
+    4.59
+   ]
+  },
+  "Lolly3": {
+   "parts": [
+    {
+     "name": "Lolly3",
+     "tris": 650,
+     "size": [
+      9.5,
+      21.61,
+      4.58
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 650,
+   "collision": "hull",
+   "size": [
+    9.5,
+    21.61,
+    4.58
+   ]
+  },
+  "Peppermint": {
+   "parts": [
+    {
+     "name": "Peppermint",
+     "tris": 160,
+     "size": [
+      4.4,
+      0.5,
+      4.38
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 160,
+   "collision": "none",
+   "size": [
+    4.4,
+    0.5,
+    4.38
+   ]
+  },
+  "PlotBase": {
+   "parts": [
+    {
+     "name": "PlotBase",
+     "tris": 2200,
+     "size": [
+      86.0,
+      2.2,
+      86.0
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 2200,
+   "collision": "box",
+   "size": [
+    86.0,
+    2.2,
+    86.0
+   ]
+  },
+  "Sacks1": {
+   "parts": [
+    {
+     "name": "Sacks1",
+     "tris": 448,
+     "size": [
+      5.0,
+      5.05,
+      4.4
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 448,
+   "collision": "box",
+   "size": [
+    5.0,
+    5.05,
+    4.4
+   ]
+  },
+  "Slot12x12": {
+   "parts": [
+    {
+     "name": "Slot12x12",
+     "tris": 168,
+     "size": [
+      12.7,
+      0.12,
+      12.7
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 168,
+   "collision": "none",
+   "size": [
+    12.7,
+    0.12,
+    12.7
+   ]
+  },
+  "Slot20x14": {
+   "parts": [
+    {
+     "name": "Slot20x14",
+     "tris": 216,
+     "size": [
+      20.7,
+      0.12,
+      14.7
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 216,
+   "collision": "none",
+   "size": [
+    20.7,
+    0.12,
+    14.7
+   ]
+  },
+  "Slot40x8": {
+   "parts": [
+    {
+     "name": "Slot40x8",
+     "tris": 384,
+     "size": [
+      40.7,
+      0.12,
+      8.7
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 384,
+   "collision": "none",
+   "size": [
+    40.7,
+    0.12,
+    8.7
+   ]
+  },
+  "SpawnPad": {
+   "parts": [
+    {
+     "name": "SpawnPad",
+     "tris": 252,
+     "size": [
+      18.0,
+      1.15,
+      18.0
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "SpawnPad_Glow_ring",
+     "tris": 360,
+     "size": [
+      17.08,
+      0.57,
+      17.09
+     ],
+     "glow": "ring",
+     "color": [
+      255,
+      122,
+      217
+     ]
+    }
+   ],
+   "tris": 612,
+   "collision": "precise",
+   "size": [
+    18.0,
+    1.15,
+    18.0
+   ]
+  },
+  "Upgrader1": {
+   "parts": [
+    {
+     "name": "Upgrader1",
+     "tris": 250,
+     "size": [
+      3.2,
+      13.2,
+      11.0
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Upgrader1_Glow_ring",
+     "tris": 280,
+     "size": [
+      0.67,
+      6.56,
+      6.57
+     ],
+     "glow": "ring",
+     "color": [
+      255,
+      122,
+      217
+     ]
+    },
+    {
+     "name": "Upgrader1_Glow_beam",
+     "tris": 24,
+     "size": [
+      0.12,
+      0.92,
+      3.6
+     ],
+     "glow": "beam",
+     "color": [
+      122,
+      232,
+      255
+     ]
+    }
+   ],
+   "tris": 554,
+   "collision": "hull",
+   "size": [
+    3.2,
+    13.2,
+    11.0
+   ]
+  },
+  "Walk18x6": {
+   "parts": [
+    {
+     "name": "Walk18x6",
+     "tris": 156,
+     "size": [
+      7.4,
+      0.1,
+      18.0
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 156,
+   "collision": "none",
+   "size": [
+    7.4,
+    0.1,
+    18.0
+   ]
+  },
+  "Walk30x5": {
+   "parts": [
+    {
+     "name": "Walk30x5",
+     "tris": 252,
+     "size": [
+      6.4,
+      0.1,
+      30.0
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 252,
+   "collision": "none",
+   "size": [
+    6.4,
+    0.1,
+    30.0
+   ]
+  },
+  "WrapperBin": {
+   "parts": [
+    {
+     "name": "WrapperBin",
+     "tris": 146,
+     "size": [
+      2.2,
+      3.3,
+      2.09
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 146,
+   "collision": "box",
+   "size": [
+    2.2,
+    3.3,
+    2.09
+   ]
+  }
+ },
+ "static": [
+  {
+   "name": "Ground_0",
+   "group": "Ground",
+   "tris": 11447,
+   "size": [
+    325.2,
+    40.96,
+    297.78
+   ]
+  },
+  {
+   "name": "Ground_1",
+   "group": "Ground",
+   "tris": 11447,
+   "size": [
+    325.67,
+    41.05,
+    297.77
+   ]
+  },
+  {
+   "name": "Hardscape_0",
+   "group": "Ground",
+   "tris": 11948,
+   "size": [
+    93.2,
+    1.0,
+    162.38
+   ]
+  },
+  {
+   "name": "Hardscape_1",
+   "group": "Ground",
+   "tris": 11948,
+   "size": [
+    73.2,
+    1.0,
+    468.55
+   ]
+  },
+  {
+   "name": "Horizon_0",
+   "group": "Ground",
+   "tris": 3898,
+   "size": [
+    1851.2,
+    328.1,
+    1926.3
+   ]
+  }
+ ],
+ "bigparts": [
+  {
+   "name": "Sea_Water_0_0",
+   "group": "Ground",
+   "pos": [
+    -900.0,
+    -32.5,
+    -900.0
+   ],
+   "size": [
+    1800.0,
+    0.5,
+    1800.0
+   ],
+   "color": [
+    19,
+    108,
+    171
+   ]
+  },
+  {
+   "name": "Sea_Water_0_1",
+   "group": "Ground",
+   "pos": [
+    -900.0,
+    -32.5,
+    900.0
+   ],
+   "size": [
+    1800.0,
+    0.5,
+    1800.0
+   ],
+   "color": [
+    19,
+    108,
+    171
+   ]
+  },
+  {
+   "name": "Sea_Water_1_0",
+   "group": "Ground",
+   "pos": [
+    900.0,
+    -32.5,
+    -900.0
+   ],
+   "size": [
+    1800.0,
+    0.5,
+    1800.0
+   ],
+   "color": [
+    19,
+    108,
+    171
+   ]
+  },
+  {
+   "name": "Sea_Water_1_1",
+   "group": "Ground",
+   "pos": [
+    900.0,
+    -32.5,
+    900.0
+   ],
+   "size": [
+    1800.0,
+    0.5,
+    1800.0
+   ],
+   "color": [
+    19,
+    108,
+    171
+   ]
+  },
+  {
+   "name": "Ocean_Floor_0_0",
+   "group": "Ground",
+   "pos": [
+    -925.0,
+    -38.0,
+    -925.0
+   ],
+   "size": [
+    1850.0,
+    0.5,
+    1850.0
+   ],
+   "color": [
+    182,
+    106,
+    47
+   ]
+  },
+  {
+   "name": "Ocean_Floor_0_1",
+   "group": "Ground",
+   "pos": [
+    -925.0,
+    -38.0,
+    925.0
+   ],
+   "size": [
+    1850.0,
+    0.5,
+    1850.0
+   ],
+   "color": [
+    182,
+    106,
+    47
+   ]
+  },
+  {
+   "name": "Ocean_Floor_1_0",
+   "group": "Ground",
+   "pos": [
+    925.0,
+    -38.0,
+    -925.0
+   ],
+   "size": [
+    1850.0,
+    0.5,
+    1850.0
+   ],
+   "color": [
+    182,
+    106,
+    47
+   ]
+  },
+  {
+   "name": "Ocean_Floor_1_1",
+   "group": "Ground",
+   "pos": [
+    925.0,
+    -38.0,
+    925.0
+   ],
+   "size": [
+    1850.0,
+    0.5,
+    1850.0
+   ],
+   "color": [
+    182,
+    106,
+    47
+   ]
+  }
+ ],
+ "look": {
+  "SunDir": [
+   0.914,
+   0.276,
+   -0.297
+  ],
+  "SunElevation": 16.0,
+  "ClockTime": 7.07,
+  "SunColor": [
+   255,
+   219,
+   178
+  ],
+  "Brightness": 3.71,
+  "AtmosphereDensity": 0.208,
+  "AtmosphereColor": [
+   255,
+   243,
+   238
+  ],
+  "Horizon": [
+   255,
+   222,
+   177
+  ],
+  "Zenith": [
+   148,
+   138,
+   205
+  ]
+ }
+}

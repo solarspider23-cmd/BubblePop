@@ -1,0 +1,3007 @@
+{
+ "name": "ShatteredVoid",
+ "format": "glb",
+ "props": {
+  "ArenaCircle": {
+   "parts": [
+    {
+     "name": "ArenaCircle",
+     "tris": 924,
+     "size": [
+      40.0,
+      0.42,
+      40.0
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "ArenaCircle_Glow_violet",
+     "tris": 600,
+     "size": [
+      34.09,
+      0.08,
+      34.2
+     ],
+     "glow": "violet",
+     "color": [
+      155,
+      77,
+      255
+     ]
+    },
+    {
+     "name": "ArenaCircle_Glow_cyan",
+     "tris": 336,
+     "size": [
+      24.32,
+      0.07,
+      24.32
+     ],
+     "glow": "cyan",
+     "color": [
+      47,
+      242,
+      255
+     ]
+    },
+    {
+     "name": "ArenaCircle_Glow_void",
+     "tris": 252,
+     "size": [
+      14.38,
+      0.07,
+      14.38
+     ],
+     "glow": "void",
+     "color": [
+      255,
+      47,
+      210
+     ]
+    }
+   ],
+   "tris": 2112,
+   "collision": "none",
+   "size": [
+    40.0,
+    0.44,
+    40.0
+   ]
+  },
+  "ArenaRim": {
+   "parts": [
+    {
+     "name": "ArenaRim",
+     "tris": 2208,
+     "size": [
+      70.5,
+      7.5,
+      70.55
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "ArenaRim_Glow_violet",
+     "tris": 840,
+     "size": [
+      66.01,
+      0.6,
+      65.6
+     ],
+     "glow": "violet",
+     "color": [
+      155,
+      77,
+      255
+     ]
+    },
+    {
+     "name": "ArenaRim_Glow_void",
+     "tris": 108,
+     "size": [
+      62.83,
+      3.0,
+      20.27
+     ],
+     "glow": "void",
+     "color": [
+      255,
+      47,
+      210
+     ]
+    }
+   ],
+   "tris": 3156,
+   "collision": "precise",
+   "size": [
+    70.5,
+    10.3,
+    70.55
+   ]
+  },
+  "AscensionAltar": {
+   "parts": [
+    {
+     "name": "AscensionAltar",
+     "tris": 1478,
+     "size": [
+      19.16,
+      18.8,
+      19.16
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "AscensionAltar_Glow_violet",
+     "tris": 430,
+     "size": [
+      10.55,
+      11.7,
+      10.4
+     ],
+     "glow": "violet",
+     "color": [
+      155,
+      77,
+      255
+     ]
+    },
+    {
+     "name": "AscensionAltar_Glow_cyan",
+     "tris": 240,
+     "size": [
+      3.23,
+      9.2,
+      3.23
+     ],
+     "glow": "cyan",
+     "color": [
+      47,
+      242,
+      255
+     ]
+    },
+    {
+     "name": "AscensionAltar_Glow_void",
+     "tris": 384,
+     "size": [
+      8.22,
+      3.87,
+      7.83
+     ],
+     "glow": "void",
+     "color": [
+      255,
+      47,
+      210
+     ]
+    },
+    {
+     "name": "AscensionAltar_Glow_flame",
+     "tris": 320,
+     "size": [
+      11.68,
+      1.67,
+      11.68
+     ],
+     "glow": "flame",
+     "color": [
+      255,
+      79,
+      230
+     ]
+    }
+   ],
+   "tris": 2852,
+   "collision": "precise",
+   "size": [
+    19.16,
+    18.8,
+    19.16
+   ]
+  },
+  "CrystalChips1": {
+   "parts": [
+    {
+     "name": "CrystalChips1",
+     "tris": 66,
+     "size": [
+      2.63,
+      2.44,
+      2.33
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "CrystalChips1_Glow_cyan",
+     "tris": 18,
+     "size": [
+      1.43,
+      1.95,
+      0.52
+     ],
+     "glow": "cyan",
+     "color": [
+      47,
+      242,
+      255
+     ]
+    }
+   ],
+   "tris": 84,
+   "collision": "none",
+   "size": [
+    2.63,
+    2.44,
+    2.33
+   ]
+  },
+  "CrystalChips2": {
+   "parts": [
+    {
+     "name": "CrystalChips2",
+     "tris": 64,
+     "size": [
+      2.99,
+      2.29,
+      2.3
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "CrystalChips2_Glow_void",
+     "tris": 18,
+     "size": [
+      0.37,
+      1.96,
+      1.74
+     ],
+     "glow": "void",
+     "color": [
+      255,
+      47,
+      210
+     ]
+    }
+   ],
+   "tris": 82,
+   "collision": "none",
+   "size": [
+    2.99,
+    2.29,
+    2.43
+   ]
+  },
+  "CrystalChips3": {
+   "parts": [
+    {
+     "name": "CrystalChips3",
+     "tris": 66,
+     "size": [
+      2.67,
+      2.1,
+      2.55
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "CrystalChips3_Glow_violet",
+     "tris": 18,
+     "size": [
+      0.86,
+      2.28,
+      0.7
+     ],
+     "glow": "violet",
+     "color": [
+      155,
+      77,
+      255
+     ]
+    }
+   ],
+   "tris": 84,
+   "collision": "none",
+   "size": [
+    2.67,
+    2.29,
+    2.55
+   ]
+  },
+  "CrystalCyan2": {
+   "parts": [
+    {
+     "name": "CrystalCyan2",
+     "tris": 420,
+     "size": [
+      10.85,
+      14.94,
+      9.63
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "CrystalCyan2_Glow_cyan",
+     "tris": 174,
+     "size": [
+      8.22,
+      4.96,
+      5.33
+     ],
+     "glow": "cyan",
+     "color": [
+      47,
+      242,
+      255
+     ]
+    }
+   ],
+   "tris": 594,
+   "collision": "hull",
+   "size": [
+    10.85,
+    14.94,
+    9.63
+   ]
+  },
+  "CrystalCyan4": {
+   "parts": [
+    {
+     "name": "CrystalCyan4",
+     "tris": 404,
+     "size": [
+      9.08,
+      14.81,
+      9.47
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "CrystalCyan4_Glow_cyan",
+     "tris": 174,
+     "size": [
+      7.85,
+      5.44,
+      9.1
+     ],
+     "glow": "cyan",
+     "color": [
+      47,
+      242,
+      255
+     ]
+    }
+   ],
+   "tris": 578,
+   "collision": "hull",
+   "size": [
+    10.3,
+    14.81,
+    9.9
+   ]
+  },
+  "CrystalHang0": {
+   "parts": [
+    {
+     "name": "CrystalHang0",
+     "tris": 352,
+     "size": [
+      13.18,
+      18.66,
+      14.0
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "CrystalHang0_Glow_cyan",
+     "tris": 174,
+     "size": [
+      6.95,
+      7.35,
+      12.42
+     ],
+     "glow": "cyan",
+     "color": [
+      47,
+      242,
+      255
+     ]
+    }
+   ],
+   "tris": 526,
+   "collision": "none",
+   "size": [
+    13.18,
+    18.66,
+    14.04
+   ]
+  },
+  "CrystalHang1": {
+   "parts": [
+    {
+     "name": "CrystalHang1",
+     "tris": 400,
+     "size": [
+      13.67,
+      20.68,
+      14.74
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "CrystalHang1_Glow_violet",
+     "tris": 138,
+     "size": [
+      5.21,
+      7.74,
+      9.53
+     ],
+     "glow": "violet",
+     "color": [
+      155,
+      77,
+      255
+     ]
+    },
+    {
+     "name": "CrystalHang1_Glow_void",
+     "tris": 36,
+     "size": [
+      10.24,
+      6.92,
+      2.94
+     ],
+     "glow": "void",
+     "color": [
+      255,
+      47,
+      210
+     ]
+    }
+   ],
+   "tris": 574,
+   "collision": "none",
+   "size": [
+    13.67,
+    20.68,
+    14.74
+   ]
+  },
+  "CrystalViolet1": {
+   "parts": [
+    {
+     "name": "CrystalViolet1",
+     "tris": 426,
+     "size": [
+      10.9,
+      14.41,
+      9.97
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "CrystalViolet1_Glow_violet",
+     "tris": 138,
+     "size": [
+      6.04,
+      5.13,
+      6.36
+     ],
+     "glow": "violet",
+     "color": [
+      155,
+      77,
+      255
+     ]
+    },
+    {
+     "name": "CrystalViolet1_Glow_void",
+     "tris": 36,
+     "size": [
+      3.35,
+      5.41,
+      4.0
+     ],
+     "glow": "void",
+     "color": [
+      255,
+      47,
+      210
+     ]
+    }
+   ],
+   "tris": 600,
+   "collision": "hull",
+   "size": [
+    10.9,
+    14.41,
+    9.97
+   ]
+  },
+  "CrystalViolet3": {
+   "parts": [
+    {
+     "name": "CrystalViolet3",
+     "tris": 380,
+     "size": [
+      8.98,
+      12.3,
+      9.59
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "CrystalViolet3_Glow_violet",
+     "tris": 138,
+     "size": [
+      6.2,
+      4.31,
+      6.86
+     ],
+     "glow": "violet",
+     "color": [
+      155,
+      77,
+      255
+     ]
+    },
+    {
+     "name": "CrystalViolet3_Glow_void",
+     "tris": 36,
+     "size": [
+      2.74,
+      4.42,
+      5.79
+     ],
+     "glow": "void",
+     "color": [
+      255,
+      47,
+      210
+     ]
+    }
+   ],
+   "tris": 554,
+   "collision": "hull",
+   "size": [
+    8.98,
+    12.3,
+    9.59
+   ]
+  },
+  "DebrisShard1": {
+   "parts": [
+    {
+     "name": "DebrisShard1",
+     "tris": 180,
+     "size": [
+      7.19,
+      9.3,
+      7.68
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "DebrisShard1_Glow_violet",
+     "tris": 18,
+     "size": [
+      1.42,
+      3.56,
+      1.67
+     ],
+     "glow": "violet",
+     "color": [
+      155,
+      77,
+      255
+     ]
+    },
+    {
+     "name": "DebrisShard1_Glow_cyan",
+     "tris": 14,
+     "size": [
+      0.73,
+      2.45,
+      1.37
+     ],
+     "glow": "cyan",
+     "color": [
+      47,
+      242,
+      255
+     ]
+    },
+    {
+     "name": "DebrisShard1_Glow_void",
+     "tris": 20,
+     "size": [
+      1.15,
+      1.84,
+      0.39
+     ],
+     "glow": "void",
+     "color": [
+      255,
+      47,
+      210
+     ]
+    }
+   ],
+   "tris": 232,
+   "collision": "none",
+   "size": [
+    7.36,
+    11.23,
+    7.68
+   ]
+  },
+  "DebrisShard2": {
+   "parts": [
+    {
+     "name": "DebrisShard2",
+     "tris": 180,
+     "size": [
+      8.27,
+      9.21,
+      7.06
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "DebrisShard2_Glow_violet",
+     "tris": 18,
+     "size": [
+      1.51,
+      3.57,
+      1.5
+     ],
+     "glow": "violet",
+     "color": [
+      155,
+      77,
+      255
+     ]
+    },
+    {
+     "name": "DebrisShard2_Glow_cyan",
+     "tris": 14,
+     "size": [
+      0.99,
+      2.38,
+      1.15
+     ],
+     "glow": "cyan",
+     "color": [
+      47,
+      242,
+      255
+     ]
+    },
+    {
+     "name": "DebrisShard2_Glow_void",
+     "tris": 20,
+     "size": [
+      1.18,
+      1.78,
+      0.43
+     ],
+     "glow": "void",
+     "color": [
+      255,
+      47,
+      210
+     ]
+    }
+   ],
+   "tris": 232,
+   "collision": "none",
+   "size": [
+    8.44,
+    11.29,
+    7.06
+   ]
+  },
+  "DebrisShard3": {
+   "parts": [
+    {
+     "name": "DebrisShard3",
+     "tris": 168,
+     "size": [
+      7.34,
+      9.28,
+      7.4
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "DebrisShard3_Glow_violet",
+     "tris": 18,
+     "size": [
+      1.49,
+      3.53,
+      1.42
+     ],
+     "glow": "violet",
+     "color": [
+      155,
+      77,
+      255
+     ]
+    },
+    {
+     "name": "DebrisShard3_Glow_cyan",
+     "tris": 14,
+     "size": [
+      1.08,
+      2.39,
+      1.07
+     ],
+     "glow": "cyan",
+     "color": [
+      47,
+      242,
+      255
+     ]
+    },
+    {
+     "name": "DebrisShard3_Glow_void",
+     "tris": 20,
+     "size": [
+      1.07,
+      1.79,
+      0.35
+     ],
+     "glow": "void",
+     "color": [
+      255,
+      47,
+      210
+     ]
+    }
+   ],
+   "tris": 220,
+   "collision": "none",
+   "size": [
+    7.5,
+    11.16,
+    7.4
+   ]
+  },
+  "DebrisShard4": {
+   "parts": [
+    {
+     "name": "DebrisShard4",
+     "tris": 176,
+     "size": [
+      7.01,
+      9.18,
+      7.4
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "DebrisShard4_Glow_violet",
+     "tris": 18,
+     "size": [
+      1.78,
+      3.56,
+      1.18
+     ],
+     "glow": "violet",
+     "color": [
+      155,
+      77,
+      255
+     ]
+    },
+    {
+     "name": "DebrisShard4_Glow_cyan",
+     "tris": 14,
+     "size": [
+      1.09,
+      2.37,
+      1.29
+     ],
+     "glow": "cyan",
+     "color": [
+      47,
+      242,
+      255
+     ]
+    },
+    {
+     "name": "DebrisShard4_Glow_void",
+     "tris": 20,
+     "size": [
+      0.93,
+      1.78,
+      0.34
+     ],
+     "glow": "void",
+     "color": [
+      255,
+      47,
+      210
+     ]
+    }
+   ],
+   "tris": 228,
+   "collision": "none",
+   "size": [
+    7.13,
+    11.19,
+    7.4
+   ]
+  },
+  "FarDebris1": {
+   "parts": [
+    {
+     "name": "FarDebris1",
+     "tris": 16,
+     "size": [
+      16.39,
+      17.16,
+      16.61
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "FarDebris1_Glow_cyan",
+     "tris": 14,
+     "size": [
+      1.48,
+      4.2,
+      2.5
+     ],
+     "glow": "cyan",
+     "color": [
+      47,
+      242,
+      255
+     ]
+    },
+    {
+     "name": "FarDebris1_Glow_violet",
+     "tris": 28,
+     "size": [
+      6.77,
+      5.22,
+      2.83
+     ],
+     "glow": "violet",
+     "color": [
+      155,
+      77,
+      255
+     ]
+    }
+   ],
+   "tris": 58,
+   "collision": "none",
+   "size": [
+    16.39,
+    21.27,
+    16.61
+   ]
+  },
+  "FarDebris2": {
+   "parts": [
+    {
+     "name": "FarDebris2",
+     "tris": 12,
+     "size": [
+      18.32,
+      20.49,
+      18.77
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "FarDebris2_Glow_cyan",
+     "tris": 14,
+     "size": [
+      2.8,
+      5.49,
+      1.85
+     ],
+     "glow": "cyan",
+     "color": [
+      47,
+      242,
+      255
+     ]
+    },
+    {
+     "name": "FarDebris2_Glow_violet",
+     "tris": 28,
+     "size": [
+      4.41,
+      5.59,
+      2.55
+     ],
+     "glow": "violet",
+     "color": [
+      155,
+      77,
+      255
+     ]
+    }
+   ],
+   "tris": 54,
+   "collision": "none",
+   "size": [
+    18.32,
+    24.87,
+    18.77
+   ]
+  },
+  "FarDebris3": {
+   "parts": [
+    {
+     "name": "FarDebris3",
+     "tris": 16,
+     "size": [
+      19.84,
+      19.14,
+      19.22
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "FarDebris3_Glow_cyan",
+     "tris": 14,
+     "size": [
+      1.52,
+      4.28,
+      2.23
+     ],
+     "glow": "cyan",
+     "color": [
+      47,
+      242,
+      255
+     ]
+    },
+    {
+     "name": "FarDebris3_Glow_violet",
+     "tris": 28,
+     "size": [
+      3.24,
+      4.96,
+      4.47
+     ],
+     "glow": "violet",
+     "color": [
+      155,
+      77,
+      255
+     ]
+    }
+   ],
+   "tris": 58,
+   "collision": "none",
+   "size": [
+    19.84,
+    23.06,
+    19.22
+   ]
+  },
+  "HeartCrystal": {
+   "parts": [
+    {
+     "name": "HeartCrystal",
+     "tris": 744,
+     "size": [
+      18.47,
+      30.48,
+      22.03
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "HeartCrystal_Glow_cyan",
+     "tris": 288,
+     "size": [
+      16.75,
+      10.14,
+      17.88
+     ],
+     "glow": "cyan",
+     "color": [
+      47,
+      242,
+      255
+     ]
+    }
+   ],
+   "tris": 1032,
+   "collision": "hull",
+   "size": [
+    18.92,
+    30.48,
+    22.03
+   ]
+  },
+  "LiftBeam": {
+   "parts": [
+    {
+     "name": "LiftBeam_Glow_cyan",
+     "tris": 840,
+     "size": [
+      6.18,
+      58.0,
+      5.38
+     ],
+     "glow": "cyan",
+     "color": [
+      47,
+      242,
+      255
+     ]
+    },
+    {
+     "name": "LiftBeam_Glow_core",
+     "tris": 960,
+     "size": [
+      5.28,
+      48.35,
+      5.28
+     ],
+     "glow": "core",
+     "color": [
+      244,
+      232,
+      255
+     ]
+    }
+   ],
+   "tris": 1800,
+   "collision": "none",
+   "size": [
+    6.18,
+    58.0,
+    5.38
+   ]
+  },
+  "LiftPad": {
+   "parts": [
+    {
+     "name": "LiftPad",
+     "tris": 704,
+     "size": [
+      12.6,
+      3.53,
+      12.6
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "LiftPad_Glow_cyan",
+     "tris": 92,
+     "size": [
+      6.4,
+      0.08,
+      6.4
+     ],
+     "glow": "cyan",
+     "color": [
+      47,
+      242,
+      255
+     ]
+    },
+    {
+     "name": "LiftPad_Glow_violet",
+     "tris": 264,
+     "size": [
+      8.74,
+      2.16,
+      8.75
+     ],
+     "glow": "violet",
+     "color": [
+      155,
+      77,
+      255
+     ]
+    }
+   ],
+   "tris": 1060,
+   "collision": "precise",
+   "size": [
+    12.6,
+    3.53,
+    12.6
+   ]
+  },
+  "LiftPadTop": {
+   "parts": [
+    {
+     "name": "LiftPadTop",
+     "tris": 704,
+     "size": [
+      12.6,
+      3.53,
+      12.6
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "LiftPadTop_Glow_cyan",
+     "tris": 92,
+     "size": [
+      6.4,
+      0.08,
+      6.4
+     ],
+     "glow": "cyan",
+     "color": [
+      47,
+      242,
+      255
+     ]
+    },
+    {
+     "name": "LiftPadTop_Glow_violet",
+     "tris": 264,
+     "size": [
+      8.74,
+      2.16,
+      8.75
+     ],
+     "glow": "violet",
+     "color": [
+      155,
+      77,
+      255
+     ]
+    }
+   ],
+   "tris": 1060,
+   "collision": "precise",
+   "size": [
+    12.6,
+    3.53,
+    12.6
+   ]
+  },
+  "OrbitSingularity": {
+   "parts": [
+    {
+     "name": "OrbitSingularity",
+     "tris": 2400,
+     "size": [
+      130.31,
+      122.71,
+      117.77
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "OrbitSingularity_Glow_core",
+     "tris": 1752,
+     "size": [
+      95.14,
+      62.31,
+      66.88
+     ],
+     "glow": "core",
+     "color": [
+      244,
+      232,
+      255
+     ]
+    },
+    {
+     "name": "OrbitSingularity_Glow_void",
+     "tris": 1228,
+     "size": [
+      101.96,
+      63.1,
+      67.6
+     ],
+     "glow": "void",
+     "color": [
+      255,
+      47,
+      210
+     ]
+    },
+    {
+     "name": "OrbitSingularity_Glow_violet",
+     "tris": 1618,
+     "size": [
+      98.38,
+      113.48,
+      90.37
+     ],
+     "glow": "violet",
+     "color": [
+      155,
+      77,
+      255
+     ]
+    },
+    {
+     "name": "OrbitSingularity_Glow_cyan",
+     "tris": 850,
+     "size": [
+      114.33,
+      104.99,
+      86.36
+     ],
+     "glow": "cyan",
+     "color": [
+      47,
+      242,
+      255
+     ]
+    }
+   ],
+   "tris": 7848,
+   "collision": "none",
+   "size": [
+    130.31,
+    126.11,
+    117.77
+   ]
+  },
+  "OverlookCircle": {
+   "parts": [
+    {
+     "name": "OverlookCircle",
+     "tris": 924,
+     "size": [
+      13.0,
+      0.42,
+      13.0
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "OverlookCircle_Glow_violet",
+     "tris": 600,
+     "size": [
+      11.08,
+      0.08,
+      11.11
+     ],
+     "glow": "violet",
+     "color": [
+      155,
+      77,
+      255
+     ]
+    },
+    {
+     "name": "OverlookCircle_Glow_cyan",
+     "tris": 336,
+     "size": [
+      7.9,
+      0.07,
+      7.9
+     ],
+     "glow": "cyan",
+     "color": [
+      47,
+      242,
+      255
+     ]
+    },
+    {
+     "name": "OverlookCircle_Glow_void",
+     "tris": 252,
+     "size": [
+      4.67,
+      0.07,
+      4.67
+     ],
+     "glow": "void",
+     "color": [
+      255,
+      47,
+      210
+     ]
+    }
+   ],
+   "tris": 2112,
+   "collision": "none",
+   "size": [
+    13.0,
+    0.44,
+    13.0
+   ]
+  },
+  "Pillar1": {
+   "parts": [
+    {
+     "name": "Pillar1",
+     "tris": 796,
+     "size": [
+      6.4,
+      19.8,
+      6.4
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Pillar1_Glow_violet",
+     "tris": 192,
+     "size": [
+      4.44,
+      0.32,
+      4.44
+     ],
+     "glow": "violet",
+     "color": [
+      155,
+      77,
+      255
+     ]
+    }
+   ],
+   "tris": 988,
+   "collision": "hull",
+   "size": [
+    6.4,
+    19.8,
+    6.4
+   ]
+  },
+  "PillarBroken1": {
+   "parts": [
+    {
+     "name": "PillarBroken1",
+     "tris": 1020,
+     "size": [
+      11.9,
+      11.03,
+      9.49
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "PillarBroken1_Glow_violet",
+     "tris": 192,
+     "size": [
+      4.44,
+      0.32,
+      4.44
+     ],
+     "glow": "violet",
+     "color": [
+      155,
+      77,
+      255
+     ]
+    }
+   ],
+   "tris": 1212,
+   "collision": "hull",
+   "size": [
+    11.9,
+    11.03,
+    9.49
+   ]
+  },
+  "PillarBroken2": {
+   "parts": [
+    {
+     "name": "PillarBroken2",
+     "tris": 1020,
+     "size": [
+      12.22,
+      14.1,
+      7.29
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "PillarBroken2_Glow_violet",
+     "tris": 192,
+     "size": [
+      4.44,
+      0.32,
+      4.44
+     ],
+     "glow": "violet",
+     "color": [
+      155,
+      77,
+      255
+     ]
+    }
+   ],
+   "tris": 1212,
+   "collision": "hull",
+   "size": [
+    12.22,
+    14.1,
+    7.29
+   ]
+  },
+  "PillarBroken3": {
+   "parts": [
+    {
+     "name": "PillarBroken3",
+     "tris": 1020,
+     "size": [
+      12.12,
+      11.34,
+      9.67
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "PillarBroken3_Glow_violet",
+     "tris": 192,
+     "size": [
+      4.44,
+      0.32,
+      4.44
+     ],
+     "glow": "violet",
+     "color": [
+      155,
+      77,
+      255
+     ]
+    }
+   ],
+   "tris": 1212,
+   "collision": "hull",
+   "size": [
+    12.12,
+    11.34,
+    9.67
+   ]
+  },
+  "RiftGate": {
+   "parts": [
+    {
+     "name": "RiftGate",
+     "tris": 964,
+     "size": [
+      42.2,
+      38.49,
+      27.86
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "RiftGate_Glow_violet",
+     "tris": 478,
+     "size": [
+      39.2,
+      36.49,
+      24.85
+     ],
+     "glow": "violet",
+     "color": [
+      155,
+      77,
+      255
+     ]
+    },
+    {
+     "name": "RiftGate_Glow_cyan",
+     "tris": 1032,
+     "size": [
+      27.76,
+      27.92,
+      2.48
+     ],
+     "glow": "cyan",
+     "color": [
+      47,
+      242,
+      255
+     ]
+    },
+    {
+     "name": "RiftGate_Glow_rift",
+     "tris": 188,
+     "size": [
+      24.6,
+      28.14,
+      1.01
+     ],
+     "glow": "rift",
+     "color": [
+      195,
+      60,
+      255
+     ]
+    },
+    {
+     "name": "RiftGate_Glow_void",
+     "tris": 612,
+     "size": [
+      40.44,
+      21.7,
+      3.54
+     ],
+     "glow": "void",
+     "color": [
+      255,
+      47,
+      210
+     ]
+    },
+    {
+     "name": "RiftGate_Glow_core",
+     "tris": 504,
+     "size": [
+      16.51,
+      19.4,
+      0.79
+     ],
+     "glow": "core",
+     "color": [
+      244,
+      232,
+      255
+     ]
+    }
+   ],
+   "tris": 3778,
+   "collision": "precise",
+   "size": [
+    42.2,
+    38.49,
+    27.86
+   ]
+  },
+  "RimChunk0": {
+   "parts": [
+    {
+     "name": "RimChunk0",
+     "tris": 58,
+     "size": [
+      5.97,
+      3.19,
+      5.38
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "RimChunk0_Glow_cyan",
+     "tris": 18,
+     "size": [
+      1.08,
+      1.94,
+      0.95
+     ],
+     "glow": "cyan",
+     "color": [
+      47,
+      242,
+      255
+     ]
+    }
+   ],
+   "tris": 76,
+   "collision": "hull",
+   "size": [
+    5.97,
+    3.54,
+    5.38
+   ]
+  },
+  "Rubble1": {
+   "parts": [
+    {
+     "name": "Rubble1",
+     "tris": 296,
+     "size": [
+      5.82,
+      1.91,
+      5.6
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Rubble1_Glow_violet",
+     "tris": 18,
+     "size": [
+      0.54,
+      2.31,
+      1.3
+     ],
+     "glow": "violet",
+     "color": [
+      155,
+      77,
+      255
+     ]
+    }
+   ],
+   "tris": 314,
+   "collision": "hull",
+   "size": [
+    5.82,
+    2.31,
+    5.6
+   ]
+  },
+  "Rubble2": {
+   "parts": [
+    {
+     "name": "Rubble2",
+     "tris": 244,
+     "size": [
+      3.16,
+      2.09,
+      3.49
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Rubble2_Glow_violet",
+     "tris": 18,
+     "size": [
+      0.53,
+      2.33,
+      1.29
+     ],
+     "glow": "violet",
+     "color": [
+      155,
+      77,
+      255
+     ]
+    }
+   ],
+   "tris": 262,
+   "collision": "hull",
+   "size": [
+    3.16,
+    2.35,
+    3.49
+   ]
+  },
+  "RuneBridgeRiftArena": {
+   "parts": [
+    {
+     "name": "RuneBridgeRiftArena",
+     "tris": 788,
+     "size": [
+      11.6,
+      17.37,
+      91.34
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "RuneBridgeRiftArena_Glow_cyan",
+     "tris": 24,
+     "size": [
+      10.24,
+      8.14,
+      91.63
+     ],
+     "glow": "cyan",
+     "color": [
+      47,
+      242,
+      255
+     ]
+    },
+    {
+     "name": "RuneBridgeRiftArena_Glow_violet",
+     "tris": 960,
+     "size": [
+      5.48,
+      6.99,
+      83.38
+     ],
+     "glow": "violet",
+     "color": [
+      155,
+      77,
+      255
+     ]
+    },
+    {
+     "name": "RuneBridgeRiftArena_Glow_lamp",
+     "tris": 144,
+     "size": [
+      10.86,
+      9.23,
+      90.56
+     ],
+     "glow": "lamp",
+     "color": [
+      134,
+      246,
+      255
+     ]
+    }
+   ],
+   "tris": 1916,
+   "collision": "precise",
+   "size": [
+    11.6,
+    18.87,
+    91.63
+   ]
+  },
+  "RuneBridgeSeerArena": {
+   "parts": [
+    {
+     "name": "RuneBridgeSeerArena",
+     "tris": 784,
+     "size": [
+      11.6,
+      19.47,
+      85.78
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "RuneBridgeSeerArena_Glow_cyan",
+     "tris": 24,
+     "size": [
+      10.24,
+      8.11,
+      85.96
+     ],
+     "glow": "cyan",
+     "color": [
+      47,
+      242,
+      255
+     ]
+    },
+    {
+     "name": "RuneBridgeSeerArena_Glow_violet",
+     "tris": 960,
+     "size": [
+      5.48,
+      6.98,
+      78.55
+     ],
+     "glow": "violet",
+     "color": [
+      155,
+      77,
+      255
+     ]
+    },
+    {
+     "name": "RuneBridgeSeerArena_Glow_lamp",
+     "tris": 144,
+     "size": [
+      10.86,
+      9.21,
+      85.01
+     ],
+     "glow": "lamp",
+     "color": [
+      134,
+      246,
+      255
+     ]
+    }
+   ],
+   "tris": 1912,
+   "collision": "precise",
+   "size": [
+    11.6,
+    20.97,
+    85.96
+   ]
+  },
+  "RuneBridgeShopSeer": {
+   "parts": [
+    {
+     "name": "RuneBridgeShopSeer",
+     "tris": 678,
+     "size": [
+      11.6,
+      17.91,
+      73.12
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "RuneBridgeShopSeer_Glow_cyan",
+     "tris": 24,
+     "size": [
+      10.24,
+      7.0,
+      73.03
+     ],
+     "glow": "cyan",
+     "color": [
+      47,
+      242,
+      255
+     ]
+    },
+    {
+     "name": "RuneBridgeShopSeer_Glow_violet",
+     "tris": 800,
+     "size": [
+      5.48,
+      5.8,
+      65.08
+     ],
+     "glow": "violet",
+     "color": [
+      155,
+      77,
+      255
+     ]
+    },
+    {
+     "name": "RuneBridgeShopSeer_Glow_lamp",
+     "tris": 126,
+     "size": [
+      10.76,
+      8.13,
+      72.28
+     ],
+     "glow": "lamp",
+     "color": [
+      134,
+      246,
+      255
+     ]
+    }
+   ],
+   "tris": 1628,
+   "collision": "precise",
+   "size": [
+    11.6,
+    19.41,
+    73.12
+   ]
+  },
+  "RuneBridgeSpawnAltar": {
+   "parts": [
+    {
+     "name": "RuneBridgeSpawnAltar",
+     "tris": 686,
+     "size": [
+      11.6,
+      16.06,
+      74.54
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "RuneBridgeSpawnAltar_Glow_cyan",
+     "tris": 24,
+     "size": [
+      10.24,
+      5.17,
+      74.48
+     ],
+     "glow": "cyan",
+     "color": [
+      47,
+      242,
+      255
+     ]
+    },
+    {
+     "name": "RuneBridgeSpawnAltar_Glow_violet",
+     "tris": 800,
+     "size": [
+      5.48,
+      4.31,
+      66.27
+     ],
+     "glow": "violet",
+     "color": [
+      155,
+      77,
+      255
+     ]
+    },
+    {
+     "name": "RuneBridgeSpawnAltar_Glow_lamp",
+     "tris": 126,
+     "size": [
+      10.76,
+      6.33,
+      73.7
+     ],
+     "glow": "lamp",
+     "color": [
+      134,
+      246,
+      255
+     ]
+    }
+   ],
+   "tris": 1636,
+   "collision": "precise",
+   "size": [
+    11.6,
+    17.56,
+    74.54
+   ]
+  },
+  "RuneBridgeSpawnShop": {
+   "parts": [
+    {
+     "name": "RuneBridgeSpawnShop",
+     "tris": 686,
+     "size": [
+      11.6,
+      15.58,
+      72.87
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "RuneBridgeSpawnShop_Glow_cyan",
+     "tris": 24,
+     "size": [
+      10.24,
+      5.17,
+      72.77
+     ],
+     "glow": "cyan",
+     "color": [
+      47,
+      242,
+      255
+     ]
+    },
+    {
+     "name": "RuneBridgeSpawnShop_Glow_violet",
+     "tris": 800,
+     "size": [
+      5.48,
+      4.3,
+      64.87
+     ],
+     "glow": "violet",
+     "color": [
+      155,
+      77,
+      255
+     ]
+    },
+    {
+     "name": "RuneBridgeSpawnShop_Glow_lamp",
+     "tris": 126,
+     "size": [
+      10.76,
+      6.33,
+      72.03
+     ],
+     "glow": "lamp",
+     "color": [
+      134,
+      246,
+      255
+     ]
+    }
+   ],
+   "tris": 1636,
+   "collision": "precise",
+   "size": [
+    11.6,
+    17.08,
+    72.87
+   ]
+  },
+  "SeersLectern": {
+   "parts": [
+    {
+     "name": "SeersLectern",
+     "tris": 1230,
+     "size": [
+      15.85,
+      10.3,
+      15.85
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "SeersLectern_Glow_violet",
+     "tris": 256,
+     "size": [
+      12.84,
+      8.87,
+      12.84
+     ],
+     "glow": "violet",
+     "color": [
+      155,
+      77,
+      255
+     ]
+    },
+    {
+     "name": "SeersLectern_Glow_cyan",
+     "tris": 110,
+     "size": [
+      11.42,
+      6.35,
+      6.81
+     ],
+     "glow": "cyan",
+     "color": [
+      47,
+      242,
+      255
+     ]
+    }
+   ],
+   "tris": 1596,
+   "collision": "precise",
+   "size": [
+    15.85,
+    12.8,
+    15.85
+   ]
+  },
+  "SpawnDais": {
+   "parts": [
+    {
+     "name": "SpawnDais",
+     "tris": 1820,
+     "size": [
+      25.2,
+      6.9,
+      25.2
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "SpawnDais_Glow_violet",
+     "tris": 648,
+     "size": [
+      16.36,
+      3.64,
+      16.42
+     ],
+     "glow": "violet",
+     "color": [
+      155,
+      77,
+      255
+     ]
+    },
+    {
+     "name": "SpawnDais_Glow_cyan",
+     "tris": 392,
+     "size": [
+      16.88,
+      7.04,
+      16.84
+     ],
+     "glow": "cyan",
+     "color": [
+      47,
+      242,
+      255
+     ]
+    },
+    {
+     "name": "SpawnDais_Glow_void",
+     "tris": 252,
+     "size": [
+      6.9,
+      0.07,
+      6.9
+     ],
+     "glow": "void",
+     "color": [
+      255,
+      47,
+      210
+     ]
+    }
+   ],
+   "tris": 3112,
+   "collision": "precise",
+   "size": [
+    25.2,
+    8.6,
+    25.2
+   ]
+  },
+  "SporePods1": {
+   "parts": [
+    {
+     "name": "SporePods1",
+     "tris": 524,
+     "size": [
+      5.94,
+      5.31,
+      5.74
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "SporePods1_Glow_void",
+     "tris": 144,
+     "size": [
+      3.04,
+      2.74,
+      4.45
+     ],
+     "glow": "void",
+     "color": [
+      255,
+      47,
+      210
+     ]
+    },
+    {
+     "name": "SporePods1_Glow_core",
+     "tris": 36,
+     "size": [
+      1.5,
+      2.19,
+      3.2
+     ],
+     "glow": "core",
+     "color": [
+      244,
+      232,
+      255
+     ]
+    }
+   ],
+   "tris": 704,
+   "collision": "hull",
+   "size": [
+    5.94,
+    5.7,
+    5.74
+   ]
+  },
+  "SporePods2": {
+   "parts": [
+    {
+     "name": "SporePods2",
+     "tris": 524,
+     "size": [
+      5.84,
+      5.04,
+      5.88
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "SporePods2_Glow_void",
+     "tris": 144,
+     "size": [
+      2.99,
+      2.36,
+      4.7
+     ],
+     "glow": "void",
+     "color": [
+      255,
+      47,
+      210
+     ]
+    },
+    {
+     "name": "SporePods2_Glow_core",
+     "tris": 36,
+     "size": [
+      1.56,
+      2.01,
+      3.57
+     ],
+     "glow": "core",
+     "color": [
+      244,
+      232,
+      255
+     ]
+    }
+   ],
+   "tris": 704,
+   "collision": "hull",
+   "size": [
+    5.84,
+    5.43,
+    5.88
+   ]
+  },
+  "StepStone1": {
+   "parts": [
+    {
+     "name": "StepStone1",
+     "tris": 16,
+     "size": [
+      5.15,
+      4.2,
+      5.32
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "StepStone1_Glow_cyan",
+     "tris": 128,
+     "size": [
+      6.12,
+      0.15,
+      6.12
+     ],
+     "glow": "cyan",
+     "color": [
+      47,
+      242,
+      255
+     ]
+    },
+    {
+     "name": "StepStone1_Glow_violet",
+     "tris": 14,
+     "size": [
+      0.42,
+      1.76,
+      0.92
+     ],
+     "glow": "violet",
+     "color": [
+      155,
+      77,
+      255
+     ]
+    }
+   ],
+   "tris": 158,
+   "collision": "precise",
+   "size": [
+    6.12,
+    5.02,
+    6.12
+   ]
+  },
+  "StepStone2": {
+   "parts": [
+    {
+     "name": "StepStone2",
+     "tris": 16,
+     "size": [
+      5.41,
+      4.2,
+      5.56
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "StepStone2_Glow_cyan",
+     "tris": 128,
+     "size": [
+      6.12,
+      0.15,
+      6.12
+     ],
+     "glow": "cyan",
+     "color": [
+      47,
+      242,
+      255
+     ]
+    },
+    {
+     "name": "StepStone2_Glow_violet",
+     "tris": 14,
+     "size": [
+      0.4,
+      1.75,
+      0.86
+     ],
+     "glow": "violet",
+     "color": [
+      155,
+      77,
+      255
+     ]
+    }
+   ],
+   "tris": 158,
+   "collision": "precise",
+   "size": [
+    6.12,
+    5.0,
+    6.12
+   ]
+  },
+  "StepStone3": {
+   "parts": [
+    {
+     "name": "StepStone3",
+     "tris": 16,
+     "size": [
+      5.26,
+      4.2,
+      4.91
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "StepStone3_Glow_cyan",
+     "tris": 128,
+     "size": [
+      6.12,
+      0.15,
+      6.12
+     ],
+     "glow": "cyan",
+     "color": [
+      47,
+      242,
+      255
+     ]
+    },
+    {
+     "name": "StepStone3_Glow_violet",
+     "tris": 14,
+     "size": [
+      0.37,
+      1.75,
+      0.89
+     ],
+     "glow": "violet",
+     "color": [
+      155,
+      77,
+      255
+     ]
+    }
+   ],
+   "tris": 158,
+   "collision": "precise",
+   "size": [
+    6.12,
+    5.02,
+    6.12
+   ]
+  },
+  "VoidArch": {
+   "parts": [
+    {
+     "name": "VoidArch",
+     "tris": 660,
+     "size": [
+      21.6,
+      32.05,
+      5.92
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "VoidArch_Glow_cyan",
+     "tris": 240,
+     "size": [
+      18.39,
+      1.19,
+      3.62
+     ],
+     "glow": "cyan",
+     "color": [
+      47,
+      242,
+      255
+     ]
+    },
+    {
+     "name": "VoidArch_Glow_violet",
+     "tris": 84,
+     "size": [
+      4.72,
+      6.51,
+      2.91
+     ],
+     "glow": "violet",
+     "color": [
+      155,
+      77,
+      255
+     ]
+    },
+    {
+     "name": "VoidArch_Glow_void",
+     "tris": 12,
+     "size": [
+      1.29,
+      1.29,
+      0.12
+     ],
+     "glow": "void",
+     "color": [
+      255,
+      47,
+      210
+     ]
+    }
+   ],
+   "tris": 996,
+   "collision": "precise",
+   "size": [
+    21.6,
+    32.05,
+    5.92
+   ]
+  },
+  "VoidBrazier": {
+   "parts": [
+    {
+     "name": "VoidBrazier",
+     "tris": 282,
+     "size": [
+      3.4,
+      4.95,
+      3.23
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "VoidBrazier_Glow_flame",
+     "tris": 400,
+     "size": [
+      1.59,
+      3.51,
+      1.92
+     ],
+     "glow": "flame",
+     "color": [
+      255,
+      79,
+      230
+     ]
+    },
+    {
+     "name": "VoidBrazier_Glow_core",
+     "tris": 80,
+     "size": [
+      0.6,
+      1.35,
+      0.69
+     ],
+     "glow": "core",
+     "color": [
+      244,
+      232,
+      255
+     ]
+    }
+   ],
+   "tris": 762,
+   "collision": "box",
+   "size": [
+    3.4,
+    7.91,
+    3.23
+   ]
+  },
+  "VoidGrass1": {
+   "parts": [
+    {
+     "name": "VoidGrass1",
+     "tris": 252,
+     "size": [
+      1.83,
+      2.35,
+      1.51
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "VoidGrass1_Glow_void",
+     "tris": 36,
+     "size": [
+      1.29,
+      1.19,
+      1.42
+     ],
+     "glow": "void",
+     "color": [
+      255,
+      47,
+      210
+     ]
+    }
+   ],
+   "tris": 288,
+   "collision": "none",
+   "size": [
+    1.92,
+    2.35,
+    1.55
+   ]
+  },
+  "VoidGrass2": {
+   "parts": [
+    {
+     "name": "VoidGrass2",
+     "tris": 252,
+     "size": [
+      1.68,
+      2.37,
+      1.59
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "VoidGrass2_Glow_void",
+     "tris": 36,
+     "size": [
+      1.1,
+      1.02,
+      1.14
+     ],
+     "glow": "void",
+     "color": [
+      255,
+      47,
+      210
+     ]
+    }
+   ],
+   "tris": 288,
+   "collision": "none",
+   "size": [
+    1.68,
+    2.46,
+    1.59
+   ]
+  },
+  "VoidGrass3": {
+   "parts": [
+    {
+     "name": "VoidGrass3",
+     "tris": 252,
+     "size": [
+      1.72,
+      2.42,
+      1.61
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "VoidGrass3_Glow_void",
+     "tris": 36,
+     "size": [
+      1.35,
+      0.69,
+      1.64
+     ],
+     "glow": "void",
+     "color": [
+      255,
+      47,
+      210
+     ]
+    }
+   ],
+   "tris": 288,
+   "collision": "none",
+   "size": [
+    1.8,
+    2.54,
+    1.66
+   ]
+  },
+  "VoidMerchant": {
+   "parts": [
+    {
+     "name": "VoidMerchant",
+     "tris": 962,
+     "size": [
+      18.63,
+      16.4,
+      18.63
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "VoidMerchant_Glow_violet",
+     "tris": 208,
+     "size": [
+      15.61,
+      16.18,
+      15.61
+     ],
+     "glow": "violet",
+     "color": [
+      155,
+      77,
+      255
+     ]
+    },
+    {
+     "name": "VoidMerchant_Glow_cyan",
+     "tris": 244,
+     "size": [
+      11.15,
+      9.25,
+      9.61
+     ],
+     "glow": "cyan",
+     "color": [
+      47,
+      242,
+      255
+     ]
+    },
+    {
+     "name": "VoidMerchant_Glow_void",
+     "tris": 192,
+     "size": [
+      10.2,
+      3.4,
+      1.0
+     ],
+     "glow": "void",
+     "color": [
+      255,
+      47,
+      210
+     ]
+    },
+    {
+     "name": "VoidMerchant_Glow_lamp",
+     "tris": 66,
+     "size": [
+      9.04,
+      1.2,
+      0.62
+     ],
+     "glow": "lamp",
+     "color": [
+      134,
+      246,
+      255
+     ]
+    }
+   ],
+   "tris": 1672,
+   "collision": "precise",
+   "size": [
+    18.63,
+    17.59,
+    18.63
+   ]
+  },
+  "VoidRail": {
+   "parts": [
+    {
+     "name": "VoidRail",
+     "tris": 396,
+     "size": [
+      9.0,
+      3.82,
+      1.0
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "VoidRail_Glow_cyan",
+     "tris": 12,
+     "size": [
+      6.8,
+      0.1,
+      0.1
+     ],
+     "glow": "cyan",
+     "color": [
+      47,
+      242,
+      255
+     ]
+    }
+   ],
+   "tris": 408,
+   "collision": "box",
+   "size": [
+    9.0,
+    3.82,
+    1.0
+   ]
+  },
+  "VoidTendril1": {
+   "parts": [
+    {
+     "name": "VoidTendril1",
+     "tris": 960,
+     "size": [
+      5.73,
+      8.15,
+      5.38
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "VoidTendril1_Glow_void",
+     "tris": 160,
+     "size": [
+      4.56,
+      3.64,
+      4.78
+     ],
+     "glow": "void",
+     "color": [
+      255,
+      47,
+      210
+     ]
+    }
+   ],
+   "tris": 1120,
+   "collision": "none",
+   "size": [
+    5.73,
+    8.84,
+    5.38
+   ]
+  },
+  "VoidTendril2": {
+   "parts": [
+    {
+     "name": "VoidTendril2",
+     "tris": 960,
+     "size": [
+      5.51,
+      8.45,
+      5.48
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "VoidTendril2_Glow_void",
+     "tris": 160,
+     "size": [
+      4.12,
+      3.02,
+      4.53
+     ],
+     "glow": "void",
+     "color": [
+      255,
+      47,
+      210
+     ]
+    }
+   ],
+   "tris": 1120,
+   "collision": "none",
+   "size": [
+    5.51,
+    9.14,
+    5.48
+   ]
+  }
+ },
+ "static": [
+  {
+   "name": "Ground_ShardSpawn_0",
+   "group": "Shards",
+   "tris": 2600,
+   "size": [
+    68.66,
+    48.25,
+    82.11
+   ]
+  },
+  {
+   "name": "Ground_ShardShop_0",
+   "group": "Shards",
+   "tris": 2592,
+   "size": [
+    51.65,
+    37.75,
+    55.04
+   ]
+  },
+  {
+   "name": "Ground_ShardAltar_0",
+   "group": "Shards",
+   "tris": 2592,
+   "size": [
+    53.12,
+    37.75,
+    53.25
+   ]
+  },
+  {
+   "name": "Ground_ShardSeer_0",
+   "group": "Shards",
+   "tris": 2592,
+   "size": [
+    56.98,
+    39.25,
+    56.48
+   ]
+  },
+  {
+   "name": "Ground_ShardRift_0",
+   "group": "Shards",
+   "tris": 2600,
+   "size": [
+    72.62,
+    46.81,
+    65.39
+   ]
+  },
+  {
+   "name": "Ground_ShardArena_0",
+   "group": "Shards",
+   "tris": 2608,
+   "size": [
+    100.53,
+    69.25,
+    98.17
+   ]
+  },
+  {
+   "name": "Ground_ShardStar_0",
+   "group": "Shards",
+   "tris": 2584,
+   "size": [
+    38.96,
+    28.75,
+    41.92
+   ]
+  },
+  {
+   "name": "RuneBridgeDeckSpawnShop_0",
+   "group": "Bridges",
+   "tris": 2420,
+   "size": [
+    70.67,
+    6.7,
+    44.22
+   ]
+  },
+  {
+   "name": "RuneBridgeDeckSpawnAltar_0",
+   "group": "Bridges",
+   "tris": 2420,
+   "size": [
+    72.21,
+    6.71,
+    45.04
+   ]
+  },
+  {
+   "name": "RuneBridgeDeckShopSeer_0",
+   "group": "Bridges",
+   "tris": 2420,
+   "size": [
+    23.05,
+    8.56,
+    75.28
+   ]
+  },
+  {
+   "name": "RuneBridgeDeckSeerArena_0",
+   "group": "Bridges",
+   "tris": 2816,
+   "size": [
+    77.36,
+    9.7,
+    60.14
+   ]
+  },
+  {
+   "name": "RuneBridgeDeckRiftArena_0",
+   "group": "Bridges",
+   "tris": 3080,
+   "size": [
+    82.37,
+    9.72,
+    63.03
+   ]
+  },
+  {
+   "name": "Ground_ShardSteps_0",
+   "group": "Bridges",
+   "tris": 1024,
+   "size": [
+    18.92,
+    6.08,
+    63.32
+   ]
+  },
+  {
+   "name": "Paving_Paths_0",
+   "group": "Paths",
+   "tris": 184,
+   "size": [
+    264.28,
+    20.26,
+    274.23
+   ]
+  }
+ ],
+ "bigparts": [],
+ "look": {
+  "SunDir": [
+   -0.452,
+   0.616,
+   0.646
+  ],
+  "SunElevation": 38.0,
+  "ClockTime": 15.47,
+  "SunColor": [
+   199,
+   184,
+   255
+  ],
+  "Brightness": 1.86,
+  "AtmosphereDensity": 0.211,
+  "AtmosphereColor": [
+   158,
+   117,
+   243
+  ],
+  "Horizon": [
+   21,
+   15,
+   34
+  ],
+  "Zenith": [
+   25,
+   21,
+   43
+  ]
+ }
+}

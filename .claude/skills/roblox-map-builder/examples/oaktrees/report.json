@@ -1,0 +1,167 @@
+{
+ "OakA": {
+  "tris": {
+   "OakA_Trunk": 4530,
+   "OakA_Branches": 872,
+   "OakA_Leaves": 2984,
+   "total": 8386
+  },
+  "size_studs": [
+   26.8,
+   27.2,
+   22.9
+  ],
+  "branches": 143,
+  "sheet": "renders/OakA_sheet.png"
+ },
+ "OakB": {
+  "tris": {
+   "OakB_Trunk": 3958,
+   "OakB_Branches": 704,
+   "OakB_Leaves": 1880,
+   "total": 6542
+  },
+  "size_studs": [
+   15.0,
+   25.6,
+   26.2
+  ],
+  "branches": 119,
+  "sheet": "renders/OakB_sheet.png"
+ },
+ "Birch": {
+  "tris": {
+   "Birch_Trunk": 3600,
+   "Birch_Branches": 768,
+   "Birch_Leaves": 3416,
+   "total": 7784
+  },
+  "size_studs": [
+   11.5,
+   13.0,
+   23.6
+  ],
+  "branches": 137,
+  "sheet": "renders/Birch_sheet.png"
+ },
+ "YoungTree": {
+  "tris": {
+   "YoungTree_Trunk": 910,
+   "YoungTree_Branches": 152,
+   "YoungTree_Leaves": 540,
+   "total": 1602
+  },
+  "size_studs": [
+   7.2,
+   7.2,
+   9.6
+  ],
+  "branches": 25,
+  "sheet": "renders/YoungTree_sheet.png"
+ },
+ "OakHero": {
+  "tris": {
+   "OakHero_Trunk": 7502,
+   "OakHero_Branches": 1376,
+   "OakHero_Leaves": 7000,
+   "total": 15878
+  },
+  "size_studs": [
+   32.0,
+   25.1,
+   27.1
+  ],
+  "branches": 221,
+  "sheet": "renders/OakHero_sheet.png"
+ },
+ "OakPink": {
+  "tris": {
+   "OakPink_Trunk": 3354,
+   "OakPink_Branches": 616,
+   "OakPink_Leaves": 1792,
+   "total": 5762
+  },
+  "size_studs": [
+   16.5,
+   16.9,
+   14.3
+  ],
+  "branches": 112,
+  "sheet": "renders/OakPink_sheet.png"
+ },
+ "PineA": {
+  "tris": {
+   "PineA_Trunk": 1914,
+   "PineA_Branches": 120,
+   "PineA_Leaves": 5500,
+   "total": 7534
+  },
+  "size_studs": [
+   21.1,
+   21.2,
+   34.1
+  ],
+  "branches": 526,
+  "sheet": "renders/PineA_sheet.png"
+ },
+ "PineB": {
+  "tris": {
+   "PineB_Trunk": 1766,
+   "PineB_Branches": 216,
+   "PineB_Leaves": 5380,
+   "total": 7362
+  },
+  "size_studs": [
+   19.3,
+   18.2,
+   25.5
+  ],
+  "branches": 520,
+  "sheet": "renders/PineB_sheet.png"
+ },
+ "StreetOak": {
+  "tris": {
+   "StreetOak_Trunk": 810,
+   "StreetOak_Branches": 216,
+   "StreetOak_Leaves": 992,
+   "total": 2018
+  },
+  "size_studs": [
+   12.5,
+   14.2,
+   14.2
+  ],
+  "branches": 34,
+  "sheet": "renders/StreetOak_sheet.png"
+ },
+ "StreetBirch": {
+  "tris": {
+   "StreetBirch_Trunk": 820,
+   "StreetBirch_Branches": 152,
+   "StreetBirch_Leaves": 676,
+   "total": 1648
+  },
+  "size_studs": [
+   9.9,
+   9.3,
+   15.6
+  ],
+  "branches": 27,
+  "sheet": "renders/StreetBirch_sheet.png"
+ },
+ "PineC": {
+  "tris": {
+   "PineC_Trunk": 1064,
+   "PineC_Branches": 32,
+   "PineC_Leaves": 1996,
+   "total": 3092
+  },
+  "size_studs": [
+   20.4,
+   17.8,
+   28.2
+  ],
+  "branches": 210,
+  "sheet": "renders/PineC_sheet.png"
+ }
+}

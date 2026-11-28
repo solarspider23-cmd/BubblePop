@@ -1,0 +1,2360 @@
+{
+ "name": "GlowrootCaverns",
+ "format": "glb",
+ "props": {
+  "Barrels2": {
+   "parts": [
+    {
+     "name": "Barrels2",
+     "tris": 1650,
+     "size": [
+      4.83,
+      3.27,
+      5.97
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1650,
+   "collision": "box",
+   "size": [
+    4.83,
+    3.27,
+    5.97
+   ]
+  },
+  "BedGlow1": {
+   "parts": [
+    {
+     "name": "BedGlow1_Glow_lake",
+     "tris": 756,
+     "size": [
+      12.91,
+      0.75,
+      9.89
+     ],
+     "glow": "lake",
+     "color": [
+      42,
+      240,
+      220
+     ]
+    }
+   ],
+   "tris": 756,
+   "collision": "none",
+   "size": [
+    12.91,
+    0.75,
+    9.89
+   ]
+  },
+  "BrewStation": {
+   "parts": [
+    {
+     "name": "BrewStation",
+     "tris": 2004,
+     "size": [
+      15.89,
+      17.34,
+      13.52
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "BrewStation_Glow_brew",
+     "tris": 774,
+     "size": [
+      14.57,
+      15.04,
+      12.22
+     ],
+     "glow": "brew",
+     "color": [
+      255,
+      111,
+      208
+     ]
+    },
+    {
+     "name": "BrewStation_Glow_fire",
+     "tris": 320,
+     "size": [
+      2.51,
+      1.34,
+      0.83
+     ],
+     "glow": "fire",
+     "color": [
+      255,
+      122,
+      38
+     ]
+    },
+    {
+     "name": "BrewStation_Glow_violet",
+     "tris": 186,
+     "size": [
+      3.44,
+      4.6,
+      0.84
+     ],
+     "glow": "violet",
+     "color": [
+      208,
+      112,
+      255
+     ]
+    }
+   ],
+   "tris": 3284,
+   "collision": "precise",
+   "size": [
+    15.89,
+    17.34,
+    13.52
+   ]
+  },
+  "CampTent": {
+   "parts": [
+    {
+     "name": "CampTent",
+     "tris": 777,
+     "size": [
+      13.7,
+      7.08,
+      12.2
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 777,
+   "collision": "precise",
+   "size": [
+    13.7,
+    7.08,
+    12.2
+   ]
+  },
+  "Campfire": {
+   "parts": [
+    {
+     "name": "Campfire",
+     "tris": 622,
+     "size": [
+      6.0,
+      4.33,
+      5.39
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Campfire_Glow_fire",
+     "tris": 480,
+     "size": [
+      2.03,
+      2.02,
+      1.97
+     ],
+     "glow": "fire",
+     "color": [
+      255,
+      122,
+      38
+     ]
+    },
+    {
+     "name": "Campfire_Glow_amber",
+     "tris": 96,
+     "size": [
+      2.1,
+      0.23,
+      1.85
+     ],
+     "glow": "amber",
+     "color": [
+      255,
+      164,
+      58
+     ]
+    }
+   ],
+   "tris": 1198,
+   "collision": "box",
+   "size": [
+    6.0,
+    4.33,
+    5.39
+   ]
+  },
+  "CaveFalls": {
+   "parts": [
+    {
+     "name": "CaveFalls",
+     "tris": 2436,
+     "size": [
+      19.91,
+      48.07,
+      15.7
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "CaveFalls_Glow_falls",
+     "tris": 4496,
+     "size": [
+      29.24,
+      43.2,
+      18.87
+     ],
+     "glow": "falls",
+     "color": [
+      207,
+      250,
+      255
+     ]
+    }
+   ],
+   "tris": 6932,
+   "collision": "none",
+   "size": [
+    29.24,
+    48.11,
+    20.13
+   ]
+  },
+  "CaveRockA": {
+   "parts": [
+    {
+     "name": "CaveRockA",
+     "tris": 968,
+     "size": [
+      34.33,
+      22.48,
+      27.23
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 968,
+   "collision": "hull",
+   "size": [
+    34.33,
+    22.48,
+    27.23
+   ]
+  },
+  "CaveRockB": {
+   "parts": [
+    {
+     "name": "CaveRockB",
+     "tris": 898,
+     "size": [
+      21.11,
+      34.65,
+      18.88
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 898,
+   "collision": "hull",
+   "size": [
+    21.11,
+    34.65,
+    18.88
+   ]
+  },
+  "CaveRockBLo": {
+   "parts": [
+    {
+     "name": "CaveRockBLo",
+     "tris": 364,
+     "size": [
+      20.68,
+      34.56,
+      18.82
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 364,
+   "collision": "hull",
+   "size": [
+    20.68,
+    34.56,
+    18.82
+   ]
+  },
+  "CaveRockC": {
+   "parts": [
+    {
+     "name": "CaveRockC",
+     "tris": 552,
+     "size": [
+      33.96,
+      12.53,
+      23.41
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 552,
+   "collision": "hull",
+   "size": [
+    33.96,
+    12.53,
+    23.41
+   ]
+  },
+  "CaveRockCLo": {
+   "parts": [
+    {
+     "name": "CaveRockCLo",
+     "tris": 410,
+     "size": [
+      33.49,
+      12.49,
+      22.92
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 410,
+   "collision": "hull",
+   "size": [
+    33.49,
+    12.49,
+    22.92
+   ]
+  },
+  "CaveRockD": {
+   "parts": [
+    {
+     "name": "CaveRockD",
+     "tris": 396,
+     "size": [
+      14.75,
+      10.75,
+      13.82
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 396,
+   "collision": "hull",
+   "size": [
+    14.75,
+    10.75,
+    13.82
+   ]
+  },
+  "CaveRockE": {
+   "parts": [
+    {
+     "name": "CaveRockE",
+     "tris": 192,
+     "size": [
+      8.35,
+      5.17,
+      7.81
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 192,
+   "collision": "hull",
+   "size": [
+    8.35,
+    5.17,
+    7.81
+   ]
+  },
+  "CaveRockF": {
+   "parts": [
+    {
+     "name": "CaveRockF",
+     "tris": 1202,
+     "size": [
+      25.41,
+      27.39,
+      23.63
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "CaveRockF_Glow_cyan",
+     "tris": 276,
+     "size": [
+      14.25,
+      10.6,
+      18.67
+     ],
+     "glow": "cyan",
+     "color": [
+      46,
+      230,
+      224
+     ]
+    }
+   ],
+   "tris": 1478,
+   "collision": "hull",
+   "size": [
+    25.41,
+    27.39,
+    23.63
+   ]
+  },
+  "CaveRockFLo": {
+   "parts": [
+    {
+     "name": "CaveRockFLo",
+     "tris": 380,
+     "size": [
+      22.76,
+      27.28,
+      22.19
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 380,
+   "collision": "hull",
+   "size": [
+    22.76,
+    27.28,
+    22.19
+   ]
+  },
+  "Crates1": {
+   "parts": [
+    {
+     "name": "Crates1",
+     "tris": 584,
+     "size": [
+      6.17,
+      4.32,
+      3.67
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 584,
+   "collision": "box",
+   "size": [
+    6.17,
+    4.32,
+    3.67
+   ]
+  },
+  "CrystalForge": {
+   "parts": [
+    {
+     "name": "CrystalForge",
+     "tris": 2480,
+     "size": [
+      18.36,
+      17.83,
+      16.67
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "CrystalForge_Glow_fire",
+     "tris": 390,
+     "size": [
+      4.0,
+      3.2,
+      1.3
+     ],
+     "glow": "fire",
+     "color": [
+      255,
+      122,
+      38
+     ]
+    },
+    {
+     "name": "CrystalForge_Glow_amber",
+     "tris": 412,
+     "size": [
+      15.86,
+      8.94,
+      6.36
+     ],
+     "glow": "amber",
+     "color": [
+      255,
+      164,
+      58
+     ]
+    },
+    {
+     "name": "CrystalForge_Glow_violet",
+     "tris": 90,
+     "size": [
+      13.89,
+      5.92,
+      4.52
+     ],
+     "glow": "violet",
+     "color": [
+      208,
+      112,
+      255
+     ]
+    },
+    {
+     "name": "CrystalForge_Glow_cyan",
+     "tris": 146,
+     "size": [
+      15.37,
+      7.61,
+      12.61
+     ],
+     "glow": "cyan",
+     "color": [
+      46,
+      230,
+      224
+     ]
+    }
+   ],
+   "tris": 3518,
+   "collision": "precise",
+   "size": [
+    18.36,
+    17.83,
+    16.67
+   ]
+  },
+  "CrystalShardsCyan": {
+   "parts": [
+    {
+     "name": "CrystalShardsCyan",
+     "tris": 278,
+     "size": [
+      3.2,
+      1.17,
+      2.34
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "CrystalShardsCyan_Glow_cyan",
+     "tris": 184,
+     "size": [
+      1.38,
+      1.45,
+      2.45
+     ],
+     "glow": "cyan",
+     "color": [
+      46,
+      230,
+      224
+     ]
+    }
+   ],
+   "tris": 462,
+   "collision": "none",
+   "size": [
+    3.2,
+    2.24,
+    2.45
+   ]
+  },
+  "CrystalSprayCyan": {
+   "parts": [
+    {
+     "name": "CrystalSprayCyan",
+     "tris": 696,
+     "size": [
+      8.94,
+      5.17,
+      6.59
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "CrystalSprayCyan_Glow_cyan",
+     "tris": 276,
+     "size": [
+      6.66,
+      5.59,
+      4.42
+     ],
+     "glow": "cyan",
+     "color": [
+      46,
+      230,
+      224
+     ]
+    }
+   ],
+   "tris": 972,
+   "collision": "hull",
+   "size": [
+    8.94,
+    8.47,
+    8.13
+   ]
+  },
+  "CrystalSprayViolet": {
+   "parts": [
+    {
+     "name": "CrystalSprayViolet",
+     "tris": 696,
+     "size": [
+      9.22,
+      5.46,
+      6.51
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "CrystalSprayViolet_Glow_violet",
+     "tris": 276,
+     "size": [
+      6.93,
+      6.2,
+      4.61
+     ],
+     "glow": "violet",
+     "color": [
+      208,
+      112,
+      255
+     ]
+    }
+   ],
+   "tris": 972,
+   "collision": "hull",
+   "size": [
+    9.22,
+    9.28,
+    9.22
+   ]
+  },
+  "DeepLift": {
+   "parts": [
+    {
+     "name": "DeepLift",
+     "tris": 3106,
+     "size": [
+      14.4,
+      33.43,
+      16.29
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "DeepLift_Glow_pale",
+     "tris": 60,
+     "size": [
+      0.64,
+      1.84,
+      0.3
+     ],
+     "glow": "pale",
+     "color": [
+      230,
+      242,
+      255
+     ]
+    }
+   ],
+   "tris": 3166,
+   "collision": "precise",
+   "size": [
+    14.4,
+    33.43,
+    16.29
+   ]
+  },
+  "GeodeAmber": {
+   "parts": [
+    {
+     "name": "GeodeAmber",
+     "tris": 1820,
+     "size": [
+      10.52,
+      6.27,
+      11.08
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "GeodeAmber_Glow_amber",
+     "tris": 414,
+     "size": [
+      3.01,
+      6.73,
+      2.84
+     ],
+     "glow": "amber",
+     "color": [
+      255,
+      164,
+      58
+     ]
+    }
+   ],
+   "tris": 2234,
+   "collision": "hull",
+   "size": [
+    10.52,
+    9.34,
+    11.08
+   ]
+  },
+  "GeodeCyan": {
+   "parts": [
+    {
+     "name": "GeodeCyan",
+     "tris": 1820,
+     "size": [
+      10.77,
+      6.15,
+      11.15
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "GeodeCyan_Glow_cyan",
+     "tris": 414,
+     "size": [
+      2.93,
+      6.66,
+      3.45
+     ],
+     "glow": "cyan",
+     "color": [
+      46,
+      230,
+      224
+     ]
+    }
+   ],
+   "tris": 2234,
+   "collision": "hull",
+   "size": [
+    10.77,
+    9.3,
+    11.15
+   ]
+  },
+  "GeodeViolet": {
+   "parts": [
+    {
+     "name": "GeodeViolet",
+     "tris": 1820,
+     "size": [
+      10.89,
+      6.22,
+      10.27
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "GeodeViolet_Glow_violet",
+     "tris": 414,
+     "size": [
+      2.32,
+      6.69,
+      3.82
+     ],
+     "glow": "violet",
+     "color": [
+      208,
+      112,
+      255
+     ]
+    }
+   ],
+   "tris": 2234,
+   "collision": "hull",
+   "size": [
+    10.89,
+    9.25,
+    10.27
+   ]
+  },
+  "GlowPuddle1": {
+   "parts": [
+    {
+     "name": "GlowPuddle1",
+     "tris": 104,
+     "size": [
+      6.6,
+      0.41,
+      5.24
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "GlowPuddle1_Glow_lake",
+     "tris": 100,
+     "size": [
+      2.07,
+      0.07,
+      1.84
+     ],
+     "glow": "lake",
+     "color": [
+      42,
+      240,
+      220
+     ]
+    }
+   ],
+   "tris": 204,
+   "collision": "none",
+   "size": [
+    6.6,
+    0.45,
+    5.24
+   ]
+  },
+  "GlowPuddle2": {
+   "parts": [
+    {
+     "name": "GlowPuddle2",
+     "tris": 104,
+     "size": [
+      7.56,
+      0.41,
+      4.88
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "GlowPuddle2_Glow_lake",
+     "tris": 100,
+     "size": [
+      3.54,
+      0.07,
+      1.4
+     ],
+     "glow": "lake",
+     "color": [
+      42,
+      240,
+      220
+     ]
+    }
+   ],
+   "tris": 204,
+   "collision": "none",
+   "size": [
+    7.56,
+    0.45,
+    4.88
+   ]
+  },
+  "GlowShroomCluster2": {
+   "parts": [
+    {
+     "name": "GlowShroomCluster2",
+     "tris": 1212,
+     "size": [
+      3.42,
+      5.79,
+      5.86
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "GlowShroomCluster2_Glow_shroom",
+     "tris": 284,
+     "size": [
+      3.16,
+      4.34,
+      5.67
+     ],
+     "glow": "shroom",
+     "color": [
+      70,
+      240,
+      204
+     ]
+    },
+    {
+     "name": "GlowShroomCluster2_Glow_spot",
+     "tris": 260,
+     "size": [
+      2.38,
+      4.3,
+      4.32
+     ],
+     "glow": "spot",
+     "color": [
+      166,
+      251,
+      234
+     ]
+    }
+   ],
+   "tris": 1756,
+   "collision": "none",
+   "size": [
+    3.42,
+    5.79,
+    5.86
+   ]
+  },
+  "GlowShroomCluster3": {
+   "parts": [
+    {
+     "name": "GlowShroomCluster3",
+     "tris": 1146,
+     "size": [
+      3.39,
+      5.16,
+      3.39
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "GlowShroomCluster3_Glow_shroom",
+     "tris": 284,
+     "size": [
+      2.8,
+      4.05,
+      3.88
+     ],
+     "glow": "shroom",
+     "color": [
+      70,
+      240,
+      204
+     ]
+    },
+    {
+     "name": "GlowShroomCluster3_Glow_spot",
+     "tris": 260,
+     "size": [
+      3.3,
+      4.27,
+      3.35
+     ],
+     "glow": "spot",
+     "color": [
+      166,
+      251,
+      234
+     ]
+    }
+   ],
+   "tris": 1690,
+   "collision": "none",
+   "size": [
+    3.39,
+    5.16,
+    3.95
+   ]
+  },
+  "GlowShroomGiant1": {
+   "parts": [
+    {
+     "name": "GlowShroomGiant1",
+     "tris": 1836,
+     "size": [
+      16.2,
+      20.94,
+      15.37
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "GlowShroomGiant1_Glow_shroom",
+     "tris": 496,
+     "size": [
+      15.6,
+      17.1,
+      15.0
+     ],
+     "glow": "shroom",
+     "color": [
+      70,
+      240,
+      204
+     ]
+    },
+    {
+     "name": "GlowShroomGiant1_Glow_spot",
+     "tris": 500,
+     "size": [
+      13.2,
+      18.77,
+      13.32
+     ],
+     "glow": "spot",
+     "color": [
+      166,
+      251,
+      234
+     ]
+    }
+   ],
+   "tris": 2832,
+   "collision": "hull",
+   "size": [
+    16.2,
+    20.94,
+    15.37
+   ]
+  },
+  "GlowShroomGiant1M": {
+   "parts": [
+    {
+     "name": "GlowShroomGiant1M",
+     "tris": 1836,
+     "size": [
+      16.2,
+      20.94,
+      15.37
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "GlowShroomGiant1M_Glow_brew",
+     "tris": 996,
+     "size": [
+      15.6,
+      18.77,
+      15.0
+     ],
+     "glow": "brew",
+     "color": [
+      255,
+      111,
+      208
+     ]
+    }
+   ],
+   "tris": 2832,
+   "collision": "hull",
+   "size": [
+    16.2,
+    20.94,
+    15.37
+   ]
+  },
+  "GlowShroomGiant2": {
+   "parts": [
+    {
+     "name": "GlowShroomGiant2",
+     "tris": 1836,
+     "size": [
+      16.35,
+      20.73,
+      14.53
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "GlowShroomGiant2_Glow_shroom",
+     "tris": 496,
+     "size": [
+      15.68,
+      16.56,
+      14.14
+     ],
+     "glow": "shroom",
+     "color": [
+      70,
+      240,
+      204
+     ]
+    },
+    {
+     "name": "GlowShroomGiant2_Glow_spot",
+     "tris": 500,
+     "size": [
+      10.65,
+      18.99,
+      12.27
+     ],
+     "glow": "spot",
+     "color": [
+      166,
+      251,
+      234
+     ]
+    }
+   ],
+   "tris": 2832,
+   "collision": "hull",
+   "size": [
+    16.35,
+    20.73,
+    14.53
+   ]
+  },
+  "GlowShroomGiant2M": {
+   "parts": [
+    {
+     "name": "GlowShroomGiant2M",
+     "tris": 1836,
+     "size": [
+      16.35,
+      20.73,
+      14.53
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "GlowShroomGiant2M_Glow_brew",
+     "tris": 996,
+     "size": [
+      15.68,
+      18.99,
+      14.14
+     ],
+     "glow": "brew",
+     "color": [
+      255,
+      111,
+      208
+     ]
+    }
+   ],
+   "tris": 2832,
+   "collision": "hull",
+   "size": [
+    16.35,
+    20.73,
+    14.53
+   ]
+  },
+  "GlowVine1": {
+   "parts": [
+    {
+     "name": "GlowVine1",
+     "tris": 732,
+     "size": [
+      5.12,
+      24.67,
+      4.42
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "GlowVine1_Glow_root",
+     "tris": 326,
+     "size": [
+      3.9,
+      20.78,
+      3.65
+     ],
+     "glow": "root",
+     "color": [
+      140,
+      240,
+      220
+     ]
+    }
+   ],
+   "tris": 1058,
+   "collision": "none",
+   "size": [
+    5.12,
+    25.62,
+    4.42
+   ]
+  },
+  "GlowVine2": {
+   "parts": [
+    {
+     "name": "GlowVine2",
+     "tris": 504,
+     "size": [
+      5.08,
+      16.67,
+      4.15
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "GlowVine2_Glow_root",
+     "tris": 184,
+     "size": [
+      4.8,
+      13.73,
+      3.48
+     ],
+     "glow": "root",
+     "color": [
+      140,
+      240,
+      220
+     ]
+    }
+   ],
+   "tris": 688,
+   "collision": "none",
+   "size": [
+    5.13,
+    17.62,
+    4.37
+   ]
+  },
+  "GlowVine3": {
+   "parts": [
+    {
+     "name": "GlowVine3",
+     "tris": 492,
+     "size": [
+      4.91,
+      10.68,
+      4.36
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "GlowVine3_Glow_root",
+     "tris": 164,
+     "size": [
+      2.95,
+      9.31,
+      3.32
+     ],
+     "glow": "root",
+     "color": [
+      140,
+      240,
+      220
+     ]
+    }
+   ],
+   "tris": 656,
+   "collision": "none",
+   "size": [
+    4.91,
+    11.63,
+    4.42
+   ]
+  },
+  "GlowWorms1": {
+   "parts": [
+    {
+     "name": "GlowWorms1",
+     "tris": 154,
+     "size": [
+      12.91,
+      3.46,
+      13.03
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "GlowWorms1_Glow_root",
+     "tris": 352,
+     "size": [
+      13.11,
+      2.66,
+      13.25
+     ],
+     "glow": "root",
+     "color": [
+      140,
+      240,
+      220
+     ]
+    }
+   ],
+   "tris": 506,
+   "collision": "none",
+   "size": [
+    13.11,
+    3.71,
+    13.25
+   ]
+  },
+  "GlowWorms2": {
+   "parts": [
+    {
+     "name": "GlowWorms2",
+     "tris": 154,
+     "size": [
+      11.99,
+      3.5,
+      10.37
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "GlowWorms2_Glow_root",
+     "tris": 352,
+     "size": [
+      12.19,
+      2.7,
+      10.59
+     ],
+     "glow": "root",
+     "color": [
+      140,
+      240,
+      220
+     ]
+    }
+   ],
+   "tris": 506,
+   "collision": "none",
+   "size": [
+    12.19,
+    3.75,
+    10.59
+   ]
+  },
+  "Glowroot": {
+   "parts": [
+    {
+     "name": "Glowroot",
+     "tris": 5955,
+     "size": [
+      33.15,
+      101.74,
+      31.56
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Glowroot_Glow_root",
+     "tris": 2738,
+     "size": [
+      28.51,
+      96.0,
+      25.86
+     ],
+     "glow": "root",
+     "color": [
+      140,
+      240,
+      220
+     ]
+    },
+    {
+     "name": "Glowroot_Glow_amber",
+     "tris": 168,
+     "size": [
+      7.55,
+      8.23,
+      7.75
+     ],
+     "glow": "amber",
+     "color": [
+      255,
+      164,
+      58
+     ]
+    }
+   ],
+   "tris": 8861,
+   "collision": "precise",
+   "size": [
+    33.15,
+    101.74,
+    31.56
+   ]
+  },
+  "LogSeat": {
+   "parts": [
+    {
+     "name": "LogSeat",
+     "tris": 128,
+     "size": [
+      1.24,
+      1.64,
+      4.6
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 128,
+   "collision": "box",
+   "size": [
+    1.24,
+    1.64,
+    4.6
+   ]
+  },
+  "MineCartAmber": {
+   "parts": [
+    {
+     "name": "MineCartAmber",
+     "tris": 1698,
+     "size": [
+      4.19,
+      5.04,
+      6.84
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "MineCartAmber_Glow_amber",
+     "tris": 208,
+     "size": [
+      1.38,
+      1.96,
+      2.0
+     ],
+     "glow": "amber",
+     "color": [
+      255,
+      164,
+      58
+     ]
+    }
+   ],
+   "tris": 1906,
+   "collision": "box",
+   "size": [
+    4.19,
+    5.79,
+    6.84
+   ]
+  },
+  "MineCartCyan": {
+   "parts": [
+    {
+     "name": "MineCartCyan",
+     "tris": 1660,
+     "size": [
+      4.19,
+      5.02,
+      6.84
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "MineCartCyan_Glow_cyan",
+     "tris": 256,
+     "size": [
+      1.82,
+      2.09,
+      2.16
+     ],
+     "glow": "cyan",
+     "color": [
+      46,
+      230,
+      224
+     ]
+    }
+   ],
+   "tris": 1916,
+   "collision": "box",
+   "size": [
+    4.19,
+    5.79,
+    6.84
+   ]
+  },
+  "MineFrame": {
+   "parts": [
+    {
+     "name": "MineFrame",
+     "tris": 1010,
+     "size": [
+      23.2,
+      18.16,
+      5.83
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "MineFrame_Glow_lamp",
+     "tris": 60,
+     "size": [
+      0.62,
+      1.01,
+      0.62
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      190,
+      104
+     ]
+    }
+   ],
+   "tris": 1070,
+   "collision": "precise",
+   "size": [
+    23.2,
+    18.16,
+    5.83
+   ]
+  },
+  "MineLantern": {
+   "parts": [
+    {
+     "name": "MineLantern",
+     "tris": 562,
+     "size": [
+      3.57,
+      8.25,
+      2.66
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "MineLantern_Glow_lamp",
+     "tris": 60,
+     "size": [
+      0.56,
+      0.92,
+      0.56
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      190,
+      104
+     ]
+    }
+   ],
+   "tris": 622,
+   "collision": "box",
+   "size": [
+    3.57,
+    8.25,
+    2.66
+   ]
+  },
+  "MineShop": {
+   "parts": [
+    {
+     "name": "MineShop",
+     "tris": 5408,
+     "size": [
+      18.0,
+      13.69,
+      15.31
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "MineShop_Glow_amber",
+     "tris": 276,
+     "size": [
+      10.34,
+      5.55,
+      9.82
+     ],
+     "glow": "amber",
+     "color": [
+      255,
+      164,
+      58
+     ]
+    },
+    {
+     "name": "MineShop_Glow_cyan",
+     "tris": 276,
+     "size": [
+      10.55,
+      5.53,
+      9.76
+     ],
+     "glow": "cyan",
+     "color": [
+      46,
+      230,
+      224
+     ]
+    },
+    {
+     "name": "MineShop_Glow_violet",
+     "tris": 230,
+     "size": [
+      10.27,
+      5.39,
+      0.66
+     ],
+     "glow": "violet",
+     "color": [
+      208,
+      112,
+      255
+     ]
+    },
+    {
+     "name": "MineShop_Glow_lamp",
+     "tris": 120,
+     "size": [
+      12.67,
+      1.1,
+      0.67
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      190,
+      104
+     ]
+    }
+   ],
+   "tris": 6310,
+   "collision": "precise",
+   "size": [
+    18.0,
+    13.69,
+    15.31
+   ]
+  },
+  "OrePileCyan": {
+   "parts": [
+    {
+     "name": "OrePileCyan",
+     "tris": 1696,
+     "size": [
+      7.52,
+      6.92,
+      6.59
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "OrePileCyan_Glow_cyan",
+     "tris": 566,
+     "size": [
+      3.75,
+      4.78,
+      4.31
+     ],
+     "glow": "cyan",
+     "color": [
+      46,
+      230,
+      224
+     ]
+    }
+   ],
+   "tris": 2262,
+   "collision": "hull",
+   "size": [
+    7.52,
+    6.92,
+    6.59
+   ]
+  },
+  "PlankBridge": {
+   "parts": [
+    {
+     "name": "PlankBridge",
+     "tris": 2108,
+     "size": [
+      6.19,
+      8.8,
+      25.16
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 2108,
+   "collision": "precise",
+   "size": [
+    6.19,
+    8.8,
+    25.16
+   ]
+  },
+  "QuestBoard": {
+   "parts": [
+    {
+     "name": "QuestBoard",
+     "tris": 1144,
+     "size": [
+      8.49,
+      9.33,
+      2.2
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "QuestBoard_Glow_lamp",
+     "tris": 60,
+     "size": [
+      0.5,
+      0.83,
+      0.5
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      190,
+      104
+     ]
+    }
+   ],
+   "tris": 1204,
+   "collision": "box",
+   "size": [
+    8.49,
+    9.33,
+    2.2
+   ]
+  },
+  "RailBuffer": {
+   "parts": [
+    {
+     "name": "RailBuffer",
+     "tris": 312,
+     "size": [
+      5.2,
+      5.56,
+      3.88
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "RailBuffer_Glow_lamp",
+     "tris": 46,
+     "size": [
+      0.72,
+      0.6,
+      0.72
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      190,
+      104
+     ]
+    }
+   ],
+   "tris": 358,
+   "collision": "box",
+   "size": [
+    5.2,
+    6.11,
+    3.88
+   ]
+  },
+  "RopeBridge": {
+   "parts": [
+    {
+     "name": "RopeBridge",
+     "tris": 3448,
+     "size": [
+      6.77,
+      6.71,
+      43.67
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 3448,
+   "collision": "precise",
+   "size": [
+    6.77,
+    6.71,
+    43.67
+   ]
+  },
+  "Scaffold": {
+   "parts": [
+    {
+     "name": "Scaffold",
+     "tris": 4362,
+     "size": [
+      17.4,
+      31.2,
+      16.29
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Scaffold_Glow_lamp",
+     "tris": 120,
+     "size": [
+      8.03,
+      9.79,
+      0.73
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      190,
+      104
+     ]
+    }
+   ],
+   "tris": 4482,
+   "collision": "precise",
+   "size": [
+    17.4,
+    31.2,
+    16.29
+   ]
+  },
+  "ShroomPatch3": {
+   "parts": [
+    {
+     "name": "ShroomPatch3",
+     "tris": 130,
+     "size": [
+      0.63,
+      1.51,
+      0.75
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "ShroomPatch3_Glow_shroom",
+     "tris": 260,
+     "size": [
+      1.65,
+      1.43,
+      1.57
+     ],
+     "glow": "shroom",
+     "color": [
+      70,
+      240,
+      204
+     ]
+    }
+   ],
+   "tris": 390,
+   "collision": "none",
+   "size": [
+    1.65,
+    1.86,
+    1.57
+   ]
+  },
+  "ShroomPatch4": {
+   "parts": [
+    {
+     "name": "ShroomPatch4",
+     "tris": 130,
+     "size": [
+      1.56,
+      1.47,
+      1.21
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "ShroomPatch4_Glow_shroom",
+     "tris": 260,
+     "size": [
+      2.14,
+      1.38,
+      1.64
+     ],
+     "glow": "shroom",
+     "color": [
+      70,
+      240,
+      204
+     ]
+    }
+   ],
+   "tris": 390,
+   "collision": "none",
+   "size": [
+    2.14,
+    1.82,
+    1.64
+   ]
+  },
+  "SkylightLip": {
+   "parts": [
+    {
+     "name": "SkylightLip",
+     "tris": 5164,
+     "size": [
+      44.79,
+      16.41,
+      43.27
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 5164,
+   "collision": "none",
+   "size": [
+    44.79,
+    16.41,
+    43.27
+   ]
+  },
+  "SpawnDais": {
+   "parts": [
+    {
+     "name": "SpawnDais",
+     "tris": 1698,
+     "size": [
+      20.75,
+      4.57,
+      20.73
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "SpawnDais_Glow_amber",
+     "tris": 504,
+     "size": [
+      14.37,
+      3.97,
+      14.5
+     ],
+     "glow": "amber",
+     "color": [
+      255,
+      164,
+      58
+     ]
+    }
+   ],
+   "tris": 2202,
+   "collision": "precise",
+   "size": [
+    20.75,
+    5.53,
+    20.73
+   ]
+  },
+  "Stalactite1": {
+   "parts": [
+    {
+     "name": "Stalactite1",
+     "tris": 508,
+     "size": [
+      8.38,
+      16.86,
+      9.11
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Stalactite1_Glow_cyan",
+     "tris": 24,
+     "size": [
+      0.44,
+      0.8,
+      0.38
+     ],
+     "glow": "cyan",
+     "color": [
+      46,
+      230,
+      224
+     ]
+    }
+   ],
+   "tris": 532,
+   "collision": "none",
+   "size": [
+    8.38,
+    17.94,
+    9.11
+   ]
+  },
+  "Stalactite2": {
+   "parts": [
+    {
+     "name": "Stalactite2",
+     "tris": 398,
+     "size": [
+      7.08,
+      11.89,
+      5.64
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Stalactite2_Glow_cyan",
+     "tris": 24,
+     "size": [
+      0.44,
+      0.8,
+      0.38
+     ],
+     "glow": "cyan",
+     "color": [
+      46,
+      230,
+      224
+     ]
+    }
+   ],
+   "tris": 422,
+   "collision": "none",
+   "size": [
+    7.08,
+    12.96,
+    5.64
+   ]
+  },
+  "Stalactite3": {
+   "parts": [
+    {
+     "name": "Stalactite3",
+     "tris": 288,
+     "size": [
+      4.05,
+      7.83,
+      3.82
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Stalactite3_Glow_cyan",
+     "tris": 24,
+     "size": [
+      0.44,
+      0.8,
+      0.38
+     ],
+     "glow": "cyan",
+     "color": [
+      46,
+      230,
+      224
+     ]
+    }
+   ],
+   "tris": 312,
+   "collision": "none",
+   "size": [
+    4.05,
+    8.82,
+    3.82
+   ]
+  },
+  "StalactiteCurtain1": {
+   "parts": [
+    {
+     "name": "StalactiteCurtain1",
+     "tris": 798,
+     "size": [
+      12.0,
+      11.71,
+      3.49
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 798,
+   "collision": "none",
+   "size": [
+    12.0,
+    11.71,
+    3.49
+   ]
+  },
+  "StalactiteCurtain2": {
+   "parts": [
+    {
+     "name": "StalactiteCurtain2",
+     "tris": 798,
+     "size": [
+      12.0,
+      11.38,
+      3.15
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 798,
+   "collision": "none",
+   "size": [
+    12.0,
+    11.38,
+    3.15
+   ]
+  },
+  "Stalagmite1": {
+   "parts": [
+    {
+     "name": "Stalagmite1",
+     "tris": 492,
+     "size": [
+      12.75,
+      12.63,
+      12.49
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 492,
+   "collision": "hull",
+   "size": [
+    12.75,
+    12.63,
+    12.49
+   ]
+  },
+  "Stalagmite2": {
+   "parts": [
+    {
+     "name": "Stalagmite2",
+     "tris": 492,
+     "size": [
+      9.28,
+      8.7,
+      9.37
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 492,
+   "collision": "hull",
+   "size": [
+    9.28,
+    8.7,
+    9.37
+   ]
+  },
+  "Stalagmite3": {
+   "parts": [
+    {
+     "name": "Stalagmite3",
+     "tris": 492,
+     "size": [
+      14.36,
+      16.71,
+      14.5
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 492,
+   "collision": "hull",
+   "size": [
+    14.36,
+    16.71,
+    14.5
+   ]
+  },
+  "ToolRack": {
+   "parts": [
+    {
+     "name": "ToolRack",
+     "tris": 764,
+     "size": [
+      7.12,
+      6.64,
+      1.1
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "ToolRack_Glow_lamp",
+     "tris": 60,
+     "size": [
+      0.5,
+      0.83,
+      0.5
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      190,
+      104
+     ]
+    }
+   ],
+   "tris": 824,
+   "collision": "box",
+   "size": [
+    7.12,
+    6.64,
+    1.1
+   ]
+  }
+ },
+ "static": [
+  {
+   "name": "Terrain_Walls_0",
+   "group": "Shell",
+   "tris": 10670,
+   "size": [
+    240.86,
+    89.41,
+    319.44
+   ]
+  },
+  {
+   "name": "Terrain_Walls_1",
+   "group": "Shell",
+   "tris": 10670,
+   "size": [
+    200.31,
+    93.38,
+    369.01
+   ]
+  },
+  {
+   "name": "Horizon_Vault_0",
+   "group": "Vault",
+   "tris": 10054,
+   "size": [
+    205.43,
+    144.46,
+    256.38
+   ]
+  },
+  {
+   "name": "Horizon_Vault_1",
+   "group": "Vault",
+   "tris": 10054,
+   "size": [
+    214.21,
+    68.73,
+    348.1
+   ]
+  },
+  {
+   "name": "Horizon_Crust_0",
+   "group": "Crust",
+   "tris": 9052,
+   "size": [
+    451.04,
+    262.39,
+    383.1
+   ]
+  },
+  {
+   "name": "Ground_CaveFloor_0",
+   "group": "Ground",
+   "tris": 15657,
+   "size": [
+    241.5,
+    7.02,
+    327.0
+   ]
+  },
+  {
+   "name": "Ground_CaveFloor_1",
+   "group": "Ground",
+   "tris": 15657,
+   "size": [
+    204.0,
+    5.67,
+    375.0
+   ]
+  },
+  {
+   "name": "Lake_Water_0",
+   "group": "Water",
+   "tris": 1640,
+   "size": [
+    123.0,
+    0.0,
+    102.0
+   ]
+  },
+  {
+   "name": "Track_Rails1_0",
+   "group": "Rails",
+   "tris": 5840,
+   "size": [
+    153.19,
+    1.28,
+    40.18
+   ]
+  },
+  {
+   "name": "Track_Rails2_0",
+   "group": "Rails",
+   "tris": 6132,
+   "size": [
+    44.16,
+    1.31,
+    161.06
+   ]
+  }
+ ],
+ "bigparts": [],
+ "look": {
+  "SunDir": [
+   0.195,
+   0.927,
+   0.32
+  ],
+  "SunElevation": 68.0,
+  "ClockTime": 10.53,
+  "SunColor": [
+   255,
+   209,
+   140
+  ],
+  "Brightness": 5,
+  "AtmosphereDensity": 0.32,
+  "AtmosphereColor": [
+   243,
+   237,
+   224
+  ]
+ }
+}

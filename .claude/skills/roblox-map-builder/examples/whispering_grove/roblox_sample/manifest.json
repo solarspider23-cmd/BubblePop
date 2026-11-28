@@ -1,0 +1,1359 @@
+{
+ "name": "WhisperingGrove",
+ "format": "glb",
+ "props": {
+  "Barrel1": {
+   "parts": [
+    {
+     "name": "Barrel1",
+     "tris": 400,
+     "size": [
+      2.32,
+      3.06,
+      2.26
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 400,
+   "collision": "box",
+   "size": [
+    2.32,
+    3.06,
+    2.26
+   ]
+  },
+  "Birch252": {
+   "parts": [
+    {
+     "name": "Birch252",
+     "tris": 566,
+     "size": [
+      7.71,
+      22.03,
+      8.44
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 566,
+   "collision": "hull",
+   "size": [
+    7.71,
+    22.03,
+    8.44
+   ]
+  },
+  "Birch252_v001": {
+   "parts": [
+    {
+     "name": "Birch252_v001",
+     "tris": 566,
+     "size": [
+      7.55,
+      21.57,
+      8.26
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 566,
+   "collision": "hull",
+   "size": [
+    7.55,
+    21.57,
+    8.26
+   ]
+  },
+  "Bridge": {
+   "parts": [
+    {
+     "name": "Bridge",
+     "tris": 1818,
+     "size": [
+      12.1,
+      6.15,
+      27.52
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1818,
+   "collision": "precise",
+   "size": [
+    12.1,
+    6.15,
+    27.52
+   ]
+  },
+  "Bush501": {
+   "parts": [
+    {
+     "name": "Bush501",
+     "tris": 432,
+     "size": [
+      6.4,
+      3.7,
+      5.44
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 432,
+   "collision": "none",
+   "size": [
+    6.4,
+    3.7,
+    5.44
+   ]
+  },
+  "Bush503": {
+   "parts": [
+    {
+     "name": "Bush503",
+     "tris": 310,
+     "size": [
+      3.65,
+      2.33,
+      4.11
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 310,
+   "collision": "none",
+   "size": [
+    3.65,
+    2.33,
+    4.11
+   ]
+  },
+  "Bush503_v001": {
+   "parts": [
+    {
+     "name": "Bush503_v001",
+     "tris": 310,
+     "size": [
+      3.65,
+      2.33,
+      4.11
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 310,
+   "collision": "none",
+   "size": [
+    3.65,
+    2.33,
+    4.11
+   ]
+  },
+  "Campfire": {
+   "parts": [
+    {
+     "name": "Campfire",
+     "tris": 412,
+     "size": [
+      5.18,
+      1.7,
+      5.06
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Campfire_Glow_fire",
+     "tris": 480,
+     "size": [
+      2.38,
+      3.33,
+      2.32
+     ],
+     "glow": "fire",
+     "color": [
+      255,
+      106,
+      26
+     ]
+    },
+    {
+     "name": "Campfire_Glow_fire2",
+     "tris": 324,
+     "size": [
+      1.78,
+      5.18,
+      1.39
+     ],
+     "glow": "fire2",
+     "color": [
+      255,
+      210,
+      60
+     ]
+    }
+   ],
+   "tris": 1216,
+   "collision": "box",
+   "size": [
+    5.18,
+    5.53,
+    5.06
+   ]
+  },
+  "Crate1": {
+   "parts": [
+    {
+     "name": "Crate1",
+     "tris": 164,
+     "size": [
+      2.56,
+      2.4,
+      2.58
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 164,
+   "collision": "box",
+   "size": [
+    2.56,
+    2.4,
+    2.58
+   ]
+  },
+  "CrystalCluster": {
+   "parts": [
+    {
+     "name": "CrystalCluster",
+     "tris": 50,
+     "size": [
+      8.55,
+      3.21,
+      8.48
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "CrystalCluster_Glow_crystal",
+     "tris": 154,
+     "size": [
+      7.97,
+      10.69,
+      5.94
+     ],
+     "glow": "crystal",
+     "color": [
+      154,
+      92,
+      255
+     ]
+    }
+   ],
+   "tris": 204,
+   "collision": "hull",
+   "size": [
+    8.95,
+    12.24,
+    8.48
+   ]
+  },
+  "ElderTree": {
+   "parts": [
+    {
+     "name": "ElderTree",
+     "tris": 4466,
+     "size": [
+      85.25,
+      100.14,
+      81.74
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "ElderTree_Glow_door",
+     "tris": 15,
+     "size": [
+      6.76,
+      9.58,
+      0.0
+     ],
+     "glow": "door",
+     "color": [
+      79,
+      245,
+      223
+     ]
+    },
+    {
+     "name": "ElderTree_Glow_lamp",
+     "tris": 396,
+     "size": [
+      50.38,
+      8.31,
+      45.03
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      179,
+      71
+     ]
+    }
+   ],
+   "tris": 4877,
+   "collision": "precise",
+   "size": [
+    85.25,
+    100.14,
+    81.74
+   ]
+  },
+  "Fence1": {
+   "parts": [
+    {
+     "name": "Fence1",
+     "tris": 172,
+     "size": [
+      8.8,
+      3.61,
+      0.59
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 172,
+   "collision": "box",
+   "size": [
+    8.8,
+    3.61,
+    0.59
+   ]
+  },
+  "Fern601": {
+   "parts": [
+    {
+     "name": "Fern601",
+     "tris": 560,
+     "size": [
+      6.86,
+      1.7,
+      6.19
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 560,
+   "collision": "none",
+   "size": [
+    6.86,
+    1.7,
+    6.19
+   ]
+  },
+  "Fern602": {
+   "parts": [
+    {
+     "name": "Fern602",
+     "tris": 640,
+     "size": [
+      8.88,
+      2.09,
+      9.67
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 640,
+   "collision": "none",
+   "size": [
+    8.88,
+    2.09,
+    9.67
+   ]
+  },
+  "Flowerscloth903": {
+   "parts": [
+    {
+     "name": "Flowerscloth903",
+     "tris": 782,
+     "size": [
+      2.89,
+      1.54,
+      2.45
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 782,
+   "collision": "none",
+   "size": [
+    2.89,
+    1.54,
+    2.45
+   ]
+  },
+  "Flowerscloth903_v001": {
+   "parts": [
+    {
+     "name": "Flowerscloth903_v001",
+     "tris": 782,
+     "size": [
+      2.89,
+      1.54,
+      2.45
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 782,
+   "collision": "none",
+   "size": [
+    2.89,
+    1.54,
+    2.45
+   ]
+  },
+  "Flowerscream902": {
+   "parts": [
+    {
+     "name": "Flowerscream902",
+     "tris": 784,
+     "size": [
+      2.3,
+      1.59,
+      2.1
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 784,
+   "collision": "none",
+   "size": [
+    2.3,
+    1.59,
+    2.1
+   ]
+  },
+  "GlowShroom400": {
+   "parts": [
+    {
+     "name": "GlowShroom400",
+     "tris": 56,
+     "size": [
+      0.72,
+      1.48,
+      0.82
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "GlowShroom400_Glow_shroom",
+     "tris": 172,
+     "size": [
+      2.27,
+      0.98,
+      2.29
+     ],
+     "glow": "shroom",
+     "color": [
+      31,
+      200,
+      255
+     ]
+    }
+   ],
+   "tris": 228,
+   "collision": "hull",
+   "size": [
+    2.27,
+    2.11,
+    2.29
+   ]
+  },
+  "GlowShroom401": {
+   "parts": [
+    {
+     "name": "GlowShroom401",
+     "tris": 56,
+     "size": [
+      0.72,
+      1.55,
+      0.76
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "GlowShroom401_Glow_shroom",
+     "tris": 172,
+     "size": [
+      2.27,
+      0.96,
+      2.25
+     ],
+     "glow": "shroom",
+     "color": [
+      31,
+      200,
+      255
+     ]
+    }
+   ],
+   "tris": 228,
+   "collision": "hull",
+   "size": [
+    2.27,
+    2.19,
+    2.25
+   ]
+  },
+  "LanternPost": {
+   "parts": [
+    {
+     "name": "LanternPost",
+     "tris": 246,
+     "size": [
+      2.6,
+      7.3,
+      0.95
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "LanternPost_Glow_lamp",
+     "tris": 44,
+     "size": [
+      0.55,
+      0.95,
+      0.55
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      179,
+      71
+     ]
+    }
+   ],
+   "tris": 290,
+   "collision": "box",
+   "size": [
+    2.6,
+    7.3,
+    0.95
+   ]
+  },
+  "Lily1201": {
+   "parts": [
+    {
+     "name": "Lily1201",
+     "tris": 248,
+     "size": [
+      4.06,
+      0.61,
+      4.96
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 248,
+   "collision": "none",
+   "size": [
+    4.06,
+    0.61,
+    4.96
+   ]
+  },
+  "Lily1202": {
+   "parts": [
+    {
+     "name": "Lily1202",
+     "tris": 204,
+     "size": [
+      2.79,
+      0.61,
+      3.1
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 204,
+   "collision": "none",
+   "size": [
+    2.79,
+    0.61,
+    3.1
+   ]
+  },
+  "Log301": {
+   "parts": [
+    {
+     "name": "Log301",
+     "tris": 1304,
+     "size": [
+      6.4,
+      2.14,
+      1.6
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1304,
+   "collision": "hull",
+   "size": [
+    6.4,
+    2.14,
+    1.6
+   ]
+  },
+  "Log802": {
+   "parts": [
+    {
+     "name": "Log802",
+     "tris": 1304,
+     "size": [
+      9.43,
+      2.59,
+      2.2
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1304,
+   "collision": "hull",
+   "size": [
+    9.43,
+    2.59,
+    2.2
+   ]
+  },
+  "Oak102": {
+   "parts": [
+    {
+     "name": "Oak102",
+     "tris": 952,
+     "size": [
+      20.69,
+      22.57,
+      17.74
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 952,
+   "collision": "hull",
+   "size": [
+    20.69,
+    22.57,
+    17.74
+   ]
+  },
+  "Oak102_v001": {
+   "parts": [
+    {
+     "name": "Oak102_v001",
+     "tris": 952,
+     "size": [
+      23.5,
+      25.65,
+      20.15
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 952,
+   "collision": "hull",
+   "size": [
+    23.5,
+    25.65,
+    20.15
+   ]
+  },
+  "Oak102_v002": {
+   "parts": [
+    {
+     "name": "Oak102_v002",
+     "tris": 952,
+     "size": [
+      19.78,
+      21.57,
+      16.97
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 952,
+   "collision": "hull",
+   "size": [
+    19.78,
+    21.57,
+    16.97
+   ]
+  },
+  "Oak104": {
+   "parts": [
+    {
+     "name": "Oak104",
+     "tris": 750,
+     "size": [
+      19.38,
+      25.75,
+      18.26
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 750,
+   "collision": "hull",
+   "size": [
+    19.38,
+    25.75,
+    18.26
+   ]
+  },
+  "Pine201": {
+   "parts": [
+    {
+     "name": "Pine201",
+     "tris": 244,
+     "size": [
+      18.74,
+      35.36,
+      19.1
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 244,
+   "collision": "hull",
+   "size": [
+    18.74,
+    35.36,
+    19.1
+   ]
+  },
+  "Pine202": {
+   "parts": [
+    {
+     "name": "Pine202",
+     "tris": 244,
+     "size": [
+      16.96,
+      31.54,
+      16.86
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 244,
+   "collision": "hull",
+   "size": [
+    16.96,
+    31.54,
+    16.86
+   ]
+  },
+  "Pine203": {
+   "parts": [
+    {
+     "name": "Pine203",
+     "tris": 244,
+     "size": [
+      18.93,
+      35.21,
+      18.89
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 244,
+   "collision": "hull",
+   "size": [
+    18.93,
+    35.21,
+    18.89
+   ]
+  },
+  "QuestBoard": {
+   "parts": [
+    {
+     "name": "QuestBoard",
+     "tris": 524,
+     "size": [
+      9.97,
+      11.09,
+      2.6
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "QuestBoard_Glow_gold",
+     "tris": 68,
+     "size": [
+      1.03,
+      4.09,
+      0.92
+     ],
+     "glow": "gold",
+     "color": [
+      255,
+      198,
+      26
+     ]
+    }
+   ],
+   "tris": 592,
+   "collision": "box",
+   "size": [
+    9.97,
+    16.0,
+    2.6
+   ]
+  },
+  "Reeds1101": {
+   "parts": [
+    {
+     "name": "Reeds1101",
+     "tris": 350,
+     "size": [
+      2.11,
+      5.09,
+      2.75
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 350,
+   "collision": "none",
+   "size": [
+    2.11,
+    5.09,
+    2.75
+   ]
+  },
+  "RngAltar": {
+   "parts": [
+    {
+     "name": "RngAltar",
+     "tris": 828,
+     "size": [
+      25.69,
+      10.08,
+      25.69
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "RngAltar_Glow_crystal",
+     "tris": 250,
+     "size": [
+      19.61,
+      11.64,
+      19.51
+     ],
+     "glow": "crystal",
+     "color": [
+      154,
+      92,
+      255
+     ]
+    },
+    {
+     "name": "RngAltar_Glow_rune",
+     "tris": 2032,
+     "size": [
+      22.53,
+      13.81,
+      22.29
+     ],
+     "glow": "rune",
+     "color": [
+      63,
+      230,
+      255
+     ]
+    }
+   ],
+   "tris": 3110,
+   "collision": "precise",
+   "size": [
+    25.69,
+    16.99,
+    25.69
+   ]
+  },
+  "Rock702": {
+   "parts": [
+    {
+     "name": "Rock702",
+     "tris": 46,
+     "size": [
+      6.26,
+      2.96,
+      5.3
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 46,
+   "collision": "hull",
+   "size": [
+    6.26,
+    2.96,
+    5.3
+   ]
+  },
+  "Rock703": {
+   "parts": [
+    {
+     "name": "Rock703",
+     "tris": 42,
+     "size": [
+      5.88,
+      2.78,
+      5.07
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 42,
+   "collision": "hull",
+   "size": [
+    5.88,
+    2.78,
+    5.07
+   ]
+  },
+  "Rock703_v001": {
+   "parts": [
+    {
+     "name": "Rock703_v001",
+     "tris": 42,
+     "size": [
+      5.88,
+      2.78,
+      5.07
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 42,
+   "collision": "hull",
+   "size": [
+    5.88,
+    2.78,
+    5.07
+   ]
+  },
+  "Rock703_v002": {
+   "parts": [
+    {
+     "name": "Rock703_v002",
+     "tris": 42,
+     "size": [
+      5.88,
+      2.78,
+      5.07
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 42,
+   "collision": "hull",
+   "size": [
+    5.88,
+    2.78,
+    5.07
+   ]
+  },
+  "Shroom410": {
+   "parts": [
+    {
+     "name": "Shroom410",
+     "tris": 344,
+     "size": [
+      2.26,
+      2.1,
+      2.26
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 344,
+   "collision": "hull",
+   "size": [
+    2.26,
+    2.1,
+    2.26
+   ]
+  },
+  "Shroom411": {
+   "parts": [
+    {
+     "name": "Shroom411",
+     "tris": 346,
+     "size": [
+      2.25,
+      2.06,
+      2.28
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 346,
+   "collision": "hull",
+   "size": [
+    2.25,
+    2.06,
+    2.28
+   ]
+  },
+  "Signpost": {
+   "parts": [
+    {
+     "name": "Signpost",
+     "tris": 68,
+     "size": [
+      7.34,
+      6.5,
+      5.57
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 68,
+   "collision": "box",
+   "size": [
+    7.34,
+    6.5,
+    5.57
+   ]
+  },
+  "Steps1301": {
+   "parts": [
+    {
+     "name": "Steps1301",
+     "tris": 196,
+     "size": [
+      2.21,
+      0.73,
+      14.47
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 196,
+   "collision": "hull",
+   "size": [
+    2.21,
+    0.73,
+    14.47
+   ]
+  },
+  "Stump801": {
+   "parts": [
+    {
+     "name": "Stump801",
+     "tris": 200,
+     "size": [
+      4.95,
+      1.99,
+      5.02
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 200,
+   "collision": "hull",
+   "size": [
+    4.95,
+    1.99,
+    5.02
+   ]
+  },
+  "Tent1": {
+   "parts": [
+    {
+     "name": "Tent1",
+     "tris": 135,
+     "size": [
+      8.2,
+      6.28,
+      9.2
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 135,
+   "collision": "precise",
+   "size": [
+    8.2,
+    6.28,
+    9.2
+   ]
+  },
+  "Tent2": {
+   "parts": [
+    {
+     "name": "Tent2",
+     "tris": 135,
+     "size": [
+      7.2,
+      5.78,
+      8.2
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 135,
+   "collision": "precise",
+   "size": [
+    7.2,
+    5.78,
+    8.2
+   ]
+  },
+  "Tuft1001": {
+   "parts": [
+    {
+     "name": "Tuft1001",
+     "tris": 90,
+     "size": [
+      1.27,
+      1.91,
+      0.96
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 90,
+   "collision": "none",
+   "size": [
+    1.27,
+    1.91,
+    0.96
+   ]
+  },
+  "Tuft1001_v001": {
+   "parts": [
+    {
+     "name": "Tuft1001_v001",
+     "tris": 90,
+     "size": [
+      1.27,
+      1.91,
+      0.96
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 90,
+   "collision": "none",
+   "size": [
+    1.27,
+    1.91,
+    0.96
+   ]
+  }
+ },
+ "static": [
+  {
+   "name": "PlazaPaving_0",
+   "group": "Ground",
+   "tris": 6034,
+   "size": [
+    54.16,
+    0.77,
+    54.66
+   ]
+  },
+  {
+   "name": "Ground_0",
+   "group": "Ground",
+   "tris": 12321,
+   "size": [
+    112.0,
+    28.97,
+    222.0
+   ]
+  },
+  {
+   "name": "Ground_1",
+   "group": "Ground",
+   "tris": 12321,
+   "size": [
+    112.0,
+    35.64,
+    222.0
+   ]
+  },
+  {
+   "name": "Ground_2",
+   "group": "Ground",
+   "tris": 12321,
+   "size": [
+    112.0,
+    30.08,
+    222.0
+   ]
+  },
+  {
+   "name": "Ground_3",
+   "group": "Ground",
+   "tris": 12321,
+   "size": [
+    112.0,
+    32.5,
+    222.0
+   ]
+  },
+  {
+   "name": "Ground_4",
+   "group": "Ground",
+   "tris": 12321,
+   "size": [
+    112.0,
+    35.21,
+    222.0
+   ]
+  },
+  {
+   "name": "Ground_5",
+   "group": "Ground",
+   "tris": 12321,
+   "size": [
+    112.0,
+    36.85,
+    222.0
+   ]
+  },
+  {
+   "name": "Ground_6",
+   "group": "Ground",
+   "tris": 12321,
+   "size": [
+    112.0,
+    31.71,
+    222.0
+   ]
+  },
+  {
+   "name": "Ground_7",
+   "group": "Ground",
+   "tris": 12321,
+   "size": [
+    112.0,
+    32.61,
+    222.0
+   ]
+  },
+  {
+   "name": "Stream_Water_0",
+   "group": "Ground",
+   "tris": 142,
+   "size": [
+    210.74,
+    0.0,
+    39.0
+   ]
+  },
+  {
+   "name": "Pool_Water_0",
+   "group": "Ground",
+   "tris": 92,
+   "size": [
+    32.0,
+    0.05,
+    32.0
+   ]
+  },
+  {
+   "name": "Horizon_0",
+   "group": "Ground",
+   "tris": 1160,
+   "size": [
+    1300.0,
+    151.94,
+    1300.0
+   ]
+  }
+ ],
+ "bigparts": [],
+ "look": {
+  "SunDir": [
+   0.471,
+   0.542,
+   -0.696
+  ],
+  "SunElevation": 32.8,
+  "ClockTime": 8.19,
+  "SunColor": [
+   255,
+   222,
+   178
+  ],
+  "Brightness": 2.79,
+  "AtmosphereDensity": 0.23,
+  "AtmosphereColor": [
+   233,
+   246,
+   255
+  ],
+  "Horizon": [
+   238,
+   238,
+   228
+  ],
+  "Zenith": [
+   128,
+   183,
+   243
+  ]
+ }
+}

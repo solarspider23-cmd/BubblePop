@@ -1,0 +1,44 @@
+{
+ "columns": {
+  "0": "SmoothPlastic",
+  "1": "Limestone",
+  "2": "Sandstone",
+  "3": "Rock",
+  "4": "Wood",
+  "5": "WoodPlanks",
+  "6": "LeafyGrass",
+  "7": "LeafyGrass",
+  "8": "Grass",
+  "9": "Glass",
+  "10": "SmoothPlastic",
+  "11": "SmoothPlastic",
+  "12": "SmoothPlastic",
+  "13": "SmoothPlastic",
+  "14": "LeafyGrass",
+  "15": "Metal"
+ },
+ "names": [
+  "white",
+  "cream",
+  "stone",
+  "rock",
+  "wood",
+  "woodlt",
+  "leaf",
+  "pine",
+  "grass",
+  "water",
+  "roofA",
+  "roofB",
+  "roofC",
+  "roofD",
+  "maple",
+  "iron"
+ ],
+ "overrides": {
+  "Horizon_Peaks": "SmoothPlastic",
+  "Hardscape_T1": "Limestone",
+  "Hardscape_T2": "Limestone",
+  "Hardscape_T3": "Limestone"
+ }
+}

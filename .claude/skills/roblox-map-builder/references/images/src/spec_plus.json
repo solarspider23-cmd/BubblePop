@@ -1,0 +1,42 @@
+{
+ "img": "../plan_plus.png",
+ "out": "../plan_plus_annotated.jpg",
+ "center": [
+  0,
+  -1080
+ ],
+ "size": 2500,
+ "title": "+1 Speed Run (zone strip)",
+ "labels": [
+  {
+   "text": "Hub: spawn pad, treadmills, hatchery, shop, rebirth, leaderboard",
+   "x": 0,
+   "z": 0,
+   "color": "#62c84a"
+  },
+  {
+   "text": "START arch over the track mouth",
+   "x": 0,
+   "z": -100,
+   "color": "#ffc21a"
+  },
+  {
+   "text": "8 zones x 250 studs, each its own checker, walls, dressing, gate + wins pads",
+   "x": 0,
+   "z": -700,
+   "color": "#ff6fae"
+  },
+  {
+   "text": "Stepped 3-tier canyon walls (24-wide blocks + caps) with themed props on the caps",
+   "x": 120,
+   "z": -1200,
+   "color": "#a0603e"
+  },
+  {
+   "text": "FINISH arch, gold plaza, 1-2-3 podium + giant trophy",
+   "x": 0,
+   "z": -2180,
+   "color": "#fff2a0"
+  }
+ ]
+}

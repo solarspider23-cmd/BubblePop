@@ -1,0 +1,9 @@
+{"img": "../plan_frost.png", "out": "../plan_frost_annotated.jpg", "center": [0, 0], "size": 470, "title": "Frostpeak (village)",
+ "labels": [
+  {"text": "Spawn on the south street", "x": 0, "z": 76, "color": "#ff4f9a"},
+  {"text": "Market square: roll well + 4 stalls", "x": 0, "z": 0, "color": "#ffffff"},
+  {"text": "Hero: Frost Spire on its terrace", "x": 0, "z": -138, "color": "#ffc928"},
+  {"text": "Frozen pond + fishing huts", "x": 104, "z": -22, "color": "#3ab6ff"},
+  {"text": "Cabins on level pads, doors turned to the street (front_to)", "x": -46, "z": 30, "color": "#ff8a1f"},
+  {"text": "Snowy pine rim + slopes show rock", "x": -190, "z": -150, "color": "#62d14a"}],
+ "arrows": [{"from": [0, 70], "to": [0, -110], "color": "#ffc928"}]}

@@ -1,0 +1,10 @@
+{"img": "../plan_grove.png", "out": "../plan_grove_annotated.jpg", "center": [0, 0], "size": 470, "title": "Whispering Grove (hub bowl)",
+ "labels": [
+  {"text": "Spawn on the south path, looking north at the hero", "x": 0, "z": 110, "color": "#ff4f9a"},
+  {"text": "Central plaza + altar: all paths meet here", "x": 0, "z": 0, "color": "#ffffff"},
+  {"text": "Hero: Elder Tree with a real cut doorway, on a plateau", "x": 0, "z": -140, "color": "#ffc928"},
+  {"text": "Stream + pond carved into the heightfield, bridge on the path", "x": -60, "z": -58, "color": "#3ab6ff"},
+  {"text": "Camp district (west)", "x": -90, "z": 20, "color": "#ff8a1f"},
+  {"text": "Crystal grove district (east)", "x": 92, "z": -24, "color": "#8a52ff"},
+  {"text": "Dense rim wall of trees contains the space", "x": -200, "z": 160, "color": "#62d14a"}],
+ "arrows": [{"from": [0, 100], "to": [0, -110], "color": "#ffc928"}]}

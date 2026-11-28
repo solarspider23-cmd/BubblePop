@@ -1,0 +1,2592 @@
+{
+ "name": "Bloomcrest",
+ "format": "glb",
+ "props": {
+  "BerryBaskets": {
+   "parts": [
+    {
+     "name": "BerryBaskets",
+     "tris": 3194,
+     "size": [
+      5.65,
+      3.91,
+      3.22
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 3194,
+   "collision": "box",
+   "size": [
+    5.65,
+    3.91,
+    3.22
+   ]
+  },
+  "Bollard": {
+   "parts": [
+    {
+     "name": "Bollard",
+     "tris": 116,
+     "size": [
+      1.3,
+      2.9,
+      1.24
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Bollard_Glow_lamp",
+     "tris": 38,
+     "size": [
+      1.14,
+      0.4,
+      1.08
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      241,
+      204
+     ]
+    }
+   ],
+   "tris": 154,
+   "collision": "box",
+   "size": [
+    1.3,
+    2.9,
+    1.24
+   ]
+  },
+  "CapsuleFountain": {
+   "parts": [
+    {
+     "name": "CapsuleFountain",
+     "tris": 4100,
+     "size": [
+      16.2,
+      12.55,
+      16.2
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "CapsuleFountain_Glow_gem",
+     "tris": 84,
+     "size": [
+      1.07,
+      1.0,
+      0.72
+     ],
+     "glow": "gem",
+     "color": [
+      200,
+      255,
+      244
+     ]
+    },
+    {
+     "name": "CapsuleFountain_Glow_heal",
+     "tris": 304,
+     "size": [
+      8.1,
+      4.78,
+      8.1
+     ],
+     "glow": "heal",
+     "color": [
+      84,
+      255,
+      198
+     ]
+    }
+   ],
+   "tris": 4488,
+   "collision": "precise",
+   "size": [
+    16.2,
+    12.55,
+    16.2
+   ]
+  },
+  "CapsuleShelf1": {
+   "parts": [
+    {
+     "name": "CapsuleShelf1",
+     "tris": 8890,
+     "size": [
+      10.35,
+      11.96,
+      2.75
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "CapsuleShelf1_Glow_gem",
+     "tris": 244,
+     "size": [
+      7.33,
+      8.73,
+      0.92
+     ],
+     "glow": "gem",
+     "color": [
+      200,
+      255,
+      244
+     ]
+    }
+   ],
+   "tris": 9134,
+   "collision": "box",
+   "size": [
+    10.35,
+    11.96,
+    2.75
+   ]
+  },
+  "Cloud1": {
+   "parts": [
+    {
+     "name": "Cloud1",
+     "tris": 448,
+     "size": [
+      87.16,
+      18.79,
+      36.33
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 448,
+   "collision": "none",
+   "size": [
+    87.16,
+    18.79,
+    36.33
+   ]
+  },
+  "Cloud2": {
+   "parts": [
+    {
+     "name": "Cloud2",
+     "tris": 444,
+     "size": [
+      95.86,
+      16.33,
+      35.49
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 444,
+   "collision": "none",
+   "size": [
+    95.86,
+    16.33,
+    35.49
+   ]
+  },
+  "Cloud3": {
+   "parts": [
+    {
+     "name": "Cloud3",
+     "tris": 422,
+     "size": [
+      85.33,
+      18.04,
+      41.24
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 422,
+   "collision": "none",
+   "size": [
+    85.33,
+    18.04,
+    41.24
+   ]
+  },
+  "DisplayRack": {
+   "parts": [
+    {
+     "name": "DisplayRack",
+     "tris": 8368,
+     "size": [
+      5.4,
+      8.51,
+      5.4
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "DisplayRack_Glow_gem",
+     "tris": 204,
+     "size": [
+      3.13,
+      5.75,
+      2.71
+     ],
+     "glow": "gem",
+     "color": [
+      200,
+      255,
+      244
+     ]
+    }
+   ],
+   "tris": 8572,
+   "collision": "box",
+   "size": [
+    5.4,
+    8.51,
+    5.4
+   ]
+  },
+  "DockCables": {
+   "parts": [
+    {
+     "name": "DockCables",
+     "tris": 628,
+     "size": [
+      17.3,
+      5.2,
+      6.8
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "DockCables_Glow_screen",
+     "tris": 210,
+     "size": [
+      16.58,
+      3.6,
+      0.76
+     ],
+     "glow": "screen",
+     "color": [
+      134,
+      214,
+      255
+     ]
+    },
+    {
+     "name": "DockCables_Glow_heal",
+     "tris": 72,
+     "size": [
+      0.14,
+      3.64,
+      0.06
+     ],
+     "glow": "heal",
+     "color": [
+      84,
+      255,
+      198
+     ]
+    }
+   ],
+   "tris": 910,
+   "collision": "none",
+   "size": [
+    17.3,
+    5.2,
+    6.8
+   ]
+  },
+  "DrinkCooler": {
+   "parts": [
+    {
+     "name": "DrinkCooler",
+     "tris": 512,
+     "size": [
+      2.2,
+      5.85,
+      2.1
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 512,
+   "collision": "box",
+   "size": [
+    2.2,
+    5.85,
+    2.1
+   ]
+  },
+  "EntranceCanopy": {
+   "parts": [
+    {
+     "name": "EntranceCanopy",
+     "tris": 2010,
+     "size": [
+      21.24,
+      24.31,
+      10.62
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "EntranceCanopy_Glow_lamp",
+     "tris": 166,
+     "size": [
+      17.41,
+      0.23,
+      5.84
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      241,
+      204
+     ]
+    }
+   ],
+   "tris": 2176,
+   "collision": "precise",
+   "size": [
+    21.24,
+    24.31,
+    10.62
+   ]
+  },
+  "EntryMat": {
+   "parts": [
+    {
+     "name": "EntryMat",
+     "tris": 532,
+     "size": [
+      14.0,
+      0.22,
+      6.0
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 532,
+   "collision": "none",
+   "size": [
+    14.0,
+    0.22,
+    6.0
+   ]
+  },
+  "EvoChamber": {
+   "parts": [
+    {
+     "name": "EvoChamber",
+     "tris": 6866,
+     "size": [
+      25.85,
+      18.71,
+      22.27
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "EvoChamber_Glow_evo",
+     "tris": 2232,
+     "size": [
+      17.33,
+      14.98,
+      17.33
+     ],
+     "glow": "evo",
+     "color": [
+      142,
+      244,
+      255
+     ]
+    },
+    {
+     "name": "EvoChamber_Glow_screen",
+     "tris": 44,
+     "size": [
+      3.38,
+      1.9,
+      2.84
+     ],
+     "glow": "screen",
+     "color": [
+      134,
+      214,
+      255
+     ]
+    }
+   ],
+   "tris": 9142,
+   "collision": "precise",
+   "size": [
+    25.85,
+    18.71,
+    22.27
+   ]
+  },
+  "FiddleFig1": {
+   "parts": [
+    {
+     "name": "FiddleFig1",
+     "tris": 4396,
+     "size": [
+      5.94,
+      9.72,
+      5.7
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 4396,
+   "collision": "hull",
+   "size": [
+    5.94,
+    9.72,
+    5.7
+   ]
+  },
+  "FiddleFig2": {
+   "parts": [
+    {
+     "name": "FiddleFig2",
+     "tris": 5064,
+     "size": [
+      6.39,
+      9.42,
+      6.76
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 5064,
+   "collision": "hull",
+   "size": [
+    6.39,
+    9.42,
+    6.76
+   ]
+  },
+  "FlowerBed1": {
+   "parts": [
+    {
+     "name": "FlowerBed1",
+     "tris": 1212,
+     "size": [
+      6.46,
+      1.14,
+      3.34
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1212,
+   "collision": "none",
+   "size": [
+    6.46,
+    1.14,
+    3.34
+   ]
+  },
+  "FlowerBed2": {
+   "parts": [
+    {
+     "name": "FlowerBed2",
+     "tris": 1212,
+     "size": [
+      7.04,
+      1.12,
+      2.89
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1212,
+   "collision": "none",
+   "size": [
+    7.04,
+    1.12,
+    2.89
+   ]
+  },
+  "FlowerBed3": {
+   "parts": [
+    {
+     "name": "FlowerBed3",
+     "tris": 1212,
+     "size": [
+      6.72,
+      1.18,
+      3.24
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1212,
+   "collision": "none",
+   "size": [
+    6.72,
+    1.18,
+    3.24
+   ]
+  },
+  "GardenWall14": {
+   "parts": [
+    {
+     "name": "GardenWall14",
+     "tris": 222,
+     "size": [
+      14.9,
+      3.55,
+      1.6
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 222,
+   "collision": "box",
+   "size": [
+    14.9,
+    3.55,
+    1.6
+   ]
+  },
+  "HallCeiling": {
+   "parts": [
+    {
+     "name": "HallCeiling",
+     "tris": 3712,
+     "size": [
+      86.09,
+      8.8,
+      86.09
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 3712,
+   "collision": "none",
+   "size": [
+    86.09,
+    8.8,
+    86.09
+   ]
+  },
+  "HallTrim": {
+   "parts": [
+    {
+     "name": "HallTrim",
+     "tris": 4040,
+     "size": [
+      87.4,
+      20.15,
+      86.11
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "HallTrim_Glow_lamp",
+     "tris": 672,
+     "size": [
+      86.9,
+      0.12,
+      85.62
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      241,
+      204
+     ]
+    }
+   ],
+   "tris": 4712,
+   "collision": "none",
+   "size": [
+    87.4,
+    20.15,
+    86.11
+   ]
+  },
+  "HangingArt1": {
+   "parts": [
+    {
+     "name": "HangingArt1",
+     "tris": 216,
+     "size": [
+      5.8,
+      7.3,
+      0.5
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 216,
+   "collision": "none",
+   "size": [
+    5.8,
+    7.3,
+    0.5
+   ]
+  },
+  "HangingArt2": {
+   "parts": [
+    {
+     "name": "HangingArt2",
+     "tris": 216,
+     "size": [
+      5.8,
+      7.3,
+      0.5
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 216,
+   "collision": "none",
+   "size": [
+    5.8,
+    7.3,
+    0.5
+   ]
+  },
+  "HangingArt3": {
+   "parts": [
+    {
+     "name": "HangingArt3",
+     "tris": 216,
+     "size": [
+      5.8,
+      7.3,
+      0.5
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 216,
+   "collision": "none",
+   "size": [
+    5.8,
+    7.3,
+    0.5
+   ]
+  },
+  "HangingClock": {
+   "parts": [
+    {
+     "name": "HangingClock",
+     "tris": 432,
+     "size": [
+      2.9,
+      2.9,
+      0.48
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 432,
+   "collision": "none",
+   "size": [
+    2.9,
+    2.9,
+    0.48
+   ]
+  },
+  "HangingPotC": {
+   "parts": [
+    {
+     "name": "HangingPotC",
+     "tris": 1534,
+     "size": [
+      3.09,
+      7.53,
+      2.48
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1534,
+   "collision": "none",
+   "size": [
+    3.09,
+    7.53,
+    2.48
+   ]
+  },
+  "HealCorner": {
+   "parts": [
+    {
+     "name": "HealCorner",
+     "tris": 2054,
+     "size": [
+      10.0,
+      2.1,
+      5.7
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 2054,
+   "collision": "none",
+   "size": [
+    10.0,
+    2.1,
+    5.7
+   ]
+  },
+  "HealCounter": {
+   "parts": [
+    {
+     "name": "HealCounter",
+     "tris": 2812,
+     "size": [
+      15.32,
+      6.1,
+      5.04
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "HealCounter_Glow_screen",
+     "tris": 88,
+     "size": [
+      8.6,
+      1.1,
+      0.42
+     ],
+     "glow": "screen",
+     "color": [
+      134,
+      214,
+      255
+     ]
+    }
+   ],
+   "tris": 2900,
+   "collision": "precise",
+   "size": [
+    15.32,
+    6.1,
+    5.04
+   ]
+  },
+  "HealMachine": {
+   "parts": [
+    {
+     "name": "HealMachine",
+     "tris": 6378,
+     "size": [
+      15.9,
+      13.48,
+      5.05
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "HealMachine_Glow_heal",
+     "tris": 932,
+     "size": [
+      11.26,
+      5.93,
+      2.72
+     ],
+     "glow": "heal",
+     "color": [
+      84,
+      255,
+      198
+     ]
+    },
+    {
+     "name": "HealMachine_Glow_gem",
+     "tris": 48,
+     "size": [
+      10.1,
+      0.09,
+      0.1
+     ],
+     "glow": "gem",
+     "color": [
+      200,
+      255,
+      244
+     ]
+    },
+    {
+     "name": "HealMachine_Glow_liquid",
+     "tris": 88,
+     "size": [
+      15.1,
+      5.4,
+      1.1
+     ],
+     "glow": "liquid",
+     "color": [
+      82,
+      255,
+      168
+     ]
+    },
+    {
+     "name": "HealMachine_Glow_screen",
+     "tris": 44,
+     "size": [
+      1.51,
+      1.0,
+      0.61
+     ],
+     "glow": "screen",
+     "color": [
+      134,
+      214,
+      255
+     ]
+    }
+   ],
+   "tris": 7490,
+   "collision": "box",
+   "size": [
+    15.9,
+    13.48,
+    5.05
+   ]
+  },
+  "LabArchway": {
+   "parts": [
+    {
+     "name": "LabArchway",
+     "tris": 1642,
+     "size": [
+      20.8,
+      20.45,
+      3.26
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "LabArchway_Glow_heal",
+     "tris": 206,
+     "size": [
+      17.23,
+      4.53,
+      0.22
+     ],
+     "glow": "heal",
+     "color": [
+      84,
+      255,
+      198
+     ]
+    }
+   ],
+   "tris": 1848,
+   "collision": "precise",
+   "size": [
+    20.8,
+    20.45,
+    3.26
+   ]
+  },
+  "LabShelf": {
+   "parts": [
+    {
+     "name": "LabShelf",
+     "tris": 3654,
+     "size": [
+      9.35,
+      8.83,
+      2.15
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 3654,
+   "collision": "box",
+   "size": [
+    9.35,
+    8.83,
+    2.15
+   ]
+  },
+  "LabWing": {
+   "parts": [
+    {
+     "name": "LabWing",
+     "tris": 3880,
+     "size": [
+      52.6,
+      21.4,
+      82.3
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 3880,
+   "collision": "precise",
+   "size": [
+    52.6,
+    21.4,
+    82.3
+   ]
+  },
+  "LampPost": {
+   "parts": [
+    {
+     "name": "LampPost",
+     "tris": 764,
+     "size": [
+      1.9,
+      13.9,
+      1.9
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "LampPost_Glow_lamp",
+     "tris": 32,
+     "size": [
+      0.8,
+      1.3,
+      0.8
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      241,
+      204
+     ]
+    },
+    {
+     "name": "LampPost_Glow_gem",
+     "tris": 8,
+     "size": [
+      0.07,
+      0.07,
+      0.09
+     ],
+     "glow": "gem",
+     "color": [
+      200,
+      255,
+      244
+     ]
+    }
+   ],
+   "tris": 804,
+   "collision": "box",
+   "size": [
+    1.9,
+    13.9,
+    1.9
+   ]
+  },
+  "LilyPads1": {
+   "parts": [
+    {
+     "name": "LilyPads1",
+     "tris": 504,
+     "size": [
+      4.79,
+      0.46,
+      4.65
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 504,
+   "collision": "none",
+   "size": [
+    4.79,
+    0.46,
+    4.65
+   ]
+  },
+  "LilyPads2": {
+   "parts": [
+    {
+     "name": "LilyPads2",
+     "tris": 504,
+     "size": [
+      5.61,
+      0.46,
+      4.13
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 504,
+   "collision": "none",
+   "size": [
+    5.61,
+    0.46,
+    4.13
+   ]
+  },
+  "LongPlanter12": {
+   "parts": [
+    {
+     "name": "LongPlanter12",
+     "tris": 1220,
+     "size": [
+      12.3,
+      4.47,
+      2.95
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1220,
+   "collision": "box",
+   "size": [
+    12.3,
+    4.47,
+    2.95
+   ]
+  },
+  "MedShelf1": {
+   "parts": [
+    {
+     "name": "MedShelf1",
+     "tris": 4516,
+     "size": [
+      8.35,
+      10.2,
+      2.18
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 4516,
+   "collision": "box",
+   "size": [
+    8.35,
+    10.2,
+    2.18
+   ]
+  },
+  "MicroscopeBench": {
+   "parts": [
+    {
+     "name": "MicroscopeBench",
+     "tris": 1102,
+     "size": [
+      4.7,
+      7.25,
+      3.1
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1102,
+   "collision": "box",
+   "size": [
+    4.7,
+    7.25,
+    3.1
+   ]
+  },
+  "Monstera1": {
+   "parts": [
+    {
+     "name": "Monstera1",
+     "tris": 1732,
+     "size": [
+      6.32,
+      4.31,
+      6.46
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1732,
+   "collision": "box",
+   "size": [
+    6.32,
+    4.31,
+    6.46
+   ]
+  },
+  "Monstera2": {
+   "parts": [
+    {
+     "name": "Monstera2",
+     "tris": 1732,
+     "size": [
+      6.5,
+      4.19,
+      6.28
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1732,
+   "collision": "box",
+   "size": [
+    6.5,
+    4.19,
+    6.28
+   ]
+  },
+  "OliveTree2": {
+   "parts": [
+    {
+     "name": "OliveTree2",
+     "tris": 4660,
+     "size": [
+      4.77,
+      9.29,
+      4.09
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 4660,
+   "collision": "hull",
+   "size": [
+    4.77,
+    9.29,
+    4.09
+   ]
+  },
+  "PCTerminal": {
+   "parts": [
+    {
+     "name": "PCTerminal",
+     "tris": 1894,
+     "size": [
+      3.97,
+      7.52,
+      3.29
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "PCTerminal_Glow_screen",
+     "tris": 44,
+     "size": [
+      2.9,
+      1.88,
+      0.32
+     ],
+     "glow": "screen",
+     "color": [
+      134,
+      214,
+      255
+     ]
+    },
+    {
+     "name": "PCTerminal_Glow_gem",
+     "tris": 96,
+     "size": [
+      0.12,
+      0.96,
+      0.96
+     ],
+     "glow": "gem",
+     "color": [
+      200,
+      255,
+      244
+     ]
+    }
+   ],
+   "tris": 2034,
+   "collision": "box",
+   "size": [
+    4.01,
+    7.52,
+    3.29
+   ]
+  },
+  "ParkBench": {
+   "parts": [
+    {
+     "name": "ParkBench",
+     "tris": 1052,
+     "size": [
+      7.0,
+      4.6,
+      2.63
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1052,
+   "collision": "box",
+   "size": [
+    7.0,
+    4.6,
+    2.63
+   ]
+  },
+  "ParkTree1": {
+   "parts": [
+    {
+     "name": "ParkTree1",
+     "tris": 3668,
+     "size": [
+      12.87,
+      17.91,
+      12.56
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 3668,
+   "collision": "hull",
+   "size": [
+    12.87,
+    17.91,
+    12.56
+   ]
+  },
+  "ParkTree2": {
+   "parts": [
+    {
+     "name": "ParkTree2",
+     "tris": 3104,
+     "size": [
+      14.25,
+      21.04,
+      15.11
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 3104,
+   "collision": "hull",
+   "size": [
+    14.25,
+    21.04,
+    15.11
+   ]
+  },
+  "ParkTree3": {
+   "parts": [
+    {
+     "name": "ParkTree3",
+     "tris": 3768,
+     "size": [
+      11.22,
+      15.42,
+      11.31
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 3768,
+   "collision": "hull",
+   "size": [
+    11.22,
+    15.42,
+    11.31
+   ]
+  },
+  "PendantLampM": {
+   "parts": [
+    {
+     "name": "PendantLampM",
+     "tris": 356,
+     "size": [
+      3.06,
+      7.03,
+      3.06
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "PendantLampM_Glow_lamp",
+     "tris": 24,
+     "size": [
+      2.4,
+      0.5,
+      2.4
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      241,
+      204
+     ]
+    }
+   ],
+   "tris": 380,
+   "collision": "none",
+   "size": [
+    3.06,
+    7.03,
+    3.06
+   ]
+  },
+  "PendantLampT": {
+   "parts": [
+    {
+     "name": "PendantLampT",
+     "tris": 356,
+     "size": [
+      3.06,
+      5.03,
+      3.06
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "PendantLampT_Glow_lamp",
+     "tris": 24,
+     "size": [
+      2.4,
+      0.5,
+      2.4
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      241,
+      204
+     ]
+    }
+   ],
+   "tris": 380,
+   "collision": "none",
+   "size": [
+    3.06,
+    5.03,
+    3.06
+   ]
+  },
+  "PinkParkTree4": {
+   "parts": [
+    {
+     "name": "PinkParkTree4",
+     "tris": 3206,
+     "size": [
+      10.44,
+      14.31,
+      10.27
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 3206,
+   "collision": "hull",
+   "size": [
+    10.44,
+    14.31,
+    10.27
+   ]
+  },
+  "PlushCoral": {
+   "parts": [
+    {
+     "name": "PlushCoral",
+     "tris": 592,
+     "size": [
+      1.98,
+      2.5,
+      2.67
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 592,
+   "collision": "none",
+   "size": [
+    1.98,
+    2.5,
+    2.67
+   ]
+  },
+  "PlushMint": {
+   "parts": [
+    {
+     "name": "PlushMint",
+     "tris": 592,
+     "size": [
+      1.98,
+      2.5,
+      2.67
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 592,
+   "collision": "none",
+   "size": [
+    1.98,
+    2.5,
+    2.67
+   ]
+  },
+  "PotionShelf2": {
+   "parts": [
+    {
+     "name": "PotionShelf2",
+     "tris": 5464,
+     "size": [
+      10.35,
+      9.33,
+      2.35
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 5464,
+   "collision": "box",
+   "size": [
+    10.35,
+    9.33,
+    2.35
+   ]
+  },
+  "Reeds1": {
+   "parts": [
+    {
+     "name": "Reeds1",
+     "tris": 144,
+     "size": [
+      2.22,
+      4.13,
+      1.73
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 144,
+   "collision": "none",
+   "size": [
+    2.22,
+    4.13,
+    1.73
+   ]
+  },
+  "RestNook": {
+   "parts": [
+    {
+     "name": "RestNook",
+     "tris": 1758,
+     "size": [
+      14.0,
+      2.66,
+      9.2
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1758,
+   "collision": "precise",
+   "size": [
+    14.0,
+    2.66,
+    9.2
+   ]
+  },
+  "RopeLine4": {
+   "parts": [
+    {
+     "name": "RopeLine4",
+     "tris": 782,
+     "size": [
+      13.2,
+      3.12,
+      1.2
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 782,
+   "collision": "box",
+   "size": [
+    13.2,
+    3.12,
+    1.2
+   ]
+  },
+  "Rotunda": {
+   "parts": [
+    {
+     "name": "Rotunda",
+     "tris": 16690,
+     "size": [
+      96.0,
+      40.7,
+      96.0
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Rotunda_Glow_heal",
+     "tris": 72,
+     "size": [
+      1.8,
+      1.7,
+      1.8
+     ],
+     "glow": "heal",
+     "color": [
+      84,
+      255,
+      198
+     ]
+    }
+   ],
+   "tris": 16762,
+   "collision": "precise",
+   "size": [
+    96.0,
+    42.3,
+    96.0
+   ]
+  },
+  "RoundBush1b": {
+   "parts": [
+    {
+     "name": "RoundBush1b",
+     "tris": 1004,
+     "size": [
+      3.83,
+      2.56,
+      3.96
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1004,
+   "collision": "none",
+   "size": [
+    3.83,
+    2.56,
+    3.96
+   ]
+  },
+  "RoundBush2g": {
+   "parts": [
+    {
+     "name": "RoundBush2g",
+     "tris": 1004,
+     "size": [
+      3.89,
+      2.49,
+      4.18
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1004,
+   "collision": "none",
+   "size": [
+    3.89,
+    2.49,
+    4.18
+   ]
+  },
+  "RoundPlanter2": {
+   "parts": [
+    {
+     "name": "RoundPlanter2",
+     "tris": 2288,
+     "size": [
+      5.8,
+      4.29,
+      5.8
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 2288,
+   "collision": "box",
+   "size": [
+    5.8,
+    4.29,
+    5.8
+   ]
+  },
+  "RoundRugM": {
+   "parts": [
+    {
+     "name": "RoundRugM",
+     "tris": 778,
+     "size": [
+      16.0,
+      0.14,
+      16.0
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 778,
+   "collision": "none",
+   "size": [
+    16.0,
+    0.14,
+    16.0
+   ]
+  },
+  "RoundRugT": {
+   "parts": [
+    {
+     "name": "RoundRugT",
+     "tris": 778,
+     "size": [
+      16.0,
+      0.14,
+      16.0
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 778,
+   "collision": "none",
+   "size": [
+    16.0,
+    0.14,
+    16.0
+   ]
+  },
+  "SaleStand": {
+   "parts": [
+    {
+     "name": "SaleStand",
+     "tris": 1972,
+     "size": [
+      4.95,
+      3.8,
+      2.05
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "SaleStand_Glow_gem",
+     "tris": 48,
+     "size": [
+      1.14,
+      0.39,
+      1.17
+     ],
+     "glow": "gem",
+     "color": [
+      200,
+      255,
+      244
+     ]
+    }
+   ],
+   "tris": 2020,
+   "collision": "box",
+   "size": [
+    4.95,
+    3.8,
+    2.05
+   ]
+  },
+  "ShopCounter": {
+   "parts": [
+    {
+     "name": "ShopCounter",
+     "tris": 4336,
+     "size": [
+      12.6,
+      6.31,
+      4.05
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "ShopCounter_Glow_gem",
+     "tris": 48,
+     "size": [
+      4.83,
+      0.08,
+      0.1
+     ],
+     "glow": "gem",
+     "color": [
+      200,
+      255,
+      244
+     ]
+    },
+    {
+     "name": "ShopCounter_Glow_screen",
+     "tris": 44,
+     "size": [
+      1.6,
+      0.97,
+      0.3
+     ],
+     "glow": "screen",
+     "color": [
+      134,
+      214,
+      255
+     ]
+    }
+   ],
+   "tris": 4428,
+   "collision": "box",
+   "size": [
+    12.6,
+    6.31,
+    4.05
+   ]
+  },
+  "SlidingDoors": {
+   "parts": [
+    {
+     "name": "SlidingDoors",
+     "tris": 1188,
+     "size": [
+      22.4,
+      14.0,
+      1.6
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "SlidingDoors_Glow_screen",
+     "tris": 44,
+     "size": [
+      0.8,
+      0.14,
+      0.1
+     ],
+     "glow": "screen",
+     "color": [
+      134,
+      214,
+      255
+     ]
+    }
+   ],
+   "tris": 1232,
+   "collision": "none",
+   "size": [
+    22.4,
+    14.0,
+    1.67
+   ]
+  },
+  "SnakePlant1": {
+   "parts": [
+    {
+     "name": "SnakePlant1",
+     "tris": 736,
+     "size": [
+      2.35,
+      7.28,
+      2.35
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 736,
+   "collision": "box",
+   "size": [
+    2.35,
+    7.28,
+    2.35
+   ]
+  },
+  "SnakePlant2": {
+   "parts": [
+    {
+     "name": "SnakePlant2",
+     "tris": 736,
+     "size": [
+      2.35,
+      6.95,
+      2.35
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 736,
+   "collision": "box",
+   "size": [
+    2.35,
+    6.95,
+    2.35
+   ]
+  },
+  "SnakePlant3": {
+   "parts": [
+    {
+     "name": "SnakePlant3",
+     "tris": 736,
+     "size": [
+      2.35,
+      7.11,
+      2.35
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 736,
+   "collision": "box",
+   "size": [
+    2.35,
+    7.11,
+    2.35
+   ]
+  },
+  "SpecimenTankA": {
+   "parts": [
+    {
+     "name": "SpecimenTankA",
+     "tris": 2468,
+     "size": [
+      5.5,
+      12.86,
+      6.39
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "SpecimenTankA_Glow_screen",
+     "tris": 44,
+     "size": [
+      1.6,
+      0.35,
+      0.06
+     ],
+     "glow": "screen",
+     "color": [
+      134,
+      214,
+      255
+     ]
+    },
+    {
+     "name": "SpecimenTankA_Glow_liquid",
+     "tris": 60,
+     "size": [
+      3.6,
+      7.1,
+      3.6
+     ],
+     "glow": "liquid",
+     "color": [
+      82,
+      255,
+      168
+     ]
+    }
+   ],
+   "tris": 2572,
+   "collision": "box",
+   "size": [
+    5.5,
+    12.86,
+    6.39
+   ]
+  },
+  "SpecimenTankB": {
+   "parts": [
+    {
+     "name": "SpecimenTankB",
+     "tris": 2468,
+     "size": [
+      5.5,
+      12.86,
+      6.39
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "SpecimenTankB_Glow_screen",
+     "tris": 44,
+     "size": [
+      1.6,
+      0.35,
+      0.06
+     ],
+     "glow": "screen",
+     "color": [
+      134,
+      214,
+      255
+     ]
+    },
+    {
+     "name": "SpecimenTankB_Glow_liquid2",
+     "tris": 60,
+     "size": [
+      3.6,
+      7.1,
+      3.6
+     ],
+     "glow": "liquid2",
+     "color": [
+      255,
+      154,
+      184
+     ]
+    }
+   ],
+   "tris": 2572,
+   "collision": "box",
+   "size": [
+    5.5,
+    12.86,
+    6.39
+   ]
+  },
+  "StarterTable": {
+   "parts": [
+    {
+     "name": "StarterTable",
+     "tris": 6106,
+     "size": [
+      10.74,
+      7.06,
+      10.74
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "StarterTable_Glow_gem",
+     "tris": 330,
+     "size": [
+      5.8,
+      0.75,
+      1.51
+     ],
+     "glow": "gem",
+     "color": [
+      200,
+      255,
+      244
+     ]
+    }
+   ],
+   "tris": 6436,
+   "collision": "precise",
+   "size": [
+    10.74,
+    7.06,
+    10.74
+   ]
+  },
+  "SteppingStone": {
+   "parts": [
+    {
+     "name": "SteppingStone",
+     "tris": 70,
+     "size": [
+      2.6,
+      0.8,
+      2.08
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 70,
+   "collision": "precise",
+   "size": [
+    2.6,
+    0.8,
+    2.08
+   ]
+  },
+  "SupplyBoxes1": {
+   "parts": [
+    {
+     "name": "SupplyBoxes1",
+     "tris": 2928,
+     "size": [
+      7.98,
+      4.12,
+      4.97
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "SupplyBoxes1_Glow_gem",
+     "tris": 40,
+     "size": [
+      1.51,
+      0.05,
+      0.93
+     ],
+     "glow": "gem",
+     "color": [
+      200,
+      255,
+      244
+     ]
+    }
+   ],
+   "tris": 2968,
+   "collision": "box",
+   "size": [
+    7.98,
+    4.12,
+    4.97
+   ]
+  },
+  "Topiary8": {
+   "parts": [
+    {
+     "name": "Topiary8",
+     "tris": 584,
+     "size": [
+      8.4,
+      4.75,
+      2.9
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 584,
+   "collision": "box",
+   "size": [
+    8.4,
+    4.75,
+    2.9
+   ]
+  },
+  "TradeDesk": {
+   "parts": [
+    {
+     "name": "TradeDesk",
+     "tris": 4502,
+     "size": [
+      11.4,
+      6.5,
+      9.3
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "TradeDesk_Glow_screen",
+     "tris": 88,
+     "size": [
+      10.3,
+      1.0,
+      0.06
+     ],
+     "glow": "screen",
+     "color": [
+      134,
+      214,
+      255
+     ]
+    },
+    {
+     "name": "TradeDesk_Glow_gem",
+     "tris": 168,
+     "size": [
+      6.37,
+      0.18,
+      0.16
+     ],
+     "glow": "gem",
+     "color": [
+      200,
+      255,
+      244
+     ]
+    }
+   ],
+   "tris": 4758,
+   "collision": "precise",
+   "size": [
+    11.4,
+    6.5,
+    9.3
+   ]
+  },
+  "TrophyShelf": {
+   "parts": [
+    {
+     "name": "TrophyShelf",
+     "tris": 2724,
+     "size": [
+      7.4,
+      5.7,
+      1.64
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "TrophyShelf_Glow_gem",
+     "tris": 84,
+     "size": [
+      0.18,
+      0.18,
+      0.13
+     ],
+     "glow": "gem",
+     "color": [
+      200,
+      255,
+      244
+     ]
+    }
+   ],
+   "tris": 2808,
+   "collision": "box",
+   "size": [
+    7.4,
+    5.7,
+    1.64
+   ]
+  },
+  "VendingMachineC": {
+   "parts": [
+    {
+     "name": "VendingMachineC",
+     "tris": 2320,
+     "size": [
+      4.8,
+      8.19,
+      3.67
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "VendingMachineC_Glow_screen",
+     "tris": 44,
+     "size": [
+      0.8,
+      2.2,
+      0.1
+     ],
+     "glow": "screen",
+     "color": [
+      134,
+      214,
+      255
+     ]
+    }
+   ],
+   "tris": 2364,
+   "collision": "box",
+   "size": [
+    4.8,
+    8.19,
+    3.67
+   ]
+  },
+  "VendingMachineS": {
+   "parts": [
+    {
+     "name": "VendingMachineS",
+     "tris": 2320,
+     "size": [
+      4.8,
+      8.19,
+      3.67
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "VendingMachineS_Glow_screen",
+     "tris": 44,
+     "size": [
+      0.8,
+      2.2,
+      0.1
+     ],
+     "glow": "screen",
+     "color": [
+      134,
+      214,
+      255
+     ]
+    }
+   ],
+   "tris": 2364,
+   "collision": "box",
+   "size": [
+    4.8,
+    8.19,
+    3.67
+   ]
+  },
+  "WaitBenchT": {
+   "parts": [
+    {
+     "name": "WaitBenchT",
+     "tris": 816,
+     "size": [
+      8.1,
+      4.24,
+      2.57
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 816,
+   "collision": "box",
+   "size": [
+    8.1,
+    4.24,
+    2.57
+   ]
+  },
+  "WallCapsules": {
+   "parts": [
+    {
+     "name": "WallCapsules",
+     "tris": 3358,
+     "size": [
+      6.3,
+      4.25,
+      1.72
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "WallCapsules_Glow_gem",
+     "tris": 468,
+     "size": [
+      4.55,
+      0.6,
+      1.29
+     ],
+     "glow": "gem",
+     "color": [
+      200,
+      255,
+      244
+     ]
+    }
+   ],
+   "tris": 3826,
+   "collision": "none",
+   "size": [
+    6.3,
+    4.25,
+    1.77
+   ]
+  },
+  "WelcomeSign": {
+   "parts": [
+    {
+     "name": "WelcomeSign",
+     "tris": 3246,
+     "size": [
+      13.8,
+      9.98,
+      3.4
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 3246,
+   "collision": "box",
+   "size": [
+    13.8,
+    9.98,
+    3.4
+   ]
+  },
+  "Whiteboard": {
+   "parts": [
+    {
+     "name": "Whiteboard",
+     "tris": 1652,
+     "size": [
+      10.9,
+      9.12,
+      3.4
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1652,
+   "collision": "box",
+   "size": [
+    10.9,
+    9.12,
+    3.4
+   ]
+  },
+  "WingRoof": {
+   "parts": [
+    {
+     "name": "WingRoof",
+     "tris": 4636,
+     "size": [
+      52.2,
+      9.2,
+      84.1
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 4636,
+   "collision": "none",
+   "size": [
+    52.2,
+    9.2,
+    84.1
+   ]
+  },
+  "WingTrim": {
+   "parts": [
+    {
+     "name": "WingTrim",
+     "tris": 948,
+     "size": [
+      48.04,
+      16.27,
+      81.7
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "WingTrim_Glow_lamp",
+     "tris": 156,
+     "size": [
+      47.2,
+      0.1,
+      77.45
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      241,
+      204
+     ]
+    }
+   ],
+   "tris": 1104,
+   "collision": "none",
+   "size": [
+    48.04,
+    16.27,
+    81.7
+   ]
+  },
+  "Workbench1": {
+   "parts": [
+    {
+     "name": "Workbench1",
+     "tris": 2032,
+     "size": [
+      8.1,
+      6.95,
+      3.5
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Workbench1_Glow_lamp",
+     "tris": 20,
+     "size": [
+      0.9,
+      0.1,
+      0.86
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      241,
+      204
+     ]
+    }
+   ],
+   "tris": 2052,
+   "collision": "box",
+   "size": [
+    8.1,
+    6.95,
+    3.5
+   ]
+  }
+ },
+ "static": [
+  {
+   "name": "Floor_Hall_0",
+   "group": "Floors",
+   "tris": 13750,
+   "size": [
+    88.4,
+    2.65,
+    88.4
+   ]
+  },
+  {
+   "name": "Floor_Wing_0",
+   "group": "Floors",
+   "tris": 3508,
+   "size": [
+    48.6,
+    2.6,
+    83.0
+   ]
+  },
+  {
+   "name": "Hardscape_Plaza_0",
+   "group": "Outside",
+   "tris": 9598,
+   "size": [
+    90.4,
+    2.3,
+    88.38
+   ]
+  },
+  {
+   "name": "Pond_Water_0",
+   "group": "Garden",
+   "tris": 38,
+   "size": [
+    31.2,
+    0.0,
+    31.2
+   ]
+  },
+  {
+   "name": "Hardscape_Garden_0",
+   "group": "Garden",
+   "tris": 5086,
+   "size": [
+    174.37,
+    3.38,
+    258.42
+   ]
+  },
+  {
+   "name": "Ground_Lawn_0",
+   "group": "Ground",
+   "tris": 14482,
+   "size": [
+    700.0,
+    57.01,
+    1400.0
+   ]
+  },
+  {
+   "name": "Ground_Lawn_1",
+   "group": "Ground",
+   "tris": 14482,
+   "size": [
+    700.0,
+    58.75,
+    1400.0
+   ]
+  },
+  {
+   "name": "Horizon_Hills_0",
+   "group": "Horizon",
+   "tris": 8772,
+   "size": [
+    1776.81,
+    152.99,
+    1816.09
+   ]
+  }
+ ],
+ "bigparts": [],
+ "look": {
+  "SunDir": [
+   0.43,
+   0.743,
+   0.513
+  ],
+  "SunElevation": 48.0,
+  "ClockTime": 9.2,
+  "SunColor": [
+   255,
+   245,
+   229
+  ],
+  "Brightness": 3.14,
+  "Horizon": [
+   220,
+   243,
+   255
+  ],
+  "Zenith": [
+   97,
+   172,
+   246
+  ]
+ }
+}

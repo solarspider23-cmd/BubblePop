@@ -1,0 +1,55 @@
+{
+ "columns": {
+  "0": "SmoothPlastic",
+  "1": "SmoothPlastic",
+  "2": "Grass",
+  "3": "Grass",
+  "4": "LeafyGrass",
+  "5": "LeafyGrass",
+  "6": "LeafyGrass",
+  "7": "Sand",
+  "8": "Glass",
+  "9": "Wood",
+  "10": "Wood",
+  "11": "SmoothPlastic",
+  "12": "Slate",
+  "13": "Cobblestone",
+  "14": "SmoothPlastic",
+  "15": "SmoothPlastic"
+ },
+ "names": [
+  "white",
+  "rock",
+  "moss",
+  "grass",
+  "leaf",
+  "pine",
+  "blossom",
+  "sand",
+  "water",
+  "wood",
+  "wooddk",
+  "shoji",
+  "roof",
+  "stone",
+  "flower",
+  "red"
+ ],
+ "overrides": {
+  "FishingDock": {
+   "wood": "WoodPlanks"
+  },
+  "FootBridge": {
+   "wood": "WoodPlanks"
+  },
+  "Waterfall": {
+   "water": "Glass",
+   "rock": "SmoothPlastic"
+  },
+  "StoneStair": "Slate",
+  "Ground_Valley": {
+   "rock": "SmoothPlastic",
+   "sand": "Sand"
+  }
+ }
+}

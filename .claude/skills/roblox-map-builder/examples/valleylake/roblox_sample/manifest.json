@@ -1,0 +1,2157 @@
+{
+ "name": "MistvaleLake",
+ "format": "glb",
+ "props": {
+  "Bush1": {
+   "parts": [
+    {
+     "name": "Bush1",
+     "tris": 494,
+     "size": [
+      6.74,
+      3.08,
+      4.33
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 494,
+   "collision": "none",
+   "size": [
+    6.74,
+    3.08,
+    4.33
+   ]
+  },
+  "Bush3": {
+   "parts": [
+    {
+     "name": "Bush3",
+     "tris": 484,
+     "size": [
+      5.4,
+      2.57,
+      3.46
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 484,
+   "collision": "none",
+   "size": [
+    5.4,
+    2.57,
+    3.46
+   ]
+  },
+  "Bush4": {
+   "parts": [
+    {
+     "name": "Bush4",
+     "tris": 340,
+     "size": [
+      4.88,
+      2.36,
+      3.42
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 340,
+   "collision": "none",
+   "size": [
+    4.88,
+    2.36,
+    3.42
+   ]
+  },
+  "Crates1": {
+   "parts": [
+    {
+     "name": "Crates1",
+     "tris": 1448,
+     "size": [
+      6.56,
+      3.5,
+      3.34
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1448,
+   "collision": "box",
+   "size": [
+    6.56,
+    3.5,
+    3.34
+   ]
+  },
+  "Crates2": {
+   "parts": [
+    {
+     "name": "Crates2",
+     "tris": 1448,
+     "size": [
+      6.57,
+      3.5,
+      3.36
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1448,
+   "collision": "box",
+   "size": [
+    6.57,
+    3.5,
+    3.36
+   ]
+  },
+  "Crates3": {
+   "parts": [
+    {
+     "name": "Crates3",
+     "tris": 1448,
+     "size": [
+      6.52,
+      3.5,
+      3.31
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1448,
+   "collision": "box",
+   "size": [
+    6.52,
+    3.5,
+    3.31
+   ]
+  },
+  "FishingDock": {
+   "parts": [
+    {
+     "name": "FishingDock",
+     "tris": 4252,
+     "size": [
+      10.44,
+      13.21,
+      33.62
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "FishingDock_Glow_lamp",
+     "tris": 20,
+     "size": [
+      6.05,
+      0.48,
+      0.47
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      207,
+      110
+     ]
+    }
+   ],
+   "tris": 4272,
+   "collision": "precise",
+   "size": [
+    10.44,
+    13.21,
+    33.62
+   ]
+  },
+  "Flowers1": {
+   "parts": [
+    {
+     "name": "Flowers1",
+     "tris": 340,
+     "size": [
+      2.51,
+      2.09,
+      3.34
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 340,
+   "collision": "none",
+   "size": [
+    2.51,
+    2.09,
+    3.34
+   ]
+  },
+  "Flowers2": {
+   "parts": [
+    {
+     "name": "Flowers2",
+     "tris": 340,
+     "size": [
+      3.75,
+      2.07,
+      2.69
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 340,
+   "collision": "none",
+   "size": [
+    3.75,
+    2.07,
+    2.69
+   ]
+  },
+  "FootBridge": {
+   "parts": [
+    {
+     "name": "FootBridge",
+     "tris": 1696,
+     "size": [
+      5.0,
+      6.52,
+      17.06
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1696,
+   "collision": "precise",
+   "size": [
+    5.0,
+    6.52,
+    17.06
+   ]
+  },
+  "LanternPost1": {
+   "parts": [
+    {
+     "name": "LanternPost1",
+     "tris": 300,
+     "size": [
+      1.41,
+      6.85,
+      2.81
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "LanternPost1_Glow_lamp",
+     "tris": 12,
+     "size": [
+      0.6,
+      0.7,
+      0.6
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      207,
+      110
+     ]
+    }
+   ],
+   "tris": 312,
+   "collision": "box",
+   "size": [
+    1.41,
+    6.85,
+    2.81
+   ]
+  },
+  "LanternRope_28_0p1": {
+   "parts": [
+    {
+     "name": "LanternRope_28_0p1",
+     "tris": 586,
+     "size": [
+      28.09,
+      5.01,
+      0.94
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "LanternRope_28_0p1_Glow_lamp",
+     "tris": 30,
+     "size": [
+      14.5,
+      1.57,
+      0.52
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      207,
+      110
+     ]
+    }
+   ],
+   "tris": 616,
+   "collision": "none",
+   "size": [
+    28.09,
+    5.01,
+    0.94
+   ]
+  },
+  "LanternRope_29_0p1": {
+   "parts": [
+    {
+     "name": "LanternRope_29_0p1",
+     "tris": 586,
+     "size": [
+      29.09,
+      5.05,
+      0.94
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "LanternRope_29_0p1_Glow_lamp",
+     "tris": 30,
+     "size": [
+      15.0,
+      1.58,
+      0.52
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      207,
+      110
+     ]
+    }
+   ],
+   "tris": 616,
+   "collision": "none",
+   "size": [
+    29.09,
+    5.05,
+    0.94
+   ]
+  },
+  "LanternRope_34_0p2": {
+   "parts": [
+    {
+     "name": "LanternRope_34_0p2",
+     "tris": 586,
+     "size": [
+      34.08,
+      5.3,
+      0.94
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "LanternRope_34_0p2_Glow_lamp",
+     "tris": 30,
+     "size": [
+      17.5,
+      1.66,
+      0.52
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      207,
+      110
+     ]
+    }
+   ],
+   "tris": 616,
+   "collision": "none",
+   "size": [
+    34.08,
+    5.3,
+    0.94
+   ]
+  },
+  "LanternRope_35_0p2": {
+   "parts": [
+    {
+     "name": "LanternRope_35_0p2",
+     "tris": 586,
+     "size": [
+      35.08,
+      5.34,
+      0.94
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "LanternRope_35_0p2_Glow_lamp",
+     "tris": 30,
+     "size": [
+      18.0,
+      1.67,
+      0.52
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      207,
+      110
+     ]
+    }
+   ],
+   "tris": 616,
+   "collision": "none",
+   "size": [
+    35.08,
+    5.34,
+    0.94
+   ]
+  },
+  "LanternRope_36_0p1": {
+   "parts": [
+    {
+     "name": "LanternRope_36_0p1",
+     "tris": 586,
+     "size": [
+      36.08,
+      5.33,
+      0.94
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "LanternRope_36_0p1_Glow_lamp",
+     "tris": 30,
+     "size": [
+      18.5,
+      1.66,
+      0.52
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      207,
+      110
+     ]
+    }
+   ],
+   "tris": 616,
+   "collision": "none",
+   "size": [
+    36.08,
+    5.33,
+    0.94
+   ]
+  },
+  "LanternRope_37_0p2": {
+   "parts": [
+    {
+     "name": "LanternRope_37_0p2",
+     "tris": 586,
+     "size": [
+      37.07,
+      5.42,
+      0.94
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "LanternRope_37_0p2_Glow_lamp",
+     "tris": 30,
+     "size": [
+      19.0,
+      1.7,
+      0.52
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      207,
+      110
+     ]
+    }
+   ],
+   "tris": 616,
+   "collision": "none",
+   "size": [
+    37.07,
+    5.42,
+    0.94
+   ]
+  },
+  "LanternRope_38_0p2": {
+   "parts": [
+    {
+     "name": "LanternRope_38_0p2",
+     "tris": 586,
+     "size": [
+      38.07,
+      5.46,
+      0.94
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "LanternRope_38_0p2_Glow_lamp",
+     "tris": 30,
+     "size": [
+      19.5,
+      1.71,
+      0.52
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      207,
+      110
+     ]
+    }
+   ],
+   "tris": 616,
+   "collision": "none",
+   "size": [
+    38.07,
+    5.46,
+    0.94
+   ]
+  },
+  "LanternRope_41_0p5": {
+   "parts": [
+    {
+     "name": "LanternRope_41_0p5",
+     "tris": 586,
+     "size": [
+      41.07,
+      5.73,
+      0.94
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "LanternRope_41_0p5_Glow_lamp",
+     "tris": 30,
+     "size": [
+      21.0,
+      1.82,
+      0.52
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      207,
+      110
+     ]
+    }
+   ],
+   "tris": 616,
+   "collision": "none",
+   "size": [
+    41.07,
+    5.73,
+    0.94
+   ]
+  },
+  "LanternRope_42_m0p7": {
+   "parts": [
+    {
+     "name": "LanternRope_42_m0p7",
+     "tris": 586,
+     "size": [
+      42.07,
+      5.87,
+      0.94
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "LanternRope_42_m0p7_Glow_lamp",
+     "tris": 30,
+     "size": [
+      21.5,
+      1.88,
+      0.52
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      207,
+      110
+     ]
+    }
+   ],
+   "tris": 616,
+   "collision": "none",
+   "size": [
+    42.07,
+    5.87,
+    0.94
+   ]
+  },
+  "LanternRope_43_m0p7": {
+   "parts": [
+    {
+     "name": "LanternRope_43_m0p7",
+     "tris": 586,
+     "size": [
+      43.07,
+      5.91,
+      0.94
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "LanternRope_43_m0p7_Glow_lamp",
+     "tris": 30,
+     "size": [
+      22.0,
+      1.89,
+      0.52
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      207,
+      110
+     ]
+    }
+   ],
+   "tris": 616,
+   "collision": "none",
+   "size": [
+    43.07,
+    5.91,
+    0.94
+   ]
+  },
+  "LanternRope_49_m0p0": {
+   "parts": [
+    {
+     "name": "LanternRope_49_m0p0",
+     "tris": 748,
+     "size": [
+      49.06,
+      5.59,
+      0.94
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "LanternRope_49_m0p0_Glow_lamp",
+     "tris": 40,
+     "size": [
+      29.9,
+      2.09,
+      0.52
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      207,
+      110
+     ]
+    }
+   ],
+   "tris": 788,
+   "collision": "none",
+   "size": [
+    49.06,
+    5.59,
+    0.94
+   ]
+  },
+  "LanternRope_54_m0p1": {
+   "parts": [
+    {
+     "name": "LanternRope_54_m0p1",
+     "tris": 748,
+     "size": [
+      54.06,
+      5.84,
+      0.94
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "LanternRope_54_m0p1_Glow_lamp",
+     "tris": 40,
+     "size": [
+      32.9,
+      2.21,
+      0.52
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      207,
+      110
+     ]
+    }
+   ],
+   "tris": 788,
+   "collision": "none",
+   "size": [
+    54.06,
+    5.84,
+    0.94
+   ]
+  },
+  "LilyPads1": {
+   "parts": [
+    {
+     "name": "LilyPads1",
+     "tris": 556,
+     "size": [
+      6.82,
+      0.5,
+      6.67
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 556,
+   "collision": "none",
+   "size": [
+    6.82,
+    0.5,
+    6.67
+   ]
+  },
+  "LilyPads2": {
+   "parts": [
+    {
+     "name": "LilyPads2",
+     "tris": 556,
+     "size": [
+      7.78,
+      0.5,
+      5.95
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 556,
+   "collision": "none",
+   "size": [
+    7.78,
+    0.5,
+    5.95
+   ]
+  },
+  "LongHouse1": {
+   "parts": [
+    {
+     "name": "LongHouse1",
+     "tris": 5992,
+     "size": [
+      27.0,
+      14.6,
+      16.67
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "LongHouse1_Glow_shoji",
+     "tris": 240,
+     "size": [
+      23.96,
+      2.51,
+      10.96
+     ],
+     "glow": "shoji",
+     "color": [
+      255,
+      230,
+      176
+     ]
+    }
+   ],
+   "tris": 6232,
+   "collision": "precise",
+   "size": [
+    27.0,
+    14.6,
+    16.67
+   ]
+  },
+  "LongHouse3": {
+   "parts": [
+    {
+     "name": "LongHouse3",
+     "tris": 5992,
+     "size": [
+      27.0,
+      14.6,
+      16.67
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "LongHouse3_Glow_shoji",
+     "tris": 240,
+     "size": [
+      23.96,
+      2.51,
+      10.96
+     ],
+     "glow": "shoji",
+     "color": [
+      255,
+      230,
+      176
+     ]
+    }
+   ],
+   "tris": 6232,
+   "collision": "precise",
+   "size": [
+    27.0,
+    14.6,
+    16.67
+   ]
+  },
+  "MarketStall1": {
+   "parts": [
+    {
+     "name": "MarketStall1",
+     "tris": 3976,
+     "size": [
+      10.2,
+      8.9,
+      7.4
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "MarketStall1_Glow_lamp",
+     "tris": 20,
+     "size": [
+      7.6,
+      0.54,
+      0.52
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      207,
+      110
+     ]
+    }
+   ],
+   "tris": 3996,
+   "collision": "precise",
+   "size": [
+    10.2,
+    8.9,
+    7.4
+   ]
+  },
+  "MarketStall2": {
+   "parts": [
+    {
+     "name": "MarketStall2",
+     "tris": 3976,
+     "size": [
+      10.2,
+      8.9,
+      7.4
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "MarketStall2_Glow_lamp",
+     "tris": 20,
+     "size": [
+      7.6,
+      0.54,
+      0.52
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      207,
+      110
+     ]
+    }
+   ],
+   "tris": 3996,
+   "collision": "precise",
+   "size": [
+    10.2,
+    8.9,
+    7.4
+   ]
+  },
+  "MarketStall3": {
+   "parts": [
+    {
+     "name": "MarketStall3",
+     "tris": 3976,
+     "size": [
+      10.2,
+      8.9,
+      7.4
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "MarketStall3_Glow_lamp",
+     "tris": 20,
+     "size": [
+      7.6,
+      0.54,
+      0.52
+     ],
+     "glow": "lamp",
+     "color": [
+      255,
+      207,
+      110
+     ]
+    }
+   ],
+   "tris": 3996,
+   "collision": "precise",
+   "size": [
+    10.2,
+    8.9,
+    7.4
+   ]
+  },
+  "Reeds1": {
+   "parts": [
+    {
+     "name": "Reeds1",
+     "tris": 280,
+     "size": [
+      2.53,
+      5.5,
+      2.38
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 280,
+   "collision": "none",
+   "size": [
+    2.53,
+    5.5,
+    2.38
+   ]
+  },
+  "Reeds2": {
+   "parts": [
+    {
+     "name": "Reeds2",
+     "tris": 280,
+     "size": [
+      1.76,
+      5.2,
+      2.69
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 280,
+   "collision": "none",
+   "size": [
+    1.76,
+    5.2,
+    2.69
+   ]
+  },
+  "RockBare1": {
+   "parts": [
+    {
+     "name": "RockBare1",
+     "tris": 432,
+     "size": [
+      7.16,
+      5.24,
+      6.68
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 432,
+   "collision": "hull",
+   "size": [
+    7.16,
+    5.24,
+    6.68
+   ]
+  },
+  "RockKnob1": {
+   "parts": [
+    {
+     "name": "RockKnob1",
+     "tris": 700,
+     "size": [
+      12.89,
+      11.48,
+      10.93
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 700,
+   "collision": "hull",
+   "size": [
+    12.89,
+    11.48,
+    10.93
+   ]
+  },
+  "RockKnob2": {
+   "parts": [
+    {
+     "name": "RockKnob2",
+     "tris": 780,
+     "size": [
+      9.98,
+      7.69,
+      11.42
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 780,
+   "collision": "hull",
+   "size": [
+    9.98,
+    7.69,
+    11.42
+   ]
+  },
+  "RockMassiveVLo": {
+   "parts": [
+    {
+     "name": "RockMassiveVLo",
+     "tris": 372,
+     "size": [
+      42.32,
+      28.01,
+      32.97
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 372,
+   "collision": "hull",
+   "size": [
+    42.32,
+    28.01,
+    32.97
+   ]
+  },
+  "RockPillow1VLo": {
+   "parts": [
+    {
+     "name": "RockPillow1VLo",
+     "tris": 242,
+     "size": [
+      28.26,
+      16.81,
+      22.13
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 242,
+   "collision": "hull",
+   "size": [
+    28.26,
+    16.81,
+    22.13
+   ]
+  },
+  "RockPillow2": {
+   "parts": [
+    {
+     "name": "RockPillow2",
+     "tris": 700,
+     "size": [
+      23.89,
+      14.61,
+      23.3
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 700,
+   "collision": "hull",
+   "size": [
+    23.89,
+    14.61,
+    23.3
+   ]
+  },
+  "RockPillow2VLo": {
+   "parts": [
+    {
+     "name": "RockPillow2VLo",
+     "tris": 234,
+     "size": [
+      23.55,
+      14.33,
+      23.17
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 234,
+   "collision": "hull",
+   "size": [
+    23.55,
+    14.33,
+    23.17
+   ]
+  },
+  "RockTalus": {
+   "parts": [
+    {
+     "name": "RockTalus",
+     "tris": 260,
+     "size": [
+      7.9,
+      4.7,
+      6.15
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 260,
+   "collision": "hull",
+   "size": [
+    7.9,
+    4.7,
+    6.15
+   ]
+  },
+  "RockTower1VLo": {
+   "parts": [
+    {
+     "name": "RockTower1VLo",
+     "tris": 202,
+     "size": [
+      15.91,
+      29.29,
+      16.08
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 202,
+   "collision": "hull",
+   "size": [
+    15.91,
+    29.29,
+    16.08
+   ]
+  },
+  "RopePole1": {
+   "parts": [
+    {
+     "name": "RopePole1",
+     "tris": 396,
+     "size": [
+      4.0,
+      14.45,
+      1.4
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 396,
+   "collision": "box",
+   "size": [
+    4.0,
+    14.45,
+    1.4
+   ]
+  },
+  "SignStand1": {
+   "parts": [
+    {
+     "name": "SignStand1",
+     "tris": 324,
+     "size": [
+      4.6,
+      6.05,
+      1.31
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 324,
+   "collision": "box",
+   "size": [
+    4.6,
+    6.05,
+    1.31
+   ]
+  },
+  "SteppingStones1": {
+   "parts": [
+    {
+     "name": "SteppingStones1",
+     "tris": 960,
+     "size": [
+      3.38,
+      1.43,
+      14.07
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 960,
+   "collision": "precise",
+   "size": [
+    3.38,
+    1.43,
+    14.07
+   ]
+  },
+  "StoneStair": {
+   "parts": [
+    {
+     "name": "StoneStair",
+     "tris": 1520,
+     "size": [
+      8.6,
+      9.15,
+      11.57
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1520,
+   "collision": "precise",
+   "size": [
+    8.6,
+    9.15,
+    11.57
+   ]
+  },
+  "StoneWall1": {
+   "parts": [
+    {
+     "name": "StoneWall1",
+     "tris": 1040,
+     "size": [
+      8.0,
+      9.91,
+      2.6
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1040,
+   "collision": "precise",
+   "size": [
+    8.0,
+    9.91,
+    2.6
+   ]
+  },
+  "Storehouse3": {
+   "parts": [
+    {
+     "name": "Storehouse3",
+     "tris": 2128,
+     "size": [
+      11.6,
+      13.9,
+      13.8
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 2128,
+   "collision": "precise",
+   "size": [
+    11.6,
+    13.9,
+    13.8
+   ]
+  },
+  "TownHouse2": {
+   "parts": [
+    {
+     "name": "TownHouse2",
+     "tris": 5116,
+     "size": [
+      18.93,
+      18.9,
+      15.93
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "TownHouse2_Glow_shoji",
+     "tris": 324,
+     "size": [
+      13.96,
+      8.09,
+      10.96
+     ],
+     "glow": "shoji",
+     "color": [
+      255,
+      230,
+      176
+     ]
+    }
+   ],
+   "tris": 5440,
+   "collision": "precise",
+   "size": [
+    18.93,
+    18.9,
+    15.93
+   ]
+  },
+  "TownHouse4": {
+   "parts": [
+    {
+     "name": "TownHouse4",
+     "tris": 5116,
+     "size": [
+      18.93,
+      18.9,
+      15.93
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "TownHouse4_Glow_shoji",
+     "tris": 324,
+     "size": [
+      13.96,
+      8.09,
+      10.96
+     ],
+     "glow": "shoji",
+     "color": [
+      255,
+      230,
+      176
+     ]
+    }
+   ],
+   "tris": 5440,
+   "collision": "precise",
+   "size": [
+    18.93,
+    18.9,
+    15.93
+   ]
+  },
+  "TreeOakA_Branches": {
+   "parts": [
+    {
+     "name": "TreeOakA_Branches",
+     "tris": 872,
+     "size": [
+      22.4,
+      13.77,
+      23.75
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 872,
+   "collision": "none",
+   "size": [
+    22.4,
+    13.77,
+    23.75
+   ]
+  },
+  "TreeOakA_Leaves": {
+   "parts": [
+    {
+     "name": "TreeOakA_Leaves",
+     "tris": 2984,
+     "size": [
+      26.75,
+      16.18,
+      27.2
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 2984,
+   "collision": "none",
+   "size": [
+    26.75,
+    16.18,
+    27.2
+   ]
+  },
+  "TreeOakA_Trunk": {
+   "parts": [
+    {
+     "name": "TreeOakA_Trunk",
+     "tris": 4530,
+     "size": [
+      20.77,
+      21.36,
+      20.84
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 4530,
+   "collision": "hull",
+   "size": [
+    20.77,
+    21.36,
+    20.84
+   ]
+  },
+  "TreeOakB_Branches": {
+   "parts": [
+    {
+     "name": "TreeOakB_Branches",
+     "tris": 704,
+     "size": [
+      13.54,
+      17.1,
+      24.2
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 704,
+   "collision": "none",
+   "size": [
+    13.54,
+    17.1,
+    24.2
+   ]
+  },
+  "TreeOakB_Leaves": {
+   "parts": [
+    {
+     "name": "TreeOakB_Leaves",
+     "tris": 1880,
+     "size": [
+      14.99,
+      20.43,
+      24.77
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1880,
+   "collision": "none",
+   "size": [
+    14.99,
+    20.43,
+    24.77
+   ]
+  },
+  "TreeOakB_Trunk": {
+   "parts": [
+    {
+     "name": "TreeOakB_Trunk",
+     "tris": 3958,
+     "size": [
+      10.85,
+      24.16,
+      21.19
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 3958,
+   "collision": "hull",
+   "size": [
+    10.85,
+    24.16,
+    21.19
+   ]
+  },
+  "TreeOakHero_Branches": {
+   "parts": [
+    {
+     "name": "TreeOakHero_Branches",
+     "tris": 1376,
+     "size": [
+      25.97,
+      18.96,
+      20.18
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1376,
+   "collision": "none",
+   "size": [
+    25.97,
+    18.96,
+    20.18
+   ]
+  },
+  "TreeOakHero_Leaves": {
+   "parts": [
+    {
+     "name": "TreeOakHero_Leaves",
+     "tris": 7000,
+     "size": [
+      31.96,
+      18.22,
+      25.08
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 7000,
+   "collision": "none",
+   "size": [
+    31.96,
+    18.22,
+    25.08
+   ]
+  },
+  "TreeOakHero_Trunk": {
+   "parts": [
+    {
+     "name": "TreeOakHero_Trunk",
+     "tris": 7502,
+     "size": [
+      25.86,
+      24.81,
+      18.12
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 7502,
+   "collision": "hull",
+   "size": [
+    25.86,
+    24.81,
+    18.12
+   ]
+  },
+  "TreeOakPink_Branches": {
+   "parts": [
+    {
+     "name": "TreeOakPink_Branches",
+     "tris": 616,
+     "size": [
+      15.24,
+      10.63,
+      14.73
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 616,
+   "collision": "none",
+   "size": [
+    15.24,
+    10.63,
+    14.73
+   ]
+  },
+  "TreeOakPink_Leaves": {
+   "parts": [
+    {
+     "name": "TreeOakPink_Leaves",
+     "tris": 1792,
+     "size": [
+      16.54,
+      9.57,
+      16.86
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1792,
+   "collision": "none",
+   "size": [
+    16.54,
+    9.57,
+    16.86
+   ]
+  },
+  "TreeOakPink_Trunk": {
+   "parts": [
+    {
+     "name": "TreeOakPink_Trunk",
+     "tris": 3354,
+     "size": [
+      12.24,
+      12.84,
+      12.2
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 3354,
+   "collision": "hull",
+   "size": [
+    12.24,
+    12.84,
+    12.2
+   ]
+  },
+  "TreePineA_Branches": {
+   "parts": [
+    {
+     "name": "TreePineA_Branches",
+     "tris": 120,
+     "size": [
+      7.72,
+      13.76,
+      8.02
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 120,
+   "collision": "none",
+   "size": [
+    7.72,
+    13.76,
+    8.02
+   ]
+  },
+  "TreePineA_Leaves": {
+   "parts": [
+    {
+     "name": "TreePineA_Leaves",
+     "tris": 5500,
+     "size": [
+      21.15,
+      34.11,
+      21.21
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 5500,
+   "collision": "none",
+   "size": [
+    21.15,
+    34.11,
+    21.21
+   ]
+  },
+  "TreePineA_Trunk": {
+   "parts": [
+    {
+     "name": "TreePineA_Trunk",
+     "tris": 1914,
+     "size": [
+      15.29,
+      32.51,
+      14.99
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1914,
+   "collision": "hull",
+   "size": [
+    15.29,
+    32.51,
+    14.99
+   ]
+  },
+  "TreePineB_Branches": {
+   "parts": [
+    {
+     "name": "TreePineB_Branches",
+     "tris": 216,
+     "size": [
+      7.5,
+      10.73,
+      7.57
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 216,
+   "collision": "none",
+   "size": [
+    7.5,
+    10.73,
+    7.57
+   ]
+  },
+  "TreePineB_Leaves": {
+   "parts": [
+    {
+     "name": "TreePineB_Leaves",
+     "tris": 5380,
+     "size": [
+      19.3,
+      25.52,
+      18.18
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 5380,
+   "collision": "none",
+   "size": [
+    19.3,
+    25.52,
+    18.18
+   ]
+  },
+  "TreePineB_Trunk": {
+   "parts": [
+    {
+     "name": "TreePineB_Trunk",
+     "tris": 1766,
+     "size": [
+      14.16,
+      21.62,
+      12.63
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1766,
+   "collision": "hull",
+   "size": [
+    14.16,
+    21.62,
+    12.63
+   ]
+  },
+  "TreePineC_Branches": {
+   "parts": [
+    {
+     "name": "TreePineC_Branches",
+     "tris": 32,
+     "size": [
+      5.96,
+      8.58,
+      5.07
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 32,
+   "collision": "none",
+   "size": [
+    5.96,
+    8.58,
+    5.07
+   ]
+  },
+  "TreePineC_Leaves": {
+   "parts": [
+    {
+     "name": "TreePineC_Leaves",
+     "tris": 1996,
+     "size": [
+      20.42,
+      28.18,
+      17.76
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1996,
+   "collision": "none",
+   "size": [
+    20.42,
+    28.18,
+    17.76
+   ]
+  },
+  "TreePineC_Trunk": {
+   "parts": [
+    {
+     "name": "TreePineC_Trunk",
+     "tris": 1064,
+     "size": [
+      13.32,
+      24.51,
+      13.52
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 1064,
+   "collision": "hull",
+   "size": [
+    13.32,
+    24.51,
+    13.52
+   ]
+  },
+  "TreeYoungTree_Branches": {
+   "parts": [
+    {
+     "name": "TreeYoungTree_Branches",
+     "tris": 152,
+     "size": [
+      5.86,
+      5.79,
+      6.39
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 152,
+   "collision": "none",
+   "size": [
+    5.86,
+    5.79,
+    6.39
+   ]
+  },
+  "TreeYoungTree_Leaves": {
+   "parts": [
+    {
+     "name": "TreeYoungTree_Leaves",
+     "tris": 540,
+     "size": [
+      7.21,
+      7.17,
+      7.2
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 540,
+   "collision": "none",
+   "size": [
+    7.21,
+    7.17,
+    7.2
+   ]
+  },
+  "TreeYoungTree_Trunk": {
+   "parts": [
+    {
+     "name": "TreeYoungTree_Trunk",
+     "tris": 910,
+     "size": [
+      4.37,
+      8.28,
+      4.99
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 910,
+   "collision": "hull",
+   "size": [
+    4.37,
+    8.28,
+    4.99
+   ]
+  },
+  "Tuft1": {
+   "parts": [
+    {
+     "name": "Tuft1",
+     "tris": 45,
+     "size": [
+      2.1,
+      2.34,
+      2.88
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 45,
+   "collision": "none",
+   "size": [
+    2.1,
+    2.34,
+    2.88
+   ]
+  },
+  "Tuft2": {
+   "parts": [
+    {
+     "name": "Tuft2",
+     "tris": 45,
+     "size": [
+      2.46,
+      2.1,
+      1.89
+     ],
+     "glow": null,
+     "color": null
+    }
+   ],
+   "tris": 45,
+   "collision": "none",
+   "size": [
+    2.46,
+    2.1,
+    1.89
+   ]
+  },
+  "Waterfall": {
+   "parts": [
+    {
+     "name": "Waterfall",
+     "tris": 2866,
+     "size": [
+      49.63,
+      66.91,
+      17.01
+     ],
+     "glow": null,
+     "color": null
+    },
+    {
+     "name": "Waterfall_Glow_falls",
+     "tris": 216,
+     "size": [
+      28.77,
+      64.0,
+      9.2
+     ],
+     "glow": "falls",
+     "color": [
+      196,
+      244,
+      255
+     ]
+    },
+    {
+     "name": "Waterfall_Glow_foam",
+     "tris": 1360,
+     "size": [
+      40.16,
+      21.8,
+      23.45
+     ],
+     "glow": "foam",
+     "color": [
+      228,
+      251,
+      255
+     ]
+    }
+   ],
+   "tris": 4442,
+   "collision": "none",
+   "size": [
+    49.63,
+    70.07,
+    28.83
+   ]
+  }
+ },
+ "static": [
+  {
+   "name": "Cliff_Wall_0",
+   "group": "Cliffs",
+   "tris": 9360,
+   "size": [
+    422.73,
+    169.97,
+    402.57
+   ]
+  },
+  {
+   "name": "Cliff_Wall_1",
+   "group": "Cliffs",
+   "tris": 9360,
+   "size": [
+    392.97,
+    162.32,
+    398.17
+   ]
+  },
+  {
+   "name": "Cliff_Wall_2",
+   "group": "Cliffs",
+   "tris": 9360,
+   "size": [
+    421.79,
+    84.74,
+    400.87
+   ]
+  },
+  {
+   "name": "Cliff_Wall_3",
+   "group": "Cliffs",
+   "tris": 9360,
+   "size": [
+    426.34,
+    87.56,
+    503.12
+   ]
+  },
+  {
+   "name": "Ground_Valley_0",
+   "group": "Ground",
+   "tris": 9936,
+   "size": [
+    468.0,
+    14.35,
+    540.0
+   ]
+  },
+  {
+   "name": "Ground_Beach_0",
+   "group": "Ground",
+   "tris": 3960,
+   "size": [
+    174.14,
+    3.74,
+    158.36
+   ]
+  },
+  {
+   "name": "Path_Dirt_0",
+   "group": "Ground",
+   "tris": 1544,
+   "size": [
+    240.04,
+    9.0,
+    196.66
+   ]
+  },
+  {
+   "name": "Lake_Water_0",
+   "group": "Water",
+   "tris": 480,
+   "size": [
+    154.82,
+    0.0,
+    140.37
+   ]
+  },
+  {
+   "name": "Stream_Water_0",
+   "group": "Water",
+   "tris": 122,
+   "size": [
+    33.14,
+    0.38,
+    188.91
+   ]
+  },
+  {
+   "name": "Pool_Water_0",
+   "group": "Water",
+   "tris": 24,
+   "size": [
+    38.0,
+    0.0,
+    22.0
+   ]
+  }
+ ],
+ "bigparts": [],
+ "look": {
+  "SunDir": [
+   -0.26,
+   0.788,
+   0.558
+  ],
+  "SunElevation": 52.0,
+  "ClockTime": 14.53,
+  "SunColor": [
+   255,
+   247,
+   229
+  ],
+  "Brightness": 3.57,
+  "AtmosphereDensity": 0.266,
+  "AtmosphereColor": [
+   148,
+   230,
+   255
+  ],
+  "Horizon": [
+   177,
+   237,
+   255
+  ],
+  "Zenith": [
+   43,
+   111,
+   237
+  ]
+ }
+}

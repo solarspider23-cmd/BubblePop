@@ -1,0 +1,10 @@
+{"img": "../plan_sky.png", "out": "../plan_sky_annotated.jpg", "center": [60, -320], "size": 900, "title": "Skyrise (sky islands + zones)",
+ "labels": [
+  {"text": "Spawn island: plaza, egg shrine, sell pad, upgrade stand, leaderboard; teleport arc behind spawn", "x": 0, "z": 0, "color": "#ff6aae"},
+  {"text": "Zone 1 Meadow (y 14): coin piles + chests, puffy trees", "x": 0, "z": -230, "color": "#7dff6a"},
+  {"text": "Zone 2 Dune (y 34): cacti, mesas, coins", "x": -230, "z": -380, "color": "#ffcc33"},
+  {"text": "Zone 3 Frost (y 58): snow trees, ice spikes, crystal nodes", "x": 0, "z": -540, "color": "#5fdcff"},
+  {"text": "Zone 4 Ember (y 86): basalt, lava cracks + pools, gem nodes", "x": 230, "z": -400, "color": "#ff6a2a"},
+  {"text": "Summit (y 130): hero Trophy, highest point, seen from spawn", "x": 230, "z": -640, "color": "#ffe14a"},
+  {"text": "Zone gate at each bridge head, front facing the island you come from", "x": 0, "z": -120, "color": "#ffffff"},
+  {"text": "Winding stone path entry -> middle -> exit; resource clusters off the path", "x": -40, "z": -255, "color": "#b9bfd6"}]}

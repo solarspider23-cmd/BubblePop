@@ -1,0 +1,5073 @@
+{
+ "anchors": [
+  {
+   "name": "TownHallDoor",
+   "kind": "door",
+   "group": "Landmarks",
+   "pos": [
+    -0.0,
+    3.6,
+    -130.6
+   ],
+   "yaw": 0,
+   "size": [
+    9,
+    15,
+    2
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "Bank",
+   "kind": "station",
+   "group": "Stations",
+   "pos": [
+    -126.4,
+    3.6,
+    -28.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    8,
+    6,
+    4
+   ],
+   "attrs": {
+    "Station": "Bank"
+   }
+  },
+  {
+   "name": "Bank_Prompt",
+   "kind": "prompt",
+   "group": "Stations",
+   "pos": [
+    -111.0,
+    2.1,
+    -28.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    6,
+    6,
+    6
+   ],
+   "attrs": {
+    "Station": "Bank"
+   }
+  },
+  {
+   "name": "CarDealer",
+   "kind": "station",
+   "group": "Stations",
+   "pos": [
+    138.0,
+    1.9,
+    -13.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    14,
+    4,
+    14
+   ],
+   "attrs": {
+    "Station": "CarDealer"
+   }
+  },
+  {
+   "name": "CarDealer_Sign",
+   "kind": "sign",
+   "group": "Signs",
+   "pos": [
+    111.05,
+    15.6,
+    -19.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    40,
+    4,
+    0.2
+   ],
+   "attrs": {
+    "Station": "CarDealer"
+   }
+  },
+  {
+   "name": "JobBoard",
+   "kind": "station",
+   "group": "Stations",
+   "pos": [
+    -19.68,
+    6.5,
+    12.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    9,
+    6.6,
+    0.3
+   ],
+   "attrs": {
+    "Station": "JobBoard"
+   }
+  },
+  {
+   "name": "Shop_Sign",
+   "kind": "sign",
+   "group": "Signs",
+   "pos": [
+    -41.0,
+    11.6,
+    109.63
+   ],
+   "yaw": 0.0,
+   "size": [
+    25.8,
+    1.9000000000000008,
+    0.2
+   ],
+   "attrs": {
+    "Station": "Shop"
+   }
+  },
+  {
+   "name": "Shop",
+   "kind": "station",
+   "group": "Stations",
+   "pos": [
+    -30.4,
+    3.6,
+    109.0
+   ],
+   "yaw": 0.0,
+   "size": [
+    6,
+    6,
+    4
+   ],
+   "attrs": {
+    "Station": "Shop"
+   }
+  },
+  {
+   "name": "Cafe_Sign",
+   "kind": "sign",
+   "group": "Signs",
+   "pos": [
+    -10.7,
+    11.6,
+    109.63
+   ],
+   "yaw": 0.0,
+   "size": [
+    23.8,
+    1.9000000000000008,
+    0.2
+   ],
+   "attrs": {
+    "Station": "Cafe"
+   }
+  },
+  {
+   "name": "Cafe",
+   "kind": "station",
+   "group": "Stations",
+   "pos": [
+    -1.1,
+    3.6,
+    109.0
+   ],
+   "yaw": 0.0,
+   "size": [
+    6,
+    6,
+    4
+   ],
+   "attrs": {
+    "Station": "Cafe"
+   }
+  },
+  {
+   "name": "Boutique_Sign",
+   "kind": "sign",
+   "group": "Signs",
+   "pos": [
+    -127.0,
+    11.6,
+    109.63
+   ],
+   "yaw": 0.0,
+   "size": [
+    25.8,
+    1.9000000000000008,
+    0.2
+   ],
+   "attrs": {
+    "Station": "Boutique"
+   }
+  },
+  {
+   "name": "Boutique",
+   "kind": "station",
+   "group": "Stations",
+   "pos": [
+    -116.4,
+    3.6,
+    109.0
+   ],
+   "yaw": 0.0,
+   "size": [
+    6,
+    6,
+    4
+   ],
+   "attrs": {
+    "Station": "Boutique"
+   }
+  },
+  {
+   "name": "ShopSign01",
+   "kind": "sign",
+   "group": "Signs",
+   "pos": [
+    -41.0,
+    11.6,
+    109.63
+   ],
+   "yaw": 0.0,
+   "size": [
+    25.8,
+    1.9000000000000008,
+    0.2
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "ShopSign02",
+   "kind": "sign",
+   "group": "Signs",
+   "pos": [
+    -10.7,
+    11.6,
+    109.63
+   ],
+   "yaw": 0.0,
+   "size": [
+    23.8,
+    1.9000000000000008,
+    0.2
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "ShopSign03",
+   "kind": "sign",
+   "group": "Signs",
+   "pos": [
+    21.6,
+    11.6,
+    109.63
+   ],
+   "yaw": 0.0,
+   "size": [
+    29.8,
+    1.9000000000000008,
+    0.2
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "ShopSign04",
+   "kind": "sign",
+   "group": "Signs",
+   "pos": [
+    52.9,
+    11.6,
+    109.63
+   ],
+   "yaw": 0.0,
+   "size": [
+    21.8,
+    1.9000000000000008,
+    0.2
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "ShopSign05",
+   "kind": "sign",
+   "group": "Signs",
+   "pos": [
+    -127.0,
+    11.6,
+    109.63
+   ],
+   "yaw": 0.0,
+   "size": [
+    25.8,
+    1.9000000000000008,
+    0.2
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "ShopSign06",
+   "kind": "sign",
+   "group": "Signs",
+   "pos": [
+    -159.0,
+    11.6,
+    109.63
+   ],
+   "yaw": 0.0,
+   "size": [
+    29.8,
+    1.9000000000000008,
+    0.2
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "ShopSign08",
+   "kind": "sign",
+   "group": "Signs",
+   "pos": [
+    -215.0,
+    11.6,
+    109.63
+   ],
+   "yaw": 0.0,
+   "size": [
+    25.8,
+    1.9000000000000008,
+    0.2
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "ShopSign09",
+   "kind": "sign",
+   "group": "Signs",
+   "pos": [
+    -250.0,
+    11.6,
+    109.63
+   ],
+   "yaw": 0.0,
+   "size": [
+    35.8,
+    1.9000000000000008,
+    0.2
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "ShopSign10",
+   "kind": "sign",
+   "group": "Signs",
+   "pos": [
+    126.0,
+    11.6,
+    109.63
+   ],
+   "yaw": 0.0,
+   "size": [
+    23.8,
+    1.9000000000000008,
+    0.2
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "ShopSign11",
+   "kind": "sign",
+   "group": "Signs",
+   "pos": [
+    151.0,
+    11.6,
+    109.63
+   ],
+   "yaw": 0.0,
+   "size": [
+    17.8,
+    1.9000000000000008,
+    0.2
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "ShopSign12",
+   "kind": "sign",
+   "group": "Signs",
+   "pos": [
+    175.0,
+    11.6,
+    109.63
+   ],
+   "yaw": 0.0,
+   "size": [
+    21.8,
+    1.9000000000000008,
+    0.2
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "ShopSign13",
+   "kind": "sign",
+   "group": "Signs",
+   "pos": [
+    205.0,
+    11.6,
+    109.63
+   ],
+   "yaw": 0.0,
+   "size": [
+    29.8,
+    1.9000000000000008,
+    0.2
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "ShopSign14",
+   "kind": "sign",
+   "group": "Signs",
+   "pos": [
+    -160.0,
+    11.6,
+    30.37
+   ],
+   "yaw": 180.0,
+   "size": [
+    35.8,
+    1.9000000000000008,
+    0.2
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "ShopSign15",
+   "kind": "sign",
+   "group": "Signs",
+   "pos": [
+    -197.0,
+    11.6,
+    30.37
+   ],
+   "yaw": 180.0,
+   "size": [
+    29.8,
+    1.9000000000000008,
+    0.2
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "ShopSign16",
+   "kind": "sign",
+   "group": "Signs",
+   "pos": [
+    -227.0,
+    11.6,
+    30.37
+   ],
+   "yaw": 180.0,
+   "size": [
+    21.8,
+    1.9000000000000008,
+    0.2
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "TrainStation_Sign",
+   "kind": "sign",
+   "group": "Signs",
+   "pos": [
+    281.25,
+    22.3,
+    70.0
+   ],
+   "yaw": 90.0,
+   "size": [
+    20.8,
+    1.8,
+    0.2
+   ],
+   "attrs": {
+    "Station": "TrainStation"
+   }
+  },
+  {
+   "name": "TrainStation",
+   "kind": "station",
+   "group": "Stations",
+   "pos": [
+    331.0,
+    2.8,
+    70.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    16,
+    6,
+    10
+   ],
+   "attrs": {
+    "Station": "TrainStation"
+   }
+  },
+  {
+   "name": "TrainTravel",
+   "kind": "travel",
+   "group": "Stations",
+   "pos": [
+    339.0,
+    2.8,
+    66.0
+   ],
+   "yaw": 270.0,
+   "size": [
+    6,
+    8,
+    30
+   ],
+   "attrs": {
+    "Station": "TrainStation"
+   }
+  },
+  {
+   "name": "TrainDoor",
+   "kind": "traindoor",
+   "group": "Stations",
+   "pos": [
+    345.0,
+    6.6,
+    43.27
+   ],
+   "yaw": 90,
+   "size": [
+    1,
+    8,
+    5
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "BusStop",
+   "kind": "busstop",
+   "group": "Stations",
+   "pos": [
+    146,
+    0.6,
+    102
+   ],
+   "yaw": 180,
+   "size": [
+    12,
+    8,
+    5
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "North_East_01",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -270.0,
+    0.2,
+    -89.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_East",
+    "Order": 1,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_East_02",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -246.0,
+    0.2,
+    -89.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_East",
+    "Order": 2,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_East_03",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -222.0,
+    0.2,
+    -89.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_East",
+    "Order": 3,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_East_04",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -198.0,
+    0.2,
+    -89.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_East",
+    "Order": 4,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_East_05",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -174.0,
+    0.2,
+    -89.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_East",
+    "Order": 5,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_East_06",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -150.0,
+    0.2,
+    -89.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_East",
+    "Order": 6,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_East_07",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -126.0,
+    0.2,
+    -89.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_East",
+    "Order": 7,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_East_08",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -102.0,
+    0.2,
+    -89.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_East",
+    "Order": 8,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_East_09",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -78.0,
+    0.2,
+    -89.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_East",
+    "Order": 9,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_East_10",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -54.0,
+    0.2,
+    -89.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_East",
+    "Order": 10,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_East_11",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -30.0,
+    0.2,
+    -89.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_East",
+    "Order": 11,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_East_12",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -6.0,
+    0.2,
+    -89.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_East",
+    "Order": 12,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_East_13",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    18.0,
+    0.2,
+    -89.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_East",
+    "Order": 13,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_East_14",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    42.0,
+    0.2,
+    -89.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_East",
+    "Order": 14,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_East_15",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    66.0,
+    0.2,
+    -89.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_East",
+    "Order": 15,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_East_16",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    90.0,
+    0.2,
+    -89.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_East",
+    "Order": 16,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_East_17",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    114.0,
+    0.2,
+    -89.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_East",
+    "Order": 17,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_East_18",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    138.0,
+    0.2,
+    -89.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_East",
+    "Order": 18,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_East_19",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    162.0,
+    0.2,
+    -89.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_East",
+    "Order": 19,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_East_20",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    186.0,
+    0.2,
+    -89.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_East",
+    "Order": 20,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_East_21",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    210.0,
+    0.2,
+    -89.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_East",
+    "Order": 21,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_East_22",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    234.0,
+    0.2,
+    -89.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_East",
+    "Order": 22,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_East_23",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    258.0,
+    0.2,
+    -89.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_East",
+    "Order": 23,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_West_01",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    258.0,
+    0.2,
+    -103.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_West",
+    "Order": 1,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_West_02",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    234.0,
+    0.2,
+    -103.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_West",
+    "Order": 2,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_West_03",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    210.0,
+    0.2,
+    -103.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_West",
+    "Order": 3,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_West_04",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    186.0,
+    0.2,
+    -103.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_West",
+    "Order": 4,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_West_05",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    162.0,
+    0.2,
+    -103.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_West",
+    "Order": 5,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_West_06",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    138.0,
+    0.2,
+    -103.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_West",
+    "Order": 6,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_West_07",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    114.0,
+    0.2,
+    -103.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_West",
+    "Order": 7,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_West_08",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    90.0,
+    0.2,
+    -103.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_West",
+    "Order": 8,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_West_09",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    66.0,
+    0.2,
+    -103.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_West",
+    "Order": 9,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_West_10",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    42.0,
+    0.2,
+    -103.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_West",
+    "Order": 10,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_West_11",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    18.0,
+    0.2,
+    -103.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_West",
+    "Order": 11,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_West_12",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -6.0,
+    0.2,
+    -103.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_West",
+    "Order": 12,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_West_13",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -30.0,
+    0.2,
+    -103.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_West",
+    "Order": 13,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_West_14",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -54.0,
+    0.2,
+    -103.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_West",
+    "Order": 14,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_West_15",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -78.0,
+    0.2,
+    -103.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_West",
+    "Order": 15,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_West_16",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -102.0,
+    0.2,
+    -103.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_West",
+    "Order": 16,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_West_17",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -126.0,
+    0.2,
+    -103.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_West",
+    "Order": 17,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_West_18",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -150.0,
+    0.2,
+    -103.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_West",
+    "Order": 18,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_West_19",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -174.0,
+    0.2,
+    -103.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_West",
+    "Order": 19,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_West_20",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -198.0,
+    0.2,
+    -103.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_West",
+    "Order": 20,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_West_21",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -222.0,
+    0.2,
+    -103.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_West",
+    "Order": 21,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_West_22",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -246.0,
+    0.2,
+    -103.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_West",
+    "Order": 22,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "North_West_23",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -270.0,
+    0.2,
+    -103.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "North_West",
+    "Order": 23,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_East_01",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -270.0,
+    0.2,
+    84.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_East",
+    "Order": 1,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_East_02",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -246.0,
+    0.2,
+    84.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_East",
+    "Order": 2,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_East_03",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -222.0,
+    0.2,
+    84.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_East",
+    "Order": 3,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_East_04",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -198.0,
+    0.2,
+    84.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_East",
+    "Order": 4,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_East_05",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -174.0,
+    0.2,
+    84.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_East",
+    "Order": 5,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_East_06",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -150.0,
+    0.2,
+    84.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_East",
+    "Order": 6,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_East_07",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -126.0,
+    0.2,
+    84.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_East",
+    "Order": 7,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_East_08",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -102.0,
+    0.2,
+    84.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_East",
+    "Order": 8,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_East_09",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -78.0,
+    0.2,
+    84.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_East",
+    "Order": 9,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_East_10",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -54.0,
+    0.2,
+    84.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_East",
+    "Order": 10,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_East_11",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -30.0,
+    0.2,
+    84.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_East",
+    "Order": 11,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_East_12",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -6.0,
+    0.2,
+    84.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_East",
+    "Order": 12,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_East_13",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    18.0,
+    0.2,
+    84.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_East",
+    "Order": 13,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_East_14",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    42.0,
+    0.2,
+    84.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_East",
+    "Order": 14,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_East_15",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    66.0,
+    0.2,
+    84.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_East",
+    "Order": 15,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_East_16",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    90.0,
+    0.2,
+    84.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_East",
+    "Order": 16,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_East_17",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    114.0,
+    0.2,
+    84.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_East",
+    "Order": 17,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_East_18",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    138.0,
+    0.2,
+    84.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_East",
+    "Order": 18,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_East_19",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    162.0,
+    0.2,
+    84.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_East",
+    "Order": 19,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_East_20",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    186.0,
+    0.2,
+    84.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_East",
+    "Order": 20,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_East_21",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    210.0,
+    0.2,
+    84.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_East",
+    "Order": 21,
+    "Dir": "east",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_West_01",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    210.0,
+    0.2,
+    56.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_West",
+    "Order": 1,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_West_02",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    186.0,
+    0.2,
+    56.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_West",
+    "Order": 2,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_West_03",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    162.0,
+    0.2,
+    56.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_West",
+    "Order": 3,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_West_04",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    138.0,
+    0.2,
+    56.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_West",
+    "Order": 4,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_West_05",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    114.0,
+    0.2,
+    56.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_West",
+    "Order": 5,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_West_06",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    90.0,
+    0.2,
+    56.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_West",
+    "Order": 6,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_West_07",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    66.0,
+    0.2,
+    56.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_West",
+    "Order": 7,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_West_08",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    42.0,
+    0.2,
+    56.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_West",
+    "Order": 8,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_West_09",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    18.0,
+    0.2,
+    56.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_West",
+    "Order": 9,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_West_10",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -6.0,
+    0.2,
+    56.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_West",
+    "Order": 10,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_West_11",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -30.0,
+    0.2,
+    56.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_West",
+    "Order": 11,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_West_12",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -54.0,
+    0.2,
+    56.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_West",
+    "Order": 12,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_West_13",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -78.0,
+    0.2,
+    56.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_West",
+    "Order": 13,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_West_14",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -102.0,
+    0.2,
+    56.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_West",
+    "Order": 14,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_West_15",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -126.0,
+    0.2,
+    56.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_West",
+    "Order": 15,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_West_16",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -150.0,
+    0.2,
+    56.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_West",
+    "Order": 16,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_West_17",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -174.0,
+    0.2,
+    56.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_West",
+    "Order": 17,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_West_18",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -198.0,
+    0.2,
+    56.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_West",
+    "Order": 18,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_West_19",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -222.0,
+    0.2,
+    56.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_West",
+    "Order": 19,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_West_20",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -246.0,
+    0.2,
+    56.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_West",
+    "Order": 20,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "Blvd_West_21",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -270.0,
+    0.2,
+    56.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "Blvd_West",
+    "Order": 21,
+    "Dir": "west",
+    "Speed": 30
+   }
+  },
+  {
+   "name": "West_South_01",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -91.0,
+    0.2,
+    -258.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_South",
+    "Order": 1,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_South_02",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -91.0,
+    0.2,
+    -234.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_South",
+    "Order": 2,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_South_03",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -91.0,
+    0.2,
+    -210.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_South",
+    "Order": 3,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_South_04",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -91.0,
+    0.2,
+    -186.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_South",
+    "Order": 4,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_South_05",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -91.0,
+    0.2,
+    -162.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_South",
+    "Order": 5,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_South_06",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -91.0,
+    0.2,
+    -138.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_South",
+    "Order": 6,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_South_07",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -91.0,
+    0.2,
+    -114.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_South",
+    "Order": 7,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_South_08",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -91.0,
+    0.2,
+    -90.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_South",
+    "Order": 8,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_South_09",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -91.0,
+    0.2,
+    -66.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_South",
+    "Order": 9,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_South_10",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -91.0,
+    0.2,
+    -42.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_South",
+    "Order": 10,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_South_11",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -91.0,
+    0.2,
+    -18.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_South",
+    "Order": 11,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_South_12",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -91.0,
+    0.2,
+    6.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_South",
+    "Order": 12,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_South_13",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -91.0,
+    0.2,
+    30.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_South",
+    "Order": 13,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_South_14",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -91.0,
+    0.2,
+    54.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_South",
+    "Order": 14,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_South_15",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -91.0,
+    0.2,
+    78.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_South",
+    "Order": 15,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_South_16",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -91.0,
+    0.2,
+    102.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_South",
+    "Order": 16,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_South_17",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -91.0,
+    0.2,
+    126.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_South",
+    "Order": 17,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_South_18",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -91.0,
+    0.2,
+    150.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_South",
+    "Order": 18,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_South_19",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -91.0,
+    0.2,
+    174.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_South",
+    "Order": 19,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_South_20",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -91.0,
+    0.2,
+    198.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_South",
+    "Order": 20,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_South_21",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -91.0,
+    0.2,
+    222.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_South",
+    "Order": 21,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_South_22",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -91.0,
+    0.2,
+    246.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_South",
+    "Order": 22,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_North_01",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -77.0,
+    0.2,
+    246.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_North",
+    "Order": 1,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_North_02",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -77.0,
+    0.2,
+    222.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_North",
+    "Order": 2,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_North_03",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -77.0,
+    0.2,
+    198.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_North",
+    "Order": 3,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_North_04",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -77.0,
+    0.2,
+    174.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_North",
+    "Order": 4,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_North_05",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -77.0,
+    0.2,
+    150.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_North",
+    "Order": 5,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_North_06",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -77.0,
+    0.2,
+    126.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_North",
+    "Order": 6,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_North_07",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -77.0,
+    0.2,
+    102.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_North",
+    "Order": 7,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_North_08",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -77.0,
+    0.2,
+    78.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_North",
+    "Order": 8,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_North_09",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -77.0,
+    0.2,
+    54.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_North",
+    "Order": 9,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_North_10",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -77.0,
+    0.2,
+    30.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_North",
+    "Order": 10,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_North_11",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -77.0,
+    0.2,
+    6.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_North",
+    "Order": 11,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_North_12",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -77.0,
+    0.2,
+    -18.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_North",
+    "Order": 12,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_North_13",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -77.0,
+    0.2,
+    -42.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_North",
+    "Order": 13,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_North_14",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -77.0,
+    0.2,
+    -66.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_North",
+    "Order": 14,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_North_15",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -77.0,
+    0.2,
+    -90.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_North",
+    "Order": 15,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_North_16",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -77.0,
+    0.2,
+    -114.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_North",
+    "Order": 16,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_North_17",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -77.0,
+    0.2,
+    -138.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_North",
+    "Order": 17,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_North_18",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -77.0,
+    0.2,
+    -162.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_North",
+    "Order": 18,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_North_19",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -77.0,
+    0.2,
+    -186.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_North",
+    "Order": 19,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_North_20",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -77.0,
+    0.2,
+    -210.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_North",
+    "Order": 20,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_North_21",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -77.0,
+    0.2,
+    -234.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_North",
+    "Order": 21,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "West_North_22",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    -77.0,
+    0.2,
+    -258.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "West_North",
+    "Order": 22,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_South_01",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    77.0,
+    0.2,
+    -258.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_South",
+    "Order": 1,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_South_02",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    77.0,
+    0.2,
+    -234.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_South",
+    "Order": 2,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_South_03",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    77.0,
+    0.2,
+    -210.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_South",
+    "Order": 3,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_South_04",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    77.0,
+    0.2,
+    -186.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_South",
+    "Order": 4,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_South_05",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    77.0,
+    0.2,
+    -162.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_South",
+    "Order": 5,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_South_06",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    77.0,
+    0.2,
+    -138.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_South",
+    "Order": 6,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_South_07",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    77.0,
+    0.2,
+    -114.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_South",
+    "Order": 7,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_South_08",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    77.0,
+    0.2,
+    -90.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_South",
+    "Order": 8,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_South_09",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    77.0,
+    0.2,
+    -66.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_South",
+    "Order": 9,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_South_10",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    77.0,
+    0.2,
+    -42.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_South",
+    "Order": 10,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_South_11",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    77.0,
+    0.2,
+    -18.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_South",
+    "Order": 11,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_South_12",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    77.0,
+    0.2,
+    6.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_South",
+    "Order": 12,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_South_13",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    77.0,
+    0.2,
+    30.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_South",
+    "Order": 13,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_South_14",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    77.0,
+    0.2,
+    54.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_South",
+    "Order": 14,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_South_15",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    77.0,
+    0.2,
+    78.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_South",
+    "Order": 15,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_South_16",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    77.0,
+    0.2,
+    102.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_South",
+    "Order": 16,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_South_17",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    77.0,
+    0.2,
+    126.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_South",
+    "Order": 17,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_South_18",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    77.0,
+    0.2,
+    150.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_South",
+    "Order": 18,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_South_19",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    77.0,
+    0.2,
+    174.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_South",
+    "Order": 19,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_South_20",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    77.0,
+    0.2,
+    198.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_South",
+    "Order": 20,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_South_21",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    77.0,
+    0.2,
+    222.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_South",
+    "Order": 21,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_South_22",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    77.0,
+    0.2,
+    246.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_South",
+    "Order": 22,
+    "Dir": "south",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_North_01",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    91.0,
+    0.2,
+    246.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_North",
+    "Order": 1,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_North_02",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    91.0,
+    0.2,
+    222.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_North",
+    "Order": 2,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_North_03",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    91.0,
+    0.2,
+    198.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_North",
+    "Order": 3,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_North_04",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    91.0,
+    0.2,
+    174.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_North",
+    "Order": 4,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_North_05",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    91.0,
+    0.2,
+    150.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_North",
+    "Order": 5,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_North_06",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    91.0,
+    0.2,
+    126.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_North",
+    "Order": 6,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_North_07",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    91.0,
+    0.2,
+    102.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_North",
+    "Order": 7,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_North_08",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    91.0,
+    0.2,
+    78.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_North",
+    "Order": 8,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_North_09",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    91.0,
+    0.2,
+    54.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_North",
+    "Order": 9,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_North_10",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    91.0,
+    0.2,
+    30.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_North",
+    "Order": 10,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_North_11",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    91.0,
+    0.2,
+    6.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_North",
+    "Order": 11,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_North_12",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    91.0,
+    0.2,
+    -18.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_North",
+    "Order": 12,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_North_13",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    91.0,
+    0.2,
+    -42.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_North",
+    "Order": 13,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_North_14",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    91.0,
+    0.2,
+    -66.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_North",
+    "Order": 14,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_North_15",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    91.0,
+    0.2,
+    -90.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_North",
+    "Order": 15,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_North_16",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    91.0,
+    0.2,
+    -114.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_North",
+    "Order": 16,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_North_17",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    91.0,
+    0.2,
+    -138.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_North",
+    "Order": 17,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_North_18",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    91.0,
+    0.2,
+    -162.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_North",
+    "Order": 18,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_North_19",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    91.0,
+    0.2,
+    -186.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_North",
+    "Order": 19,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_North_20",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    91.0,
+    0.2,
+    -210.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_North",
+    "Order": 20,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_North_21",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    91.0,
+    0.2,
+    -234.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_North",
+    "Order": 21,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "East_North_22",
+   "kind": "roadpath",
+   "group": "RoadPaths",
+   "pos": [
+    91.0,
+    0.2,
+    -258.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "East_North",
+    "Order": 22,
+    "Dir": "north",
+    "Speed": 26
+   }
+  },
+  {
+   "name": "Junction_West_North",
+   "kind": "roadnode",
+   "group": "RoadPaths",
+   "pos": [
+    -84.0,
+    0.2,
+    -96.0
+   ],
+   "yaw": 0,
+   "size": [
+    32.0,
+    2,
+    32.0
+   ],
+   "attrs": {
+    "Streets": "West,North"
+   }
+  },
+  {
+   "name": "Junction_West_Blvd",
+   "kind": "roadnode",
+   "group": "RoadPaths",
+   "pos": [
+    -84.0,
+    0.2,
+    70.0
+   ],
+   "yaw": 0,
+   "size": [
+    32.0,
+    2,
+    56.0
+   ],
+   "attrs": {
+    "Streets": "West,Blvd"
+   }
+  },
+  {
+   "name": "Junction_East_North",
+   "kind": "roadnode",
+   "group": "RoadPaths",
+   "pos": [
+    84.0,
+    0.2,
+    -96.0
+   ],
+   "yaw": 0,
+   "size": [
+    32.0,
+    2,
+    32.0
+   ],
+   "attrs": {
+    "Streets": "East,North"
+   }
+  },
+  {
+   "name": "Junction_East_Blvd",
+   "kind": "roadnode",
+   "group": "RoadPaths",
+   "pos": [
+    84.0,
+    0.2,
+    70.0
+   ],
+   "yaw": 0,
+   "size": [
+    32.0,
+    2,
+    56.0
+   ],
+   "attrs": {
+    "Streets": "East,Blvd"
+   }
+  },
+  {
+   "name": "SquareWalk_01",
+   "kind": "npcpath",
+   "group": "NPCPaths",
+   "pos": [
+    -62.0,
+    0.8,
+    -74.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "SquareWalk",
+    "Order": 1
+   }
+  },
+  {
+   "name": "SquareWalk_02",
+   "kind": "npcpath",
+   "group": "NPCPaths",
+   "pos": [
+    -44.29,
+    0.8,
+    -74.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "SquareWalk",
+    "Order": 2
+   }
+  },
+  {
+   "name": "SquareWalk_03",
+   "kind": "npcpath",
+   "group": "NPCPaths",
+   "pos": [
+    -26.57,
+    0.8,
+    -74.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "SquareWalk",
+    "Order": 3
+   }
+  },
+  {
+   "name": "SquareWalk_04",
+   "kind": "npcpath",
+   "group": "NPCPaths",
+   "pos": [
+    -8.86,
+    0.8,
+    -74.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "SquareWalk",
+    "Order": 4
+   }
+  },
+  {
+   "name": "SquareWalk_05",
+   "kind": "npcpath",
+   "group": "NPCPaths",
+   "pos": [
+    8.86,
+    0.8,
+    -74.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "SquareWalk",
+    "Order": 5
+   }
+  },
+  {
+   "name": "SquareWalk_06",
+   "kind": "npcpath",
+   "group": "NPCPaths",
+   "pos": [
+    26.57,
+    0.8,
+    -74.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "SquareWalk",
+    "Order": 6
+   }
+  },
+  {
+   "name": "SquareWalk_07",
+   "kind": "npcpath",
+   "group": "NPCPaths",
+   "pos": [
+    44.29,
+    0.8,
+    -74.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "SquareWalk",
+    "Order": 7
+   }
+  },
+  {
+   "name": "SquareWalk_08",
+   "kind": "npcpath",
+   "group": "NPCPaths",
+   "pos": [
+    62.0,
+    0.8,
+    -74.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "SquareWalk",
+    "Order": 8
+   }
+  },
+  {
+   "name": "SquareWalk_09",
+   "kind": "npcpath",
+   "group": "NPCPaths",
+   "pos": [
+    62.0,
+    0.8,
+    -55.67
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "SquareWalk",
+    "Order": 9
+   }
+  },
+  {
+   "name": "SquareWalk_10",
+   "kind": "npcpath",
+   "group": "NPCPaths",
+   "pos": [
+    62.0,
+    0.8,
+    -37.33
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "SquareWalk",
+    "Order": 10
+   }
+  },
+  {
+   "name": "SquareWalk_11",
+   "kind": "npcpath",
+   "group": "NPCPaths",
+   "pos": [
+    62.0,
+    0.8,
+    -19.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "SquareWalk",
+    "Order": 11
+   }
+  },
+  {
+   "name": "SquareWalk_12",
+   "kind": "npcpath",
+   "group": "NPCPaths",
+   "pos": [
+    62.0,
+    0.8,
+    -0.67
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "SquareWalk",
+    "Order": 12
+   }
+  },
+  {
+   "name": "SquareWalk_13",
+   "kind": "npcpath",
+   "group": "NPCPaths",
+   "pos": [
+    62.0,
+    0.8,
+    17.67
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "SquareWalk",
+    "Order": 13
+   }
+  },
+  {
+   "name": "SquareWalk_14",
+   "kind": "npcpath",
+   "group": "NPCPaths",
+   "pos": [
+    62.0,
+    0.8,
+    36.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "SquareWalk",
+    "Order": 14
+   }
+  },
+  {
+   "name": "SquareWalk_15",
+   "kind": "npcpath",
+   "group": "NPCPaths",
+   "pos": [
+    44.29,
+    0.8,
+    36.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "SquareWalk",
+    "Order": 15
+   }
+  },
+  {
+   "name": "SquareWalk_16",
+   "kind": "npcpath",
+   "group": "NPCPaths",
+   "pos": [
+    26.57,
+    0.8,
+    36.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "SquareWalk",
+    "Order": 16
+   }
+  },
+  {
+   "name": "SquareWalk_17",
+   "kind": "npcpath",
+   "group": "NPCPaths",
+   "pos": [
+    8.86,
+    0.8,
+    36.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "SquareWalk",
+    "Order": 17
+   }
+  },
+  {
+   "name": "SquareWalk_18",
+   "kind": "npcpath",
+   "group": "NPCPaths",
+   "pos": [
+    -8.86,
+    0.8,
+    36.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "SquareWalk",
+    "Order": 18
+   }
+  },
+  {
+   "name": "SquareWalk_19",
+   "kind": "npcpath",
+   "group": "NPCPaths",
+   "pos": [
+    -26.57,
+    0.8,
+    36.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "SquareWalk",
+    "Order": 19
+   }
+  },
+  {
+   "name": "SquareWalk_20",
+   "kind": "npcpath",
+   "group": "NPCPaths",
+   "pos": [
+    -44.29,
+    0.8,
+    36.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "SquareWalk",
+    "Order": 20
+   }
+  },
+  {
+   "name": "SquareWalk_21",
+   "kind": "npcpath",
+   "group": "NPCPaths",
+   "pos": [
+    -62.0,
+    0.8,
+    36.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "SquareWalk",
+    "Order": 21
+   }
+  },
+  {
+   "name": "SquareWalk_22",
+   "kind": "npcpath",
+   "group": "NPCPaths",
+   "pos": [
+    -62.0,
+    0.8,
+    17.67
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "SquareWalk",
+    "Order": 22
+   }
+  },
+  {
+   "name": "SquareWalk_23",
+   "kind": "npcpath",
+   "group": "NPCPaths",
+   "pos": [
+    -62.0,
+    0.8,
+    -0.67
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "SquareWalk",
+    "Order": 23
+   }
+  },
+  {
+   "name": "SquareWalk_24",
+   "kind": "npcpath",
+   "group": "NPCPaths",
+   "pos": [
+    -62.0,
+    0.8,
+    -19.0
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "SquareWalk",
+    "Order": 24
+   }
+  },
+  {
+   "name": "SquareWalk_25",
+   "kind": "npcpath",
+   "group": "NPCPaths",
+   "pos": [
+    -62.0,
+    0.8,
+    -37.33
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "SquareWalk",
+    "Order": 25
+   }
+  },
+  {
+   "name": "SquareWalk_26",
+   "kind": "npcpath",
+   "group": "NPCPaths",
+   "pos": [
+    -62.0,
+    0.8,
+    -55.67
+   ],
+   "yaw": 0,
+   "size": [
+    2,
+    2,
+    2
+   ],
+   "attrs": {
+    "Path": "SquareWalk",
+    "Order": 26
+   }
+  },
+  {
+   "name": "SpawnLocation",
+   "kind": "spawn",
+   "group": "Spawn",
+   "pos": [
+    0.0,
+    1.1,
+    26.0
+   ],
+   "yaw": 0,
+   "size": [
+    12,
+    1,
+    12
+   ],
+   "attrs": {}
+  }
+ ],
+ "spawn": [
+  0.0,
+  0.6,
+  26.0
+ ],
+ "look": {
+  "sun": [
+   0.43,
+   0.743,
+   0.513
+  ]
+ }
+}

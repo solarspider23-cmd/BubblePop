@@ -1,0 +1,11 @@
+{"img": "../plan_sugar.png", "out": "../plan_sugar_annotated.jpg", "center": [0, -30], "size": 600, "title": "Sugarworks (tycoon plots)",
+ "labels": [
+  {"text": "Spawn plaza: star pad, faces north up the boulevard", "x": 0, "z": 212, "color": "#ff4f9a"},
+  {"text": "Hero: Candy Exchange closes the vista at the road's end", "x": 0, "z": -264, "color": "#ffc928"},
+  {"text": "Boulevard 32 wide + sidewalks; lamps and benches only here", "x": 0, "z": 60, "color": "#ffffff"},
+  {"text": "Plot: one plot() in local coords, placed 8x = identical (fair)", "x": 68, "z": -5, "color": "#1fd6b4"},
+  {"text": "Gate + claim pad on the road side of every plot", "x": 25, "z": -100, "color": "#8a52ff"},
+  {"text": "Starter line dropper > belts > upgrader > collector", "x": -68, "z": 90, "color": "#ff8a1f"},
+  {"text": "11-stud lawn gaps: tree + bush rows separate plots", "x": -80, "z": -147.5, "color": "#62d14a"},
+  {"text": "Cliff skirt from lawn edge to sea, outside the playable box", "x": 150, "z": 150, "color": "#d47f3a"}],
+ "arrows": [{"from": [0, 190], "to": [0, -220], "color": "#ffc928"}]}

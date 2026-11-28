@@ -1,0 +1,349 @@
+{
+ "anchors": [
+  {
+   "name": "Dock1",
+   "kind": "station",
+   "group": "Docks",
+   "pos": [
+    -90,
+    1,
+    70
+   ],
+   "yaw": 0,
+   "size": [
+    10,
+    12,
+    8
+   ],
+   "attrs": {
+    "State": "closed"
+   }
+  },
+  {
+   "name": "Dock2",
+   "kind": "station",
+   "group": "Docks",
+   "pos": [
+    -60,
+    1,
+    70
+   ],
+   "yaw": 0,
+   "size": [
+    10,
+    12,
+    8
+   ],
+   "attrs": {
+    "State": "open"
+   }
+  },
+  {
+   "name": "Dock3",
+   "kind": "station",
+   "group": "Docks",
+   "pos": [
+    -30,
+    1,
+    70
+   ],
+   "yaw": 0,
+   "size": [
+    10,
+    12,
+    8
+   ],
+   "attrs": {
+    "State": "half"
+   }
+  },
+  {
+   "name": "Dock4",
+   "kind": "station",
+   "group": "Docks",
+   "pos": [
+    0,
+    1,
+    70
+   ],
+   "yaw": 0,
+   "size": [
+    10,
+    12,
+    8
+   ],
+   "attrs": {
+    "State": "open"
+   }
+  },
+  {
+   "name": "Dock5",
+   "kind": "station",
+   "group": "Docks",
+   "pos": [
+    30,
+    1,
+    70
+   ],
+   "yaw": 0,
+   "size": [
+    10,
+    12,
+    8
+   ],
+   "attrs": {
+    "State": "closed"
+   }
+  },
+  {
+   "name": "Dock6",
+   "kind": "station",
+   "group": "Docks",
+   "pos": [
+    60,
+    1,
+    70
+   ],
+   "yaw": 0,
+   "size": [
+    10,
+    12,
+    8
+   ],
+   "attrs": {
+    "State": "open"
+   }
+  },
+  {
+   "name": "Dock7",
+   "kind": "station",
+   "group": "Docks",
+   "pos": [
+    90,
+    1,
+    70
+   ],
+   "yaw": 0,
+   "size": [
+    10,
+    12,
+    8
+   ],
+   "attrs": {
+    "State": "closed"
+   }
+  },
+  {
+   "name": "Spawn",
+   "kind": "spawn",
+   "group": "Spawn",
+   "pos": [
+    -108,
+    0.5,
+    38
+   ],
+   "yaw": 270.0,
+   "size": [
+    6,
+    1,
+    6
+   ],
+   "attrs": {}
+  },
+  {
+   "name": "Charger1",
+   "kind": "station",
+   "group": "Stations",
+   "pos": [
+    114.0,
+    1,
+    -6.0
+   ],
+   "yaw": 90,
+   "size": [
+    4,
+    6,
+    4
+   ],
+   "attrs": {
+    "Kind": "charge"
+   }
+  },
+  {
+   "name": "Charger2",
+   "kind": "station",
+   "group": "Stations",
+   "pos": [
+    114.0,
+    1,
+    2.0
+   ],
+   "yaw": 90,
+   "size": [
+    4,
+    6,
+    4
+   ],
+   "attrs": {
+    "Kind": "charge"
+   }
+  },
+  {
+   "name": "Charger3",
+   "kind": "station",
+   "group": "Stations",
+   "pos": [
+    114.0,
+    1,
+    10.0
+   ],
+   "yaw": 90,
+   "size": [
+    4,
+    6,
+    4
+   ],
+   "attrs": {
+    "Kind": "charge"
+   }
+  },
+  {
+   "name": "Wrapper",
+   "kind": "station",
+   "group": "Stations",
+   "pos": [
+    92,
+    1,
+    -20
+   ],
+   "yaw": 90,
+   "size": [
+    8,
+    8,
+    8
+   ],
+   "attrs": {
+    "Kind": "wrap"
+   }
+  },
+  {
+   "name": "Office",
+   "kind": "station",
+   "group": "Stations",
+   "pos": [
+    80,
+    15,
+    -68
+   ],
+   "yaw": 90,
+   "size": [
+    6,
+    8,
+    6
+   ],
+   "attrs": {
+    "Kind": "orders"
+   }
+  },
+  {
+   "name": "PackBench1",
+   "kind": "station",
+   "group": "Stations",
+   "pos": [
+    66,
+    1,
+    -40
+   ],
+   "yaw": 0,
+   "size": [
+    8,
+    6,
+    4
+   ],
+   "attrs": {
+    "Kind": "pack"
+   }
+  },
+  {
+   "name": "PackBench2",
+   "kind": "station",
+   "group": "Stations",
+   "pos": [
+    78,
+    1,
+    -40
+   ],
+   "yaw": 0,
+   "size": [
+    8,
+    6,
+    4
+   ],
+   "attrs": {
+    "Kind": "pack"
+   }
+  },
+  {
+   "name": "PackBench3",
+   "kind": "station",
+   "group": "Stations",
+   "pos": [
+    90,
+    1,
+    -40
+   ],
+   "yaw": 0,
+   "size": [
+    8,
+    6,
+    4
+   ],
+   "attrs": {
+    "Kind": "pack"
+   }
+  },
+  {
+   "name": "YardBounds",
+   "kind": "border",
+   "group": "Border",
+   "pos": [
+    0,
+    0,
+    113.0
+   ],
+   "yaw": 0,
+   "size": [
+    240.0,
+    20,
+    66.0
+   ],
+   "attrs": {
+    "Note": "weld-mesh fence = border"
+   }
+  },
+  {
+   "name": "HallBounds",
+   "kind": "border",
+   "group": "Border",
+   "pos": [
+    0,
+    18.0,
+    0
+   ],
+   "yaw": 0,
+   "size": [
+    240.0,
+    36.0,
+    160.0
+   ],
+   "attrs": {
+    "Note": "clad walls = border"
+   }
+  }
+ ],
+ "spawn": [
+  -108,
+  0.5,
+  38
+ ]
+}

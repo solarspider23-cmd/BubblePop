@@ -1,0 +1,45 @@
+{
+ "columns": {
+  "0": "SmoothPlastic",
+  "1": "WoodPlanks",
+  "2": "Wood",
+  "3": "Wood",
+  "4": "Fabric",
+  "5": "Sand",
+  "6": "Limestone",
+  "7": "Basalt",
+  "8": "LeafyGrass",
+  "9": "Glass",
+  "10": "SmoothPlastic",
+  "11": "SmoothPlastic",
+  "12": "SmoothPlastic",
+  "13": "SmoothPlastic",
+  "14": "SmoothPlastic",
+  "15": "Metal"
+ },
+ "names": [
+  "white",
+  "deck",
+  "wood",
+  "bamboo",
+  "thatch",
+  "sand",
+  "coral",
+  "rock",
+  "palm",
+  "water",
+  "paint",
+  "red",
+  "yellow",
+  "teal",
+  "lime",
+  "metal"
+ ],
+ "overrides": {
+  "Horizon_Islands": "SmoothPlastic",
+  "Cloud": "SmoothPlastic",
+  "Ground_Seabed": {
+   "water": "Sand"
+  }
+ }
+}
