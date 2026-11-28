@@ -17,7 +17,7 @@ local Lobby = {}
 -- for a run: the properties below are saved as they are now (the server's values), the hub's own
 -- effects are only enabled in the hub, and BubbleView puts the room look's lighting back.
 local Lighting = game:GetService("Lighting")
-local HUB_LIT = HubConfig.theme == "clean" and HubConfig.lighting or nil
+local HUB_LIT = HubConfig.hubLighting -- (classic or clean theme; nil = the server's lighting)
 local PROPS = { "Brightness", "ClockTime", "GeographicLatitude", "Ambient", "OutdoorAmbient", "ColorShift_Top", "ExposureCompensation", "GlobalShadows", "ShadowSoftness", "EnvironmentDiffuseScale", "EnvironmentSpecularScale" }
 local saved: { [string]: any } = {}
 for _, k in PROPS do

@@ -13,6 +13,7 @@ local Scraps = require(Controllers.Scraps)
 local Shop = require(Controllers.Shop)
 local Lobby = require(Controllers.Lobby)
 local HubBubbles = require(Controllers.HubBubbles)
+local HubChest = require(Controllers.HubChest)
 local Sounds = require(ReplicatedStorage.Shared.Config.Sounds)
 local Room = require(ReplicatedStorage.Shared.Config.Room)
 local Pop = require(ReplicatedStorage.Shared.Config.Pop)
@@ -56,6 +57,7 @@ Stomp.start(remotes)
 Shop.start(remotes)
 Lobby.start(remotes) -- hub (third person) vs popping room (first person, run HUD)
 HubBubbles.start()
+HubChest.start() -- the free gift chest opens as you walk up (cosmetic)
 
 -- Test-room switches: L = look, 1-9 = pop sound, K = squeeze sound, B = shop
 local squeezeIndex = 1

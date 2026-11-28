@@ -12,6 +12,7 @@ local Models = require(Shared.Config.Models)
 local Piles = require(Shared.Config.GumballPiles)
 local HubPolish = require(script.Parent.HubPolish)
 local HubToyBox = require(script.Parent.HubToyBox)
+local HubClassic = require(script.Parent.HubClassic)
 
 local Hub = {}
 
@@ -1083,10 +1084,8 @@ local function lollipop(base: Vector3, s: number, rng: Random)
 	part("LollyMiddle", Vector3.new(1.8 * s, 2 * s, 2 * s), cf, gumColor(rng), { shape = CYL })
 end
 
-local function buildScenery()
-	local rng = Random.new(7)
-	local greens = { Color3.fromRGB(80, 180, 80), Color3.fromRGB(100, 195, 85), Color3.fromRGB(65, 160, 75) }
-	-- puffy clouds: a thick cloud floor far below (hides the popping room), and a few puffs around
+-- puffy clouds: a thick cloud floor far below (hides the popping room), and a few puffs around
+local function buildClouds(rng: Random)
 	local cloud = Color3.fromRGB(255, 255, 255)
 	local function puff(c: Vector3, size: number)
 		for _ = 1, rng:NextInteger(3, 5) do
@@ -1102,6 +1101,12 @@ local function buildScenery()
 		local a, r = rng:NextNumber(0, math.pi * 2), rng:NextNumber(170, 400)
 		puff(at(math.cos(a) * r, rng:NextNumber(-50, 40), math.sin(a) * r), rng:NextNumber(14, 28))
 	end
+end
+
+local function buildScenery()
+	local rng = Random.new(7)
+	local greens = { Color3.fromRGB(80, 180, 80), Color3.fromRGB(100, 195, 85), Color3.fromRGB(65, 160, 75) }
+	buildClouds(rng)
 	-- round cartoon trees on the island, between the plaza and the glass
 	local placed = 0
 	local maxR = HubConfig.island.radius - 12
@@ -1215,6 +1220,15 @@ end
 
 function Hub.build()
 	local gumball = HubConfig.theme == "gumball"
+	if HubConfig.classicOn then -- classic simulator island (HubClassic), clouds; no glass bubble
+		HubClassic.build({
+			part = part, at = at, folder = folder, blocker = blocker, sign = sign,
+			padParts = padParts, padText = padText, padCount = padCount,
+		})
+		buildClouds(Random.new(7))
+		folder.Parent = workspace
+		return
+	end
 	if TOYBOX then -- every piece from plain parts (HubToyBox), then the recoloured polish, clouds, trees, glass
 		HubToyBox.build({
 			part = part, at = at, folder = folder, blocker = blocker, sign = sign, label = label,

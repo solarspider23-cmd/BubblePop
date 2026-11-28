@@ -611,7 +611,7 @@ end
 -- Per-look lighting (this client only). The server's lighting is remembered as the default.
 local Lighting = game:GetService("Lighting")
 local HubCfg = require(game:GetService("ReplicatedStorage").Shared.Config.Hub)
-local HubLighting = HubCfg.theme == "clean" and HubCfg.lighting or nil
+local HubLighting = HubCfg.hubLighting
 local defaults: { [string]: any }? = nil
 local bloom = Instance.new("BloomEffect")
 bloom.Name = "LookBloom"

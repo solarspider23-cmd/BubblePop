@@ -25,9 +25,10 @@ local Hub = {
 	backToHubSeconds = 8, -- after the room is cleared
 	rooms = { { name = "Starter Room" } }, -- what the pad owner can pick (more later)
 
-	-- Which look the hub uses: "clean" (Clean Pop Plaza: bubble centrepiece, soft pastels), "gumball"
+	-- Which look the hub uses: "classic" (clean classic simulator island: natural studs, colour only on
+	-- the stations; ServerScriptService/HubClassic.lua, data in Hub.classic below), "clean" (Clean Pop Plaza: bubble centrepiece, soft pastels), "gumball"
 	-- (giant gumball machine, candy colours) or "aero" (glossy bubble HQ).
-	theme = "clean",
+	theme = "classic", -- also "clean" (Toy Box with useModels = false), "gumball", "aero"
 	-- false = build every lobby piece from plain Roblox parts (the clean theme then uses the Toy Box look
 	-- below); true = use the uploaded Blender models (Config/Models.hub / hubClean). The model code stays.
 	useModels = false,
@@ -279,6 +280,179 @@ if Hub.toyboxOn then
 	P.rainbow = nil
 	P.leaderboard.frame, P.leaderboard.face = SKY, TRIM
 end
+
+-- CLASSIC (theme = "classic"; owner 2026-11-27): a clean, classic simulator hub on a floating sky island.
+-- Plastic parts with studded tops, ONE simple colour scheme used everywhere (`palette`), plain play pads
+-- with readable signs, one landmark (giant bubble + BUBBLE POP sign) at the back on the spawn axis.
+-- Built by ServerScriptService/HubClassic.lua. Positions are x, z from the hub origin (floor = island top
+-- = y 0), -z is the back (the landmark), the spawn is at the front facing it. Rects are { x1, z1, x2, z2 }.
+--   palette = "bubbleBlue" (light grey base, sky blue main, sunny yellow accent) or "mintCoral" (soft mint
+--             base, warm white main, coral accent)
+--   layout  = "full" (stations round a plaza, trees / bushes / rocks / flowers fill the gaps) or "minimal"
+--             (compact: spawn, pads, shops, gift chest, leaderboards, landmark and paths; no nature)
+-- Stations share the palette and are told apart by their signs and icons.
+local function ramp(light, mid, dark)
+	return { light = light, mid = mid, dark = dark }
+end
+Hub.classic = {
+	palette = "bubbleBlue",
+	layout = "full",
+
+	palettes = {
+		bubbleBlue = {
+			base = ramp(rgb(236, 239, 244), rgb(204, 211, 222), rgb(166, 175, 190)), -- light grey studs: plaza (light), island top (mid)
+			main = ramp(rgb(150, 205, 250), rgb(80, 165, 235), rgb(40, 112, 192)), -- sky blue: paths, pads, signs, trim, plants
+			accent = ramp(rgb(255, 225, 110), rgb(255, 200, 40), rgb(215, 150, 15)), -- sunny yellow: logo, gift chest, key buttons
+			stone = { rgb(176, 184, 196), rgb(156, 164, 178), rgb(138, 146, 162), rgb(122, 130, 146), rgb(108, 116, 132), rgb(96, 103, 118) }, -- underside, top to tip
+			ink = rgb(24, 58, 118), -- dark text and text outlines
+			padLine = "baseLight", -- the line round each play pad
+			signBoard = "main", signText = rgb(255, 255, 255), signOutline = rgb(24, 58, 118),
+			logoFace = "main", logoText = "accent", logoOutline = rgb(24, 58, 118),
+			bubble = rgb(120, 195, 250), bubbleRim = rgb(40, 112, 192),
+			leaves = { "main", "mainLight" }, trunk = "baseDark", bushes = { "main", "mainLight" },
+			rocks = { "baseDark", "stone2" }, flowers = { "accent", "mainLight" },
+		},
+		mintCoral = {
+			base = ramp(rgb(212, 242, 226), rgb(184, 228, 204), rgb(130, 196, 162)), -- soft mint studs
+			main = ramp(rgb(255, 253, 248), rgb(250, 244, 232), rgb(222, 211, 192)), -- warm white trim
+			accent = ramp(rgb(250, 150, 135), rgb(238, 104, 90), rgb(196, 70, 62)), -- coral red
+			stone = { rgb(204, 196, 184), rgb(186, 178, 166), rgb(168, 160, 150), rgb(150, 142, 134), rgb(134, 126, 120), rgb(118, 110, 106) },
+			ink = rgb(120, 52, 48),
+			padLine = "accent", -- (a coral edge so the white pads read on the mint plaza)
+			signBoard = "main", signText = "accent", signOutline = rgb(255, 255, 255),
+			logoFace = "main", logoText = "accent", logoOutline = rgb(120, 52, 48),
+			bubble = rgb(170, 232, 208), bubbleRim = rgb(238, 104, 90),
+			leaves = { "baseDark", "mainLight" }, trunk = "mainDark", bushes = { "baseDark" },
+			rocks = { "stone1", "stone2" }, flowers = { "accent", "mainLight" },
+		},
+	},
+
+	-- standing parts: the pads use the main colour (rim dark, line light base); the stations main walls, base trim
+	pad = { sign = { w = 10, h = 4.8, y = 4.6 } },
+	kerbWidth = 0.8, -- main-colour kerb round every plaza piece
+	spawnPad = { size = 10 },
+	-- landmark (position per layout): stepped base (dark > mid > light base), giant see-through bubble, BUBBLE POP sign
+	landmark = { tiers = { { 30, 2.6 }, { 24, 2.6 }, { 18, 3 } }, bubble = 26, bubbleTransparency = 0.3, sign = { y = 12, w = 36, h = 7 } },
+	booth = { padDistance = 10 }, -- the key-button pad in front of each shop
+	howTo = "1. Stand on a pad with your friends\n2. Pop every bubble in the room\n3. Sell your scraps at the chute\n4. Upgrade and clear it FAST!",
+
+	layouts = {
+		full = {
+			island = {
+				radius = 88, row = 6, -- row depth in studs (the stepped edge)
+				layers = { { 88, 2, "top" }, { 86, 3, "baseDark" }, { 81, 4, 1 }, { 72, 5, 2 }, { 60, 6, 3 }, { 46, 6, 4 }, { 31, 6, 5 }, { 16, 5, 6 }, { 7, 4, 6 } },
+				wallRadius = 83, wallHeight = 16, -- invisible wall (players can't walk off)
+				hanging = { { -20, 0, 2 }, { 24, 10, 1.6 }, { 4, -26, 1.8 }, { -32, 30, 1.4 } }, -- x, z, size
+			},
+			islets = { { -190, 18, -160, 20 }, { 215, 45, -110, 16 }, { -245, -10, 110, 22 }, { 230, 0, 175, 18 } }, -- far floating islands { x, y, z, radius }
+			plates = { -- light base plaza pieces (kerbed)
+				{ -34, -42, 34, -11 }, -- pad court
+				{ -20, -80, 20, -42 }, -- landmark court
+				{ -8, 27, 8, 42 }, -- spawn court
+				{ -60, -26, -36, 26 }, -- left station court
+				{ 36, -26, 62, 36 }, -- right station court
+			},
+			paths = { { -4, -11, 4, 27 }, { -36, -3, -4, 3 }, { 4, -3, 36, 3 } }, -- main colour walkways
+			landmark = { z = -62, signZ = -44.5 },
+			stations = {
+				{ kind = "booth", name = "SHOP", icon = "🛒", x = 55, z = -14 },
+				{ kind = "booth", name = "PASSES", icon = "🎟️", x = 55, z = 7 },
+				{ kind = "booth", name = "CRYSTALS", icon = "💎", x = 55, z = 28 },
+				{ kind = "board", name = "HOW TO PLAY", x = -54, z = -13 },
+				{ kind = "gift", name = "FREE GIFT", icon = "🎁", x = -52, z = 14 },
+			},
+			leaderboards = {},
+			nature = {
+				seed = 27,
+				trees = { -- clusters { x, z, count, spread }
+					{ -36, -62, 3, 6 }, { 36, -62, 3, 6 }, { -50, -46, 2, 5 }, { 52, -44, 2, 5 },
+					{ -68, -30, 3, 6 }, { 70, -30, 2, 5 }, { -70, 28, 3, 6 }, { 72, 4, 2, 4 },
+					{ -52, 50, 3, 6 }, { 52, 54, 3, 6 }, { -26, 64, 3, 6 }, { 26, 66, 3, 6 },
+					{ -34, 40, 2, 5 }, { 36, 46, 2, 5 }, { 0, 72, 1, 2 }, { -74, -4, 1, 2 },
+				},
+				treeSize = { 0.85, 1.25 },
+				bushes = { -- clumps { x, z, count }
+					{ -38, -46, 3 }, { 38, -46, 3 }, { -12, 46, 3 }, { 12, 46, 3 }, { -24, -78, 2 }, { 24, -78, 2 },
+					{ -38, 33, 3 }, { 30, 40, 3 }, { -66, -32, 2 }, { 66, 40, 2 }, { -64, 30, 3 }, { 68, -30, 3 },
+					{ -10, 8, 2 }, { 10, 8, 2 }, { -22, -8, 2 }, { 22, -8, 2 },
+					{ -24, 22, 3 }, { 26, 24, 3 }, { -14, 58, 3 }, { 14, 56, 2 }, { -46, 32, 2 }, { 50, 40, 2 },
+				},
+				rocks = { { -26, -76, 3 }, { 28, -74, 2 }, { -64, 44, 3 }, { 72, -16, 2 }, { 40, 64, 3 }, { -40, 62, 2 }, { 58, -52, 2 }, { -20, 46, 2 } },
+				flowers = { { -24, 12, 7 }, { 24, 14, 7 }, { -44, 42, 6 }, { 44, 50, 6 }, { -28, -54, 5 }, { 28, -54, 5 }, { -16, 34, 5 }, { 18, 36, 5 }, { -6, 62, 6 }, { 60, 22, 5 } },
+			},
+		},
+		minimal = {
+			island = {
+				centre = { 0, -14 }, -- (moved back so the island fits the pieces: no dead floor in front of the spawn)
+				radius = 72, row = 6,
+				layers = { { 72, 2, "top" }, { 70, 3, "baseDark" }, { 65, 4, 1 }, { 56, 5, 2 }, { 46, 6, 3 }, { 34, 6, 4 }, { 22, 5, 5 }, { 11, 4, 6 } },
+				wallRadius = 68, wallHeight = 16,
+				hanging = { { -14, 0, 1.8 }, { 18, 8, 1.4 }, { 2, -20, 1.6 } },
+			},
+			islets = { { -170, 18, -150, 16 }, { 190, 40, -100, 13 }, { -210, -10, 100, 18 }, { 200, 0, 160, 15 } },
+			plates = {
+				{ -30, -34, 30, -11 }, -- pad court
+				{ -17, -68, 17, -34 }, -- landmark court
+				{ -8, 27, 8, 41 }, -- spawn court
+				{ -50, -18, -30, 30 }, -- left row: leaderboards
+				{ 30, -18, 50, 30 }, -- right row: shops
+				{ -30, 28, -14, 40 }, -- gift corner (left of the spawn)
+			},
+			paths = { { -4, -11, 4, 27 }, { -30, -3, -4, 3 }, { 4, -3, 30, 3 }, { -14, 31, -8, 37 } },
+			landmark = { z = -52, signZ = -33.5 },
+			stations = {
+				{ kind = "booth", name = "SHOP", icon = "🛒", x = 44, z = -8 },
+				{ kind = "booth", name = "PASSES", icon = "🎟️", x = 44, z = 8 },
+				{ kind = "booth", name = "CRYSTALS", icon = "💎", x = 44, z = 24 },
+				{ kind = "gift", name = "FREE GIFT", icon = "🎁", x = -24, z = 34 },
+			},
+			-- stud boards with placeholder rows { x, z, title }, facing the middle
+			leaderboards = {
+				{ x = -44, z = -8, title = "FASTEST CLEARS", rows = { "1.  ---   --:--", "2.  ---   --:--", "3.  ---   --:--" } },
+				{ x = -44, z = 8, title = "MOST POPS", rows = { "1.  ---   0", "2.  ---   0", "3.  ---   0" } },
+				{ x = -44, z = 24, title = "TOP CRYSTALS", rows = { "1.  ---   0", "2.  ---   0", "3.  ---   0" } },
+			},
+			nature = nil,
+		},
+	},
+
+	-- the free gift chest: opens on its own (client only, Controllers/HubChest) when you walk up to it.
+	-- No reward yet (that comes later, on the server).
+	chest = {
+		size = { 6, 3.6, 4.4 }, lid = 1.6, -- body w, h, d; lid height
+		radius = 8, -- open when the local player is this close (studs, from the chest)
+		openAngle = 100, -- degrees about the back hinge
+		openTime = 0.4, closeTime = 0.35,
+		glowBrightness = 2, glowRange = 12, -- (glow colour: the palette's light accent)
+		confettiCount = 30, -- (colours: accent, main, light base)
+		sound = "chestOpen", -- Config/Sounds key
+	},
+
+	-- hub-only lighting (Controllers/Lobby.lua, this client, not in a run): bright natural daytime
+	lighting = {
+		brightness = 2.2,
+		clockTime = 13.6,
+		latitude = 30,
+		ambient = rgb(128, 130, 138),
+		outdoor = rgb(140, 142, 150),
+		colorShiftTop = rgb(255, 246, 232),
+		exposure = -0.1,
+		shadowSoftness = 0.45,
+		envDiffuse = 0.6,
+		envSpecular = 0.3,
+		bloom = { intensity = 0.04, size = 16, threshold = 2.5 }, -- (practically off)
+		colorCorrection = { saturation = 0.06, contrast = 0.04, brightness = 0, tint = rgb(255, 255, 252) },
+		atmosphere = { density = 0.24, offset = 0.1, color = rgb(200, 222, 245), decay = rgb(150, 190, 235), glare = 0, haze = 0.6 },
+	},
+}
+Hub.classicOn = Hub.theme == "classic"
+do -- the chosen palette (P) and layout (L) as plain data for HubClassic / HubChest
+	local K = Hub.classic
+	K.P = K.palettes[K.palette] or K.palettes.bubbleBlue
+	K.L = K.layouts[K.layout] or K.layouts.full
+end
+-- the hub's own lighting (Controllers/Lobby puts it on while not in a run; nil = keep the server's)
+Hub.hubLighting = (Hub.classicOn and Hub.classic.lighting) or (Hub.theme == "clean" and Hub.lighting) or nil
 Hub.colors = Hub.toyboxOn and Hub.themes.toybox or Hub.themes[Hub.theme] or Hub.themes.aero
 
 return Hub

@@ -93,6 +93,10 @@ class Studio:
             text, _, _ = self.call("list_roblox_studios", {})
             studios = json.loads(text).get("studios", [])
             if studios:
+                # another game's Studio may be open too: prefer the BubblePop window
+                for s in studios:
+                    if "BubblePop" in (s.get("name") or "") or "BubblePop" in (s.get("file") or ""):
+                        return s["id"]
                 return studios[0]["id"]
             time.sleep(0.5)
         sys.exit("No Studio window found. Open StealAFish.rbxlx and switch MCP on.")
